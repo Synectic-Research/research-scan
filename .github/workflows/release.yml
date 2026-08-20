@@ -1,11 +1,14 @@
 name: release
 
-# Tags only. Nothing here runs on a push to main or on a pull request, so the
-# publish path cannot be reached except by cutting a tag.
+# Publishing is tag-only, structurally. `workflow_dispatch` exists so the build job can be
+# exercised against any ref, but every publishing job is gated on
+# `github.event_name == 'push'` as well as the tag prefix — so dispatching this workflow
+# against a tag still cannot publish. Dispatch is the dry run; there is no flag to flip.
 on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -28,36 +31,109 @@ jobs:
       - name: Test
         run: uv run pytest
 
-      # The tag is the release's only claim about which version this is, and
-      # importlib.metadata reads the version out of the built distribution. If the
-      # two disagree, the published artifact would carry a version nobody tagged.
-      - name: Tag must match the package version
+      # Four files carry the version, and a release that moves only some of them ships a
+      # package whose plugin manifest, citation record or registry entry disagrees with the
+      # wheel. On a tag, the tag is a fifth claim and has to agree too. The failure names the
+      # file so the fix is obvious without reading the log twice.
+      - name: Versions must agree across all four files
         run: |
-          tag_version="${GITHUB_REF_NAME#v}"
-          pyproject_version="$(uv run python -c 'import tomllib,pathlib; print(tomllib.loads(pathlib.Path("pyproject.toml").read_text())["project"]["version"])')"
-          echo "tag:        ${GITHUB_REF_NAME} (version ${tag_version})"
-          echo "pyproject:  ${pyproject_version}"
-          if [ "${tag_version}" != "${pyproject_version}" ]; then
-            echo "::error title=Version mismatch::tag ${GITHUB_REF_NAME} does not match pyproject.toml version ${pyproject_version}. Bump pyproject.toml or retag; do not publish this build."
-            exit 1
-          fi
+          uv run python - <<'PY'
+          import json
+          import os
+          import pathlib
+          import sys
+          import tomllib
+
+          import yaml
+
+          claims: dict[str, str] = {}
+
+          claims["pyproject.toml"] = tomllib.loads(
+              pathlib.Path("pyproject.toml").read_text(encoding="utf-8")
+          )["project"]["version"]
+
+          claims[".claude-plugin/plugin.json"] = json.loads(
+              pathlib.Path(".claude-plugin/plugin.json").read_text(encoding="utf-8")
+          )["version"]
+
+          claims["CITATION.cff"] = str(
+              yaml.safe_load(pathlib.Path("CITATION.cff").read_text(encoding="utf-8"))["version"]
+          )
+
+          server = json.loads(pathlib.Path("server.json").read_text(encoding="utf-8"))
+          claims["server.json (version)"] = server["version"]
+          claims["server.json (packages[0].version)"] = server["packages"][0]["version"]
+
+          ref = os.environ.get("GITHUB_REF", "")
+          ref_name = os.environ.get("GITHUB_REF_NAME", "")
+          if ref.startswith("refs/tags/v"):
+              claims[f"git tag {ref_name}"] = ref_name.removeprefix("v")
+
+          for source, version in claims.items():
+              print(f"  {source}: {version}")
+
+          distinct = set(claims.values())
+          if len(distinct) != 1:
+              expected = claims["pyproject.toml"]
+              for source, version in claims.items():
+                  if version != expected:
+                      print(
+                          f"::error title=Version mismatch::{source} says {version}, "
+                          f"pyproject.toml says {expected}. Move every version together; "
+                          f"do not publish this build."
+                      )
+              sys.exit(1)
+
+          print(f"\nall sources agree: {distinct.pop()}")
+          PY
 
       - name: Build
         run: uv build
 
-      # The repo passing its own tests is not evidence the artifact works. Install the
-      # wheel somewhere that has none of the source tree on the path and run it.
+      # The repo passing its own tests is not evidence the artifact works. Install the wheel
+      # somewhere that has none of the source tree on the path, then make it state its own
+      # version twice — once through the CLI, once through the MCP handshake a client reads.
+      # On a tag the step above has already tied pyproject to the tag, so agreeing with
+      # pyproject here is agreeing with the tag.
       - name: Smoke-test the built wheel
         run: |
+          expected="$(uv run python -c 'import tomllib,pathlib; print(tomllib.loads(pathlib.Path("pyproject.toml").read_text())["project"]["version"])')"
           python3 -m venv /tmp/smoke
           /tmp/smoke/bin/pip install --quiet --upgrade pip
           /tmp/smoke/bin/pip install --quiet dist/*.whl
-          installed_version="$(/tmp/smoke/bin/research-scan --version)"
-          echo "wheel reports: ${installed_version}"
-          if [ "${installed_version}" != "${GITHUB_REF_NAME#v}" ]; then
-            echo "::error title=Wheel version mismatch::installed wheel reports ${installed_version}, expected ${GITHUB_REF_NAME#v}"
+
+          cli_version="$(/tmp/smoke/bin/research-scan --version)"
+          echo "expected:            ${expected}"
+          echo "wheel CLI reports:   ${cli_version}"
+          if [ "${cli_version}" != "${expected}" ]; then
+            echo "::error title=Wheel version mismatch::installed wheel reports ${cli_version}, expected ${expected}"
             exit 1
           fi
+
+          handshake='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ci-smoke","version":"1"}}}'
+          server_version="$(printf '%s\n' "${handshake}" \
+            | /tmp/smoke/bin/research-scan mcp 2>/dev/null \
+            | head -1 \
+            | python3 -c 'import json,sys; print(json.load(sys.stdin)["result"]["serverInfo"]["version"])')"
+          echo "wheel MCP reports:   ${server_version}"
+          if [ "${server_version}" != "${expected}" ]; then
+            echo "::error title=MCP serverInfo version mismatch::stdio handshake reports ${server_version}, expected ${expected}"
+            exit 1
+          fi
+
+      # One builder, shared with local hands, so a CI asset and a locally built asset of the
+      # same ref are byte-identical. The hashes go to the summary because they are the thing
+      # anyone verifying a download compares against.
+      - name: Build the plugin and skill archives
+        run: |
+          uv run python scripts/build_plugin_assets.py --ref "${GITHUB_SHA}" --out assets
+          {
+            echo "### Release archives"
+            echo
+            echo '```'
+            (cd assets && sha256sum ./*)
+            echo '```'
+          } >> "${GITHUB_STEP_SUMMARY}"
 
       - uses: actions/upload-artifact@v7
         with:
@@ -65,8 +141,17 @@ jobs:
           path: dist/
           if-no-files-found: error
 
-  publish:
+      - uses: actions/upload-artifact@v7
+        with:
+          name: plugin-assets
+          path: assets/
+          if-no-files-found: error
+
+  publish-pypi:
     needs: build
+    # Tag pushes only. The event check is what makes this unreachable from
+    # workflow_dispatch even when someone dispatches against a tag ref.
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
@@ -81,3 +166,132 @@ jobs:
           path: dist/
 
       - uses: pypa/gh-action-pypi-publish@release/v1
+
+  release:
+    needs: publish-pypi
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: plugin-assets
+          path: assets/
+
+      # Provenance ties each archive to this workflow, this repository and this commit, so a
+      # download can be checked against something other than trust in the uploader.
+      - name: Attest the skill archive
+        id: attest-skill
+        uses: actions/attest-build-provenance@v4.2.2
+        with:
+          subject-path: assets/research-scan-skill-*.skill
+
+      - name: Attest the plugin archive
+        id: attest-plugin
+        uses: actions/attest-build-provenance@v4.2.2
+        with:
+          subject-path: assets/research-scan-plugin-*.zip
+
+      - name: Record the attestation URLs
+        env:
+          SKILL_ATTESTATION: ${{ steps.attest-skill.outputs.attestation-url }}
+          PLUGIN_ATTESTATION: ${{ steps.attest-plugin.outputs.attestation-url }}
+        run: |
+          {
+            echo "### Provenance attestations"
+            echo
+            echo "- skill: ${SKILL_ATTESTATION}"
+            echo "- plugin: ${PLUGIN_ATTESTATION}"
+          } >> "${GITHUB_STEP_SUMMARY}"
+
+      # CHANGELOG.md is the single source of release notes. A missing section is a failure
+      # rather than an empty release body: shipping a release nobody described is worse than
+      # not shipping it.
+      - name: Extract the release notes from CHANGELOG.md
+        run: |
+          python3 - <<'PY'
+          import os
+          import pathlib
+          import re
+          import sys
+
+          version = os.environ["GITHUB_REF_NAME"].removeprefix("v")
+          lines = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8").splitlines()
+
+          start = next(
+              (i for i, line in enumerate(lines) if re.match(rf"^## \[{re.escape(version)}\]", line)),
+              None,
+          )
+          if start is None:
+              print(
+                  f"::error title=Missing changelog section::CHANGELOG.md has no '## [{version}]' "
+                  f"section. Add one and retag; release notes are generated, never hand-written."
+              )
+              sys.exit(1)
+
+          end = next(
+              (i for i in range(start + 1, len(lines)) if lines[i].startswith("## [")),
+              len(lines),
+          )
+          body = "\n".join(lines[start + 1 : end]).strip()
+          pathlib.Path("release-notes.md").write_text(body + "\n", encoding="utf-8")
+          print(body)
+          PY
+
+      # PyPI is canonical for the wheel and sdist, so dist/ is deliberately not attached here.
+      # The Release carries only what PyPI cannot: the skill bundle and the plugin archive.
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          gh release create "${GITHUB_REF_NAME}" \
+            --title "v${version}" \
+            --notes-file release-notes.md \
+            "assets/research-scan-skill-${version}.skill" \
+            "assets/research-scan-plugin-${version}.zip"
+
+      # What GitHub serves is not automatically what the job built. Fetch both assets back
+      # from the public release and compare hashes before calling the release done.
+      - name: Verify the published assets round-trip
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p roundtrip
+          gh release download "${GITHUB_REF_NAME}" --dir roundtrip --clobber \
+            --pattern 'research-scan-*'
+          failed=0
+          for built in assets/*; do
+            name="$(basename "${built}")"
+            local_sum="$(sha256sum "${built}" | cut -d' ' -f1)"
+            remote_sum="$(sha256sum "roundtrip/${name}" | cut -d' ' -f1)"
+            echo "${name}"
+            echo "  built:     ${local_sum}"
+            echo "  published: ${remote_sum}"
+            if [ "${local_sum}" != "${remote_sum}" ]; then
+              echo "::error title=Asset mismatch::${name} on the release does not match the built archive"
+              failed=1
+            fi
+          done
+          exit "${failed}"
+
+      # The Ed25519 domain key that signs the registry publish is deliberately not in GitHub
+      # secrets, so this last step cannot be automated without weakening that. The weekly
+      # drift check catches it if it is forgotten.
+      - name: Remind the operator to publish to the MCP registry
+        run: |
+          {
+            echo "### MANUAL STEP REMAINING"
+            echo
+            echo '```bash'
+            echo 'mcp-publisher login dns -domain synectic.org -private-key <ed25519-key-hex> && mcp-publisher publish'
+            echo '```'
+            echo
+            echo "Registry publish is deliberately not automated: the Ed25519 domain key never"
+            echo "enters GitHub secrets, CI, or the repository. See RELEASING.md."
+          } >> "${GITHUB_STEP_SUMMARY}"

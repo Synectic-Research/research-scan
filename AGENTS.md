@@ -104,6 +104,13 @@ The rubrics quote its field tables, so check them too when a contract moves.
   that was already committed, and any SHA read a minute ago may no longer exist. This is the
   portfolio's single-writer rule, recorded here because this repo broke it: identify a commit by
   subject and diff, never by a remembered SHA, and branch when you are not the holder.
+- **A version bump moves four files at once**: `pyproject.toml`, `.claude-plugin/plugin.json`,
+  `CITATION.cff` and `server.json` (both its `version` and `packages[0].version`), plus a
+  `## [X.Y.Z]` section in `CHANGELOG.md` that becomes the GitHub Release body. CI fails the build
+  when they disagree, naming the file. Releases are cut by pushing a single tag ref — never
+  `git push --tags`, which would push the private-era tags this repo still carries locally. The MCP
+  registry publish stays manual so the Ed25519 domain key never enters CI. `RELEASING.md` is the
+  procedure.
 - **Never amend, rebase or force-push history that is already on `origin/main`.** `main` is
   single-writer *across sessions* and another agent or terminal may already have fetched or built
   on a commit; rewriting it collides with them silently. This was learned the hard way: v0.2.5's
@@ -540,3 +547,4 @@ V1.1 review floor. **Raising `CONTRADICTING_SLOTS` is a selection change and nee
 - `docs/measurements.md` — the V1 acceptance run and every measurement behind the current defaults
   (query shape, `per_query`, the derived pool cap, the expansion sort, arXiv).
 - `README.md` — the user-facing install, usage, cost and troubleshooting.
+- `RELEASING.md` — the release procedure, the post-release checks and the rollback rules.

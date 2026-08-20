@@ -9,7 +9,7 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
-## [Unreleased]
+## [0.5.0] — 2026-08-20 — Open Source Developer Release
 
 ### Added
 
@@ -41,12 +41,22 @@ idea is not retried blind.
 - `config.write_env()`, the first writer in `config.py`. The module already owned reading the
   credential file; it now owns writing it too, so there is still exactly one component that knows
   where that file lives.
+- `THIRD_PARTY_LICENSES.md`, recording that the dependency set is predominantly MIT/BSD/Apache/
+  ISC/PSF and that one dependency, `certifi`, is MPL-2.0, consumed unmodified as a transitive
+  dependency of `httpx`/`httpcore`.
+- A tag-triggered release workflow publishing to PyPI through Trusted Publishing (OIDC, no API
+  token), gated on the tag matching the packaged version and on a smoke test of the built wheel.
 
 ### Changed
 
-- Distribution is moving to local-first. The tool is a CLI plus an agent skill that runs on your
-  own machine against your own API keys; the previously documented remote MCP surface is not part
-  of the public project.
+- Distribution is local-first. The tool is a CLI plus an agent skill that runs on your own machine
+  against your own API keys; the previously documented remote MCP surface is not part of the public
+  project. Installation is `uvx research-scan` or `uv tool install research-scan`, from PyPI.
+- `fastmcp` and `uvicorn` moved from the optional `mcp` extra into core dependencies, exact pins
+  unchanged, so the MCP server ships by default and the documented client config needs no
+  `--from 'research-scan[mcp]'` incantation. `mcp = []` remains as an empty compatibility extra so
+  existing invocations keep resolving.
+- The project is developed in a public repository under the Apache-2.0 licence.
 - With no `RESEARCH_SCAN_MCP_TOKEN` configured, the token-authenticated HTTP transport now starts
   and answers 401 to every request instead of refusing to boot. The posture is identical — no
   request is ever served, and the alternate mount that carries the token in the URL path is not
@@ -59,9 +69,8 @@ idea is not retried blind.
   the configuration line; it is a warning, which is what it always meant.
 - `pyproject.toml` is now the only place the version is written. `__version__` resolves from the
   installed distribution through `importlib.metadata`, so the CLI, `manifest.json`'s
-  `tool_version`, the User-Agent and the MCP handshake cannot disagree with it. The number itself
-  did not move. One consequence worth knowing: after a bump, an editable install reports the old
-  number until `uv sync` runs.
+  `tool_version`, the User-Agent and the MCP handshake cannot disagree with it. One consequence
+  worth knowing: after a bump, an editable install reports the old number until `uv sync` runs.
 
 ### Fixed
 
@@ -74,10 +83,14 @@ idea is not retried blind.
 
 ### Note
 
-The package version is still `0.2.5` while the most recent tag is `v0.4.0` — `__version__` was not
-bumped when that tag was cut. The next release resolves the two. There is now a test asserting that
-the reported version equals the one written in `pyproject.toml`, so the same drift cannot recur
-silently; `.claude-plugin/plugin.json` stays out of it deliberately, as release-automation's job.
+This release resolves a three-way version drift: the package said `0.2.5`, `.claude-plugin/
+plugin.json` said `0.2.4`, and the most recent tag said `v0.4.0`. All three now say `0.5.0`, moved
+in one commit. A test asserts that the reported version equals the one written in `pyproject.toml`,
+and the release workflow fails a build whose tag disagrees with it, so the drift cannot recur
+silently.
+
+Releases before this one were made in a private repository, and their tags are not present here.
+The comparison links below therefore resolve only for releases cut in the public repository.
 
 ## [0.4.0] — 2026-08-20
 
@@ -226,7 +239,6 @@ First release: the whole V1 pipeline.
 - Acceptance run: recall@10 0.50 on both topics, recall@25 0.80 and 0.67,
   `precision_ge2_in_window` 0.875 on both.
 
-[Unreleased]: https://github.com/Synectic-Research/research-scan/compare/v0.4.0...HEAD
 [0.4.0]: https://github.com/Synectic-Research/research-scan/compare/v0.2.5...v0.4.0
 [0.2.5]: https://github.com/Synectic-Research/research-scan/compare/v0.2.4...v0.2.5
 [0.2.4]: https://github.com/Synectic-Research/research-scan/compare/v0.2.3...v0.2.4

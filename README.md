@@ -72,7 +72,7 @@ research-scan doctor --json      # machine-readable; this is the CI/agent interf
 ```
 
 ```
-Research Scan 0.2.5
+Research Scan <version>
 ✓ configuration
 ✓ OpenAlex   ✓ Semantic Scholar   ✓ Crossref   ✓ arXiv   ✓ PubMed
 ✓ writable run store

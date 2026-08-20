@@ -1,0 +1,121 @@
+# RATIFIED by the maintainer, 2026-08-19. Entries unchanged from the draft.
+#
+# Every entry was resolved live on 2026-08-19: first against the arXiv API by id, then against
+# OpenAlex by its registered 10.48550 DOI. All six resolve in both, so a scan can match them under
+# either identifier.
+#
+# No sampling bias to declare here: nothing in this set came from a research-scan run. Four papers
+# are the maintainer's (PaSa, RollingEval, ScholarQuest, LitSearch); two are proposed (OpenScholar, LitLLM).
+# This is the topic that can actually report a miss, which makes it the more informative of the two.
+#
+# S10e AMENDMENT, 2026-08-19 (the maintainer). Titles and aliases added; entries, order and status unchanged.
+# Every `title` is the live arXiv title, read back through the authenticated client (S2
+# `graph/v1/paper/arXiv:<id>`), not transcribed. Titles enable evalrun's fuzzy-title fallback,
+# which could not fire while they were absent.
+#
+# `aliases` carry the published version of an entry, so a run that surfaces the paper under its
+# venue DOI counts as a find rather than a miss. Three were confirmed and resolve in Crossref;
+# LitLLM, RollingEval and ScholarQuest have no published version, so they get none — an alias is
+# never guessed.
+#
+# CONTENT-VERIFIED, NOT REGISTRY-LINKED: OpenScholar's 10.1038/s41586-025-10072-4 alias rests on
+# content, because no registry links it to the preprint — Crossref `relation` is empty on the
+# Nature DOI, DataCite `relatedIdentifiers` is empty on 10.48550/arXiv.2411.14199, arXiv publishes
+# neither `doi` nor `journal_ref` for 2411.14199, and OpenAlex holds them as two unlinked works
+# (W4404652849 preprint, W7127589252 article, neither in the other's related_works). The identity
+# is nonetheless unambiguous: identical author order (Asai, He, Shao, Shi, Singh, Chang … Koh,
+# Hajishirzi), and the same abstract down to the 45M-paper datastore, ScholarQABench's 2,967
+# expert-written queries and 208 long-form answers, the 78–90 % GPT-4o citation-hallucination
+# rate, and the 51 %/70 % expert-preference figures. Only the headline deltas were revised in
+# review (preprint "GPT-4o by 5 % and PaperQA2 by 7 %" → Nature "6.1 % and 5.5 %"). If a registry
+# link ever appears, this alias becomes redundant rather than wrong.
+#
+# ROUTING NOTE: `domain: cs` routes arXiv, which is S6 and not built. A run on this topic will
+# record arXiv as `unavailable` in the manifest and retrieve from OpenAlex + Semantic Scholar only.
+# That is worth seeing once — it is the visible-not-silent path — but it means this topic scores
+# the tool without its most natural source for exactly this literature.
+
+topic: llm-lit-search
+status: ratified
+
+brief: |
+  Agentic LLM systems for scientific literature search, 2024–2026: system designs (search plus
+  citation-graph traversal, query reformulation, iterative crawling), the benchmarks used to
+  evaluate them, and the retrieval and reranking methods underneath. Wanted: what the recall
+  ceiling of single-query database search actually is, what agentic designs add on top, how
+  evaluation sets are constructed, and where reported gains fail to hold up.
+
+domain: cs
+window:
+  from: "2024-01"
+  to: null
+
+exclusions:
+  - drug discovery
+  - patent search
+
+expected:
+  - doi: 10.48550/arXiv.2501.10120
+    arxiv: "2501.10120"
+    title: "PaSa: An LLM Agent for Comprehensive Academic Paper Search"
+    aliases:
+      - 10.18653/v1/2025.acl-long.572   # ACL 2025 long paper; OpenAlex W4412945469
+    why: >-
+      PaSa (He et al 2025). The crawler that alternates search and expand-citations actions; the
+      reference design for why graph traversal beats single-query search.
+    found_in_s3e2e: null
+
+  - doi: 10.48550/arXiv.2605.29234
+    arxiv: "2605.29234"
+    title: >-
+      Rethinking Literature Search Evaluation: Deep Research Helps, and Human Citation Lists Are
+      Not a Ground Truth
+    why: >-
+      RollingEval (Sahu et al 2026). Shows bibliography expansion lifting recall from under 20 %
+      to over 80 %, and that human citation lists are a weak ground truth.
+    found_in_s3e2e: null
+
+  - doi: 10.48550/arXiv.2606.20235
+    arxiv: "2606.20235"
+    title: >-
+      ScholarQuest: A Taxonomy-Guided Benchmark for Agentic Academic Paper Search in Open
+      Literature Environments
+    why: >-
+      ScholarQuest (Pan et al 2026). The scope-control failure — agents treat exclusions as
+      positive keywords — and the off-target-exploration failure mode.
+    found_in_s3e2e: null
+
+  - doi: 10.48550/arXiv.2407.18940
+    arxiv: "2407.18940"
+    title: "LitSearch: A Retrieval Benchmark for Scientific Literature Search"
+    aliases:
+      - 10.18653/v1/2024.emnlp-main.840   # EMNLP 2024 main; OpenAlex W4404782900
+    why: >-
+      LitSearch (Ajith et al 2024). The retrieval benchmark the later agentic systems report
+      against; you cannot read their numbers without it.
+    found_in_s3e2e: null
+
+  - doi: 10.48550/arXiv.2411.14199
+    arxiv: "2411.14199"
+    title: "OpenScholar: Synthesizing Scientific Literature with Retrieval-augmented LMs"
+    aliases:
+      - 10.1038/s41586-025-10072-4   # Nature 2026-02-04; see CONTENT-VERIFIED note in the header
+    why: >-
+      OpenScholar (Asai et al 2024). Retrieval-augmented synthesis over the literature with an
+      open datastore — the main open counterpoint to the closed agentic systems.
+    found_in_s3e2e: null
+
+  - doi: 10.48550/arXiv.2402.01788
+    arxiv: "2402.01788"
+    title: "LitLLM: A Toolkit for Scientific Literature Review"
+    why: >-
+      LitLLM (Agarwal et al 2024). The rerank-after-retrieve toolkit; the earliest of these to
+      separate retrieval from reranking as distinct stages.
+    found_in_s3e2e: null
+
+notes: >-
+  Ratification checklist for the maintainer: (1) OpenScholar and LitLLM are my proposals, not yours — keep,
+  swap or drop them; (2) six entries sits at the low end of §13's 5–8, so there is room for two
+  more if a system or benchmark you rate is missing (an Ai2 Paper Finder / Asta paper would be the
+  obvious gap, but arXiv search did not surface one I could resolve); (3) this topic cannot
+  exercise arXiv routing until S6, so decide whether to score it now or hold it until then.

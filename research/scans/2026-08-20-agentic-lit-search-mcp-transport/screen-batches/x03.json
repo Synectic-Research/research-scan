@@ -1,0 +1,257 @@
+{
+  "batch": "x03",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic search design",
+      "text": "Describes or evaluates an LLM-driven system that searches scholarly literature through more than one query: query reformulation, citation-graph traversal, iterative crawling, planning or tool use."
+    },
+    {
+      "id": "C2",
+      "name": "baseline recall",
+      "text": "Reports what plain single-query or conventional keyword/dense database search recovers, as a measured baseline or ceiling that other systems are compared against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Introduces or analyses an evaluation set for literature search, deep research or scholarly QA, and says how the set was built, annotated or scored."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes or evaluates the underlying retrieval or reranking method \u2014 dense/sparse retrieval, LLM rerankers, citation-graph or hybrid retrieval \u2014 on scientific documents."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a failure to replicate, benchmark leakage or construction that inflates scores, a weak or unfairly tuned baseline, or a setting where the simple baseline is not beaten."
+    }
+  ],
+  "items": [
+    {
+      "cid": "8d3539825f9b",
+      "title": "SciCode: A Research Coding Benchmark Curated by Scientists",
+      "abstract_600": "Since language models (LMs) now outperform average humans on many challenging tasks, it has become increasingly difficult to develop challenging, high-quality, and realistic evaluations. We address this issue by examining LMs' capabilities to generate code for solving real scientific research problems. Incorporating input from scientists and AI researchers in 16 diverse natural science sub-fields, including mathematics, physics, chemistry, biology, and materials science, we created a scientist-curated coding benchmark, SciCode. The problems in SciCode naturally factorize into multiple subprobl",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cf1fb6248ff5",
+      "title": "AutoSurvey: Large Language Models Can Automatically Write Surveys",
+      "abstract_600": "This paper introduces AutoSurvey, a speedy and well-organized methodology for automating the creation of comprehensive literature surveys in rapidly evolving fields like artificial intelligence. Traditional survey paper creation faces challenges due to the vast volume and complexity of information, prompting the need for efficient survey methods. While large language models (LLMs) offer promise in automating this process, challenges such as context window limitations, parametric knowledge constraints, and the lack of evaluation benchmarks remain. AutoSurvey addresses these challenges through a",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c79b99f72a10",
+      "title": "Fine Tuning vs. Retrieval Augmented Generation for Less Popular Knowledge",
+      "abstract_600": "Language Models (LMs) memorize a vast amount of factual knowledge, exhibiting strong performance across diverse tasks and domains. However, it has been observed that the performance diminishes when dealing with less-popular or low-frequency concepts and entities, for example in domain specific applications. The two prominent approaches to enhance the performance of LMs on low-frequent topics are: Retrieval Augmented Generation (RAG) and fine-tuning (FT) over synthetic data. This paper explores and evaluates the impact of RAG and FT on customizing LMs in handling low-frequency entities on quest",
+      "year": 2024,
+      "venue": "SIGIR-AP",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "250221bfee1b",
+      "title": "SafeArena: Evaluating the Safety of Autonomous Web Agents",
+      "abstract_600": "LLM-based agents are becoming increasingly proficient at solving web-based tasks. With this capability comes a greater risk of misuse for malicious purposes, such as posting misinformation in an online forum or selling illicit substances on a website. To evaluate these risks, we propose SafeArena, the first benchmark to focus on the deliberate misuse of web agents. SafeArena comprises 250 safe and 250 harmful tasks across four websites. We classify the harmful tasks into five harm categories -- misinformation, illegal activity, harassment, cybercrime, and social bias, designed to assess realis",
+      "year": 2025,
+      "venue": "International Conference on Machine Learning",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1ad937910dcb",
+      "title": "Can GNN be Good Adapter for LLMs?",
+      "abstract_600": "Recently, large language models (LLMs) have demonstrated superior capabilities in understanding and zero-shot learning on textual data, promising significant advances for many text-related domains. In the graph domain, various real-world scenarios also involve textual data, where tasks and node features can be described by text. These text-attributed graphs (TAGs) have broad applications in social media, recommendation systems, etc. Thus, this paper explores how to utilize LLMs to model TAGs. Previous methods for TAG modeling are based on million-scale LMs. When scaled up to billion-scale LLMs",
+      "year": 2024,
+      "venue": "The Web Conference",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "23cf8151c6df",
+      "title": "AI-Researcher: Autonomous Scientific Innovation",
+      "abstract_600": "The powerful reasoning capabilities of Large Language Models (LLMs) in mathematics and coding, combined with their ability to automate complex tasks through agentic frameworks, present unprecedented opportunities for accelerating scientific innovation. In this paper, we introduce AI-Researcher, a fully autonomous research system that transforms how AI-driven scientific discovery is conducted and evaluated. Our framework seamlessly orchestrates the complete research pipeline--from literature review and hypothesis generation to algorithm implementation and publication-ready manuscript preparatio",
+      "year": 2025,
+      "venue": "Advances in Neural Information Processing Systems 38",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "40830b5a1000",
+      "title": "ReasonIR: Training Retrievers for Reasoning Tasks",
+      "abstract_600": "We present ReasonIR-8B, the first retriever specifically trained for general reasoning tasks. Existing retrievers have shown limited gains on reasoning tasks, in part because existing training datasets focus on short factual queries tied to documents that straightforwardly answer them. We develop a synthetic data generation pipeline that, for each document, our pipeline creates a challenging and relevant query, along with a plausibly related but ultimately unhelpful hard negative. By training on a mixture of our synthetic data and existing public data, ReasonIR-8B achieves a new state-of-the-a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2010dcba606f",
+      "title": "The Virtual Lab: AI Agents Design New SARS-CoV-2 Nanobodies with Experimental Validation",
+      "abstract_600": "Science frequently benefits from teams of interdisciplinary researchers. However, most scientists don\u2019t have access to experts from multiple fields. Fortunately, large language models (LLMs) have recently shown an impressive ability to aid researchers across diverse domains by answering scientific questions. Here, we expand the capabilities of LLMs for science by introducing the Virtual Lab, an AI-human research collaboration to perform sophisticated, interdisciplinary science research. The Virtual Lab consists of an LLM principal investigator agent guiding a team of LLM agents with different",
+      "year": 2024,
+      "venue": "bioRxiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e046905075e7",
+      "title": "Explorer: Scaling Exploration-driven Web Trajectory Synthesis for Multimodal Web Agents",
+      "abstract_600": "Recent success in large multimodal models (LMMs) has sparked promising applications of agents capable of autonomously completing complex web tasks. While open-source LMM agents have made significant advances in offline evaluation benchmarks, their performance still falls substantially short of human-level capabilities in more realistic online settings. A key bottleneck is the lack of diverse and large-scale trajectory-level datasets across various domains, which are expensive to collect. In this paper, we address this challenge by developing a scalable recipe to synthesize the largest and most",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7b5685df53fe",
+      "title": "Agent Lightning: Train ANY AI Agents with Reinforcement Learning",
+      "abstract_600": "We present Agent Lightning, a flexible and extensible framework that enables Reinforcement Learning (RL)-based training of Large Language Models (LLMs) for any AI agent. Unlike existing methods that tightly couple RL training with agent or rely on sequence concatenation with masking, Agent Lightning achieves complete decoupling between agent execution and training, allowing seamless integration with existing agents developed via diverse ways (e.g., using frameworks like LangChain, OpenAI Agents SDK, AutoGen, and building from scratch) with almost ZERO code modifications. By formulating agent e",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a8c81b0e385a",
+      "title": "A Systematic Review of Key Retrieval-Augmented Generation (RAG) Systems: Progress, Gaps, and Future Directions",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) represents a major advancement in natural language processing (NLP), combining large language models (LLMs) with information retrieval systems to enhance factual grounding, accuracy, and contextual relevance. This paper presents a comprehensive systematic review of RAG, tracing its evolution from early developments in open domain question answering to recent state-of-the-art implementations across diverse applications. The review begins by outlining the motivations behind RAG, particularly its ability to mitigate hallucinations and outdated knowledge in par",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9df43ae6d2c2",
+      "title": "ARTEMIS: Autoregressive End-to-End Trajectory Planning With Mixture of Experts for Autonomous Driving",
+      "abstract_600": "This letter presents ARTEMIS, an end-to-end autonomous driving framework that combines autoregressive trajectory planning with Mixture-of-Experts (MoE). Traditional modular methods suffer from error propagation, while existing end-to-end models typically employ static one-shot inference paradigms that inadequately capture the dynamic changes of the environment. ARTEMIS takes a different method by generating trajectory waypoints sequentially, preserves critical temporal dependencies while dynamically routing scene-specific queries to specialized expert networks. It effectively relieves trajecto",
+      "year": 2025,
+      "venue": "IEEE Robotics and Automation Letters",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3755dc763e40",
+      "title": "OpenGraph: Towards Open Graph Foundation Models",
+      "abstract_600": "Graph learning has become essential in various domains, including recommendation systems and social network analysis. Graph Neural Networks (GNNs) have emerged as promising techniques for encoding structural information and improving performance in tasks like link prediction and node classification. However, a key challenge remains: the difficulty of generalizing to unseen graph data with different properties. In this work, we propose a novel graph foundation model, called OpenGraph, to address this challenge. Our approach tackles several technical obstacles. Firstly, we enhance data augmentat",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "243d9734a089",
+      "title": "DeepSearchQA: Bridging the Comprehensiveness Gap for Deep Research Agents",
+      "abstract_600": "We introduce DeepSearchQA, a 900-prompt benchmark for evaluating agents on difficult multi-step information-seeking tasks across 17 different fields. Unlike traditional benchmarks that target single answer retrieval or broad-spectrum factuality, DeepSearchQA features a dataset of challenging, handcrafted tasks designed to evaluate an agent's ability to execute complex search plans to generate exhaustive answer lists. This shift in design explicitly tests three critical, yet under-evaluated capabilities: 1) systematic collation of fragmented information from disparate sources, 2) de-duplication",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1e803373e51e",
+      "title": "WebSailor-V2: Bridging the Chasm to Proprietary Agents via Synthetic Data and Scalable Reinforcement Learning",
+      "abstract_600": "Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucia",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0976d06f6421",
+      "title": "Gecko: Versatile Text Embeddings Distilled from Large Language Models",
+      "abstract_600": "We present Gecko, a compact and versatile text embedding model. Gecko achieves strong retrieval performance by leveraging a key idea: distilling knowledge from large language models (LLMs) into a retriever. Our two-step distillation process begins with generating diverse, synthetic paired data using an LLM. Next, we further refine the data quality by retrieving a set of candidate passages for each query, and relabeling the positive and hard negative passages using the same LLM. The effectiveness of our approach is demonstrated by the compactness of the Gecko. On the Massive Text Embedding Benc",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ead4d9a4d11a",
+      "title": "BioRAG: A RAG-LLM Framework for Biological Question Reasoning",
+      "abstract_600": "The question-answering system for Life science research, which is characterized by the rapid pace of discovery, evolving insights, and complex interactions among knowledge entities, presents unique challenges in maintaining a comprehensive knowledge warehouse and accurate information retrieval. To address these issues, we introduce BioRAG, a novel Retrieval-Augmented Generation (RAG) with the Large Language Models (LLMs) framework. Our approach starts with parsing, indexing, and segmenting an extensive collection of 22 million scientific papers as the basic knowledge, followed by training a sp",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "21daaa854c48",
+      "title": "Late Chunking: Contextual Chunk Embeddings Using Long-Context Embedding Models",
+      "abstract_600": "Many use cases require retrieving smaller portions of text, and dense vector-based retrieval systems often perform better with shorter text segments, as the semantics are less likely to be over-compressed in the embeddings. Consequently, practitioners often split text documents into smaller chunks and encode them separately. However, chunk embeddings created in this way can lose contextual information from surrounding chunks, resulting in sub-optimal representations. In this paper, we introduce a novel method called late chunking, which leverages long context embedding models to first embed al",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d0140fdca84f",
+      "title": "LLMs as Research Tools: A Large Scale Survey of Researchers' Usage and Perceptions",
+      "abstract_600": "The rise of large language models (LLMs) has led many researchers to consider their usage for scientific work. Some have found benefits using LLMs to augment or automate aspects of their research pipeline, while others have urged caution due to risks and ethical concerns. Yet little work has sought to quantify and characterize how researchers use LLMs and why. We present the first large-scale survey of 816 verified research article authors to understand how the research community leverages and perceives LLMs as research tools. We examine participants' self-reported LLM usage, finding that 81%",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "77936f669fe1",
+      "title": "AI4Research: A Survey of Artificial Intelligence for Scientific Research",
+      "abstract_600": "Recent advancements in artificial intelligence (AI), particularly in large language models (LLMs) such as OpenAI-o1 and DeepSeek-R1, have demonstrated remarkable capabilities in complex domains such as logical reasoning and experimental coding. Motivated by these advancements, numerous studies have explored the application of AI in the innovation process, particularly in the context of scientific research. These AI technologies primarily aim to develop systems that can autonomously conduct research processes across a wide range of scientific disciplines. Despite these significant strides, a co",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7051edb85a10",
+      "title": "OpenScholar: Synthesizing Scientific Literature with Retrieval-augmented LMs",
+      "abstract_600": "Scientific progress depends on researchers' ability to synthesize the growing body of literature. Can large language models (LMs) assist scientists in this task? We introduce OpenScholar, a specialized retrieval-augmented LM that answers scientific queries by identifying relevant passages from 45 million open-access papers and synthesizing citation-backed responses. To evaluate OpenScholar, we develop ScholarQABench, the first large-scale multi-domain benchmark for literature search, comprising 2,967 expert-written queries and 208 long-form answers across computer science, physics, neuroscienc",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bf8463d17b5d",
+      "title": "SurveyForge: On the Outline Heuristics, Memory-Driven Generation, and Multi-dimensional Evaluation for Automated Survey Writing",
+      "abstract_600": "Survey paper plays a crucial role in scientific research, especially given the rapid growth of research publications. Recently, researchers have begun using LLMs to automate survey generation for better efficiency. However, the quality gap between LLM-generated surveys and those written by human remains significant, particularly in terms of outline quality and citation accuracy. To close these gaps, we introduce SurveyForge, which first generates the outline by analyzing the logical structure of human-written outlines and referring to the retrieved domain-related articles. Subsequently, levera",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "caa59161af6e",
+      "title": "Synergizing RAG and Reasoning: A Systematic Review",
+      "abstract_600": "Recent breakthroughs in large language models (LLMs), particularly in reasoning capabilities, have propelled Retrieval-Augmented Generation (RAG) to unprecedented levels. By synergizing retrieval mechanisms with advanced reasoning, LLMs can now tackle increasingly complex problems. This paper presents a systematic review of the collaborative interplay between RAG and reasoning, clearly defining\"reasoning\"within the RAG context. It construct a comprehensive taxonomy encompassing multi-dimensional collaborative objectives, representative paradigms, and technical implementations, and analyze the",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b60436ddd394",
+      "title": "When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation",
+      "abstract_600": "Graph retrieval-augmented generation (GraphRAG) has emerged as a powerful paradigm for enhancing large language models (LLMs) with external knowledge. It leverages graphs to model the hierarchical structure between specific concepts, enabling more coherent and effective knowledge retrieval for accurate reasoning.Despite its conceptual promise, recent studies report that GraphRAG frequently underperforms vanilla RAG on many real-world tasks. This raises a critical question: Is GraphRAG really effective, and in which scenarios do graph structures provide measurable benefits for RAG systems? To a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9159dbd2f9a5",
+      "title": "GraphInstruct: Empowering Large Language Models with Graph Understanding and Reasoning Capability",
+      "abstract_600": "Improving the general capabilities of large language models (LLMs) is an active research topic. As a common data structure in many real-world domains, understanding graph data is a crucial part of advancing general intelligence. To this end, we propose a dynamic benchmark named GraphInstruct in this paper, which comprehensively includes 21 classical graph reasoning tasks, providing diverse graph generation pipelines and detailed intermediate reasoning steps for each sample. Based on GraphInstruct, we develop GraphSolver via efficient instruction-tuning, which demonstrates prominent graph under",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

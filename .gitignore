@@ -1,0 +1,26 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+eval/results/*
+!eval/results/.gitkeep
+# The documented V1 acceptance run. Narrow negation on purpose — ad-hoc result files stay out.
+!eval/results/2026-08-19-defaults-savings.json
+!eval/results/2026-08-19-llm-lit-search.json
+
+.DS_Store
+
+# Scan outputs — runs are local artefacts, not repo content.
+# Excluded per level rather than as `research/`: git will not descend into an excluded directory,
+# so a negation inside one never fires. Narrow, the same way eval/results keeps only its
+# documented acceptance runs — here, the two transport runs behind the v0.4.0 tag.
+research/*
+!research/scans/
+research/scans/*
+!research/scans/2026-08-20-agentic-lit-search-mcp-transport/
+!research/scans/2026-08-20-agentic-lit-search-orientation-mcp-transport/
+
+# Built skill package — a build artefact, rebuilt from skills/research-scan/
+dist/

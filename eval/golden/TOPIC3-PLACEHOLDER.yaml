@@ -1,0 +1,45 @@
+# TEMPLATE — topic 3 is the maintainer's to choose. Nothing here is a proposal.
+#
+# §13 asks for a cognitive-neuro or biomedical topic, because it is the one that routes PubMed and
+# so exercises a source the other two topics never touch. PubMed lands in S6, so this topic cannot
+# be scored end-to-end until then — but writing the brief and the expected set now is what makes
+# S6 falsifiable when it arrives.
+#
+# Rename the file to <topic>.yaml; `--topic <topic>` resolves it by filename. `pytest` validates
+# every file in this directory against the GoldenTopic contract, so a typo here fails the suite
+# rather than quietly scoring zero. This file is deliberately left invalid (empty `expected`) so
+# that it cannot be scored by accident — fill it in and the suite will start checking it.
+#
+# Before committing an entry, resolve its DOI live:
+#   curl -s "https://api.crossref.org/works/<doi>" | jq '.message | {title, issued, author}'
+# and check title, year and first author against what you wrote. Nothing goes in on memory.
+
+topic: TOPIC3-PLACEHOLDER
+status: draft
+
+brief: |
+  REPLACE ME. Write it as a real project brief, not a search query: what is being decided, what
+  the evidence has to speak to, what the setting is, and what would count as a useful answer.
+  The plan rubric turns this into 6–8 queries, so vagueness here costs recall downstream.
+
+# behavioral | cs | biomed | general — `biomed` is what routes PubMed (S6).
+domain: biomed
+
+window:
+  from: "2023-08"   # 36 months back is the default; widen for slow-moving literatures
+  to: null
+
+exclusions: []      # phrases that must not appear; these feed queries.json.must_not
+
+# 5–8 papers you would be surprised a competent scan missed. Each needs a `why` that says what
+# would be lost by missing it — "seminal" is not a reason, "the only RCT measuring X" is.
+expected: []
+#  - doi: 10.xxxx/xxxxx
+#    why: >-
+#      What this paper settles that nothing else in the set does.
+#    found_in_s3e2e: null   # only meaningful when the set was drafted against a specific run
+
+notes: >-
+  Candidate directions if useful: a topic where the biomedical and behavioural literatures use
+  different words for the same construct would test the `terminology` query type hardest, which is
+  the one the plan rubric leans on most.

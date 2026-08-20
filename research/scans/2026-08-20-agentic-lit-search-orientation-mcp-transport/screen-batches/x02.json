@@ -1,0 +1,257 @@
+{
+  "batch": "x02",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic system design",
+      "text": "Describes or evaluates an LLM agent that searches literature iteratively: query reformulation, multi-round search, citation-graph traversal, or crawling, rather than a single retrieval call."
+    },
+    {
+      "id": "C2",
+      "name": "baseline search recall",
+      "text": "Reports how much of a target set a single-query or Boolean database search actually retrieves, giving a recall or coverage number the agentic systems can be measured against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Says how an evaluation set for literature search or deep research was built - where the gold papers came from, how queries were sampled, what the annotation protocol was."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes the retrieval or reranking method underneath: dense or hybrid retrieval, LLM rerankers, citation-aware ranking, or evidence on which component carries the gain."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a replication failure, a weak or unbeaten baseline, benchmark leakage or construction that inflates scores, or a gain that vanishes under a different set or metric."
+    }
+  ],
+  "items": [
+    {
+      "cid": "5d3de6eb5f49",
+      "title": "Artificial intelligence and illusions of understanding in scientific research",
+      "abstract_600": null,
+      "year": 2024,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "61c6a4c583b9",
+      "title": "WebThinker: Empowering Large Reasoning Models with Deep Research Capability",
+      "abstract_600": "Large reasoning models (LRMs), such as OpenAI-o1 and DeepSeek-R1, demonstrate impressive long-horizon reasoning capabilities. However, their reliance on static internal knowledge limits their performance on complex, knowledge-intensive tasks and hinders their ability to produce comprehensive research reports requiring synthesis of diverse web information. To address this, we propose WebThinker, a deep research agent that empowers LRMs to autonomously search the web, navigate among web pages, and draft reports during the reasoning process. WebThinker integrates a Deep Web Explorer module, enabl",
+      "year": 2025,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "384969d4e72f",
+      "title": "RAGEN: Understanding Self-Evolution in LLM Agents via Multi-Turn Reinforcement Learning",
+      "abstract_600": "Training large language models (LLMs) as interactive agents presents unique challenges including long-horizon decision making and interacting with stochastic environment feedback. While reinforcement learning (RL) has enabled progress in static tasks, multi-turn agent RL training remains underexplored. We propose StarPO (State-Thinking-Actions-Reward Policy Optimization), a general framework for trajectory-level agent RL, and introduce RAGEN, a modular system for training and evaluating LLM agents. Our study on four stylized environments reveals three core findings. First, our agent RL trainin",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7e9046c288e0",
+      "title": "Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge",
+      "abstract_600": "LLM-as-a-Judge has been widely utilized as an evaluation method in various benchmarks and served as supervised rewards in model training. However, despite their excellence in many domains, potential issues are under-explored, undermining their reliability and the scope of their utility. Therefore, we identify 12 key potential biases and propose a new automated bias quantification framework-CALM-which systematically quantifies and analyzes each type of bias in LLM-as-a-Judge by using automated and principle-guided modification. Our experiments cover multiple popular language models, and the res",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2df20d3a37e0",
+      "title": "VAPO: Efficient and Reliable Reinforcement Learning for Advanced Reasoning Tasks",
+      "abstract_600": "We present VAPO, Value-based Augmented Proximal Policy Optimization framework for reasoning models., a novel framework tailored for reasoning models within the value-based paradigm. Benchmarked the AIME 2024 dataset, VAPO, built on the Qwen 32B pre-trained model, attains a state-of-the-art score of $\\mathbf{60.4}$. In direct comparison under identical experimental settings, VAPO outperforms the previously reported results of DeepSeek-R1-Zero-Qwen-32B and DAPO by more than 10 points. The training process of VAPO stands out for its stability and efficiency. It reaches state-of-the-art performanc",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0874c37384b6",
+      "title": "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering",
+      "abstract_600": "We introduce MLE-bench, a benchmark for measuring how well AI agents perform at machine learning engineering. To this end, we curate 75 ML engineering-related competitions from Kaggle, creating a diverse set of challenging tasks that test real-world ML engineering skills such as training models, preparing datasets, and running experiments. We establish human baselines for each competition using Kaggle's publicly available leaderboards. We use open-source agent scaffolds to evaluate several frontier language models on our benchmark, finding that the best-performing setup--OpenAI's o1-preview wi",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e00d9e36177d",
+      "title": "Evaluation of Retrieval-Augmented Generation: A Survey",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) has recently gained traction in natural language processing. Numerous studies and real-world applications are leveraging its ability to enhance generative models through external information retrieval. Evaluating these RAG systems, however, poses unique challenges due to their hybrid structure and reliance on dynamic knowledge sources. To better understand these challenges, we conduct A Unified Evaluation Process of RAG (Auepora) and aim to provide a comprehensive overview of the evaluation and benchmarks of RAG systems. Specifically, we examine and compare",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "19fc6a1ae182",
+      "title": "WebSailor: Navigating Super-human Reasoning for Web Agent",
+      "abstract_600": "Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucia",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fa405d29fbae",
+      "title": "Embodied large language models enable robots to complete complex tasks in unpredictable environments",
+      "abstract_600": "Completing complex tasks in unpredictable settings challenges robotic systems, requiring a step change in machine intelligence. Sensorimotor abilities are considered integral to human intelligence. Thus, biologically inspired machine intelligence might usefully combine artificial intelligence with robotic sensorimotor capabilities. Here we report an embodied large-language-model-enabled robot (ELLMER) framework, utilizing GPT-4 and a retrieval-augmented generation infrastructure, to enable robots to complete long-horizon tasks in unpredictable settings. The method extracts contextually relevan",
+      "year": 2025,
+      "venue": "Nature Machine Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a68810dbb98a",
+      "title": "WebWalker: Benchmarking LLMs in Web Traversal",
+      "abstract_600": "Retrieval-augmented generation (RAG) demonstrates remarkable performance across tasks in open-domain question-answering. However, traditional search engines may retrieve shallow content, limiting the ability of LLMs to handle complex, multi-layered information. To address it, we introduce WebWalkerQA, a benchmark designed to assess the ability of LLMs to perform web traversal. It evaluates the capacity of LLMs to traverse a website's subpages to extract high-quality data systematically. We propose WebWalker, which is a multi-agent framework that mimics human-like web navigation through an expl",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "99ea5f6262ee",
+      "title": "The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey",
+      "abstract_600": "This survey paper examines the recent advancements in AI agent implementations, with a focus on their ability to achieve complex goals that require enhanced reasoning, planning, and tool execution capabilities. The primary objectives of this work are to a) communicate the current capabilities and limitations of existing AI agent implementations, b) share insights gained from our observations of these systems in action, and c) suggest important considerations for future developments in AI agent design. We achieve this by providing overviews of single-agent and multi-agent architectures, identif",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "016bf719c22c",
+      "title": "Agent Q: Advanced Reasoning and Learning for Autonomous AI Agents",
+      "abstract_600": "Large Language Models (LLMs) have shown remarkable capabilities in natural language tasks requiring complex reasoning, yet their application in agentic, multi-step reasoning within interactive environments remains a difficult challenge. Traditional supervised pre-training on static datasets falls short in enabling autonomous agent capabilities needed to perform complex decision-making in dynamic settings like web navigation. Previous attempts to bridge this ga-through supervised fine-tuning on curated expert demonstrations-often suffer from compounding errors and limited exploration data, resu",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ed273b73ebf6",
+      "title": "A Survey of LLM-based Agents in Medicine: How far are we from Baymax?",
+      "abstract_600": "Large Language Models (LLMs) are transforming healthcare through the development of LLM-based agents that can understand, reason about, and assist with medical tasks. This survey provides a comprehensive review of LLM-based agents in medicine, examining their architectures, applications, and challenges. We analyze the key components of medical agent systems, including system profiles, clinical planning mechanisms, medical reasoning frameworks, and external capacity enhancement. The survey covers major application scenarios such as clinical decision support, medical documentation, training simu",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "97e58c61a717",
+      "title": "olmOCR: Unlocking Trillions of Tokens in PDFs with Vision Language Models",
+      "abstract_600": "PDF documents have the potential to provide trillions of novel, high-quality tokens for training language models. However, these documents come in a diversity of types with differing formats and visual layouts that pose a challenge when attempting to extract and faithfully represent the underlying content for language model use. Traditional open source tools often produce lower quality extractions compared to vision language models (VLMs), but reliance on the best VLMs can be prohibitively costly (e.g., over 6,240 USD per million PDF pages for GPT-4o) or infeasible if the PDFs cannot be sent t",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1a6159b9598a",
+      "title": "BRIGHT: A Realistic and Challenging Benchmark for Reasoning-Intensive Retrieval",
+      "abstract_600": "Existing retrieval benchmarks primarily consist of information-seeking queries (e.g., aggregated questions from search engines) where keyword or semantic-based retrieval is usually sufficient. However, many complex real-world queries require in-depth reasoning to identify relevant documents that go beyond surface form matching. For example, finding documentation for a coding question requires understanding the logic and syntax of the functions involved. To better benchmark retrieval on such challenging queries, we introduce BRIGHT, the first text retrieval benchmark that requires intensive rea",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1820f1b032e4",
+      "title": "CodeElo: Benchmarking Competition-level Code Generation of LLMs with Human-comparable Elo Ratings",
+      "abstract_600": "With the increasing code reasoning capabilities of existing large language models (LLMs) and breakthroughs in reasoning models like OpenAI o1 and o3, there is a growing need to develop more challenging and comprehensive benchmarks that effectively test their sophisticated competition-level coding abilities. Existing benchmarks, like LiveCodeBench and USACO, fall short due to the unavailability of private test cases, lack of support for special judges, and misaligned execution environments. To bridge this gap, we introduce CodeElo, a standardized competition-level code generation benchmark that",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a0049ae6212f",
+      "title": "LAB-Bench: Measuring Capabilities of Language Models for Biology Research",
+      "abstract_600": "There is widespread optimism that frontier Large Language Models (LLMs) and LLM-augmented systems have the potential to rapidly accelerate scientific discovery across disciplines. Today, many benchmarks exist to measure LLM knowledge and reasoning on textbook-style science questions, but few if any benchmarks are designed to evaluate language model performance on practical tasks required for scientific research, such as literature search, protocol planning, and data analysis. As a step toward building such benchmarks, we introduce the Language Agent Biology Benchmark (LAB-Bench), a broad datas",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "980033c51047",
+      "title": "LongWriter: Unleashing 10,000+ Word Generation from Long Context LLMs",
+      "abstract_600": "Current long context large language models (LLMs) can process inputs up to 100,000 tokens, yet struggle to generate outputs exceeding even a modest length of 2,000 words. Through controlled experiments, we find that the model's effective generation length is inherently bounded by the sample it has seen during supervised fine-tuning (SFT). In other words, their output limitation is due to the scarcity of long-output examples in existing SFT datasets. To address this, we introduce AgentWrite, an agent-based pipeline that decomposes ultra-long generation tasks into subtasks, enabling off-the-shel",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ed92adc5e051",
+      "title": "ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery",
+      "abstract_600": "The advancements of large language models (LLMs) have piqued growing interest in developing LLM-based language agents to automate scientific discovery end-to-end, which has sparked both excitement and skepticism about their true capabilities. In this work, we call for rigorous assessment of agents on individual tasks in a scientific workflow before making bold claims on end-to-end automation. To this end, we present ScienceAgentBench, a new benchmark for evaluating language agents for data-driven scientific discovery. To ensure the scientific authenticity and real-world relevance of our benchm",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ac9389c5a09e",
+      "title": "BixBench: a Comprehensive Benchmark for LLM-based Agents in Computational Biology",
+      "abstract_600": "Large Language Models (LLMs) and LLM-based agents show great promise in accelerating scientific research. Existing benchmarks for measuring this potential and guiding future development continue to evolve from pure recall and rote knowledge tasks, towards more practical work such as literature review and experimental planning. Bioinformatics is a domain where fully autonomous AI-driven discovery may be near, but no extensive benchmarks for measuring progress have been introduced to date. We therefore present the Bioinformatics Benchmark (BixBench), a dataset comprising over 50 real-world scena",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "40830b5a1000",
+      "title": "ReasonIR: Training Retrievers for Reasoning Tasks",
+      "abstract_600": "We present ReasonIR-8B, the first retriever specifically trained for general reasoning tasks. Existing retrievers have shown limited gains on reasoning tasks, in part because existing training datasets focus on short factual queries tied to documents that straightforwardly answer them. We develop a synthetic data generation pipeline that, for each document, our pipeline creates a challenging and relevant query, along with a plausibly related but ultimately unhelpful hard negative. By training on a mixture of our synthetic data and existing public data, ReasonIR-8B achieves a new state-of-the-a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "21643332c4c3",
+      "title": "WritingBench: A Comprehensive Benchmark for Generative Writing",
+      "abstract_600": "Recent advancements in large language models (LLMs) have significantly enhanced text generation capabilities, yet evaluating their performance in generative writing remains a challenge. Existing benchmarks primarily focus on generic text generation or limited in writing tasks, failing to capture the diverse requirements of high-quality written contents across various domains. To bridge this gap, we present WritingBench, a comprehensive benchmark designed to evaluate LLMs across 6 core writing domains and 100 subdomains. We further propose a query-dependent evaluation framework that empowers LL",
+      "year": 2025,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2ccfaaa89d09",
+      "title": "Organize the Web: Constructing Domains Enhances Pre-Training Data Curation",
+      "abstract_600": "Modern language models are trained on large, unstructured datasets consisting of trillions of tokens and obtained by crawling the web. The unstructured nature makes it difficult to reason about their contents and develop systematic approaches to data curation. In this paper, we unpack monolithic web corpora by developing taxonomies of their contents and organizing them into domains. We introduce WebOrganizer, a framework for organizing web pages in terms of both their topic and format. Using these two complementary notions of domains, we automatically annotate pre-training data by distilling a",
+      "year": 2025,
+      "venue": "International Conference on Machine Learning",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7b5685df53fe",
+      "title": "Agent Lightning: Train ANY AI Agents with Reinforcement Learning",
+      "abstract_600": "We present Agent Lightning, a flexible and extensible framework that enables Reinforcement Learning (RL)-based training of Large Language Models (LLMs) for any AI agent. Unlike existing methods that tightly couple RL training with agent or rely on sequence concatenation with masking, Agent Lightning achieves complete decoupling between agent execution and training, allowing seamless integration with existing agents developed via diverse ways (e.g., using frameworks like LangChain, OpenAI Agents SDK, AutoGen, and building from scratch) with almost ZERO code modifications. By formulating agent e",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0976d06f6421",
+      "title": "Gecko: Versatile Text Embeddings Distilled from Large Language Models",
+      "abstract_600": "We present Gecko, a compact and versatile text embedding model. Gecko achieves strong retrieval performance by leveraging a key idea: distilling knowledge from large language models (LLMs) into a retriever. Our two-step distillation process begins with generating diverse, synthetic paired data using an LLM. Next, we further refine the data quality by retrieving a set of candidate passages for each query, and relabeling the positive and hard negative passages using the same LLM. The effectiveness of our approach is demonstrated by the compactness of the Gecko. On the Massive Text Embedding Benc",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

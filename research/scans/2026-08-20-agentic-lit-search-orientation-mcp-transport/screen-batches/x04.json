@@ -1,0 +1,257 @@
+{
+  "batch": "x04",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic system design",
+      "text": "Describes or evaluates an LLM agent that searches literature iteratively: query reformulation, multi-round search, citation-graph traversal, or crawling, rather than a single retrieval call."
+    },
+    {
+      "id": "C2",
+      "name": "baseline search recall",
+      "text": "Reports how much of a target set a single-query or Boolean database search actually retrieves, giving a recall or coverage number the agentic systems can be measured against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Says how an evaluation set for literature search or deep research was built - where the gold papers came from, how queries were sampled, what the annotation protocol was."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes the retrieval or reranking method underneath: dense or hybrid retrieval, LLM rerankers, citation-aware ranking, or evidence on which component carries the gain."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a replication failure, a weak or unbeaten baseline, benchmark leakage or construction that inflates scores, or a gain that vanishes under a different set or metric."
+    }
+  ],
+  "items": [
+    {
+      "cid": "0758b58a36f9",
+      "title": "FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation",
+      "abstract_600": "Federated search systems aggregate results from multiple search engines, selecting appropriate sources to enhance result quality and align with user intent. With the increasing uptake of Retrieval-Augmented Generation (RAG) pipelines, federated search can play a pivotal role in sourcing relevant information across heterogeneous data sources to generate informed responses. However, existing datasets, such as those developed in the past TREC FedWeb tracks, predate the RAG paradigm shift and lack representation of modern information retrieval challenges. To bridge this gap, we present FeB4RAG, a",
+      "year": 2024,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fd1e8d139a08",
+      "title": "MedBrowseComp: Benchmarking Medical Deep Research and Computer Use",
+      "abstract_600": "Large language models (LLMs) are increasingly envisioned as decision-support tools in clinical practice, yet safe clinical reasoning demands integrating heterogeneous knowledge bases -- trials, primary studies, regulatory documents, and cost data -- under strict accuracy constraints. Existing evaluations often rely on synthetic prompts, reduce the task to single-hop factoid queries, or conflate reasoning with open-ended generation, leaving their real-world utility unclear. To close this gap, we present MedBrowseComp, the first benchmark that systematically tests an agent's ability to reliably",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "105b7c77b4c0",
+      "title": "CiteAudit: You Cited It, But Did You Read It? A Benchmark for Verifying Scientific References in the LLM Era",
+      "abstract_600": "Scientific research relies on citation integrity, yet large language models (LLMs) have introduced a critical risk: fabricated references that appear plausible but correspond to no real publications. As manual verification becomes infeasible and existing automated tools remain fragile, we introduce CiteAudit, a comprehensive benchmark and detection framework for hallucinated citations. We design a multi-agent verification pipeline that decomposes citation checking into metadata extraction, memory lookup, web-based retrieval, and final judgment. To evaluate this, we construct a large-scale, hum",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fbb5736284f6",
+      "title": "Zero-shot Generative Large Language Models for Systematic Review Screening Automation",
+      "abstract_600": "Systematic reviews are crucial for evidence-based medicine as they comprehensively analyse published research findings on specific questions. Conducting such reviews is often resource- and time-intensive, especially in the screening phase, where abstracts of publications are assessed for inclusion in a review. This study investigates the effectiveness of using zero-shot large language models~(LLMs) for automatic screening. We evaluate the effectiveness of eight different LLMs and investigate a calibration technique that uses a predefined recall threshold to determine whether a publication shou",
+      "year": 2024,
+      "venue": "European Conference on Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "df24488416b2",
+      "title": "Ai2 Scholar QA: Organized Literature Synthesis with Attribution",
+      "abstract_600": "Retrieval-augmented generation is increasingly effective in answering scientific questions from literature, but many state-of-the-art systems are expensive and closed-source. We introduce Ai2 Scholar QA, a free online scientific question answering application. To facilitate research, we make our entire pipeline public: as a customizable open-source Python package and interactive web app, along with paper indexes accessible through public APIs and downloadable datasets. We describe our system in detail and present experiments analyzing its key design decisions. In an evaluation on a recent scie",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8307f6bbfd24",
+      "title": "Sparse Meets Dense: A Hybrid Approach to Enhance Scientific Document Retrieval",
+      "abstract_600": "Traditional information retrieval is based on sparse bag-of-words vector representations of documents and queries. More recent deep-learning approaches have used dense embeddings learned using a transformer-based large language model. We show that on a classic benchmark on scientific document retrieval in the medical domain of cystic fibrosis, that both of these models perform roughly equivalently. Notably, dense vectors from the state-of-the-art SPECTER2 model do not significantly enhance performance. However, a hybrid model that we propose combining these methods yields significantly better",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "05fb155780d2",
+      "title": "Mitigating Hallucination in Large Language Models (LLMs): An Application-Oriented Survey on RAG, Reasoning, and Agentic Systems",
+      "abstract_600": "Hallucination remains one of the key obstacles to the reliable deployment of large language models (LLMs), particularly in real-world applications. Among various mitigation strategies, Retrieval-Augmented Generation (RAG) and reasoning enhancement have emerged as two of the most effective and widely adopted approaches, marking a shift from merely suppressing hallucinations to balancing creativity and reliability. However, their synergistic potential and underlying mechanisms for hallucination mitigation have not yet been systematically examined. This survey adopts an application-oriented persp",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2824eadfc419",
+      "title": "AttributionBench: How Hard is Automatic Attribution Evaluation?",
+      "abstract_600": "Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer's attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present AttributionBench, a comprehensive benchmark compiled from various exi",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f8b69cd8eed0",
+      "title": "Cast-R1: Learning Tool-Augmented Sequential Decision Policies for Time Series Forecasting",
+      "abstract_600": "Time series forecasting has long been dominated by model-centric approaches that formulate prediction as a single-pass mapping from historical observations to future values. Despite recent progress, such formulations often struggle in complex and evolving settings, largely because most forecasting models lack the ability to autonomously acquire informative evidence, reason about potential future changes, or revise predictions through iterative decision processes. In this work, we propose Cast-R1, a learned time series forecasting framework that reformulates forecasting as a sequential decision",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fce48a17acb4",
+      "title": "Tool and Agent Selection for Large Language Model Agents in Production: A Survey",
+      "abstract_600": "Large Language Model (LLM) agents have demonstrated remarkable abilities to interact with external tools, functions, Model Context Protocol (MCP) servers, and agents. Due to the fast-paced nature of the industry, existing literature does not accurately represent the current state of tool and agent selection. This work provides the first detailed examination of tool selection from a production perspective, distinguishing between the frontend layer where users interact with agents through buttons, slash commands, or natural language, and the backend layer where retrieval, execution, orchestratio",
+      "year": 2026,
+      "venue": "Conference on Algebraic Informatics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8c530fe0f600",
+      "title": "CiteEval: Principle-Driven Citation Evaluation for Source Attribution",
+      "abstract_600": "Citation quality is crucial in information-seeking systems, directly influencing trust and the effectiveness of information access. Current evaluation frameworks, both human and automatic, mainly rely on Natural Language Inference (NLI) to assess binary or ternary supportiveness from cited sources, which we argue is a suboptimal proxy for citation evaluation. In this work we introduce CiteEval, a citation evaluation framework driven by principles focusing on fine-grained citation assessment within a broad context, encompassing not only the cited sources but the full retrieval context, user que",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2c8ae14f6026",
+      "title": "Corpus-Steered Query Expansion with Large Language Models",
+      "abstract_600": "Recent studies demonstrate that query expansions generated by large language models (LLMs) can considerably enhance information retrieval systems by generating hypothetical documents that answer the queries as expansions. However, challenges arise from misalignments between the expansions and the retrieval corpus, resulting in issues like hallucinations and outdated information due to the limited intrinsic knowledge of LLMs. Inspired by Pseudo Relevance Feedback (PRF), we introduce Corpus-Steered Query Expansion (CSQE) to promote the incorporation of knowledge embedded within the corpus. CSQE",
+      "year": 2024,
+      "venue": "Conference of the European Chapter of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "68f29ffab0b1",
+      "title": "TableMind: An Autonomous Programmatic Agent for Tool-Augmented Table Reasoning",
+      "abstract_600": "Table reasoning requires models to jointly perform comprehensive semantic understanding and precise numerical operations. Although recent large language model (LLM)-based methods have achieved promising results, most of them still rely on a single-turn reasoning paradigm that processes flattened tables in a single forward pass. This paradigm suffers from inherent limitations, including context overflow on large tables, weak sensitivity to continuous numerical values, and the absence of explicit tool-use and reflection. In this paper, we propose TableMind, a tuning-based autonomous programmatic",
+      "year": 2025,
+      "venue": "Web Search and Data Mining",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "52a84460f0b3",
+      "title": "Resources for Brewing BEIR: Reproducible Reference Models and Statistical Analyses",
+      "abstract_600": "BEIR is a benchmark dataset originally designed for zero-shot evaluation of retrieval models across 18 different domain/task combinations. In recent years, we have witnessed the growing popularity of models based on representation learning, which naturally begs the question: How effective are these models when presented with queries and documents that differ from the training data? While BEIR was designed to answer this question, our work addresses two shortcomings that prevent the benchmark from achieving its full potential: First, the sophistication of modern neural methods and the complexit",
+      "year": 2024,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "64e44de50ab3",
+      "title": "DeepWideSearch: Benchmarking Depth and Width in Agentic Information Seeking",
+      "abstract_600": "Current search agents fundamentally lack the ability to simultaneously perform \\textit{deep} reasoning over multi-hop retrieval and \\textit{wide}-scale information collection-a critical deficiency for real-world applications like comprehensive market analysis and business development. To bridge this gap, we introduce DeepWideSearch, the first benchmark explicitly designed to evaluate agents to integrate depth and width in information seeking. In DeepWideSearch, agents must process a large volume of data, each requiring deep reasoning over multi-hop retrieval paths. Specifically, we propose two",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a8c33a394cac",
+      "title": "Exploring the Best Practices of Query Expansion with Large Language Models",
+      "abstract_600": "Large Language Models (LLMs) are foundational in language technologies, particularly in information retrieval (IR). Previous studies have utilized LLMs for query expansion, achieving notable improvements in IR. In this paper, we thoroughly explore the best practice of leveraging LLMs for query expansion. To this end, we introduce a training-free, straightforward yet effective framework called Multi-Text Generation Integration (\\textsc{MuGI}). It leverages LLMs to generate multiple pseudo-references, integrating them with queries to enhance both sparse and dense retrievers. Our empirical findin",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "38eb281b210d",
+      "title": "RefChecker: Reference-based Fine-grained Hallucination Checker and Benchmark for Large Language Models",
+      "abstract_600": "Large Language Models (LLMs) have shown impressive capabilities but also a concerning tendency to hallucinate. This paper presents RefChecker, a framework that introduces claim-triplets to represent claims in LLM responses, aiming to detect fine-grained hallucinations. In RefChecker, an extractor generates claim-triplets from a response, which are then evaluated by a checker against a reference. We delineate three task settings: Zero, Noisy and Accurate Context, to reflect various real-world use cases. We curated a benchmark spanning various NLP tasks and annotated 11k claim-triplets from 2.1k",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "12acd11c616c",
+      "title": "MemTool: Optimizing Short-Term Memory Management for Dynamic Tool Calling in LLM Agent Multi-Turn Conversations",
+      "abstract_600": "Large Language Model (LLM) agents have shown significant autonomous capabilities in dynamically searching and incorporating relevant tools or Model Context Protocol (MCP) servers for individual queries. However, fixed context windows limit effectiveness in multi-turn interactions requiring repeated, independent tool usage. We introduce MemTool, a short-term memory framework enabling LLM agents to dynamically manage tools or MCP server contexts across multi-turn conversations. MemTool offers three agentic architectures: 1) Autonomous Agent Mode, granting full tool management autonomy, 2) Workfl",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "314edef1dbb1",
+      "title": "Comprehensive review of drought characteristics and intensification under climate change: implications for agriculture and water resources",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "Journal of Hydrology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0e9a68cffe67",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "abstract_600": "Autonomous scientific research is significantly advanced thanks to the development of AI agents. One key step in this process is finding the right scientific literature, whether to explore existing knowledge for a research problem, or to acquire evidence for verifying assumptions and supporting claims. To assess AI agents'capability in driving this process, we present AutoResearchBench, a dedicated benchmark for autonomous scientific literature discovery. AutoResearchBench consists of two complementary task types: (1) Deep Research, which requires tracking down a specific target paper through",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b5d4fed6d32c",
+      "title": "Tool-to-Agent Retrieval: Bridging Tools and Agents for Scalable LLM Multi-Agent Systems",
+      "abstract_600": "Recent advances in LLM Multi-Agent Systems enable scalable orchestration of sub-agents, each coordinating hundreds or thousands of tools or Model Context Protocol (MCP) servers. However, existing retrieval methods typically match queries against coarse agent-level descriptions before routing, which obscures fine-grained tool functionality and often results in suboptimal agent selection. We introduce Tool-to-Agent Retrieval, a unified framework that embeds both tools and their parent agents in a shared vector space and connects them through metadata relationships. By explicitly representing too",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bb813d18e515",
+      "title": "A Survey on Intent-aware Recommender Systems",
+      "abstract_600": "Many modern online services feature personalized recommendations. A central challenge when providing such recommendations is that the reason why an individual user accesses the service may change from visit to visit or even during an ongoing usage session. To be effective, a recommender system should therefore aim to take the users\u2019 probable intent of using the service at a certain point in time into account. In recent years, researchers have thus started to address this challenge by incorporating intent-awareness into recommender systems. Correspondingly, a number of technical approaches were",
+      "year": 2024,
+      "venue": "Trans. Recomm. Syst.",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a9c25fae46b6",
+      "title": "Paper2Rebuttal: A Multi-Agent Framework for Transparent Author Response Assistance",
+      "abstract_600": "Writing effective rebuttals is a high-stakes task that demands more than linguistic fluency, as it requires precise alignment between reviewer intent and manuscript details. Current solutions typically treat this as a direct-to-text generation problem, suffering from hallucination, overlooked critiques, and a lack of verifiable grounding. To address these limitations, we introduce $\\textbf{RebuttalAgent}$, the first multi-agents framework that reframes rebuttal generation as an evidence-centric planning task. Our system decomposes complex feedback into atomic concerns and dynamically construct",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7c12ddd3382c",
+      "title": "Chronos: Temporal-Aware Conversational Agents with Structured Event Retrieval for Long-Term Memory",
+      "abstract_600": "Recent advances in Large Language Models (LLMs) have enabled conversational AI agents to engage in extended multi-turn interactions spanning weeks or months. However, existing memory systems struggle to reason over temporally grounded facts and preferences that evolve across months of interaction and lack effective retrieval strategies for multi-hop, time-sensitive queries over long dialogue histories. We introduce Chronos, a novel temporal-aware memory framework that decomposes raw dialogue into subject-verb-object event tuples with resolved datetime ranges and entity aliases, indexing them i",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cda158eb9ac8",
+      "title": "Verifying the Verifiers: Unveiling Pitfalls and Potentials in Fact Verifiers",
+      "abstract_600": "Fact verification is essential for ensuring the reliability of LLM applications. In this study, we evaluate 12 pre-trained LLMs and one specialized fact-verifier, including frontier LLMs and open-weight reasoning LLMs, using a collection of examples from 14 fact-checking benchmarks. We share three findings intended to guide future development of more robust fact verifiers. First, we highlight the importance of addressing annotation errors and ambiguity in datasets, demonstrating that approximately 16\\% of ambiguous or incorrectly labeled data substantially influences model rankings. Neglecting",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "batch": "x01",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic search design",
+      "text": "Describes or evaluates an LLM-driven system that searches scholarly literature through more than one query: query reformulation, citation-graph traversal, iterative crawling, planning or tool use."
+    },
+    {
+      "id": "C2",
+      "name": "baseline recall",
+      "text": "Reports what plain single-query or conventional keyword/dense database search recovers, as a measured baseline or ceiling that other systems are compared against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Introduces or analyses an evaluation set for literature search, deep research or scholarly QA, and says how the set was built, annotated or scored."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes or evaluates the underlying retrieval or reranking method \u2014 dense/sparse retrieval, LLM rerankers, citation-graph or hybrid retrieval \u2014 on scientific documents."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a failure to replicate, benchmark leakage or construction that inflates scores, a weak or unfairly tuned baseline, or a setting where the simple baseline is not beaten."
+    }
+  ],
+  "items": [
+    {
+      "cid": "9ffbe5ae04cd",
+      "title": "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning",
+      "abstract_600": "Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieva",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "19fc6a1ae182",
+      "title": "WebSailor: Navigating Super-human Reasoning for Web Agent",
+      "abstract_600": "Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucia",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "0277c70bd903",
+      "title": "ScholarGym: Benchmarking Large Language Model Capabilities in the Information-Gathering Stage of Deep Research",
+      "abstract_600": "Large language models have advanced from single-turn question answering to deep research systems that iteratively decompose research questions, invoke retrieval tools, and synthesize information across multiple rounds. Evaluating such systems typically involves scoring their final research reports holistically, but this end-to-end paradigm tightly couples the language model's decision-making, workflow design, and environmental feedback, precluding decomposable analysis of individual components. We introduce ScholarGym, an evaluation environment that isolates the information-gathering stage of",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "5b772b4af4f9",
+      "title": "Qwen3 Technical Report",
+      "abstract_600": "In this work, we present Qwen3, the latest version of the Qwen model family. Qwen3 comprises a series of large language models (LLMs) designed to advance performance, efficiency, and multilingual capabilities. The Qwen3 series includes models of both dense and Mixture-of-Expert (MoE) architectures, with parameter scales ranging from 0.6 to 235 billion. A key innovation in Qwen3 is the integration of thinking mode (for complex, multi-step reasoning) and non-thinking mode (for rapid, context-driven responses) into a unified framework. This eliminates the need to switch between different models--",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "1368f4284dea",
+      "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+      "abstract_600": "The use of retrieval-augmented generation (RAG) to retrieve relevant information from an external knowledge source enables large language models (LLMs) to answer questions over private and/or previously unseen document collections. However, RAG fails on global questions directed at an entire text corpus, such as\"What are the main themes in the dataset?\", since this is inherently a query-focused summarization (QFS) task, rather than an explicit retrieval task. Prior QFS methods, meanwhile, do not scale to the quantities of text indexed by typical RAG systems. To combine the strengths of these c",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "acec9e867f16",
+      "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+      "abstract_600": "One of the grand challenges of artificial general intelligence is developing agents capable of conducting scientific research and discovering new knowledge. While frontier models have already been used as aides to human scientists, e.g. for brainstorming ideas, writing code, or prediction tasks, they still conduct only a small part of the scientific process. This paper presents the first comprehensive framework for fully automatic scientific discovery, enabling frontier large language models to perform research independently and communicate their findings. We introduce The AI Scientist, which",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "bf806f0608f0",
+      "title": "BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents",
+      "abstract_600": "We present BrowseComp, a simple yet challenging benchmark for measuring the ability for agents to browse the web. BrowseComp comprises 1,266 questions that require persistently navigating the internet in search of hard-to-find, entangled information. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers. BrowseComp for browsing agents can be seen as analogous to how programming competitions are an incomplete but useful benchmark for coding agents. While BrowseComp sidesteps challenges of a t",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "61c6a4c583b9",
+      "title": "WebThinker: Empowering Large Reasoning Models with Deep Research Capability",
+      "abstract_600": "Large reasoning models (LRMs), such as OpenAI-o1 and DeepSeek-R1, demonstrate impressive long-horizon reasoning capabilities. However, their reliance on static internal knowledge limits their performance on complex, knowledge-intensive tasks and hinders their ability to produce comprehensive research reports requiring synthesis of diverse web information. To address this, we propose WebThinker, a deep research agent that empowers LRMs to autonomously search the web, navigate among web pages, and draft reports during the reasoning process. WebThinker integrates a Deep Web Explorer module, enabl",
+      "year": 2025,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "dc856102d276",
+      "title": "ResearchAgent: Iterative Research Idea Generation over Scientific Literature with Large Language Models",
+      "abstract_600": "The pace of scientific research, vital for improving human life, is complex, slow, and needs specialized expertise. Meanwhile, novel, impactful research often stems from both a deep understanding of prior work, and a cross-pollination of ideas across domains and fields. To enhance the productivity of researchers, we propose ResearchAgent, which leverages the encyclopedic knowledge and linguistic reasoning capabilities of Large Language Models (LLMs) to assist them in their work. This system automatically defines novel problems, proposes methods and designs experiments, while iteratively refini",
+      "year": 2024,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f875afb8f2f4",
+      "title": "BrowseComp-ZH: Benchmarking Web Browsing Ability of Large Language Models in Chinese",
+      "abstract_600": "As large language models (LLMs) evolve into tool-using agents, the ability to browse the web in real-time has become a critical yardstick for measuring their reasoning and retrieval competence. Existing benchmarks such as BrowseComp concentrate on English and overlook the linguistic, infrastructural, and censorship-related complexities of other major information ecosystems -- most notably Chinese. To address this gap, we introduce BrowseComp-ZH, a high-difficulty benchmark purpose-built to comprehensively evaluate LLM agents on the Chinese web. BrowseComp-ZH consists of 289 multi-hop questions",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "1ff1527fccd5",
+      "title": "LitLLM: A Toolkit for Scientific Literature Review",
+      "abstract_600": "Conducting literature reviews for scientific papers is essential for understanding research, its limitations, and building on existing work. It is a tedious task which makes an automatic literature review generator appealing. Unfortunately, many existing works that generate such reviews using Large Language Models (LLMs) have significant limitations. They tend to hallucinate-generate non-factual information-and ignore the latest research they have not been trained on. To address these limitations, we propose a toolkit that operates on Retrieval Augmented Generation (RAG) principles, specialize",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "68bdf0020f81",
+      "title": "PaperArena: An Evaluation Benchmark for Tool-Augmented Agentic Reasoning on Scientific Literature",
+      "abstract_600": "Understanding and reasoning on the large-scale scientific literature is a crucial touchstone for large language model (LLM) based agents. However, existing works are mainly restricted to tool-free tasks within single papers, largely due to the lack of a benchmark that evaluates cross-paper reasoning and multi-tool orchestration in authentic research scenarios. In this work, we propose PaperArena, a benchmark to evaluate LLM-based agents on questions that require integrating information across multiple papers with the assistance of external tools. Given a research question, agents should formul",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "bca024f6a8a2",
+      "title": "Corpus Subsampling: Estimating the Effectiveness of Neural Retrieval Models on Large Corpora",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "European Conference on Information Retrieval",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "0dfde1e2080f",
+      "title": "Can Deep Research Agents Retrieve and Organize? Evaluating the Synthesis Gap with Expert Taxonomies",
+      "abstract_600": "Deep Research Agents increasingly automate survey writing, yet existing benchmarks do not jointly test whether they retrieve the papers experts consider essential and organize those papers into paper-grounded taxonomies. We introduce TaxoBench, a benchmark built from 72 highly cited LLM surveys, 3,815 cited papers, and their expert-authored taxonomies. TaxoBench evaluates systems in two settings: Deep Research mode measures end-to-end retrieval and organization from a topic, while Bottom-Up mode provides the expert paper set and isolates organization. We evaluate leaf-level assignments with AR",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c22bfe26aa6c",
+      "title": "ScholarEval: Research Idea Evaluation Grounded in Literature",
+      "abstract_600": "As AI tools become increasingly common for research ideation, robust evaluation is critical to ensure the validity and usefulness of generated ideas. We introduce ScholarEval, a retrieval augmented evaluation framework that assesses research ideas based on two fundamental criteria: soundness - the empirical validity of proposed methods based on existing literature, and contribution - the degree of advancement made by the idea across different dimensions relative to prior research. To evaluate ScholarEval, we introduce ScholarIdeas, the first expert-annotated dataset of multi-domain research id",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "2dfa9df40013",
+      "title": "DeepXiv-SDK: An Agentic Data Interface for Scientific Literature",
+      "abstract_600": "LLM-agents are increasingly used to accelerate the progress of scientific research. Yet a persistent bottleneck is data access: agents not only lack readily available tools for retrieval, but also have to work with unstrcutured, human-centric data on the Internet, such as HTML web-pages and PDF files, leading to excessive token consumption, limit working efficiency, and brittle evidence look-up. This gap motivates the development of \\textit{an agentic data interface}, which is designed to enable agents to access and utilize scientific literature in a more effective, efficient, and cost-aware m",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "3125752b6c5a",
+      "title": "Wiki Live Challenge: Challenging Deep Research Agents with Expert-Level Wikipedia Articles",
+      "abstract_600": "Deep Research Agents (DRAs) have demonstrated remarkable capabilities in autonomous information retrieval and report generation, showing great potential to assist humans in complex research tasks. Current evaluation frameworks primarily rely on LLM-generated references or LLM-derived evaluation dimensions. While these approaches offer scalability, they often lack the reliability of expert-verified content and struggle to provide objective, fine-grained assessments of critical dimensions. To bridge this gap, we introduce Wiki Live Challenge (WLC), a live benchmark that leverages the newest Wiki",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "9a6dffd27191",
+      "title": "ScholarGym: Benchmarking Deep Research Workflows on Academic Literature Retrieval",
+      "abstract_600": null,
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ed87d040b011",
+      "title": "Multi-Turn Agentic Scientific Literature Search via Workflow Induction",
+      "abstract_600": "Scientific literature search often requires more than retrieving papers from a single query: users'intents are underspecified, preference-dependent, and evolve through interaction. Existing search agents typically rely on fixed pipelines or implicit language-only reasoning, making their search strategies difficult to control, inspect, and refine. We introduce PaperPilot, a multi-turn literature search agent that frames scientific search as workflow induction. Given an anchor paper and a user query, PaperPilot constructs an executable DAG of paper-search operators, including keyword search, cit",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "9494ac22663d",
+      "title": "When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search",
+      "abstract_600": "Search agents powered by large language models (LLMs) are increasingly used to solve complex information-seeking tasks, requiring multi-step retrieval and reasoning to fulfill user goals. However, existing benchmarks often assume that user queries are complete and explicit, overlooking the fact that real-world search requests are frequently vague, underspecified, or even factually incorrect. In deep search scenarios, such ambiguity can propagate along multi-step reasoning chains and lead agents toward incorrect search trajectories. To address this gap, we introduce DiscoBench, a benchmark for",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "c18353ac3e9b",
+      "title": "AiraXiv: An AI-Driven Open-Access Platform for Human and AI Scientists",
+      "abstract_600": "Recent advances in artificial intelligence (AI) have accelerated the growth of both human-authored and AI-generated research outputs, placing increasing strain on traditional academic publishing systems and challenging the scalability of conference- and journal-centered paradigms amid rising submission volumes, reviewer workload, and venue size. To address these challenges, we explore an AI-era publishing paradigm in which both human and AI scientists participate as authors and readers, and papers evolve through continuous, feedback-driven iteration. We propose AiraXiv, an AI-driven open-acces",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "cc3694851346",
+      "title": "Tool-Augmented Multi-Turn Academic Paper Recommendation via Reinforcement Learning",
+      "abstract_600": "Recent progress in large language models (LLMs) has reshaped the landscape of academic literature retrieval. However, most existing systems still rely on rigid, stage-wise pipelines with limited reasoning depth, making them ill-suited to capture evolving user intents or maintain precision during iterative exploration. We propose a multi-turn, tool-augmented agent that unifies clarification, retrieval, and filtering within a single decision loop. The agent learns the \"clarify\u2013retrieve\u2013filter\" process end-to-end, enabling dynamic refinement of search results through dialogue. We first employ an",
+      "year": 2026,
+      "venue": "International Conference on Big Data and Smart Computing",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c29200f2cec0",
+      "title": "Diagnosing Search Behavior and Failure Modes in Long-Horizon Search Agents",
+      "abstract_600": "Deep search agents answer difficult information-seeking questions by iteratively issuing search queries to gather supporting evidence, but it remains unclear whether and how greater search effort leads to better answers. We study these questions through a trajectory-level diagnosis of long-horizon search agents. Using human-annotated document-level relevance judgments, we evaluate the evidence retrieved at each search step and separate two stages of agent behavior: what evidence an agent retrieves and how effectively it uses that evidence. This distinction further allows us to decompose failur",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ae3afed1d636",
+      "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+      "abstract_600": "Mathematical reasoning poses a significant challenge for language models due to its complex and structured nature. In this paper, we introduce DeepSeekMath 7B, which continues pre-training DeepSeek-Coder-Base-v1.5 7B with 120B math-related tokens sourced from Common Crawl, together with natural language and code data. DeepSeekMath 7B has achieved an impressive score of 51.7% on the competition-level MATH benchmark without relying on external toolkits and voting techniques, approaching the performance level of Gemini-Ultra and GPT-4. Self-consistency over 64 samples from DeepSeekMath 7B achieve",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b970409d882f",
+      "title": "Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

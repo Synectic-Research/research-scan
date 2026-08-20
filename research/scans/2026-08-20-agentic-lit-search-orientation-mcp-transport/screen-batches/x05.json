@@ -1,0 +1,140 @@
+{
+  "batch": "x05",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic system design",
+      "text": "Describes or evaluates an LLM agent that searches literature iteratively: query reformulation, multi-round search, citation-graph traversal, or crawling, rather than a single retrieval call."
+    },
+    {
+      "id": "C2",
+      "name": "baseline search recall",
+      "text": "Reports how much of a target set a single-query or Boolean database search actually retrieves, giving a recall or coverage number the agentic systems can be measured against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Says how an evaluation set for literature search or deep research was built - where the gold papers came from, how queries were sampled, what the annotation protocol was."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes the retrieval or reranking method underneath: dense or hybrid retrieval, LLM rerankers, citation-aware ranking, or evidence on which component carries the gain."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a replication failure, a weak or unbeaten baseline, benchmark leakage or construction that inflates scores, or a gain that vanishes under a different set or metric."
+    }
+  ],
+  "items": [
+    {
+      "cid": "eeec3b0db13f",
+      "title": "Which academic search systems are suitable for systematic reviews or meta\u2010analyses? Evaluating retrieval qualities of Google Scholar, PubMed, and 26 other resources",
+      "abstract_600": "Rigorous evidence identification is essential for systematic reviews and meta\u2010analyses (evidence syntheses) because the sample selection of relevant studies determines a review's outcome, validity, and explanatory power. Yet, the search systems allowing access to this evidence provide varying levels of precision, recall, and reproducibility and also demand different levels of effort. To date, it remains unclear which search systems are most appropriate for evidence synthesis and why. Advice on which search engines and bibliographic databases to choose for systematic searches is limited and lac",
+      "year": 2020,
+      "venue": "Research Synthesis Methods",
+      "origin_count": 5,
+      "outside_window": true
+    },
+    {
+      "cid": "a357a4db7515",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "abstract_600": "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, b",
+      "year": 2020,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 3,
+      "outside_window": true
+    },
+    {
+      "cid": "7c7b932ff81c",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "abstract_600": "Open-domain question answering relies on efficient passage retrieval to select candidate contexts, where traditional sparse vector space models, such as TF-IDF or BM25, are the de facto method. In this work, we show that retrieval can be practically implemented using dense representations alone, where embeddings are learned from a small number of questions and passages by a simple dual-encoder framework. When evaluated on a wide range of open-domain QA datasets, our dense retriever outperforms a strong Lucene-BM25 system largely by 9%-19% absolute in terms of top-20 passage retrieval accuracy,",
+      "year": 2020,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 3,
+      "outside_window": true
+    },
+    {
+      "cid": "90b467759106",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "abstract_600": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without su",
+      "year": 2019,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "fecddd3402c5",
+      "title": "Proximal Policy Optimization Algorithms",
+      "abstract_600": "We propose a new family of policy gradient methods for reinforcement learning, which alternate between sampling data through interaction with the environment, and optimizing a \"surrogate\" objective function using stochastic gradient ascent. Whereas standard policy gradient methods perform one gradient update per data sample, we propose a novel objective function that enables multiple epochs of minibatch updates. The new methods, which we call proximal policy optimization (PPO), have some of the benefits of trust region policy optimization (TRPO), but they are much simpler to implement, more ge",
+      "year": 2017,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "83d901bfd5f4",
+      "title": "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena",
+      "abstract_600": "Evaluating large language model (LLM) based chat assistants is challenging due to their broad capabilities and the inadequacy of existing benchmarks in measuring human preferences. To address this, we explore using strong LLMs as judges to evaluate these models on more open-ended questions. We examine the usage and limitations of LLM-as-a-judge, including position, verbosity, and self-enhancement biases, as well as limited reasoning ability, and propose solutions to mitigate some of them. We then verify the agreement between LLM judges and human preferences by introducing two benchmarks: MT-be",
+      "year": 2023,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "4a7996ba394d",
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "abstract_600": "BERT (Devlin et al., 2018) and RoBERTa (Liu et al., 2019) has set a new state-of-the-art performance on sentence-pair regression tasks like semantic textual similarity (STS). However, it requires that both sentences are fed into the network, which causes a massive computational overhead: Finding the most similar pair in a collection of 10,000 sentences requires about 50 million inference computations (~65 hours) with BERT. The construction of BERT makes it unsuitable for semantic similarity search as well as for unsupervised tasks like clustering. In this publication, we present Sentence-BERT",
+      "year": 2019,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "001aac3b436c",
+      "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+      "abstract_600": null,
+      "year": 2009,
+      "venue": "Foundations and Trends in Information Retrieval",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "4d340bd9d3ff",
+      "title": "C-Pack: Packed Resources For General Chinese Embeddings",
+      "abstract_600": "We introduce C-Pack, a package of resources that significantly advances the field of general text embeddings for Chinese. C-Pack includes three critical resources. 1) C-MTP is a massive training dataset for text embedding, which is based on the curation of vast unlabeled corpora and the integration of high-quality labeled corpora. 2) C-MTEB is a comprehensive benchmark for Chinese text embeddings covering 6 tasks and 35 datasets. 3) BGE is a family of embedding models covering multiple sizes. Our models outperform all prior Chinese text embeddings on C-MTEB by more than +10% upon the time of t",
+      "year": 2023,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "9c4781fd0b4e",
+      "title": "OpenAlex: A fully-open index of scholarly works, authors, venues, institutions, and concepts",
+      "abstract_600": "OpenAlex is a new, fully-open scientific knowledge graph (SKG), launched to replace the discontinued Microsoft Academic Graph (MAG). It contains metadata for 209M works (journal articles, books, etc); 2013M disambiguated authors; 124k venues (places that host works, such as journals and online repositories); 109k institutions; and 65k Wikidata concepts (linked to works via an automated hierarchical multi-tag classifier). The dataset is fully and freely available via a web-based GUI, a full data dump, and high-volume REST API. The resource is under active development and future work will improv",
+      "year": 2022,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "a250036c7019",
+      "title": "SPECTER: Document-level Representation Learning using Citation-informed Transformers",
+      "abstract_600": "Representation learning is a critical ingredient for natural language processing systems. Recent Transformer language models like BERT learn powerful textual representations, but these models are targeted towards token- and sentence-level training objectives and do not leverage information on inter-document relatedness, which limits their document-level representation power. For applications on scientific documents, such as classification and recommendation, accurate embeddings of documents are a necessity. We propose SPECTER, a new method to generate document-level embedding of scientific pap",
+      "year": 2020,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "8da47a2a325f",
+      "title": "Pyserini: A Python Toolkit for Reproducible Information Retrieval Research with Sparse and Dense Representations",
+      "abstract_600": "Pyserini is a Python toolkit for reproducible information retrieval research with sparse and dense representations. It aims to provide effective, reproducible, and easy-to-use first-stage retrieval in a multi-stage ranking architecture. Our toolkit is self-contained as a standard Python package and comes with queries, relevance judgments, pre-built indexes, and evaluation scripts for many commonly used IR test collections. We aim to support, out of the box, the entire research lifecycle of efforts aimed at improving ranking with modern neural approaches. In particular, Pyserini supports sparse",
+      "year": 2021,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 2,
+      "outside_window": true
+    }
+  ]
+}

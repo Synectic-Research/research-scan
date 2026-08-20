@@ -1,0 +1,257 @@
+{
+  "batch": "x01",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic system design",
+      "text": "Describes or evaluates an LLM agent that searches literature iteratively: query reformulation, multi-round search, citation-graph traversal, or crawling, rather than a single retrieval call."
+    },
+    {
+      "id": "C2",
+      "name": "baseline search recall",
+      "text": "Reports how much of a target set a single-query or Boolean database search actually retrieves, giving a recall or coverage number the agentic systems can be measured against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Says how an evaluation set for literature search or deep research was built - where the gold papers came from, how queries were sampled, what the annotation protocol was."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes the retrieval or reranking method underneath: dense or hybrid retrieval, LLM rerankers, citation-aware ranking, or evidence on which component carries the gain."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a replication failure, a weak or unbeaten baseline, benchmark leakage or construction that inflates scores, or a gain that vanishes under a different set or metric."
+    }
+  ],
+  "items": [
+    {
+      "cid": "bf806f0608f0",
+      "title": "BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents",
+      "abstract_600": "We present BrowseComp, a simple yet challenging benchmark for measuring the ability for agents to browse the web. BrowseComp comprises 1,266 questions that require persistently navigating the internet in search of hard-to-find, entangled information. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers. BrowseComp for browsing agents can be seen as analogous to how programming competitions are an incomplete but useful benchmark for coding agents. While BrowseComp sidesteps challenges of a t",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "8a78fe51b7f8",
+      "title": "On-Device Deep Research at 4B: Exposure Bounds Faithfulness, Retrieval Bounds Coverage",
+      "abstract_600": "On-device research agents search a corpus, read sources, and write a cited brief on a personal laptop. Whether their citations are faithful, and at what cost, is unmeasured for a deployable small model. This study fixes one 4B generator on a 24 GB laptop and asks what makes its citations faithful. It separates two quantities usually reported as one number. Cited claim faithfulness asks whether the cited source supports the claim. Trustworthy coverage asks whether the agent also cites the right sources. The study crosses how much of each source the generator sees, 400 against 1500 characters, w",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "5b772b4af4f9",
+      "title": "Qwen3 Technical Report",
+      "abstract_600": "In this work, we present Qwen3, the latest version of the Qwen model family. Qwen3 comprises a series of large language models (LLMs) designed to advance performance, efficiency, and multilingual capabilities. The Qwen3 series includes models of both dense and Mixture-of-Expert (MoE) architectures, with parameter scales ranging from 0.6 to 235 billion. A key innovation in Qwen3 is the integration of thinking mode (for complex, multi-step reasoning) and non-thinking mode (for rapid, context-driven responses) into a unified framework. This eliminates the need to switch between different models--",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "9ffbe5ae04cd",
+      "title": "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning",
+      "abstract_600": "Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieva",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f875afb8f2f4",
+      "title": "BrowseComp-ZH: Benchmarking Web Browsing Ability of Large Language Models in Chinese",
+      "abstract_600": "As large language models (LLMs) evolve into tool-using agents, the ability to browse the web in real-time has become a critical yardstick for measuring their reasoning and retrieval competence. Existing benchmarks such as BrowseComp concentrate on English and overlook the linguistic, infrastructural, and censorship-related complexities of other major information ecosystems -- most notably Chinese. To address this gap, we introduce BrowseComp-ZH, a high-difficulty benchmark purpose-built to comprehensively evaluate LLM agents on the Chinese web. BrowseComp-ZH consists of 289 multi-hop questions",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "59259f0cee69",
+      "title": "Assisting in Writing Wikipedia-like Articles From Scratch with Large Language Models",
+      "abstract_600": "We study how to apply large language models to write grounded and organized long-form articles from scratch, with comparable breadth and depth to Wikipedia pages. This underexplored problem poses new challenges at the pre-writing stage, including how to research the topic and prepare an outline prior to writing. We propose STORM, a writing system for the Synthesis of Topic Outlines throughRetrieval and Multi-perspective Question Asking. STORM models the pre-writing stage by (1) discovering diverse perspectives in researching the given topic, (2) simulating conversations where writers carrying",
+      "year": 2024,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "559500ccf910",
+      "title": "Scientific Paper Retrieval with LLM-Guided Semantic-Based Ranking",
+      "abstract_600": "Scientific paper retrieval is essential for supporting literature discovery and research. While dense retrieval methods demonstrate effectiveness in general-purpose tasks, they often fail to capture fine-grained scientific concepts that are essential for accurate understanding of scientific queries. Recent studies also use large language models (LLMs) for query understanding; however, these methods often lack grounding in corpus-specific knowledge and may generate unreliable or unfaithful content. To overcome these limitations, we propose SemRank, an effective and efficient paper retrieval fra",
+      "year": 2025,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "68bdf0020f81",
+      "title": "PaperArena: An Evaluation Benchmark for Tool-Augmented Agentic Reasoning on Scientific Literature",
+      "abstract_600": "Understanding and reasoning on the large-scale scientific literature is a crucial touchstone for large language model (LLM) based agents. However, existing works are mainly restricted to tool-free tasks within single papers, largely due to the lack of a benchmark that evaluates cross-paper reasoning and multi-tool orchestration in authentic research scenarios. In this work, we propose PaperArena, a benchmark to evaluate LLM-based agents on questions that require integrating information across multiple papers with the assistance of external tools. Given a research question, agents should formul",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "2dfa9df40013",
+      "title": "DeepXiv-SDK: An Agentic Data Interface for Scientific Literature",
+      "abstract_600": "LLM-agents are increasingly used to accelerate the progress of scientific research. Yet a persistent bottleneck is data access: agents not only lack readily available tools for retrieval, but also have to work with unstrcutured, human-centric data on the Internet, such as HTML web-pages and PDF files, leading to excessive token consumption, limit working efficiency, and brittle evidence look-up. This gap motivates the development of \\textit{an agentic data interface}, which is designed to enable agents to access and utilize scientific literature in a more effective, efficient, and cost-aware m",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "baf8f73b2294",
+      "title": "SearchArt: Training Long-Horizon Search Agent with Scalable Synthetic and Verified Task",
+      "abstract_600": "Recent advances in large language models (LLMs) have enabled search agents to autonomously tackle complex tasks across extended search and reasoning horizons. However, training effective search agents remains challenging due to the lack of scalable and long-horizon tasks, and the difficulty of evaluating and correcting intermediate reasoning and tool-use behaviors. We introduce SearchArt, a scalable framework for training long-horizon search agents through verification-driven task synthesis and a multi-stage post-training pipeline. SearchArt constructs large-scale datasets for complex search-,",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ed87d040b011",
+      "title": "Multi-Turn Agentic Scientific Literature Search via Workflow Induction",
+      "abstract_600": "Scientific literature search often requires more than retrieving papers from a single query: users'intents are underspecified, preference-dependent, and evolve through interaction. Existing search agents typically rely on fixed pipelines or implicit language-only reasoning, making their search strategies difficult to control, inspect, and refine. We introduce PaperPilot, a multi-turn literature search agent that frames scientific search as workflow induction. Given an anchor paper and a user query, PaperPilot constructs an executable DAG of paper-search operators, including keyword search, cit",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "9494ac22663d",
+      "title": "When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search",
+      "abstract_600": "Search agents powered by large language models (LLMs) are increasingly used to solve complex information-seeking tasks, requiring multi-step retrieval and reasoning to fulfill user goals. However, existing benchmarks often assume that user queries are complete and explicit, overlooking the fact that real-world search requests are frequently vague, underspecified, or even factually incorrect. In deep search scenarios, such ambiguity can propagate along multi-step reasoning chains and lead agents toward incorrect search trajectories. To address this gap, we introduce DiscoBench, a benchmark for",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c18353ac3e9b",
+      "title": "AiraXiv: An AI-Driven Open-Access Platform for Human and AI Scientists",
+      "abstract_600": "Recent advances in artificial intelligence (AI) have accelerated the growth of both human-authored and AI-generated research outputs, placing increasing strain on traditional academic publishing systems and challenging the scalability of conference- and journal-centered paradigms amid rising submission volumes, reviewer workload, and venue size. To address these challenges, we explore an AI-era publishing paradigm in which both human and AI scientists participate as authors and readers, and papers evolve through continuous, feedback-driven iteration. We propose AiraXiv, an AI-driven open-acces",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "cc3694851346",
+      "title": "Tool-Augmented Multi-Turn Academic Paper Recommendation via Reinforcement Learning",
+      "abstract_600": "Recent progress in large language models (LLMs) has reshaped the landscape of academic literature retrieval. However, most existing systems still rely on rigid, stage-wise pipelines with limited reasoning depth, making them ill-suited to capture evolving user intents or maintain precision during iterative exploration. We propose a multi-turn, tool-augmented agent that unifies clarification, retrieval, and filtering within a single decision loop. The agent learns the \"clarify\u2013retrieve\u2013filter\" process end-to-end, enabling dynamic refinement of search results through dialogue. We first employ an",
+      "year": 2026,
+      "venue": "International Conference on Big Data and Smart Computing",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "d1680321c409",
+      "title": "FrontierFinance: A Challenging Benchmark for Measuring Frontier Intelligence of Finance Agents",
+      "abstract_600": "AI agents are increasingly deployed for professional investment research, yet no benchmark captures the complexity of the full investor workflow. Existing benchmarks mainly target financial data extraction, a narrow slice that current models have largely saturated, while reference-based metrics and generic LLM-as-a-judge scoring fall short on the open-ended, long-form answers that real analyst queries demand. We introduce FrontierFinance, a fully open benchmark of 220 expert-crafted queries and 11,543 source-attributed rubrics spanning six crucial use cases across the full investor workflow. F",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "b970409d882f",
+      "title": "Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b27a24fe580e",
+      "title": "The Claude 3 Model Family: Opus, Sonnet, Haiku",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b27a24fe580e",
+      "title": "The Claude 3 Model Family: Opus, Sonnet, Haiku",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9bf0e36392aa",
+      "title": "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "abstract_600": "Large Language Models (LLMs) applied to code-related applications have emerged as a prominent field, attracting significant interest from both academia and industry. However, as new and improved LLMs are developed, existing evaluation benchmarks (e.g., HumanEval, MBPP) are no longer sufficient for assessing their capabilities. In this work, we propose LiveCodeBench, a comprehensive and contamination-free evaluation of LLMs for code, which continuously collects new problems over time from contests across three competition platforms, namely LeetCode, AtCoder, and CodeForces. Notably, our benchma",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1368f4284dea",
+      "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+      "abstract_600": "The use of retrieval-augmented generation (RAG) to retrieve relevant information from an external knowledge source enables large language models (LLMs) to answer questions over private and/or previously unseen document collections. However, RAG fails on global questions directed at an entire text corpus, such as\"What are the main themes in the dataset?\", since this is inherently a query-focused summarization (QFS) task, rather than an explicit retrieval task. Prior QFS methods, meanwhile, do not scale to the quantities of text indexed by typical RAG systems. To combine the strengths of these c",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "610497d031fe",
+      "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+      "abstract_600": "In this work, we introduce the Qwen3 Embedding series, a significant advancement over its predecessor, the GTE-Qwen series, in text embedding and reranking capabilities, built upon the Qwen3 foundation models. Leveraging the Qwen3 LLMs' robust capabilities in multilingual text understanding and generation, our innovative multi-stage training pipeline combines large-scale unsupervised pre-training with supervised fine-tuning on high-quality datasets. Effective model merging strategies further ensure the robustness and adaptability of the Qwen3 Embedding series. During the training process, the",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "61b5632d1d85",
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "abstract_600": "Language model (LM) agents are increasingly being used to automate complicated tasks in digital environments. Just as humans benefit from powerful software applications, such as integrated development environments, for complex tasks like software engineering, we posit that LM agents represent a new category of end users with their own needs and abilities, and would benefit from specially-built interfaces to the software they use. We investigate how interface design affects the performance of language model agents. As a result of this exploration, we introduce SWE-agent: a system that facilitat",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "383b0f005b6a",
+      "title": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale",
+      "abstract_600": "The performance of a large language model (LLM) depends heavily on the quality and size of its pretraining dataset. However, the pretraining datasets for state-of-the-art open LLMs like Llama 3 and Mixtral are not publicly available and very little is known about how they were created. In this work, we introduce FineWeb, a 15-trillion token dataset derived from 96 Common Crawl snapshots that produces better-performing LLMs than other open pretraining datasets. To advance the understanding of how best to curate high-quality pretraining datasets, we carefully document and ablate all of the desig",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "acec9e867f16",
+      "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+      "abstract_600": "One of the grand challenges of artificial general intelligence is developing agents capable of conducting scientific research and discovering new knowledge. While frontier models have already been used as aides to human scientists, e.g. for brainstorming ideas, writing code, or prediction tasks, they still conduct only a small part of the scientific process. This paper presents the first comprehensive framework for fully automatic scientific discovery, enabling frontier large language models to perform research independently and communicate their findings. We introduce The AI Scientist, which",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "63a70af94562",
+      "title": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+      "abstract_600": "Task automation has been greatly empowered by the recent advances in Large Language Models (LLMs) via Python code, where the tasks ranging from software engineering development to general-purpose reasoning. While current benchmarks have shown that LLMs can solve tasks using programs like human developers, the majority of their evaluations are limited to short and self-contained algorithmic tasks or standalone function calls. Solving challenging and practical tasks requires the capability of utilizing diverse function calls as tools to efficiently implement functionalities like data analysis an",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

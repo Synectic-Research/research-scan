@@ -1,0 +1,100 @@
+{
+  "topic": "llm-lit-search",
+  "run_dir": "research/scans/2026-08-19-topic2b",
+  "expected": 6,
+  "found_at_10": 3,
+  "found_at_25": 4,
+  "recall_10": 0.5,
+  "recall_25": 0.667,
+  "misses": [
+    {
+      "doi": "10.48550/arXiv.2411.14199",
+      "why": "OpenScholar (Asai et al 2024). Retrieval-augmented synthesis over the literature with an open datastore \u2014 the main open counterpoint to the closed agentic systems."
+    },
+    {
+      "doi": "10.48550/arXiv.2402.01788",
+      "why": "LitLLM (Agarwal et al 2024). The rerank-after-retrieve toolkit; the earliest of these to separate retrieval from reranking as distinct stages."
+    }
+  ],
+  "judged": {
+    "precision_ge2": 0.7,
+    "precision_ge2_in_window": 0.875,
+    "per_rank": [
+      {
+        "rank": 1,
+        "cid": "b2f23afc9933",
+        "score": 3,
+        "reason": "Pins the single-query baseline (<20% recall), attributes the gain to bibliography expansion, and undermines reference-list ground truth \u2014 directly answers decisions 1, 2, and 4."
+      },
+      {
+        "rank": 2,
+        "cid": "86c478d214bb",
+        "score": 3,
+        "reason": "Purpose-built agentic paper-search benchmark with documented construction that confirms agentic gains while capping them at ~0.31 Recall@100 \u2014 decisions 2 and 3 at once."
+      },
+      {
+        "rank": 3,
+        "cid": "945e3f2b053b",
+        "score": 3,
+        "reason": "Reproducibility study where a 0.42 Recall@100 gain collapses below 0.02 on a controlled set while lexical rises to 0.96 \u2014 the cleanest instance of decision 4, with direct retrieval-architecture consequences."
+      },
+      {
+        "rank": 4,
+        "cid": "60fd922117d2",
+        "score": 2,
+        "reason": "Sound benchmark-construction critique (fixed corpus, verified evidence, swappable retriever) that satisfies C3, but for general web deep-research QA rather than scientific literature search."
+      },
+      {
+        "rank": 5,
+        "cid": "ab98788216b2",
+        "score": 3,
+        "reason": "In-window agentic literature-research system evaluated against unrestricted human experts with its own benchmark (LitQA2) \u2014 central to decision 2, though the contradiction-detection framing in why_it_matters overreaches."
+      },
+      {
+        "rank": 6,
+        "cid": "693fe7c9b1a3",
+        "score": 3,
+        "reason": "Literature-search benchmark with explicit construction recipe and component baselines (BM25 vs dense vs LLM rerank vs Google) \u2014 serves decisions 1 and 3 directly."
+      },
+      {
+        "rank": 7,
+        "cid": "e41a22d0ceac",
+        "score": 1,
+        "reason": "Robustness lesson about graph-vs-vector RAG verdicts is real, but the setting is requirements-traceability QA, not literature search \u2014 the citation-graph-traversal analogy in why_it_matters is a stretch."
+      },
+      {
+        "rank": 8,
+        "cid": "aac7d9e865ef",
+        "score": 2,
+        "reason": "Survey mapping the agentic design space with a benchmark-limitations critique; useful for the orientation the brief asks for, but contributes no measured effects of its own."
+      },
+      {
+        "rank": 9,
+        "cid": "572403dfe845",
+        "score": 1,
+        "reason": "The dense-retriever zero-shot transfer failure is background for retrieval choice, but it is 2021 general IR, outside the brief's 2024-01 window and not literature search."
+      },
+      {
+        "rank": 10,
+        "cid": "7c7b932ff81c",
+        "score": 1,
+        "reason": "2020 foundational DPR result offered as historical origin only; the packet's own why_it_matters concedes it informs no decision the brief names."
+      }
+    ],
+    "foundational": [
+      {
+        "rank": 9,
+        "cid": "572403dfe845",
+        "score": 1,
+        "reason": "The dense-retriever zero-shot transfer failure is background for retrieval choice, but it is 2021 general IR, outside the brief's 2024-01 window and not literature search."
+      },
+      {
+        "rank": 10,
+        "cid": "7c7b932ff81c",
+        "score": 1,
+        "reason": "2020 foundational DPR result offered as historical origin only; the packet's own why_it_matters concedes it informs no decision the brief names."
+      }
+    ]
+  },
+  "candidates": null
+}

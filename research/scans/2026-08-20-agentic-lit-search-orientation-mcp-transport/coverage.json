@@ -1,0 +1,559 @@
+{
+  "run": {
+    "run_dir": "research/scans/2026-08-20-agentic-lit-search-orientation",
+    "slug": "agentic-lit-search-orientation",
+    "date": "2026-08-20",
+    "brief_path": "research/scans/2026-08-20-agentic-lit-search-orientation/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2024-01",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "quick"
+    }
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "screened": 361,
+      "ge2": 175,
+      "unattributed_ge2": 0,
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "agentic system design",
+          "hits": 69,
+          "by_query_type": {
+            "citations": 13,
+            "contradictory": 1,
+            "direct": 12,
+            "method": 13,
+            "recommendations": 1,
+            "references": 19,
+            "review": 8,
+            "terminology": 19
+          },
+          "by_source": {
+            "arxiv": 29,
+            "openalex": 9,
+            "s2": 50
+          },
+          "thin": false
+        },
+        {
+          "id": "C2",
+          "name": "baseline search recall",
+          "hits": 17,
+          "by_query_type": {
+            "citations": 1,
+            "direct": 2,
+            "method": 1,
+            "references": 3,
+            "terminology": 11
+          },
+          "by_source": {
+            "arxiv": 4,
+            "s2": 15
+          },
+          "thin": false
+        },
+        {
+          "id": "C3",
+          "name": "benchmark construction",
+          "hits": 53,
+          "by_query_type": {
+            "citations": 8,
+            "contradictory": 1,
+            "direct": 4,
+            "method": 1,
+            "references": 20,
+            "review": 14,
+            "terminology": 14
+          },
+          "by_source": {
+            "arxiv": 17,
+            "openalex": 14,
+            "s2": 33
+          },
+          "thin": false
+        },
+        {
+          "id": "C4",
+          "name": "retrieval and reranking",
+          "hits": 73,
+          "by_query_type": {
+            "citations": 3,
+            "contradictory": 9,
+            "direct": 4,
+            "method": 34,
+            "references": 27,
+            "review": 2,
+            "terminology": 3
+          },
+          "by_source": {
+            "arxiv": 14,
+            "openalex": 17,
+            "s2": 55
+          },
+          "thin": false
+        },
+        {
+          "id": "C5",
+          "name": "gains that fail",
+          "hits": 37,
+          "by_query_type": {
+            "citations": 5,
+            "contradictory": 2,
+            "method": 6,
+            "references": 11,
+            "review": 5,
+            "terminology": 13
+          },
+          "by_source": {
+            "arxiv": 12,
+            "openalex": 8,
+            "s2": 25
+          },
+          "thin": false
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "Q1",
+          "type": "direct",
+          "pool": 33,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q2",
+          "type": "terminology",
+          "pool": 35,
+          "ge2": 20
+        },
+        {
+          "query_id": "Q3",
+          "type": "method",
+          "pool": 32,
+          "ge2": 20
+        },
+        {
+          "query_id": "Q4",
+          "type": "method",
+          "pool": 34,
+          "ge2": 20
+        },
+        {
+          "query_id": "Q5",
+          "type": "contradictory",
+          "pool": 33,
+          "ge2": 12
+        },
+        {
+          "query_id": "Q6",
+          "type": "review",
+          "pool": 33,
+          "ge2": 6
+        },
+        {
+          "query_id": "Q7",
+          "type": "review",
+          "pool": 32,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q8",
+          "type": "terminology",
+          "pool": 31,
+          "ge2": 15
+        }
+      ],
+      "seeds": [
+        {
+          "seed_id": "066d9ce1af46",
+          "neighbours": 2,
+          "ge2": 1,
+          "precision": 0.5
+        },
+        {
+          "seed_id": "254b334ff87a",
+          "neighbours": 11,
+          "ge2": 10,
+          "precision": 0.909
+        },
+        {
+          "seed_id": "38facb940624",
+          "neighbours": 16,
+          "ge2": 7,
+          "precision": 0.438
+        },
+        {
+          "seed_id": "4a640488194c",
+          "neighbours": 8,
+          "ge2": 8,
+          "precision": 1.0
+        },
+        {
+          "seed_id": "4e05571c5306",
+          "neighbours": 4,
+          "ge2": 2,
+          "precision": 0.5
+        },
+        {
+          "seed_id": "60fd922117d2",
+          "neighbours": 23,
+          "ge2": 20,
+          "precision": 0.87
+        },
+        {
+          "seed_id": "86c478d214bb",
+          "neighbours": 10,
+          "ge2": 7,
+          "precision": 0.7
+        },
+        {
+          "seed_id": "97b9c25fbfb6",
+          "neighbours": 21,
+          "ge2": 14,
+          "precision": 0.667
+        },
+        {
+          "seed_id": "b26163dcef51",
+          "neighbours": 29,
+          "ge2": 16,
+          "precision": 0.552
+        },
+        {
+          "seed_id": "b2f23afc9933",
+          "neighbours": 8,
+          "ge2": 7,
+          "precision": 0.875
+        },
+        {
+          "seed_id": "da592d0c7f78",
+          "neighbours": 16,
+          "ge2": 14,
+          "precision": 0.875
+        },
+        {
+          "seed_id": "f3ded2aff1a6",
+          "neighbours": 3,
+          "ge2": 0,
+          "precision": 0.0
+        },
+        {
+          "seed_id": "fad2d47d6aa0",
+          "neighbours": 23,
+          "ge2": 11,
+          "precision": 0.478
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "screened": 641,
+      "ge2": 252,
+      "unattributed_ge2": 0,
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "agentic system design",
+          "hits": 103,
+          "by_query_type": {
+            "citations": 21,
+            "contradictory": 1,
+            "direct": 12,
+            "gap": 3,
+            "method": 13,
+            "recommendations": 2,
+            "references": 36,
+            "review": 22,
+            "terminology": 19
+          },
+          "by_source": {
+            "arxiv": 34,
+            "openalex": 11,
+            "s2": 83
+          },
+          "thin": false
+        },
+        {
+          "id": "C2",
+          "name": "baseline search recall",
+          "hits": 38,
+          "by_query_type": {
+            "citations": 5,
+            "direct": 2,
+            "gap": 16,
+            "method": 1,
+            "recommendations": 1,
+            "references": 6,
+            "terminology": 11
+          },
+          "by_source": {
+            "arxiv": 5,
+            "openalex": 7,
+            "s2": 29
+          },
+          "thin": false
+        },
+        {
+          "id": "C3",
+          "name": "benchmark construction",
+          "hits": 73,
+          "by_query_type": {
+            "citations": 14,
+            "contradictory": 1,
+            "direct": 4,
+            "method": 1,
+            "recommendations": 2,
+            "references": 30,
+            "review": 23,
+            "terminology": 14
+          },
+          "by_source": {
+            "arxiv": 21,
+            "openalex": 15,
+            "s2": 54
+          },
+          "thin": false
+        },
+        {
+          "id": "C4",
+          "name": "retrieval and reranking",
+          "hits": 78,
+          "by_query_type": {
+            "citations": 6,
+            "contradictory": 9,
+            "direct": 4,
+            "method": 34,
+            "recommendations": 1,
+            "references": 29,
+            "review": 2,
+            "terminology": 3
+          },
+          "by_source": {
+            "arxiv": 14,
+            "openalex": 17,
+            "s2": 60
+          },
+          "thin": false
+        },
+        {
+          "id": "C5",
+          "name": "gains that fail",
+          "hits": 52,
+          "by_query_type": {
+            "citations": 10,
+            "contradictory": 2,
+            "gap": 2,
+            "method": 6,
+            "recommendations": 2,
+            "references": 16,
+            "review": 9,
+            "terminology": 13
+          },
+          "by_source": {
+            "arxiv": 14,
+            "openalex": 9,
+            "s2": 38
+          },
+          "thin": false
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "Q1",
+          "type": "direct",
+          "pool": 33,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q2",
+          "type": "terminology",
+          "pool": 35,
+          "ge2": 20
+        },
+        {
+          "query_id": "Q3",
+          "type": "method",
+          "pool": 32,
+          "ge2": 20
+        },
+        {
+          "query_id": "Q4",
+          "type": "method",
+          "pool": 34,
+          "ge2": 20
+        },
+        {
+          "query_id": "Q5",
+          "type": "contradictory",
+          "pool": 33,
+          "ge2": 12
+        },
+        {
+          "query_id": "Q6",
+          "type": "review",
+          "pool": 33,
+          "ge2": 6
+        },
+        {
+          "query_id": "Q7",
+          "type": "review",
+          "pool": 32,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q8",
+          "type": "terminology",
+          "pool": 31,
+          "ge2": 15
+        },
+        {
+          "query_id": "G1",
+          "type": "gap",
+          "pool": 47,
+          "ge2": 8
+        },
+        {
+          "query_id": "G2",
+          "type": "gap",
+          "pool": 41,
+          "ge2": 12
+        },
+        {
+          "query_id": "R1",
+          "type": "review",
+          "pool": 59,
+          "ge2": 11
+        },
+        {
+          "query_id": "R2",
+          "type": "review",
+          "pool": 53,
+          "ge2": 12
+        }
+      ],
+      "seeds": [
+        {
+          "seed_id": "066d9ce1af46",
+          "neighbours": 2,
+          "ge2": 1,
+          "precision": 0.5
+        },
+        {
+          "seed_id": "0dfde1e2080f",
+          "neighbours": 26,
+          "ge2": 21,
+          "precision": 0.808
+        },
+        {
+          "seed_id": "254b334ff87a",
+          "neighbours": 11,
+          "ge2": 10,
+          "precision": 0.909
+        },
+        {
+          "seed_id": "38facb940624",
+          "neighbours": 16,
+          "ge2": 7,
+          "precision": 0.438
+        },
+        {
+          "seed_id": "4a640488194c",
+          "neighbours": 8,
+          "ge2": 8,
+          "precision": 1.0
+        },
+        {
+          "seed_id": "4e05571c5306",
+          "neighbours": 4,
+          "ge2": 2,
+          "precision": 0.5
+        },
+        {
+          "seed_id": "5a37d6d60f87",
+          "neighbours": 6,
+          "ge2": 1,
+          "precision": 0.167
+        },
+        {
+          "seed_id": "60fd922117d2",
+          "neighbours": 23,
+          "ge2": 20,
+          "precision": 0.87
+        },
+        {
+          "seed_id": "86c478d214bb",
+          "neighbours": 10,
+          "ge2": 7,
+          "precision": 0.7
+        },
+        {
+          "seed_id": "97b9c25fbfb6",
+          "neighbours": 21,
+          "ge2": 14,
+          "precision": 0.667
+        },
+        {
+          "seed_id": "9e2dd94fea1d",
+          "neighbours": 53,
+          "ge2": 34,
+          "precision": 0.642
+        },
+        {
+          "seed_id": "ac8117bc7fd9",
+          "neighbours": 35,
+          "ge2": 6,
+          "precision": 0.171
+        },
+        {
+          "seed_id": "b26163dcef51",
+          "neighbours": 29,
+          "ge2": 16,
+          "precision": 0.552
+        },
+        {
+          "seed_id": "b2f23afc9933",
+          "neighbours": 8,
+          "ge2": 7,
+          "precision": 0.875
+        },
+        {
+          "seed_id": "da592d0c7f78",
+          "neighbours": 16,
+          "ge2": 14,
+          "precision": 0.875
+        },
+        {
+          "seed_id": "f3ded2aff1a6",
+          "neighbours": 3,
+          "ge2": 0,
+          "precision": 0.0
+        },
+        {
+          "seed_id": "fad2d47d6aa0",
+          "neighbours": 23,
+          "ge2": 11,
+          "precision": 0.478
+        }
+      ]
+    }
+  ],
+  "gap_round": {
+    "should_run": true,
+    "profile": "quick",
+    "forced": true,
+    "reasons": [
+      "--gap-round was passed"
+    ]
+  }
+}

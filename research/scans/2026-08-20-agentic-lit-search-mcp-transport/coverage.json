@@ -1,0 +1,267 @@
+{
+  "run": {
+    "run_dir": "research/scans/2026-08-20-agentic-lit-search",
+    "slug": "agentic-lit-search",
+    "date": "2026-08-20",
+    "brief_path": "research/scans/2026-08-20-agentic-lit-search/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2024-01",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "quick"
+    }
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "screened": 360,
+      "ge2": 148,
+      "unattributed_ge2": 0,
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "agentic search design",
+          "hits": 51,
+          "by_query_type": {
+            "citations": 9,
+            "contradictory": 1,
+            "direct": 10,
+            "emerging": 1,
+            "method": 10,
+            "recommendations": 2,
+            "references": 18,
+            "review": 9,
+            "terminology": 7
+          },
+          "by_source": {
+            "arxiv": 23,
+            "openalex": 6,
+            "s2": 35
+          },
+          "thin": false
+        },
+        {
+          "id": "C2",
+          "name": "baseline recall",
+          "hits": 15,
+          "by_query_type": {
+            "citations": 2,
+            "direct": 5,
+            "references": 9,
+            "review": 1
+          },
+          "by_source": {
+            "arxiv": 4,
+            "openalex": 1,
+            "s2": 12
+          },
+          "thin": false
+        },
+        {
+          "id": "C3",
+          "name": "benchmark construction",
+          "hits": 50,
+          "by_query_type": {
+            "citations": 13,
+            "contradictory": 1,
+            "direct": 4,
+            "emerging": 11,
+            "method": 2,
+            "recommendations": 2,
+            "references": 25,
+            "review": 7,
+            "terminology": 13
+          },
+          "by_source": {
+            "arxiv": 10,
+            "openalex": 13,
+            "s2": 41
+          },
+          "thin": false
+        },
+        {
+          "id": "C4",
+          "name": "retrieval and reranking",
+          "hits": 67,
+          "by_query_type": {
+            "citations": 6,
+            "contradictory": 8,
+            "direct": 5,
+            "method": 32,
+            "recommendations": 1,
+            "references": 24,
+            "review": 6
+          },
+          "by_source": {
+            "arxiv": 17,
+            "openalex": 18,
+            "s2": 50
+          },
+          "thin": false
+        },
+        {
+          "id": "C5",
+          "name": "gains that fail",
+          "hits": 30,
+          "by_query_type": {
+            "citations": 6,
+            "contradictory": 2,
+            "direct": 1,
+            "emerging": 3,
+            "method": 6,
+            "references": 5,
+            "review": 5,
+            "terminology": 8
+          },
+          "by_source": {
+            "arxiv": 13,
+            "openalex": 6,
+            "s2": 16
+          },
+          "thin": false
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "Q1",
+          "type": "direct",
+          "pool": 34,
+          "ge2": 15
+        },
+        {
+          "query_id": "Q2",
+          "type": "terminology",
+          "pool": 36,
+          "ge2": 20
+        },
+        {
+          "query_id": "Q3",
+          "type": "emerging",
+          "pool": 44,
+          "ge2": 12
+        },
+        {
+          "query_id": "Q4",
+          "type": "method",
+          "pool": 37,
+          "ge2": 17
+        },
+        {
+          "query_id": "Q5",
+          "type": "method",
+          "pool": 32,
+          "ge2": 22
+        },
+        {
+          "query_id": "Q6",
+          "type": "contradictory",
+          "pool": 34,
+          "ge2": 11
+        },
+        {
+          "query_id": "Q7",
+          "type": "review",
+          "pool": 31,
+          "ge2": 10
+        },
+        {
+          "query_id": "Q8",
+          "type": "review",
+          "pool": 37,
+          "ge2": 9
+        }
+      ],
+      "seeds": [
+        {
+          "seed_id": "0cb09b49bfae",
+          "neighbours": 9,
+          "ge2": 5,
+          "precision": 0.556
+        },
+        {
+          "seed_id": "254b334ff87a",
+          "neighbours": 9,
+          "ge2": 8,
+          "precision": 0.889
+        },
+        {
+          "seed_id": "38facb940624",
+          "neighbours": 13,
+          "ge2": 6,
+          "precision": 0.462
+        },
+        {
+          "seed_id": "4c9a5949d53c",
+          "neighbours": 31,
+          "ge2": 18,
+          "precision": 0.581
+        },
+        {
+          "seed_id": "6006ace31229",
+          "neighbours": 17,
+          "ge2": 15,
+          "precision": 0.882
+        },
+        {
+          "seed_id": "60fd922117d2",
+          "neighbours": 24,
+          "ge2": 17,
+          "precision": 0.708
+        },
+        {
+          "seed_id": "86c478d214bb",
+          "neighbours": 10,
+          "ge2": 7,
+          "precision": 0.7
+        },
+        {
+          "seed_id": "9a2df587bfa5",
+          "neighbours": 21,
+          "ge2": 6,
+          "precision": 0.286
+        },
+        {
+          "seed_id": "cc6ddb0bef89",
+          "neighbours": 18,
+          "ge2": 5,
+          "precision": 0.278
+        },
+        {
+          "seed_id": "da592d0c7f78",
+          "neighbours": 15,
+          "ge2": 10,
+          "precision": 0.667
+        },
+        {
+          "seed_id": "e2c42887588f",
+          "neighbours": 11,
+          "ge2": 7,
+          "precision": 0.636
+        },
+        {
+          "seed_id": "fad2d47d6aa0",
+          "neighbours": 20,
+          "ge2": 9,
+          "precision": 0.45
+        }
+      ]
+    }
+  ],
+  "gap_round": {
+    "should_run": false,
+    "profile": "quick",
+    "forced": false,
+    "reasons": [
+      "the quick profile never runs it"
+    ]
+  }
+}

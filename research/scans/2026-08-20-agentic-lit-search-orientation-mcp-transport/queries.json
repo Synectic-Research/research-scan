@@ -1,0 +1,129 @@
+{
+  "brief_summary": "Purpose: orient. A newcomer's map of agentic LLM systems for scientific literature search over 2024-2026, covering three branches: the system designs themselves (iterative search loops that combine query reformulation, citation-graph traversal and crawling), the benchmarks these systems are scored on, and the retrieval and reranking machinery underneath. Four things have to come out of it: what recall a plain single-query database search actually reaches, which agentic move carries the measured gain and how large it is, how evaluation sets are built and what their construction lets their numbers support, and where reported gains fail under a different set, metric or replication. The evidence is computer-science: IR and NLP venues plus arXiv preprints, not the applied domains these systems are pointed at. The premise to attack is that agentic designs reliably beat the single-query baseline and that the reported gains are real.",
+  "domain": "cs",
+  "window": {
+    "from": "2024-01",
+    "to": null
+  },
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic system design",
+      "text": "Describes or evaluates an LLM agent that searches literature iteratively: query reformulation, multi-round search, citation-graph traversal, or crawling, rather than a single retrieval call."
+    },
+    {
+      "id": "C2",
+      "name": "baseline search recall",
+      "text": "Reports how much of a target set a single-query or Boolean database search actually retrieves, giving a recall or coverage number the agentic systems can be measured against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Says how an evaluation set for literature search or deep research was built - where the gold papers came from, how queries were sampled, what the annotation protocol was."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes the retrieval or reranking method underneath: dense or hybrid retrieval, LLM rerankers, citation-aware ranking, or evidence on which component carries the gain."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a replication failure, a weak or unbeaten baseline, benchmark leakage or construction that inflates scores, or a gain that vanishes under a different set or metric."
+    }
+  ],
+  "must_not": [
+    "drug discovery",
+    "patent search",
+    "patent retrieval"
+  ],
+  "queries": [
+    {
+      "id": "Q1",
+      "type": "direct",
+      "text": "agentic academic paper search",
+      "mode": "semantic",
+      "target_criterion": null
+    },
+    {
+      "id": "Q2",
+      "type": "terminology",
+      "text": "deep research agent",
+      "mode": "semantic",
+      "target_criterion": null
+    },
+    {
+      "id": "Q3",
+      "type": "method",
+      "text": "LLM query reformulation retrieval",
+      "mode": "semantic",
+      "target_criterion": null
+    },
+    {
+      "id": "Q4",
+      "type": "method",
+      "text": "citation graph paper retrieval",
+      "mode": "semantic",
+      "target_criterion": null
+    },
+    {
+      "id": "Q5",
+      "type": "contradictory",
+      "text": "weak baselines neural retrieval",
+      "mode": "semantic",
+      "target_criterion": null
+    },
+    {
+      "id": "Q6",
+      "type": "review",
+      "text": "(\"survey\" OR \"systematic review\") AND (\"LLM agent\" OR \"agentic\") AND (\"literature search\" OR \"scientific discovery\")",
+      "mode": "keyword",
+      "target_criterion": null
+    },
+    {
+      "id": "Q7",
+      "type": "review",
+      "text": "(\"survey\" OR \"review\") AND (\"benchmark\" OR \"evaluation\") AND (\"deep research\" OR \"search agent\")",
+      "mode": "keyword",
+      "target_criterion": null
+    },
+    {
+      "id": "Q8",
+      "type": "terminology",
+      "text": "boolean search recall systematic reviews",
+      "mode": "semantic",
+      "target_criterion": null
+    }
+  ],
+  "anchors": [],
+  "round2": [
+    {
+      "id": "G1",
+      "type": "gap",
+      "text": "database coverage overlap",
+      "mode": "semantic",
+      "target_criterion": "C2"
+    },
+    {
+      "id": "G2",
+      "type": "gap",
+      "text": "supplementary citation searching",
+      "mode": "semantic",
+      "target_criterion": "C2"
+    },
+    {
+      "id": "R1",
+      "type": "review",
+      "text": "literature review automation survey",
+      "mode": "semantic",
+      "target_criterion": null
+    },
+    {
+      "id": "R2",
+      "type": "review",
+      "text": "survey deep research agents",
+      "mode": "semantic",
+      "target_criterion": null
+    }
+  ]
+}

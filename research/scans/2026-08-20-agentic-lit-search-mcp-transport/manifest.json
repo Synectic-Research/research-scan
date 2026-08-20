@@ -1,0 +1,137 @@
+{
+  "run": {
+    "run_dir": "research/scans/2026-08-20-agentic-lit-search",
+    "slug": "agentic-lit-search",
+    "date": "2026-08-20",
+    "brief_path": "research/scans/2026-08-20-agentic-lit-search/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2024-01",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "quick"
+    }
+  },
+  "defaults": {
+    "window": {
+      "from": "2024-01",
+      "to": null
+    },
+    "top": 10,
+    "foundational": 2,
+    "domain": "cs",
+    "sources": [
+      "openalex",
+      "s2",
+      "arxiv"
+    ],
+    "profile": "quick"
+  },
+  "retrieval": {
+    "per_source": {
+      "openalex": {
+        "queried": 8,
+        "hits": 160,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "s2": {
+        "queried": 8,
+        "hits": 120,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "arxiv": {
+        "queried": 8,
+        "hits": 148,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "anon"
+      }
+    },
+    "deduped_remaining": 350,
+    "abstracts_present": 243,
+    "dropped": {
+      "retracted": 0,
+      "must_not": 3,
+      "type": 0,
+      "window": 0,
+      "preprint": 0,
+      "cap": 97
+    },
+    "cost_estimate_usd": 0.008,
+    "duration_s": 41.997
+  },
+  "retrieval_round2": null,
+  "expansion": {
+    "seeds": 15,
+    "added": 100,
+    "added_outside_window": 12,
+    "dropped": {
+      "retracted": 0,
+      "must_not": 3,
+      "type": 0,
+      "cap": 305
+    },
+    "auth": {
+      "s2": "key",
+      "openalex": "key"
+    },
+    "duration_s": 50.296
+  },
+  "expansion_round2": null,
+  "verification": {
+    "verified": 47,
+    "unverified": 0,
+    "dropped_retracted": 0,
+    "crossref_skipped": false,
+    "duration_s": 41.082
+  },
+  "emit": {
+    "top": 10,
+    "foundational": 2,
+    "contradicting": 1,
+    "emitted": 10,
+    "alternates": 5,
+    "dropped_retracted": 0,
+    "duration_s": 0.0
+  },
+  "counts": {
+    "retrieved": 428,
+    "deduped": 250,
+    "expanded": 100,
+    "screened_ge2": 148,
+    "shortlisted": 47,
+    "ranked": 47,
+    "verified": 47,
+    "emitted": 10,
+    "wall_clock_s": 1210.0
+  },
+  "tool_version": "0.2.5",
+  "timestamps": {
+    "init.started_at": "2026-08-20T10:21:56+00:00",
+    "init.finished_at": "2026-08-20T10:21:56+00:00",
+    "retrieve.started_at": "2026-08-20T10:21:57+00:00",
+    "retrieve.finished_at": "2026-08-20T10:22:39+00:00",
+    "expand.started_at": "2026-08-20T10:30:34+00:00",
+    "expand.finished_at": "2026-08-20T10:31:25+00:00",
+    "coverage.started_at": "2026-08-20T10:34:31+00:00",
+    "coverage.finished_at": "2026-08-20T10:34:31+00:00",
+    "shortlist.started_at": "2026-08-20T10:34:31+00:00",
+    "shortlist.finished_at": "2026-08-20T10:34:31+00:00",
+    "verify.started_at": "2026-08-20T10:41:25+00:00",
+    "verify.finished_at": "2026-08-20T10:42:06+00:00",
+    "emit.started_at": "2026-08-20T10:42:06+00:00",
+    "emit.finished_at": "2026-08-20T10:42:06+00:00"
+  }
+}

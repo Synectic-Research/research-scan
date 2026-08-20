@@ -1,0 +1,140 @@
+{
+  "batch": "x05",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic search design",
+      "text": "Describes or evaluates an LLM-driven system that searches scholarly literature through more than one query: query reformulation, citation-graph traversal, iterative crawling, planning or tool use."
+    },
+    {
+      "id": "C2",
+      "name": "baseline recall",
+      "text": "Reports what plain single-query or conventional keyword/dense database search recovers, as a measured baseline or ceiling that other systems are compared against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Introduces or analyses an evaluation set for literature search, deep research or scholarly QA, and says how the set was built, annotated or scored."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes or evaluates the underlying retrieval or reranking method \u2014 dense/sparse retrieval, LLM rerankers, citation-graph or hybrid retrieval \u2014 on scientific documents."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a failure to replicate, benchmark leakage or construction that inflates scores, a weak or unfairly tuned baseline, or a setting where the simple baseline is not beaten."
+    }
+  ],
+  "items": [
+    {
+      "cid": "eeec3b0db13f",
+      "title": "Which academic search systems are suitable for systematic reviews or meta\u2010analyses? Evaluating retrieval qualities of Google Scholar, PubMed, and 26 other resources",
+      "abstract_600": "Rigorous evidence identification is essential for systematic reviews and meta\u2010analyses (evidence syntheses) because the sample selection of relevant studies determines a review's outcome, validity, and explanatory power. Yet, the search systems allowing access to this evidence provide varying levels of precision, recall, and reproducibility and also demand different levels of effort. To date, it remains unclear which search systems are most appropriate for evidence synthesis and why. Advice on which search engines and bibliographic databases to choose for systematic searches is limited and lac",
+      "year": 2020,
+      "venue": "Research Synthesis Methods",
+      "origin_count": 5,
+      "outside_window": true
+    },
+    {
+      "cid": "a357a4db7515",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "abstract_600": "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, b",
+      "year": 2020,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 3,
+      "outside_window": true
+    },
+    {
+      "cid": "90b467759106",
+      "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+      "abstract_600": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without su",
+      "year": 2019,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "dc60347e8863",
+      "title": "Decoupled Weight Decay Regularization",
+      "abstract_600": null,
+      "year": 2017,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "fecddd3402c5",
+      "title": "Proximal Policy Optimization Algorithms",
+      "abstract_600": "We propose a new family of policy gradient methods for reinforcement learning, which alternate between sampling data through interaction with the environment, and optimizing a \"surrogate\" objective function using stochastic gradient ascent. Whereas standard policy gradient methods perform one gradient update per data sample, we propose a novel objective function that enables multiple epochs of minibatch updates. The new methods, which we call proximal policy optimization (PPO), have some of the benefits of trust region policy optimization (TRPO), but they are much simpler to implement, more ge",
+      "year": 2017,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "b6b64c68b3e8",
+      "title": "Graph Attention Networks",
+      "abstract_600": "We present graph attention networks (GATs), novel neural network architectures that operate on graph-structured data, leveraging masked self-attentional layers to address the shortcomings of prior methods based on graph convolutions or their approximations. By stacking layers in which nodes are able to attend over their neighborhoods' features, we enable (implicitly) specifying different weights to different nodes in a neighborhood, without requiring any kind of costly matrix operation (such as inversion) or depending on knowing the graph structure upfront. In this way, we address several key",
+      "year": 2017,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "4a7996ba394d",
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "abstract_600": "BERT (Devlin et al., 2018) and RoBERTa (Liu et al., 2019) has set a new state-of-the-art performance on sentence-pair regression tasks like semantic textual similarity (STS). However, it requires that both sentences are fed into the network, which causes a massive computational overhead: Finding the most similar pair in a collection of 10,000 sentences requires about 50 million inference computations (~65 hours) with BERT. The construction of BERT makes it unsuitable for semantic similarity search as well as for unsupervised tasks like clustering. In this publication, we present Sentence-BERT",
+      "year": 2019,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "2aed270d6685",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "abstract_600": "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it",
+      "year": 2022,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "7c7b932ff81c",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "abstract_600": "Open-domain question answering relies on efficient passage retrieval to select candidate contexts, where traditional sparse vector space models, such as TF-IDF or BM25, are the de facto method. In this work, we show that retrieval can be practically implemented using dense representations alone, where embeddings are learned from a small number of questions and passages by a simple dual-encoder framework. When evaluated on a wide range of open-domain QA datasets, our dense retriever outperforms a strong Lucene-BM25 system largely by 9%-19% absolute in terms of top-20 passage retrieval accuracy,",
+      "year": 2020,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "68a7ec08cbfe",
+      "title": "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering",
+      "abstract_600": "Existing question answering (QA) datasets fail to train QA systems to perform complex reasoning and provide explanations for answers. We introduce HotpotQA, a new dataset with 113k Wikipedia-based question-answer pairs with four key features: (1) the questions require finding and reasoning over multiple supporting documents to answer; (2) the questions are diverse and not constrained to any pre-existing knowledge bases or knowledge schemas; (3) we provide sentence-level supporting facts required for reasoning, allowing QA systems to reason with strong supervision and explain the predictions; (",
+      "year": 2018,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "7c91b11253e7",
+      "title": "SciBERT: A Pretrained Language Model for Scientific Text",
+      "abstract_600": "Obtaining large-scale annotated data for NLP tasks in the scientific domain is challenging and expensive. We release SciBERT, a pretrained language model based on BERT (Devlin et. al., 2018) to address the lack of high-quality, large-scale labeled scientific data. SciBERT leverages unsupervised pretraining on a large multi-domain corpus of scientific publications to improve performance on downstream scientific NLP tasks. We evaluate on a suite of tasks including sequence tagging, sentence classification and dependency parsing, with datasets from a variety of scientific domains. We demonstrate",
+      "year": 2019,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "001aac3b436c",
+      "title": "The Probabilistic Relevance Framework: BM25 and Beyond",
+      "abstract_600": null,
+      "year": 2009,
+      "venue": "Foundations and Trends in Information Retrieval",
+      "origin_count": 2,
+      "outside_window": true
+    }
+  ]
+}

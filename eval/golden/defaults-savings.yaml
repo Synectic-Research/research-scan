@@ -1,0 +1,175 @@
+# RATIFIED WITH CAVEAT by the maintainer, 2026-08-19. The caveat is the sampling-bias note below, which is
+# preserved verbatim from the draft and therefore still describes the ORIGINAL eight entries. The maintainer
+# then added two more (Carroll et al 2009, Chetty et al 2014), chosen without reference to any run
+# output, bringing the set to ten: six drafted from the s3-e2e run, four independent of it.
+#
+# Every DOI here was resolved live at Crossref on 2026-08-19 (title, year and first author checked
+# against what is recorded). None was taken on trust.
+#
+# SAMPLING BIAS, STATED PLAINLY: five of these eight came out of the 2026-08-19-s3-e2e run's own
+# evidence or alternates, so that run cannot fail on them — `found_in_s3e2e: true` marks which.
+# The three marked false are canon the run did not surface in its top 25, and they are the only
+# entries currently capable of reporting a miss. A set drawn entirely from a tool's own output
+# grades that tool on a curve; if you want this set to bite, weight it toward papers you believe
+# in independently of what the scan returned.
+
+topic: defaults-savings
+status: ratified-with-caveat
+
+brief: |
+  A consumer banking app is choosing how users enter a round-up savings feature — opt-in, opt-out,
+  or forced active choice — and whether to pre-set the round-up multiplier. Needed: how large
+  default effects are on enrolment, whether they persist and change amounts actually saved rather
+  than nominal sign-ups, whether pre-set levels anchor the chosen level, whether active choice
+  recovers most of the benefit without the disengagement cost, and who is helped versus harmed.
+  Consumer product with liquid savings, not an employer pension plan.
+
+domain: behavioral
+window:
+  from: "2023-08"
+  to: null
+
+exclusions:
+  - cryptocurrency
+  - organ donation
+  - clinical trial
+
+expected:
+  - doi: 10.1257/aer.20210881
+    title: 'Default Options and Retirement Saving Dynamics'
+    why: >-
+      Choukhmane 2025. The persistence question answered directly: auto-enrolment's gains at 12
+      months attenuate by 36. A scan that misses this cannot speak to whether enrolment sticks.
+    found_in_s3e2e: true
+
+  - doi: 10.3386/w32828
+    title: 'Smaller than We Thought? The Effect of Automatic Savings Policies'
+    why: >-
+      Choi et al 2024, "Smaller than We Thought?". The strongest recent statement that the
+      default effect shrinks in the medium run. The brief explicitly asked for contradiction.
+    found_in_s3e2e: true
+
+  - doi: 10.3386/w31601
+    title: 'Automatic Enrollment with a 12% Default Contribution Rate'
+    why: >-
+      Beshears et al 2023. The only study testing an unusually high default contribution rate,
+      so it is the one that speaks to which multiplier to pre-select.
+    found_in_s3e2e: true
+
+  - doi: 10.3386/w32074
+    title: 'Employer-Based Short-Term Savings Accounts'
+    why: >-
+      Berk et al 2024, employer-based short-term savings. Closest published setting to a liquid
+      round-up pot; effect sizes here transfer better than pension estimates do.
+    found_in_s3e2e: true
+
+  - doi: 10.3386/w7682
+    title: 'The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior'
+    why: >-
+      Madrian & Shea 2000. The foundational default-effect result every later estimate argues
+      against. Expansion should reach it even though it is far outside the window.
+    found_in_s3e2e: true
+
+  - doi: 10.1086/380085
+    title: 'Save More Tomorrow: Using Behavioral Economics to Increase Employee Saving'
+    why: >-
+      Thaler & Benartzi 2004, Save More Tomorrow. The escalation design that made the preset-level
+      question a design decision rather than a parameter.
+    found_in_s3e2e: false
+
+  - doi: 10.3386/w8651
+    title: 'For Better or For Worse: Default Effects and 401(k) Savings Behavior'
+    # v0.2.1 AMENDMENT. The published version of the same work: the Choi, Laibson, Madrian &
+    # Metrick chapter in the NBER/Chicago volume *Perspectives on the Economics of Aging* (Wise,
+    # ed., 2004). Resolved live at Crossref on 2026-08-19 as a `book-chapter` titled "For Better
+    # or for Worse" in that container, with the four authors matching. The scan reaches it — at
+    # `openalex:references:f9d28a450ab0:11`, in Choukhmane's reference list — under this DOI and
+    # never under the NBER working-paper DOI, so without the alias a genuine find reads as a miss.
+    #
+    # The *volume* DOI, 10.7208/chicago/9780226903286.001.0001, is deliberately NOT listed. It is
+    # the edited monograph, a different work containing many chapters; matching a paper by its
+    # container would let any chapter of it count as this one.
+    aliases:
+      - 10.7208/chicago/9780226903286.003.0003
+    why: >-
+      Choi et al 2001, "For Better or For Worse". Establishes that defaults set the contribution
+      rate as well as participation — the anchoring mechanism the brief is worried about.
+    found_in_s3e2e: false
+
+  - doi: 10.1017/bpp.2018.43
+    title: "When and why defaults influence decisions: a meta-analysis of default effects"
+    # No SSRN alias, deliberately (S4.5). 10.2139/ssrn.2727301 — the DOI the s3-e2e run carried
+    # this paper under — resolves at Crossref to "Default-Switching: The Hidden Cost of Defaults"
+    # (2016), a DIFFERENT paper by the same authors, so listing it would count a wrong identifier
+    # as a legitimate identity. The title-fuzzy match (≥ 95) carries this entry instead: the run's
+    # record has the identical title, ratio 100.
+    why: >-
+      Jachimowicz et al 2019 meta-analysis of default effects, with moderators. The pooled effect
+      size the brief asked for instead of a single study's estimate.
+    found_in_s3e2e: true
+
+  - doi: 10.1162/qjec.2009.124.4.1639
+    title: Optimal Defaults and Active Decisions
+    aliases:
+      - 10.3386/w11074   # the NBER working paper; the same work under its preprint identity
+    why: >-
+      Carroll, Choi, Laibson, Madrian & Metrick 2009 (QJE). The paper that put required active
+      choice on the table as an alternative to a default rather than a weaker version of one —
+      which is precisely the third option the brief is deciding between.
+    found_in_s3e2e: false
+
+  - doi: 10.1093/qje/qju013
+    title: "Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts: Evidence from Denmark"
+    aliases:
+      - 10.3386/w18565   # the NBER working paper
+    why: >-
+      Chetty, Friedman, Leth-Petersen, Nielsen & Olsen 2014 (QJE). Population-scale Danish evidence
+      that automatic contributions largely crowd out saving that would have happened anyway. It is
+      the sharpest answer to whether a default changes the amount saved or only who is enrolled.
+    found_in_s3e2e: false
+
+notes: |
+  FIRST SCORING, 2026-08-19, against 2026-08-19-s3-e2e: recall@10 0.625, recall@25 0.75. Both clear
+  §14.6 (0.5 / 0.7) — and the result carries almost no information, because the split is exactly
+  along the sampling line: 6/6 of the entries drawn from that run were found, 0/2 of the entries
+  chosen independently of it were. Read the number as "this set has two live entries", not as a
+  passing grade.
+
+  The two misses were diagnosed rather than assumed (§13 asks for exactly this classification):
+    - 10.1086/380085 Save More Tomorrow — RETRIEVED and screened 3, tagged outside_window, then
+      lost downstream of screening. A ranking or cap problem, not a retrieval one.
+    - 10.3386/w8651 Choi et al 2001 — NOT retrieved at all in s3-e2e, but retrieved and screened 3
+      in the earlier s1-smoke run under a different query plan. A query-plan/source gap, and
+      evidence that recall varies run to run on the same brief.
+
+  SECOND SCORING, 2026-08-19, same run, after the maintainer added Carroll 2009 and Chetty 2014 and ratified:
+  recall@10 0.50 (5/10), recall@25 0.60 (6/10). recall@25 now FAILS §14.6's 0.7 bar, and that is
+  the set working as intended — the split is unchanged in character but far starker:
+
+      drawn from the s3-e2e run:   6/6 found
+      chosen independently of it:  0/4 found
+
+  All four misses were diagnosed against the run's own files, and they are two problems, not four:
+
+    CAP (2 of 4) — retrieved, screened 3, then discarded before reranking.
+      10.1086/380085 Save More Tomorrow (2004) and 10.1093/qje/qju013 Chetty et al 2014 both
+      screened 3, both tagged outside_window, and both lost `shortlist --max-outside-window`, which
+      defaults to 5. Twelve out-of-window candidates screened >= 2 in this run and only five could
+      pass; five of the twelve had scored 3, including "Nudges that fail" and "Enhanced active
+      choice". The reranker never saw any of them. This cap is sized for emit's 2 foundational
+      slots, not for how much canon a mature literature actually has, and it is currently the
+      single largest source of misses on this topic.
+
+    QUERY-PLAN VARIANCE (2 of 4) — not retrieved at all in s3-e2e.
+      10.3386/w8651 Choi et al 2001 and 10.1162/qjec.2009.124.4.1639 Carroll et al 2009 never
+      entered the candidate pool in this run, though both were retrieved and screened 3 in the
+      earlier s1-smoke run under a different query plan. Recall varies run to run on the same brief.
+
+  the maintainer's ratification decisions, 2026-08-19: added Carroll 2009 and Chetty 2014, both chosen without
+  reference to run output and both resolved live at Crossref; gave the Jachimowicz entry its
+  Behavioural Public Policy DOI as primary with the SSRN link demoted to `aliases`; ratified with
+  the caveat above standing.
+
+  Open for the next decision: whether `max_outside_window` at 5 is right. Raising it is a one-flag
+  change that would likely move recall@25 on this topic, which is exactly the kind of claim §16
+  says must be demonstrated on this set rather than assumed.

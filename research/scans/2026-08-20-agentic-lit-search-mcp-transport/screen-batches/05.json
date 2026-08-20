@@ -1,0 +1,257 @@
+{
+  "batch": "05",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic search design",
+      "text": "Describes or evaluates an LLM-driven system that searches scholarly literature through more than one query: query reformulation, citation-graph traversal, iterative crawling, planning or tool use."
+    },
+    {
+      "id": "C2",
+      "name": "baseline recall",
+      "text": "Reports what plain single-query or conventional keyword/dense database search recovers, as a measured baseline or ceiling that other systems are compared against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Introduces or analyses an evaluation set for literature search, deep research or scholarly QA, and says how the set was built, annotated or scored."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes or evaluates the underlying retrieval or reranking method \u2014 dense/sparse retrieval, LLM rerankers, citation-graph or hybrid retrieval \u2014 on scientific documents."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a failure to replicate, benchmark leakage or construction that inflates scores, a weak or unfairly tuned baseline, or a setting where the simple baseline is not beaten."
+    }
+  ],
+  "items": [
+    {
+      "cid": "733aed5a5da4",
+      "title": "CompRank: Efficient LLM Reranking via Token-Level Compression and Decoding-Free Scoring",
+      "abstract_600": "Large language model (LLM) rerankers have become an important component of modern retrieval and retrieval-augmented generation pipelines, but their high computational cost limits their applicability to long candidate lists. In this paper, we propose \\textbf{CompRank}, a token-efficient reranking framework that reduces redundant computation by aligning reranker design with the sparsity of ranking signals. CompRank decouples document representations from candidate order and query context, enabling reusable document-side states; applies segment-wise token compression to reduce query--document int",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f40bfc4282f7",
+      "title": "GraphMASAL: A Graph-based Multi-Agent System for Adaptive Learning",
+      "abstract_600": "The advent of Intelligent Tutoring Systems (ITSs) has marked a paradigm shift in education, enabling highly personalized learning pathways. However, true personalization requires adapting to learners' complex knowledge states (multi-source) and diverse goals (multi-sink); existing ITSs often lack the necessary structural-reasoning capability and knowledge dynamism to generate genuinely effective learning paths, and they lack scientifically rigorous validation paradigms. In this paper we propose GraphMASAL (A Graph-based Multi-Agent System for Adaptive Learning), which integrates (i) a dynamic",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8b86d6d4fc90",
+      "title": "Understanding the planning of LLM agents: A survey",
+      "abstract_600": "As Large Language Models (LLMs) have shown significant intelligence, the progress to leverage LLMs as planning modules of autonomous agents has attracted more attention. This survey provides the first systematic view of LLM-based agents planning, covering recent works aiming to improve planning ability. We provide a taxonomy of existing works on LLM-Agent planning, which can be categorized into Task Decomposition, Plan Selection, External Module, Reflection and Memory. Comprehensive analyses are conducted for each direction, and further challenges for the field of research are discussed.",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "139f36eb2158",
+      "title": "A Survey on RAG Meeting LLMs: Towards Retrieval-Augmented Large Language Models",
+      "abstract_600": "As one of the most advanced techniques in AI, Retrieval-Augmented Generation (RAG) can offer reliable and up-to-date external knowledge, providing huge convenience for numerous tasks. Particularly in the era of AI-Generated Content (AIGC), the powerful capacity of retrieval in providing additional knowledge enables RAG to assist existing generative AI in producing high-quality outputs. Recently, Large Language Models (LLMs) have demonstrated revolutionary abilities in language understanding and generation, while still facing inherent limitations such as hallucinations and out-of-date internal",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "af4e16744704",
+      "title": "Optimization Problem Solving Can Transition to Evolutionary Agentic Workflows",
+      "abstract_600": "This position paper argues that optimization problem solving can transition from expert-dependent to evolutionary agentic workflows. Traditional optimization practices rely on human specialists for problem formulation, algorithm selection, and hyperparameter tuning, creating bottlenecks that impede industrial adoption of cutting-edge methods. We contend that an evolutionary agentic workflow, powered by foundation models and evolutionary search, can autonomously navigate the optimization space, comprising problem, formulation, algorithm, and hyperparameter spaces. Through case studies in cloud",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c365b2591417",
+      "title": "WebAggregator: Enhancing Compositional Reasoning Capabilities of Deep Research Agent Foundation Models",
+      "abstract_600": "The hallmark of Deep Research agents lies in compositional reasoning, the capacity to aggregate distributed, heterogeneous information into coherent logical insights. However, current agentic systems are often retrieval-heavy but reasoning-light, where success is predominantly determined by simple entity-seeking rather than the multi-step aggregation of scattered evidence. To address this, we propose a data synthesis pipeline WebAggregator, designed to shift the agentic paradigm from retrieval-centric to compositional aggregation. Our approach first employs Proactive Explorer to collect interc",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3f16ad6b5a85",
+      "title": "ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents",
+      "abstract_600": "Deep Research (DR) is an emerging agent application that leverages large language models (LLMs) to address open-ended queries. It requires the integration of several capabilities, including multi-step reasoning, cross-document synthesis, and the generation of evidence-backed, long-form answers. Evaluating DR remains challenging because responses are lengthy and diverse, admit many valid solutions, and often depend on dynamic information sources. We introduce ResearchRubrics, a standardized benchmark for DR built with over 2,800+ hours of human labor that pairs realistic, domain-diverse prompts",
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c3e33b4eeda3",
+      "title": "A review of graph neural networks: concepts, architectures, techniques, challenges, datasets, applications, and future directions",
+      "abstract_600": "Abstract Deep learning has seen significant growth recently and is now applied to a wide range of conventional use cases, including graphs. Graph data provides relational information between elements and is a standard data format for various machine learning and deep learning tasks. Models that can learn from such inputs are essential for working with graph data effectively. This paper identifies nodes and edges within specific applications, such as text, entities, and relations, to create graph structures. Different applications may require various graph neural network (GNN) models. GNNs faci",
+      "year": 2024,
+      "venue": "Journal Of Big Data",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "477768ba25b5",
+      "title": "Guiding Retrieval Using LLM-Based Listwise Rankers",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "Lecture notes in computer science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7f76de40cae1",
+      "title": "GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs",
+      "abstract_600": "Retrieval-augmented generation (RAG) in Knowledge Graph Question Answering (KGQA) enhances the context of Large Language Models (LLMs) by incorporating information retrieved from the Knowledge Graph (KG).Most recent approaches rely on costly LLM calls to generate executable relation paths or traverse the KG, which is inefficient in complex KGQA tasks, such as those involving multi-hop or multi-entity questions.We introduce the GNN-RAG framework, which utilizes lightweight Graph Neural Networks (GNNs) for effective and efficient graph retrieval.The GNN learns to assign importance weights to nod",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "384eb609168f",
+      "title": "STRUCTSURVEY: Structured Agentic Retrieval for Automated Survey Paper Generation",
+      "abstract_600": "The rapid growth of scientific publications makes it increasingly difficult to track and synthesize research progress. While Large Language Models (LLMs) can support automated survey generation, existing methods retrieve unstructured data and require models to infer conceptual, methodological, and taxonomic relations from raw text at generation time. We introduce STRUCTSURVEY, a hierarchical multi-agent framework that shifts structural reasoning from generation to retrieval by dynamically constructing graph-based representations of entities, relations, and topical taxonomies. We evaluate STRUC",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5ae75f82b0f9",
+      "title": "MRCoder: An Efficient Context Selecting Approach for Repository-Level Code Generation",
+      "abstract_600": "Large language models (LLMs) have demonstrated strong capabilities in code generation. However, repository-level code generation remains challenging, as it requires effectively identifying and utilizing repository-specific context. While retrieval-augmented generation (RAG) incorporates relevant code snippets, it often introduces redundant context that interferes with the LLM's ability to utilize relevant information, leading to degraded generation quality and increased computational cost. Moreover, existing context selection and compression methods struggle to balance efficiency and quality,",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9b08535f6ddc",
+      "title": "A review of large language models and autonomous agents in chemistry",
+      "abstract_600": "Large language models (LLMs) have emerged as powerful tools in chemistry, significantly impacting molecule design, property prediction, and synthesis optimization. This review highlights LLM capabilities in these domains and their potential to accelerate scientific discovery through automation. We also review LLM-based autonomous agents: LLMs with a broader set of tools to interact with their surrounding environment. These agents perform diverse tasks such as paper scraping, interfacing with automated laboratories, and synthesis planning. As agents are an emerging topic, we extend the scope of",
+      "year": 2024,
+      "venue": "Chemical Science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6006ace31229",
+      "title": "Total Recall QA: A Verifiable Evaluation Suite for Deep Research Agents",
+      "abstract_600": "Deep research agents have emerged as LLM-based systems designed to perform multi-step information seeking and reasoning over large, open-domain sources to answer complex questions by synthesizing information from multiple information sources. Given the complexity of the task and despite various recent efforts, evaluation of deep research agents remains fundamentally challenging. This paper identifies a list of requirements and optional properties for evaluating deep research agents. We observe that existing benchmarks do not satisfy all identified requirements. Inspired by prior research on TR",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "96509a441620",
+      "title": "The YOLO Framework: A Comprehensive Review of Evolution, Applications, and Benchmarks in Object Detection",
+      "abstract_600": "This paper provides a comprehensive review of the YOLO (You Only Look Once) framework up to its latest version, YOLO 11. As a state-of-the-art model for object detection, YOLO has revolutionized the field by achieving an optimal balance between speed and accuracy. The review traces the evolution of YOLO variants, highlighting key architectural improvements, performance benchmarks, and applications in domains such as healthcare, autonomous vehicles, and robotics. It also evaluates the framework\u2019s strengths and limitations in practical scenarios, addressing challenges like small object detection",
+      "year": 2024,
+      "venue": "Computers",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d1e5bff8ac55",
+      "title": "Integrating Knowledge Graph with Retrieval-Augmented Generation for Vietnamese Legal Question Answering",
+      "abstract_600": "Large Language Models (LLMs) are increasingly used for question answering, but legal applications require grounded answers with article-level citations and minimal unsupported statements. This paper presents a framework that integrates an ontology-driven Knowledge Graph (KG) with Retrieval-Augmented Generation (RAG) for Vietnamese legal question answering. The method builds a document-aware KG that preserves the hierarchical structure of statutes (Document \u2192 Chapter \u2192 Section \u2192 Article \u2192 Clause \u2192 Point) and encodes semantic and cross-reference relations. Graph-aware retrieval is combined with",
+      "year": 2025,
+      "venue": "DS Journal of Digital Science and Technology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f2499f5135bc",
+      "title": "MeVer at CheckThat! 2026: Cluster-Aware Hard-Negative Mining for Multilingual Scientific Source Retrieval",
+      "abstract_600": "Identifying the scientific source behind a social media claim requires matching short, informal, and often multilingual claims against large collections of scientific publications, where semantically related papers may act as challenging distractors or false negatives during training. We present our submission to CheckThat! 2026 Task 1 on multilingual scientific-source retrieval, focusing on how hard-negative mining should be adapted to multi-stage retrieval pipelines for scientific source retrieval. We propose cluster-aware hard-negative mining strategies that exploit the semantic structure o",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fd3181bc31cd",
+      "title": "Telco-oRAG: Optimizing Retrieval-Augmented Generation for Telecom Queries via Hybrid Retrieval and Neural Routing",
+      "abstract_600": "Artificial intelligence will be one of the key pillars of the next generation of mobile networks (6G), as it is expected to provide novel added-value services and improve network performance. In this context, large language models have the potential to revolutionize the telecom landscape through intent comprehension, intelligent knowledge retrieval, coding proficiency, and cross-domain orchestration capabilities. This paper presents Telco-oRAG, an open-source Retrieval-Augmented Generation (RAG) framework optimized for answering technical questions in the telecommunications domain, with a part",
+      "year": 2025,
+      "venue": "IEEE Journal on Selected Areas in Communications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "380e3115145f",
+      "title": "Large Language Models and Empathy: Systematic Review",
+      "abstract_600": "BACKGROUND: Empathy, a fundamental aspect of human interaction, is characterized as the ability to experience another being's emotions within oneself. In health care, empathy is a fundamental for health care professionals and patients' interaction. It is a unique quality to humans that large language models (LLMs) are believed to lack. OBJECTIVE: We aimed to review the literature on the capacity of LLMs in demonstrating empathy. METHODS: We conducted a literature search on MEDLINE, Google Scholar, PsyArXiv, medRxiv, and arXiv between December 2022 and February 2024. We included English-languag",
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a9dc921f1019",
+      "title": "Graph Retrieval-Augmented Generation: A Survey",
+      "abstract_600": "Recently, Retrieval-Augmented Generation (RAG) has achieved remarkable success in addressing the challenges of Large Language Models (LLMs) without necessitating retraining. By referencing an external knowledge base, RAG refines LLM outputs, effectively mitigating issues such as ``hallucination'', lack of domain-specific knowledge, and outdated information. However, the complex structure of relationships among different entities in databases presents challenges for RAG systems. In response, GraphRAG leverages structural information across entities to enable more precise and comprehensive retri",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f238d0ce695c",
+      "title": "ScholarGenie: A Multi-Agentic System for Automated Literature Summarization and Presentation Generation",
+      "abstract_600": "ScholarGenie is a multi-agent framework designed to automate the academic literature review process by integrating paper retrieval, semantic summarization, and slide deck generation into a unified system. Based on modular agent based orchestration using CrewAI and LangChain, ScholarGenie deploys specialized agents that collectively manage document search, context-aware summarization, and automated content formatting. This architecture reduces the dependency on manual effort and accelerates research workflows, particularly in educational and time constrained environments. Using large language m",
+      "year": 2025,
+      "venue": "2025 International Conference on Advances in Next-Gen Computer Science (ICANCS)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5f7a0106d50a",
+      "title": "DeepResearch-9K: A Challenging Benchmark Dataset of Deep-Research Agent",
+      "abstract_600": "Deep-research agents are capable of executing multi-step web exploration, targeted retrieval, and sophisticated question answering. Despite their powerful capabilities, deep-research agents face two critical bottlenecks: (1) the lack of large-scale, challenging datasets with real-world difficulty, and (2) the absence of accessible, open-source frameworks for data synthesis and agent training. To bridge these gaps, we first construct DeepResearch-9K, a large-scale challenging dataset specifically designed for deep-research scenarios built from open-source multi-hop question-answering (QA) datas",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9e2c64b15b82",
+      "title": "Surface Reconstruction From Point Clouds: A Survey and a Benchmark",
+      "abstract_600": "Reconstruction of a continuous surface of two-dimensional manifold from its raw, discrete point cloud observation is a long-standing problem in computer vision and graphics research. The problem is technically ill-posed, and becomes more difficult considering that various sensing imperfections would appear in the point clouds obtained by practical depth scanning. In literature, a rich set of methods has been proposed, and reviews of existing methods are also provided. However, existing reviews are short of thorough investigations on a common benchmark. The present paper aims to review and benc",
+      "year": 2024,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "70c7ceb5697f",
+      "title": "SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration",
+      "abstract_600": "Recent advances in Tool-Integrated Large Language Models have made web search a core capability of information-seeking agents. However, as interaction histories grow, agents increasingly struggle to track task progress. When search attempts fail to yield useful evidence, current single- and multi-agent systems can become trapped in repetitive loops, wasting search budgets and ultimately compromising the quality and completeness of the final output. We introduce SearchOS, a system-level multi-agent framework that turns fragile, implicit search progress into explicit, persistent, and shared stat",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1e1ad423e713",
+      "title": "Zero-Shot Cross-Lingual Reranking with Large Language Models for Low-Resource Languages",
+      "abstract_600": "Large language models (LLMs) as listwise rerankers have shown impressive zero-shot capabilities in various passage ranking tasks.Despite their success, there is still a gap in existing literature on their effectiveness in reranking low-resource languages.To address this, we investigate how LLMs function as listwise rerankers in cross-lingual information retrieval (CLIR) systems with queries in English and passages in four African languages: Hausa, Somali, Swahili, and Yoruba.We analyze and compare the effectiveness of monolingual reranking using either query or document translations.We also ev",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

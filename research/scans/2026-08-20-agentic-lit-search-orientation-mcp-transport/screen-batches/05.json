@@ -1,0 +1,257 @@
+{
+  "batch": "05",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic system design",
+      "text": "Describes or evaluates an LLM agent that searches literature iteratively: query reformulation, multi-round search, citation-graph traversal, or crawling, rather than a single retrieval call."
+    },
+    {
+      "id": "C2",
+      "name": "baseline search recall",
+      "text": "Reports how much of a target set a single-query or Boolean database search actually retrieves, giving a recall or coverage number the agentic systems can be measured against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Says how an evaluation set for literature search or deep research was built - where the gold papers came from, how queries were sampled, what the annotation protocol was."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes the retrieval or reranking method underneath: dense or hybrid retrieval, LLM rerankers, citation-aware ranking, or evidence on which component carries the gain."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a replication failure, a weak or unbeaten baseline, benchmark leakage or construction that inflates scores, or a gain that vanishes under a different set or metric."
+    }
+  ],
+  "items": [
+    {
+      "cid": "f40bfc4282f7",
+      "title": "GraphMASAL: A Graph-based Multi-Agent System for Adaptive Learning",
+      "abstract_600": "The advent of Intelligent Tutoring Systems (ITSs) has marked a paradigm shift in education, enabling highly personalized learning pathways. However, true personalization requires adapting to learners' complex knowledge states (multi-source) and diverse goals (multi-sink); existing ITSs often lack the necessary structural-reasoning capability and knowledge dynamism to generate genuinely effective learning paths, and they lack scientifically rigorous validation paradigms. In this paper we propose GraphMASAL (A Graph-based Multi-Agent System for Adaptive Learning), which integrates (i) a dynamic",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a363ab7c7819",
+      "title": "Agent Laboratory: Using LLM Agents as Research Assistants",
+      "abstract_600": "Historically, scientific discovery has been a lengthy and costly process, demanding substantial time and resources from initial conception to final results. To accelerate scientific discovery, reduce research costs, and improve research quality, we introduce Agent Laboratory, an autonomous LLM-based framework capable of completing the entire research process. This framework accepts a human-provided research idea and progresses through three stages--literature review, experimentation, and report writing to produce comprehensive research outputs, including a code repository and a research report",
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "0dae01787769",
+      "title": "A Survey of Large Language Models: Evolution, Architectures, Adaptation, Benchmarking, Applications, Challenges, and Societal Implications",
+      "abstract_600": "This survey provides an in-depth review of large language models (LLMs), highlighting the significant paradigm shift they represent in artificial intelligence. Our purpose is to consolidate state-of-the-art advances in LLM design, training, adaptation, evaluation, and application for both researchers and practitioners. To accomplish this, we trace the evolution of language models and describe core approaches, including parameter-efficient fine-tuning (PEFT). The methodology involves a thorough survey of real-world LLM applications across the scientific, engineering, healthcare, and creative se",
+      "year": 2025,
+      "venue": "Electronics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "42d5dbe65cf3",
+      "title": "The searchbuildR shiny app: A new implementation of the objective approach for search strategy development in systematic reviews",
+      "abstract_600": "One of the main tasks in information retrieval is the development of Boolean search strategies for systematic searches in bibliographic databases. This includes the identification of free\u2010text terms and controlled vocabulary. IQWiG has previously implemented its objective approach for search strategy development using a fee\u2010based text analysis software. However, this implementation is not fully automated, due to a lack of technical options. The aim of our project was to develop a text analysis tool for the development of Boolean search strategies using R.",
+      "year": 2024,
+      "venue": "Cochrane evidence synthesis and methods",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "af4e16744704",
+      "title": "Optimization Problem Solving Can Transition to Evolutionary Agentic Workflows",
+      "abstract_600": "This position paper argues that optimization problem solving can transition from expert-dependent to evolutionary agentic workflows. Traditional optimization practices rely on human specialists for problem formulation, algorithm selection, and hyperparameter tuning, creating bottlenecks that impede industrial adoption of cutting-edge methods. We contend that an evolutionary agentic workflow, powered by foundation models and evolutionary search, can autonomously navigate the optimization space, comprising problem, formulation, algorithm, and hyperparameter spaces. Through case studies in cloud",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c365b2591417",
+      "title": "WebAggregator: Enhancing Compositional Reasoning Capabilities of Deep Research Agent Foundation Models",
+      "abstract_600": "The hallmark of Deep Research agents lies in compositional reasoning, the capacity to aggregate distributed, heterogeneous information into coherent logical insights. However, current agentic systems are often retrieval-heavy but reasoning-light, where success is predominantly determined by simple entity-seeking rather than the multi-step aggregation of scattered evidence. To address this, we propose a data synthesis pipeline WebAggregator, designed to shift the agentic paradigm from retrieval-centric to compositional aggregation. Our approach first employs Proactive Explorer to collect interc",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "19d929648405",
+      "title": "IterCQR: Iterative Conversational Query Reformulation with Retrieval Guidance",
+      "abstract_600": "Yunah Jang, Kang-il Lee, Hyunkyung Bae, Hwanhee Lee, Kyomin Jung. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "edda07888e95",
+      "title": "Seven Failure Points When Engineering a Retrieval Augmented Generation System",
+      "abstract_600": "Software engineers are increasingly adding semantic search capabilities to applications using a strategy known as Retrieval Augmented Generation (RAG). A RAG system involves finding documents that semantically match a query and then passing the documents to a large language model (LLM) such as ChatGPT to extract the right answer using an LLM. RAG systems aim to: a) reduce the problem of hallucinated responses from LLMs, b) link sources/references to generated responses, and c) remove the need for annotating documents with meta-data. However, RAG systems suffer from limitations inherent to info",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7f76de40cae1",
+      "title": "GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs",
+      "abstract_600": "Retrieval-augmented generation (RAG) in Knowledge Graph Question Answering (KGQA) enhances the context of Large Language Models (LLMs) by incorporating information retrieved from the Knowledge Graph (KG).Most recent approaches rely on costly LLM calls to generate executable relation paths or traverse the KG, which is inefficient in complex KGQA tasks, such as those involving multi-hop or multi-entity questions.We introduce the GNN-RAG framework, which utilizes lightweight Graph Neural Networks (GNNs) for effective and efficient graph retrieval.The GNN learns to assign importance weights to nod",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e9ee4f1d12b6",
+      "title": "Structure Liberates: How Constrained Sensemaking Produces More Novel Research Output",
+      "abstract_600": "Scientific discovery is an extended process of ideation--surveying prior work, forming hypotheses, and refining reasoning--yet existing approaches treat this phase as a brief preamble despite its central role in research. We introduce SCISENSE, a sensemaking-grounded framework that operationalizes ideation as a structured sequence of eight cognitive stages (Pirolli \\& Card, 2005). We construct SCISENSE-Traj, a 100K-scale dataset of citation-conditioned research trajectories in two modes: Target, where an LLM reconstructs the ideation path leading to a known paper from its cited works, and Infe",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fe7b87771f9d",
+      "title": "EvoBrowseComp: Benchmarking Search Agents on Evolving Knowledge",
+      "abstract_600": "Search Agents -- large language models augmented with search tools -- have intensified the need for future-proof evaluation benchmarks. Existing benchmarks such as BrowseComp rely on static knowledge, making them vulnerable to test-set contamination and parametric memorization. Consequently, models can achieve high scores through fact recall rather than genuine retrieval, obscuring true browsing competence via reasoning shortcuts. In this paper, we introduce EvoBrowseComp, an evolving benchmark of 400 English and 400 Chinese contamination-free complex questions synthesized via live-web travers",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0959fbca75b7",
+      "title": "Investigation into Application of AI and Telemedicine in Rural Communities: A Systematic Literature Review",
+      "abstract_600": "Recent advances in artificial intelligence (AI) and telemedicine are transforming healthcare delivery, particularly in rural and underserved communities. BACKGROUND/OBJECTIVES: The purpose of this systematic review is to explore the use of AI-driven diagnostic tools and telemedicine platforms to identify underlying themes (constructs) in the literature across multiple research studies. METHOD: The research team conducted an extensive review of studies and articles using multiple research databases that aimed to identify consistent themes and patterns across the literature. RESULTS: Five underl",
+      "year": 2025,
+      "venue": "Healthcare",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9b08535f6ddc",
+      "title": "A review of large language models and autonomous agents in chemistry",
+      "abstract_600": "Large language models (LLMs) have emerged as powerful tools in chemistry, significantly impacting molecule design, property prediction, and synthesis optimization. This review highlights LLM capabilities in these domains and their potential to accelerate scientific discovery through automation. We also review LLM-based autonomous agents: LLMs with a broader set of tools to interact with their surrounding environment. These agents perform diverse tasks such as paper scraping, interfacing with automated laboratories, and synthesis planning. As agents are an emerging topic, we extend the scope of",
+      "year": 2024,
+      "venue": "Chemical Science",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "6006ace31229",
+      "title": "Total Recall QA: A Verifiable Evaluation Suite for Deep Research Agents",
+      "abstract_600": "Deep research agents have emerged as LLM-based systems designed to perform multi-step information seeking and reasoning over large, open-domain sources to answer complex questions by synthesizing information from multiple information sources. Given the complexity of the task and despite various recent efforts, evaluation of deep research agents remains fundamentally challenging. This paper identifies a list of requirements and optional properties for evaluating deep research agents. We observe that existing benchmarks do not satisfy all identified requirements. Inspired by prior research on TR",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1d641c98219b",
+      "title": "Single-Turn LLM Reformulation Powered Multi-Stage Hybrid Re-Ranking for Tip-of-the-Tongue Known-Item Retrieval",
+      "abstract_600": "Retrieving known items from vague descriptions, Tip-of-the-Tongue (ToT) retrieval, remains a significant challenge. We propose using a single call to a generic 8B-parameter LLM for query reformulation, bridging the gap between ill-formed ToT queries and specific information needs. This method is particularly effective where standard Pseudo-Relevance Feedback fails due to poor initial recall. Crucially, our LLM is not fine-tuned for ToT or specific domains, demonstrating that gains stem from our prompting strategy rather than model specialization. Rewritten queries feed a multi-stage pipeline:",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1191eb1f7bc7",
+      "title": "Heterogeneous hypergraph learning for literature retrieval based on citation intents",
+      "abstract_600": "Experimental results show that CitenGL outperforms most existing neural ranking models that only consider textual information, which illustrates the effectiveness of integrating citation intent information with textual information.",
+      "year": 2024,
+      "venue": "Scientometrics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "fd3181bc31cd",
+      "title": "Telco-oRAG: Optimizing Retrieval-Augmented Generation for Telecom Queries via Hybrid Retrieval and Neural Routing",
+      "abstract_600": "Artificial intelligence will be one of the key pillars of the next generation of mobile networks (6G), as it is expected to provide novel added-value services and improve network performance. In this context, large language models have the potential to revolutionize the telecom landscape through intent comprehension, intelligent knowledge retrieval, coding proficiency, and cross-domain orchestration capabilities. This paper presents Telco-oRAG, an open-source Retrieval-Augmented Generation (RAG) framework optimized for answering technical questions in the telecommunications domain, with a part",
+      "year": 2025,
+      "venue": "IEEE Journal on Selected Areas in Communications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "380e3115145f",
+      "title": "Large Language Models and Empathy: Systematic Review",
+      "abstract_600": "BACKGROUND: Empathy, a fundamental aspect of human interaction, is characterized as the ability to experience another being's emotions within oneself. In health care, empathy is a fundamental for health care professionals and patients' interaction. It is a unique quality to humans that large language models (LLMs) are believed to lack. OBJECTIVE: We aimed to review the literature on the capacity of LLMs in demonstrating empathy. METHODS: We conducted a literature search on MEDLINE, Google Scholar, PsyArXiv, medRxiv, and arXiv between December 2022 and February 2024. We included English-languag",
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a035bbefc8f8",
+      "title": "A survey on training challenges in generative adversarial networks for biomedical image analysis",
+      "abstract_600": "Abstract In biomedical image analysis, the applicability of deep learning methods is directly impacted by the quantity of image data available. This is due to deep learning models requiring large image datasets to provide high-level performance. Generative Adversarial Networks (GANs) have been widely utilized to address data limitations through the generation of synthetic biomedical images. GANs consist of two models. The generator, a model that learns how to produce synthetic images based on the feedback it receives. The discriminator, a model that classifies an image as synthetic or real and",
+      "year": 2024,
+      "venue": "Artificial Intelligence Review",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "86a477332e3d",
+      "title": "Examining the Reproducibility of Search Strategies in Systematic Reviews and Meta-Analyses in Top-Impact Dermatology Journals",
+      "abstract_600": "Introduction Systematic reviews depend on thorough search strategies, yet reproducibility remains inconsistent in medicine and surgery journals. It is unknown how dermatology journals are affected. In our cross-sectional study, we aim to analyze systematic reviews and meta-analyses in dermatology journals to determine factors influencing the inclusion of reproducible search strategies. Understanding these aspects will enhance the transparency and reliability of published studies. Methods We identified the top five dermatology journals using Google Scholar Metrics h-5 index. On January 12th, 20",
+      "year": 2024,
+      "venue": "Clinical Dermatology and Surgery",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f238d0ce695c",
+      "title": "ScholarGenie: A Multi-Agentic System for Automated Literature Summarization and Presentation Generation",
+      "abstract_600": "ScholarGenie is a multi-agent framework designed to automate the academic literature review process by integrating paper retrieval, semantic summarization, and slide deck generation into a unified system. Based on modular agent based orchestration using CrewAI and LangChain, ScholarGenie deploys specialized agents that collectively manage document search, context-aware summarization, and automated content formatting. This architecture reduces the dependency on manual effort and accelerates research workflows, particularly in educational and time constrained environments. Using large language m",
+      "year": 2025,
+      "venue": "2025 International Conference on Advances in Next-Gen Computer Science (ICANCS)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5f7a0106d50a",
+      "title": "DeepResearch-9K: A Challenging Benchmark Dataset of Deep-Research Agent",
+      "abstract_600": "Deep-research agents are capable of executing multi-step web exploration, targeted retrieval, and sophisticated question answering. Despite their powerful capabilities, deep-research agents face two critical bottlenecks: (1) the lack of large-scale, challenging datasets with real-world difficulty, and (2) the absence of accessible, open-source frameworks for data synthesis and agent training. To bridge these gaps, we first construct DeepResearch-9K, a large-scale challenging dataset specifically designed for deep-research scenarios built from open-source multi-hop question-answering (QA) datas",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9de59164c791",
+      "title": "On the impact of retrieved content representations in RAG Pipelines",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) supplements a language model's input with retrieved documents, yet most RAG pipelines inherit retrieval components designed for human readers. How retrieved content should be represented when the consumer is a large language model (LLM) rather than a human is less well understood. Recent work has proposed transformations of retrieved content and identified properties that affect generation, but each examines a single transformation or property in isolation, leaving open which features of a document's representation matter most. We address this with a contro",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a9dc921f1019",
+      "title": "Graph Retrieval-Augmented Generation: A Survey",
+      "abstract_600": "Recently, Retrieval-Augmented Generation (RAG) has achieved remarkable success in addressing the challenges of Large Language Models (LLMs) without necessitating retraining. By referencing an external knowledge base, RAG refines LLM outputs, effectively mitigating issues such as ``hallucination'', lack of domain-specific knowledge, and outdated information. However, the complex structure of relationships among different entities in databases presents challenges for RAG systems. In response, GraphRAG leverages structural information across entities to enable more precise and comprehensive retri",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4db7be536e1d",
+      "title": "Hierarchical Resolution Transformers: A Wavelet-Inspired Architecture for Multi-Scale Language Understanding",
+      "abstract_600": "Transformer architectures have achieved state-of-the-art performance across natural language tasks, yet they fundamentally misrepresent the hierarchical nature of human language by processing text as flat token sequences. This results in quadratic computational cost, weak computational cost, weak compositional generalization, and inadequate discourse-level modeling. We propose Hierarchical Resolution Transformer (HRT), a novel wavelet-inspired neural architecture that processes language simultaneously across multiple resolutions, from characters to discourse-level units. HRT constructs a multi",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

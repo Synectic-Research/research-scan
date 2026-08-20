@@ -1,0 +1,257 @@
+{
+  "batch": "x03",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic system design",
+      "text": "Describes or evaluates an LLM agent that searches literature iteratively: query reformulation, multi-round search, citation-graph traversal, or crawling, rather than a single retrieval call."
+    },
+    {
+      "id": "C2",
+      "name": "baseline search recall",
+      "text": "Reports how much of a target set a single-query or Boolean database search actually retrieves, giving a recall or coverage number the agentic systems can be measured against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Says how an evaluation set for literature search or deep research was built - where the gold papers came from, how queries were sampled, what the annotation protocol was."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes the retrieval or reranking method underneath: dense or hybrid retrieval, LLM rerankers, citation-aware ranking, or evidence on which component carries the gain."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a replication failure, a weak or unbeaten baseline, benchmark leakage or construction that inflates scores, or a gain that vanishes under a different set or metric."
+    }
+  ],
+  "items": [
+    {
+      "cid": "ead4d9a4d11a",
+      "title": "BioRAG: A RAG-LLM Framework for Biological Question Reasoning",
+      "abstract_600": "The question-answering system for Life science research, which is characterized by the rapid pace of discovery, evolving insights, and complex interactions among knowledge entities, presents unique challenges in maintaining a comprehensive knowledge warehouse and accurate information retrieval. To address these issues, we introduce BioRAG, a novel Retrieval-Augmented Generation (RAG) with the Large Language Models (LLMs) framework. Our approach starts with parsing, indexing, and segmenting an extensive collection of 22 million scientific papers as the basic knowledge, followed by training a sp",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d0140fdca84f",
+      "title": "LLMs as Research Tools: A Large Scale Survey of Researchers' Usage and Perceptions",
+      "abstract_600": "The rise of large language models (LLMs) has led many researchers to consider their usage for scientific work. Some have found benefits using LLMs to augment or automate aspects of their research pipeline, while others have urged caution due to risks and ethical concerns. Yet little work has sought to quantify and characterize how researchers use LLMs and why. We present the first large-scale survey of 816 verified research article authors to understand how the research community leverages and perceives LLMs as research tools. We examine participants' self-reported LLM usage, finding that 81%",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1ff1527fccd5",
+      "title": "LitLLM: A Toolkit for Scientific Literature Review",
+      "abstract_600": "Conducting literature reviews for scientific papers is essential for understanding research, its limitations, and building on existing work. It is a tedious task which makes an automatic literature review generator appealing. Unfortunately, many existing works that generate such reviews using Large Language Models (LLMs) have significant limitations. They tend to hallucinate-generate non-factual information-and ignore the latest research they have not been trained on. To address these limitations, we propose a toolkit that operates on Retrieval Augmented Generation (RAG) principles, specialize",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7c94cdc74170",
+      "title": "HALoGEN: Fantastic LLM Hallucinations and Where to Find Them",
+      "abstract_600": "Despite their impressive ability to generate high-quality and fluent text, generative large language models (LLMs) also produce hallucinations: statements that are misaligned with established world knowledge or provided input context. However, measuring hallucination can be challenging, as having humans verify model generations on-the-fly is both expensive and time-consuming. In this work, we release HALoGEN, a comprehensive hallucination benchmark consisting of: (1) 10,923 prompts for generative models spanning nine domains including programming, scientific attribution, and summarization, and",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ac4a6d6dee90",
+      "title": "Attribute First, then Generate: Locally-attributable Grounded Text Generation",
+      "abstract_600": "Recent efforts to address hallucinations in Large Language Models (LLMs) have focused on attributed text generation, which supplements generated texts with citations of supporting sources for post-generation fact-checking and corrections. Yet, these citations often point to entire documents or paragraphs, burdening users with extensive verification work. In this paper, we introduce a locally-attributable text generation approach, prioritizing concise attributions. Our method, named\"Attribute First, then Generate\", breaks down the conventional end-to-end generation process into three intuitive",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b60436ddd394",
+      "title": "When to use Graphs in RAG: A Comprehensive Analysis for Graph Retrieval-Augmented Generation",
+      "abstract_600": "Graph retrieval-augmented generation (GraphRAG) has emerged as a powerful paradigm for enhancing large language models (LLMs) with external knowledge. It leverages graphs to model the hierarchical structure between specific concepts, enabling more coherent and effective knowledge retrieval for accurate reasoning.Despite its conceptual promise, recent studies report that GraphRAG frequently underperforms vanilla RAG on many real-world tasks. This raises a critical question: Is GraphRAG really effective, and in which scenarios do graph structures provide measurable benefits for RAG systems? To a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "07e2efcd7204",
+      "title": "Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents",
+      "abstract_600": "With the remarkable advancements of large language models (LLMs), LLM-based agents have become a research hotspot in human-computer interaction. However, there is a scarcity of benchmarks available for LLM-based mobile agents. Benchmarking these agents generally faces three main challenges: (1) The inefficiency of UI-only operations imposes limitations to task evaluation. (2) Specific instructions within a singular application lack adequacy for assessing the multi-dimensional reasoning and decision-making capacities of LLM mobile agents. (3) Current evaluation metrics are insufficient to accur",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1c23572cc886",
+      "title": "ScaleMCP: Dynamic and Auto-Synchronizing Model Context Protocol Tools for LLM Agents",
+      "abstract_600": "Recent advancements in Large Language Models (LLMs) and the introduction of the Model Context Protocol (MCP) have significantly expanded LLM agents' capability to interact dynamically with external tools and APIs. However, existing tool selection frameworks do not integrate MCP servers, instead relying heavily on error-prone manual updates to monolithic local tool repositories, leading to duplication, inconsistencies, and inefficiencies. Additionally, current approaches abstract tool selection before the LLM agent is invoked, limiting its autonomy and hindering dynamic re-querying capabilities",
+      "year": 2025,
+      "venue": "International Joint Conference on Computational Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1c546512efc3",
+      "title": "Language models for data extraction and risk of bias assessment in complementary medicine",
+      "abstract_600": "Large language models (LLMs) have the potential to enhance evidence synthesis efficiency and accuracy. This study assessed LLM-only and LLM-assisted methods in data extraction and risk of bias assessment for 107 trials on complementary medicine. Moonshot-v1-128k and Claude-3.5-sonnet achieved high accuracy (\u226595%), with LLM-assisted methods performing better (\u226597%). LLM-assisted methods significantly reduced processing time (14.7 and 5.9\u2009min vs. 86.9 and 10.4\u2009min for conventional methods). These findings highlight LLMs\u2019 potential when integrated with human expertise.",
+      "year": 2025,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ae44d33e3a32",
+      "title": "Retrieval-Augmented Retrieval: Large Language Models are Strong Zero-Shot Retriever",
+      "abstract_600": ",",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f569d3854f92",
+      "title": "An Empirical Study on Reinforcement Learning for Reasoning-Search Interleaved LLM Agents",
+      "abstract_600": "Reinforcement learning (RL) has demonstrated strong potential in training large language models (LLMs) capable of complex reasoning for real-world problem solving. More recently, RL has been leveraged to create sophisticated LLM-based search agents that adeptly combine reasoning with search engine use. While the use of RL for training search agents is promising, the optimal design of such agents remains not fully understood. In particular, key factors -- such as (1) reward formulation, (2) the choice and characteristics of the underlying LLM, and (3) the role of the search engine in the RL pro",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1ad8b6f40c5a",
+      "title": "Assessing Judging Bias in Large Reasoning Models: An Empirical Study",
+      "abstract_600": "Large Reasoning Models (LRMs) like DeepSeek-R1 and OpenAI-o1 have demonstrated remarkable reasoning capabilities, raising important questions about their biases in LLM-as-a-judge settings. We present a comprehensive benchmark comparing judging biases between LLMs and LRMs across both subjective preference-alignment datasets and objective fact-based datasets. Through investigation of bandwagon, authority, position, and distraction biases, we uncover four key findings: (1) despite their advanced reasoning capabilities, LRMs remain susceptible to the above biases; (2) LRMs demonstrate better robu",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "68781f58df4c",
+      "title": "AGILE: A Novel Reinforcement Learning Framework of LLM Agents",
+      "abstract_600": "We introduce a novel reinforcement learning framework of LLM agents named AGILE (AGent that Interacts and Learns from Environments) designed to perform complex conversational tasks with users, leveraging LLMs, memory, tools, and interactions with experts. The agent possesses capabilities beyond conversation, including reflection, tool usage, and expert consultation. We formulate the construction of such an LLM agent as a reinforcement learning (RL) problem, in which the LLM serves as the policy model. We fine-tune the LLM using labeled data of actions and the PPO algorithm. We focus on questio",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "98bb2257ebed",
+      "title": "Exploring the Individuality and Collectivity of Intents behind Interactions for Graph Collaborative Filtering",
+      "abstract_600": "Intent modeling has attracted widespread attention in recommender systems. As the core motivation behind user selection of items, intent is crucial for elucidating recommendation results. The current mainstream modeling method is to abstract the intent into unknowable but learnable shared or non-shared parameters. Despite considerable progress, we argue that it still confronts the following challenges: firstly, these methods only capture the coarse-grained aspects of intent, ignoring the fact that user-item interactions will be affected by collective and individual factors (e.g., a user may ch",
+      "year": 2024,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b9308b11def2",
+      "title": "Time Series Forecasting as Reasoning: A Slow-Thinking Approach with Reinforced LLMs",
+      "abstract_600": "To advance time series forecasting (TSF), various methods have been proposed to improve prediction accuracy, evolving from statistical techniques to data-driven deep learning architectures. Despite their effectiveness, most existing methods still adhere to a fast thinking paradigm-relying on extracting historical patterns and mapping them to future values as their core modeling philosophy, lacking an explicit thinking process that incorporates intermediate time series reasoning. Meanwhile, emerging slow-thinking LLMs (e.g., OpenAI-o1) have shown remarkable multi-step reasoning capabilities, of",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3344c3241a27",
+      "title": "REAR: A Relevance-Aware Retrieval-Augmented Framework for Open-Domain Question Answering",
+      "abstract_600": "Considering the limited internal parametric knowledge, retrieval-augmented generation (RAG) has been widely used to extend the knowledge scope of large language models (LLMs). Despite the extensive efforts on RAG research, in existing methods, LLMs cannot precisely assess the relevance of retrieved documents, thus likely leading to misleading or even incorrect utilization of external knowledge (i.e., retrieved documents). To address this issue, in this paper, we propose REAR, a RElevance-Aware Retrieval-augmented approach for open-domain question answering (QA). As the key motivation, we aim t",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "27ed8ae2ff8d",
+      "title": "CiteME: Can Language Models Accurately Cite Scientific Claims?",
+      "abstract_600": "Thousands of new scientific papers are published each month. Such information overload complicates researcher efforts to stay current with the state-of-the-art as well as to verify and correctly attribute claims. We pose the following research question: Given a text excerpt referencing a paper, could an LM act as a research assistant to correctly identify the referenced paper? We advance efforts to answer this question by building a benchmark that evaluates the abilities of LMs in citation attribution. Our benchmark, CiteME, consists of text excerpts from recent machine learning papers, each r",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ff6b39ce2167",
+      "title": "Tevatron 2.0: Unified Document Retrieval Toolkit across Scale, Language, and Modality",
+      "abstract_600": "Recent advancements in large language models (LLMs) have driven interest in billion-scale retrieval models with strong generalization across retrieval tasks and languages. Additionally, progress in large vision-language models has created new opportunities for multimodal retrieval. In response, we have updated the Tevatron toolkit, introducing a unified pipeline that enables researchers to explore retriever models at different scales, across multiple languages, and with various modalities. This demo paper highlights the toolkit's key features, bridging academia and industry by supporting effic",
+      "year": 2025,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d599ba4a2456",
+      "title": "Robust Planning with LLM-Modulo Framework: Case Study in Travel Planning",
+      "abstract_600": "As the applicability of Large Language Models (LLMs) extends beyond traditional text processing tasks, there is a burgeoning interest in their potential to excel in planning and reasoning assignments, realms traditionally reserved for System 2 cognitive competencies. Despite their perceived versatility, the research community is still unraveling effective strategies to harness these models in such complex domains. The recent discourse introduced by the paper on LLM Modulo marks a significant stride, proposing a conceptual framework that enhances the integration of LLMs into diverse planning an",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "19fe0a902f5b",
+      "title": "Open Technical Problems in Open-Weight AI Model Risk Management",
+      "abstract_600": "Frontier AI models with openly available weights are steadily becoming more powerful and widely adopted. However, compared to proprietary models, open-weight models pose different opportunities and challenges for effective risk management. For example, they allow for more open research and testing. However, managing their risks is also challenging because they can be modified arbitrarily, used without oversight, and spread irreversibly. Currently, there is limited research on safety tooling specific to open-weight models. Addressing these gaps will be key to both realizing their benefits and m",
+      "year": 2026,
+      "venue": "Trans. Mach. Learn. Res.",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4b6cd63d6c59",
+      "title": "Agent-R1: A Unified and Modular Framework for Agentic Reinforcement Learning",
+      "abstract_600": "Large language models (LLMs) have rapidly evolved from single-turn text generators into the foundation of increasingly capable agents. As these agents take on more complex reasoning, decision making, tool use, and long-horizon tasks, reinforcement learning (RL) is becoming increasingly important for shaping their behavior. This shift is especially visible in agentic RL, where models must interact with tools and environments across multiple rounds rather than produce a single standalone response. In this regime, the usual view of a trajectory as one ever-growing token sequence becomes increasin",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c39f962ee42e",
+      "title": "HelloBench: Evaluating Long Text Generation Capabilities of Large Language Models",
+      "abstract_600": "In recent years, Large Language Models (LLMs) have demonstrated remarkable capabilities in various tasks (e.g., long-context understanding), and many benchmarks have been proposed. However, we observe that long text generation capabilities are not well investigated. Therefore, we introduce the Hierarchical Long Text Generation Benchmark (HelloBench), a comprehensive, in-the-wild, and open-ended benchmark to evaluate LLMs' performance in generating long text. Based on Bloom's Taxonomy, HelloBench categorizes long text generation tasks into five subtasks: open-ended QA, summarization, chat, text",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a98239764b62",
+      "title": "From Clicks to Carbon: The Environmental Toll of Recommender Systems",
+      "abstract_600": "As global warming soars, the need to assess the environmental impact of research is becoming increasingly urgent. Despite this, few recommender systems research papers address their environmental impact. In this study, we estimate the environmental impact of recommender systems research by reproducing typical experimental pipelines. Our analysis spans 79 full papers from the 2013 and 2023 ACM RecSys conferences, comparing traditional \u201cgood old-fashioned AI\u2019\u2019 algorithms with modern deep learning algorithms. We designed and reproduced representative experimental pipelines for both years, measuri",
+      "year": 2024,
+      "venue": "ACM Conference on Recommender Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "69a36957c2d3",
+      "title": "System for systematic literature review using multiple AI agents: Concept and an empirical evaluation",
+      "abstract_600": "Systematic literature review (SLR) is foundational to evidence-based research, enabling scholars to identify, classify, and synthesize existing studies to address specific research questions. Conducting an SLR is, however, largely a manual process. In recent years, researchers have made significant progress in automating portions of the SLR pipeline to reduce the effort and time required for high-quality reviews; nevertheless, there remains a lack of AI-agent-based systems that automate the entire SLR workflow. To this end, we introduce a novel multi-AI-agent system designed to fully automate",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "26710c71ba04",
+      "title": "DRAMA: Diverse Augmentation from Large Language Models to Smaller Dense Retrievers",
+      "abstract_600": "Large language models (LLMs) have demonstrated strong effectiveness and robustness while fine-tuned as dense retrievers. However, their large parameter size brings significant inference time computational challenges, including high encoding costs for large-scale corpora and increased query latency, limiting their practical deployment. While smaller retrievers offer better efficiency, they often fail to generalize effectively with limited supervised fine-tuning data. In this work, we introduce DRAMA, a training framework that leverages LLMs to train smaller generalizable dense retrievers. In pa",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

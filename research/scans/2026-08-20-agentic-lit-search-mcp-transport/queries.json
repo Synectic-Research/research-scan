@@ -1,0 +1,100 @@
+{
+  "brief_summary": "Purpose: orient. A map of what a newcomer must know about agentic LLM systems for finding scientific literature, 2024 onward. Three things are in scope: the system designs themselves (an LLM driving search, reformulating its own queries, walking the citation graph, crawling iteratively), the benchmarks these systems are scored on and how those evaluation sets were built, and the retrieval and reranking machinery underneath. Four questions organise the map: how much a single database query already recovers, which agentic move actually carries the reported gain, what a benchmark's construction lets its numbers support, and where reported gains do not survive a different set, metric or replication. The team already believes agentic designs beat single-query search and that the reported gains are real, so the scan should reach hardest for the work that pushes against that. The evidence is computer-science: CS venues and preprint servers, not the applied fields these systems are pointed at.",
+  "domain": "cs",
+  "window": {
+    "from": "2024-01",
+    "to": null
+  },
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "agentic search design",
+      "text": "Describes or evaluates an LLM-driven system that searches scholarly literature through more than one query: query reformulation, citation-graph traversal, iterative crawling, planning or tool use."
+    },
+    {
+      "id": "C2",
+      "name": "baseline recall",
+      "text": "Reports what plain single-query or conventional keyword/dense database search recovers, as a measured baseline or ceiling that other systems are compared against."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Introduces or analyses an evaluation set for literature search, deep research or scholarly QA, and says how the set was built, annotated or scored."
+    },
+    {
+      "id": "C4",
+      "name": "retrieval and reranking",
+      "text": "Contributes or evaluates the underlying retrieval or reranking method \u2014 dense/sparse retrieval, LLM rerankers, citation-graph or hybrid retrieval \u2014 on scientific documents."
+    },
+    {
+      "id": "C5",
+      "name": "gains that fail",
+      "text": "Reports a failure to replicate, benchmark leakage or construction that inflates scores, a weak or unfairly tuned baseline, or a setting where the simple baseline is not beaten."
+    }
+  ],
+  "must_not": [
+    "drug discovery",
+    "patent search",
+    "patent retrieval"
+  ],
+  "queries": [
+    {
+      "id": "Q1",
+      "type": "direct",
+      "text": "agentic academic paper search",
+      "mode": "semantic",
+      "target_criterion": "C1"
+    },
+    {
+      "id": "Q2",
+      "type": "terminology",
+      "text": "deep research agent",
+      "mode": "semantic",
+      "target_criterion": "C1"
+    },
+    {
+      "id": "Q3",
+      "type": "emerging",
+      "text": "deep research benchmark",
+      "mode": "semantic",
+      "target_criterion": "C3"
+    },
+    {
+      "id": "Q4",
+      "type": "method",
+      "text": "citation graph retrieval",
+      "mode": "semantic",
+      "target_criterion": "C4"
+    },
+    {
+      "id": "Q5",
+      "type": "method",
+      "text": "LLM listwise reranking",
+      "mode": "semantic",
+      "target_criterion": "C4"
+    },
+    {
+      "id": "Q6",
+      "type": "contradictory",
+      "text": "weak baselines neural retrieval",
+      "mode": "semantic",
+      "target_criterion": "C5"
+    },
+    {
+      "id": "Q7",
+      "type": "review",
+      "text": "(\"survey\" OR \"systematic review\") AND (\"LLM agent\" OR \"agentic\") AND (\"literature search\" OR \"information retrieval\")",
+      "mode": "keyword",
+      "target_criterion": null
+    },
+    {
+      "id": "Q8",
+      "type": "review",
+      "text": "(\"survey\" OR \"review\") AND (\"benchmark\" OR \"evaluation\") AND (\"deep research\" OR \"search agent\" OR \"retrieval augmented generation\")",
+      "mode": "keyword",
+      "target_criterion": "C3"
+    }
+  ],
+  "anchors": [],
+  "round2": []
+}

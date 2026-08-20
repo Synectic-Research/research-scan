@@ -1,0 +1,22 @@
+{"ts": "2026-08-20T11:18:21+00:00", "stage": "retrieval-r2", "event": "enter"}
+{"ts": "2026-08-20T11:18:21+00:00", "stage": "retrieval-r2", "event": "plan", "domain": "cs", "window": ["2024-01-01", "2026-08-20"], "sources": ["openalex", "s2", "arxiv"], "queries": 4, "per_query": 20, "max_candidates": 250, "profile": "quick"}
+{"ts": "2026-08-20T11:18:23+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "G1", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:25+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "G1", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:25+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "arxiv", "query_id": "G1", "auth": "anon", "hits": 9}
+{"ts": "2026-08-20T11:18:26+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "G2", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:28+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "G2", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:28+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "arxiv", "query_id": "G2", "auth": "anon", "hits": 4}
+{"ts": "2026-08-20T11:18:29+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "R1", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:33+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "R1", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:33+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "arxiv", "query_id": "R1", "auth": "anon", "hits": 20}
+{"ts": "2026-08-20T11:18:34+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "R2", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:36+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "R2", "auth": "key", "hits": 20}
+{"ts": "2026-08-20T11:18:37+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "arxiv", "query_id": "R2", "auth": "anon", "hits": 20}
+{"ts": "2026-08-20T11:18:37+00:00", "stage": "retrieval-r2", "event": "fan_out", "hits": 213, "per_query": {"G1": 49, "G2": 44, "R1": 60, "R2": 60}}
+{"ts": "2026-08-20T11:18:37+00:00", "stage": "retrieval-r2", "event": "dedup", "kept": 198, "merged": {"arxiv": 3, "doi": 11, "pmid": 1}}
+{"ts": "2026-08-20T11:18:37+00:00", "stage": "retrieval-r2", "event": "filter", "kept": 195, "dropped": {"retracted": 0, "must_not": 2, "type": 1, "window": 0, "preprint": 0, "cap": 0}}
+{"ts": "2026-08-20T11:18:37+00:00", "stage": "retrieval-r2", "event": "cap", "kept": 195, "dropped": 0}
+{"ts": "2026-08-20T11:18:38+00:00", "stage": "retrieval-r2", "event": "gap_round", "known": 362, "added": 180}
+{"ts": "2026-08-20T11:18:38+00:00", "stage": "retrieval-r2", "event": "batches", "count": 8}
+{"ts": "2026-08-20T11:18:38+00:00", "stage": "retrieval-r2", "event": "http", "requests": 13, "cache_hits": 0, "transport_errors": 0, "status": {"200": 12, "429": 1}}
+{"ts": "2026-08-20T11:18:38+00:00", "stage": "retrieval-r2", "event": "exit", "duration_s": 17.408, "failed": false, "error": null}

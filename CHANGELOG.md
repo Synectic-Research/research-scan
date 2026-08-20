@@ -9,6 +9,13 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
+## [0.5.1] — 2026-08-21
+
+### Changed
+
+- Packaging only: PyPI long description (`readme` metadata) and MCP registry ownership marker; no
+  code changes.
+
 ## [0.5.0] — 2026-08-20 — Open Source Developer Release
 
 ### Added

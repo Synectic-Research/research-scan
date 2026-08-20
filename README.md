@@ -249,7 +249,7 @@ out-of-window budget (12 / 20 / 30) — topic 1's remaining misses are all pre-w
 each step up admits one more.
 
 Full tables, what was tried and reverted, and the rules the numbers obey:
-[`docs/measurements.md`](docs/measurements.md).
+[`docs/measurements.md`](https://github.com/Synectic-Research/research-scan/blob/main/docs/measurements.md).
 
 ## Outputs
 
@@ -397,13 +397,15 @@ uv tool install --editable .              # put research-scan on PATH, tracking 
 docs the agent reads (`skills/research-scan/references/schemas.md` — regenerate it in the same
 commit, a test compares them), and the exit-2 error messages.
 
-`AGENTS.md` holds the operating doctrine, [`docs/measurements.md`](docs/measurements.md) the
+`AGENTS.md` holds the operating doctrine, [`docs/measurements.md`](https://github.com/Synectic-Research/research-scan/blob/main/docs/measurements.md) the
 measured results behind the current defaults, and `eval/` the golden-set harness
 (`research-scan eval --topic <t> --run <dir>`).
 
-[`CONTRIBUTING.md`](CONTRIBUTING.md) · [`SECURITY.md`](SECURITY.md) ·
-[`CHANGELOG.md`](CHANGELOG.md) · [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) ·
-[`CITATION.cff`](CITATION.cff) · [`LICENSE`](LICENSE) (Apache-2.0)
+[`CONTRIBUTING.md`](https://github.com/Synectic-Research/research-scan/blob/main/CONTRIBUTING.md) · [`SECURITY.md`](https://github.com/Synectic-Research/research-scan/blob/main/SECURITY.md) ·
+[`CHANGELOG.md`](https://github.com/Synectic-Research/research-scan/blob/main/CHANGELOG.md) · [`CODE_OF_CONDUCT.md`](https://github.com/Synectic-Research/research-scan/blob/main/CODE_OF_CONDUCT.md) ·
+[`CITATION.cff`](https://github.com/Synectic-Research/research-scan/blob/main/CITATION.cff) · [`LICENSE`](https://github.com/Synectic-Research/research-scan/blob/main/LICENSE) (Apache-2.0)
 
-Dependencies keep their own licenses; [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md) says what
+Dependencies keep their own licenses; [`THIRD_PARTY_LICENSES.md`](https://github.com/Synectic-Research/research-scan/blob/main/THIRD_PARTY_LICENSES.md) says what
 they are and how to regenerate the table.
+
+<!-- mcp-name: org.synectic/research-scan -->

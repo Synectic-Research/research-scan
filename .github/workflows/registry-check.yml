@@ -1,0 +1,72 @@
+name: registry-check
+
+# Cross-surface version agreement, asserted after the dust settles rather than during a
+# release. The release run cannot check this: at the moment it publishes, PyPI has just
+# gained the new version and the MCP registry legitimately still holds the previous one,
+# because that publish is a manual step by design. A weekly read-only check is what
+# notices when the manual step was skipped.
+on:
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  versions-agree:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PyPI and the MCP registry must hold the same version
+        run: |
+          python3 - <<'PY'
+          import json
+          import sys
+          import urllib.request
+
+          PYPI = "https://pypi.org/pypi/research-scan/json"
+          REGISTRY = (
+              "https://registry.modelcontextprotocol.io/v0/servers"
+              "?search=org.synectic/research-scan"
+          )
+
+
+          def fetch(url: str) -> dict:
+              with urllib.request.urlopen(url, timeout=30) as response:
+                  return json.load(response)
+
+
+          pypi_version = fetch(PYPI)["info"]["version"]
+
+          servers = fetch(REGISTRY)["servers"]
+          entry = next(
+              (s for s in servers if s["server"]["name"] == "org.synectic/research-scan"),
+              None,
+          )
+          if entry is None:
+              print(
+                  "::error title=Registry entry missing::org.synectic/research-scan is not in "
+                  "the MCP registry. See RELEASING.md for the manual publish command."
+              )
+              sys.exit(1)
+
+          server = entry["server"]
+          registry_version = server["version"]
+          package_version = server["packages"][0]["version"]
+
+          print(f"  PyPI latest:               {pypi_version}")
+          print(f"  registry version:          {registry_version}")
+          print(f"  registry packages[0]:      {package_version}")
+
+          if len({pypi_version, registry_version, package_version}) != 1:
+              print(
+                  f"::error title=Surface drift::PyPI is at {pypi_version} but the MCP registry "
+                  f"is at {registry_version} (package {package_version}). The registry publish "
+                  f"is manual and looks skipped. Run, from a checkout of the released tag: "
+                  f"mcp-publisher login dns -domain synectic.org -private-key <hex> "
+                  f"&& mcp-publisher publish"
+              )
+              sys.exit(1)
+
+          print(f"\nboth surfaces agree: {pypi_version}")
+          PY

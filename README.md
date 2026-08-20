@@ -141,6 +141,16 @@ claude --plugin-dir /path/to/research-scan
 npx skills add Synectic-Research/research-scan
 ```
 
+### Claude Code — the plugin
+
+The plugin installs the skill and configures the `uvx` MCP server in one step; the `.mcp.json` route
+below stays the path for non-plugin clients such as Claude Desktop and Cursor.
+
+```bash
+/plugin marketplace add Synectic-Research/research-scan
+/plugin install research-scan@synectic
+```
+
 ### Any MCP client — stdio
 
 `research-scan mcp` speaks MCP on stdin/stdout and nothing else. It reads no token and needs none:

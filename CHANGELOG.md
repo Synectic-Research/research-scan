@@ -238,13 +238,3 @@ First release: the whole V1 pipeline.
   from 1/6 to 6/6, with no loss on topic 1. Pool cap scaled by built-source count (450 × n/2).
 - Acceptance run: recall@10 0.50 on both topics, recall@25 0.80 and 0.67,
   `precision_ge2_in_window` 0.875 on both.
-
-[0.4.0]: https://github.com/Synectic-Research/research-scan/compare/v0.2.5...v0.4.0
-[0.2.5]: https://github.com/Synectic-Research/research-scan/compare/v0.2.4...v0.2.5
-[0.2.4]: https://github.com/Synectic-Research/research-scan/compare/v0.2.3...v0.2.4
-[0.2.3]: https://github.com/Synectic-Research/research-scan/compare/v0.2.2...v0.2.3
-[0.2.2]: https://github.com/Synectic-Research/research-scan/compare/v0.2.1...v0.2.2
-[0.2.1]: https://github.com/Synectic-Research/research-scan/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/Synectic-Research/research-scan/compare/v0.1.1...v0.2.0
-[0.1.1]: https://github.com/Synectic-Research/research-scan/compare/v0.1.0...v0.1.1
-[0.1.0]: https://github.com/Synectic-Research/research-scan/releases/tag/v0.1.0

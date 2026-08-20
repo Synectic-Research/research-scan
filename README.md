@@ -1,7 +1,8 @@
 # research-scan
 
 Find the 5–10 recent papers with the highest impact on a research question, topic or project,
-starting from a brief or a one-line question.
+starting from a brief or a one-line question. It is an evidence pipeline for a reasoning agent to
+drive, not an assistant that answers questions.
 
 The work is split in two, deliberately.
 
@@ -10,13 +11,21 @@ arXiv, walks the citation graph, dedups, counts coverage per criterion, shortlis
 DOI against the live record, applies the selection rules and renders the result. It contains no LLM
 SDK and makes no judgement about a paper.
 
-**The skill supplies the cognition.** Planning the queries, scoring each candidate 0–3, writing gap
-queries when coverage is thin, and reranking the shortlist are all model decisions, made against
-rubrics that ship as plain Markdown in `skills/research-scan/references/`. Whatever agent hosts the
-skill executes them.
+**The agent supplies the cognition.** Planning the queries, scoring each candidate 0–3, writing gap
+queries when coverage is thin, and reranking the shortlist are all model decisions. The skill
+packages the rubrics they are made against, as plain Markdown in `skills/research-scan/references/`;
+whatever agent hosts it executes them.
 
-Files are the interface between the two halves, which is what lets Claude Code, Codex, Cursor or a
+Files are the interface between the two halves: the filesystem is the protocol boundary between
+reasoning and execution, not a storage detail. That is what lets Claude Code, Codex, Cursor or a
 plain Python loop drive the same chain over the same artifacts.
+
+```
+brief ─▶ [plan queries] ─▶ retrieve ─▶ [screen 0–3] ─▶ expand ─▶ [screen] ─▶ coverage
+      ─▶ [gap round, if coverage is thin] ─▶ shortlist ─▶ [rerank] ─▶ verify ─▶ emit
+```
+
+Bracketed steps are the agent's; the rest are CLI stages.
 
 Two things bound the result. A **purpose** — `build`, `research` or `orient` — decides what a paper
 has to do to earn a slot. A **profile** — `quick`, `standard` or `deep` — decides how much the scan
@@ -176,21 +185,17 @@ ships with the package.
 
 Four tools, one per model decision the pipeline needs: `scan_start` (you supply the query plan),
 `scan_continue` (screening scores, gap queries, or a page of rerank entries), `scan_verify` and
-`scan_result`. The stage order, the artifacts and every judgement are the same as the skill's — the
-adapter drives the CLI as a subprocess and reads its exit codes. Run `research-scan mcp --help` for
-the other transport.
+`scan_result`. They are not a chat endpoint over the pipeline: each is a decision point where a
+judgement is needed, and the client's model supplies exactly the cognition the skill would — same
+stage order, same artifacts. The adapter drives the CLI as a subprocess and reads its exit codes.
+Run `research-scan mcp --help` for the other transport.
 
 ## How it works
 
-```
-brief ─▶ [plan queries] ─▶ retrieve ─▶ [screen 0–3] ─▶ expand ─▶ [screen] ─▶ coverage
-      ─▶ [gap round, if coverage is thin] ─▶ shortlist ─▶ [rerank] ─▶ verify ─▶ emit
-```
-
-Bracketed steps are the agent's; the rest are CLI stages. Each stage is idempotent and re-runnable:
-change `queries.json` or pass a flag and re-run from the stage it affects. The CLI owns
-`candidates.json`, `shortlist.json`, `manifest.json` and `evidence.*`; the agent owns
-`queries.json`, `screen.json` and `ranked.json`. Neither edits the other's files.
+Each stage is idempotent and re-runnable: change `queries.json` or pass a flag and re-run from the
+stage it affects. The CLI owns `candidates.json`, `shortlist.json`, `manifest.json` and
+`evidence.*`; the agent owns `queries.json`, `screen.json` and `ranked.json`. Neither edits the
+other's files.
 
 ### Purpose
 

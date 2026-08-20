@@ -1,0 +1,83 @@
+name: release
+
+# Tags only. Nothing here runs on a push to main or on a pull request, so the
+# publish path cannot be reached except by cutting a tag.
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10.0.1
+        with:
+          enable-cache: true
+
+      - name: Install the locked dependency set
+        run: uv sync --locked
+
+      - name: Lint
+        run: uv run ruff check
+
+      - name: Test
+        run: uv run pytest
+
+      # The tag is the release's only claim about which version this is, and
+      # importlib.metadata reads the version out of the built distribution. If the
+      # two disagree, the published artifact would carry a version nobody tagged.
+      - name: Tag must match the package version
+        run: |
+          tag_version="${GITHUB_REF_NAME#v}"
+          pyproject_version="$(uv run python -c 'import tomllib,pathlib; print(tomllib.loads(pathlib.Path("pyproject.toml").read_text())["project"]["version"])')"
+          echo "tag:        ${GITHUB_REF_NAME} (version ${tag_version})"
+          echo "pyproject:  ${pyproject_version}"
+          if [ "${tag_version}" != "${pyproject_version}" ]; then
+            echo "::error title=Version mismatch::tag ${GITHUB_REF_NAME} does not match pyproject.toml version ${pyproject_version}. Bump pyproject.toml or retag; do not publish this build."
+            exit 1
+          fi
+
+      - name: Build
+        run: uv build
+
+      # The repo passing its own tests is not evidence the artifact works. Install the
+      # wheel somewhere that has none of the source tree on the path and run it.
+      - name: Smoke-test the built wheel
+        run: |
+          python3 -m venv /tmp/smoke
+          /tmp/smoke/bin/pip install --quiet --upgrade pip
+          /tmp/smoke/bin/pip install --quiet dist/*.whl
+          installed_version="$(/tmp/smoke/bin/research-scan --version)"
+          echo "wheel reports: ${installed_version}"
+          if [ "${installed_version}" != "${GITHUB_REF_NAME#v}" ]; then
+            echo "::error title=Wheel version mismatch::installed wheel reports ${installed_version}, expected ${GITHUB_REF_NAME#v}"
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      # The only credential this job gets. There is no API token anywhere in this
+      # workflow or in the repository's secrets: PyPI Trusted Publishing exchanges
+      # this short-lived OIDC token for an upload token at publish time.
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: dist
+          path: dist/
+
+      - uses: pypa/gh-action-pypi-publish@release/v1

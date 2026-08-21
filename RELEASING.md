@@ -21,6 +21,13 @@ disagrees:
 The changelog section is not optional: the GitHub Release body is generated from it, and the
 release job fails when the section is missing.
 
+The five-way check is `scripts/check_versions.py`, run by both `ci.yml` and `release.yml`. On a
+tag, `release.yml` passes `--tag` so the tag becomes a sixth claim. Run it locally before pushing:
+
+```bash
+python3 scripts/check_versions.py       # or --tag vX.Y.Z to include the tag
+```
+
 Then `uv sync` so the lockfile and the installed distribution follow, and check the gate locally:
 
 ```bash
@@ -61,6 +68,12 @@ mcp-publisher publish
 
 The key lives at `~/.config/mcp-publisher/synectic.org-ed25519.pem` and is PKCS#8; the CLI wants
 the raw 32-byte seed as hex. It never goes into the repository, CI, or a secret store.
+
+`publish` sends the whole of `server.json`, `websiteUrl` included — so the documentation site's
+address reaches the registry only through this step. Changing that URL without a republish leaves
+the registry pointing at the old one, and no drift check catches it: `registry-check.yml` compares
+versions, not URLs. `mcp-publisher validate` checks the file against the live registry before you
+publish, and is worth running first; note that the registry caps `description` at 100 characters.
 
 **6. The drift check has your back.** `registry-check.yml` runs weekly and fails if PyPI and the
 registry hold different versions — which is exactly what a forgotten step 5 looks like. You can

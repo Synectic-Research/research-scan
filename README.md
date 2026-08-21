@@ -2,6 +2,8 @@
 
 Research Scan finds and verifies the papers that matter for a research question, project, or decision. Starting from a brief or a single question, it runs a structured evidence pipeline that retrieves literature, expands through citation graphs, screens candidates, and verifies results before producing evidence objects.
 
+Documentation: <https://researchscan.synectic.org>
+
 The work is split in two, deliberately.
 
 **The CLI is deterministic and model-free.** It retrieves across OpenAlex, Semantic Scholar and
@@ -423,7 +425,7 @@ commit, a test compares them), and the exit-2 error messages.
 measured results behind the current defaults, and `eval/` the golden-set harness
 (`research-scan eval --topic <t> --run <dir>`).
 
-[`CONTRIBUTING.md`](https://github.com/Synectic-Research/research-scan/blob/main/CONTRIBUTING.md) · [`SECURITY.md`](https://github.com/Synectic-Research/research-scan/blob/main/SECURITY.md) ·
+[Documentation](https://researchscan.synectic.org) · [`CONTRIBUTING.md`](https://github.com/Synectic-Research/research-scan/blob/main/CONTRIBUTING.md) · [`SECURITY.md`](https://github.com/Synectic-Research/research-scan/blob/main/SECURITY.md) ·
 [`CHANGELOG.md`](https://github.com/Synectic-Research/research-scan/blob/main/CHANGELOG.md) · [`CODE_OF_CONDUCT.md`](https://github.com/Synectic-Research/research-scan/blob/main/CODE_OF_CONDUCT.md) ·
 [`CITATION.cff`](https://github.com/Synectic-Research/research-scan/blob/main/CITATION.cff) · [`LICENSE`](https://github.com/Synectic-Research/research-scan/blob/main/LICENSE) (Apache-2.0)
 

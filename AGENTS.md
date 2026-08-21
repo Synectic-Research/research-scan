@@ -528,9 +528,9 @@ V1.1 review floor. **Raising `CONTRADICTING_SLOTS` is a selection change and nee
 - Writing a gap query aimed at a paper you already know is missing. The gap round is aimed by
   `coverage.json` at a thin criterion, never at a golden entry — a query written to retrieve a
   known answer measures nothing.
-- Assuming a bigger pool is a better pool. Measured false on topic 2: `quick` returns 6/6 from 362
-  candidates where `deep` returns 5/6 from 805. The round-robin cap keeps a *different* mix, not a
-  subset, so depth changes which seeds get expanded.
+- Assuming a bigger pool is a *proportionally* better pool. Recall is monotone in the profile on
+  both topics, but recall per 100 screened falls as the pool grows: on topic 1 `quick` returns
+  0.199 against `deep`'s 0.157. Depth buys recall, and buys it at a worse rate.
 - Reading a cap as a floor. Twice in V1.1 a change looked inert until the cap downstream of it was
   lifted, and once the cap turned out to *be* the whole effect. Before concluding a change does
   nothing, re-run it with the caps off.

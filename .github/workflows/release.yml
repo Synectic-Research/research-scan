@@ -37,55 +37,11 @@ jobs:
       # file so the fix is obvious without reading the log twice.
       - name: Versions must agree across all four files
         run: |
-          uv run python - <<'PY'
-          import json
-          import os
-          import pathlib
-          import sys
-          import tomllib
-
-          import yaml
-
-          claims: dict[str, str] = {}
-
-          claims["pyproject.toml"] = tomllib.loads(
-              pathlib.Path("pyproject.toml").read_text(encoding="utf-8")
-          )["project"]["version"]
-
-          claims[".claude-plugin/plugin.json"] = json.loads(
-              pathlib.Path(".claude-plugin/plugin.json").read_text(encoding="utf-8")
-          )["version"]
-
-          claims["CITATION.cff"] = str(
-              yaml.safe_load(pathlib.Path("CITATION.cff").read_text(encoding="utf-8"))["version"]
-          )
-
-          server = json.loads(pathlib.Path("server.json").read_text(encoding="utf-8"))
-          claims["server.json (version)"] = server["version"]
-          claims["server.json (packages[0].version)"] = server["packages"][0]["version"]
-
-          ref = os.environ.get("GITHUB_REF", "")
-          ref_name = os.environ.get("GITHUB_REF_NAME", "")
-          if ref.startswith("refs/tags/v"):
-              claims[f"git tag {ref_name}"] = ref_name.removeprefix("v")
-
-          for source, version in claims.items():
-              print(f"  {source}: {version}")
-
-          distinct = set(claims.values())
-          if len(distinct) != 1:
-              expected = claims["pyproject.toml"]
-              for source, version in claims.items():
-                  if version != expected:
-                      print(
-                          f"::error title=Version mismatch::{source} says {version}, "
-                          f"pyproject.toml says {expected}. Move every version together; "
-                          f"do not publish this build."
-                      )
-              sys.exit(1)
-
-          print(f"\nall sources agree: {distinct.pop()}")
-          PY
+          if [ "$GITHUB_REF_TYPE" = tag ]; then
+            python3 scripts/check_versions.py --tag "$GITHUB_REF_NAME"
+          else
+            python3 scripts/check_versions.py
+          fi
 
       - name: Build
         run: uv build

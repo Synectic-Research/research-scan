@@ -11,7 +11,7 @@ allowed-tools: Bash(research-scan *), Read, Write, Edit, Glob, Grep, scan_start,
 You produce a verified evidence scan for a research question, topic or project. You do the reasoning; the `research-scan` CLI does retrieval, expansion, shortlisting, verification and rendering. Never cite a paper that is not in the run's files; never edit paper metadata from memory. All CLI options go after the command; use `--json` on every call and read the JSON.
 
 ## 0. Preflight
-1. `research-scan doctor --json`. Exit 3 → stop and report the failing checks verbatim (do not improvise around a missing key). Command not found → tell the user to run `uv tool install git+https://github.com/Synectic-Research/research-scan` and stop.
+1. `research-scan doctor --json`. Exit 3 → stop and report the failing checks verbatim (do not improvise around a missing key). Command not found → tell the user to run `uv tool install research-scan` and stop.
 2. Parse `$ARGUMENTS`: first token = brief file path or a quoted question; flags follow. `--profile` belongs to `init` and sets per-query depth, the pool cap, the out-of-window total and whether the gap round runs — pass it through; `standard` is the default and `quick` is the right answer when the user wants an answer in minutes. `--max-candidates` and `--per-query` belong to `retrieve`, not `init` (they override the profile) — hold them back and pass them in step 1; `--gap-round` belongs to `coverage`, hold it back for step 4. `init` rejects an unknown option with exit 2. Run `research-scan init <brief-or-question> <remaining-flags> --json`; keep the returned `run_dir` and `defaults`.
 
 ## 1. Plan queries

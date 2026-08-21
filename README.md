@@ -1,8 +1,6 @@
 # research-scan
 
-Find the 5–10 recent papers with the highest impact on a research question, topic or project,
-starting from a brief or a one-line question. It is an evidence pipeline for a reasoning agent to
-drive, not an assistant that answers questions.
+Research Scan finds and verifies the papers that matter for a research question, project, or decision. Starting from a brief or a single question, it runs a structured evidence pipeline that retrieves literature, expands through citation graphs, screens candidates, and verifies results before producing evidence objects.
 
 The work is split in two, deliberately.
 

@@ -9,6 +9,42 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
+## [0.5.2] — 2026-08-21
+
+### Added
+
+- A documentation site at <https://researchscan.synectic.org>, built from
+  [`research-scan-docs`](https://github.com/Synectic-Research/research-scan-docs). The README and
+  the package metadata link to it; `server.json` carries it as `websiteUrl`.
+- `[project.urls]` in `pyproject.toml` — homepage, documentation, repository, changelog and
+  issues — so the PyPI sidebar points somewhere.
+- `websiteUrl` in `server.json`, which the MCP registry shows on the server's record. It reaches
+  the registry only through the manual publish step; `RELEASING.md` now says so.
+- CI on every push and pull request: lint, tests, the version guard, and a wheel smoke test that
+  installs the built artifact into a clean venv and makes it state its own version. Python 3.11
+  and 3.13, since `requires-python` is `>=3.11`.
+- `scripts/check_versions.py`, the five-way version guard as a script instead of Python embedded
+  in a workflow. `ci.yml` and `release.yml` both call it, and it runs locally the same way.
+
+### Changed
+
+- The README opens on what the tool does and for whom, and one description now runs across the
+  package, the plugin, the marketplace entry and the skill, rather than four variants of it. The
+  registry record carries that sentence's first clause: the MCP registry caps `description` at
+  100 characters, and the full sentence is 119.
+- `SKILL.md`'s command-not-found hint installs from PyPI (`uv tool install research-scan`) instead
+  of from a git URL. The package has been on PyPI since 0.5.0.
+- The `AGENTS.md` anti-pattern about pool size now cites the corrected per-100-screened figures.
+  It had rested on a topic-2 `quick` 6/6 that was withdrawn at v0.2.2, when the run behind it
+  turned out to have arXiv failing all eight queries.
+
+### Removed
+
+- `ok` and `tool_version` from `doctor --json`. Read `ready` and `version`, identical in value.
+  `doctor --json` is a stable interface from 0.5.2 onward: keys are added, never removed or
+  repurposed. The two removed keys existed in 0.5.0 and 0.5.1 as undocumented duplicates of
+  `ready` and `version`; the README has always named `ready` as the boolean.
+
 ## [0.5.1] — 2026-08-21
 
 ### Changed

@@ -12,7 +12,7 @@ The plugin archive is the plugin only. `marketplace.json` lives in the repositor
 the artifact: the repo is its own marketplace, and shipping the catalog inside the entry
 it lists is a loop with no purpose.
 
-    python scripts/build_plugin_assets.py --ref v0.5.1 --out dist/assets
+    python scripts/build_plugin_assets.py --ref vX.Y.Z --out dist/assets
 """
 
 from __future__ import annotations

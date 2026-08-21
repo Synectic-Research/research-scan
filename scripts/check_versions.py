@@ -6,7 +6,7 @@ some of them ships a package whose plugin manifest, citation record or registry 
 disagrees with the wheel. On a tag, the tag is a sixth claim and has to agree too.
 
     python3 scripts/check_versions.py                # the five file claims
-    python3 scripts/check_versions.py --tag v0.5.1   # ...and the tag
+    python3 scripts/check_versions.py --tag vX.Y.Z   # ...and the tag
 
 Exit 0 iff every claim agrees; exit 1 naming each source that disagrees with
 pyproject.toml, which is the reference. Stdlib only, so CI can run it on a bare
@@ -66,7 +66,7 @@ def claims_for(root: pathlib.Path, tag: str | None) -> dict[str, str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--tag", help="a tag ref name, e.g. v0.5.1; adds it as a sixth claim")
+    parser.add_argument("--tag", help="a tag ref name, e.g. vX.Y.Z; adds it as a sixth claim")
     parser.add_argument(
         "--root", type=pathlib.Path, default=ROOT, help="repo root (default: this repo)"
     )

@@ -94,10 +94,13 @@ checks and the exit code are identical in all three output modes — only the pr
 With the skill installed, ask for a scan in your agent:
 
 ```
-/research-scan "I am designing a financial education product for young adults. Research question: What interventions have the strongest recent evidence for increasing long-term savings behavior?
+/research-scan "I am designing a financial education product for young adults. 
+Research question: What interventions have the strongest recent evidence for increasing 
+long-term savings behavior?
 
 Context:
-- I am interested in mechanisms that change real-world behavior, not just financial literacy scores.
+- I am interested in mechanisms that change real-world behavior, not just 
+financial literacy scores.
 - Prioritize randomized trials, large field studies, and strong causal evidence.
 - Include evidence that challenges the assumption that education alone works.
 

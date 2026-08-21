@@ -94,12 +94,18 @@ checks and the exit code are identical in all three output modes — only the pr
 With the skill installed, ask for a scan in your agent:
 
 ```
-/research-scan "what is the strongest recent evidence that default enrolment changes how much
-                people save?" --profile quick
+/research-scan "I am designing a financial education product for young adults. Research question: What interventions have the strongest recent evidence for increasing long-term savings behavior?
+
+Context:
+- I am interested in mechanisms that change real-world behavior, not just financial literacy scores.
+- Prioritize randomized trials, large field studies, and strong causal evidence.
+- Include evidence that challenges the assumption that education alone works.
+
+Find the 10 papers that should shape our product decisions. Explain why each paper matters, what it found, and what evidence gaps remain.
+" --profile standard
 ```
 
-A one-line question works. A brief works better, because the planning step maps each section of it
-onto a specific part of the search plan. The template is
+A one-line question works. A brief with context works better, because the planning step maps each section of it onto a specific part of the search plan. The template is
 `skills/research-scan/examples/brief.example.md` — a worked `build` brief — and
 `brief.research-example.md` is the same template at `Purpose: research`.
 

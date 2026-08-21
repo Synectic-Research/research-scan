@@ -104,8 +104,8 @@ financial literacy scores.
 - Prioritize randomized trials, large field studies, and strong causal evidence.
 - Include evidence that challenges the assumption that education alone works.
 
-Find the 10 papers that should shape our product decisions. Explain why each paper matters, what it found, and what evidence gaps remain.
-" --profile standard
+Find the 10 papers that should shape our product decisions. Explain why each paper matters, what it 
+found, and what evidence gaps remain." --profile standard
 ```
 
 A one-line question works. A brief with context works better, because the planning step maps each section of it onto a specific part of the search plan. The template is

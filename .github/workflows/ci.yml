@@ -1,0 +1,66 @@
+name: ci
+
+# Everything the release workflow checks before it publishes, run on the way in instead:
+# a branch push or a PR should fail here, not at tag time when the version is already cut.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # requires-python is >=3.11; .python-version pins the development interpreter to 3.13.
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python }}
+
+      - name: Install the locked dependency set
+        run: uv sync --frozen
+
+      - name: Lint
+        run: uv run ruff check
+
+      - name: Test
+        run: uv run pytest -q
+
+      - name: Versions must agree across all four files
+        run: python3 scripts/check_versions.py
+
+      # The repo passing its own tests is not evidence the artifact works. Build the wheel and
+      # install it into a venv that has none of the source tree on the path, then make the
+      # installed console script answer for itself.
+      - name: Smoke-test the built wheel
+        run: |
+          expected="$(python3 -c 'import tomllib,pathlib; print(tomllib.loads(pathlib.Path("pyproject.toml").read_text())["project"]["version"])')"
+          rm -rf dist          # so dist/*.whl is unambiguous when run on a dirty tree
+          uv build
+          uv venv /tmp/w
+          uv pip install --python /tmp/w/bin/python dist/*.whl
+          got="$(/tmp/w/bin/research-scan --version)"
+          if [ "$got" != "$expected" ]; then
+            echo "::error title=Wheel version mismatch::installed wheel reports ${got}, expected ${expected}"
+            exit 1
+          fi
+          echo "research-scan --version: ${got}"
+          if /tmp/w/bin/research-scan mcp --help > /dev/null; then
+            echo "research-scan mcp --help: exit 0"
+          else
+            echo "::error title=MCP surface missing::research-scan mcp --help exited non-zero"
+            exit 1
+          fi

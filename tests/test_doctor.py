@@ -236,16 +236,28 @@ def test_the_json_superset_keeps_every_key_the_skill_already_parses(settings):
     """The skill's preflight reads `checks` and reports failures verbatim. Add, never remove."""
     payload = doctor.run_checks(settings, FakeClient()).to_dict()
 
-    for key in ("ok", "exit_code", "tool_version", "python", "sources", "paths", "keys", "checks"):
+    for key in ("exit_code", "python", "sources", "paths", "keys", "checks"):
         assert key in payload, f"{key} is a published key and may not be dropped"
     for key in ("version", "ready", "providers", "config", "run_store"):
         assert key in payload
-    assert payload["version"] == payload["tool_version"]
-    assert payload["ready"] is payload["ok"]
     assert payload["config"] == "ok"
     assert payload["run_store"] == "ok"
     assert set(payload["providers"]) == set(doctor.ALL_SOURCES)
     assert payload["providers"]["openalex"] == "ok"
+
+
+def test_the_legacy_duplicate_keys_are_gone(settings):
+    """`ok` and `tool_version` duplicated `ready` and `version` and were removed at 0.5.2.
+
+    Removing a published key is the one thing to_dict's contract forbids, so it happens once,
+    at a named version, and this test is what stops it happening again by accident.
+    """
+    payload = doctor.run_checks(settings, FakeClient()).to_dict()
+
+    assert "ok" not in payload
+    assert "tool_version" not in payload
+    assert payload["ready"] is True
+    assert payload["version"] == doctor.__version__
 
 
 def test_a_provider_rollup_takes_the_worst_of_its_checks(settings):

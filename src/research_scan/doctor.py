@@ -155,11 +155,14 @@ class Report:
         return self.rollup(RUN_STORE_CHECKS)
 
     def to_dict(self) -> dict[str, Any]:
-        """The machine interface. Keys here are stable — add, never remove or repurpose.
+        """The machine interface. Keys are stable from 0.5.2 — add, never remove or repurpose.
 
         The five summary keys are what CI and an agent should read. Everything below them is
         the original detailed shape, kept because the research-scan skill's preflight parses
         `checks` and reports failing ones verbatim.
+
+        0.5.0 and 0.5.1 also emitted `ok` and `tool_version`, undocumented duplicates of
+        `ready` and `version`. They were removed in 0.5.2; read `ready` and `version`.
         """
         return {
             "version": __version__,
@@ -167,9 +170,7 @@ class Report:
             "providers": {name: _SERIALISED[status] for name, status in self.providers().items()},
             "config": _SERIALISED[status] if (status := self.config_status) else None,
             "run_store": _SERIALISED[status] if (status := self.run_store_status) else None,
-            "ok": self.ok,
             "exit_code": self.exit_code,
-            "tool_version": __version__,
             "python": platform.python_version(),
             "sources": self.sources,
             "paths": self.paths,

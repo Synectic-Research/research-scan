@@ -1,3 +1,5 @@
+![Research Scan logo](assets/research-scan-logo.jpg)
+
 # research-scan
 
 Research Scan finds and verifies the 5–10 recent papers that matter most for a research question,

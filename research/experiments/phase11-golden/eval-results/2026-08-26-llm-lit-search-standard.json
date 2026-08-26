@@ -1,0 +1,41 @@
+{
+  "topic": "llm-lit-search",
+  "run_dir": "research/experiments/phase11-golden/sweep/p11-t2/R15/run",
+  "expected": 6,
+  "found_at_10": 0,
+  "found_at_25": 0,
+  "recall_10": 0.0,
+  "recall_25": 0.0,
+  "profile": "standard",
+  "pool_size": 1009,
+  "wall_clock_s": 1910.0,
+  "recall_per_100_screened": 0.0,
+  "misses": [
+    {
+      "doi": "10.48550/arXiv.2501.10120",
+      "why": "PaSa (He et al 2025). The crawler that alternates search and expand-citations actions; the reference design for why graph traversal beats single-query search."
+    },
+    {
+      "doi": "10.48550/arXiv.2605.29234",
+      "why": "RollingEval (Sahu et al 2026). Shows bibliography expansion lifting recall from under 20 % to over 80 %, and that human citation lists are a weak ground truth."
+    },
+    {
+      "doi": "10.48550/arXiv.2606.20235",
+      "why": "ScholarQuest (Pan et al 2026). The scope-control failure \u2014 agents treat exclusions as positive keywords \u2014 and the off-target-exploration failure mode."
+    },
+    {
+      "doi": "10.48550/arXiv.2407.18940",
+      "why": "LitSearch (Ajith et al 2024). The retrieval benchmark the later agentic systems report against; you cannot read their numbers without it."
+    },
+    {
+      "doi": "10.48550/arXiv.2411.14199",
+      "why": "OpenScholar (Asai et al 2024). Retrieval-augmented synthesis over the literature with an open datastore \u2014 the main open counterpoint to the closed agentic systems."
+    },
+    {
+      "doi": "10.48550/arXiv.2402.01788",
+      "why": "LitLLM (Agarwal et al 2024). The rerank-after-retrieve toolkit; the earliest of these to separate retrieval from reranking as distinct stages."
+    }
+  ],
+  "judged": null,
+  "candidates": null
+}

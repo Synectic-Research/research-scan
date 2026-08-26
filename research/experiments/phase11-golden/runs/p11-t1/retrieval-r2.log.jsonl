@@ -1,0 +1,18 @@
+{"ts": "2026-08-26T09:07:16+00:00", "stage": "retrieval-r2", "event": "enter"}
+{"ts": "2026-08-26T09:07:16+00:00", "stage": "retrieval-r2", "event": "plan", "domain": "behavioral", "window": ["2023-08-01", "2026-08-26"], "sources": ["openalex", "s2"], "queries": 4, "per_query": 40, "max_candidates": 450, "profile": "standard"}
+{"ts": "2026-08-26T09:07:17+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "G1", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:20+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "G1", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:22+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "G2", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:26+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "G2", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:27+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "R1", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:33+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "R1", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:34+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "openalex", "query_id": "R2", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:37+00:00", "stage": "retrieval-r2", "event": "source_query", "source": "s2", "query_id": "R2", "auth": "key", "hits": 40}
+{"ts": "2026-08-26T09:07:37+00:00", "stage": "retrieval-r2", "event": "fan_out", "hits": 320, "per_query": {"G1": 80, "G2": 80, "R1": 80, "R2": 80}}
+{"ts": "2026-08-26T09:07:37+00:00", "stage": "retrieval-r2", "event": "dedup", "kept": 310, "merged": {"title": 3, "doi": 7}}
+{"ts": "2026-08-26T09:07:37+00:00", "stage": "retrieval-r2", "event": "filter", "kept": 305, "dropped": {"retracted": 0, "must_not": 5, "type": 0, "window": 0, "preprint": 0, "cap": 0}}
+{"ts": "2026-08-26T09:07:37+00:00", "stage": "retrieval-r2", "event": "cap", "kept": 305, "dropped": 0}
+{"ts": "2026-08-26T09:07:40+00:00", "stage": "retrieval-r2", "event": "gap_round", "known": 570, "added": 281}
+{"ts": "2026-08-26T09:07:40+00:00", "stage": "retrieval-r2", "event": "batches", "count": 12}
+{"ts": "2026-08-26T09:07:40+00:00", "stage": "retrieval-r2", "event": "http", "requests": 10, "cache_hits": 0, "transport_errors": 0, "status": {"200": 8, "429": 2}}
+{"ts": "2026-08-26T09:07:40+00:00", "stage": "retrieval-r2", "event": "exit", "duration_s": 24.772, "failed": false, "error": null}

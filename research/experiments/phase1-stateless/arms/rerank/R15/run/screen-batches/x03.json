@@ -1,0 +1,257 @@
+{
+  "batch": "x03",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "1fddd89bedc8",
+      "title": "CharXiv: Charting Gaps in Realistic Chart Understanding in Multimodal LLMs",
+      "abstract_600": "Chart understanding plays a pivotal role when applying Multimodal Large Language Models (MLLMs) to real-world tasks such as analyzing scientific papers or financial reports. However, existing datasets often focus on oversimplified and homogeneous charts with template-based questions, leading to an over-optimistic measure of progress. We demonstrate that although open-source models can appear to outperform strong proprietary models on these benchmarks, a simple stress test with slightly different charts or questions can deteriorate performance by up to 34.5%. In this work, we propose CharXiv, a",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0970eef88bf3",
+      "title": "SORRY-Bench: Systematically Evaluating Large Language Model Safety Refusal Behaviors",
+      "abstract_600": "Evaluating aligned large language models' (LLMs) ability to recognize and reject unsafe user requests is crucial for safe, policy-compliant deployments. Existing evaluation efforts, however, face three limitations that we address with SORRY-Bench, our proposed benchmark. First, existing methods often use coarse-grained taxonomies of unsafe topics, and are over-representing some fine-grained topics. For example, among the ten existing datasets that we evaluated, tests for refusals of self-harm instructions are over 3x less represented than tests for fraudulent activities. SORRY-Bench improves o",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "25f1db90053e",
+      "title": "Evaluating Retrieval Quality in Retrieval-Augmented Generation",
+      "abstract_600": "Evaluating retrieval-augmented generation (RAG) presents challenges, particularly for retrieval models within these systems. Traditional end-to-end evaluation methods are computationally expensive. Furthermore, evaluation of the retrieval model's performance based on query-document relevance labels shows a small correlation with the RAG system's downstream performance. We propose a novel evaluation approach, eRAG, where each document in the retrieval list is individually utilized by the large language model within the RAG system. The output generated for each document is then evaluated based o",
+      "year": 2024,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "88c3c5f1d53e",
+      "title": "Do Large Language Models Latently Perform Multi-Hop Reasoning?",
+      "abstract_600": "We study whether Large Language Models (LLMs) latently perform multi-hop reasoning with complex prompts such as\"The mother of the singer of 'Superstition' is\". We look for evidence of a latent reasoning pathway where an LLM (1) latently identifies\"the singer of 'Superstition'\"as Stevie Wonder, the bridge entity, and (2) uses its knowledge of Stevie Wonder's mother to complete the prompt. We analyze these two hops individually and consider their co-occurrence as indicative of latent multi-hop reasoning. For the first hop, we test if changing the prompt to indirectly mention the bridge entity in",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "416cb4ee9971",
+      "title": "The Power of Noise: Redefining Retrieval for RAG Systems",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) has recently emerged as a method to extend beyond the pre-trained knowledge of Large Language Models by augmenting the original prompt with relevant passages or documents retrieved by an Information Retrieval (IR) system. RAG has become increasingly important for Generative AI solutions, especially in enterprise settings or in any domain in which knowledge is constantly refreshed and cannot be memorized in the LLM. We argue here that the retrieval component of RAG systems, be it dense or sparse, deserves increased attention from the research community, and",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cee5a2d8f739",
+      "title": "Synthesizing scientific literature with retrieval-augmented language models",
+      "abstract_600": "Scientific progress depends on the ability of researchers to synthesize the growing body of literature. Can large language models (LLMs) assist scientists in this task? Here we introduce OpenScholar, a specialized retrieval-augmented language model (LM)1 that answers scientific queries by identifying relevant passages from 45\u2009million open-access papers and synthesizing citation-backed responses. To evaluate OpenScholar, we develop ScholarQABench, the first large-scale multi-domain benchmark for literature search, comprising 2,967\u2009expert-written queries and 208\u2009long-form answers across computer",
+      "year": 2026,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "edf042691ae1",
+      "title": "MMLongBench-Doc: Benchmarking Long-context Document Understanding with Visualizations",
+      "abstract_600": "Understanding documents with rich layouts and multi-modal components is a long-standing and practical task. Recent Large Vision-Language Models (LVLMs) have made remarkable strides in various tasks, particularly in single-page document understanding (DU). However, their abilities on long-context DU remain an open problem. This work presents MMLongBench-Doc, a long-context, multi-modal benchmark comprising 1,062 expert-annotated questions. Distinct from previous datasets, it is constructed upon 130 lengthy PDF-formatted documents with an average of 49.4 pages and 20,971 textual tokens. Towards",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a4d60cb73e49",
+      "title": "CycleResearcher: Improving Automated Research via Automated Review",
+      "abstract_600": "The automation of scientific discovery has been a long-standing goal within the research community, driven by the potential to accelerate knowledge creation. While significant progress has been made using commercial large language models (LLMs) as research assistants or idea generators, the possibility of automating the entire research process with open-source LLMs remains largely unexplored. This paper explores the feasibility of using open-source post-trained LLMs as autonomous agents capable of performing the full cycle of automated research and review, from literature review and manuscript",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bceaacd30e65",
+      "title": "Plot2Code: A Comprehensive Benchmark for Evaluating Multi-modal Large Language Models in Code Generation from Scientific Plots",
+      "abstract_600": ",",
+      "year": 2025,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "375cd1eb8f71",
+      "title": "An automated framework for assessing how well LLMs cite relevant medical references",
+      "abstract_600": "As large language models (LLMs) are increasingly used to address health-related queries, it is crucial that they support their conclusions with credible references. While models can cite sources, the extent to which these support claims remains unclear. To address this gap, we introduce SourceCheckup, an automated agent-based pipeline that evaluates the relevance and supportiveness of sources in LLM responses. We evaluate seven popular LLMs on a dataset of 800 questions and 58,000 pairs of statements and sources on data that represent common medical queries. Our findings reveal that between 50",
+      "year": 2025,
+      "venue": "Nature Communications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "20a225c408f8",
+      "title": "Personalization of Large Language Models: A Survey",
+      "abstract_600": "Personalization of Large Language Models (LLMs) has recently become increasingly important with a wide range of applications. Despite the importance and recent progress, most existing works on personalized LLMs have focused either entirely on (a) personalized text generation or (b) leveraging LLMs for personalization-related downstream applications, such as recommendation systems. In this work, we bridge the gap between these two separate main directions for the first time by introducing a taxonomy for personalized LLM usage and summarizing the key differences and challenges. We provide a form",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cd3ea526fb54",
+      "title": "Legal Knowledge and Information Systems",
+      "abstract_600": null,
+      "year": 2024,
+      "venue": "Frontiers in artificial intelligence and applications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a4fb97deb81d",
+      "title": "MTRAG: A Multi-Turn Conversational Benchmark for Evaluating Retrieval-Augmented Generation Systems",
+      "abstract_600": "Retrieval-augmented generation (RAG) has recently become a very popular task for Large Language Models (LLMs). Evaluating them on multi-turn RAG conversations, where the system is asked to generate a response to a question in the context of a preceding conversation, is an important and often overlooked task with several additional challenges. We present mtRAG, an end-to-end human-generated multi-turn RAG benchmark that reflects several real-world properties across diverse dimensions for evaluating the full RAG pipeline. mtRAG contains 110 conversations averaging 7.7 turns each across four doma",
+      "year": 2025,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "04499a8976c0",
+      "title": "M3DocRAG: Multi-modal Retrieval is What You Need for Multi-page Multi-document Understanding",
+      "abstract_600": "Document visual question answering (DocVQA) pipelines that answer questions from documents have broad applications. Existing methods focus on handling single-page documents with multi-modal language models (MLMs), or rely on text-based retrieval-augmented generation (RAG) that uses text extraction tools such as optical character recognition (OCR). However, there are difficulties in applying these methods in real-world scenarios: (a) questions often require information across different pages or documents, where MLMs cannot handle many long documents; (b) documents often have important informati",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8397243c5038",
+      "title": "The Art of Saying No: Contextual Noncompliance in Language Models",
+      "abstract_600": "Chat-based language models are designed to be helpful, yet they should not comply with every user request. While most existing work primarily focuses on refusal of\"unsafe\"queries, we posit that the scope of noncompliance should be broadened. We introduce a comprehensive taxonomy of contextual noncompliance describing when and how models should not comply with user requests. Our taxonomy spans a wide range of categories including incomplete, unsupported, indeterminate, and humanizing requests (in addition to unsafe requests). To test noncompliance capabilities of language models, we use this ta",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "51e406dae26a",
+      "title": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+      "abstract_600": "We present a principled approach to provide LLM-based evaluation with a rigorous guarantee of human agreement. We first propose that a reliable evaluation method should not uncritically rely on model preferences for pairwise evaluation, but rather assess the confidence of judge models and selectively decide when to trust its judgement. We then show that under this selective evaluation framework, human agreement can be provably guaranteed -- such that the model evaluation aligns with that of humans to a user-specified agreement level. As part of our framework, we also introduce Simulated Annota",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7c47bc78d5f1",
+      "title": "Evaluating LLM-based Agents for Multi-turn Conversations: A Survey",
+      "abstract_600": "This survey examines evaluation methods for large language model (LLM)-based agents in multi-turn conversational settings. Using a PRISMA-inspired framework, we systematically reviewed nearly 250 scholarly sources, capturing the state-of-the-art from various venues of publication, and establishing a solid foundation for our analysis. Our study offers a structured approach by developing two interrelated taxonomy systems: one that defines what to evaluate and another that explains how to evaluate. The first taxonomy identifies key components of LLM-based agents for multi-turn conversations and t",
+      "year": 2025,
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ce6a5c4681d4",
+      "title": "One Thousand and One Pairs: A \u201cnovel\u201d challenge for long-context language models",
+      "abstract_600": "Synthetic long-context LLM benchmarks (e.g., \u201cneedle-in-the-haystack\u201d) test only surface-level retrieval capabilities; but how well can long-context LLMs retrieve, synthesize, and reason over information across book-length inputs? We address this question by creating NoCha, a dataset of 1,001 minimally different pairs of true and false claims about 67 recently-published English fictional books, written by human readers of those books. In contrast to existing long-context benchmarks, our annotators confirm that the largest share of pairs in NoCha require global reasoning over the entire book to",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "111f8c6babe8",
+      "title": "ScienceAgentBench: Toward Rigorous Assessment of Language Agents for Data-Driven Scientific Discovery",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "85d8ce75b6aa",
+      "title": "FOFO: A Benchmark to Evaluate LLMs' Format-Following Capability",
+      "abstract_600": "This paper presents FoFo, a pioneering benchmark for evaluating large language models' (LLMs) ability to follow complex, domain-specific formats, a crucial yet underexamined capability for their application as AI agents. Despite LLMs' advancements, existing benchmarks fail to assess their format-following proficiency adequately. FoFo fills this gap with a diverse range of real-world formats and instructions, developed through an AI-Human collaborative method. Our evaluation across both open-source (e.g., Llama 2, WizardLM) and closed-source (e.g., GPT-4, PALM2, Gemini) LLMs highlights three ke",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bd4f6eecdc46",
+      "title": "MileBench: Benchmarking MLLMs in Long Context",
+      "abstract_600": "Despite the advancements and impressive performance of Multimodal Large Language Models (MLLMs) on benchmarks, their effectiveness in real-world, long-context, and multi-image tasks is unclear due to the benchmarks' limited scope. Existing benchmarks often focus on single-image and short-text samples, and when assessing multi-image tasks, they either limit the image count or focus on specific task (e.g time-series captioning), potentially obscuring the performance challenges of MLLMs. To address these limitations, we introduce MileBench, a pioneering benchmark designed to test the MultImodal L",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0f6f94417ce4",
+      "title": "A Chain-of-Thought Is as Strong as Its Weakest Link: A Benchmark for Verifiers of Reasoning Chains",
+      "abstract_600": "Prompting language models to provide step-by-step answers (e.g.,\"Chain-of-Thought\") is the prominent approach for complex reasoning tasks, where more accurate reasoning chains typically improve downstream task performance. Recent literature discusses automatic methods to verify reasoning to evaluate and improve their correctness. However, no fine-grained step-level datasets are available to enable thorough evaluation of such verification methods, hindering progress in this direction. We introduce REVEAL: Reasoning Verification Evaluation, a dataset to benchmark automatic verifiers of complex C",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1ff1527fccd5",
+      "title": "LitLLM: A Toolkit for Scientific Literature Review",
+      "abstract_600": "Conducting literature reviews for scientific papers is essential for understanding research, its limitations, and building on existing work. It is a tedious task which makes an automatic literature review generator appealing. Unfortunately, many existing works that generate such reviews using Large Language Models (LLMs) have significant limitations. They tend to hallucinate-generate non-factual information-and ignore the latest research they have not been trained on. To address these limitations, we propose a toolkit that operates on Retrieval Augmented Generation (RAG) principles, specialize",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ede505c44b2f",
+      "title": "Rating Roulette: Self-Inconsistency in LLM-As-A-Judge Frameworks",
+      "abstract_600": "As Natural Language Generation (NLG) continues to be widely adopted, properly assessing it has become quite difficult. Lately, using large language models (LLMs) for evaluating these generations has gained traction, as they tend to align more closely with human preferences than conventional n-gram or embedding-based metrics. In our experiments, we show that LLM judges have low intra-rater reliability in their assigned scores across different runs. This variance makes their ratings inconsistent, almost arbitrary in the worst case, making it difficult to measure how good their judgments actually",
+      "year": 2025,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e19b6dde070a",
+      "title": "\u201cAs an AI language model, I cannot\u201d: Investigating LLM Denials of User Requests",
+      "abstract_600": "Users ask large language models (LLMs) to help with their homework, for lifestyle advice, or for support in making challenging decisions. Yet LLMs are often unable to fulfil these requests, either as a result of their technical inabilities or policies restricting their responses. To investigate the effect of LLMs denying user requests, we evaluate participants\u2019 perceptions of different denial styles. We compare specific denial styles (baseline, factual, diverting, and opinionated) across two studies, respectively focusing on LLM\u2019s technical limitations and their social policy restrictions. Our",
+      "year": 2024,
+      "venue": "International Conference on Human Factors in Computing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

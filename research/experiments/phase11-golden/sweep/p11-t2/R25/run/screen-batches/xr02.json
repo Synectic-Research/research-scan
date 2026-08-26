@@ -1,0 +1,257 @@
+{
+  "batch": "xr02",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "fb15156be7c1",
+      "title": "Prompt-Level Distillation: A Non-Parametric Alternative to Model Fine-Tuning for Efficient Reasoning",
+      "abstract_600": "Advanced reasoning typically requires Chain-of-Thought prompting, which is accurate but incurs prohibitive latency and substantial test-time inference costs. The standard alternative, fine-tuning smaller models, often sacrifices interpretability while introducing significant resource and operational overhead. To address these limitations, we introduce Prompt-Level Distillation (PLD). We extract explicit reasoning patterns from a Teacher model and organize them into a structured list of expressive instructions for the Student model's System Prompt. Evaluated using Gemma-3 4B, PLD improved Macro",
+      "year": 2026,
+      "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 6: Industry Track)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8862bd804fe6",
+      "title": "Emergence WebVoyager: Toward Consistent and Transparent Evaluation of (Web) Agents in The Wild",
+      "abstract_600": "Reliable evaluation of AI agents operating in complex, real-world environments requires methodologies that are robust, transparent, and contextually aligned with the tasks agents are intended to perform. This study identifies persistent shortcomings in existing AI agent evaluation practices that are particularly acute in web agent evaluation, as exemplified by our audit of WebVoyager, including task-framing ambiguity and operational variability that hinder meaningful and reproducible performance comparisons. To address these challenges, we introduce Emergence WebVoyager, an enhanced version of",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "95c39e055716",
+      "title": "Reasoning Gets Harder for LLMs Inside A Dialogue",
+      "abstract_600": "Large Language Models (LLMs) achieve strong performance on many reasoning benchmarks, yet these evaluations typically focus on isolated tasks that differ from real-world usage in task-oriented dialogue (TOD). In this setting, LLMs must perform reasoning inherently while generating text and adhering to instructions on role, format, and style. This mismatch raises concerns about whether benchmark performance accurately reflects models'reasoning robustness in TOD setting. We investigate how framing reasoning tasks within TOD affects LLM performance by introducing BOULDER, a new dynamic benchmark",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e2962b9ec772",
+      "title": "Reason to Retrieve: Enhancing Query Understanding through Decomposition and Interpretation",
+      "abstract_600": "Query understanding (QU) aims to accurately infer user intent to improve document retrieval. It plays a vital role in modern search engines. While large language models (LLMs) have made notable progress in this area, their effectiveness has primarily been studied on short, keyword-based queries. With the rise of AI-driven search, long-form queries with complex intent become increasingly common, but they are underexplored in the context of LLM-based QU. To address this gap, we introduce ReDI, a reasoning-enhanced query understanding method through decomposition and interpretation. ReDI uses the",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0c7dc90a3f2e",
+      "title": "ToolAnchor: Anchoring Counterfactual Context to Boost Agentic Tool-use Capability",
+      "abstract_600": "Tool-augmented large language model agents excel at long-horizon tasks, yet they are typically post-trained on fixed toolsets. When tasks demand new tools, these agents struggle to incorporate them effectively, and retraining from scratch is often impractical. We identify the core obstacle in such toolset expansion problem as behavioral inertia: the tendency of agents to fall back on familiar tools and established reasoning patterns despite having access to new ones. We demonstrate that injecting counterfactual anchor contexts at critical decision points can break this inertia, recovering fail",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c97423231260",
+      "title": "Synthesizing Agentic Data for Web Agents with Progressive Difficulty Enhancement Mechanisms",
+      "abstract_600": "Web-based'deep research'agents aim to solve complex question - answering tasks through long-horizon interactions with online tools. These tasks remain challenging, as the underlying language models are often not optimized for long-horizon reasoning and exploration. Prior work has proposed workflows for constructing instruction-tuning datasets, often leveraging knowledge graphs. However, such methods typically lack fine-grained control over difficulty and quality, yielding synthetic data that falls short of capturing the complexity required for long-horizon reasoning. Furthermore, many studies",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "82f7b5fa2897",
+      "title": "The Contamination Paradox: Why Test Set Leakage Can Be Both Potent and Negligible",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a8b83ac688d0",
+      "title": "LLM-guided Hierarchical Search for End-to-end Reasoning Intensive Retrieval",
+      "abstract_600": "Search systems are increasingly used for reasoning-intensive queries, where what makes a document relevant requires understanding or reasoning over the query-document relation rather than relying on surface vocabulary or topical similarity. The standard recipe - a cheap embedding-based retriever followed by an LLM verifier - works only when the embedding model places the right documents in its top-k, an assumption that recent reasoning-intensive IR benchmarks show often fails to hold even for SOTA embedding models. Recent query-side fixes such as query rewriting and agentic loops keep the LLM",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7ae06238cdec",
+      "title": "CROP: Token-Efficient Reasoning in Large Language Models via Regularized Prompt Optimization",
+      "abstract_600": "Large Language Models utilizing reasoning techniques improve task performance but incur significant latency and token costs due to verbose generation. Existing automatic prompt optimization(APO) frameworks target task accuracy exclusively at the expense of generating long reasoning traces. We propose Cost-Regularized Optimization of Prompts (CROP), an APO method that introduces regularization on response length by generating textual feedback in addition to standard accuracy feedback. This forces the optimization process to produce prompts that elicit concise responses containing only critical",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "04c18af7211f",
+      "title": "Generative AI for Video Trailer Synthesis: From Extractive Heuristics to Autoregressive Creativity",
+      "abstract_600": "The domain of automatic video trailer generation is currently undergoing a profound paradigm shift, transitioning from heuristic-based extraction methods to deep generative synthesis. While early methodologies relied heavily on low-level feature engineering, visual saliency, and rule-based heuristics to select representative shots, recent advancements in Large Language Models (LLMs), Multimodal Large Language Models (MLLMs), and diffusion-based video synthesis have enabled systems that not only identify key moments but also construct coherent, emotionally resonant narratives. This survey provi",
+      "year": 2026,
+      "venue": "WSDM Companion",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b8cc4d2dd339",
+      "title": "Comparing Contrastive and Triplet Loss: Variance Analysis and Optimization Behavior",
+      "abstract_600": "Contrastive loss and triplet loss are widely used objectives in deep metric learning, yet their effects on representation quality remain insufficiently understood. We present a theoretical and empirical comparison of these losses, focusing on intra- and inter-class variance and optimization behavior (e.g., greedy updates). Through task-specific experiments with consistent settings on synthetic data and real datasets-MNIST, CIFAR-10-it is shown that triplet loss preserves greater variance within and across classes, supporting finer-grained distinctions in the learned representations. In contras",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f8938f68800d",
+      "title": "Perplexity",
+      "abstract_600": null,
+      "year": null,
+      "venue": "perplexity",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "88d37288044a",
+      "title": "Gemini deep research - your personal research assistant",
+      "abstract_600": null,
+      "year": null,
+      "venue": "gemini.google/ overview/deep-research/",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "dc6612fba47a",
+      "title": "Projecting BrowseComp-Plus onto ClimbMix: Toward More Realistic Corpora for Agentic Search",
+      "abstract_600": "The BrowseComp-Plus benchmark disentangled the evaluation of agentic search by replacing opaque web search with a fixed corpus, so that an agent's role can be separated from the retriever's. That corpus, however, holds only about 100K documents and was assembled from the supporting documents of the benchmark's own queries plus mined hard negatives, so the evidence and the distractors were both selected per query. We introduce $\\text{BrowseComp-Plus}_{\\text{CM}}$, which keeps the BrowseComp-Plus questions but relocates their evidence to ClimbMix, a 400B-token, 553M-document mixture of web text",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ebb79d71551d",
+      "title": "Every Model Cheats: Prompt-Level Mitigation of Cheating on Offensive Cyber Tasks",
+      "abstract_600": "Large language model (LLM) agents routinely cheat on cybersecurity benchmarks, inflating reported pass rates far beyond genuine capability. Prior audits of Cybench found cheating in 0.3-3.4% of traces, implicating only a handful of models. We present a controlled prompt-ablation study across 22 frontier models from 7 providers on 23 Cybench capture-the-flag (CTF) challenges under three prompt conditions (no anti-cheat, standard, severe). All 1,518 task traces were individually audited through a four-stage pipeline combining LLM-as-a-judge classification, programmatic verification, judge-verifi",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cf1d1bc9b27a",
+      "title": "iAgentBench: Benchmarking Sensemaking Capabilities of Information-Seeking Agents on High-Traffic Topics",
+      "abstract_600": "With the emergence of search-enabled generative QA systems, users are increasingly turning to tools that browse, aggregate, and reconcile evidence across multiple sources on their behalf. Yet many widely used QA benchmarks remain answerable by retrieving a single relevant passage, making them poorly suited for measuring cross-source sensemaking, such as integrating evidence, tracking causal links, and resolving dependencies across facets of a topic. We present iAgentBench, a dynamic ODQA benchmark that targets these higher-level information needs while keeping questions natural and grounded in",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b22e4a8c3ddc",
+      "title": "Artificial Intelligence Resources for the Screening of Titles and Abstracts in Systematic Reviews: A Scoping Review",
+      "abstract_600": "ABSTRACT Introduction Artificial intelligence (AI) is a branch of technology enabling machines to emulate complex human skills; it can also entail problem\u2010solving using bioinspired methods. It is used for automating systematic literature reviews (SLR), that is, defining a clinical question, locating relevant literature, preliminary screening, study evaluation, data extraction and analysis. Title and abstract screening is one of the most time\u2010consuming and error\u2010prone phases involved in developing a systematic review. While AI promises to expedite this process, adopting it faces challenges due",
+      "year": 2026,
+      "venue": "Cochrane Evidence Synthesis and Methods",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "898c40322ee7",
+      "title": "MAPS-AI a Model-driven AI-Assisted Tool for IT Project Plan and Scope: Case Study and Evaluation",
+      "abstract_600": null,
+      "year": 2026,
+      "venue": "Lecture notes in business information processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "972f4e1cb8a5",
+      "title": "Pharmacogenetic Predictors of Chemotherapy Treatment-Related Toxicities in Paediatric and Adolescent Acute Lymphoblastic Leukemia: A Systematic Review, Meta-Analysis and Literature-Based Candidate Prioritization",
+      "abstract_600": "Background: Childhood and adolescent acute lymphoblastic leukemia (ALL) survival outcomes have improved significantly, but treatment-related toxicities (TRTs) remain a major concern affecting dose intensity and quality of life. Germline pharmacogenetic variations contribute to inter-individual differences in chemotherapy response, yet consistent replication of associations has been limited by differences in treatment protocols, ethnic backgrounds, and toxicity definitions. Methods: This systematic review and meta-analysis (PROSPERO CRD42021229748) included 68 studies in the qualitative synthes",
+      "year": 2026,
+      "venue": "Pharmaceuticals",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3d7e5db0d3ed",
+      "title": "ystematic reviews in the era of artificial intelligence: Opportunities, challenges, and the future of evidence synthesis",
+      "abstract_600": "Systematic reviews remain the cornerstone of evidence-based practice, providing a rigorous and transparent synthesis of research findings across diverse disciplines. However, the exponential growth of scientific literature has placed considerable pressure on traditional review methodologies, which are increasingly constrained by time, resources, and human capacity. In response, artificial intelligence (AI) has emerged as a transformative force in evidence synthesis, offering new opportunities to enhance the efficiency, accuracy, and scalability of systematic reviews. This article critically ex",
+      "year": 2026,
+      "venue": "International Journal of Studies in Systematic Reviews",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9b3ab2c59ae9",
+      "title": "Let Retrievers Think Before Action: Thought-Augmented Embedding for Dense Retrieval",
+      "abstract_600": "Large language models (LLMs) have demonstrated that explicitly performing step-by-step thinking before producing \ufb01nal outputs can substantially improve performance on complex tasks, as exempli\ufb01ed by recent reasoning-oriented models such as OpenAI O1 and DeepSeek R1. Inspired by these advancements, we propose the O1 Embedder, a novel approach aiming to endow retrieval models with similar capabilities to address challenges like multi-task retrieval, zero-shot retrieval, and tasks requiring intensive reasoning of complex relationships. The O1 Embedder generates preliminary thoughts for input quer",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fb548963d9c8",
+      "title": "SciExplore: Evaluating Autonomous Agents from Scientific Navigation to Information Integration",
+      "abstract_600": "Scientific research involves complex information-seeking and reasoning workflows across heterogeneous sources. However, existing benchmarks primarily emphasize general-domain retrieval or static scientific question answering, and therefore fail to assess key capabilities required in realistic scientific research workflows. We introduce SciExplore, a benchmark designed to evaluate scientific information-seeking and reasoning capabilities of LLMs and agents. SciExplore comprises four task types covering 103 expert-curated tasks across more than ten scientific disciplines: scientific database nav",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "92451249a71b",
+      "title": "Towards Query-Agnostic RAG Evaluation via Query Coverage and Claim Verifiability",
+      "abstract_600": "Retrieval-augmented generation improves the factuality of large language models by grounding responses in retrieved evidence, yet existing evaluation frameworks struggle to provide consistent, fine-grained diagnostics across the diverse spectrum of user queries, ranging from close-ended fact-seeking to open-ended explanatory requests. We propose Q-CARE, a query-agnostic and fully reference-free framework that enables fine-grained assessment by decomposing queries into sub-queries and answers into atomic claims. Q-CARE establishes a unified evaluation principle based on query coverage and claim",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4418551a89d1",
+      "title": "Beyond Relevance-Centric Retrieval: Rubric-Oriented Document Set Selection and Ranking",
+      "abstract_600": "As large language models and AI agents become the primary consumers of search results, document set quality determines the upper bound of downstream generation. Yet existing evaluation systems remain confined to scoring documents independently and aggregating via nDCG, ignoring inter-document interactions (redundancy, conflict, complementarity) and unable to answer what makes one document set better than another. To address these issues, we propose a complete evaluate-diagnose-optimize framework. We design SetwiseEvalKit, a three-level, nine-dimension document set evaluation benchmark covering",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8a791260fa82",
+      "title": "Enhancing Legal Information Retrieval Through Metadata-Driven Multi-Hop RAG Architecture",
+      "abstract_600": "Legal-administrative search in Court of Accounts settings requires more than generic semantic matching: many queries are inherently multi-hop, demanding evidence to be gathered and reconciled across heterogeneous sources such as legislation, audit reports, and formal decisions. This paper proposes a modular, metadata-driven multi-hop RAG architecture. The core contribution lies in a tight integration between query decomposition, LLM-guided metadata extraction for dynamic filtering, hybrid sparse-dense retrieval, and domain-specific crossencoder reranking. By leveraging domain taxonomy to prune",
+      "year": 2026,
+      "venue": "Annual International Computer Software and Applications Conference",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

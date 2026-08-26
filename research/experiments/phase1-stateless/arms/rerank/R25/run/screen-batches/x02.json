@@ -1,0 +1,257 @@
+{
+  "batch": "x02",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "88a22dfdcd06",
+      "title": "HarmBench: A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal",
+      "abstract_600": "Automated red teaming holds substantial promise for uncovering and mitigating the risks associated with the malicious use of large language models (LLMs), yet the field lacks a standardized evaluation framework to rigorously assess new methods. To address this issue, we introduce HarmBench, a standardized evaluation framework for automated red teaming. We identify several desirable properties previously unaccounted for in red teaming evaluations and systematically design HarmBench to meet these criteria. Using HarmBench, we conduct a large-scale comparison of 18 red teaming methods and 33 targ",
+      "year": 2024,
+      "venue": "International Conference on Machine Learning",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6ae7af455a0b",
+      "title": "How far are we to GPT-4V? Closing the gap to commercial multimodal models with open-source suites",
+      "abstract_600": "In this paper, we introduce InternVL 1.5, an open-source multimodal large language model (MLLM) to bridge the capability gap between open-source and proprietary commercial models in multimodal understanding. We introduce three simple improvements. (1) Strong vision encoder: we explored a continuous learning strategy for the large-scale vision foundation model \u2014 InternViT-6B, boosting its visual understanding capabilities, and making it can be transferred and reused in different LLMs. (2) Dynamic high-resolution: we divide images into tiles ranging from 1 to 40 of 448\u00d7448 pixels according to th",
+      "year": 2024,
+      "venue": "Science China Information Sciences",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "acec9e867f16",
+      "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+      "abstract_600": "One of the grand challenges of artificial general intelligence is developing agents capable of conducting scientific research and discovering new knowledge. While frontier models have already been used as aides to human scientists, e.g. for brainstorming ideas, writing code, or prediction tasks, they still conduct only a small part of the scientific process. This paper presents the first comprehensive framework for fully automatic scientific discovery, enabling frontier large language models to perform research independently and communicate their findings. We introduce The AI Scientist, which",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "54e5cec02a50",
+      "title": "\u03c4-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "abstract_600": "Existing benchmarks do not test language agents on their interaction with human users or ability to follow domain-specific rules, both of which are vital for deploying them in real world applications. We propose $\\tau$-bench, a benchmark emulating dynamic conversations between a user (simulated by language models) and a language agent provided with domain-specific API tools and policy guidelines. We employ an efficient and faithful evaluation process that compares the database state at the end of a conversation with the annotated goal state. We also propose a new metric (pass^k) to evaluate th",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "948578cf9b86",
+      "title": "Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators",
+      "abstract_600": "LLM-based auto-annotators have become a key component of the LLM development process due to their cost-effectiveness and scalability compared to human-based evaluation. However, these auto-annotators can introduce biases that are hard to remove. Even simple, known confounders such as preference for longer outputs remain in existing automated evaluation metrics. We propose a simple regression analysis approach for controlling biases in auto-evaluations. As a real case study, we focus on reducing the length bias of AlpacaEval, a fast and affordable benchmark for instruction-tuned LLMs that uses",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2ca0e4a45bba",
+      "title": "Claude 3.5 Sonnet Model Card Addendum",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bf806f0608f0",
+      "title": "BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents",
+      "abstract_600": "We present BrowseComp, a simple yet challenging benchmark for measuring the ability for agents to browse the web. BrowseComp comprises 1,266 questions that require persistently navigating the internet in search of hard-to-find, entangled information. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers. BrowseComp for browsing agents can be seen as analogous to how programming competitions are an incomplete but useful benchmark for coding agents. While BrowseComp sidesteps challenges of a t",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "16b4e342cdbe",
+      "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+      "abstract_600": "Self-evaluation using large language models (LLMs) has proven valuable not only in benchmarking but also methods like reward modeling, constitutional AI, and self-refinement. But new biases are introduced due to the same LLM acting as both the evaluator and the evaluatee. One such bias is self-preference, where an LLM evaluator scores its own outputs higher than others' while human annotators consider them of equal quality. But do LLMs actually recognize their own outputs when they give those texts higher scores, or is it just a coincidence? In this paper, we investigate if self-recognition ca",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4915e3efac3e",
+      "title": "JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models",
+      "abstract_600": "Jailbreak attacks cause large language models (LLMs) to generate harmful, unethical, or otherwise objectionable content. Evaluating these attacks presents a number of challenges, which the current collection of benchmarks and evaluation techniques do not adequately address. First, there is no clear standard of practice regarding jailbreaking evaluation. Second, existing works compute costs and success rates in incomparable ways. And third, numerous works are not reproducible, as they withhold adversarial prompts, involve closed-source code, or rely on evolving proprietary APIs. To address thes",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ffd948986701",
+      "title": "MMMU-Pro: A More Robust Multi-discipline Multimodal Understanding Benchmark",
+      "abstract_600": "This paper introduces MMMU-Pro, a robust version of the Massive Multi-discipline Multimodal Understanding and Reasoning (MMMU) benchmark. MMMU-Pro rigorously assesses multimodal models' true understanding and reasoning capabilities through a three-step process based on MMMU: (1) filtering out questions answerable by text-only models, (2) augmenting candidate options, and (3) introducing a vision-only input setting where questions are embedded within images. This setting challenges AI to truly\"see\"and\"read\"simultaneously, testing a fundamental human cognitive skill of seamlessly integrating vis",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cc3f5a16b251",
+      "title": "Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models",
+      "abstract_600": "Proprietary LMs such as GPT-4 are often employed to assess the quality of responses from various LMs. However, concerns including transparency, controllability, and affordability strongly motivate the development of open-source LMs specialized in evaluations. On the other hand, existing open evaluator LMs exhibit critical shortcomings: 1) they issue scores that significantly diverge from those assigned by humans, and 2) they lack the flexibility to perform both direct assessment and pairwise ranking, the two most prevalent forms of assessment. Additionally, they do not possess the ability to e",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "89091b53af5e",
+      "title": "WildGuard: Open One-Stop Moderation Tools for Safety Risks, Jailbreaks, and Refusals of LLMs",
+      "abstract_600": "We introduce WildGuard -- an open, light-weight moderation tool for LLM safety that achieves three goals: (1) identifying malicious intent in user prompts, (2) detecting safety risks of model responses, and (3) determining model refusal rate. Together, WildGuard serves the increasing needs for automatic safety moderation and evaluation of LLM interactions, providing a one-stop tool with enhanced accuracy and broad coverage across 13 risk categories. While existing open moderation tools such as Llama-Guard2 score reasonably well in classifying straightforward model interactions, they lag far be",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "de3feb1b814f",
+      "title": "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions",
+      "abstract_600": "Today's LLMs are susceptible to prompt injections, jailbreaks, and other attacks that allow adversaries to overwrite a model's original instructions with their own malicious prompts. In this work, we argue that one of the primary vulnerabilities underlying these attacks is that LLMs often consider system prompts (e.g., text from an application developer) to be the same priority as text from untrusted users and third parties. To address this, we propose an instruction hierarchy that explicitly defines how models should behave when instructions of different priorities conflict. We then propose a",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7e9046c288e0",
+      "title": "Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge",
+      "abstract_600": "LLM-as-a-Judge has been widely utilized as an evaluation method in various benchmarks and served as supervised rewards in model training. However, despite their excellence in many domains, potential issues are under-explored, undermining their reliability and the scope of their utility. Therefore, we identify 12 key potential biases and propose a new automated bias quantification framework-CALM-which systematically quantifies and analyzes each type of bias in LLM-as-a-Judge by using automated and principle-guided modification. Our experiments cover multiple popular language models, and the res",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e6a459a84eef",
+      "title": "The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "df14b3713ce9",
+      "title": "Empowering Biomedical Discovery with AI Agents",
+      "abstract_600": "We envision \"AI scientists\" as systems capable of skeptical learning and reasoning that empower biomedical research through collaborative agents that integrate AI models and biomedical tools with experimental platforms. Rather than taking humans out of the discovery process, biomedical AI agents combine human creativity and expertise with AI's ability to analyze large datasets, navigate hypothesis spaces, and execute repetitive tasks. AI agents are poised to be proficient in various tasks, planning discovery workflows and performing self-assessment to identify and mitigate gaps in their knowle",
+      "year": 2024,
+      "venue": "Cell",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7146200e926a",
+      "title": "A StrongREJECT for Empty Jailbreaks",
+      "abstract_600": "Most jailbreak papers claim the jailbreaks they propose are highly effective, often boasting near-100% attack success rates. However, it is perhaps more common than not for jailbreak developers to substantially exaggerate the effectiveness of their jailbreaks. We suggest this problem arises because jailbreak researchers lack a standard, high-quality benchmark for evaluating jailbreak performance, leaving researchers to create their own. To create a benchmark, researchers must choose a dataset of forbidden prompts to which a victim model will respond, along with an evaluation method that scores",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7cf1431d8d41",
+      "title": "To CoT or not to CoT? Chain-of-thought helps mainly on math and symbolic reasoning",
+      "abstract_600": "Chain-of-thought (CoT) via prompting is the de facto method for eliciting reasoning capabilities from large language models (LLMs). But for what kinds of tasks is this extra ``thinking'' really helpful? To analyze this, we conducted a quantitative meta-analysis covering over 100 papers using CoT and ran our own evaluations of 20 datasets across 14 models. Our results show that CoT gives strong performance benefits primarily on tasks involving math or logic, with much smaller gains on other types of tasks. On MMLU, directly generating the answer without CoT leads to almost identical accuracy as",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b26163dcef51",
+      "title": "DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents",
+      "abstract_600": "Deep Research Agents are a prominent category of LLM-based agents. By autonomously orchestrating multistep web exploration, targeted retrieval, and higher-order synthesis, they transform vast amounts of online information into analyst-grade, citation-rich reports--compressing hours of manual desk research into minutes. However, a comprehensive benchmark for systematically evaluating the capabilities of these agents remains absent. To bridge this gap, we present DeepResearch Bench, a benchmark consisting of 100 PhD-level research tasks, each meticulously crafted by domain experts across 22 dist",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a1b69dbf9ea6",
+      "title": "Replacing Judges with Juries: Evaluating LLM Generations with a Panel of Diverse Models",
+      "abstract_600": "As Large Language Models (LLMs) have become more advanced, they have outpaced our abilities to accurately evaluate their quality. Not only is finding data to adequately probe particular model properties difficult, but evaluating the correctness of a model's freeform generation alone is a challenge. To address this, many evaluations now rely on using LLMs themselves as judges to score the quality of outputs from other LLMs. Evaluations most commonly use a single large model like GPT4. While this method has grown in popularity, it is costly, has been shown to introduce intramodel bias, and in th",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c85ecfba9117",
+      "title": "tinyBenchmarks: evaluating LLMs with fewer examples",
+      "abstract_600": "The versatility of large language models (LLMs) led to the creation of diverse benchmarks that thoroughly test a variety of language models' abilities. These benchmarks consist of tens of thousands of examples making evaluation of LLMs very expensive. In this paper, we investigate strategies to reduce the number of evaluations needed to assess the performance of an LLM on several key benchmarks. For example, we show that to accurately estimate the performance of an LLM on MMLU, a popular multiple-choice QA benchmark consisting of 14K examples, it is sufficient to evaluate this LLM on 100 curat",
+      "year": 2024,
+      "venue": "International Conference on Machine Learning",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a5f28f654c41",
+      "title": "A multi-agent system for automating scientific discovery",
+      "abstract_600": "Scientific discovery is driven by the iterative process of observation, hypothesis generation, experimentation and data analysis. Despite recent advancements in applying artificial intelligence (AI) to biology, no system has yet automated all these stages1, 2\u20133. Here we introduce Robin, a multi-agent system capable of fully automating both hypothesis generation and data analysis for experimental biology. By integrating literature search agents with data analysis agents, Robin can generate hypotheses, propose experiments, interpret experimental results and generate updated hypotheses, achieving",
+      "year": 2026,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "601b344ce025",
+      "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+      "abstract_600": "Evaluating Large Language Models (LLMs) as general-purpose agents is essential for understanding their capabilities and facilitating their integration into practical applications. However, the evaluation process presents substantial challenges. A primary obstacle is the benchmarking of agent performance across diverse scenarios within a unified framework, especially in maintaining partially-observable environments and ensuring multi-round interactions. Moreover, current evaluation frameworks mostly focus on the final success rate, revealing few insights during the process and failing to provid",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "28e586aac6e9",
+      "title": "Data Interpreter: An LLM Agent For Data Science",
+      "abstract_600": "Large Language Model (LLM)-based agents have shown effectiveness across many applications. However, their use in data science scenarios requiring solving long-term interconnected tasks, dynamic data adjustments and domain expertise remains challenging. Previous approaches primarily focus on individual tasks, making it difficult to assess the complete data science workflow. Moreover, they struggle to handle real-time changes in intermediate data and fail to adapt dynamically to evolving task dependencies inherent to data science problems. In this paper, we present Data Interpreter, an LLM-based",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "dd3e45589609",
+      "title": "RewardBench: Evaluating Reward Models for Language Modeling",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

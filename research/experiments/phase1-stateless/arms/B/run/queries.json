@@ -1,0 +1,32 @@
+{
+  "brief_summary": "Purpose: research. We are building a paper-to-decision engine that reads scientific papers and outputs structured claims with the evidence that backs them, and it must report each claim's trustworthiness and abstain when support is weak. This scan tests our working assumption that frontier LLMs already extract claims reliably and that the real failure mode is evidence linking (fabricated support, wrong-direction reads of contradicting evidence, over-generalisation beyond a paper's stated conditions) rather than extraction itself. It also needs to map which claim-evidence grounding benchmarks exist, how they were built, what their numbers can legitimately support, and whether abstention or calibrated uncertainty actually buys trustworthiness or just costs coverage.",
+  "domain": "cs",
+  "window": { "from": "2024-01", "to": null },
+  "sub_criteria": [
+    { "id": "C1", "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model." },
+    { "id": "C2", "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions." },
+    { "id": "C3", "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support." },
+    { "id": "C4", "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so." },
+    { "id": "C5", "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts." }
+  ],
+  "must_not": ["drug discovery", "molecular property prediction", "patent claims", "legal claim analysis", "news fact-checking", "social media fact-checking"],
+  "queries": [
+    { "id": "Q1", "type": "direct",        "text": "scientific claim extraction",              "mode": "semantic" },
+    { "id": "Q2", "type": "terminology",   "text": "citation attribution evaluation",           "mode": "semantic" },
+    { "id": "Q3", "type": "contradictory", "text": "annotation artifacts fact verification",    "mode": "semantic" },
+    { "id": "Q4", "type": "review",        "text": "(\"survey\" OR \"benchmark\") AND (\"claim verification\" OR \"citation grounding\")", "mode": "keyword" },
+    { "id": "Q5", "type": "mechanism",     "text": "hallucination faithfulness NLI",             "mode": "semantic" },
+    { "id": "Q6", "type": "method",        "text": "LLM abstention calibration uncertainty",     "mode": "semantic" },
+    { "id": "Q7", "type": "adjacent",      "text": "retrieval augmented generation attribution", "mode": "semantic" },
+    { "id": "Q8", "type": "emerging",      "text": "long document scientific fact checking",     "mode": "semantic" }
+  ],
+  "anchors": [
+    { "title": "Fact or Fiction: Verifying Scientific Claims" },
+    { "title": "CiteME: Can Language Models Accurately Cite Scientific Claims?" }
+  ]
+}

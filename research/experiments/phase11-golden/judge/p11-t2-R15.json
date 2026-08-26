@@ -1,0 +1,78 @@
+{
+ "label": "p11-t2-R15",
+ "run_dir": "sweep/p11-t2/R15/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 33.8,
+ "cost_usd": 0.2391,
+ "input_tokens": 11465,
+ "output_tokens": 2489,
+ "thinking_tokens": 1370,
+ "n_scored": 10,
+ "in_window_n": 10,
+ "foundational_n": 0,
+ "precision_ge2_in_window": 1.0,
+ "mean_score_in_window": 2.6,
+ "foundational_scores": [],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "60fd922117d2",
+   "score": 3,
+   "reason": "Fixed-corpus benchmark that isolates retriever contribution and reports BM25 vs dense baselines — directly anchors decision 1 (baseline ceiling) and decision 3 (benchmark construction) with concrete numbers."
+  },
+  {
+   "rank": 2,
+   "cid": "2cbca1abbe99",
+   "score": 3,
+   "reason": "Decomposes agent failures into retrieval vs utilization gaps and shows search effort only weakly aligned with accuracy — direct evidence for decisions 2 and 4, challenging the brief's premise as requested."
+  },
+  {
+   "rank": 3,
+   "cid": "dc6612fba47a",
+   "score": 3,
+   "reason": "Shows evidence recall collapsing 84.3%→21.4% when the same questions are moved to an independently built corpus — the clearest decision-4 evidence in the list that per-query corpus construction inflates reported performance."
+  },
+  {
+   "rank": 4,
+   "cid": "04c2c77e0326",
+   "score": 3,
+   "reason": "An actual scientific literature-search agent combining keyword search, citation expansion, and reranking with quantified multi-turn gains — squarely the system-design comparison decision 2 asks for."
+  },
+  {
+   "rank": 5,
+   "cid": "aac7d9e865ef",
+   "score": 2,
+   "reason": "Survey/taxonomy with a genuine benchmark critique that informs decisions 3 and 4, but it reports no measurements of its own and moves no specific decision by itself."
+  },
+  {
+   "rank": 6,
+   "cid": "37b82519b62a",
+   "score": 3,
+   "reason": "Attributes a measured accuracy and efficiency gain to a specific controllable mechanism (novelty/coverage-aware stopping and action selection) rather than the whole system — exactly the mechanism attribution decision 2 needs."
+  },
+  {
+   "rank": 7,
+   "cid": "3b14a111838b",
+   "score": 3,
+   "reason": "Quantifies search-time contamination inflating agent benchmark scores by up to 4% and proposes contamination controls — directly serves decisions 3 and 4 and reaches against the brief's premise as instructed."
+  },
+  {
+   "rank": 8,
+   "cid": "d8c6216340fd",
+   "score": 2,
+   "reason": "Quantified isolation of reformulation combined with graph traversal (two moves the brief names), but evaluated on multi-hop QA datasets rather than literature search, so its bearing on the brief's decisions is by analogy."
+  },
+  {
+   "rank": 9,
+   "cid": "3f16ad6b5a85",
+   "score": 2,
+   "reason": "A carefully constructed benchmark (query source, expert rubrics, human labor documented) that informs decision 3, though it evaluates report quality rather than literature retrieval recall, one step off the brief's core question."
+  },
+  {
+   "rank": 10,
+   "cid": "93ac147bb924",
+   "score": 2,
+   "reason": "Coordinates the specific agentic operations the brief names (iterative retrieval, reformulation, sufficiency checking) with measured gains, but on QA datasets, not literature search — informs decision 2 only indirectly."
+  }
+ ]
+}

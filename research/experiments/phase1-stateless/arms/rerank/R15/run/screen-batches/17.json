@@ -1,0 +1,257 @@
+{
+  "batch": "17",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "24cc9cf2cf5a",
+      "title": "Ultrathin polymer membrane for improved hole extraction and ion blocking in perovskite solar cells",
+      "abstract_600": "Highly efficient perovskite solar cells (PSCs) in the n-i-p structure have demonstrated limited operational lifetimes, primarily due to the layer-to-layer ion diffusion in the perovskite/doped hole-transport layer (HTL) heterojunction, leading to conductivity drop in HTL and component loss in perovskite. Herein, we introduce an ultrathin (~7 nm) p-type polymeric interlayer (D18) with excellent ion-blocking ability between perovskite and HTL to address these issues. The ultrathin D18 interlayer effectively inhibits the layer-to-layer diffusion of lithium, methylammonium, formamidium, and iodide",
+      "year": 2024,
+      "venue": "Nature Communications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "514ed24b80a8",
+      "title": "Citation: A Key to Building Responsible and Accountable Large Language Models",
+      "abstract_600": "Large Language Models (LLMs) bring transformative benefits alongside unique challenges, including intellectual property (IP) and ethical concerns.This position paper explores a novel angle to mitigate these risks, drawing parallels between LLMs and established web systems.We identify \"citation\"-the acknowledgement or reference to a source or evidence-as a crucial yet missing component in LLMs.Incorporating citation could enhance content transparency and verifiability, thereby confronting the IP and ethical issues in the deployment of LLMs.We further propose that a comprehensive citation mechan",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5dd7b3d9ca44",
+      "title": "Extending Retag to Detect Conversion Errors in Syntactic Annotation: SynTagRus as a Case Study",
+      "abstract_600": "The Universal Dependencies (UD) project has grown rapidly through semi-automatic conversion of existing treebanks, but ensuring the quality of converted annotations remains a challenge. Manual verification does not scale, and existing automatic methods cannot distinguish conversion errors from inherent annotation complexity. We present a method that addresses this gap by training two parsers on a token-aligned parallel corpus: one on\nthe original annotation and one on its UD conversion. By requiring correct predictions from the parser trained on\nthe original annotation, our approach isolates e",
+      "year": 2026,
+      "venue": "Computational Linguistics and Intellectual Technologies",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e90b22b999c3",
+      "title": "MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries",
+      "abstract_600": "Retrieval-augmented generation (RAG) augments large language models (LLM) by retrieving relevant knowledge, showing promising potential in mitigating LLM hallucinations and enhancing response quality, thereby facilitating the great adoption of LLMs in practice. However, we find that existing RAG systems are inadequate in answering multi-hop queries, which require retrieving and reasoning over multiple pieces of supporting evidence. Furthermore, to our knowledge, no existing RAG benchmarking dataset focuses on multi-hop queries. In this paper, we develop a novel dataset, MultiHop-RAG, which con",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "596fa0597205",
+      "title": "Faithfulness-Aware Uncertainty Quantification for Fact-Checking the Output of Retrieval Augmented Generation",
+      "abstract_600": "Large Language Models (LLMs) enhanced with retrieval, an approach known as Retrieval-Augmented Generation (RAG), have achieved strong performance in open-domain question answering. However, RAG remains prone to hallucinations: factually incorrect outputs may arise from inaccuracies in the model's internal knowledge and the retrieved context. Existing approaches to mitigating hallucinations often conflate factuality with faithfulness to the retrieved evidence, incorrectly labeling factually correct statements as hallucinations if they are not explicitly supported by the retrieval. In this paper",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0e6577393bf7",
+      "title": "Learning Conformal Abstention Policies for Adaptive Risk Management in Large Language and Vision-Language Models",
+      "abstract_600": "Large Language and Vision-Language Models (LLMs/VLMs) are increasingly used in safety-critical applications, yet their opaque decision-making complicates risk assessment and reliability. Uncertainty quantification (UQ) helps assess prediction confidence and enables abstention when uncertainty is high. Conformal prediction (CP), a leading UQ method, provides statistical guarantees but relies on static thresholds, which fail to adapt to task complexity and evolving data distributions, leading to suboptimal trade-offs in accuracy, coverage, and informativeness. To address this, we propose learnab",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c2e62bbb0d5c",
+      "title": "A HYBRID RETRIEVAL-AUGMENTED GENERATION AND LANGUAGE MODEL FRAMEWORK FOR EVIDENCE-GROUNDED REVIEW SYSTEMS",
+      "abstract_600": "Evidence-grounded review systems require balancing comprehensive knowledge retrieval with accurate and reliable generation. Traditional approaches often struggle with maintaining factual consistency, providing proper attribution, and combining complex multi-source evidence. In this study we propose a reliable hybrid framework that integrates retrieval-augmented generation with large language models to support evidence-grounded critiques, risk assessments, and recommendations. The framework created ensures to incorporate structured rubrics, a dual-model verification, and a human-in-the-loop to",
+      "year": 2025,
+      "venue": "International Journal of Advanced Research in Computer Science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b4c8c493812c",
+      "title": "From Fact Drafts to Operational Systems: Semantic Search in Legal Decisions Using Fact Drafts",
+      "abstract_600": "This research paper presents findings from an investigation in the semantic similarity search task within the legal domain, using a corpus of 1172 Hungarian court decisions. The study establishes the groundwork for an operational semantic similarity search system designed to identify cases with comparable facts using preliminary legal fact drafts. Evaluating such systems often poses significant challenges, given the need for thorough document checks, which can be costly and limit evaluation reusability. To address this, the study employs manually created fact drafts for legal cases, enabling r",
+      "year": 2024,
+      "venue": "Big Data and Cognitive Computing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3715382e79bf",
+      "title": "FORM-TRACE: A formula-based method for tracking forest-management transitions at Harvard Forest from 1908 to 2026",
+      "abstract_600": "Long-term changes in forest management are documented across reports, plans, and scientific papers written for different purposes and with changing vocabularies. This makes it difficult to show how a documentary record was converted into a temporal claim. FORM-TRACE is a formula-based workflow that records corpus decisions, extraction quality, domain terms, and calculations before interpretation. We demonstrate it with Harvard Forest and New England documents dated 1908\u20132026. Of 257 PDFs inspected, 215 met the analytical criteria; 201 were extracted and scored, 14 were flagged as unreadable, s",
+      "year": 2026,
+      "venue": "MethodsX",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f5caad7c4abf",
+      "title": "Demanding peer review is associated with higher impact in published science",
+      "abstract_600": "Peer review shapes which scientific claims enter the published record, but its internal dynamics are hard to measure at scale because reviewer criticism and author revision are usually embedded in long, unstructured correspondence. Here we use a fixed-prompt large language model pipeline to convert the review correspondence of \\textit{Nature Communications} papers published from 2017 to 2024 into structured reviewer--author interactions. We find that review pressure is concentrated in the first round and focused disproportionately on core claims rather than peripheral presentation. Higher aver",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4508022091ce",
+      "title": "Large language models show Dunning-Kruger-like effects in multilingual fact-checking",
+      "abstract_600": "The rise of misinformation underscores the need for scalable and reliable fact-checking solutions. Large language models (LLMs) hold promise in automating fact verification, yet their effectiveness across global contexts remains uncertain. We systematically evaluate nine established LLMs across multiple categories (open/closed-source, multiple sizes, diverse architectures, reasoning-based) using 5,000 claims previously assessed by 174 professional fact-checking organizations across 47 languages. Our methodology tests model generalizability on claims postdating training cutoffs and four prompti",
+      "year": 2026,
+      "venue": "Scientific Reports",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bf148137fbce",
+      "title": "Courtroom-Style Multi-Agent Debate with Progressive RAG and Role-Switching for Controversial Claim Verification",
+      "abstract_600": "Large language models (LLMs) remain unreliable for high-stakes claim verification due to hallucinations and shallow reasoning. While retrieval-augmented generation (RAG) and multi-agent debate (MAD) address this, they are limited by one-pass retrieval and unstructured debate dynamics. We propose a courtroom-style multi-agent framework, PROClaim, that reformulates verification as a structured, adversarial deliberation. Our approach integrates specialized roles (e.g., Plaintiff, Defense, Judge) with Progressive RAG (P-RAG) to dynamically expand and refine the evidence pool during the debate. Fur",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "01759a63cac0",
+      "title": "ACUEval: Fine-grained Hallucination Evaluation and Correction for Abstractive Summarization",
+      "abstract_600": "The impressive generation capabilities of large language models (LLMs) have made it harder to detect the subtle hallucinations they make in abstractive summarization, where generated summaries consist of a blend of correct and incorrect information w.r.t. a given document. Recently-proposed LLM-based evaluation metrics attempt to capture this, but still face challenges: (1) they are biased towards summaries generated from the same underlying LLM, and (2) they lack interpretability, offering only a single score. In this work, we present ACUE-VAL , a metric that leverages the power of LLMs to pe",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "416905c5d3e9",
+      "title": "Large language models in real-world clinical workflows: a systematic review of applications and implementation",
+      "abstract_600": "Background: Large language models (LLMs) offer promise for enhancing clinical care by automating documentation, supporting decision-making, and improving communication. However, their integration into real-world healthcare workflows remains limited and under characterized. This systematic review aims to evaluate the literature on real-world implementation of LLMs in clinical workflows, including their use cases, clinical settings, observed outcomes, and challenges. Methods: We searched MEDLINE, Scopus, Web of Science, and Google Scholar for studies published between January 2015 and April 2025",
+      "year": 2025,
+      "venue": "Frontiers in Digital Health",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0e82de61761f",
+      "title": "ASARL: Autonomous Social-Aware Relevance Learning for QQ Search",
+      "abstract_600": "The rapid growth of online social platforms has transformed communication and information retrieval, giving rise to social search, where queries-titles are typically expressed in informal, community-specific language. While large language models provide strong general-purpose semantic understanding, their effectiveness in social search is constrained by contextual discrepancy, data scarcity, and behavior-driven dynamics. To address these challenges, we propose the Autonomous Social-Aware Relevance Learning (ASARL), a fully automated framework that integrates multi-agent data curation with stag",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "88220660f832",
+      "title": "A Comprehensive Survey of Scientific Large Language Models and Their Applications in Scientific Discovery",
+      "abstract_600": "In many scientific fields, large language models (LLMs) have revolutionized the way text and other modalities of data (e.g., molecules and proteins) are handled, achieving superior performance in various applications and augmenting the scientific discovery process.Nevertheless, previous surveys on scientific LLMs often concentrate on one or two fields or a single modality.In this paper, we aim to provide a more holistic view of the research landscape by unveiling cross-field and cross-modal connections between scientific LLMs regarding their architectures and pretraining techniques.To this end",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "69290ae76a26",
+      "title": "Can LLMs extract scientific consensus? A case study in high-temperature superconductivity",
+      "abstract_600": "Scientific knowledge is increasingly dispersed across vast and heterogeneous scientific literature, where important claims are often implicit, evolving, and internally debated. While large language models (LLMs) have shown impressive performance in information extraction and summarization, their ability to recover latent scientific consensus remains unclear. Here, we investigate this problem in the context of high-temperature superconductivity (HTS), a long-standing and highly debated topic in condensed matter physics, as a challenging testbed. Using near 18,000 highly-cited publications over",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8dd1d1afd6dc",
+      "title": "AI-Assisted Tools for Scientific Review Writing: Opportunities and Cautions",
+      "abstract_600": "The evolution of large language models (LLMs) is reshaping the landscape of scientific writing, enabling the generation of machine-written review papers with minimal human intervention. This paper presents a pipeline for the automated production of scientific survey articles using Retrieval-Augmented Generation (RAG) and modular LLM agents. The pipeline processes user-selected literature or citation network-derived corpora through vectorized content, reference, and figure databases to generate structured, citation-rich reviews. Two distinct strategies are evaluated: one based on manually curat",
+      "year": 2025,
+      "venue": "ACS Applied Materials & Interfaces",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "81776af11615",
+      "title": "Verified Foundations for Differential Privacy",
+      "abstract_600": "Differential privacy (DP) has become the gold standard for privacy-preserving data analysis, but implementing it correctly has proven challenging. Prior work has focused on verifying DP at a high level, assuming either that the foundations are correct or that a perfect source of random noise is available. However, the underlying theory of differential privacy can be very complex and subtle. Flaws in basic mechanisms and random number generation have been a critical source of vulnerabilities in real-world DP systems. In this paper, we present SampCert, the first comprehensive, mechanized founda",
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "82f649164e12",
+      "title": "Signals Are Not States: Neuro-Symbolic Safeguards for Culturally Aware Classroom AI",
+      "abstract_600": "Classroom AI systems increasingly infer high-level educational states such as engagement, confusion, collaboration, participation, and instructional quality from multimodal and linguistic signals. In multicultural and multilingual classrooms, such inferences can translate culturally situated behavior into stereotyped claims: silence may be read as disengagement, gaze aversion as inattention, code-switching as low proficiency, or indirect help-seeking as confusion. We argue that stereotype-aware classroom AI should separate observable evidence from culturally loaded interpretation and should tr",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fb1cb37a806f",
+      "title": "GraphEval: A Knowledge-Graph Based LLM Hallucination Evaluation Framework",
+      "abstract_600": "Methods to evaluate Large Language Model (LLM) responses and detect inconsistencies, also known as hallucinations, with respect to the provided knowledge, are becoming increasingly important for LLM applications. Current metrics fall short in their ability to provide explainable decisions, systematically check all pieces of information in the response, and are often too computationally expensive to be used in practice. We present GraphEval: a hallucination evaluation framework based on representing information in Knowledge Graph (KG) structures. Our method identifies the specific triples in th",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ac784b808424",
+      "title": "LLMs Capture Emotion Labels, Not Emotion Uncertainty: Distributional Analysis and Calibration of Human-LLM Judgment Gaps",
+      "abstract_600": "Human annotators frequently disagree on emotion labels, yet most evaluations of Large Language Model (LLM) emotion annotation collapse these judgments into a single gold standard, discarding the distributional information that disagreement encodes. We ask whether LLMs capture the structure of this disagreement, not just majority labels, by comparing emotion judgment distributions between human annotators and four zero-shot LLMs, plus a fine-tuned RoBERTa baseline, across two complementary benchmarks: GoEmotions and EmoBank, totaling 640,000 LLM responses. Zero-shot models diverge substantially",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f345b7ffb0b6",
+      "title": "A Systematic Literature Review of Retrieval-Augmented Generation: Techniques, Metrics, and Challenges",
+      "abstract_600": "Background: Retrieval-augmented generation (RAG) aims to reduce hallucinations and outdated knowledge by grounding LLM outputs in retrieved evidence, but empirical results are scattered across tasks, systems, and metrics, limiting cumulative insight. Objective: We aimed to synthesise empirical evidence on RAG effectiveness versus parametric-only baselines, map datasets/architectures/evaluation practices, and surface limitations and research gaps. Methods: This systematic review was conducted and reported in accordance with PRISMA 2020. We searched the ACM Digital Library, IEEE Xplore, Scopus,",
+      "year": 2025,
+      "venue": "Big Data and Cognitive Computing",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "b965358625a7",
+      "title": "QwenLong-L1.5: Post-Training Recipe for Long-Context Reasoning and Memory Management",
+      "abstract_600": "We introduce QwenLong-L1.5, a model that achieves superior long-context reasoning capabilities through systematic post-training innovations. The key technical breakthroughs of QwenLong-L1.5 are as follows: (1) Long-Context Data Synthesis Pipeline: We develop a systematic synthesis framework that generates challenging reasoning tasks requiring multi-hop grounding over globally distributed evidence. By deconstructing documents into atomic facts and their underlying relationships, and then programmatically composing verifiable reasoning questions, our approach creates high-quality training data a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f22f8a0ed67c",
+      "title": "Enhanced feature extraction YOLO industrial small object detection algorithm based on receptive-field attention and multi-scale features",
+      "abstract_600": "Abstract To guarantee the stability and safety of industrial production, it is necessary to regulate the behavior of employees. However, the high background complexity, low pixel count, occlusion and fuzzy appearance can result in a high leakage rate and poor detection accuracy of small objects. Considering the above problems, this paper proposes the Enhanced feature extraction-You Only Look Once (EFE-YOLO) algorithm to improve the detection of industrial small objects. To enhance the detection of fuzzy and occluded objects, the PixelShuffle and Receptive-Field Attention (PSRFA) upsampling mod",
+      "year": 2024,
+      "venue": "Measurement Science and Technology",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

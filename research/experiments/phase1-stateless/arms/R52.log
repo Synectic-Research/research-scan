@@ -1,0 +1,84 @@
+shortlist exit=0: {
+  "ok": true,
+  "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R52/run",
+  "screened": 572,
+  "screened_ge2": 90,
+  "in_window": 40,
+  "outside_window": 2
+}
+R52: shortlist 40+2 -> reranking 40+2 = 42
+  R52/c1   154.1s  $0.1889  in=8567 cr=0 out=15718 (think 8585)
+  R52/c2   139.2s  $0.1599  in=8106 cr=5850 out=14251 (think 7055)
+  R52/c3   192.5s  $0.2152  in=9678 cr=5850 out=19466 (think 12860)
+  R52/c4    66.1s  $0.0697  in=1993 cr=5850 out=6458 (think 4558)
+ranked.json schema: True ok
+verify exit=0: {
+  "ok": true,
+  "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R52/run",
+  "verification": {
+    "verified": 42,
+    "unverified": 0,
+    "dropped_retracted": 0,
+    "crossref_skipped": false,
+    "duration_s": 20.301
+  },
+  "unverified": []
+}
+emit exit=0: {
+  "ok": true,
+  "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R52/run",
+  "evidence_json": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R52/run/evidence.json",
+  "emit": {
+    "top": 10,
+    "founda
+{
+ "calls": 4,
+ "calls_ok": 4,
+ "calls_failed": 0,
+ "input_tokens": 28344,
+ "cache_read_tokens": 17550,
+ "cache_write_tokens": 5850,
+ "output_tokens": 55893,
+ "thinking_tokens": 33058,
+ "cost_usd": 0.633753,
+ "api_seconds_sum": 552.01,
+ "retries": 0,
+ "sub_arm": "R52",
+ "source_arm": "C",
+ "cut": 52,
+ "reranked": 42,
+ "in_window": 40,
+ "outside_window": 2,
+ "stage_wall_s": 552.04,
+ "ranked_schema_valid": true,
+ "ranked_schema_msg": "ok",
+ "shortlist_size": 42,
+ "verify_exit": 0,
+ "emit_exit": 0,
+ "cumulative_spend_usd": 3.618308,
+ "top10_dois": [
+  "10.48550/arxiv.2607.20527",
+  "10.48550/arxiv.2607.11074",
+  "10.48550/arxiv.2608.01409",
+  "10.48550/arxiv.2506.08235",
+  "10.48550/arxiv.2405.02228",
+  "10.48550/arxiv.2605.26663",
+  "10.1038/s41467-025-58551-6",
+  "10.18653/v1/2026.acl-long.1430",
+  "10.18653/v1/2023.emnlp-main.398",
+  "10.18653/v1/2023.findings-emnlp.467"
+ ],
+ "top10_cids": [
+  "84b54d56d46b",
+  "752402f2a368",
+  "134a6c31c11c",
+  "444f2c23f859",
+  "ea71e3251c36",
+  "d6920ae21863",
+  "375cd1eb8f71",
+  "3c1e5f6887f9",
+  "b13f6337909b",
+  "7d29489aa7b6"
+ ],
+ "top10_overlap": 5
+}

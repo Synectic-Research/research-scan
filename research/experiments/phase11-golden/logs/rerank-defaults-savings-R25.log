@@ -1,0 +1,70 @@
+defaults-savings R25: shortlist 40+6 -> reranking 19+6 = 25   spent $4.0176
+  rerank/defaults-savings/R25/c1   111.9s  $0.1243  in=6488 cr=6148 out=11006 (think 5336)
+  rerank/defaults-savings/R25/c2   133.3s  $0.1414  in=5738 cr=6148 out=12866 (think 7609)
+ranked schema True; verify exit 0; emit exit 0
+{
+ "calls": 2,
+ "calls_ok": 2,
+ "calls_failed": 0,
+ "input_tokens": 12226,
+ "cache_read_tokens": 12296,
+ "cache_write_tokens": 0,
+ "output_tokens": 23872,
+ "thinking_tokens": 12945,
+ "cost_usd": 0.265631,
+ "api_seconds_sum": 245.26,
+ "retries": 0,
+ "schema_failures": 0,
+ "topic": "defaults-savings",
+ "arm": "R25",
+ "cut": 25,
+ "reranked": 25,
+ "in_window": 19,
+ "outside_window": 6,
+ "stage_wall_s": 245.29,
+ "ranked_schema_valid": true,
+ "ranked_schema_msg": "ok",
+ "shortlist_size": 46,
+ "verify_exit": 0,
+ "emit_exit": 0,
+ "verify_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t1/R25/run\",\n  \"verification\": {\n    \"verified\": 25,\n    \"unverified\": 0,\n    \"dropped_retracted\": 0,\n    \"crossref_skipped\": false,\n    \"duration_s\": 12.472\n  },\n  \"unverified\": []\n}",
+ "emit_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t1/R25/run\",\n  \"evidence_json\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t1/R25/run/evidence.json\",\n  \"emit\": {\n    \"top\": 10,\n    \"foundational\": 2,\n    \"contradicting\": 1,\n    \"emitted\": 10,\n    \"alternates\": 5,\n    \"dropped_retracted\": 0",
+ "frontier_tokens": 36098,
+ "cumulative_spend_usd": 4.283232,
+ "top10_cids": [
+  "3c6587448c9c",
+  "9e3699988af6",
+  "6c8b6522d8f1",
+  "8319d6c6bc20",
+  "c3219a378627",
+  "a46ee7af47d3",
+  "5273b68f1dce",
+  "33a48a81613a",
+  "26f21e72f8db",
+  "893434476830"
+ ],
+ "top10_dois": [
+  "10.3386/w31926",
+  "10.1002/bdm.2395",
+  "10.1002/arcp.70007",
+  "10.1111/jofi.13404",
+  "10.1287/mnsc.2024.05272",
+  "10.48550/arxiv.2310.00340",
+  "10.3386/w31601",
+  "10.1257/aer.20210013",
+  "10.3386/w24854",
+  "10.1093/rfs/hhaa108"
+ ],
+ "selection_reasons": [
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "foundational",
+  "foundational"
+ ]
+}

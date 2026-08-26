@@ -1,0 +1,1989 @@
+{
+  "run": {
+    "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/Rall/run",
+    "slug": "p11-t2",
+    "date": "2026-08-26",
+    "brief_path": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/Rall/run/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2024-01",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "standard"
+    }
+  },
+  "packets": [
+    {
+      "cid": "2cbca1abbe99",
+      "criteria": {
+        "C1": 2,
+        "C2": 3,
+        "C3": 1,
+        "C4": 2,
+        "C5": 3
+      },
+      "overall": 3,
+      "evidence_level": "observational",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": false
+      },
+      "key_finding": "Across six agents on BrowseComp-Plus (validated on BrowseComp), search effort is only weakly aligned with answer quality; accuracy correlates better with cumulative retrieval recall than with number of searches, and the best agents issue far fewer redundant queries.",
+      "methodology": "Trajectory-level diagnosis using human-annotated document-relevance judgments, decomposing failures into retrieval gaps vs. utilization gaps, retrieval model held fixed across six agents.",
+      "why_it_matters": "Directly undercuts the premise that more iterative searching or reformulation reliably drives agentic gains \u2014 shows that reported improvements often trace to retrieval-recall quality and stopping discipline, not raw search volume, which should recalibrate how we attribute and measure agentic gains.",
+      "limitations": [
+        "restricted to two web-search benchmarks (BrowseComp/BrowseComp-Plus), not literature-specific corpora",
+        "six agents studied, may not generalize to all architectures"
+      ],
+      "relevance_reason": "Directly answers the brief's core questions on what agentic moves carry the gain and where reported search-effort gains fail to materialize.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Diagnosing Search Behavior and Failure Modes in Long-Horizon Search Agents",
+      "abstract": "Deep search agents answer difficult information-seeking questions by iteratively issuing search queries to gather supporting evidence, but it remains unclear whether and how greater search effort leads to better answers. We study these questions through a trajectory-level diagnosis of long-horizon search agents. Using human-annotated document-level relevance judgments, we evaluate the evidence retrieved at each search step and separate two stages of agent behavior: what evidence an agent retrieves and how effectively it uses that evidence. This distinction further allows us to decompose failures into retrieval gaps, where the necessary evidence is never found, and utilization gaps, where relevant evidence is retrieved but not used correctly. With the retrieval model and evaluation harness held fixed, we compare six agents on BrowseComp-Plus and further validate our findings on BrowseComp with an open-web search API. Across settings, we find that search effort and answer quality are only weakly aligned. Answer accuracy is better correlated with the quality of retrieved evidence, especially cumulative retrieval recall, than with the number of searches or the amount of context consumed. Useful evidence often appears early in the trajectory, yet agents tend to continue searching, producing a long tail of low-yield retrieval steps. At the query level, exploratory reformulations remain useful, but the best-performing agents issue far fewer redundant queries. Overall, by systematically characterizing the search behavior and failure modes of long-horizon search agents, this work points to practical directions for building better deep research systems, including stronger query formulation, more effective evidence selection and context management, and stopping criteria based on whether sufficient supporting evidence has been retrieved.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Qi Liu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Jiaxin Mao",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Fengbin Zhu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Tat-Seng Chua",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-08-03",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.AI",
+      "ids": {
+        "doi": "10.48550/arxiv.2608.01913",
+        "arxiv": "2608.01913",
+        "pmid": null,
+        "openalex": null,
+        "s2": "fa438b01b8c78e6f10479114f3a061bded83be75"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2608.01913v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 26
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 4
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "60fd922117d2",
+          "rank": 13
+        }
+      ],
+      "outside_window": false,
+      "rank": 1,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2608.01913"
+    },
+    {
+      "cid": "6006ace31229",
+      "criteria": {
+        "C1": 3,
+        "C2": 1,
+        "C3": 2,
+        "C4": 3,
+        "C5": 2
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "plan-influencing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "Introduces Total Recall QA (TRQA), a benchmark built from Wikidata-Wikipedia plus a synthetic contamination-resistant e-commerce corpus, establishing baseline retrieval and end-to-end results for deep research agents against a formal set of evaluation requirements.",
+      "methodology": "Constructs single-answer, total-recall queries with relevance judgments from a structured KB paired with a text corpus, enabling large-scale, contamination-controlled benchmark construction; benchmarks representative retrievers and deep-research models. Abstract-only for numeric baselines.",
+      "why_it_matters": "Directly targets Q1 (what a single-query recall ceiling looks like) and Q3 (rigorous benchmark construction with contamination control), giving a concrete comparison framework rather than an ad hoc one.",
+      "limitations": [
+        "abstract omits actual recall numbers",
+        "corpus is Wikidata/Wikipedia and synthetic e-commerce rather than scientific literature specifically"
+      ],
+      "relevance_reason": "Provides the recall-ceiling baseline methodology and contamination-aware benchmark-construction framework the brief's Q1 and Q3 need.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Total Recall QA: A Verifiable Evaluation Suite for Deep Research Agents",
+      "abstract": "Deep research agents have emerged as LLM-based systems designed to perform multi-step information seeking and reasoning over large, open-domain sources to answer complex questions by synthesizing information from multiple information sources. Given the complexity of the task and despite various recent efforts, evaluation of deep research agents remains fundamentally challenging. This paper identifies a list of requirements and optional properties for evaluating deep research agents. We observe that existing benchmarks do not satisfy all identified requirements. Inspired by prior research on TREC Total Recall Tracks, we introduce the task of Total Recall Question Answering and develop a framework for deep research agents evaluation that satisfies the identified criteria. Our framework constructs single-answer, total recall queries with precise evaluation and relevance judgments derived from a structured knowledge base paired with a text corpus, enabling large-scale data construction. Using this framework, we build TRQA, a deep research benchmark constructed from Wikidata-Wikipedia as a real-world source and a synthetically generated e-commerce knowledge base and corpus to mitigate the effects of data contamination. We benchmark the collection with representative retriever and deep research models and establish baseline retrieval and end-to-end results for future comparative evaluation.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Mahta Rafiee",
+          "s2_id": null,
+          "openalex_id": "A5140780711"
+        },
+        {
+          "name": "Heydar Soudani",
+          "s2_id": null,
+          "openalex_id": "A5140865597"
+        },
+        {
+          "name": "Zahra Abbasiantaeb",
+          "s2_id": null,
+          "openalex_id": "A5140920049"
+        },
+        {
+          "name": "Mohammad Aliannejadi",
+          "s2_id": null,
+          "openalex_id": "A5140930373"
+        },
+        {
+          "name": "Faegheh Hasibi",
+          "s2_id": null,
+          "openalex_id": "A5140839677"
+        },
+        {
+          "name": "Hamed Zamani",
+          "s2_id": null,
+          "openalex_id": "A5140870383"
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-15",
+      "venue": null,
+      "type": "other",
+      "raw_type": "conference-paper",
+      "ids": {
+        "doi": "10.1145/3805712.3808629",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W7168405860",
+        "s2": null
+      },
+      "citation_count": 1,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.1145/3805712.3808629",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 6
+        }
+      ],
+      "outside_window": false,
+      "rank": 2,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.1145/3805712.3808629"
+    },
+    {
+      "cid": "60fd922117d2",
+      "criteria": {
+        "C1": 3,
+        "C2": 1,
+        "C3": 2,
+        "C4": 3,
+        "C5": 1
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "foundational",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "On a fixed, human-verified corpus, BM25+Search-R1 achieves only 3.86% accuracy while GPT-5 reaches 55.9%, and swapping in a stronger embedding retriever lifts GPT-5 to 70.1% with fewer search calls.",
+      "methodology": "New benchmark derived from BrowseComp with a fixed curated corpus, human-verified supporting documents and mined hard negatives, enabling disentangled agent-vs-retriever evaluation.",
+      "why_it_matters": "Gives a concrete, controlled measurement of the single-query/simple-retriever recall ceiling (BM25 at 3.86%) against which agentic and retriever improvements can be anchored \u2014 exactly the baseline the brief says everything else must be measured against.",
+      "limitations": [
+        "100K-document corpus is still curated per-query rather than a naturalistic large corpus (addressed by later work)",
+        "not literature-domain specific"
+      ],
+      "relevance_reason": "Foundational benchmark establishing the baseline recall ceiling and enabling controlled attribution of agentic vs. retrieval gains, referenced by multiple other shortlisted papers.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "BrowseComp-Plus: A More Fair and Transparent Evaluation Benchmark of Deep-Research Agent",
+      "abstract": "Deep-Research agents, which integrate large language models (LLMs) with search tools, have shown success in improving the effectiveness of handling complex queries that require iterative search planning and reasoning over search results. Evaluations on current benchmarks like BrowseComp relies on black-box live web search APIs, have notable limitations in (1) fairness: dynamic and opaque web APIs hinder fair comparisons and reproducibility of deep research methods; (2) transparency: lack of control over the document corpus makes it difficult to isolate retriever contributions. In other words, the current evaluations may compare a complete deep research system at a given time, but they do not foster well-controlled experiments to provide insights into the capability of underlying deep research LLMs. To address these challenges, we introduce BrowseComp-Plus, a benchmark derived from BrowseComp, employing a fixed, carefully curated corpus. Each query in BrowseComp-Plus includes human-verified supporting documents and mined challenging negatives, enabling controlled experimentation. The benchmark is shown to be effective in distinguishing the performance of deep research systems. For instance, the open-source model Search-R1, when paired with the BM25 retriever, achieves 3.86% accuracy, whereas the GPT-5 achieves 55.9%. Integrating the GPT-5 with the Qwen3-Embedding-8B retriever further enhances its accuracy to 70.1% with fewer search calls. This benchmark allows comprehensive evaluation and disentangled analysis of deep research agents and retrieval methods, fostering insights into retrieval effectiveness, citation accuracy, and context engineering in Deep-Research system.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Zijian Chen",
+          "s2_id": null,
+          "openalex_id": "A5100603242"
+        },
+        {
+          "name": "Xueguang Ma",
+          "s2_id": null,
+          "openalex_id": "A5021623012"
+        },
+        {
+          "name": "Shengyao Zhuang",
+          "s2_id": null,
+          "openalex_id": "A5012958162"
+        },
+        {
+          "name": "Ping Nie",
+          "s2_id": null,
+          "openalex_id": "A5053562090"
+        },
+        {
+          "name": "Kai Zou",
+          "s2_id": null,
+          "openalex_id": "A5083796315"
+        },
+        {
+          "name": "Andy Liu",
+          "s2_id": null,
+          "openalex_id": "A5100673526"
+        },
+        {
+          "name": "Joshua Green",
+          "s2_id": null,
+          "openalex_id": "A5030329104"
+        },
+        {
+          "name": "Patel, Kshama",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Meng, Ruoxi",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Ming Su",
+          "s2_id": null,
+          "openalex_id": "A5072704895"
+        },
+        {
+          "name": "Sahel Sharifymoghaddam",
+          "s2_id": null,
+          "openalex_id": "A5053032107"
+        },
+        {
+          "name": "Yanxi Li",
+          "s2_id": null,
+          "openalex_id": "A5100663088"
+        },
+        {
+          "name": "Haoran Hong",
+          "s2_id": null,
+          "openalex_id": "A5079256277"
+        },
+        {
+          "name": "Xinyu Shi",
+          "s2_id": null,
+          "openalex_id": "A5011095791"
+        },
+        {
+          "name": "Xuye Liu",
+          "s2_id": null,
+          "openalex_id": "A5012411636"
+        },
+        {
+          "name": "Nandan Thakur",
+          "s2_id": null,
+          "openalex_id": "A5052977545"
+        },
+        {
+          "name": "Crystina Zhang",
+          "s2_id": null,
+          "openalex_id": "A5111270983"
+        },
+        {
+          "name": "Gao, Luyu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Wenhu Chen",
+          "s2_id": null,
+          "openalex_id": "A5103103242"
+        },
+        {
+          "name": "Jimmy Lin",
+          "s2_id": null,
+          "openalex_id": "A5082997975"
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-08-08",
+      "venue": "arXiv (Cornell University)",
+      "type": "preprint",
+      "raw_type": "preprint",
+      "ids": {
+        "doi": "10.48550/arxiv.2508.06600",
+        "arxiv": "2508.06600",
+        "pmid": null,
+        "openalex": "W4416176141",
+        "s2": "a1b1590452727b80805cf9c90d4a181856267794"
+      },
+      "citation_count": 167,
+      "influential_citation_count": 41,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2508.06600",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 3
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 0
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "R2",
+          "seed_id": null,
+          "rank": 13
+        }
+      ],
+      "outside_window": false,
+      "rank": 3,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2508.06600"
+    },
+    {
+      "cid": "dc6612fba47a",
+      "criteria": {
+        "C1": 1,
+        "C2": 1,
+        "C3": 1,
+        "C4": 3,
+        "C5": 3
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": true
+      },
+      "key_finding": "Relocating BrowseComp-Plus's evidence into a naturalistic, benchmark-agnostic corpus (ClimbMix) causes the strongest agent's evidence recall to fall from 84.3% to 21.4% and accuracy to drop five points, while issuing 63% more search calls, on 57 fully-grounded projected questions.",
+      "methodology": "A dataset-agnostic projection pipeline decomposing questions into atomic reasoning hops, grounding each hop in a new 553M-document corpus, verified by automatic checks, an independent agent, and human review.",
+      "why_it_matters": "Is the clearest demonstration in the shortlist that a benchmark's construction (evidence and negatives selected per-query from a small curated corpus) inflates measured performance \u2014 exactly the gain-replication-failure evidence the brief says it must reach hardest for.",
+      "limitations": [
+        "yields only 57 grounded questions out of 830, a small validated subset",
+        "single benchmark family (BrowseComp-Plus) projected, generality to other benchmarks untested"
+      ],
+      "relevance_reason": "Directly shows a reported agentic performance level collapsing under a more realistic, less benchmark-tailored corpus \u2014 the strongest evidence of gain replication failure in the set.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "arxiv",
+          "s2"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": null,
+        "mismatches": []
+      },
+      "title": "Projecting BrowseComp-Plus onto ClimbMix: Toward More Realistic Corpora for Agentic Search",
+      "abstract": "The BrowseComp-Plus benchmark disentangled the evaluation of agentic search by replacing opaque web search with a fixed corpus, so that an agent's role can be separated from the retriever's. That corpus, however, holds only about 100K documents and was assembled from the supporting documents of the benchmark's own queries plus mined hard negatives, so the evidence and the distractors were both selected per query. We introduce $\\text{BrowseComp-Plus}_{\\text{CM}}$, which keeps the BrowseComp-Plus questions but relocates their evidence to ClimbMix, a 400B-token, 553M-document mixture of web text released by NVIDIA for pre-training language models and built without reference to any benchmark. Our main contribution is the projection pipeline that makes this possible: it decomposes each question into atomic reasoning hops and grounds every hop in the new corpus, retaining a question only when automatic verification, an independent agent, and human review all confirm that every hop is supported. The pipeline is dataset-agnostic and applies to any benchmark whose questions decompose into verifiable facts. Applied to the 830 BrowseComp-Plus test questions, our pipeline yields 57 fully grounded questions with question-level relevance judgments. Projection shifts the difficulty onto retrieval, as the strongest agent we evaluate loses five points of answer accuracy but sees its evidence recall fall from 84.3% to 21.4% while issuing 63% more search calls. As the first of a series of projections, we release the pipeline, the benchmark, and our analyses at https://github.com/castorini/cmass.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Sahel Sharifymoghaddam",
+          "s2_id": "71076877",
+          "openalex_id": null
+        },
+        {
+          "name": "Lin Gu",
+          "s2_id": "2335876892",
+          "openalex_id": null
+        },
+        {
+          "name": "Yijun Ge",
+          "s2_id": "2384822231",
+          "openalex_id": null
+        },
+        {
+          "name": "Jimmy Lin",
+          "s2_id": "2378722290",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-08-20",
+      "venue": null,
+      "type": "review",
+      "raw_type": "Review",
+      "ids": {
+        "doi": null,
+        "arxiv": "2608.20317",
+        "pmid": null,
+        "openalex": null,
+        "s2": "1232e0f1326e48428ed34406f8b3ba3b495f7cca"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "5197bbb391c8",
+          "rank": 0
+        },
+        {
+          "source": "s2",
+          "relation": "recommendations",
+          "query_id": null,
+          "seed_id": null,
+          "rank": 7
+        }
+      ],
+      "outside_window": false,
+      "rank": 4,
+      "selection_reason": "score",
+      "url": "https://arxiv.org/abs/2608.20317"
+    },
+    {
+      "cid": "625aeeca9085",
+      "criteria": {
+        "C1": 2,
+        "C2": 3,
+        "C3": 2,
+        "C4": 2,
+        "C5": 0
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "PaSaMaster achieves a 16.5x higher F1-score than Google Scholar and 37.8% higher F1 than GPT-5.2 on PaSaMaster-Bench (38 disciplines) at about 1% of the cost, reducing source hallucination from 32.66% to zero.",
+      "methodology": "Recursive self-evolving retrieval agent separating intent-understanding (frontier LLM) from retrieval/ranking (lightweight models), evaluated on a new 38-discipline benchmark.",
+      "why_it_matters": "Gives a concrete, mechanism-attributed comparison of an agentic literature search design against single-query database search (Google Scholar), directly informing decisions 1 and 2, though it confirms rather than tests the brief's premise.",
+      "limitations": [
+        "self-reported new benchmark, not yet independently validated",
+        "does not decompose how much of the gain each component (self-evolving retrieval vs verified ranking) contributes"
+      ],
+      "relevance_reason": "A current agentic literature-retrieval system reporting a large, mechanism-attributed gain over single-query search baselines, exactly the design space the brief is scanning.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Towards Recursive Self-Evolving Agentic Literature Retrieval",
+      "abstract": "Scientific literature retrieval must understand complex search intents while preserving source authenticity. Traditional keyword and embedding-based systems return authentic sources but miss nuanced intents, whereas large language models capture richer intents but may fabricate citations. We introduce PaSaMaster, a Recursive Self-Evolving agentic literature retrieval system that iteratively analyzes intent, retrieves verified papers and ranks them with evidence-grounded relevance scores. PaSaMaster combines self-evolving retrieval that refines search intent from ranked evidence over time, hallucination-free ranking over verified papers rather than generated citations, and cost-efficient planning--retrieval separation that reserves frontier LLMs for intent understanding while delegating retrieval and scoring to lightweight models and customized corpora. Across 38 disciplines in PaSaMaster-Bench, PaSaMaster achieves a 16.5$\\times$ higher F1-score than Google Scholar and a 37.8\\% higher F1-score than GPT-5.2 at about 1\\% of the cost, while reducing source hallucination from 32.66\\% in generative LLMs to zero: https://github.com/sjtu-sai-agents/PaSaMaster",
+      "tldr": "PaSaMaster is introduced, a Recursive Self-Evolving agentic literature retrieval system that iteratively analyzes intent, retrieves verified papers and ranks them with evidence-grounded relevance scores and achieves a higher F1-score than Google Scholar and a 37.8% higher F1-score than GPT-5.2.",
+      "authors": [
+        {
+          "name": "Yuwen Du",
+          "s2_id": "2334873436",
+          "openalex_id": null
+        },
+        {
+          "name": "Tian Jin",
+          "s2_id": "2362722493",
+          "openalex_id": null
+        },
+        {
+          "name": "Jing Kang",
+          "s2_id": "2426293542",
+          "openalex_id": null
+        },
+        {
+          "name": "Xianghe Pang",
+          "s2_id": "2259929200",
+          "openalex_id": null
+        },
+        {
+          "name": "Jingyi Chai",
+          "s2_id": "2273563877",
+          "openalex_id": null
+        },
+        {
+          "name": "Tingjia Miao",
+          "s2_id": "2367185011",
+          "openalex_id": null
+        },
+        {
+          "name": "Fenyi Liu",
+          "s2_id": "2435532959",
+          "openalex_id": null
+        },
+        {
+          "name": "Wenhao Wang",
+          "s2_id": "2280328057",
+          "openalex_id": null
+        },
+        {
+          "name": "Sikai Yao",
+          "s2_id": "2293267945",
+          "openalex_id": null
+        },
+        {
+          "name": "Yuzhi Zhang",
+          "s2_id": "2379700140",
+          "openalex_id": null
+        },
+        {
+          "name": "Siheng Chen",
+          "s2_id": "2275022100",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-05-14",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.IR",
+      "ids": {
+        "doi": "10.48550/arxiv.2605.14306",
+        "arxiv": "2605.14306",
+        "pmid": null,
+        "openalex": null,
+        "s2": "9ef09d60160e94a531ff8dfa49563d014603cacb"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2605.14306v3",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 4
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 38
+        }
+      ],
+      "outside_window": false,
+      "rank": 5,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2605.14306"
+    },
+    {
+      "cid": "0bf8f356a21c",
+      "criteria": {
+        "C1": 3,
+        "C2": 2,
+        "C3": 1,
+        "C4": 3,
+        "C5": 0
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "foundational",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "PaSa-7B surpasses the best Google-based baseline by 37.78% in recall@20 and 39.90% in recall@50 on RealScholarQuery, and exceeds a GPT-4o-prompted version of itself by 30.36% recall and 4.25% precision.",
+      "methodology": "RL-trained LLM agent that autonomously searches, reads papers, and selects references; trained on synthetic AutoScholarQuery (35k queries) and evaluated on a real-world RealScholarQuery benchmark.",
+      "why_it_matters": "Establishes the anchor recall comparison of an iterative agentic search-and-crawl design against single/paraphrased-query database search that decision 1 needs, and is the base system later work (e.g. PaSaMaster) explicitly builds on and must be checked against.",
+      "limitations": [
+        "trained mainly on synthetic data, real-world benchmark comparatively small",
+        "recall gains are not decomposed by individual agentic move (search vs read vs select)"
+      ],
+      "relevance_reason": "The foundational agentic academic-search system with explicit recall gains over single-query database baselines, central to the brief's decision 1.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "PaSa: An LLM Agent for Comprehensive Academic Paper Search",
+      "abstract": "We introduce PaSa, an advanced Paper Search agent powered by large language models. PaSa can autonomously make a series of decisions, including invoking search tools, reading papers, and selecting relevant references, to ultimately obtain comprehensive and accurate results for complex scholar queries. We optimize PaSa using reinforcement learning with a synthetic dataset, AutoScholarQuery, which includes 35k fine-grained academic queries and corresponding papers sourced from top-tier AI conference publications. Additionally, we develop RealScholarQuery, a benchmark collecting real-world academic queries to assess PaSa performance in more realistic scenarios. Despite being trained on synthetic data, PaSa significantly outperforms existing baselines on RealScholarQuery, including Google, Google Scholar, Google with GPT-4o for paraphrased queries, ChatGPT (search-enabled GPT-4o), GPT-o1, and PaSa-GPT-4o (PaSa implemented by prompting GPT-4o). Notably, PaSa-7B surpasses the best Google-based baseline, Google with GPT-4o, by 37.78% in recall@20 and 39.90% in recall@50, and exceeds PaSa-GPT-4o by 30.36% in recall and 4.25% in precision. Model, datasets, and code are available at https://github.com/bytedance/pasa.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Yichen He",
+          "s2_id": "2302988027",
+          "openalex_id": null
+        },
+        {
+          "name": "Guanhua Huang",
+          "s2_id": "2303544894",
+          "openalex_id": null
+        },
+        {
+          "name": "Peiyuan Feng",
+          "s2_id": "2302773746",
+          "openalex_id": null
+        },
+        {
+          "name": "Yuan Lin",
+          "s2_id": "2268547458",
+          "openalex_id": null
+        },
+        {
+          "name": "Yuchen Zhang",
+          "s2_id": "2304516721",
+          "openalex_id": null
+        },
+        {
+          "name": "Hang Li",
+          "s2_id": "2267425733",
+          "openalex_id": null
+        },
+        {
+          "name": "W. E",
+          "s2_id": "2239570597",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-01-17",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2501.10120",
+        "arxiv": "2501.10120",
+        "pmid": null,
+        "openalex": null,
+        "s2": "5e5bca8f0b203785d371d265371ac88a2390c014"
+      },
+      "citation_count": 74,
+      "influential_citation_count": 12,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "04c2c77e0326",
+          "rank": 6
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "625aeeca9085",
+          "rank": 24
+        }
+      ],
+      "outside_window": false,
+      "rank": 6,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2501.10120"
+    },
+    {
+      "cid": "3b89edf4b85c",
+      "criteria": {
+        "C1": 2,
+        "C2": 3,
+        "C3": 3,
+        "C4": 1,
+        "C5": 0
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "Crase's bounded 1.5-hop citation-graph expansion with entailment-based pruning and recency-aware random-walk ranking outperforms proprietary deep research agents by up to 3x recall@50 at roughly a third of the cost on LitSearch and a further benchmark over a 500K-paper arXiv corpus.",
+      "methodology": "Single seed search, fixed 1.5-hop citation-neighborhood expansion, entailment-based edge pruning, and recency-aware random-walk ranking, evaluated against open-ended deep research agents on a 500K-paper arXiv corpus.",
+      "why_it_matters": "Isolates exactly which agentic move (bounded citation-graph traversal plus principled pruning and ranking) drives the recall gain over less-constrained agent search loops, directly answering decision 2 with numbers in a genuine literature-search setting.",
+      "limitations": [
+        "evaluated on LitSearch and one further benchmark only",
+        "compared against proprietary deep research agents rather than a plain single-query baseline"
+      ],
+      "relevance_reason": "A system design directly attributing measured recall gains to specific, bounded agentic moves (citation-graph traversal, pruning, ranking) in scholarly search, the exact question decision 2 asks.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": null,
+        "mismatches": []
+      },
+      "title": "Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch",
+      "abstract": "We present Crase, a bounded and inspectable alternative to deep research agents for scholarly search. Instead of an open-ended search loop, Crase queries a search engine once for seed papers, expands them along their 1.5-hop citation neighborhood, prunes citation edges whose claims lack entailment support, and ranks the remaining papers with a recency-aware random walk. This makes the candidate set, the reason each paper is kept, and the stopping condition explicit and fixed before inference. On LitSearch and one further benchmarks over a 500K-paper arXiv corpus, Crase outperforms deep research agents built on proprietary models by up to 3$\\times$ recall@50 at roughly a third of the cost.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Rima Hazra",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Sayan Layek",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Somnath Banerjee",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Soumen Chakrabarti",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Animesh Mukherjee",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-08-25",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2608.24809",
+        "arxiv": "2608.24809",
+        "pmid": null,
+        "openalex": null,
+        "s2": null
+      },
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2608.24809v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 0
+        }
+      ],
+      "outside_window": false,
+      "rank": 7,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2608.24809"
+    },
+    {
+      "cid": "890330c91980",
+      "criteria": {
+        "C1": 3,
+        "C2": 3,
+        "C3": 3,
+        "C4": 0,
+        "C5": 0
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "ReBOL uses LLM query reformulations to seed a Bayesian Optimization posterior over document relevance, iteratively acquiring and scoring batches to beat LLM reranker baselines, e.g. 46.5% vs 35.0% recall@100 on Robust04 at comparable latency.",
+      "methodology": "Multimodal Bayesian Optimization over batched LLM relevance observations initialized by query reformulation; evaluated on five BEIR datasets with two LLM backbones (Gemini-2.5-Flash-Lite, GPT-5.2).",
+      "why_it_matters": "Gives a numerically anchored account of how much gain comes from query reformulation plus iterative re-scoring versus vector-similarity retrieval alone, directly informing Q1 (baseline) and Q2 (mechanism) with a technique that plugs into the retrieval/reranking stage of any agentic literature-search pipeline.",
+      "limitations": [
+        "evaluated on general BEIR IR benchmarks rather than scientific-literature-specific corpora",
+        "no ablation isolating reformulation's contribution from the BO acquisition loop"
+      ],
+      "relevance_reason": "A concrete, quantified retrieval/reranking method combining reformulation with iterative scoring \u2014 directly germane to Q1, Q2 and Q3.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "ReBOL: Retrieval via Bayesian Optimization with Batched LLM Relevance Observations and Query Reformulation",
+      "abstract": "LLM-reranking is limited by the top-k documents retrieved by vector similarity, which neither enables contextual query-document token interactions nor captures multimodal relevance distributions. While LLM query reformulation attempts to improve recall by generating improved or additional queries, it is still followed by vector similarity retrieval. We thus propose to address these top-k retrieval stage failures by introducing ReBOL, which 1) uses LLM query reformulations to initialize a multimodal Bayesian Optimization (BO) posterior over document relevance, and 2) iteratively acquires document batches for LLM query-document relevance scoring followed by posterior updates to optimize relevance. After exploring query reformulation and document batch diversification techniques, we evaluate ReBOL against LLM reranker baselines on five BEIR datasets and using two LLMs (Gemini-2.5-Flash-Lite, GPT-5.2). ReBOL consistently achieves higher recall and competitive rankings, for example compared to the best LLM reranker on the Robust04 dataset with 46.5% vs. 35.0% recall@100 and 63.6% vs. 61.2% NDCG@10. We also show that ReBOL can achieve comparable latency to LLM rerankers.",
+      "tldr": "ReBOL is introduced, which uses LLM query reformulations to initialize a multimodal Bayesian Optimization posterior over document relevance, and iteratively acquires document batches for LLM query-document relevance scoring followed by posterior updates to optimize relevance.",
+      "authors": [
+        {
+          "name": "A. Korikov",
+          "s2_id": "2123355559",
+          "openalex_id": null
+        },
+        {
+          "name": "Scott Sanner",
+          "s2_id": "2287430916",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-03-20",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2603.20513",
+        "arxiv": "2603.20513",
+        "pmid": null,
+        "openalex": null,
+        "s2": "14adc39aee7acf2a5d1cf3d18b34a77325d7b3a1"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 19
+        }
+      ],
+      "outside_window": false,
+      "rank": 8,
+      "selection_reason": "backfill",
+      "url": "https://doi.org/10.48550/arxiv.2603.20513"
+    },
+    {
+      "cid": "e2c42887588f",
+      "criteria": {
+        "C1": 2,
+        "C2": 2,
+        "C3": 2,
+        "C4": 1,
+        "C5": 2
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": true
+      },
+      "key_finding": "WisPaper's Deep Search module (WisModel) validates candidate papers against queries via structured reasoning, reaching 22.26% recall on TaxoBench versus 20.92% for an O3 baseline, with 93.70% validation accuracy against retrieval hallucinations.",
+      "methodology": "End-to-end academic-literature agent with integrated Scholar Search, Library, and AI Feeds modules; benchmarked on TaxoBench; abstract-only for further detail.",
+      "why_it_matters": "Gives a concrete numeric comparison (22.26% vs 20.92%, a ~1.3-point margin) between an agentic validation step and a strong baseline in scientific literature search \u2014 exactly the Q1 anchor and a modest-gain data point supporting the scan's Q4 skepticism.",
+      "limitations": [
+        "gain over baseline is small (~1.3 points), raising questions about how much it would replicate elsewhere",
+        "TaxoBench construction not detailed in the abstract",
+        "vendor system description may understate limitations"
+      ],
+      "relevance_reason": "Directly reports agentic vs. baseline recall numbers in academic literature search, exactly the Q1 comparison the brief needs, with a margin small enough to bear on Q4.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "WisPaper: Your AI Scholar Search Engine",
+      "abstract": "We present \\textsc{WisPaper}, an end-to-end agent system that transforms how researchers discover, organize, and track academic literature. The system addresses two fundamental challenges. (1)~\\textit{Semantic search limitations}: existing academic search engines match keywords but cannot verify whether papers truly address complex research questions; and (2)~\\textit{Workflow fragmentation}: researchers must manually stitch together separate tools for discovery, organization, and monitoring. \\textsc{WisPaper} tackles these through three integrated modules. \\textbf{Scholar Search} combines rapid keyword retrieval with \\textit{Deep Search}, in which an agentic model, \\textsc{WisModel}, validates candidate papers against user queries through structured reasoning. Discovered papers flow seamlessly into \\textbf{Library} with one click, where systematic organization progressively builds a user profile that sharpens the recommendations of \\textbf{AI Feeds}, which continuously surfaces relevant new publications and in turn guides subsequent exploration, closing the loop from discovery to long-term awareness. On TaxoBench, \\textsc{WisPaper} achieves 22.26\\% recall, surpassing the O3 baseline (20.92\\%). Furthermore, \\textsc{WisModel} attains 93.70\\% validation accuracy, effectively mitigating retrieval hallucinations.",
+      "tldr": "An end-to-end agent system that transforms how researchers discover, organize, and track academic literature through three integrated modules that addresses two fundamental challenges.",
+      "authors": [
+        {
+          "name": "Li Ju",
+          "s2_id": "2397376120",
+          "openalex_id": null
+        },
+        {
+          "name": "Jun Zhao",
+          "s2_id": "2399983087",
+          "openalex_id": null
+        },
+        {
+          "name": "Mingxu Chai",
+          "s2_id": "2292198470",
+          "openalex_id": null
+        },
+        {
+          "name": "Ziyu Shen",
+          "s2_id": "2392228136",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiangyang Wang",
+          "s2_id": "2336745329",
+          "openalex_id": null
+        },
+        {
+          "name": "Yage Geng",
+          "s2_id": "2397378453",
+          "openalex_id": null
+        },
+        {
+          "name": "Chunchun Ma",
+          "s2_id": "2397424097",
+          "openalex_id": null
+        },
+        {
+          "name": "Hao Peng",
+          "s2_id": "2304718694",
+          "openalex_id": null
+        },
+        {
+          "name": "Guang-Zhen Li",
+          "s2_id": "2313038341",
+          "openalex_id": null
+        },
+        {
+          "name": "Tao Li",
+          "s2_id": "2397678791",
+          "openalex_id": null
+        },
+        {
+          "name": "Chengyong Liao",
+          "s2_id": "2398717607",
+          "openalex_id": null
+        },
+        {
+          "name": "Fu Wang",
+          "s2_id": "2397721462",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiaolong Wang",
+          "s2_id": "2276201738",
+          "openalex_id": null
+        },
+        {
+          "name": "Junshen Chen",
+          "s2_id": "2312270302",
+          "openalex_id": null
+        },
+        {
+          "name": "Ruirong Gong",
+          "s2_id": "2140587982",
+          "openalex_id": null
+        },
+        {
+          "name": "Shijia Liang",
+          "s2_id": "2114786354",
+          "openalex_id": null
+        },
+        {
+          "name": "Feiyang Li",
+          "s2_id": "2351245663",
+          "openalex_id": null
+        },
+        {
+          "name": "Ming Zhang",
+          "s2_id": "2240574799",
+          "openalex_id": null
+        },
+        {
+          "name": "Kexin Tan",
+          "s2_id": "2400502336",
+          "openalex_id": null
+        },
+        {
+          "name": "Junjie Ye",
+          "s2_id": "2143616977",
+          "openalex_id": null
+        },
+        {
+          "name": "Zhiheng Xi",
+          "s2_id": "2218237934",
+          "openalex_id": null
+        },
+        {
+          "name": "Shihan Dou",
+          "s2_id": "2042683163",
+          "openalex_id": null
+        },
+        {
+          "name": "Tao Gui",
+          "s2_id": "2352016379",
+          "openalex_id": null
+        },
+        {
+          "name": "Yuankai Ying",
+          "s2_id": "2397378693",
+          "openalex_id": null
+        },
+        {
+          "name": "Yang Shi",
+          "s2_id": "2119036803",
+          "openalex_id": null
+        },
+        {
+          "name": "Yue Zhang",
+          "s2_id": "2336917604",
+          "openalex_id": null
+        },
+        {
+          "name": "Qi Zhang",
+          "s2_id": "2355125199",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-12-07",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2512.06879",
+        "arxiv": "2512.06879",
+        "pmid": null,
+        "openalex": null,
+        "s2": "74f189cbc880fda83538fd4da92a08c4ce4a712d"
+      },
+      "citation_count": 4,
+      "influential_citation_count": 1,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 16
+        }
+      ],
+      "outside_window": false,
+      "rank": 9,
+      "selection_reason": "backfill",
+      "url": "https://doi.org/10.48550/arxiv.2512.06879"
+    },
+    {
+      "cid": "aac7d9e865ef",
+      "criteria": {
+        "C1": 1,
+        "C2": 1,
+        "C3": 1,
+        "C4": 2,
+        "C5": 1
+      },
+      "overall": 3,
+      "evidence_level": "other",
+      "relation": "foundational",
+      "flags": {
+        "review": true,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "A systematic taxonomy of Deep Research agent architectures (API-based vs. browser-based retrieval, static vs. dynamic workflows, single- vs. multi-agent) alongside a critical review identifying current benchmarks' limitations: restricted external knowledge access, sequential-execution inefficiency, and metric misalignment.",
+      "methodology": "Narrative/systematic survey of architectures and benchmarks with an accompanying curated repository; not a systematic-review-protocol paper.",
+      "why_it_matters": "Provides the orienting taxonomy and explicit critique of benchmark shortcomings that the brief's third question (how are evaluation sets constructed, and what can their numbers support) needs as a map of the field before diving into individual results.",
+      "limitations": [
+        "narrative synthesis rather than quantitative meta-analysis",
+        "covers general deep-research agents, not literature-search-specific systems exclusively"
+      ],
+      "relevance_reason": "Serves as the field-orienting review connecting system design taxonomy to benchmark critique, directly useful for structuring the scan's synthesis.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": null,
+        "mismatches": []
+      },
+      "title": "Deep Research Agents: A Systematic Examination And Roadmap",
+      "abstract": "The rapid progress of Large Language Models (LLMs) has given rise to a new category of autonomous AI systems, referred to as Deep Research (DR) agents. These agents are designed to tackle complex, multi-turn informational research tasks by leveraging a combination of dynamic reasoning, adaptive long-horizon planning, multi-hop information retrieval, iterative tool use, and the generation of structured analytical reports. In this paper, we conduct a detailed analysis of the foundational technologies and architectural components that constitute Deep Research agents. We begin by reviewing information acquisition strategies, contrasting API-based retrieval methods with browser-based exploration. We then examine modular tool-use frameworks, including code execution, multimodal input processing, and the integration of Model Context Protocols (MCPs) to support extensibility and ecosystem development. To systematize existing approaches, we propose a taxonomy that differentiates between static and dynamic workflows, and we classify agent architectures based on planning strategies and agent composition, including single-agent and multi-agent configurations. We also provide a critical evaluation of current benchmarks, highlighting key limitations such as restricted access to external knowledge, sequential execution inefficiencies, and misalignment between evaluation metrics and the practical objectives of DR agents. Finally, we outline open challenges and promising directions for future research. A curated and continuously updated repository of DR agent research is available at: {https://github.com/ai-agents-2030/awesome-deep-research-agent}.",
+      "tldr": "A detailed analysis of the foundational technologies and architectural components that constitute Deep Research agents is conducted, contrasting API-based retrieval methods with browser-based exploration and proposing a taxonomy that differentiates between static and dynamic workflows.",
+      "authors": [
+        {
+          "name": "Yuxuan Huang",
+          "s2_id": "2348490567",
+          "openalex_id": null
+        },
+        {
+          "name": "Yihang Chen",
+          "s2_id": "2370956570",
+          "openalex_id": null
+        },
+        {
+          "name": "Haozhen Zhang",
+          "s2_id": "2326070420",
+          "openalex_id": null
+        },
+        {
+          "name": "Kang Li",
+          "s2_id": "2356544824",
+          "openalex_id": null
+        },
+        {
+          "name": "Meng Fang",
+          "s2_id": "2325905652",
+          "openalex_id": null
+        },
+        {
+          "name": "Linyi Yang",
+          "s2_id": "2366614050",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiaoguang Li",
+          "s2_id": "2370954376",
+          "openalex_id": null
+        },
+        {
+          "name": "Lifeng Shang",
+          "s2_id": "2284986217",
+          "openalex_id": null
+        },
+        {
+          "name": "Songcen Xu",
+          "s2_id": "2238399614",
+          "openalex_id": null
+        },
+        {
+          "name": "Jianye Hao",
+          "s2_id": "2327843646",
+          "openalex_id": null
+        },
+        {
+          "name": "Kun Shao",
+          "s2_id": "2275194161",
+          "openalex_id": null
+        },
+        {
+          "name": "Jun Wang",
+          "s2_id": "2327096473",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-06-22",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2506.18096",
+        "arxiv": "2506.18096",
+        "pmid": null,
+        "openalex": null,
+        "s2": "dc491963de5b0e69b10094092753f010c3f72977"
+      },
+      "citation_count": 128,
+      "influential_citation_count": 7,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 19
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 10
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "3f16ad6b5a85",
+          "rank": 7
+        }
+      ],
+      "outside_window": false,
+      "rank": 10,
+      "selection_reason": "review",
+      "url": "https://doi.org/10.48550/arxiv.2506.18096"
+    }
+  ],
+  "alternates": [
+    {
+      "cid": "c094178d6f39",
+      "criteria": {
+        "C1": 1,
+        "C2": 1,
+        "C3": 1,
+        "C4": 3,
+        "C5": 3
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "plan-influencing",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": true
+      },
+      "key_finding": "AstaBench, comprising 2400+ problems across the scientific-discovery process, evaluates 57 agents across 22 classes with a reproducible, confounder-controlled search environment and finds that despite progress on individual aspects, AI remains far from solving science research assistance.",
+      "methodology": "Defines principles and tooling for rigorous agent benchmarking (reproducible tools, cost/tool-access confounder control, standardized interfaces, comprehensive baselines); evaluates many baseline and specialized science agents; abstract-only for granular numeric results.",
+      "why_it_matters": "Directly supports Q4's skepticism at scale: rigorous controlled evaluation across many purported agentic science-research systems finds the field far from solved, and it names the exact confounders (model cost, tool access) that inflate naive agentic-gain comparisons.",
+      "limitations": [
+        "abstract lacks specific per-agent numeric results",
+        "covers the broad scientific-discovery process rather than literature search alone"
+      ],
+      "relevance_reason": "The most rigorous, large-scale benchmark testing whether agentic gains for scientific research (including literature search) hold up under controlled comparison \u2014 central to Q3 and Q4.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": null,
+        "mismatches": []
+      },
+      "title": "AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite",
+      "abstract": "AI agents hold the potential to revolutionize scientific productivity by automating literature reviews, replicating experiments, analyzing data, and even proposing new directions of inquiry; indeed, there are now many such agents, ranging from general-purpose\"deep research\"systems to specialized science-specific agents, such as AI Scientist and AIGS. Rigorous evaluation of these agents is critical for progress. Yet existing benchmarks fall short on several fronts: they often (1) lack reproducible agent tools necessary for a controlled comparison of core agentic capabilities; (2) do not account for confounding variables such as model cost and tool access; (3) do not provide standardized interfaces for quick agent prototyping and evaluation; (4) fail to provide holistic, product-informed measures of real-world use cases such as science research; and (5) lack comprehensive baseline agents necessary to identify true advances. In response, we define principles and tooling for more rigorously benchmarking agents. Using these, we present AstaBench, a suite that provides a holistic measure of agentic ability to perform scientific research, comprising 2400+ problems spanning the entire scientific discovery process and multiple scientific domains, and including many problems inspired by actual user requests to deployed Asta agents. Our suite comes with the first scientific research environment with production-grade search tools that enable controlled, reproducible evaluation, better accounting for confounders. Alongside, we provide a comprehensive suite of nine science-optimized classes of Asta agents and numerous baselines. Our extensive evaluation of 57 agents across 22 agent classes reveals several interesting findings, most importantly that despite meaningful progress on certain individual aspects, AI remains far from solving the challenge of science research assistance.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Jonathan Bragg",
+          "s2_id": "2699105",
+          "openalex_id": null
+        },
+        {
+          "name": "Mike D'Arcy",
+          "s2_id": "40480862",
+          "openalex_id": null
+        },
+        {
+          "name": "Nishant Balepur",
+          "s2_id": "2216486213",
+          "openalex_id": null
+        },
+        {
+          "name": "Dan Bareket",
+          "s2_id": "1668035914",
+          "openalex_id": null
+        },
+        {
+          "name": "Bhavana Dalvi",
+          "s2_id": "40135250",
+          "openalex_id": null
+        },
+        {
+          "name": "Sergey Feldman",
+          "s2_id": "46411828",
+          "openalex_id": null
+        },
+        {
+          "name": "Dany Haddad",
+          "s2_id": "2355422537",
+          "openalex_id": null
+        },
+        {
+          "name": "Jena D. Hwang",
+          "s2_id": "2374960195",
+          "openalex_id": null
+        },
+        {
+          "name": "P. Jansen",
+          "s2_id": "2287446119",
+          "openalex_id": null
+        },
+        {
+          "name": "V. Kishore",
+          "s2_id": "2394076718",
+          "openalex_id": null
+        },
+        {
+          "name": "Bodhisattwa Prasad Majumder",
+          "s2_id": "3165738",
+          "openalex_id": null
+        },
+        {
+          "name": "Aakanksha Naik",
+          "s2_id": "2315305284",
+          "openalex_id": null
+        },
+        {
+          "name": "Sigal Rahamimov",
+          "s2_id": "2311091932",
+          "openalex_id": null
+        },
+        {
+          "name": "Kyle Richardson",
+          "s2_id": "46666605",
+          "openalex_id": null
+        },
+        {
+          "name": "Amanpreet Singh",
+          "s2_id": "2116287642",
+          "openalex_id": null
+        },
+        {
+          "name": "Harshit Surana",
+          "s2_id": "2762792",
+          "openalex_id": null
+        },
+        {
+          "name": "Aryeh Tiktinsky",
+          "s2_id": "1667847713",
+          "openalex_id": null
+        },
+        {
+          "name": "Rosni Vasu",
+          "s2_id": "2106414009",
+          "openalex_id": null
+        },
+        {
+          "name": "Guy Wiener",
+          "s2_id": "34510093",
+          "openalex_id": null
+        },
+        {
+          "name": "Chloe Anastasiades",
+          "s2_id": "1667818755",
+          "openalex_id": null
+        },
+        {
+          "name": "Stefan Candra",
+          "s2_id": "2202412446",
+          "openalex_id": null
+        },
+        {
+          "name": "Jason Dunkelberger",
+          "s2_id": "38092776",
+          "openalex_id": null
+        },
+        {
+          "name": "Dan Emery",
+          "s2_id": "2387786582",
+          "openalex_id": null
+        },
+        {
+          "name": "Rob Evans",
+          "s2_id": "2357512188",
+          "openalex_id": null
+        },
+        {
+          "name": "Malachi Hamada",
+          "s2_id": "2387786701",
+          "openalex_id": null
+        },
+        {
+          "name": "Regan Huff",
+          "s2_id": "153179615",
+          "openalex_id": null
+        },
+        {
+          "name": "Rodney Kinney",
+          "s2_id": "2282136328",
+          "openalex_id": null
+        },
+        {
+          "name": "Matt Latzke",
+          "s2_id": "2087047386",
+          "openalex_id": null
+        },
+        {
+          "name": "Jaron Lochner",
+          "s2_id": "3047023",
+          "openalex_id": null
+        },
+        {
+          "name": "Ruben Lozano-Aguilera",
+          "s2_id": "2387786821",
+          "openalex_id": null
+        },
+        {
+          "name": "Cecile Nguyen",
+          "s2_id": "2355793111",
+          "openalex_id": null
+        },
+        {
+          "name": "Smita Rao",
+          "s2_id": "2115660042",
+          "openalex_id": null
+        },
+        {
+          "name": "Amber Tanaka",
+          "s2_id": "2355418858",
+          "openalex_id": null
+        },
+        {
+          "name": "Brooke Vlahos",
+          "s2_id": "2387787024",
+          "openalex_id": null
+        },
+        {
+          "name": "Peter Clark",
+          "s2_id": "2305607265",
+          "openalex_id": null
+        },
+        {
+          "name": "Doug Downey",
+          "s2_id": "2372536250",
+          "openalex_id": null
+        },
+        {
+          "name": "Yoav Goldberg",
+          "s2_id": "2258116088",
+          "openalex_id": null
+        },
+        {
+          "name": "Ashish Sabharwal",
+          "s2_id": "2257349398",
+          "openalex_id": null
+        },
+        {
+          "name": "Daniel S. Weld",
+          "s2_id": "2325340903",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-10-24",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2510.21652",
+        "arxiv": "2510.21652",
+        "pmid": null,
+        "openalex": null,
+        "s2": "083152cf82efbde68c6210e1916f2b3984480af9"
+      },
+      "citation_count": 33,
+      "influential_citation_count": 2,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "625aeeca9085",
+          "rank": 23
+        }
+      ],
+      "outside_window": false,
+      "rank": 11,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2510.21652"
+    },
+    {
+      "cid": "a8b83ac688d0",
+      "criteria": {
+        "C1": 2,
+        "C2": 2,
+        "C3": 3,
+        "C4": 0,
+        "C5": 1
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "plan-influencing",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": true
+      },
+      "key_finding": "LATTICE, an LLM-guided hierarchical search index built and traversed without any embedding model at search time, matches the best fine-tuned ensemble on BRIGHT (46.7 nDCG@10) and reaches 49.1 with a lightweight fusion ensemble, while a controlled same-LLM comparison shows sliding-window reranking wins at low token budgets but LATTICE reaches a higher asymptote at moderate budgets.",
+      "methodology": "Proposes LATTICE: top-down LLM-guided construction of a multi-level document summary index plus calibrated path-aggregated LLM traversal; evaluated on BRIGHT (reasoning-intensive retrieval) and on NQ, SciFact, SciDocs, with a controlled comparison against sliding-window reranking at matched token budgets and both proprietary and open-weight LLMs.",
+      "why_it_matters": "Directly targets the retrieval backbone question the brief cares about: it argues standard embedding-retriever-plus-LLM-verifier pipelines and even query-side agentic fixes (rewriting, agentic loops) are brittle to embedder top-k failures, and proposes replacing embedding search entirely with LLM-guided index traversal \u2014 this reframes what 'baseline' and 'agentic gain' mean for retrieval-underlying-agent-design and should shift what we measure retrieval quality against.",
+      "limitations": [
+        "evaluated on general reasoning-intensive IR benchmarks (BRIGHT, NQ) rather than a literature-search-agent-specific benchmark",
+        "no citation-graph or corpus-crawling mechanism evaluated, only hierarchical summary-index traversal",
+        "does not report benchmark construction methodology, using existing benchmarks as-is"
+      ],
+      "relevance_reason": "A core retrieval/reranking method paper (C3) that explicitly argues single-query embedding retrieval and even agentic query rewriting are brittle, directly bearing on the brief's questions about baseline recall ceilings and which agentic moves carry gains, tested partly on scientific retrieval benchmarks (SciFact, SciDocs).",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "arxiv",
+          "s2"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": null,
+        "mismatches": []
+      },
+      "title": "LLM-guided Hierarchical Search for End-to-end Reasoning Intensive Retrieval",
+      "abstract": "Search systems are increasingly used for reasoning-intensive queries, where what makes a document relevant requires understanding or reasoning over the query-document relation rather than relying on surface vocabulary or topical similarity. The standard recipe - a cheap embedding-based retriever followed by an LLM verifier - works only when the embedding model places the right documents in its top-k, an assumption that recent reasoning-intensive IR benchmarks show often fails to hold even for SOTA embedding models. Recent query-side fixes such as query rewriting and agentic loops keep the LLM upstream of the cheap retriever and remain brittle to the embedder's failures and to the LLM's ability to rewrite the query from its parametric knowledge. In this paper, we explore a different paradigm - LLM-guided hierarchical search - in which an LLM interacts with the corpus directly via a hierarchically navigable search index, with no embedding model in the loop at search time. We propose LATTICE, an instantiation with two technical contributions: (i) a top-down LLM-guided construction of the search index using LLM judgements over multi-level document summaries, and (ii) a calibrated, path-aggregated LLM-guided traversal that mitigates noisy, slate-dependent LLM scores via cross-branch reference nodes. On the reasoning-intensive BRIGHT benchmark, base LATTICE with a single off-the-shelf LLM achieves 46.7 nDCG@10 - matching the best fine-tuned ensemble baseline overall - and a lightweight ensemble LATTICE++ that fuses LATTICE with cheap retrieval reaches 49.1 nDCG@10. A controlled same-LLM comparison against sliding-window reranking shows reranking offers a better tradeoff at low token budgets, but LATTICE converges to a higher asymptote after a moderate budget. LATTICE also works with open-weight LLMs and remains competitive on traditional IR benchmarks (NQ, SciFact, SciDocs).",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Nilesh Gupta",
+          "s2_id": "2258554155",
+          "openalex_id": null
+        },
+        {
+          "name": "Wei-Cheng Chang",
+          "s2_id": "1702500",
+          "openalex_id": null
+        },
+        {
+          "name": "N. Bui",
+          "s2_id": "1846426",
+          "openalex_id": null
+        },
+        {
+          "name": "Cho-Jui Hsieh",
+          "s2_id": "2256992918",
+          "openalex_id": null
+        },
+        {
+          "name": "Inderjit S. Dhillon",
+          "s2_id": "2257038095",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-10-15",
+      "venue": null,
+      "type": "preprint",
+      "raw_type": null,
+      "ids": {
+        "doi": null,
+        "arxiv": "2510.13217",
+        "pmid": null,
+        "openalex": null,
+        "s2": "297be5767b6deb6920113fee13b1ef2eb17e1583"
+      },
+      "citation_count": 2,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "ff039f41b558",
+          "rank": 22
+        }
+      ],
+      "outside_window": false,
+      "rank": 12,
+      "selection_reason": "score",
+      "url": "https://arxiv.org/abs/2510.13217"
+    },
+    {
+      "cid": "37b82519b62a",
+      "criteria": {
+        "C1": 0,
+        "C2": 3,
+        "C3": 1,
+        "C4": 0,
+        "C5": 2
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": true
+      },
+      "key_finding": "Most iterations of deep research agents contribute little or no improvement ('reasoning stagnation'); adding a Retrieval-Aware Agent Controller using search-novelty and information-coverage signals cuts search calls by 14 on average and improves accuracy up to 10% (3% on average) on BrowseComp-Plus.",
+      "methodology": "Trajectory analysis across multiple DRAs on BrowseComp-Plus, followed by introduction of an unsupervised controller (RAAC) for action selection.",
+      "why_it_matters": "Directly quantifies how much of an agent's iterative search activity is wasted effort, showing that naive 'more iteration = more gain' framing is false and that a specific mechanism (novelty/coverage-aware control) is what carries the measurable gain \u2014 precisely the attribution the brief's second question demands.",
+      "limitations": [
+        "evaluated only on BrowseComp-Plus, a single benchmark family",
+        "gains modest on average (3%) despite headline 10% max"
+      ],
+      "relevance_reason": "Empirically isolates which agentic mechanism (retrieval-aware control) carries measured gains and shows stagnation undermining the premise that more search iterations help.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": null,
+        "mismatches": []
+      },
+      "title": "When Deep Research Agents Stagnate: Enhancing Reasoning with Retrieval-Aware Agent Control",
+      "abstract": "In this paper, we analyze the reasoning trajectories of a variety of DRAs and show that existing agents often suffer from reasoning stagnation: the majority of iterations contribute little or no improvement to final performance, while agents lack awareness of their trajectories and are therefore ineffective at adapting their search strategies or determining when to terminate. To address this issue, we introduce a set of unsupervised signals and a Retrieval-Aware Agent Controller (RAAC), which assists the agent in selecting optimal actions at each stage of the research process. RAAC incorporates key information retrieval principles, namely search novelty and information coverage, resulting in more effective reasoning trajectories that improve overall performance while reducing unnecessary iterations, and consequently cost and latency. Specifically on BrowseComp-Plus and across a large set of DRAs, adding RAAC reduces the number of search calls by an average of 14, significantly improves the best-performing DRA on recall and accuracy, and achieves an accuracy gain of up to 10% (3% on average).",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Heydar Soudani",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Elizabeth Lingg",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Faegheh Hasibi",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Navid Rekabsaz",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-08-15",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.IR",
+      "ids": {
+        "doi": "10.48550/arxiv.2608.15191",
+        "arxiv": "2608.15191",
+        "pmid": null,
+        "openalex": null,
+        "s2": "8a0e9b736951c9937a76249c100720ad6a3ac8c0"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2608.15191v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 10
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "60fd922117d2",
+          "rank": 5
+        }
+      ],
+      "outside_window": false,
+      "rank": 13,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2608.15191"
+    },
+    {
+      "cid": "04c2c77e0326",
+      "criteria": {
+        "C1": 1,
+        "C2": 3,
+        "C3": 2,
+        "C4": 0,
+        "C5": 0
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "PaperPilot frames scientific literature search as executable-workflow induction (keyword search, citation expansion, filtering, scoring, reranking, evidence extraction); PaperPilot-9B raises Hit@5 from 58.0 to 77.0, MRR from 47.5 to 59.4, and nDCG@10 from 26.8 to 32.5 over a base toolset agent, while cutting workflow execution errors from 9.5% to 0%.",
+      "methodology": "Supervised workflow imitation plus preference optimization over controlled workflow corruptions; multi-turn interaction with anchor paper and user query, built on Qwen3.5-9B.",
+      "why_it_matters": "The most directly on-brief system paper: it decomposes agentic literature search into explicit, editable operators (including citation expansion, a citation-graph move, and reranking) and quantifies the gain of workflow structure over an undifferentiated tool-use agent, exactly the mechanism-attribution the brief asks for.",
+      "limitations": [
+        "no comparison to a plain single-query database search baseline",
+        "benchmark/eval corpus construction not detailed in the abstract"
+      ],
+      "relevance_reason": "Directly targets scientific literature search with an explicit, decomposed agentic workflow including citation-graph traversal and reranking, matching the brief's system-design scope precisely.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Multi-Turn Agentic Scientific Literature Search via Workflow Induction",
+      "abstract": "Scientific literature search often requires more than retrieving papers from a single query: users' intents are underspecified, preference-dependent, and evolve through interaction. Existing search agents typically rely on fixed pipelines or implicit language-only reasoning, making their search strategies difficult to control, inspect, and refine. We introduce PaperPilot, a multi-turn literature search agent that frames scientific search as workflow induction. Given an anchor paper and a user query, PaperPilot constructs an executable DAG of paper-search operators, including keyword search, citation expansion, filtering, scoring, reranking, and evidence extraction. User feedback is then used to refine both the query and the workflow itself. We train PaperPilot with supervised workflow imitation and preference optimization over controlled workflow corruptions. Experiments show that PaperPilot-9B improves over the base Qwen3.5-9B toolset agent under multi-turn interaction, increasing Hit@5 from 58.0 to 77.0, MRR from 47.5 to 59.4, and nDCG@10 from 26.8 to 32.5, while reducing workflow execution errors from 9.5% to 0%. These results show that explicit, editable search workflows provide an effective and controllable interface for aligning literature search agents with complex scientific intent.",
+      "tldr": "The results show that explicit, editable search workflows provide an effective and controllable interface for aligning literature search agents with complex scientific intent.",
+      "authors": [
+        {
+          "name": "Jisen Li",
+          "s2_id": "2386656342",
+          "openalex_id": null
+        },
+        {
+          "name": "Bingxuan Li",
+          "s2_id": "2405896518",
+          "openalex_id": null
+        },
+        {
+          "name": "Nanyi Jiang",
+          "s2_id": "2446029778",
+          "openalex_id": null
+        },
+        {
+          "name": "Xuying Ning",
+          "s2_id": "2266396687",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiyao Wang",
+          "s2_id": "2446372506",
+          "openalex_id": null
+        },
+        {
+          "name": "Yifan Shen",
+          "s2_id": "2281910510",
+          "openalex_id": null
+        },
+        {
+          "name": "Hengfei Wang",
+          "s2_id": "2433577752",
+          "openalex_id": null
+        },
+        {
+          "name": "Yuqing Jian",
+          "s2_id": "2182568513",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiaoxia Wu",
+          "s2_id": "2446917239",
+          "openalex_id": null
+        },
+        {
+          "name": "Ben Athiwaratkun",
+          "s2_id": "2304481349",
+          "openalex_id": null
+        },
+        {
+          "name": "Pan Lu",
+          "s2_id": "2351138270",
+          "openalex_id": null
+        },
+        {
+          "name": "Jiaxuan You",
+          "s2_id": "2294362256",
+          "openalex_id": null
+        },
+        {
+          "name": "Bingxin Zhao",
+          "s2_id": "2280917337",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-01",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2607.00597",
+        "arxiv": "2607.00597",
+        "pmid": null,
+        "openalex": null,
+        "s2": "8974e6d453610a260093012e5b21505dc5da823c"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2607.00597v2",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 0
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 19
+        }
+      ],
+      "outside_window": false,
+      "rank": 14,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2607.00597"
+    },
+    {
+      "cid": "3b14a111838b",
+      "criteria": {
+        "C1": 0,
+        "C2": 0,
+        "C3": 0,
+        "C4": 3,
+        "C5": 3
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": true
+      },
+      "key_finding": "Search-Time Contamination inflates deep research agent performance by up to 4% across six public benchmarks, via metadata leakage, question-context leakage, and explicit answer leakage.",
+      "methodology": "Defines three contamination severity types, develops detection algorithms, and evaluates modern deep research agents on six public benchmarks.",
+      "why_it_matters": "Shows that a chunk of reported agentic-search gains is an artifact of benchmark leakage rather than real capability; the contamination taxonomy and detection approach transfer directly to literature-search benchmarks (e.g. LitSearch, AutoScholarQuery) that are similarly built from public, web-crawlable metadata.",
+      "limitations": [
+        "evaluated on existing public benchmarks rather than literature-search-specific ones by name",
+        "detection algorithms are heuristic and may miss subtler leakage forms"
+      ],
+      "relevance_reason": "Directly answers decision 4 by showing where reported agentic gains fail to hold once search-time contamination is accounted for.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex",
+          "arxiv"
+        ],
+        "verified_on": "2026-08-26",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Search-Time Contamination in Deep Research Agents: Measuring Performance Inflation in Public Benchmark Evaluation",
+      "abstract": "Public benchmarks enable fair and reproducible evaluation of LLM reasoning, but they become fragile for deep research agents that actively search the web during inference. Such agents may retrieve public benchmark metadata, question context, or even ground-truth answers via web search. This gives rise to Search-Time Contamination (STC), where external retrieval bypasses intended reasoning and inflates measured performance. We systematically study STC in deep research agent evaluation. We define three contamination types with increasing severity, namely Benchmark Metadata Leakage, Question-Context Leakage, and Explicit Answer Leakage, and develop detection algorithms to identify them and quantify their impact on agent performance. Evaluating modern deep research agents on six public benchmarks, we find that STC is widespread and can inflate performance by up to 4%. Our findings show that existing evaluations may overestimate true reasoning ability. We therefore advocate contamination-aware practices, including isolated sandboxes, transparent search trajectories, and controlled benchmark access.",
+      "tldr": "The findings show that existing evaluations may overestimate true reasoning ability, and advocate contamination-aware practices, including isolated sandboxes, transparent search trajectories, and controlled benchmark access.",
+      "authors": [
+        {
+          "name": "Yongjie Wang",
+          "s2_id": "2306809338",
+          "openalex_id": null
+        },
+        {
+          "name": "Xinyu Crystina Zhang",
+          "s2_id": "2118895402",
+          "openalex_id": null
+        },
+        {
+          "name": "Kunhong Yao",
+          "s2_id": "2440606755",
+          "openalex_id": null
+        },
+        {
+          "name": "Zhiwei Zeng",
+          "s2_id": "49512311",
+          "openalex_id": null
+        },
+        {
+          "name": "Kaisong Song",
+          "s2_id": "2391762992",
+          "openalex_id": null
+        },
+        {
+          "name": "Jun Lin",
+          "s2_id": "2335147095",
+          "openalex_id": null
+        },
+        {
+          "name": "Zhiqiang Shen",
+          "s2_id": "2276491016",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-06-03",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2606.05241",
+        "arxiv": "2606.05241",
+        "pmid": null,
+        "openalex": null,
+        "s2": "13e30d86cc1d0feec95f1efae10b77dbf41ff6ca"
+      },
+      "citation_count": 2,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2606.05241v1",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q5",
+          "seed_id": null,
+          "rank": 16
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q5",
+          "seed_id": null,
+          "rank": 18
+        }
+      ],
+      "outside_window": false,
+      "rank": 15,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2606.05241"
+    }
+  ]
+}

@@ -1,0 +1,1943 @@
+{
+ "topics": {
+  "defaults-savings": {
+   "slug": "p11-t1",
+   "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/runs/p11-t1",
+   "purpose": "build",
+   "defaults": {
+    "window": {
+     "from": "2023-08",
+     "to": null
+    },
+    "top": 10,
+    "foundational": 2,
+    "domain": "behavioral",
+    "sources": [
+     "openalex",
+     "s2"
+    ],
+    "profile": "standard"
+   },
+   "per_source": {
+    "openalex": {
+     "hits": 320,
+     "failed": 0,
+     "auth": "key"
+    },
+    "s2": {
+     "hits": 247,
+     "failed": 0,
+     "auth": "key"
+    }
+   },
+   "retrieval_dropped": {
+    "retracted": 0,
+    "must_not": 11,
+    "type": 0,
+    "window": 0,
+    "preprint": 0,
+    "cap": 54
+   },
+   "expansion": {
+    "seeds": 15,
+    "added": 100,
+    "added_outside_window": 20,
+    "dropped": {
+     "retracted": 0,
+     "must_not": 2,
+     "type": 0,
+     "cap": 226
+    },
+    "auth": {
+     "s2": "key",
+     "openalex": "key"
+    },
+    "duration_s": 100.263
+   },
+   "pool": 905,
+   "outside_window_in_pool": 19,
+   "score_distribution": {
+    "0": 680,
+    "1": 147,
+    "2": 62,
+    "3": 16
+   },
+   "screened_ge2": 78,
+   "shortlist": {
+    "in_window": 40,
+    "outside_window": 6
+   },
+   "plan": {
+    "cost_usd": 0.02617,
+    "api_seconds_sum": 14.12,
+    "output_tokens": 1041,
+    "thinking_tokens": 0,
+    "purpose": "build",
+    "n_queries": 8,
+    "n_sub_criteria": 6
+   },
+   "gap": {
+    "ran": true,
+    "n_round2": 4,
+    "cost_usd": 0.029826,
+    "api_seconds_sum": 11.54,
+    "trigger_reasons": [
+     "C6 active choice comparison has 4 papers, under 8",
+     "C6 active choice comparison has 4 papers against a median of 12 across the criteria"
+    ]
+   },
+   "screen_spend_ledger": {
+    "calls_including_failed_attempts": 39,
+    "cost_usd": 1.17562
+   },
+   "screen_wall_measured": {
+    "passes": {
+     "main": 72.65,
+     "expand": 38.62,
+     "gap": 49.41,
+     "gapexpand": 33.94
+    },
+    "total_s": 194.62
+   },
+   "screen_stages": {
+    "expand": {
+     "calls": 5,
+     "calls_ok": 5,
+     "calls_failed": 0,
+     "cost_usd": 0.148886,
+     "stage_wall_s": 38.62,
+     "retries": 0,
+     "schema_failures": 0,
+     "scored": 570,
+     "input_tokens": 29835,
+     "cache_read_tokens": 16480,
+     "output_tokens": 7562
+    },
+    "gap": {
+     "calls": 12,
+     "calls_ok": 12,
+     "calls_failed": 0,
+     "cost_usd": 0.35572,
+     "stage_wall_s": 49.41,
+     "retries": 0,
+     "schema_failures": 0,
+     "scored": 851,
+     "input_tokens": 90088,
+     "cache_read_tokens": 45320,
+     "output_tokens": 15618
+    },
+    "gapexpand": {
+     "calls": 3,
+     "calls_ok": 3,
+     "calls_failed": 0,
+     "cost_usd": 0.06563,
+     "stage_wall_s": 33.94,
+     "retries": 0,
+     "schema_failures": 0,
+     "scored": 905,
+     "input_tokens": 15524,
+     "cache_read_tokens": 12360,
+     "output_tokens": 3211
+    },
+    "main": {
+     "calls": 18,
+     "calls_ok": 18,
+     "calls_failed": 0,
+     "cost_usd": 0.57443,
+     "stage_wall_s": 72.65,
+     "retries": 1,
+     "schema_failures": 1,
+     "scored": 450,
+     "input_tokens": 141996,
+     "cache_read_tokens": 70040,
+     "output_tokens": 26613
+    }
+   },
+   "salvage": [],
+   "cli_stage_seconds": {
+    "coverage": 0.0,
+    "expand": 100.0,
+    "expand-r2": 37.0,
+    "init": 0.0,
+    "retrieve": 116.0,
+    "retrieve-r2": 25.0,
+    "shortlist": 0.0
+   },
+   "golden_fate": [
+    {
+     "doi": "10.1257/aer.20210881",
+     "title": "Default Options and Retirement Saving Dynamics",
+     "cid": "f9d28a450ab0",
+     "retrieved": true,
+     "screen_reason": "Auto-enrollment effects attenuate at 36 months; directly addresses persistence and effect size",
+     "criteria_hit": [
+      "C1",
+      "C2"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "openalex:query:Q1:6",
+      "s2:query:Q1:4"
+     ],
+     "screen_score": 3,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 5,
+     "shortlist_side": "in_window",
+     "in_cut": {
+      "R10": true,
+      "R15": true,
+      "R20": true,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": true,
+      "R15": true,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "emitted",
+      "R15": "emitted",
+      "R20": "rerank / emit ordering",
+      "R25": "rerank / emit ordering",
+      "Rall": "rerank / emit ordering"
+     }
+    },
+    {
+     "doi": "10.3386/w32828",
+     "title": "Smaller than We Thought? The Effect of Automatic Savings Policies",
+     "cid": "32831b736c11",
+     "retrieved": true,
+     "screen_reason": "Shows auto-enrolment/auto-escalation effects are much smaller long-run due to opt-out and withdrawal; contradicts default premise",
+     "criteria_hit": [
+      "C1",
+      "C2"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "openalex:query:Q1:1",
+      "openalex:query:Q1:8",
+      "openalex:query:Q4:13",
+      "openalex:query:Q6:2"
+     ],
+     "screen_score": 3,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 2,
+     "shortlist_side": "in_window",
+     "in_cut": {
+      "R10": true,
+      "R15": true,
+      "R20": true,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": true,
+      "R15": true,
+      "R20": true,
+      "R25": false,
+      "Rall": true
+     },
+     "loss_stage": {
+      "R10": "emitted",
+      "R15": "emitted",
+      "R20": "emitted",
+      "R25": "rerank / emit ordering",
+      "Rall": "emitted"
+     }
+    },
+    {
+     "doi": "10.3386/w31601",
+     "title": "Automatic Enrollment with a 12% Default Contribution Rate",
+     "cid": "5273b68f1dce",
+     "retrieved": true,
+     "screen_reason": "Studies how high default contribution rate affects opt-out and anchoring at suboptimal level",
+     "criteria_hit": [
+      "C1",
+      "C3"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "openalex:query:Q1:2",
+      "openalex:query:Q1:5",
+      "s2:query:Q1:2",
+      "s2:query:Q1:3"
+     ],
+     "screen_score": 2,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 15,
+     "shortlist_side": "in_window",
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": true,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": true,
+      "R25": true,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "R10 cut",
+      "R15": "R15 cut",
+      "R20": "emitted",
+      "R25": "emitted",
+      "Rall": "rerank / emit ordering"
+     }
+    },
+    {
+     "doi": "10.3386/w32074",
+     "title": "Employer-Based Short-Term Savings Accounts",
+     "cid": "b6857cc616fe",
+     "retrieved": true,
+     "screen_reason": "Employer short-term savings account opt-in choice architecture with persistence data over 12 months",
+     "criteria_hit": [
+      "C1",
+      "C2"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "openalex:query:Q1:17"
+     ],
+     "screen_score": 3,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 12,
+     "shortlist_side": "in_window",
+     "in_cut": {
+      "R10": false,
+      "R15": true,
+      "R20": true,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": true,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "R10 cut",
+      "R15": "emitted",
+      "R20": "rerank / emit ordering",
+      "R25": "rerank / emit ordering",
+      "Rall": "rerank / emit ordering"
+     }
+    },
+    {
+     "doi": "10.3386/w7682",
+     "title": "The Power of Suggestion: Inertia in 401(k) Participation and Savings Behavior",
+     "cid": "4d7c9fdb0fab",
+     "retrieved": true,
+     "screen_reason": "Classic 401k auto-enrollment default effect; employer setting but foundational C1 evidence.",
+     "criteria_hit": [
+      "C1"
+     ],
+     "matched_by": "title",
+     "outside_window": false,
+     "origins": [
+      "openalex:references:f9d28a450ab0:1",
+      "openalex:references:3c6587448c9c:21",
+      "openalex:references:b6857cc616fe:3",
+      "openalex:references:5273b68f1dce:17"
+     ],
+     "screen_score": 2,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 16,
+     "shortlist_side": "in_window",
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "R10 cut",
+      "R15": "R15 cut",
+      "R20": "R20 cut",
+      "R25": "rerank / emit ordering",
+      "Rall": "rerank / emit ordering"
+     }
+    },
+    {
+     "doi": "10.1086/380085",
+     "title": "Save More Tomorrow\u2122: Using Behavioral Economics to Increase Employee Saving",
+     "cid": "c2f8aeca5b0d",
+     "retrieved": true,
+     "screen_reason": "Save More Tomorrow employer savings program, not consumer self-directed nor default enrolment comparison.",
+     "criteria_hit": [],
+     "matched_by": "doi",
+     "outside_window": true,
+     "origins": [
+      "openalex:references:f9d28a450ab0:2",
+      "openalex:references:3c6587448c9c:24",
+      "openalex:references:5273b68f1dce:15"
+     ],
+     "screen_score": 1,
+     "screened_ge2": false,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "screening (<2)",
+      "R15": "screening (<2)",
+      "R20": "screening (<2)",
+      "R25": "screening (<2)",
+      "Rall": "screening (<2)"
+     }
+    },
+    {
+     "doi": "10.3386/w8651",
+     "title": "For Better or For Worse: Default Effects and 401(k) Savings Behavior",
+     "cid": "df2e582de7db",
+     "retrieved": true,
+     "screen_reason": "Default effects on 401k participation and anchoring at low default savings rate, addresses C1/C3.",
+     "criteria_hit": [
+      "C1",
+      "C3"
+     ],
+     "matched_by": "doi",
+     "outside_window": true,
+     "origins": [
+      "openalex:references:b6857cc616fe:17",
+      "openalex:references:f0395b76e878:19"
+     ],
+     "screen_score": 2,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 46,
+     "shortlist_side": "outside_window",
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "R10 cut",
+      "R15": "R15 cut",
+      "R20": "R20 cut",
+      "R25": "rerank / emit ordering",
+      "Rall": "rerank / emit ordering"
+     }
+    },
+    {
+     "doi": "10.1017/bpp.2018.43",
+     "title": "When and why defaults influence decisions: a meta-analysis of default effects",
+     "cid": null,
+     "retrieved": false,
+     "screen_reason": null,
+     "criteria_hit": null,
+     "matched_by": null,
+     "outside_window": null,
+     "origins": null,
+     "screen_score": null,
+     "screened_ge2": false,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "not-retrieved",
+      "R15": "not-retrieved",
+      "R20": "not-retrieved",
+      "R25": "not-retrieved",
+      "Rall": "not-retrieved"
+     }
+    },
+    {
+     "doi": "10.1162/qjec.2009.124.4.1639",
+     "title": "Optimal Defaults and Active Decisions",
+     "cid": null,
+     "retrieved": false,
+     "screen_reason": null,
+     "criteria_hit": null,
+     "matched_by": null,
+     "outside_window": null,
+     "origins": null,
+     "screen_score": null,
+     "screened_ge2": false,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "not-retrieved",
+      "R15": "not-retrieved",
+      "R20": "not-retrieved",
+      "R25": "not-retrieved",
+      "Rall": "not-retrieved"
+     }
+    },
+    {
+     "doi": "10.1093/qje/qju013",
+     "title": "Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts: Evidence from Denmark *",
+     "cid": "5a5e499f6ec3",
+     "retrieved": true,
+     "screen_reason": "Active vs passive choice effects on savings rates and crowd-out, directly addresses C6/C1.",
+     "criteria_hit": [
+      "C1",
+      "C6"
+     ],
+     "matched_by": "doi",
+     "outside_window": true,
+     "origins": [
+      "openalex:references:f9d28a450ab0:5",
+      "openalex:references:3c6587448c9c:1",
+      "openalex:references:f0395b76e878:1"
+     ],
+     "screen_score": 3,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 41,
+     "shortlist_side": "outside_window",
+     "in_cut": {
+      "R10": true,
+      "R15": true,
+      "R20": true,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": true,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "emitted",
+      "R15": "rerank / emit ordering",
+      "R20": "rerank / emit ordering",
+      "R25": "rerank / emit ordering",
+      "Rall": "rerank / emit ordering"
+     }
+    }
+   ],
+   "arms": {
+    "R10": {
+     "cut": 10,
+     "in_window": 8,
+     "outside_window": 2,
+     "emitted": [
+      "3c6587448c9c",
+      "9e3699988af6",
+      "27753f3a0af1",
+      "32831b736c11",
+      "f9d28a450ab0",
+      "5716814f6adf",
+      "3b4211254cf6",
+      "4a9e350afe4a",
+      "bfd1c9f2db97",
+      "5a5e499f6ec3"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "foundational",
+      "foundational"
+     ],
+     "foundational_slots": 2,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 0,
+     "relation_contradicting": 4,
+     "criterion_coverage": "6/6",
+     "recall_10": [
+      3,
+      10
+     ],
+     "recall_25": [
+      3,
+      10
+     ],
+     "frontier_tokens": 18137,
+     "cost_usd": 0.156708,
+     "wall_s": 123.91,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 0.875,
+      "mean_score_in_window": 2.5,
+      "in_window_n": 8,
+      "foundational_scores": [
+       3,
+       3
+      ],
+      "cost_usd": 0.2234
+     }
+    },
+    "R15": {
+     "cut": 15,
+     "in_window": 12,
+     "outside_window": 3,
+     "emitted": [
+      "3c6587448c9c",
+      "9e3699988af6",
+      "32831b736c11",
+      "3b4211254cf6",
+      "27753f3a0af1",
+      "5716814f6adf",
+      "f9d28a450ab0",
+      "b6857cc616fe",
+      "893434476830",
+      "bfd1c9f2db97"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "foundational",
+      "foundational"
+     ],
+     "foundational_slots": 2,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 0,
+     "relation_contradicting": 4,
+     "criterion_coverage": "6/6",
+     "recall_10": [
+      3,
+      10
+     ],
+     "recall_25": [
+      4,
+      10
+     ],
+     "frontier_tokens": 28775,
+     "cost_usd": 0.245254,
+     "wall_s": 219.28,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 1.0,
+      "mean_score_in_window": 2.625,
+      "in_window_n": 8,
+      "foundational_scores": [
+       2,
+       3
+      ],
+      "cost_usd": 0.2148
+     }
+    },
+    "R20": {
+     "cut": 20,
+     "in_window": 15,
+     "outside_window": 5,
+     "emitted": [
+      "9e3699988af6",
+      "3c6587448c9c",
+      "c3219a378627",
+      "32831b736c11",
+      "6c8b6522d8f1",
+      "a46ee7af47d3",
+      "27753f3a0af1",
+      "5273b68f1dce",
+      "26f21e72f8db",
+      "893434476830"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "foundational",
+      "foundational"
+     ],
+     "foundational_slots": 2,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 0,
+     "relation_contradicting": 3,
+     "criterion_coverage": "5/6",
+     "recall_10": [
+      2,
+      10
+     ],
+     "recall_25": [
+      5,
+      10
+     ],
+     "frontier_tokens": 33458,
+     "cost_usd": 0.256799,
+     "wall_s": 246.24,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 1.0,
+      "mean_score_in_window": 2.625,
+      "in_window_n": 8,
+      "foundational_scores": [
+       2,
+       3
+      ],
+      "cost_usd": 0.2711
+     }
+    },
+    "R25": {
+     "cut": 25,
+     "in_window": 19,
+     "outside_window": 6,
+     "emitted": [
+      "3c6587448c9c",
+      "9e3699988af6",
+      "6c8b6522d8f1",
+      "8319d6c6bc20",
+      "c3219a378627",
+      "a46ee7af47d3",
+      "5273b68f1dce",
+      "33a48a81613a",
+      "26f21e72f8db",
+      "893434476830"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "foundational",
+      "foundational"
+     ],
+     "foundational_slots": 2,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 0,
+     "relation_contradicting": 2,
+     "criterion_coverage": "6/6",
+     "recall_10": [
+      1,
+      10
+     ],
+     "recall_25": [
+      7,
+      10
+     ],
+     "frontier_tokens": 36098,
+     "cost_usd": 0.265631,
+     "wall_s": 245.29,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 1.0,
+      "mean_score_in_window": 2.5,
+      "in_window_n": 8,
+      "foundational_scores": [
+       2,
+       3
+      ],
+      "cost_usd": 0.2489
+     }
+    },
+    "Rall": {
+     "cut": 46,
+     "in_window": 40,
+     "outside_window": 6,
+     "emitted": [
+      "3c6587448c9c",
+      "3b187fa626d9",
+      "32831b736c11",
+      "8319d6c6bc20",
+      "c3219a378627",
+      "6c8b6522d8f1",
+      "9e3699988af6",
+      "2f9a017e1fd8",
+      "26f21e72f8db",
+      "893434476830"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "foundational",
+      "foundational"
+     ],
+     "foundational_slots": 2,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 0,
+     "relation_contradicting": 3,
+     "criterion_coverage": "5/6",
+     "recall_10": [
+      1,
+      10
+     ],
+     "recall_25": [
+      6,
+      10
+     ],
+     "frontier_tokens": 86033,
+     "cost_usd": 0.673272,
+     "wall_s": 617.22,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 0.875,
+      "mean_score_in_window": 2.5,
+      "in_window_n": 8,
+      "foundational_scores": [
+       3,
+       2
+      ],
+      "cost_usd": 0.3059
+     }
+    }
+   },
+   "baseline": {
+    "run": "2026-08-19-s3-e2e",
+    "profile_of_run": "quick-depth",
+    "recall_10": [
+     5,
+     10
+    ],
+    "recall_25": [
+     8,
+     10
+    ],
+    "candidates_recall_standard": [
+     8,
+     10
+    ],
+    "foundational_slots": 2,
+    "contradicting_reason": 0,
+    "relation_contradicting": 0,
+    "review_slots": 1
+   }
+  },
+  "llm-lit-search": {
+   "slug": "p11-t2",
+   "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/runs/p11-t2",
+   "purpose": "research",
+   "defaults": {
+    "window": {
+     "from": "2024-01",
+     "to": null
+    },
+    "top": 10,
+    "foundational": 2,
+    "domain": "cs",
+    "sources": [
+     "openalex",
+     "s2",
+     "arxiv"
+    ],
+    "profile": "standard"
+   },
+   "per_source": {
+    "openalex": {
+     "hits": 320,
+     "failed": 0,
+     "auth": "key"
+    },
+    "s2": {
+     "hits": 280,
+     "failed": 0,
+     "auth": "key"
+    },
+    "arxiv": {
+     "hits": 272,
+     "failed": 0,
+     "auth": "anon"
+    }
+   },
+   "retrieval_dropped": {
+    "retracted": 0,
+    "must_not": 2,
+    "type": 0,
+    "window": 0,
+    "preprint": 0,
+    "cap": 319
+   },
+   "expansion": {
+    "seeds": 15,
+    "added": 100,
+    "added_outside_window": 20,
+    "dropped": {
+     "retracted": 0,
+     "must_not": 0,
+     "type": 0,
+     "cap": 285
+    },
+    "auth": {
+     "s2": "key",
+     "openalex": "key"
+    },
+    "duration_s": 91.278
+   },
+   "pool": 1009,
+   "outside_window_in_pool": 16,
+   "score_distribution": {
+    "0": 603,
+    "1": 206,
+    "2": 146,
+    "3": 54
+   },
+   "screened_ge2": 200,
+   "shortlist": {
+    "in_window": 40,
+    "outside_window": 0
+   },
+   "plan": {
+    "cost_usd": 0.046406,
+    "api_seconds_sum": 31.53,
+    "output_tokens": 3089,
+    "thinking_tokens": 2161,
+    "purpose": "research",
+    "n_queries": 8,
+    "n_sub_criteria": 5
+   },
+   "gap": {
+    "ran": true,
+    "n_round2": 4,
+    "cost_usd": 0.032714,
+    "api_seconds_sum": 12.51,
+    "trigger_reasons": [
+     "C5 gain replication failure has 6 papers, under 8",
+     "C5 gain replication failure has 6 papers against a median of 58 across the criteria"
+    ]
+   },
+   "screen_spend_ledger": {
+    "calls_including_failed_attempts": 49,
+    "cost_usd": 1.513281
+   },
+   "screen_wall_measured": {
+    "passes": {
+     "main": 70.28,
+     "expand": 75.48,
+     "expand-retry": 56.67,
+     "salvage-x02": 17.1,
+     "gap": 49.69,
+     "gapexpand": 36.51
+    },
+    "total_s": 305.73
+   },
+   "screen_stages": {
+    "expand": {
+     "calls": 1,
+     "calls_ok": 0,
+     "calls_failed": 1,
+     "cost_usd": 0.0,
+     "stage_wall_s": 56.67,
+     "retries": 2,
+     "schema_failures": 1,
+     "scored": 545,
+     "input_tokens": 0,
+     "cache_read_tokens": 0,
+     "output_tokens": 0
+    },
+    "gap": {
+     "calls": 15,
+     "calls_ok": 15,
+     "calls_failed": 0,
+     "cost_usd": 0.442622,
+     "stage_wall_s": 49.69,
+     "retries": 0,
+     "schema_failures": 0,
+     "scored": 928,
+     "input_tokens": 114138,
+     "cache_read_tokens": 59880,
+     "output_tokens": 20237
+    },
+    "gapexpand": {
+     "calls": 4,
+     "calls_ok": 4,
+     "calls_failed": 0,
+     "cost_usd": 0.105202,
+     "stage_wall_s": 36.51,
+     "retries": 0,
+     "schema_failures": 0,
+     "scored": 1009,
+     "input_tokens": 25804,
+     "cache_read_tokens": 15968,
+     "output_tokens": 5040
+    },
+    "main": {
+     "calls": 18,
+     "calls_ok": 18,
+     "calls_failed": 0,
+     "cost_usd": 0.584003,
+     "stage_wall_s": 70.28,
+     "retries": 1,
+     "schema_failures": 1,
+     "scored": 450,
+     "input_tokens": 143510,
+     "cache_read_tokens": 67864,
+     "output_tokens": 27343
+    }
+   },
+   "salvage": [
+    {
+     "topic": "llm-lit-search",
+     "batch": "x02",
+     "seconds": 17.1,
+     "cost_usd": 0.032482,
+     "returned_rows": 27,
+     "batch_items": 25,
+     "dropped_rows": [
+      {
+       "cid": "4a1808a68e2a2",
+       "score": 0,
+       "reason": "duplicate placeholder",
+       "criteria_hit": []
+      },
+      {
+       "cid": "2ad9d99f0b79b",
+       "score": 0,
+       "reason": "duplicate placeholder",
+       "criteria_hit": []
+      }
+     ],
+     "kept_rows": 25,
+     "cumulative_spend_usd": 1.792292
+    }
+   ],
+   "cli_stage_seconds": {
+    "coverage": 0.0,
+    "expand": 92.0,
+    "expand-r2": 38.0,
+    "init": 0.0,
+    "retrieve": 11.0,
+    "retrieve-r2": 73.0,
+    "shortlist": 0.0
+   },
+   "golden_fate": [
+    {
+     "doi": "10.48550/arXiv.2501.10120",
+     "title": "PaSa: An LLM Agent for Comprehensive Academic Paper Search",
+     "cid": "0bf8f356a21c",
+     "retrieved": true,
+     "screen_reason": "LLM agent for academic paper search with RL, synthetic benchmark construction, directly central",
+     "criteria_hit": [
+      "C2",
+      "C3",
+      "C4"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "s2:references:04c2c77e0326:6",
+      "s2:references:625aeeca9085:24"
+     ],
+     "screen_score": 3,
+     "screened_ge2": true,
+     "shortlisted": true,
+     "shortlist_pos": 20,
+     "shortlist_side": "in_window",
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": true,
+      "R25": true,
+      "Rall": true
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": true,
+      "R25": true,
+      "Rall": true
+     },
+     "loss_stage": {
+      "R10": "R10 cut",
+      "R15": "R15 cut",
+      "R20": "emitted",
+      "R25": "emitted",
+      "Rall": "emitted"
+     }
+    },
+    {
+     "doi": "10.48550/arXiv.2605.29234",
+     "title": "Rethinking Literature Search Evaluation: Deep Research Helps, and Human Citation Lists Are Not a Ground Truth",
+     "cid": null,
+     "retrieved": false,
+     "screen_reason": null,
+     "criteria_hit": null,
+     "matched_by": null,
+     "outside_window": null,
+     "origins": null,
+     "screen_score": null,
+     "screened_ge2": false,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "not-retrieved",
+      "R15": "not-retrieved",
+      "R20": "not-retrieved",
+      "R25": "not-retrieved",
+      "Rall": "not-retrieved"
+     }
+    },
+    {
+     "doi": "10.48550/arXiv.2606.20235",
+     "title": "ScholarQuest: A Taxonomy-Guided Benchmark for Agentic Academic Paper Search in Open Literature Environments",
+     "cid": null,
+     "retrieved": false,
+     "screen_reason": null,
+     "criteria_hit": null,
+     "matched_by": null,
+     "outside_window": null,
+     "origins": null,
+     "screen_score": null,
+     "screened_ge2": false,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "not-retrieved",
+      "R15": "not-retrieved",
+      "R20": "not-retrieved",
+      "R25": "not-retrieved",
+      "Rall": "not-retrieved"
+     }
+    },
+    {
+     "doi": "10.48550/arXiv.2407.18940",
+     "title": "LitSearch: A Retrieval Benchmark for Scientific Literature Search",
+     "cid": "112765f8f03e",
+     "retrieved": true,
+     "screen_reason": "Retrieval benchmark for scientific literature search with explicit construction methodology",
+     "criteria_hit": [
+      "C4",
+      "C1"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "s2:references:625aeeca9085:26"
+     ],
+     "screen_score": 3,
+     "screened_ge2": true,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "shortlist cap",
+      "R15": "shortlist cap",
+      "R20": "shortlist cap",
+      "R25": "shortlist cap",
+      "Rall": "shortlist cap"
+     }
+    },
+    {
+     "doi": "10.48550/arXiv.2411.14199",
+     "title": "OpenScholar: Synthesizing Scientific Literature with Retrieval-augmented LMs",
+     "cid": "7051edb85a10",
+     "retrieved": true,
+     "screen_reason": "OpenScholar system plus ScholarQABench benchmark construction for literature search",
+     "criteria_hit": [
+      "C3",
+      "C4"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "s2:references:625aeeca9085:25"
+     ],
+     "screen_score": 3,
+     "screened_ge2": true,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "shortlist cap",
+      "R15": "shortlist cap",
+      "R20": "shortlist cap",
+      "R25": "shortlist cap",
+      "Rall": "shortlist cap"
+     }
+    },
+    {
+     "doi": "10.48550/arXiv.2402.01788",
+     "title": "LitLLM: A Toolkit for Scientific Literature Review",
+     "cid": "1ff1527fccd5",
+     "retrieved": true,
+     "screen_reason": "RAG-based literature review toolkit; relevant system design underlying agentic search",
+     "criteria_hit": [
+      "C3"
+     ],
+     "matched_by": "doi",
+     "outside_window": false,
+     "origins": [
+      "s2:references:04c2c77e0326:7"
+     ],
+     "screen_score": 2,
+     "screened_ge2": true,
+     "shortlisted": false,
+     "shortlist_pos": null,
+     "shortlist_side": null,
+     "in_cut": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "in_top10": {
+      "R10": false,
+      "R15": false,
+      "R20": false,
+      "R25": false,
+      "Rall": false
+     },
+     "loss_stage": {
+      "R10": "shortlist cap",
+      "R15": "shortlist cap",
+      "R20": "shortlist cap",
+      "R25": "shortlist cap",
+      "Rall": "shortlist cap"
+     }
+    }
+   ],
+   "arms": {
+    "R10": {
+     "cut": 10,
+     "in_window": 10,
+     "outside_window": 0,
+     "emitted": [
+      "2cbca1abbe99",
+      "60fd922117d2",
+      "dc6612fba47a",
+      "37b82519b62a",
+      "aac7d9e865ef",
+      "3759e655e951",
+      "b26163dcef51",
+      "7d6d01fe8a27",
+      "d8c6216340fd",
+      "3f16ad6b5a85"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "backfill",
+      "backfill"
+     ],
+     "foundational_slots": 0,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 2,
+     "relation_contradicting": 3,
+     "criterion_coverage": "5/5",
+     "recall_10": [
+      0,
+      6
+     ],
+     "recall_25": [
+      0,
+      6
+     ],
+     "frontier_tokens": 27949,
+     "cost_usd": 0.235289,
+     "wall_s": 193.06,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 0.9,
+      "mean_score_in_window": 2.3,
+      "in_window_n": 10,
+      "foundational_scores": [],
+      "cost_usd": 0.2741
+     }
+    },
+    "R15": {
+     "cut": 15,
+     "in_window": 15,
+     "outside_window": 0,
+     "emitted": [
+      "60fd922117d2",
+      "2cbca1abbe99",
+      "dc6612fba47a",
+      "04c2c77e0326",
+      "aac7d9e865ef",
+      "37b82519b62a",
+      "3b14a111838b",
+      "d8c6216340fd",
+      "3f16ad6b5a85",
+      "93ac147bb924"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "backfill",
+      "backfill"
+     ],
+     "foundational_slots": 0,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 2,
+     "relation_contradicting": 3,
+     "criterion_coverage": "5/5",
+     "recall_10": [
+      0,
+      6
+     ],
+     "recall_25": [
+      0,
+      6
+     ],
+     "frontier_tokens": 38087,
+     "cost_usd": 0.309384,
+     "wall_s": 246.09,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 1.0,
+      "mean_score_in_window": 2.6,
+      "in_window_n": 10,
+      "foundational_scores": [],
+      "cost_usd": 0.2391
+     }
+    },
+    "R20": {
+     "cut": 20,
+     "in_window": 20,
+     "outside_window": 0,
+     "emitted": [
+      "60fd922117d2",
+      "b60436ddd394",
+      "2cbca1abbe99",
+      "dc6612fba47a",
+      "0bf8f356a21c",
+      "625aeeca9085",
+      "37b82519b62a",
+      "aac7d9e865ef",
+      "3b14a111838b",
+      "04c2c77e0326"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "backfill",
+      "backfill"
+     ],
+     "foundational_slots": 0,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 2,
+     "relation_contradicting": 4,
+     "criterion_coverage": "5/5",
+     "recall_10": [
+      1,
+      6
+     ],
+     "recall_25": [
+      1,
+      6
+     ],
+     "frontier_tokens": 59462,
+     "cost_usd": 0.479298,
+     "wall_s": 416.05,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 0.9,
+      "mean_score_in_window": 2.6,
+      "in_window_n": 10,
+      "foundational_scores": [],
+      "cost_usd": 0.2632
+     }
+    },
+    "R25": {
+     "cut": 25,
+     "in_window": 25,
+     "outside_window": 0,
+     "emitted": [
+      "60fd922117d2",
+      "2cbca1abbe99",
+      "0bf8f356a21c",
+      "3b89edf4b85c",
+      "dc6612fba47a",
+      "625aeeca9085",
+      "aac7d9e865ef",
+      "04c2c77e0326",
+      "3b14a111838b",
+      "7d6d01fe8a27"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "backfill",
+      "backfill"
+     ],
+     "foundational_slots": 0,
+     "contradicting_slots": 0,
+     "review_slots": 0,
+     "backfill_slots": 2,
+     "relation_contradicting": 2,
+     "criterion_coverage": "5/5",
+     "recall_10": [
+      1,
+      6
+     ],
+     "recall_25": [
+      1,
+      6
+     ],
+     "frontier_tokens": 69854,
+     "cost_usd": 0.554522,
+     "wall_s": 498.53,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 0.9,
+      "mean_score_in_window": 2.6,
+      "in_window_n": 10,
+      "foundational_scores": [],
+      "cost_usd": 0.2409
+     }
+    },
+    "Rall": {
+     "cut": 40,
+     "in_window": 40,
+     "outside_window": 0,
+     "emitted": [
+      "2cbca1abbe99",
+      "6006ace31229",
+      "60fd922117d2",
+      "dc6612fba47a",
+      "625aeeca9085",
+      "0bf8f356a21c",
+      "3b89edf4b85c",
+      "890330c91980",
+      "e2c42887588f",
+      "aac7d9e865ef"
+     ],
+     "selection_reasons": [
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "score",
+      "backfill",
+      "backfill",
+      "review"
+     ],
+     "foundational_slots": 0,
+     "contradicting_slots": 0,
+     "review_slots": 1,
+     "backfill_slots": 2,
+     "relation_contradicting": 2,
+     "criterion_coverage": "5/5",
+     "recall_10": [
+      1,
+      6
+     ],
+     "recall_25": [
+      1,
+      6
+     ],
+     "frontier_tokens": 105379,
+     "cost_usd": 0.823025,
+     "wall_s": 744.22,
+     "retries": 0,
+     "schema_failures": 0,
+     "verify_exit": 0,
+     "emit_exit": 0,
+     "ranked_schema_valid": true,
+     "judge": {
+      "precision_ge2_in_window": 1.0,
+      "mean_score_in_window": 2.5,
+      "in_window_n": 10,
+      "foundational_scores": [],
+      "cost_usd": 0.2385
+     }
+    }
+   },
+   "baseline": {
+    "run": "2026-08-19-topic2b",
+    "profile_of_run": "deep",
+    "recall_10": [
+     3,
+     6
+    ],
+    "recall_25": [
+     4,
+     6
+    ],
+    "candidates_recall_standard": [
+     5,
+     6
+    ],
+    "foundational_slots": 2,
+    "contradicting_reason": 0,
+    "relation_contradicting": 2,
+    "review_slots": 1
+   }
+  }
+ },
+ "arms": {},
+ "pooled": {
+  "stage_loss": {
+   "R10": {
+    "pooled": {
+     "emitted": 3,
+     "R10 cut": 5,
+     "screening (<2)": 1,
+     "not-retrieved": 4,
+     "shortlist cap": 3
+    },
+    "per_topic": {
+     "defaults-savings": {
+      "emitted": 3,
+      "R10 cut": 4,
+      "screening (<2)": 1,
+      "not-retrieved": 2
+     },
+     "llm-lit-search": {
+      "R10 cut": 1,
+      "not-retrieved": 2,
+      "shortlist cap": 3
+     }
+    }
+   },
+   "R15": {
+    "pooled": {
+     "emitted": 3,
+     "R15 cut": 4,
+     "screening (<2)": 1,
+     "not-retrieved": 4,
+     "rerank / emit ordering": 1,
+     "shortlist cap": 3
+    },
+    "per_topic": {
+     "defaults-savings": {
+      "emitted": 3,
+      "R15 cut": 3,
+      "screening (<2)": 1,
+      "not-retrieved": 2,
+      "rerank / emit ordering": 1
+     },
+     "llm-lit-search": {
+      "R15 cut": 1,
+      "not-retrieved": 2,
+      "shortlist cap": 3
+     }
+    }
+   },
+   "R20": {
+    "pooled": {
+     "rerank / emit ordering": 3,
+     "emitted": 3,
+     "R20 cut": 2,
+     "screening (<2)": 1,
+     "not-retrieved": 4,
+     "shortlist cap": 3
+    },
+    "per_topic": {
+     "defaults-savings": {
+      "rerank / emit ordering": 3,
+      "emitted": 2,
+      "R20 cut": 2,
+      "screening (<2)": 1,
+      "not-retrieved": 2
+     },
+     "llm-lit-search": {
+      "emitted": 1,
+      "not-retrieved": 2,
+      "shortlist cap": 3
+     }
+    }
+   },
+   "R25": {
+    "pooled": {
+     "rerank / emit ordering": 6,
+     "emitted": 2,
+     "screening (<2)": 1,
+     "not-retrieved": 4,
+     "shortlist cap": 3
+    },
+    "per_topic": {
+     "defaults-savings": {
+      "rerank / emit ordering": 6,
+      "emitted": 1,
+      "screening (<2)": 1,
+      "not-retrieved": 2
+     },
+     "llm-lit-search": {
+      "emitted": 1,
+      "not-retrieved": 2,
+      "shortlist cap": 3
+     }
+    }
+   },
+   "Rall": {
+    "pooled": {
+     "rerank / emit ordering": 6,
+     "emitted": 2,
+     "screening (<2)": 1,
+     "not-retrieved": 4,
+     "shortlist cap": 3
+    },
+    "per_topic": {
+     "defaults-savings": {
+      "rerank / emit ordering": 6,
+      "emitted": 1,
+      "screening (<2)": 1,
+      "not-retrieved": 2
+     },
+     "llm-lit-search": {
+      "emitted": 1,
+      "not-retrieved": 2,
+      "shortlist cap": 3
+     }
+    }
+   }
+  },
+  "G1": {
+   "retrieved": 12,
+   "ge2": 11,
+   "bar": 11,
+   "raw_ge2_over_16": "11/16",
+   "conditional": "11/12",
+   "pass": true,
+   "misses": [
+    {
+     "topic": "defaults-savings",
+     "doi": "10.1086/380085",
+     "score": 1,
+     "title": "Save More Tomorrow\u2122: Using Behavioral Economics to Increase Employee Saving"
+    }
+   ]
+  },
+  "G2": {
+   "defaults-savings": {
+    "recall_10": [
+     3,
+     10
+    ],
+    "baseline_recall_10": [
+     5,
+     10
+    ],
+    "pass_vs_recorded_recall10": false,
+    "recall_25": [
+     4,
+     10
+    ],
+    "baseline_recall_25": [
+     8,
+     10
+    ]
+   },
+   "llm-lit-search": {
+    "recall_10": [
+     0,
+     6
+    ],
+    "baseline_recall_10": [
+     3,
+     6
+    ],
+    "pass_vs_recorded_recall10": false,
+    "recall_25": [
+     0,
+     6
+    ],
+    "baseline_recall_25": [
+     4,
+     6
+    ]
+   }
+  },
+  "G3": {
+   "defaults-savings": {
+    "foundational": [
+     2,
+     2
+    ],
+    "contradicting_reason": [
+     0,
+     0
+    ],
+    "relation_contradicting": [
+     4,
+     0
+    ],
+    "review": [
+     0,
+     1
+    ],
+    "pass": true
+   },
+   "llm-lit-search": {
+    "foundational": [
+     0,
+     2
+    ],
+    "contradicting_reason": [
+     0,
+     0
+    ],
+    "relation_contradicting": [
+     3,
+     2
+    ],
+    "review": [
+     0,
+     1
+    ],
+    "pass": false
+   }
+  },
+  "G4": {
+   "api_calls_total": 125,
+   "pipeline_calls": 115,
+   "pipeline_logical_units": 107,
+   "repeat_attempts_by_tag": {
+    "screen/defaults-savings/11": 2,
+    "screen/llm-lit-search/07": 2,
+    "screen/llm-lit-search/x02": 6,
+    "rerank/defaults-savings/R25/c1": 2
+   },
+   "operator_orphan_excluded": "rerank/defaults-savings/R25/c1",
+   "schema_retries": 7,
+   "retry_rate_over_logical_units": 0.0654,
+   "retry_rate_over_attempts": 0.0614,
+   "unrecovered_schema_failures": [
+    "screen/llm-lit-search/x02"
+   ],
+   "unrecovered_under_frozen_policy": 1,
+   "attempts_that_batch_took": 6,
+   "salvaged_batches": [
+    "llm-lit-search/x02"
+   ],
+   "verify_exit_nonzero": [],
+   "emit_exit_nonzero": [],
+   "ranked_schema_invalid": [],
+   "pass": false
+  },
+  "p_golden_given_score": {
+   "0": {
+    "pool": 1283,
+    "golden": 0,
+    "p": 0.0
+   },
+   "1": {
+    "pool": 353,
+    "golden": 1,
+    "p": 0.002833
+   },
+   "2": {
+    "pool": 208,
+    "golden": 4,
+    "p": 0.019231
+   },
+   "3": {
+    "pool": 70,
+    "golden": 7,
+    "p": 0.1
+   }
+  },
+  "pool_score_distribution": {
+   "0": 1283,
+   "1": 353,
+   "2": 208,
+   "3": 70
+  },
+  "cumulative_spend_usd": 9.568531
+ }
+}

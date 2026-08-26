@@ -1,0 +1,81 @@
+{
+ "label": "R52",
+ "run_dir": "arms/rerank/R52/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 34.5,
+ "cost_usd": 0.2332,
+ "input_tokens": 11175,
+ "output_tokens": 2429,
+ "thinking_tokens": 1165,
+ "n_scored": 10,
+ "in_window_n": 8,
+ "foundational_n": 2,
+ "precision_ge2_in_window": 1.0,
+ "mean_score_in_window": 2.625,
+ "foundational_scores": [
+  3,
+  3
+ ],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "84b54d56d46b",
+   "score": 3,
+   "reason": "Shows citation-verification itself is unreliable (3-18% unsupported rate depending on verifier strictness) and validates across models on SciFact — directly moves belief on C2/C3/C5 and on whether reported grounding numbers can be trusted, exactly the premise-stressing work the brief asks for."
+  },
+  {
+   "rank": 2,
+   "cid": "752402f2a368",
+   "score": 3,
+   "reason": "Benchmark built for citation-grounded single-paper QA with grounded refusal as a first-class dimension and eight-model comparison — hits C3, C4, and C5 directly, and its finding that citation metrics discriminate where LLM-judge scores compress changes how the authors should measure."
+  },
+  {
+   "rank": 3,
+   "cid": "134a6c31c11c",
+   "score": 2,
+   "reason": "Rigorous biomedical claim-verification evaluation showing retrieval utility is source-dependent and fine-tuned LLMs beat RAG for evidence generation — solid on C2/C5, though it evaluates verification pipelines more than extraction from papers."
+  },
+  {
+   "rank": 4,
+   "cid": "444f2c23f859",
+   "score": 3,
+   "reason": "CLAIM-BENCH measures claim-evidence extraction from full papers against annotation with six-model comparison and prompting-strategy tradeoffs — the most direct answer to Q1/C1 in the list, plus C3 and C5."
+  },
+  {
+   "rank": 5,
+   "cid": "ea71e3251c36",
+   "score": 2,
+   "reason": "REASONS benchmarks sentence-level citation attribution across 12 domains and quantifies hallucination rates with a RAG mitigation — relevant to C2/C3, though its attribution tasks (title/author matching) are one step removed from claim-evidence linking within papers."
+  },
+  {
+   "rank": 6,
+   "cid": "d6920ae21863",
+   "score": 3,
+   "reason": "Directly demonstrates a benchmark-construction artifact — NEI label construction silently determines what scores mean in SciFact-style verification and competence does not transfer — hitting C3, C4, and C5 and the brief's explicit ask for construction-inflated accuracy."
+  },
+  {
+   "rank": 7,
+   "cid": "375cd1eb8f71",
+   "score": 3,
+   "reason": "Large-scale, doctor-validated quantification of unsupported and contradicted citations (50-90% of responses not fully supported) in a rigorous biomedical setting — the strongest evidence in the list on C2's error-mode question, and it stresses rather than flatters the premise."
+  },
+  {
+   "rank": 8,
+   "cid": "3c1e5f6887f9",
+   "score": 2,
+   "reason": "Systematic survey of 134 papers and 300 metrics maps the benchmark landscape Q3 asks about and documents that reported numbers are not comparable across evaluation practices — useful background for C3, though it produces no new measurements itself."
+  },
+  {
+   "rank": 9,
+   "cid": "b13f6337909b",
+   "score": 3,
+   "reason": "Foundational slot: ALCE is the canonical automatic citation-evaluation benchmark that later grounding work builds on; a newcomer skipping it would misread the current papers' evaluation setups and baselines."
+  },
+  {
+   "rank": 10,
+   "cid": "7d29489aa7b6",
+   "score": 3,
+   "reason": "Foundational slot: this human-annotated audit established the citation precision/recall framing (51.5%/74.5%) that the newer grounding literature argues with — canonical background a newcomer needs before the rest of the list."
+  }
+ ]
+}

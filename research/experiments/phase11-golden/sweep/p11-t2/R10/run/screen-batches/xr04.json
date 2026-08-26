@@ -1,0 +1,86 @@
+{
+  "batch": "xr04",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "27cdbc360ade",
+      "title": "VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies",
+      "abstract_600": "Agents deployed in enterprise settings must reason across structured APIs and document collections, yet existing benchmarks evaluate these capabilities in isolation. We introduce VAKRA (e\\textbf{V}aluating \\textbf{A}PI and \\textbf{K}nowledge \\textbf{R}etrieval \\textbf{A}gents), a benchmark of over $8{,}000$ executable APIs across $62$ domains with tasks spanning three settings of increasing difficulty: diverse API interaction styles, multi-hop reasoning over structured APIs, and multi-source reasoning with natural-language tool-use policy constraints. Correctness is verified by re-executing pr",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "dae25b01ee2c",
+      "title": "Transforming LLMs into Efficient Cross-Encoders via Knowledge Distillation for RAG Reranking",
+      "abstract_600": "Cross-encoders achieve high reranking accuracy in Retrieval-Augmented Generation (RAG) pipelines but impose quadratic inference costs that limit real-time deployment. We address this by fine-tuning LLaMA 3 (8B) as a drop-in reranker using a two-stage pipeline: supervised fine-tuning on a custom query-document relevance dataset via the Unsloth framework with LoRA adapters, followed by 4-bit quantization for efficient inference. The resulting model replaces the cross-encoder in a dual-retriever RAG pipeline combining BM25 and dense vector search. Evaluated on a domain-specific question-answering",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1b9fd405dda8",
+      "title": "Agentic Context Strategies for Multi-Format Document Understanding: When Should Language Models Use Tools?",
+      "abstract_600": "Large language models face fundamental trade-offs when processing long documents: full context is expensive and may exceed limits, while RAG risks missing relevant information. We evaluate four context strategies across six frontier models on three document formats (Word, Excel, and PowerPoint). Our key finding: agentic tool-augmented approaches dramatically outperform passive strategies , with RAG+Tools achieving 46% accuracy vs 6% for RAG-only. Tool benefits are consistent across formats (+28-40 points) and models. We further show that (1) intelligent routing matters more than iteration coun",
+      "year": 2026,
+      "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 6: Industry Track)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "118342fdeee5",
+      "title": "AIRCoder: Adaptive Integration of Multi-dimensional Retrieval for Repository-level Code Completion",
+      "abstract_600": "Repository-level code completion relies on retrieval strategies to select relevant context from large codebases. Most existing methods employ single-dimensional retrieval based on textual similarity or dependency existence, leading to inconsistent performance across completion scenarios. Even task-adaptive and hybrid methods incur high computational costs while failing to explicitly consider structural hierarchy for retrieving functionally similar code. We introduce AIRCoder , a multi-dimensional retrieval framework that combines eight complementary metrics across three dimensions: textual sim",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5317e3e22990",
+      "title": "HIERA: Hierarchical Multi-Agent Relevance Assessment for Content Discovery Systems",
+      "abstract_600": "Content discovery systems depend on relevance judgment for search quality evaluation, but human annotation faces inter-annotator disagreement and scaling costs. While Large Language Models show promise as automated assessors, current approaches rely on flat aggregation strategies: single-step prompting, voting ensembles, or uncoordinated multi-agent pipelines that aggregate independent outputs without integration. We propose HIERA, a hierarchical multi-agent relevance assessment framework with four specialized agents: a Relevance Judge, Query Analyzer, Item Analyzer, and Relation Analyzer. The",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c2524aa952c7",
+      "title": "WebRetriever: A Large-Scale Comprehensive Benchmark for Efficient Web Agent Evaluation",
+      "abstract_600": "As web agents increasingly demonstrate capabilities in automated task execution, the development of robust evaluation frameworks for assessing their navigation and task completion performance has emerged as a critical research priority. However, existing benchmarks exhibit fundamental limitations. First, they suffer from insufficient scale and limited domain diversity, constraining comprehensive evaluation of cross-domain generalization. Second, prevailing LLM-as-Judge evaluation methodologies inadequately capture fine-grained interaction semantics, particularly regarding precise query formula",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

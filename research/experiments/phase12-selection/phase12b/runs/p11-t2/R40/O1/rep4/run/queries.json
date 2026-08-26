@@ -1,0 +1,119 @@
+{
+ "brief_summary": "Purpose: research. This scan surveys agentic LLM systems for scientific literature search (2024–2026), asking whether iterative, graph-traversing, query-reformulating agents actually beat single-query database search, which specific agentic moves carry the gain, how the benchmarks used to measure that gain are constructed, and where reported improvements fail to replicate under a different benchmark, metric, or baseline. Evidence lives in CS venues and preprint servers, not the applied domains these systems are pointed at.",
+ "domain": "cs",
+ "window": {
+  "from": "2024-01",
+  "to": null
+ },
+ "sub_criteria": [
+  {
+   "id": "C1",
+   "name": "baseline recall ceiling",
+   "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+  },
+  {
+   "id": "C2",
+   "name": "agentic mechanism gain",
+   "text": "Attributes a measured gain to a specific agentic move — query reformulation, citation-graph traversal, or iterative crawling — rather than to the system as an undifferentiated whole."
+  },
+  {
+   "id": "C3",
+   "name": "retrieval/reranking method",
+   "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+  },
+  {
+   "id": "C4",
+   "name": "benchmark construction",
+   "text": "Explains how an evaluation set for literature-search agents was built — query source, relevance labeling, corpus coverage, contamination controls."
+  },
+  {
+   "id": "C5",
+   "name": "gain replication failure",
+   "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+  }
+ ],
+ "must_not": [
+  "drug discovery",
+  "patent search"
+ ],
+ "queries": [
+  {
+   "id": "Q1",
+   "type": "direct",
+   "text": "agentic literature search",
+   "mode": "semantic"
+  },
+  {
+   "id": "Q2",
+   "type": "terminology",
+   "text": "deep research agent",
+   "mode": "semantic"
+  },
+  {
+   "id": "Q3",
+   "type": "mechanism",
+   "text": "citation graph traversal",
+   "mode": "semantic"
+  },
+  {
+   "id": "Q4",
+   "type": "method",
+   "text": "query reformulation retrieval",
+   "mode": "semantic"
+  },
+  {
+   "id": "Q5",
+   "type": "contradictory",
+   "text": "benchmark leakage LLM agents",
+   "mode": "semantic"
+  },
+  {
+   "id": "Q6",
+   "type": "review",
+   "text": "(survey OR review) AND (\"literature search\" OR \"scientific search\") AND (LLM OR agent)",
+   "mode": "keyword"
+  },
+  {
+   "id": "Q7",
+   "type": "adjacent",
+   "text": "retrieval augmented generation pipeline",
+   "mode": "semantic"
+  },
+  {
+   "id": "Q8",
+   "type": "emerging",
+   "text": "multi-agent research agents",
+   "mode": "semantic"
+  }
+ ],
+ "round2": [
+  {
+   "id": "G1",
+   "type": "gap",
+   "text": "reproducibility crisis NLP",
+   "mode": "semantic",
+   "target_criterion": "C5"
+  },
+  {
+   "id": "G2",
+   "type": "gap",
+   "text": "benchmark overfitting leaderboard",
+   "mode": "semantic",
+   "target_criterion": "C5"
+  },
+  {
+   "id": "R1",
+   "type": "contradictory",
+   "text": "data contamination benchmark evaluation",
+   "mode": "semantic",
+   "target_criterion": "C5"
+  },
+  {
+   "id": "R2",
+   "type": "contradictory",
+   "text": "agent evaluation pitfalls",
+   "mode": "semantic",
+   "target_criterion": "C5"
+  }
+ ]
+}

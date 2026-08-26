@@ -1,0 +1,257 @@
+{
+  "batch": "16",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "8b9877e2ce9e",
+      "title": "PluriHopRAG: Exhaustive, Recall-Sensitive QA Through Corpus-Specific Document Structure Learning",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) has been used in question answering (QA) systems to improve performance when relevant information is in one (single-hop) or multiple (multi-hop) passages. However, many real life scenarios (e.g. dealing with financial, legal, medical reports) require checking all documents for relevant information without a clear stopping condition. We term these pluri-hop questions, and formalize them by 3 conditions - recall sensitivity, exhaustiveness, and exactness. To study this setting, we introduce PluriHopWIND, a multilingual diagnostic benchmark of 48 pluri-hop que",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c585effce86d",
+      "title": "A scoping review of large language model based approaches for information extraction from radiology reports",
+      "abstract_600": "Radiological imaging is a globally prevalent diagnostic method, yet the free text contained in radiology reports is not frequently used for secondary purposes. Natural Language Processing can provide structured data retrieved from these reports. This paper provides a summary of the current state of research on Large Language Model (LLM) based approaches for information extraction (IE) from radiology reports. We conduct a scoping review that follows the PRISMA-ScR guideline. Queries of five databases were conducted on August 1st 2023. Among the 34 studies that met inclusion criteria, only pre-t",
+      "year": 2024,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9b66407a334a",
+      "title": "Can ChatGPT evaluate research quality?",
+      "abstract_600": "Abstract Purpose Assess whether ChatGPT 4.0 is accurate enough to perform research evaluations on journal articles to automate this time-consuming task. Design/methodology/approach Test the extent to which ChatGPT-4 can assess the quality of journal articles using a case study of the published scoring guidelines of the UK Research Excellence Framework (REF) 2021 to create a research evaluation ChatGPT. This was applied to 51 of my own articles and compared against my own quality judgements. Findings ChatGPT-4 can produce plausible document summaries and quality evaluation rationales that match",
+      "year": 2024,
+      "venue": "Journal of Data and Information Science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6d8fdd1c4b8c",
+      "title": "The Java Verification Tool KeY:A Tutorial",
+      "abstract_600": "Abstract The KeY tool is a state-of-the-art deductive program verifier for the Java language. Its verification engine is based on a sequent calculus for dynamic logic, realizing forward symbolic execution of the target program, whereby all symbolic paths through a program are explored. Method contracts make verification scalable. KeY combines auto-active and fine-grained proof interaction, which is possible both at the level of the verification target and its specification, as well as at the level of proof rules and program logic. This makes KeY well-suited for teaching program verification, b",
+      "year": 2024,
+      "venue": "Lecture notes in computer science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "05a4111ad2a7",
+      "title": "QuanTemp: A real-world open-domain benchmark for fact-checking numerical claims",
+      "abstract_600": "With the growth of misinformation on the web, automated fact checking has garnered immense interest for detecting growing misinformation and disinformation. Current systems have made significant advancements in handling synthetic claims sourced from Wikipedia, and noteworthy progress has been achieved in addressing real-world claims that are verified by fact-checking organizations as well. We compile and release QuanTemp, a diverse, multi-domain dataset focused exclusively on numerical claims, encompassing comparative, statistical, interval, and temporal aspects, with detailed metadata and an",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9f32e5f48c41",
+      "title": "Investigating Hallucinations in Pruned Large Language Models for Abstractive Summarization",
+      "abstract_600": "Abstract Despite the remarkable performance of generative large language models (LLMs) on abstractive summarization, they face two significant challenges: their considerable size and tendency to hallucinate. Hallucinations are concerning because they erode reliability and raise safety issues. Pruning is a technique that reduces model size by removing redundant weights, enabling more efficient sparse inference. Pruned models yield downstream task performance comparable to the original, making them ideal alternatives when operating on a limited budget. However, the effect that pruning has upon h",
+      "year": 2024,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3bd0157bfd44",
+      "title": "Do Retrieval Augmented Language Models Know When They Don't Know?",
+      "abstract_600": "Existing large language models (LLMs) occasionally generate plausible yet factually incorrect responses, known as hallucinations. Two main approaches have been proposed to mitigate hallucinations: retrieval-augmented language models (RALMs) and refusal post-training. However, current research predominantly focuses on their individual effectiveness while overlooking the evaluation of the refusal capability of RALMs. Ideally, if RALMs know when they do not know, they should refuse to answer.In this study, we ask the fundamental question: Do RALMs know when they don't know? Specifically, we inves",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "27bd594053e8",
+      "title": "Concise and Sufficient Sub-Sentence Citations for Retrieval-Augmented Generation",
+      "abstract_600": "In retrieval-augmented generation (RAG) question answering systems, generating citations for large language model (LLM) outputs enhances verifiability and helps users identify potential hallucinations. However, we observe two problems in the citations produced by existing attribution methods. First, the citations are typically provided at the sentence or even paragraph level. Long sentences or paragraphs may include a substantial amount of irrelevant content. Second, sentence-level citations may omit information that is essential for verifying the output, forcing users to read the surrounding",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a44b7c91fd2b",
+      "title": "AutoRE: Document-Level Relation Extraction with Large Language Models",
+      "abstract_600": "Large Language Models (LLMs) have demonstrated exceptional abilities in comprehending and generating text, motivating numerous researchers to utilize them for Information Extraction (IE) purposes, including Relation Extraction (RE).Nonetheless, most existing methods are predominantly designed for Sentencelevel Relation Extraction (SentRE) tasks, which typically encompass a restricted set of relations and triplet facts within a single sentence.Furthermore, certain approaches resort to treating relations as candidate choices integrated into prompt templates, leading to inefficient processing and",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "62d56c3d1b1f",
+      "title": "VAULTX",
+      "abstract_600": "Abstract\u2014 The rapid digitalization of financial and administrative processes has led to a significant increase in the volume of documents such as bills, warranties, insurance policies, receipts, and invoices. Recent research has explored the application of Artificial Intelligence (AI), Machine Learning (ML), Optical Character Recognition (OCR), and Natural Language Processing (NLP) to automate document processing, information extraction, and decision support in financial and industrial do mains. Existing studies investigate predictive modeling for warranty analysis, AI-assisted warranty claim",
+      "year": 2026,
+      "venue": "International Journal of Scientific Research in Engineering and Management",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7f97a042ce2a",
+      "title": "Correctness is not Faithfulness in RAG Attributions",
+      "abstract_600": "Retrieving relevant context is a common approach to reduce hallucinations and enhance answer reliability. Explicitly citing source documents allows users to verify generated responses and increases trust. Prior work largely evaluates citation correctness - whether cited documents support the corresponding statements. But citation correctness alone is insufficient. To establish trust in attributed answers, we must examine both citation correctness and citation faithfulness. In this work, we first disentangle the notions of citation correctness and faithfulness, which have been applied inconsist",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "712f40824355",
+      "title": "Optimizing LLM Annotation of Classroom Discourse through Multi-Agent Orchestration",
+      "abstract_600": "Large language models (LLMs) are increasingly positioned as scalable tools for annotating educational data, including classroom discourse, interaction logs, and qualitative learning artifacts. Their ability to rapidly summarize instructional interactions and assign rubric-aligned labels has fueled optimism about reducing the cost and time associated with expert human annotation. However, growing evidence suggests that single-pass LLM outputs remain unreliable for high-stakes educational constructs that require contextual, pedagogical, or normative judgment, such as instructional intent or disc",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "dcd6c194f176",
+      "title": "Exploring Retrieval Augmented Generation For Real-world Claim Verification",
+      "abstract_600": "Automated Fact-Checking (AFC) has recently gained considerable attention to address the increasing misinformation spreading in the web and social media.The recently introduced AVeriTeC dataset alleviates some limitations of existing AFC benchmarks.In this paper, we propose to explore Retrieval Augmented Generation (RAG) and describe the system (UPS participant) we implemented to solve the AVeriTeC shared task.Our end-to-end system integrates retrieval and generation in a joint training setup to enhance evidence retrieval and question generation.Our system operates as follows: First, we conduct",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "aca7174c5d98",
+      "title": "Faithful and Robust LLM-Driven Theorem Proving for NLI Explanations",
+      "abstract_600": "Natural language explanations play a fundamental role in Natural Language Inference (NLI) by revealing how premises logically entail hypotheses. Recent work has shown that the interaction of large language models (LLMs) with theorem provers (TPs) can help verify and improve the validity of NLI explanations. However, TPs require translating natural language into machine-verifiable formal representations, a process that introduces the risk of semantic information loss and unfaithful interpretation, an issue compounded by LLMs' challenges in capturing critical logical structures with sufficient p",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e82834e8dc16",
+      "title": "To Believe or Not to Believe Your LLM",
+      "abstract_600": "We explore uncertainty quantification in large language models (LLMs), with the goal to identify when uncertainty in responses given a query is large. We simultaneously consider both epistemic and aleatoric uncertainties, where the former comes from the lack of knowledge about the ground truth (such as about facts or the language), and the latter comes from irreducible randomness (such as multiple possible answers). In particular, we derive an information-theoretic metric that allows to reliably detect when only epistemic uncertainty is large, in which case the output of the model is unreliabl",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6656a81af3de",
+      "title": "GARDRec: Decision-Level Graph Grounding for Large Language Model Recommendation",
+      "abstract_600": "Large language models (LLMs) offer new opportunities for recommendation by interpreting item descriptions, user instructions, and external knowledge through natural-language prompts. However, existing graph-augmented LLM recommenders often use knowledge graphs mainly as prompt-level evidence, leaving ranking decisions weakly constrained by structured user-item relations. This is problematic for next-item recommendation, where the model must compare candidates under the same user context while preserving temporal preference, collaborative signals, and attribute matches. To address this issue, w",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ed396f2c8700",
+      "title": "Modeling the long-term preservation of archival documents using digital twins",
+      "abstract_600": "Despite the fact that an analysis of modern scientific works shows the active use of digital twins, primarily in industrial production, and, partly, in other areas of the economy and society, the use of digital twin technologies in the field of archival storage has not yet been considered. However, in the context of the digital transformation of the economy and society, the criticality of the safety of digital data in general and documents in particular increases significantly. For example, the digital economy program of the Russian Federation defines data in digital form as a key production f",
+      "year": 2024,
+      "venue": "Highly available systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7c6199024324",
+      "title": "On Compositional Learning Behaviours in Formal Mathematics",
+      "abstract_600": "Self-evolving scientific agents capable of conquering the hard tail of formal mathematics require Compositional Learning Behaviours (CLBs) -- the capacity to ground and recombine novel symbolic structures in context, beyond mere recombination of prelearned atoms. We propose S2B-LM, an adaptation of the CLB-evaluating Symbolic Behaviour Benchmark that removes numerical processing as a confound and adds chain-of-thought scaffolding to elicit rather than merely probe latent CLB competency. Cross-evaluating ten Lean~4 theorem provers on CLB competency in S2B-LM and miniF2F whole-proof performance,",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "64a0b4460e5f",
+      "title": "CUE-R: Beyond the Final Answer in Retrieval-Augmented Generation",
+      "abstract_600": "As language models shift from single-shot answer generation toward multi-step reasoning that retrieves and consumes evidence mid-inference, evaluating the role of individual retrieved items becomes more important. Existing RAG evaluation typically targets final-answer quality, citation faithfulness, or answer-level attribution, but none of these directly targets the intervention-based, per-evidence-item utility view we study here. We introduce CUE-R, a lightweight intervention-based framework for measuring per-evidence-item operational utility in single-shot RAG using shallow observable retrie",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "02c40fc017e1",
+      "title": "Laurel: Unblocking Automated Verification with Large Language Models",
+      "abstract_600": "Program verifiers such as Dafny automate proofs by outsourcing them to an SMT solver. This automation is not perfect, however, and the solver often requires hints in the form of assertions, creating a burden for the proof engineer. In this paper, we propose Laurel, a tool that alleviates this burden by automatically generating assertions using large language models (LLMs). To improve the success rate of LLMs in this task, we design two domain-specific prompting techniques. First, we help the LLM determine the location of the missing assertion by analyzing the verifier\u2019s error message and inser",
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "257260146472",
+      "title": "ThinknCheck: Grounded Claim Verification with Compact, Reasoning-Driven, and Interpretable Models",
+      "abstract_600": "We present ThinknCheck, a 1B-parameter verifier for grounded claim verification that first produces a short, structured rationale and then a binary verdict. We construct LLMAggreFact-Think, a 24.1k reasoning-augmented training set derived from LLMAggreFact, and fine-tune a 4-bit Gemma3 model to follow this format. On LLMAggreFact, ThinknCheck attains 78.1 balanced accuracy (BAcc), surpassing MiniCheck-7B (77.4) with 7x fewer parameters; removing the reasoning step reduces BAcc to 57.5. On SciFact, ThinknCheck reaches 64.7 BAcc, a +14.7 absolute gain over MiniCheck-7B. By contrast, zero-shot ch",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7abfe00f7c24",
+      "title": "DiaHalu: A Dialogue-level Hallucination Evaluation Benchmark for Large Language Models",
+      "abstract_600": "Though large language models (LLMs) achieve significant success in recent years, the hallucination issue remains a challenge, and numerous benchmarks are proposed for hallucination detection.Nevertheless, some of these benchmarks are not naturally generated by LLMs but are intentionally induced.Also, many merely focus on the factuality hallucination while ignoring the faithfulness hallucination.Additionally, although dialogue pattern is more widely utilized in the era of LLMs, current benchmarks only concentrate on sentence-level and passagelevel hallucination.In this study, we propose DiaHalu",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4b86f48cc48d",
+      "title": "Uncertainty-Guided Sampling for LLM Calibration in Automated Short Answer Grading",
+      "abstract_600": "Automated short answer grading using LLMs requires per-question calibration with human-graded examples to align outputs with instructor standards. Existing approaches treat all responses as equally informative for calibration. We propose uncertainty-guided sampling that combines stratification to ensure score range coverage with uncertainty-based selection to target responses where human judgment is most informative. Using Gaussian kernel regression, we map LLM scores to instructor preferences from these selected samples. Evaluated on Mohler benchmark and PT\\_ASAG dataset, our method achieves",
+      "year": 2026,
+      "venue": "ACM Conference on Learning @ Scale",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3e7c3702ce3c",
+      "title": "Retrieval-augmented generation elevates local LLM quality in radiology contrast media consultation",
+      "abstract_600": "Large language models (LLMs) demonstrate significant potential in healthcare applications, but clinical deployment is limited by privacy concerns and insufficient medical domain training. This study investigated whether retrieval-augmented generation (RAG) can improve locally deployable LLM for radiology contrast media consultation. In 100 synthetic iodinated contrast media consultations we compared Llama 3.2-11B (baseline and RAG) with three cloud-based models-GPT-4o mini, Gemini 2.0 Flash and Claude 3.5 Haiku. A blinded radiologist ranked the five replies per case, and three LLM-based judges",
+      "year": 2025,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "404caa4dc45d",
+      "title": "DocLLM: A Layout-Aware Generative Language Model for Multimodal Document Understanding",
+      "abstract_600": "Dongsheng Wang, Natraj Raman, Mathieu Sibue, Zhiqiang Ma, Petr Babkin, Simerjot Kaur, Yulong Pei, Armineh Nourbakhsh, Xiaomo Liu. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

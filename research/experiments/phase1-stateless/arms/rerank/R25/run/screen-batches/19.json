@@ -1,0 +1,50 @@
+{
+  "batch": "19",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "3b34501ecd91",
+      "title": "Fact or Fiction: Verifying Scientific Claims",
+      "abstract_600": "David Wadden, Shanchuan Lin, Kyle Lo, Lucy Lu Wang, Madeleine van Zuylen, Arman Cohan, Hannaneh Hajishirzi. Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020.",
+      "year": 2020,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": true
+    },
+    {
+      "cid": "27ed8ae2ff8d",
+      "title": "CiteME: Can Language Models Accurately Cite Scientific Claims?",
+      "abstract_600": "Thousands of new scientific papers are published each month. Such information overload complicates researcher efforts to stay current with the state-of-the-art as well as to verify and correctly attribute claims. We pose the following research question: Given a text excerpt referencing a paper, could an LM act as a research assistant to correctly identify the referenced paper? We advance efforts to answer this question by building a benchmark that evaluates the abilities of LMs in citation attribution. Our benchmark, CiteME, consists of text excerpts from recent machine learning papers, each r",
+      "year": 2024,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

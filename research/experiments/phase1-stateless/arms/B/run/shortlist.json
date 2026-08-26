@@ -1,0 +1,2995 @@
+{
+  "in_window": [
+    {
+      "cid": "659e22c8290d",
+      "title": "Deceptive Grounding: Entity Attribution Failure in Clinical Retrieval-Augmented Generation",
+      "abstract": "Retrieval-augmented generation evaluation checks whether model claims are factually grounded in retrieved documents. It does not check whether retrieved evidence is attributed to the correct entity. A clinical RAG response can pass every automated check (zero hallucinations, near-perfect faithfulness, real citations) while presenting drug Y's clinical evidence as evidence about queried drug X. We term this deceptive grounding (DG): a failure invisible to faithfulness, hallucination, and citation checks because every claim is sourced from a real document, about the wrong entity. Using a controlled factorial benchmark across 13 models, we find DG rates spanning 8-87% at peak adversarial conditions. Medical and biomedical fine-tuned models reach up to 86.7%; domain specialization amplifies the failure rather than mitigating it. A controlled ablation identifies the mechanism: removing entity-specific clinical evidence from retrieved documents eliminates entity-attribution failure entirely, shifting all failures to confabulation. The two failure modes respond to the same trigger, taking different paths. Production measurement across 740 drug-disease pairs finds 7.8% overall DG in a deployed RAG system, rising to 13.6% for recently approved drugs. Entity-attribution verification (checking that cited evidence applies to the queried entity) detects DG at 97.0% precision and 98.7% DG recall (IPW-adjusted human gold standard); no existing framework implements it.",
+      "tldr": "A controlled ablation identifies the mechanism: removing entity-specific clinical evidence from retrieved documents eliminates entity-attribution failure entirely, shifting all failures to confabulation.",
+      "authors": [
+        {
+          "name": "C\u00e9dric Caruzzo",
+          "s2_id": "2379765792",
+          "openalex_id": null
+        },
+        {
+          "name": "Donggeun Yoo",
+          "s2_id": "2449487423",
+          "openalex_id": null
+        },
+        {
+          "name": "Tae Soo Kim",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-10",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2607.09349",
+        "arxiv": "2607.09349",
+        "pmid": null,
+        "openalex": null,
+        "s2": "c0083eff06562bac6dc47238f921262217346443"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2607.09349v1",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 13
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 6
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q7",
+          "seed_id": null,
+          "rank": 27
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q7",
+          "seed_id": null,
+          "rank": 25
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "97b9c25fbfb6",
+      "title": "Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents",
+      "abstract": "Large language models (LLMs) power deep research agents that synthesize information from hundreds of web sources into cited reports, yet these citations cannot be reliably verified. Current approaches either trust models to self-cite accurately, risking bias, or employ retrieval-augmented generation (RAG) that does not validate source accessibility, relevance, or factual consistency. We introduce the first source attribution evaluation framework that uses a reproducible AST parser to extract and evaluate inline citations from LLM-generated Markdown reports at scale. Unlike methods that verify claims in isolation, our framework closes the loop by retrieving the actual cited content, enabling human or model evaluators to judge each citation against its source. Citations are evaluated along three dimensions. (1) Link Works verifies URL accessibility, (2) Relevant Content measures topical alignment, and (3) Fact Check validates factual accuracy against source content. We benchmark 14 closed-source and open-source LLMs across three evaluation dimensions using rubric-based LLM-as-a-judge evaluators calibrated through human review. Our results reveal that even the strongest frontier models maintain link validity above 94% and relevance above 80%, yet achieve only 39-77% factual accuracy, while fewer than half of open-source models successfully generate cited reports in a one-shot setting. Ablation studies on research depth show that Fact Check accuracy drops by approximately 42% on average across two frontier models as tool calls scale from 2 to 150, demonstrating that more retrieval does not produce more accurate citations. These findings reveal a critical disconnect between surface-level citation quality and factual reliability, and our framework provides the evaluation infrastructure to assess the disconnect.",
+      "tldr": "This work introduces the first source attribution evaluation framework that uses a reproducible AST parser to extract and evaluate inline citations from LLM-generated Markdown reports at scale, revealing a critical disconnect between surface-level citation quality and factual reliability.",
+      "authors": [
+        {
+          "name": "Hailey Onweller",
+          "s2_id": "2224958789",
+          "openalex_id": null
+        },
+        {
+          "name": "Elias Lumer",
+          "s2_id": "2326836585",
+          "openalex_id": null
+        },
+        {
+          "name": "A. Huber",
+          "s2_id": "2331881838",
+          "openalex_id": null
+        },
+        {
+          "name": "Pia Ramchandani",
+          "s2_id": "32580447",
+          "openalex_id": null
+        },
+        {
+          "name": "V. K. Subbiah",
+          "s2_id": "2327043802",
+          "openalex_id": null
+        },
+        {
+          "name": "Corey Feld",
+          "s2_id": "2433249449",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-05-07",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2605.06635",
+        "arxiv": "2605.06635",
+        "pmid": null,
+        "openalex": null,
+        "s2": "81a5f497c198e41a534f0d669521b447b1d5d58f"
+      },
+      "citation_count": 6,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2605.06635v1",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 9
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 18
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "27ed8ae2ff8d",
+          "rank": 7
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "f1f9c4bc1a14",
+          "rank": 5
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "9fc1195f8ecb",
+      "title": "SciClaimEval: Cross-modal Claim Verification in Scientific Papers",
+      "abstract": "We present SciClaimEval, a new scientific dataset for the claim verification task. Unlike existing resources, SciClaimEval features authentic claims, including refuted ones, directly extracted from published papers. To create refuted claims, we introduce a novel approach that modifies the supporting evidence (figures and tables), rather than altering the claims or relying on large language models (LLMs) to fabricate contradictions. The dataset provides cross-modal evidence with diverse representations: figures are available as images, while tables are provided in multiple formats, including images, LaTeX source, HTML, and JSON. SciClaimEval contains 1,664 annotated samples from 180 papers across three domains, machine learning, natural language processing, and medicine, validated through expert annotation. We benchmark 11 multimodal foundation models, both open-source and proprietary, across the dataset. Results show that figure-based verification remains particularly challenging for all models, as a substantial performance gap remains between the best system and human baseline.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Xanh Ho",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Yun-Ang Wu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Sunisth Kumar",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Tian Cheng Xia",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Florian Boudin",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Andre Greiner-Petter",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Akiko Aizawa",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-02-07",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2602.07621",
+        "arxiv": "2602.07621",
+        "pmid": null,
+        "openalex": "W7128514732",
+        "s2": "3b72fb1c4ab2baabc22182226407e773f9a39493"
+      },
+      "citation_count": 6,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2602.07621v2",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 31
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 17
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 33
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 13
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "4b09a0db960e",
+      "title": "MiniCheck: Efficient Fact-Checking of LLMs on Grounding Documents",
+      "abstract": "Recognizing if LLM output can be grounded in evidence is central to many tasks in NLP: retrieval-augmented generation, summarization, document-grounded dialogue, and more. Current approaches to this kind of fact-checking are based on verifying each piece of a model generation against potential evidence using an LLM. However, this process can be very computationally expensive, requiring many calls to a model to check a single response. In this work, we show how to build small fact-checking models that have GPT-4-level performance but for 400x lower cost. We do this by constructing synthetic training data with GPT-4, which involves creating realistic yet challenging instances of factual errors via a structured generation procedure. Training on this data teaches models to check each fact in the claim and recognize synthesis of information across sentences. For evaluation, we unify datasets from recent work on fact-checking and grounding LLM generations into a new benchmark, LLM-AggreFact. Our best system MiniCheck-FT5 (770M parameters) outperforms all systems of comparable size and reaches GPT-4 accuracy. We release LLM-AggreFact, code for data synthesis, and models.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Liyan Tang",
+          "s2_id": null,
+          "openalex_id": "A5111270976"
+        },
+        {
+          "name": "Philippe Laban",
+          "s2_id": null,
+          "openalex_id": "A5050818189"
+        },
+        {
+          "name": "Greg Durrett",
+          "s2_id": null,
+          "openalex_id": "A5015133105"
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-01-01",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "type": "article",
+      "raw_type": "conference-paper",
+      "ids": {
+        "doi": "10.18653/v1/2024.emnlp-main.499",
+        "arxiv": "2404.10774",
+        "pmid": null,
+        "openalex": "W4404782774",
+        "s2": "d0489fd7c5ff833e08969341ae6e5fa1d0e6dd2a"
+      },
+      "citation_count": 287,
+      "influential_citation_count": 62,
+      "is_retracted": false,
+      "oa_url": "https://aclanthology.org/2024.emnlp-main.499.pdf",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q3",
+          "seed_id": null,
+          "rank": 7
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "e155e52aeeca",
+          "rank": 12
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f6d880d038a7",
+          "rank": 11
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "82ca698970fc",
+          "rank": 14
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "0400ccbd230c",
+      "title": "PEARL: Auditable Repair for Scientific Reasoning Graph Extraction",
+      "abstract": "Scientific Reasoning Graph Extraction (SRGE) aims to recover explicit links among observations, evidence, intermediate claims, and paper-level conclusions. LLMs can produce graph-like scientific explanations, but their outputs often mix malformed syntax, drifting edge labels, incorrectly oriented roots, and weak source anchors. We propose PEARL (Peircean Extraction via Abstraction and Repair Layer), a training-free framework that turns noisy LLM graph responses into auditable reasoning graphs and repairs them toward strict semantic validity. PEARL first materializes explicit graph content under a closed Peircean schema, then uses matched evidence-grounded judge feedback to repair rejected edge types, local inference steps, and terminal roots while preserving an audit trail. On five 70-paper model archives from ARCHE, a benchmark for latent reasoning-chain extraction, PEARL raises strict gate passes from 0/350 for the LLM baseline to 300/350, with average REA improving from 0.339 to 0.906. The graphs provide a reliability layer for research-agent and AI scientist workflows that need inspectable reasoning traces rather than unconstrained graph regeneration. Code and audit artifacts are available at https://github.com/BohanSu/auditable-repair-reasoning-graphs/tree/300-350_workshop .",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Bohan Su",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Pengze Li",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Yuchen Lu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Xi Chen",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-20",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.AI",
+      "ids": {
+        "doi": "10.48550/arxiv.2607.17917",
+        "arxiv": "2607.17917",
+        "pmid": null,
+        "openalex": null,
+        "s2": "c46644f865cc2404dc2b8880922db8f944a074cf"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2607.17917v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 4
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "444f2c23f859",
+          "rank": 0
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 1
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "84b54d56d46b",
+      "title": "Evaluating and Guarding Citation Faithfulness in Agentic Scientific Synthesis",
+      "abstract": "Agentic LLM systems such as OpenScholar and PaperQA2 read the scientific literature and return cited answers, and both they and their benchmarks already check whether those citations hold, with a fixed attribution model or human graders. Neither audits the reliability of that check itself. We show it is not reliable, and that this matters. On identical agent outputs the measured unsupported-citation rate ranges from about 3% to about 18% depending only on the verifier's strictness, and although verifiers agree on which citations are supported, they disagree on which to flag (negative-specific agreement 0.27 to 0.30), so no single flag set is trustworthy and cross-paper comparison is invalid without a named verifier and protocol. We present a gold-anchored evaluation protocol and a deployable guard that make this behavior measurable and bounded. The protocol validates the verifier, measures re-attribution, and calibrates a guarantee against human gold rather than another model's verdict; the verifier is a swappable instrument chosen on cost (recall 0.94 on the supported class, held out), and re-attribution is a commodity step where a deterministic BM25 matches the best open generator. The guard adds a split-conformal layer placing a distribution-free, finite-sample bound on truly unsupported citations that slip past a chosen flagging rule, a guarantee on catch rate rather than conclusion correctness. The bound holds on held-out gold, and we identify and quantify the condition governing its transfer to deployment, calibration-negative difficulty, with a concrete recalibration recipe, left untested by prior conformal-factuality work. Validated across four open 27-35B models and three agentic pipelines on public benchmarks (SciFact, QASA, PubMedQA), with confidence intervals on every headline number, the protocol and guard ship as an open single-GPU kit.",
+      "tldr": "A gold-anchored evaluation protocol and a deployable guard that makes unsupported-citation behavior measurable and bounded, and validates the verifier, measures re-attribution, and calibrates a guarantee against human gold rather than another model's verdict.",
+      "authors": [
+        {
+          "name": "Taewan Goo",
+          "s2_id": "66873519",
+          "openalex_id": null
+        },
+        {
+          "name": "Junsik Kim",
+          "s2_id": "2452887756",
+          "openalex_id": null
+        },
+        {
+          "name": "Kyulhee Han",
+          "s2_id": "2051900116",
+          "openalex_id": null
+        },
+        {
+          "name": "G. Jo",
+          "s2_id": "2452627375",
+          "openalex_id": null
+        },
+        {
+          "name": "Jong-Soo Kim",
+          "s2_id": "2452890006",
+          "openalex_id": null
+        },
+        {
+          "name": "Tae-Hyung Kim",
+          "s2_id": "2445889186",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-10",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.AI",
+      "ids": {
+        "doi": "10.48550/arxiv.2607.20527",
+        "arxiv": "2607.20527",
+        "pmid": null,
+        "openalex": null,
+        "s2": "a86b8a6b2c2abad5fba417366b511306b32c19f4"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2607.20527v1",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 11
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 7
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "f1f9c4bc1a14",
+          "rank": 2
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "802e8aeccb24",
+      "title": "Encoded but Not Routed: Explaining the Table-Chart Gap in Scientific Claim Verification",
+      "abstract": "Multimodal LLMs are increasingly used to assist scientific peer review, where a core requirement is verifying whether claims in a paper are supported by its evidence. Prior work has shown that models perform substantially better at this task when the evidence is a table than when it is a chart of the same underlying data. This raises the question of whether models fail to extract information from charts, or do they extract it but fail to use it when forming their prediction? We study this question through layer-wise linear probing and attention analysis on three open-weight VLMs over table and chart evidence, representing the same underlying data. We find consistent evidence for the latter. Chart information is encoded in the models' intermediate representations but does not reach the prediction position, a gap that is absent for tables and holds across all conditions tested. Attention analysis further reveals that this disconnect takes two architecturally distinct forms across model families. These findings reframe the table-chart gap as a failure of how encoded visual information is routed at prediction time, rather than a failure of encoding itself.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Sunisth Kumar",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Xanh Ho",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Tim Schopf",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Andre Greiner-Petter",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Florian Boudin",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Akiko Aizawa",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-06-01",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2606.01679",
+        "arxiv": "2606.01679",
+        "pmid": null,
+        "openalex": null,
+        "s2": "eb26c5b0468f82f296d64fc2759c938af090023e"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2606.01679v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 16
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "9fc1195f8ecb",
+          "rank": 3
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 3
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "cac1acd8d788",
+      "title": "When Verification Fails: How Compositionally Infeasible Claims Escape Rejection",
+      "abstract": "Scientific claim verification, the task of determining whether claims are entailed by scientific evidence, is fundamental to establishing discoveries in evidence while preventing misinformation. This process involves evaluating each asserted constraint against validated evidence. Under the Closed-World Assumption (CWA), a claim is accepted if and only if all asserted constraints are positively supported. We show that existing verification benchmarks cannot distinguish models enforcing this standard from models applying a simpler shortcut called salient-constraint checking, which applies CWA's rejection criterion only to the most salient constraint and accepts when that constraint is supported. Because existing benchmarks construct infeasible claims by perturbing a single salient element they are insufficient at distinguishing between rigorous claim verification and simple salient-constraint reliance. To separate the two, we construct compositionally infeasible claims where the salient constraint is supported but a non-salient constraint is contradicted. Across model families and modalities, models that otherwise saturate existing benchmarks consistently over-accept these claims, confirming the prevalence of such shortcut reasoning. Via model context interventions, we show that different models and prompting strategies occupy distinct positions on a shared ROC curve, indicating that the gap between model families reflects differences in verification threshold rather than underlying reasoning ability, and that the compositional inference bottleneck is a structural property of current verification behavior that strategy guidance alone cannot overcome.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Muxin Liu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Delip Rao",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Grace Kim",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Chris Callison-Burch",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-13",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2604.10990",
+        "arxiv": "2604.10990",
+        "pmid": null,
+        "openalex": null,
+        "s2": "e382837458a06a7e41b8db9f32f271e8fb1b5be2"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2604.10990v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 22
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "43e31518612f",
+          "rank": 3
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 8
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "f6d880d038a7",
+      "title": "What Do Claim Verification Datasets Actually Test? A Reasoning Trace Analysis",
+      "abstract": "Despite rapid progress in claim verification, we lack a systematic understanding of what reasoning these benchmarks actually exercise. We generate structured reasoning traces for 24K claim-verification examples across 9 datasets using GPT-4o-mini and find that direct evidence extraction dominates, while multi-sentence synthesis and numerical reasoning are severely under-represented. A dataset-level breakdown reveals stark biases: some datasets almost exclusively test lexical matching, while others require information synthesis in roughly half of cases. Using a compact 1B-parameter reasoning verifier, we further characterize five error types and show that error profiles vary dramatically by domain -- general-domain verification is dominated by lexical overlap bias, scientific verification by overcautiousness, and mathematical verification by arithmetic reasoning failures. Our findings suggest that high benchmark scores primarily reflect retrieval-plus-entailment ability. We outline recommendations for building more challenging evaluation suites that better test the reasoning capabilities verification systems need.",
+      "tldr": "This work generates structured reasoning traces for 24K claim-verification examples across 9 datasets using GPT-4o-mini and finds that direct evidence extraction dominates, while multi-sentence synthesis and numerical reasoning are severely under-represented.",
+      "authors": [
+        {
+          "name": "D. Rao",
+          "s2_id": "2334016057",
+          "openalex_id": null
+        },
+        {
+          "name": "Christopher Callison-Burch",
+          "s2_id": "2266396865",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-02",
+      "venue": "International Conference on Applications of Natural Language to Data Bases",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2604.01657",
+        "arxiv": "2604.01657",
+        "pmid": null,
+        "openalex": null,
+        "s2": "db3b09a65db6df9430821c41787f60ab655b7164"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2604.01657v1",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 8
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 27
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 25
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "5cc6d41b9aeb",
+      "title": "CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation",
+      "abstract": "Large Language Models (LLMs) have emerged as powerful assistants for scientific writing. However, concerns remain about the quality and reliability of the generated text, including citation accuracy and faithfulness. While most recent work relies on methods such as LLM-as-a-Judge, the reliability of LLM-as-a-Judge alone is also in doubt. In this work, we reframe citation evaluation as a problem of citation attribution alignment, which assesses whether LLM-generated citations match those a human author would include for the same text. We propose CiteGuard, a retrieval-aware agent framework designed to provide more faithful grounding for citation validation. CiteGuard improves over the prior baseline by 10 percentage points and achieves up to 68.1% accuracy on the CiteME benchmark, approaching human performance (69.2%). It also identifies alternative valid citations and demonstrates generalization ability for cross-domain citation attribution. Our code is available at https://github.com/KathCYM/CiteGuard.",
+      "tldr": "This work proposes CiteGuard, a retrieval-aware agent framework designed to provide more faithful grounding for citation validation, and improves over the prior baseline by 10 percentage points and achieves up to 68.1% accuracy on the CiteME benchmark, approaching human performance.",
+      "authors": [
+        {
+          "name": "Yee Man Choi",
+          "s2_id": "2288054771",
+          "openalex_id": null
+        },
+        {
+          "name": "Xuehang Guo",
+          "s2_id": "2386830964",
+          "openalex_id": null
+        },
+        {
+          "name": "Yi R. Fung",
+          "s2_id": "2372579789",
+          "openalex_id": null
+        },
+        {
+          "name": "Qingyun Wang",
+          "s2_id": "1786863",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-10-15",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2510.17853",
+        "arxiv": "2510.17853",
+        "pmid": null,
+        "openalex": null,
+        "s2": "083862f590801e0b131dcbaf2173b70c5ac0b047"
+      },
+      "citation_count": 9,
+      "influential_citation_count": 1,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 1
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "27ed8ae2ff8d",
+          "rank": 24
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "97b9c25fbfb6",
+          "rank": 24
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "ec20fca86fc1",
+      "title": "Generation-Time vs. Post-hoc Citation: A Holistic Evaluation of LLM Attribution",
+      "abstract": "Trustworthy Large Language Models (LLMs) must cite human-verifiable sources in high-stakes domains such as healthcare, law, academia, and finance, where even small errors can have severe consequences. Practitioners and researchers face a choice: let models generate citations during decoding, or let models draft answers first and then attach appropriate citations. To clarify this choice, we introduce two paradigms: Generation-Time Citation (G-Cite), which produces the answer and citations in one pass, and Post-hoc Citation (P-Cite), which adds or verifies citations after drafting. We conduct a comprehensive evaluation from zero-shot to advanced retrieval-augmented methods across four popular attribution datasets and provide evidence-based recommendations that weigh trade-offs across use cases. Our results show a consistent trade-off between coverage and citation correctness, with retrieval as the main driver of attribution quality in both paradigms. P-Cite methods achieve high coverage with competitive correctness and moderate latency, whereas G-Cite methods prioritize precision at the cost of coverage and speed. We recommend a retrieval-centric, P-Cite-first approach for high-stakes applications, reserving G-Cite for precision-critical settings such as strict claim verification. Our codes and human evaluation results are available at https://anonymous.4open.science/r/Citation_Paradigms-BBB5/",
+      "tldr": "A comprehensive evaluation from zero-shot to advanced retrieval-augmented methods across four popular attribution datasets is conducted and evidence-based recommendations that weigh trade-offs across use cases are provided.",
+      "authors": [
+        {
+          "name": "Yash Saxena",
+          "s2_id": "2298271532",
+          "openalex_id": null
+        },
+        {
+          "name": "Raviteja Bommireddy",
+          "s2_id": "2382761868",
+          "openalex_id": null
+        },
+        {
+          "name": "A. Padia",
+          "s2_id": "2382762362",
+          "openalex_id": null
+        },
+        {
+          "name": "Manas Gaur",
+          "s2_id": "2307092529",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-09-25",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2509.21557",
+        "arxiv": "2509.21557",
+        "pmid": null,
+        "openalex": null,
+        "s2": "3a3deea533d3cf7f172041f7fcb72856cd37cbfc"
+      },
+      "citation_count": 3,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 2
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "ea71e3251c36",
+          "rank": 4
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "97b9c25fbfb6",
+          "rank": 25
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "e155e52aeeca",
+      "title": "The Next Phase of Scientific Fact-Checking: Advanced Evidence Retrieval from Complex Structured Academic Papers",
+      "abstract": "Scientific fact-checking aims to determine the veracity of scientific claims by retrieving and analysing evidence from research literature. The problem is inherently more complex than general fact-checking since it must accommodate the evolving nature of scientific knowledge, the structural complexity of academic literature and the challenges posed by long-form, multimodal scientific expression. However, existing approaches focus on simplified versions of the problem based on small-scale datasets consisting of abstracts rather than full papers, thereby avoiding the distinct challenges associated with processing complete documents. This paper examines the limitations of current scientific fact-checking systems and reveals the many potential features and resources that could be exploited to advance their performance. It identifies key research challenges within evidence retrieval, including (1) evidence-driven retrieval that addresses semantic limitations and topic imbalance (2) time-aware evidence retrieval with citation tracking to mitigate outdated information, (3) structured document parsing to leverage long-range context, (4) handling complex scientific expressions, including tables, figures, and domain-specific terminology and (5) assessing the credibility of scientific literature. Preliminary experiments were conducted to substantiate these challenges and identify potential solutions. This perspective paper aims to advance scientific fact-checking with a specialised IR system tailored for real-world applications.",
+      "tldr": "This perspective paper aims to advance scientific fact-checking with a specialised IR system tailored for real-world applications by identifying key research challenges within evidence retrieval and identifying potential solutions.",
+      "authors": [
+        {
+          "name": "Xipeng Deng",
+          "s2_id": null,
+          "openalex_id": "A5062362062"
+        },
+        {
+          "name": "Xi Wang",
+          "s2_id": null,
+          "openalex_id": "A5018792662"
+        },
+        {
+          "name": "Mark Stevenson",
+          "s2_id": null,
+          "openalex_id": "A5101566333"
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-07-18",
+      "venue": "International Conference on the Theory of Information Retrieval",
+      "type": "article",
+      "raw_type": "conference-paper",
+      "ids": {
+        "doi": "10.1145/3731120.3744614",
+        "arxiv": "2506.20844",
+        "pmid": null,
+        "openalex": "W4412673533",
+        "s2": "f20f8fa076a4f58403e0b832d6085286f1f3aa6d"
+      },
+      "citation_count": 7,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2506.20844",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 22
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 1
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 0
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "a020efa017f5",
+      "title": "SciVer: Evaluating Foundation Models for Multimodal Scientific Claim Verification",
+      "abstract": "We introduce SciVer, the first benchmark specifically designed to evaluate the ability of foundation models to verify claims within a multimodal scientific context. SciVer consists of 3,000 expert-annotated examples over 1,113 scientific papers, covering four subsets, each representing a common reasoning type in multimodal scientific claim verification. To enable fine-grained evaluation, each example includes expert-annotated supporting evidence. We assess the performance of 21 state-of-the-art multimodal foundation models, including o4-mini, Gemini-2.5-Flash, Llama-3.2-Vision, and Qwen2.5-VL. Our experiment reveals a substantial performance gap between these models and human experts on SciVer. Through an in-depth analysis of retrieval-augmented generation (RAG), and human-conducted error evaluations, we identify critical limitations in current open-source models, offering key insights to advance models' comprehension and reasoning in multimodal scientific literature tasks.",
+      "tldr": "Critical limitations in current open-source models are identified, offering key insights to advance models' comprehension and reasoning in multimodal scientific literature tasks through an in-depth analysis of retrieval-augmented generation (RAG), and human-conducted error evaluations.",
+      "authors": [
+        {
+          "name": "Chengye Wang",
+          "s2_id": "2330010524",
+          "openalex_id": null
+        },
+        {
+          "name": "Yifei Shen",
+          "s2_id": "2367515882",
+          "openalex_id": null
+        },
+        {
+          "name": "Zexi Kuang",
+          "s2_id": "2367190959",
+          "openalex_id": null
+        },
+        {
+          "name": "Arman Cohan",
+          "s2_id": "2266838179",
+          "openalex_id": null
+        },
+        {
+          "name": "Yilun Zhao",
+          "s2_id": "2367201621",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-06-18",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2506.15569",
+        "arxiv": "2506.15569",
+        "pmid": null,
+        "openalex": "W4412945493",
+        "s2": "02d17393bd1ee28e329641a6b303e3f843b254e1"
+      },
+      "citation_count": 17,
+      "influential_citation_count": 3,
+      "is_retracted": false,
+      "oa_url": "https://aclanthology.org/2025.acl-long.420.pdf",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 24
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 11
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "9fc1195f8ecb",
+          "rank": 16
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "128373449baf",
+      "title": "Towards Evidence-Aware Retrieval and Verification for Scientific Fact-Checking",
+      "abstract": "Scientific fact-checking (SFC) is a critical task that aims to verify scientific claims by finding supporting or refuting evidence from a vast and rapidly growing body of research literature [4]. Unlike general fact-checking, SFC operates in high-stakes domains where incorrect scientific conclusions may influence public policy, medical practice, or future research directions. As scientific publications continue to increase in volume and technical complexity, manually verifying claims becomes infeasible for human experts and fact-checkers. This limitation not only slows knowledge validation but also increases the risk that unverified or misinterpreted findings propagate through academic and public discourse. Consequently, there is an urgent need for automated systems that can assist researchers in ensuring the reliability and integrity of scientific knowledge. A standard fact-checking pipeline typically consists of two main stages: evidence retrieval and claim verification [3]. While the community has made significant progress in claim verification, the retrieval stage is often oversimplified. Most existing studies treat retrieval as a general similarity search, ignoring the specific requirements of the verification process. A perspectives paper systematically investigates the limitations of current scientific fact-checking [1]. It identifies that the field is currently stuck in a \"simplified phase\" where models mostly work on short abstracts rather than complex and full-text scientific papers, with off-the-shelf retrievers or general search APIs. However, this simplification introduces several research gaps in current scientific fact-checking. The first gap is the lack of Evidence-Driven Retrieval and Verification. Our analysis revealed that most current systems use off-the-shelf IR algorithms that rank documents based on general topical relevance rather than their actual \"verifiability\". Furthermore, even when relevant evidence is retrieved, Large Language Models (LLMs) used for verification often suffer from hallucinations, relying on their internal parametric knowledge instead of the provided evidence. In our research, we argue for a shift toward a tightly coupled framework where retrieval is aware of verification feedback, and the verification process is rigorously grounded in the retrieved evidence to ensure faithfulness [2]. The second gap focuses on Complex Document Structures and Long-Range Context. We identified that scientific evidence is often scattered across the hierarchical structure of a research paper, such as matching a specific condition in the Methods section with a result reported pages later in the Results section. This creates a \"context gap\" for existing sentence-level or passage-level fact-checking systems that ignore structural relationships and long-dependency interactions. Bridging this gap is the essential first step in moving from abstract-based search to a deep understanding of full-text scientific documents. The third gap involves the Inherent Specificities of Scientific Evidence. Scientific knowledge is characterised by its evolving nature and multimodal expression, which goes beyond standard text-based retrieval. In addition, evidence in scientific literature varies in quality, credibility, and publication status, and conclusions may change over time as new findings emerge or prior work is corrected or retracted. We also highlight the importance of citation tracking to handle the time-sensitive nature of scientific facts, as well as the need to process multimodal elements such as tables and figures. Current systems often overlook these domain-specific features, which are crucial for resolving semantic gaps in professional terminology and ensuring the accuracy and timeliness of the fact-checking process.",
+      "tldr": "A perspectives paper systematically investigates the limitations of current scientific fact-checking and argues for a shift toward a tightly coupled framework where retrieval is aware of verification feedback, and the verification process is rigorously grounded in the retrieved evidence to ensure faithfulness.",
+      "authors": [
+        {
+          "name": "Xingyu Deng",
+          "s2_id": "2371266220",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-19",
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "type": "article",
+      "raw_type": "Book",
+      "ids": {
+        "doi": "10.1145/3805712.3808354",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": null,
+        "s2": "d9cb91a6a2bbbc7fea6677b1d787faf0a9500f85"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.1145/3805712.3808354",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 3
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "e155e52aeeca",
+          "rank": 0
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "72af10feddf6",
+      "title": "ToolSciVer: Multimodal Scientific Claim Verification with Visual Tool Augmented Reinforcement Learning",
+      "abstract": "Multimodal Scientific Claim Verification (MSCV) requires models to verify scientific claims using visually grounded evidence from papers, including figures, tables, charts, and textual context. However, existing methods often fail because they struggle to locate decisive visual evidence, accurately read structured scientific visuals, and integrate multimodal observations into reliable reasoning. We introduce ToolSciVer, the first tool-augmented framework for MSCV to our knowledge. ToolSciVer equips a VLM with three type-aware visual tools, table row/column focus, chart-to-structure parsing, and high-resolution region zoom, which convert dense scientific visuals into explicit, claim-facing evidence, and trains the policy with Group Relative Policy Optimization (GRPO) under a composite reward of answer correctness, format validity, length control, tool-use efficiency, and tool-validity penalties. Experiments on SciVer and MuSciClaims datasets on five VLMs from three model families (Qwen, InternVL, Gemma) demonstrate that our method achieves superior performance compared to four competitive baselines including prompting-based and RL-based tool-use methods, highlighting the effectiveness of learned, type-aware tool use for scientific claim verification.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Binglin Zhou",
+          "s2_id": "2451124291",
+          "openalex_id": null
+        },
+        {
+          "name": "Peng Shi",
+          "s2_id": "2055357805",
+          "openalex_id": null
+        },
+        {
+          "name": "Ryo Kamoi",
+          "s2_id": "83757854",
+          "openalex_id": null
+        },
+        {
+          "name": "Nan Zhang",
+          "s2_id": "2266469940",
+          "openalex_id": null
+        },
+        {
+          "name": "Rui Zhang",
+          "s2_id": "2305152311",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-17",
+      "venue": null,
+      "type": "preprint",
+      "raw_type": null,
+      "ids": {
+        "doi": null,
+        "arxiv": "2607.16131",
+        "pmid": null,
+        "openalex": null,
+        "s2": "dfd635e7eb6fb6974dcfe9f93444a2e22829b3c9"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "9fc1195f8ecb",
+          "rank": 0
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 2
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "752402f2a368",
+      "title": "ResearchQA: Benchmarking Citation-Grounded Question-Answering on Scientific Papers",
+      "abstract": "Large language models are increasingly used to assist scientific reading, but existing evaluation methods often fail to detect whether answers are supported by verifiable citations. We introduce ResearchQA, a benchmark of 6,211 single-paper question-answer pairs from 494 open-access papers spanning eight domains and four question types: lookup, comprehension, multi-hop, and adversarial. ResearchQA is designed for citation-grounded evaluation: it permits multiple valid supporting passages for a claim and rewards grounded refusal when the source paper does not support an answer. We evaluate eight leading closed- and open-weight models in a citation-grounded chat-with-paper setting using a deterministic citation matcher and an LLM-based rubric evaluator. Citation-based metrics separate systems more clearly than LLM-evaluator scores: section coverage and citation accuracy vary substantially across models, while evaluator scores remain tightly compressed. We further find that open-weight models approach the best closed-model citation accuracy while achieving 3 to 6 times lower per-example latency. We release the benchmark, evaluation harness, and evaluator prompt.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Saba Imran",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Debanjum Singh Solanky",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-07-13",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2607.11074",
+        "arxiv": "2607.11074",
+        "pmid": null,
+        "openalex": null,
+        "s2": "ce2b8ae4f7389715f1e4296631224e65241a39b4"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2607.11074v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 10
+        },
+        {
+          "source": "s2",
+          "relation": "recommendations",
+          "query_id": null,
+          "seed_id": null,
+          "rank": 14
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "758f13dc1f19",
+      "title": "AutoVerifier: An Agentic Automated Verification Framework Using Large Language Models",
+      "abstract": "Scientific and Technical Intelligence (S&TI) analysis requires verifying complex technical claims across rapidly growing literature, where existing approaches fail to bridge the verification gap between surface-level accuracy and deeper methodological validity. We present AutoVerifier, an LLM-based agentic framework that automates end-to-end verification of technical claims without requiring domain expertise. AutoVerifier decomposes every technical assertion into structured claim triples of the form (Subject, Predicate, Object), constructing knowledge graphs that enable structured reasoning across six progressively enriching layers: corpus construction and ingestion, entity and claim extraction, intra-document verification, cross-source verification, external signal corroboration, and final hypothesis matrix generation. We demonstrate AutoVerifier on a contested quantum computing claim, where the framework, operated by analysts with no quantum expertise, automatically identified overclaims and metric inconsistencies within the target paper, traced cross-source contradictions, uncovered undisclosed commercial conflicts of interest, and produced a final assessment. These results show that structured LLM verification can reliably evaluate the validity and maturity of emerging technologies, turning raw technical documents into traceable, evidence-backed intelligence assessments.",
+      "tldr": "Results show that structured LLM verification can reliably evaluate the validity and maturity of emerging technologies, turning raw technical documents into traceable, evidence-backed intelligence assessments.",
+      "authors": [
+        {
+          "name": "Yuntao Du",
+          "s2_id": "2363280993",
+          "openalex_id": null
+        },
+        {
+          "name": "Minh-Hai Dinh",
+          "s2_id": "2370942881",
+          "openalex_id": null
+        },
+        {
+          "name": "Kaiyuan Zhang",
+          "s2_id": "2365258070",
+          "openalex_id": null
+        },
+        {
+          "name": "Ninghui Li",
+          "s2_id": "2283906276",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-03",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2604.02617",
+        "arxiv": "2604.02617",
+        "pmid": null,
+        "openalex": null,
+        "s2": "3ee83860a5b2bb708cd67312f87c7e166877c24e"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2604.02617v1",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 14
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 26
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "2aba00d1ebdf",
+      "title": "+VeriRel: Verification Feedback to Enhance Document Retrieval for Scientific Fact Checking",
+      "abstract": "Identification of appropriate supporting evidence is critical to the success of scientific fact checking. However, existing approaches rely on off-the-shelf Information Retrieval algorithms that rank documents based on relevance rather than the evidence they provide to support or refute the claim being checked. This paper proposes +VeriRel which includes verification success in the document ranking. Experimental results on three scientific fact checking datasets (SciFact, SciFact-Open and Check-Covid) demonstrate consistently leading performance by +VeriRel for document evidence retrieval and a positive impact on downstream verification. This study highlights the potential of integrating verification feedback to document relevance assessment for effective scientific fact checking systems. It shows promising future work to evaluate fine-grained relevance when examining complex documents for advanced scientific fact checking.",
+      "tldr": "This study highlights the potential of integrating verification feedback to document relevance assessment for effective scientific fact checking systems and shows promising future work to evaluate fine-grained relevance when examining complex documents for advanced scientific fact checking.",
+      "authors": [
+        {
+          "name": "Xingyu Deng",
+          "s2_id": "2371266220",
+          "openalex_id": null
+        },
+        {
+          "name": "Xi Wang",
+          "s2_id": "2371156191",
+          "openalex_id": null
+        },
+        {
+          "name": "Mark Stevenson",
+          "s2_id": "2371074846",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-08-14",
+      "venue": "International Conference on Information and Knowledge Management",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.1145/3746252.3760822",
+        "arxiv": "2508.11122",
+        "pmid": null,
+        "openalex": null,
+        "s2": "3a18bd5ad3d8ca5fb146e262df0716b4d4e01f1d"
+      },
+      "citation_count": 2,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3746252.3760822",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 0
+        },
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "e155e52aeeca",
+          "rank": 5
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "444f2c23f859",
+      "title": "Can AI Validate Science? Benchmarking LLMs for Accurate Scientific Claim \u2192 Evidence Reasoning",
+      "abstract": "Large language models (LLMs) are increasingly being used for complex research tasks such as literature review, idea generation, and scientific paper analysis, yet their ability to truly understand and process the intricate relationships within complex research papers, such as the logical links between claims and supporting evidence remains largely unexplored. In this study, we present CLAIM-BENCH, a comprehensive benchmark for evaluating LLMs' capabilities in scientific claim-evidence extraction and validation, a task that reflects deeper comprehension of scientific argumentation. We systematically compare three approaches which are inspired by divide and conquer approaches, across six diverse LLMs, highlighting model-specific strengths and weaknesses in scientific comprehension. Through evaluation involving over 300 claim-evidence pairs across multiple research domains, we reveal significant limitations in LLMs' ability to process complex scientific content. Our results demonstrate that closed-source models like GPT-4 and Claude consistently outperform open-source counterparts in precision and recall across claim-evidence identification tasks. Furthermore, strategically designed three-pass and one-by-one prompting approaches significantly improve LLMs' abilities to accurately link dispersed evidence with claims, although this comes at increased computational cost. CLAIM-BENCH sets a new standard for evaluating scientific comprehension in LLMs, offering both a diagnostic tool and a path forward for building systems capable of deeper, more reliable reasoning across full-length papers.",
+      "tldr": "This study presents CLAIM-BENCH, a comprehensive benchmark for evaluating LLMs' capabilities in scientific claim-evidence extraction and validation, and systematically compares three approaches which are inspired by divide and conquer approaches, across six diverse LLMs, highlighting model-specific strengths and weaknesses in scientific comprehension.",
+      "authors": [
+        {
+          "name": "Shashidhar Reddy Javaji",
+          "s2_id": "2004281519",
+          "openalex_id": null
+        },
+        {
+          "name": "Yupeng Cao",
+          "s2_id": "2285587055",
+          "openalex_id": null
+        },
+        {
+          "name": "Haohang Li",
+          "s2_id": "2238311785",
+          "openalex_id": null
+        },
+        {
+          "name": "Yangyang Yu",
+          "s2_id": "2238569503",
+          "openalex_id": null
+        },
+        {
+          "name": "Nikhil Muralidhar",
+          "s2_id": "2366166894",
+          "openalex_id": null
+        },
+        {
+          "name": "Zining Zhu",
+          "s2_id": "2352395728",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-06-09",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2506.08235",
+        "arxiv": "2506.08235",
+        "pmid": null,
+        "openalex": null,
+        "s2": "61cbf4b79155dc3647beb963e3786ce98a9b92ae"
+      },
+      "citation_count": 4,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2506.08235v1",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 0
+        },
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 37
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "378e4bff2ac2",
+      "title": "Valsci: an open-source, self-hostable literature review utility for automated large-batch scientific claim verification using large language models",
+      "abstract": "BACKGROUND: The exponential growth of scientific publications poses a formidable challenge for researchers seeking to validate emerging hypotheses or synthesize existing evidence. In this paper, we introduce Valsci, an open-source, self-hostable utility that automates large-batch scientific claim verification using any OpenAI-compatible large language model. Valsci unites retrieval-augmented generation with structured bibliometric scoring and chain-of-thought prompting, enabling users to efficiently search, evaluate, and summarize evidence from the Semantic Scholar database and other academic sources. Unlike conventional standalone LLMs, which often suffer from hallucinations and unreliable citations, Valsci grounds its analyses in verifiable published findings. A guided prompt-flow approach is employed to generate query expansions, retrieve relevant excerpts, and synthesize coherent, evidence-based reports. RESULTS: Preliminary evaluations across claims from the SciFact benchmark dataset reveal that Valsci significantly outperforms base GPT-4o outputs in citation hallucination rate while maintaining a low misclassification rate. The system is highly scalable, processing hundreds of claims per hour through asynchronous parallelization. CONCLUSIONS: By providing an open and transparent platform for large-batch literature verification, Valsci substantially lowers the barrier to comprehensive evidence-based reviews and fosters a more reproducible research ecosystem.",
+      "tldr": "Valsci, an open-source, self-hostable utility that automates large-batch scientific claim verification using any OpenAI-compatible large language model, substantially lowers the barrier to comprehensive evidence-based reviews and fosters a more reproducible research ecosystem.",
+      "authors": [
+        {
+          "name": "Brice Edelman",
+          "s2_id": "2351239742",
+          "openalex_id": null
+        },
+        {
+          "name": "J. Skolnick",
+          "s2_id": "2237967770",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-05-28",
+      "venue": "BMC Bioinformatics",
+      "type": "review",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.1186/s12859-025-06159-4",
+        "arxiv": null,
+        "pmid": "40437377",
+        "openalex": "W4410806538",
+        "s2": "13e079da1dba19509dfd1fd05440b1a52666603a"
+      },
+      "citation_count": 7,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/s12859-025-06159-4",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 32
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 14
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "82ca698970fc",
+      "title": "Assessing the Reasoning Capabilities of LLMs in the context of Evidence-based Claim Verification",
+      "abstract": "Although LLMs have shown great performance on Mathematics and Coding related reasoning tasks, the reasoning capabilities of LLMs regarding other forms of reasoning are still an open problem.Here, we examine the issue of reasoning from the perspective of claim verification.We propose a framework designed to break down any claim paired with evidence into atomic reasoning types that are necessary for verification.We use this framework to create RECV, the first claim verification benchmark, incorporating real-world claims, to assess the deductive and abductive reasoning capabilities of LLMs.The benchmark comprises of three datasets, covering reasoning problems of increasing complexity.We evaluate three state-of-the-art proprietary LLMs under multiple prompt settings.Our results show that while LLMs can address deductive reasoning problems, they consistently fail in cases of abductive reasoning.Moreover, we observe that enhancing LLMs with rationale generation is not always beneficial.Nonetheless, we find that generated rationales are semantically similar to those provided by humans, especially in deductive reasoning cases.Tsun-Hin Cheung and Kin-Man Lam.2023.Factl- lama: Optimizing instruction-following language models with external knowledge for automated fact- checking.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "John Dougrez-Lewis",
+          "s2_id": null,
+          "openalex_id": "A5050032717"
+        },
+        {
+          "name": "Mahmud Elahi Akhter",
+          "s2_id": null,
+          "openalex_id": "A5043723724"
+        },
+        {
+          "name": "Federico Ruggeri",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Sebastian L\u00f6bbers",
+          "s2_id": null,
+          "openalex_id": "A5090377387"
+        },
+        {
+          "name": "Yulan He",
+          "s2_id": null,
+          "openalex_id": "A5015709853"
+        },
+        {
+          "name": "Maria Liakata",
+          "s2_id": null,
+          "openalex_id": "A5007426895"
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-01-01",
+      "venue": "arXiv (Cornell University)",
+      "type": "preprint",
+      "raw_type": "conference-paper",
+      "ids": {
+        "doi": "10.18653/v1/2025.findings-acl.1059",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W4412887849",
+        "s2": null
+      },
+      "citation_count": 5,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://aclanthology.org/2025.findings-acl.1059.pdf",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 9
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 13
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "7f97a042ce2a",
+      "title": "Correctness is not Faithfulness in RAG Attributions",
+      "abstract": "Retrieving relevant context is a common approach to reduce hallucinations and enhance answer reliability. Explicitly citing source documents allows users to verify generated responses and increases trust. Prior work largely evaluates citation correctness - whether cited documents support the corresponding statements. But citation correctness alone is insufficient. To establish trust in attributed answers, we must examine both citation correctness and citation faithfulness. In this work, we first disentangle the notions of citation correctness and faithfulness, which have been applied inconsistently in previous studies. Faithfulness ensures that the model's reliance on cited documents is genuine, reflecting actual reference use rather than superficial alignment with prior beliefs, which we call post-rationalization. We design an experiment that reveals the prevalent issue of post-rationalization, which undermines reliable attribution and may result in misplaced trust. Our findings suggest that current attributed answers often lack citation faithfulness (up to 57 percent of the citations), highlighting the need to evaluate correctness and faithfulness for trustworthy attribution in language models.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Jonas Wallat",
+          "s2_id": null,
+          "openalex_id": "A5066650027"
+        },
+        {
+          "name": "Maria Heuss",
+          "s2_id": null,
+          "openalex_id": "A5086303295"
+        },
+        {
+          "name": "Maarten de Rijke",
+          "s2_id": null,
+          "openalex_id": "A5031439294"
+        },
+        {
+          "name": "Avishek Anand",
+          "s2_id": null,
+          "openalex_id": "A5075681290"
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-12-23",
+      "venue": "arXiv (Cornell University)",
+      "type": "preprint",
+      "raw_type": "preprint",
+      "ids": {
+        "doi": "10.48550/arxiv.2412.18004",
+        "arxiv": "2412.18004",
+        "pmid": null,
+        "openalex": "W4405783579",
+        "s2": "90c55bcadb753290921be6f70c6bc4439d7d146d"
+      },
+      "citation_count": 21,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2412.18004",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 20
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "84b54d56d46b",
+          "rank": 28
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "ab98788216b2",
+      "title": "Language agents achieve superhuman synthesis of scientific knowledge",
+      "abstract": "Language models are known to hallucinate incorrect information, and it is unclear if they are sufficiently accurate and reliable for use in scientific research. We developed a rigorous human-AI comparison methodology to evaluate language model agents on real-world literature search tasks covering information retrieval, summarization, and contradiction detection tasks. We show that PaperQA2, a frontier language model agent optimized for improved factuality, matches or exceeds subject matter expert performance on three realistic literature research tasks without any restrictions on humans (i.e., full access to internet, search tools, and time). PaperQA2 writes cited, Wikipedia-style summaries of scientific topics that are significantly more accurate than existing, human-written Wikipedia articles. We also introduce a hard benchmark for scientific literature research called LitQA2 that guided design of PaperQA2, leading to it exceeding human performance. Finally, we apply PaperQA2 to identify contradictions within the scientific literature, an important scientific task that is challenging for humans. PaperQA2 identifies 2.34 +/- 1.99 contradictions per paper in a random subset of biology papers, of which 70% are validated by human experts. These results demonstrate that language model agents are now capable of exceeding domain experts across meaningful tasks on scientific literature.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Michael Skarlinski",
+          "s2_id": "2322440716",
+          "openalex_id": null
+        },
+        {
+          "name": "Sam Cox",
+          "s2_id": "2161337138",
+          "openalex_id": null
+        },
+        {
+          "name": "Jon M. Laurent",
+          "s2_id": "2311439808",
+          "openalex_id": null
+        },
+        {
+          "name": "James D. Braza",
+          "s2_id": "2322440721",
+          "openalex_id": null
+        },
+        {
+          "name": "Michaela M. Hinks",
+          "s2_id": "2311440844",
+          "openalex_id": null
+        },
+        {
+          "name": "M. Hammerling",
+          "s2_id": "5864891",
+          "openalex_id": null
+        },
+        {
+          "name": "Manvitha Ponnapati",
+          "s2_id": "1742055442",
+          "openalex_id": null
+        },
+        {
+          "name": "S. Rodriques",
+          "s2_id": "2258964497",
+          "openalex_id": null
+        },
+        {
+          "name": "Andrew D. White",
+          "s2_id": "2273941271",
+          "openalex_id": null
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-09-10",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2409.13740",
+        "arxiv": "2409.13740",
+        "pmid": null,
+        "openalex": null,
+        "s2": "fa5f9aa1cb6f97654ca8e6d279ceee1427a87e68"
+      },
+      "citation_count": 155,
+      "influential_citation_count": 16,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "27ed8ae2ff8d",
+          "rank": 21
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 16
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "27ed8ae2ff8d",
+      "title": "CiteME: Can Language Models Accurately Cite Scientific Claims?",
+      "abstract": "Thousands of new scientific papers are published each month. Such information overload complicates researcher efforts to stay current with the state-of-the-art as well as to verify and correctly attribute claims. We pose the following research question: Given a text excerpt referencing a paper, could an LM act as a research assistant to correctly identify the referenced paper? We advance efforts to answer this question by building a benchmark that evaluates the abilities of LMs in citation attribution. Our benchmark, CiteME, consists of text excerpts from recent machine learning papers, each referencing a single other paper. CiteME use reveals a large gap between frontier LMs and human performance, with LMs achieving only 4.2-18.5% accuracy and humans 69.7%. We close this gap by introducing CiteAgent, an autonomous system built on the GPT-4o LM that can also search and read papers, which achieves an accuracy of 35.3\\% on CiteME. Overall, CiteME serves as a challenging testbed for open-ended claim attribution, driving the research community towards a future where any claim made by an LM can be automatically verified and discarded if found to be incorrect.",
+      "tldr": "A benchmark that evaluates the abilities of LMs in citation attribution, and introduces CiteAgent, an autonomous system built on the GPT-4o LM that can also search and read papers, which achieves an accuracy of 35.3\\% on CiteME.",
+      "authors": [
+        {
+          "name": "O. Press",
+          "s2_id": "147751058",
+          "openalex_id": null
+        },
+        {
+          "name": "Andreas Hochlehnert",
+          "s2_id": "2311885568",
+          "openalex_id": null
+        },
+        {
+          "name": "Ameya Prabhu",
+          "s2_id": "2311885852",
+          "openalex_id": null
+        },
+        {
+          "name": "Vishaal Udandarao",
+          "s2_id": "114284760",
+          "openalex_id": null
+        },
+        {
+          "name": "Ofir Press",
+          "s2_id": "40170001",
+          "openalex_id": null
+        },
+        {
+          "name": "Matthias Bethge",
+          "s2_id": "2256998402",
+          "openalex_id": null
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-07-10",
+      "venue": "Neural Information Processing Systems",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2407.12861",
+        "arxiv": "2407.12861",
+        "pmid": null,
+        "openalex": null,
+        "s2": "4cd491391b5cd1866535ac95cfcb52e1779c40a1"
+      },
+      "citation_count": 51,
+      "influential_citation_count": 3,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "anchor",
+          "query_id": null,
+          "seed_id": null,
+          "rank": 1
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "97b9c25fbfb6",
+          "rank": 11
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "ea71e3251c36",
+      "title": "Attribution in Scientific Literature: New Benchmark and Methods",
+      "abstract": "Large language models (LLMs) present a promising yet challenging frontier for automated source citation in scientific communication. Previous approaches to citation generation have been limited by citation ambiguity and LLM overgeneralization. We introduce REASONS, a novel dataset with sentence-level annotations across 12 scientific domains from arXiv. Our evaluation framework covers two key citation scenarios: indirect queries (matching sentences to paper titles) and direct queries (author attribution), both enhanced with contextual metadata. We conduct extensive experiments with models such as GPT-O1, GPT-4O, GPT-3.5, DeepSeek, and other smaller models like Perplexity AI (7B). While top-tier LLMs achieve high performance in sentence attribution, they struggle with high hallucination rates, a key metric for scientific reliability. Our metadata-augmented approach reduces hallucination rates across all tasks, offering a promising direction for improvement. Retrieval-augmented generation (RAG) with Mistral improves performance in indirect queries, reducing hallucination rates by 42% and maintaining competitive precision with larger models. However, adversarial testing highlights challenges in linking paper titles to abstracts, revealing fundamental limitations in current LLMs. REASONS provides a challenging benchmark for developing reliable and trustworthy LLMs in scientific applications",
+      "tldr": "Retrieval-augmented generation (RAG) with Mistral improves performance in indirect queries, reducing hallucination rates by 42% and maintaining competitive precision with larger models, and adversarial testing highlights challenges in linking paper titles to abstracts, revealing fundamental limitations in current LLMs.",
+      "authors": [
+        {
+          "name": "Yash Saxena",
+          "s2_id": null,
+          "openalex_id": "A5095912711"
+        },
+        {
+          "name": "Deepa Tilwani",
+          "s2_id": null,
+          "openalex_id": "A5080779620"
+        },
+        {
+          "name": "Ali Mohammadi",
+          "s2_id": null,
+          "openalex_id": "A5107640170"
+        },
+        {
+          "name": "Edward Raff",
+          "s2_id": null,
+          "openalex_id": "A5068036546"
+        },
+        {
+          "name": "Sheth Amit",
+          "s2_id": null,
+          "openalex_id": "A5001627453"
+        },
+        {
+          "name": "Srinivasan Parthasarathy",
+          "s2_id": null,
+          "openalex_id": "A5100755351"
+        },
+        {
+          "name": "Manas Gaur",
+          "s2_id": null,
+          "openalex_id": "A5023667301"
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-05-03",
+      "venue": "arXiv (Cornell University)",
+      "type": "preprint",
+      "raw_type": "preprint",
+      "ids": {
+        "doi": "10.48550/arxiv.2405.02228",
+        "arxiv": "2405.02228",
+        "pmid": null,
+        "openalex": "W4396786040",
+        "s2": "9929c3f7dcc5156ee8620f1f86c3cfd069d3d9b1"
+      },
+      "citation_count": 12,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2405.02228",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 35
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 6
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "2824eadfc419",
+      "title": "AttributionBench: How Hard is Automatic Attribution Evaluation?",
+      "abstract": "Modern generative search engines enhance the reliability of large language model (LLM) responses by providing cited evidence. However, evaluating the answer's attribution, i.e., whether every claim within the generated responses is fully supported by its cited evidence, remains an open problem. This verification, traditionally dependent on costly human evaluation, underscores the urgent need for automatic attribution evaluation methods. To bridge the gap in the absence of standardized benchmarks for these methods, we present AttributionBench, a comprehensive benchmark compiled from various existing attribution datasets. Our extensive experiments on AttributionBench reveal the challenges of automatic attribution evaluation, even for state-of-the-art LLMs. Specifically, our findings show that even a fine-tuned GPT-3.5 only achieves around 80% macro-F1 under a binary classification formulation. A detailed analysis of more than 300 error cases indicates that a majority of failures stem from the model's inability to process nuanced information, and the discrepancy between the information the model has access to and that human annotators do.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Yifei Li",
+          "s2_id": "2266807416",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiang Yue",
+          "s2_id": "2268495181",
+          "openalex_id": null
+        },
+        {
+          "name": "Zeyi Liao",
+          "s2_id": "2284224390",
+          "openalex_id": null
+        },
+        {
+          "name": "Huan Sun",
+          "s2_id": "2239158325",
+          "openalex_id": null
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-02-23",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2402.15089",
+        "arxiv": "2402.15089",
+        "pmid": null,
+        "openalex": null,
+        "s2": "1ed82e398ddb9f65f68123d05c6dcbdc46392475"
+      },
+      "citation_count": 32,
+      "influential_citation_count": 3,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "84b54d56d46b",
+          "rank": 29
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "97b9c25fbfb6",
+          "rank": 14
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "ebb2d00875ca",
+      "title": "What Makes Medical Claims (Un)Verifiable? Analyzing Entity and Relation Properties for Fact Verification",
+      "abstract": "Verifying biomedical claims fails if no evidence can be discovered. In these cases, the fact-checking verdict remains unknown and the claim is unverifiable. To improve this situation, we have to understand if there are any claim properties that impact its verifiability. In this work we assume that entities and relations define the core variables in a biomedical claim\u2019s anatomy and analyze if their properties help us to differentiate verifiable from unverifiable claims. In a study with trained annotation experts we prompt them to find evidence for biomedical claims, and observe how they refine search queries for their evidence search. This leads to the first corpus for scientific fact verification annotated with subject\u2013relation\u2013object triplets, evidence documents, and fact-checking verdicts (the BEAR-FACT corpus). We find (1) that discovering evidence for negated claims (e.g., X\u2013does-not-cause\u2013Y) is particularly challenging. Further, we see that annotators process queries mostly by adding constraints to the search and by normalizing entities to canonical names. (2) We compare our in-house annotations with a small crowdsourcing setting where we employ both medical experts and laypeople. We find that domain expertise does not have a substantial effect on the reliability of annotations. Finally, (3), we demonstrate that it is possible to reliably estimate the success of evidence retrieval purely from the claim text (.82F_1), whereas identifying unverifiable claims proves more challenging (.27F_1)",
+      "tldr": "It is found that discovering evidence for negated claims (e.g., X\u2013does-not-cause\u2013Y) is particularly challenging, and it is possible to reliably estimate the success of evidence retrieval purely from the claim text, whereas identifying unverifiable claims proves more challenging.",
+      "authors": [
+        {
+          "name": "Amelie W\u00fchrl",
+          "s2_id": "2163480927",
+          "openalex_id": null
+        },
+        {
+          "name": "Yarik Menchaca Resendiz",
+          "s2_id": "1477466495",
+          "openalex_id": null
+        },
+        {
+          "name": "Lara Grimminger",
+          "s2_id": "2051800058",
+          "openalex_id": null
+        },
+        {
+          "name": "Roman Klinger",
+          "s2_id": "66339110",
+          "openalex_id": null
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-02-02",
+      "venue": "Conference of the European Chapter of the Association for Computational Linguistics",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2402.01360",
+        "arxiv": "2402.01360",
+        "pmid": null,
+        "openalex": null,
+        "s2": "5c8ecaeb56d89ea3643d89245a8cac0d5b8a34f0"
+      },
+      "citation_count": 13,
+      "influential_citation_count": 2,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q3",
+          "seed_id": null,
+          "rank": 3
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 21
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "43e31518612f",
+      "title": "Retrieval augmented scientific claim verification",
+      "abstract": "Abstract Objective To automate scientific claim verification using PubMed abstracts. Materials and Methods We developed CliVER, an end-to-end scientific Claim VERification system that leverages retrieval-augmented techniques to automatically retrieve relevant clinical trial abstracts, extract pertinent sentences, and use the PICO framework to support or refute a scientific claim. We also created an ensemble of three state-of-the-art deep learning models to classify rationale of support, refute, and neutral. We then constructed CoVERt, a new COVID VERification dataset comprising 15 PICO-encoded drug claims accompanied by 96 manually selected and labeled clinical trial abstracts that either support or refute each claim. We used CoVERt and SciFact (a public scientific claim verification dataset) to assess CliVER\u2019s performance in predicting labels. Finally, we compared CliVER to clinicians in the verification of 19 claims from 6 disease domains, using 189 648 PubMed abstracts extracted from January 2010 to October 2021. Results In the evaluation of label prediction accuracy on CoVERt, CliVER achieved a notable F1 score of 0.92, highlighting the efficacy of the retrieval-augmented models. The ensemble model outperforms each individual state-of-the-art model by an absolute increase from 3% to 11% in the F1 score. Moreover, when compared with four clinicians, CliVER achieved a precision of 79.0% for abstract retrieval, 67.4% for sentence selection, and 63.2% for label prediction, respectively. Conclusion CliVER demonstrates its early potential to automate scientific claim verification using retrieval-augmented strategies to harness the wealth of clinical trial abstracts in PubMed. Future studies are warranted to further test its clinical utility.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Hao Liu",
+          "s2_id": null,
+          "openalex_id": "A5100458789"
+        },
+        {
+          "name": "Ali Soroush",
+          "s2_id": null,
+          "openalex_id": "A5083337227"
+        },
+        {
+          "name": "Jordan G. Nestor",
+          "s2_id": null,
+          "openalex_id": "A5076330165"
+        },
+        {
+          "name": "Elizabeth Park",
+          "s2_id": null,
+          "openalex_id": "A5008408671"
+        },
+        {
+          "name": "Betina Idnay",
+          "s2_id": null,
+          "openalex_id": "A5046632480"
+        },
+        {
+          "name": "Yilu Fang",
+          "s2_id": null,
+          "openalex_id": "A5061866993"
+        },
+        {
+          "name": "Jane Y Pan",
+          "s2_id": null,
+          "openalex_id": "A5101048269"
+        },
+        {
+          "name": "Stan Liao",
+          "s2_id": null,
+          "openalex_id": "A5110239566"
+        },
+        {
+          "name": "Marguerite Bernard",
+          "s2_id": null,
+          "openalex_id": "A5102358410"
+        },
+        {
+          "name": "Yifan Peng",
+          "s2_id": null,
+          "openalex_id": "A5085113833"
+        },
+        {
+          "name": "Chunhua Weng",
+          "s2_id": null,
+          "openalex_id": "A5009604048"
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-01-04",
+      "venue": "JAMIA Open",
+      "type": "article",
+      "raw_type": "article",
+      "ids": {
+        "doi": "10.1093/jamiaopen/ooae021",
+        "arxiv": null,
+        "pmid": "38455840",
+        "openalex": "W4392226889",
+        "s2": null
+      },
+      "citation_count": 8,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.1093/jamiaopen/ooae021",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 30
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 3
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "07ee54799b1f",
+      "title": "Comparing Knowledge Sources for Open-Domain Scientific Claim Verification",
+      "abstract": "The increasing rate at which scientific knowledge is discovered and health claims shared online has highlighted the importance of developing efficient fact-checking systems for scientific claims. The usual setting for this task in the literature assumes that the documents containing the evidence for claims are already provided and annotated or contained in a limited corpus. This renders the systems unrealistic for real-world settings where knowledge sources with potentially millions of documents need to be queried to find relevant evidence. In this paper, we perform an array of experiments to test the performance of open-domain claim verification systems. We test the final verdict prediction of systems on four datasets of biomedical and health claims in different settings. While keeping the pipeline\u2019s evidence selection and verdict prediction parts constant, document retrieval is performed over three common knowledge sources (PubMed, Wikipedia, Google) and using two different information retrieval techniques. We show that PubMed works better with specialized biomedical claims, while Wikipedia is more suited for everyday health concerns. Likewise, BM25 excels in retrieval precision, while semantic search in recall of relevant evidence. We discuss the results, outline frequent retrieval patterns and challenges, and provide promising future directions.",
+      "tldr": "It is shown that PubMed works better with specialized biomedical claims, while Wikipedia is more suited for everyday health concerns, and BM25 excels in retrieval precision, while semantic search in recall of relevant evidence.",
+      "authors": [
+        {
+          "name": "Juraj Vladika",
+          "s2_id": null,
+          "openalex_id": "A5041263555"
+        },
+        {
+          "name": "Florian Matthes",
+          "s2_id": null,
+          "openalex_id": "A5022973212"
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-01-01",
+      "venue": "Conference of the European Chapter of the Association for Computational Linguistics",
+      "type": "article",
+      "raw_type": "conference-paper",
+      "ids": {
+        "doi": "10.18653/v1/2024.eacl-long.128",
+        "arxiv": "2402.02844",
+        "pmid": null,
+        "openalex": "W4411630032",
+        "s2": "c977b9f5bb5c72a8c655db3d75dfae1d0b765cb1"
+      },
+      "citation_count": 12,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://aclanthology.org/2024.eacl-long.128.pdf",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 19
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 24
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "a7588078a82c",
+      "title": "TRACES: A Benchmark for Epistemic Reliability in Scientific Reasoning by LLMs",
+      "abstract": "Large language models are being proposed as agents in scientific workflows, in domains where no downstream verifier exists. Such deployment assumes the model can distinguish reliable scientific literature from unreliable literature, a capability that has not yet been directly measured. Existing benchmarks evaluate factuality on questions with known answers; the failure mode we target here is different. We introduce a probe corpus of 42 retracted, fraudulent, and pseudoscientific papers, paired with a methodology for eliciting and scoring single-shot model engagement with each paper's framing. Each probe pairs a preamble extracted near-verbatim from the target paper with a scientifically plausible study-design request. The probes span five claim types: fabricated observation, pseudophysical mechanism, magical premise, legitimization bridge, and cargo-cult experiment. Two complementary scores measure whether a model rejects the flawed premise outright (IFR-a) and whether it recognizes the unreliability while still engaging (IFR-i). A depth score, the Engagement Depth Index (EDI), quantifies reproduction of paper- or field-specific withheld details. Across 30 models and 10 repeated runs, aggregate IFR-a is 0.93 $\\pm$ 0.004 and aggregate IFR-i is 0.809 $\\pm$ 0.009. Models engaged with untenable premises in 95% of all non-empty responses. Every evaluated model fails more than 71% of agentic probes, and 22 of 30 models fail more than 90% of the time. Rejections are concentrated on a small number of high-notoriety topics and specific probes, and disappear under matched-structure controls. These results are consistent with topic-keyed safety behavior rather than robust epistemic competence, and indicate an urgent need for guardrail infrastructure for scientific deployment of language models.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Valentin Rodionov",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Shamil Assylbekov",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-08-11",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.IR",
+      "ids": {
+        "doi": "10.48550/arxiv.2608.11415",
+        "arxiv": "2608.11415",
+        "pmid": null,
+        "openalex": null,
+        "s2": null
+      },
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2608.11415v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 1
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "fc8d549659ad",
+      "title": "Do Methods Support the Claims? Intra-Paper Verification for Peer Review",
+      "abstract": "The growing volume of scientific submissions has motivated interest in using large language models (LLMs) to assist peer review. Existing automated novelty assessment approaches typically compare a paper's claimed contributions against prior literature, implicitly assuming that these contributions are accurately realized in the work itself. Human reviewers, however, frequently challenge novelty claims not because similar ideas already exist, but because the methodological evidence presented in the paper does not adequately support them. This internal mismatch between claimed contributions and methodological realization is rarely examined by current LLM-based review systems. To address this gap, we introduce intra-paper claim verification, a framework that evaluates whether novelty claims articulated in a paper are substantiated by the methods used to realize them. The framework employs an LLM to extract novelty claims from the introduction, retrieve claim-relevant methodological evidence, and assess whether the methods substantiate the stated contributions. Assessment is guided by reviewer-inspired evaluation criteria derived inductively from human peer reviews collected from 182 ICLR 2025 papers. These criteria capture recurring reviewer concerns related to novelty, methodology, clarity, and other issues and are used to generate structured reviewer-style assessments of claim substantiation. We evaluate the framework by comparing LLM-generated review comments against human reviewer concerns on a balanced subset of accepted and rejected papers. Human evaluation demonstrates significant alignment between framework-generated assessments and human reviewer concerns, particularly for novelty-related issues. BERTScore further distinguishes corresponding human-LLM review pairs from mismatched controls, indicating that the framework captures concerns consistent with human reviewer observations.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Ranjitha Shivaprasad Ballakuraya",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Arash Mahyari",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Ashok Srinivasan",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-06-21",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2607.26066",
+        "arxiv": "2607.26066",
+        "pmid": null,
+        "openalex": null,
+        "s2": null
+      },
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2607.26066v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 9
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "193a10fed359",
+      "title": "Relevant Is Not Warranted: Evidence-Force Calibration for Cited RAG",
+      "abstract": "Cited RAG evaluation often treats visible sources as a grounding signal, but a real, topically relevant citation can still under-warrant the attached wording. We study this diagnostic failure as citation laundering: a related source is presented as warrant for an over-strong claim. We introduce FORCEBENCH, a contrastive stress test for evidence-force calibration. Each item holds a cited passage fixed and pairs an evidence-calibrated claim with a localized force-raised variant across five operational axes: relation, modality, scope, temporal validity, and numeric specificity. A calibrated evaluator should score the evidence-calibrated claim higher. Headline experiments use a fixed, locality-filtered 198-pair evaluation set. A citation-presence sanity check is uninformative by design; token and entity overlap still violate monotonicity on 32.8--36.4% of pairs. Across four reported model judges, standard generic support prompting is insufficient for this force-calibration stress test (aggregate MVR 47.2%), while explicit warrant-strength prompting lowers MVR to 24.5% but remains imperfect. We release the benchmark, prompts, outputs, and plug-in pipeline so citation evaluators can report monotonicity violation rate and force sensitivity alongside conventional support metrics.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Pinyan Qian",
+          "s2_id": "2429577145",
+          "openalex_id": null
+        },
+        {
+          "name": "Su Wang",
+          "s2_id": "2116429728",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiaoyuan Wang",
+          "s2_id": "2356129931",
+          "openalex_id": null
+        },
+        {
+          "name": "Yihang Chen",
+          "s2_id": "2370956570",
+          "openalex_id": null
+        },
+        {
+          "name": "Wenxuan Xu",
+          "s2_id": "48721698",
+          "openalex_id": null
+        },
+        {
+          "name": "Qi Yu",
+          "s2_id": "2284827339",
+          "openalex_id": null
+        },
+        {
+          "name": "Shuhua Lin",
+          "s2_id": "2216857593",
+          "openalex_id": null
+        },
+        {
+          "name": "Sipeng Zhang",
+          "s2_id": "2433619395",
+          "openalex_id": null
+        },
+        {
+          "name": "Junxian You",
+          "s2_id": "2348117714",
+          "openalex_id": null
+        },
+        {
+          "name": "Xinpeng Wei",
+          "s2_id": "2257922678",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-05-27",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2605.28044",
+        "arxiv": "2605.28044",
+        "pmid": null,
+        "openalex": null,
+        "s2": "288fac4a949a898313e9a9e0ce57a212d5c00a24"
+      },
+      "citation_count": 20,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "f1f9c4bc1a14",
+          "rank": 3
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "d6920ae21863",
+      "title": "Evidence Absence Is Not Evidence Insufficiency: Diagnosing NEI Construction Artifacts in Fact Verification",
+      "abstract": "Evidence absence is not evidence insufficiency, but fact verification benchmarks can make them observationally similar. The Not Enough Information (NEI) label is often operationalized through different evidence conditions, and that choice silently determines what a verifier learns and what its score can hide. We introduce NEI-CAP, a construction-aware diagnostic protocol for insufficient-evidence evaluation. Each NEI example carries the construction family that produced it; NEI-CAP audits shortcut cues, validates hard cases through human adjudication, and tests whether competence transfers across constructions. We instantiate the protocol in SciFact-style scientific verification, with FEVER and HoVer as bounded external controls. Across these settings, NEI competence does not transfer reliably: models trained on shortcut-prone constructions fail to recognize semantically related insufficient evidence, and mixed-construction training narrows but does not close the gap. Fixed-claim diagnostics further show that the evidence condition shifts confidence in the reference Support/Refute label, not only NEI recall, so an aggregate NEI score can hide which problem a model has actually solved.",
+      "tldr": "Fixed-claim diagnostics show that the evidence condition shifts confidence in the reference Support/Refute label, not only NEI recall, so an aggregate NEI score can hide which problem a model has actually solved, so an aggregate NEI score can hide which problem a model has actually solved.",
+      "authors": [
+        {
+          "name": "Jing Qiu",
+          "s2_id": "2390570681",
+          "openalex_id": null
+        },
+        {
+          "name": "Zeyu Han",
+          "s2_id": "2385433388",
+          "openalex_id": null
+        },
+        {
+          "name": "Chen Huang",
+          "s2_id": "2187442756",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-05-26",
+      "venue": "arXiv.org",
+      "type": "preprint",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2605.26663",
+        "arxiv": "2605.26663",
+        "pmid": null,
+        "openalex": null,
+        "s2": "7b65c197cfee4e022a77970e33c0507c80030c64"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q3",
+          "seed_id": null,
+          "rank": 1
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "69290ae76a26",
+      "title": "Can LLMs extract scientific consensus? A case study in high-temperature superconductivity",
+      "abstract": "Scientific knowledge is increasingly dispersed across vast and heterogeneous scientific literature, where important claims are often implicit, evolving, and internally debated. While large language models (LLMs) have shown impressive performance in information extraction and summarization, their ability to recover latent scientific consensus remains unclear. Here, we investigate this problem in the context of high-temperature superconductivity (HTS), a long-standing and highly debated topic in condensed matter physics, as a challenging testbed. Using near 18,000 highly-cited publications over the past seven decades, we construct a structured knowledge graph linking competing superconducting mechanisms, material families, evidential modalities, and citation relations. We find that LLM-extracted representations recover coherent and physically interpretable structures, including family-dependent mechanism profiles, evidence-specific correlations, and citation-mediated temporal evolution of scientific beliefs. Ablation studies on LLM further show that the global structure remains robust across prompting, decoding, and model variations. Our results suggest that LLMs can indeed serve as scalable tools for deciphering scientific knowledge in domains characterized by competing interpretations and evolving knowledge.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Mouyang Cheng",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Wenhao He",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Zhuotao Jin",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Bowen Yu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Ju Li",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Boris Kozinsky",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Yao Wang",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Pavel Volkov",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Liangzi Deng",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Ching-Wu Chu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Xiao-Gang Wen",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Mingda Li",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-05-26",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.DL",
+      "ids": {
+        "doi": "10.48550/arxiv.2606.07570",
+        "arxiv": "2606.07570",
+        "pmid": null,
+        "openalex": null,
+        "s2": null
+      },
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2606.07570v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 19
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "ba3478c2133e",
+      "title": "Echoes of Citations: Automated Extraction of Claims from Full Scientific Papers",
+      "abstract": "Automated extraction of core scientific claims, concise statements of a paper\u2019s primary contributions, is critical for navigating the growing scientific literature. We present a scalable framework that leverages citances, sentences from other papers citing the target work, as natural supervision, removing the need for costly manual labelling. Our method filters citances with a claim-focused rubric and aligns them with candidate claims to train two pipelines: an unsupervised extractor and a weakly supervised model. Experiments show our approach outperforms existing baselines, achieving up to 18% higher precision and 22% greater coverage. We further analyse claim distributions across paper sections and introduce a taxonomy of claim types, providing new insights into the rhetorical structure of scientific discourse.",
+      "tldr": "This work presents a scalable framework that leverages citances, sentences from other papers citing the target work, as natural supervision, removing the need for costly manual labelling.",
+      "authors": [
+        {
+          "name": "N. Tan",
+          "s2_id": "2151063121",
+          "openalex_id": null
+        },
+        {
+          "name": "Niket Tandon",
+          "s2_id": "2261389843",
+          "openalex_id": null
+        },
+        {
+          "name": "Oyvind Tafjord",
+          "s2_id": "3385516",
+          "openalex_id": null
+        },
+        {
+          "name": "Michael Witbrock",
+          "s2_id": "2280960277",
+          "openalex_id": null
+        },
+        {
+          "name": "Peter Clark",
+          "s2_id": "2367197321",
+          "openalex_id": null
+        },
+        {
+          "name": "M. Gahegan",
+          "s2_id": "1801583",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-05-18",
+      "venue": "AAAI Spring Symposia",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.1609/aaaiss.v8i1.42589",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": null,
+        "s2": "81a698c5f58406ac872df737a3ead62fa7d3a68f"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://ojs.aaai.org/index.php/AAAI-SS/article/download/42589/50149",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 3
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "c77608477dc7",
+      "title": "BioDivergence: A Benchmark and Evaluation Framework for Hidden Contextual Contradictions in Biomedical Abstracts",
+      "abstract": "Biomedical findings often seem to conflict across studies, but many of these differences are context-dependent rather than true contradictions. Variations in cohort, geography, assay protocol, disease subtype, and clinical setting can make both claims locally valid. Existing NLI and scientific claim-verification benchmarks reduce such cases to entailment, contradiction, or neutral, failing to capture the contextual structure behind divergence. To address this, we introduce BioDivergence, an evaluation framework with a six-class conflict taxonomy, a 13-axis divergence ontology, and four structured outputs per claim pair: conflict type, divergence axes, dominant confounder, and reconciliation explanation. We release BioDivergence-Silver-v1.0, an article-disjoint silver benchmark of 11,865 claim pairs across five biomedical domains, alongside a legacy deduplicated variant for comparison. Results show notable ranking differences between the two variants, with the fine-tuned reference model dropping about 12 points under the article-disjoint setting, while Mistral-7B-Instruct-v0.3 achieves 0.5523 accuracy and 0.3894 contextual-F1 on the 842-example primary test set. BioDivergence offers a more faithful way to distinguish contextual divergence from direct contradiction and to separate article-level memorization from genuine task learning.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Elias Hossain",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Sanjeda Sara Jennifer",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Sabera Akter Bushra",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Niloofar Yousefi",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-23",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.CL",
+      "ids": {
+        "doi": "10.48550/arxiv.2606.11208",
+        "arxiv": "2606.11208",
+        "pmid": null,
+        "openalex": null,
+        "s2": null
+      },
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2606.11208v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 20
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "43d4ec9a1e25",
+      "title": "Uncertainty-Aware Web-Conditioned Scientific Fact-Checking",
+      "abstract": "Scientific fact-checking is vital for assessing claims in specialized domains such as biomedicine and materials science, yet existing systems often hallucinate or apply inconsistent reasoning, especially when verifying technical, compositional claims against an evidence snippet under source and cost/latency constraints. We present a pipeline centered on atomic predicate\u2013argument decomposition and calibrated, uncertainty-gated corroboration: atomic facts are aligned to local snippets via embeddings, verified by a compact evidence-grounded checker, and only facts with uncertain support trigger domain-restricted web search over authoritative sources. The system supports both binary and tri-valued classification where it predicts labels from Supported, Refuted, NEI for three-way tasks. We evaluate under two regimes, Context-Only (no web) and Context+Web (uncertainty-gated web corroboration); when retrieved evidence conflicts with the provided context, we abstain with NEI rather than overriding the context. On multiple benchmarks, our framework surpasses the strongest benchmarks. In our experiments, web corroboration was invoked for only a minority of atomic facts on average, indicating that external evidence is consulted selectively under calibrated uncertainty rather than routinely. Overall, coupling atomic granularity with calibrated, uncertainty-gated corroboration yields more interpretable and context-conditioned verification, making the approach well-suited to high-stakes, single-document settings that demand traceable rationales, predictable cost/latency, and conservative abstention under domain and evidence grounding constraints.",
+      "tldr": "Coupling atomic granularity with calibrated, uncertainty-gated corroboration yields more interpretable and context-conditioned verification, making the approach well-suited to high-stakes, single- document settings that demand traceable rationales, predictable cost/latency, and conservative abstention under domain and evidence grounding constraints.",
+      "authors": [
+        {
+          "name": "Ashwin Vinod",
+          "s2_id": "2354177648",
+          "openalex_id": null
+        },
+        {
+          "name": "Katrin Erk",
+          "s2_id": "2271297328",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-12",
+      "venue": "The Web Conference",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.1145/3774904.3792951",
+        "arxiv": "2604.11036",
+        "pmid": null,
+        "openalex": null,
+        "s2": "adf33bcf3423e2e24b5e28d31a8a63ff60bd1924"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.1145/3774904.3792951",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q8",
+          "seed_id": null,
+          "rank": 4
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "fa3967ebc4c6",
+      "title": "FactReview: Evidence-Grounded Peer Review with Execution-Based Claim Verification",
+      "abstract": "Large language model (LLM)-based reviewing systems typically assess manuscripts in isolation, leaving literature- and code-dependent claims difficult to verify. We present FactReview, an audit pipeline that extracts review-relevant claims, grounds them in related work and reference checks, and, when code is available, executes released artifacts under a fixed repair budget. On 26 paper-disjoint test papers with 354 human-verified claims, FactReview achieves 84.3\\% F1 for claim recovery. In a same-backend, evidence-matched comparison, FactReview scores 4.72/5 overall, outperforming a direct LLM reviewer by 0.74 points. Removing execution evidence changes 17.0\\% of claim statuses, more than removing any other single evidence source. In a reviewer-assistance study, FactReview reduces mean review time by 58\\% while increasing benchmark-claim coverage from 87\\% to 99\\%. FactReview supports evidence-based claim auditing, with acceptance decisions reserved for human reviewers. The code is public at https://github.com/DEFENSE-SEU/FactReview.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Ling Yue",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Chaoqian Ouyang",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Hang Xu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Ruijun Huang",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Yuchen Liu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Libin Zheng",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Wei Liu",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Shaowu Pan",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Shimin Di",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Min-Ling Zhang",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-05",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.AI",
+      "ids": {
+        "doi": "10.48550/arxiv.2604.04074",
+        "arxiv": "2604.04074",
+        "pmid": null,
+        "openalex": null,
+        "s2": null
+      },
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2604.04074v4",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 24
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "257260146472",
+      "title": "ThinknCheck: Grounded Claim Verification with Compact, Reasoning-Driven, and Interpretable Models",
+      "abstract": "We present ThinknCheck, a 1B-parameter verifier for grounded claim verification that first produces a short, structured rationale and then a binary verdict. We construct LLMAggreFact-Think, a 24.1k reasoning-augmented training set derived from LLMAggreFact, and fine-tune a 4-bit Gemma3 model to follow this format. On LLMAggreFact, ThinknCheck attains 78.1 balanced accuracy (BAcc), surpassing MiniCheck-7B (77.4) with 7x fewer parameters; removing the reasoning step reduces BAcc to 57.5. On SciFact, ThinknCheck reaches 64.7 BAcc, a +14.7 absolute gain over MiniCheck-7B. By contrast, zero-shot chain-of-thought on the base Gemma3-1B harms accuracy relative to direct answers, and preference optimization with a simple format+accuracy reward underperforms supervised reasoning. To probe the latter, we introduce GSMClaims and a domain-specialized variant, ThinknCheck-Science, which improves across benchmarks, including 61.0\\% accuracy on GSMClaims. Overall, explicit, supervised reasoning enables compact verifiers that are competitive while remaining resource-efficient and interpretable.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Delip Rao",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Feijiang Han",
+          "s2_id": null,
+          "openalex_id": null
+        },
+        {
+          "name": "Chris Callison-Burch",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-02",
+      "venue": "arXiv",
+      "type": "preprint",
+      "raw_type": "cs.AI",
+      "ids": {
+        "doi": "10.48550/arxiv.2604.01652",
+        "arxiv": "2604.01652",
+        "pmid": null,
+        "openalex": null,
+        "s2": null
+      },
+      "citation_count": 0,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://arxiv.org/pdf/2604.01652v1",
+      "origins": [
+        {
+          "source": "arxiv",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 26
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    },
+    {
+      "cid": "3c1e5f6887f9",
+      "title": "Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models",
+      "abstract": "The increasing adoption of large language models (LLMs) has raised serious concerns about their reliability and trustworthiness. As a result, a growing body of research focuses on evidence-based text generation with LLMs, aiming to link model outputs to supporting evidence to ensure traceability and verifiability. However, the field is fragmented due to inconsistent terminology, isolated evaluation practices, and a lack of unified benchmarks. To bridge this gap, we systematically analyze 134 papers, introduce a unified taxonomy of evidence-based text generation with LLMs, and investigate 300 evaluation metrics across seven key dimensions. Thereby, we focus on approaches that use citations, attribution, or quotations for evidence-based text generation. Building on this, we examine the distinctive characteristics and representative methods in the field. Finally, we highlight open challenges and outline promising directions for future work.",
+      "tldr": "This work systematically analyzes 134 papers, introduces a unified taxonomy of evidence-based text generation with LLMs, and investigates 300 evaluation metrics across seven key dimensions.",
+      "authors": [
+        {
+          "name": "Tobias Schreieder",
+          "s2_id": "2181136363",
+          "openalex_id": null
+        },
+        {
+          "name": "Tim Schopf",
+          "s2_id": "2120192839",
+          "openalex_id": null
+        },
+        {
+          "name": "Michael Farber",
+          "s2_id": "2372390157",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-08-21",
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "type": "review",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.18653/v1/2026.acl-long.1430",
+        "arxiv": "2508.15396",
+        "pmid": null,
+        "openalex": null,
+        "s2": "8a921bf4a04336dfd78ec57765faa0477f51f07b"
+      },
+      "citation_count": 11,
+      "influential_citation_count": 2,
+      "is_retracted": false,
+      "oa_url": "https://aclanthology.org/2026.acl-long.1430.pdf",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 4
+        }
+      ],
+      "outside_window": false,
+      "score": 3
+    }
+  ],
+  "outside_window": [
+    {
+      "cid": "b13f6337909b",
+      "title": "Enabling Large Language Models to Generate Text with Citations",
+      "abstract": "Large language models (LLMs) have emerged as a widely-used tool for information seeking, but their generated outputs are prone to hallucination. In this work, our aim is to allow LLMs to generate text with citations, improving their factual correctness and verifiability. Existing work mainly relies on commercial search engines and human evaluation, making it challenging to reproduce and compare different modeling approaches. We propose ALCE, the first benchmark for Automatic LLMs' Citation Evaluation. ALCE collects a diverse set of questions and retrieval corpora and requires building end-to-end systems to retrieve supporting evidence and generate answers with citations. We develop automatic metrics along three dimensions -- fluency, correctness, and citation quality -- and demonstrate their strong correlation with human judgements. Our experiments with state-of-the-art LLMs and novel prompting strategies show that current systems have considerable room for improvement -- For example, on the ELI5 dataset, even the best models lack complete citation support 50% of the time. Our analyses further highlight promising future directions, including developing better retrievers, advancing long-context LLMs, and improving the ability to synthesize information from multiple sources.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Tianyu Gao",
+          "s2_id": null,
+          "openalex_id": "A5033296587"
+        },
+        {
+          "name": "H. W. Yen",
+          "s2_id": null,
+          "openalex_id": "A5111465448"
+        },
+        {
+          "name": "Jiatong Yu",
+          "s2_id": null,
+          "openalex_id": "A5101383362"
+        },
+        {
+          "name": "Danqi Chen",
+          "s2_id": null,
+          "openalex_id": "A5051064208"
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-01-01",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "type": "article",
+      "raw_type": "conference-paper",
+      "ids": {
+        "doi": "10.18653/v1/2023.emnlp-main.398",
+        "arxiv": "2305.14627",
+        "pmid": null,
+        "openalex": "W4389520670",
+        "s2": "e7c97e953849f1a8e5d85ceb4cfcc0a5d54d2365"
+      },
+      "citation_count": 747,
+      "influential_citation_count": 109,
+      "is_retracted": false,
+      "oa_url": "https://aclanthology.org/2023.emnlp-main.398.pdf",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "9bf531c01324",
+          "rank": 14
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f1f9c4bc1a14",
+          "rank": 7
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "ea71e3251c36",
+          "rank": 7
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "84b54d56d46b",
+          "rank": 9
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "97b9c25fbfb6",
+          "rank": 4
+        }
+      ],
+      "outside_window": true,
+      "score": 2
+    },
+    {
+      "cid": "7d29489aa7b6",
+      "title": "Evaluating Verifiability in Generative Search Engines",
+      "abstract": "Generative search engines directly generate responses to user queries, along with in-line citations. A prerequisite trait of a trustworthy generative search engine is verifiability, i.e., systems should cite comprehensively (high citation recall; all statements are fully supported by citations) and accurately (high citation precision; every cite supports its associated statement). We conduct human evaluation to audit four popular generative search engines -- Bing Chat, NeevaAI, perplexity.ai, and YouChat -- across a diverse set of queries from a variety of sources (e.g., historical Google user queries, dynamically-collected open-ended questions on Reddit, etc.). We find that responses from existing generative search engines are fluent and appear informative, but frequently contain unsupported statements and inaccurate citations: on average, a mere 51.5% of generated sentences are fully supported by citations and only 74.5% of citations support their associated sentence. We believe that these results are concerningly low for systems that may serve as a primary tool for information-seeking users, especially given their facade of trustworthiness. We hope that our results further motivate the development of trustworthy generative search engines and help researchers and users better understand the shortcomings of existing commercial systems.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Nelson F. Liu",
+          "s2_id": null,
+          "openalex_id": "A5031981513"
+        },
+        {
+          "name": "Tianyi Zhang",
+          "s2_id": null,
+          "openalex_id": "A5100437461"
+        },
+        {
+          "name": "Percy Liang",
+          "s2_id": null,
+          "openalex_id": "A5025255782"
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-01-01",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "type": "article",
+      "raw_type": "conference-paper",
+      "ids": {
+        "doi": "10.18653/v1/2023.findings-emnlp.467",
+        "arxiv": "2304.09848",
+        "pmid": null,
+        "openalex": "W4389518954",
+        "s2": "e03dc5bd72bea7d1db03de380d4c43b7e610fbee"
+      },
+      "citation_count": 430,
+      "influential_citation_count": 45,
+      "is_retracted": false,
+      "oa_url": "https://aclanthology.org/2023.findings-emnlp.467.pdf",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "9bf531c01324",
+          "rank": 16
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f6d880d038a7",
+          "rank": 9
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f1f9c4bc1a14",
+          "rank": 9
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "ea71e3251c36",
+          "rank": 10
+        }
+      ],
+      "outside_window": true,
+      "score": 2
+    },
+    {
+      "cid": "7c75cad1f848",
+      "title": "WiCE: Real-World Entailment for Claims in Wikipedia",
+      "abstract": "Textual entailment models are increasingly applied in settings like fact-checking, presupposition verification in question answering, or summary evaluation. However, these represent a significant domain shift from existing entailment datasets, and models underperform as a result. We propose WiCE, a new fine-grained textual entailment dataset built on natural claim and evidence pairs extracted from Wikipedia. In addition to standard claim-level entailment, WiCE provides entailment judgments over sub-sentence units of the claim, and a minimal subset of evidence sentences that support each subclaim. To support this, we propose an automatic claim decomposition strategy using GPT-3.5 which we show is also effective at improving entailment models' performance on multiple datasets at test time. Finally, we show that real claims in our dataset involve challenging verification and retrieval problems that existing models fail to address.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Ryo Kamoi",
+          "s2_id": "83757854",
+          "openalex_id": null
+        },
+        {
+          "name": "Tanya Goyal",
+          "s2_id": "9531287",
+          "openalex_id": null
+        },
+        {
+          "name": "Juan Diego Rodriguez",
+          "s2_id": "40636184",
+          "openalex_id": null
+        },
+        {
+          "name": "Greg Durrett",
+          "s2_id": "1814094",
+          "openalex_id": null
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-03-02",
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.48550/arxiv.2303.01432",
+        "arxiv": "2303.01432",
+        "pmid": null,
+        "openalex": null,
+        "s2": "f7ec0e9237fbf960ffd20e2223e07287edb4f26a"
+      },
+      "citation_count": 146,
+      "influential_citation_count": 26,
+      "is_retracted": false,
+      "oa_url": "http://arxiv.org/pdf/2303.01432",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "659e22c8290d",
+          "rank": 17
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f6d880d038a7",
+          "rank": 12
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 18
+        }
+      ],
+      "outside_window": true,
+      "score": 2
+    },
+    {
+      "cid": "4ef7e5e70b1e",
+      "title": "TabFact: A Large-scale Dataset for Table-based Fact Verification",
+      "abstract": "The problem of verifying whether a textual hypothesis holds based on the given evidence, also known as fact verification, plays an important role in the study of natural language understanding and semantic representation. However, existing studies are mainly restricted to dealing with unstructured evidence (e.g., natural language sentences and documents, news, etc), while verification under structured evidence, such as tables, graphs, and databases, remains under-explored. This paper specifically aims to study the fact verification given semi-structured data as evidence. To this end, we construct a large-scale dataset called TabFact with 16k Wikipedia tables as the evidence for 118k human-annotated natural language statements, which are labeled as either ENTAILED or REFUTED. TabFact is challenging since it involves both soft linguistic reasoning and hard symbolic reasoning. To address these reasoning challenges, we design two different models: Table-BERT and Latent Program Algorithm (LPA). Table-BERT leverages the state-of-the-art pre-trained language model to encode the linearized tables and statements into continuous vectors for verification. LPA parses statements into programs and executes them against the tables to obtain the returned binary value for verification. Both methods achieve similar accuracy but still lag far behind human performance. We also perform a comprehensive analysis to demonstrate great future opportunities. The data and code of the dataset are provided in \\url{this https URL}.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Wenhu Chen",
+          "s2_id": "2928777",
+          "openalex_id": null
+        },
+        {
+          "name": "Hongmin Wang",
+          "s2_id": "46506498",
+          "openalex_id": null
+        },
+        {
+          "name": "Jianshu Chen",
+          "s2_id": "1720246",
+          "openalex_id": null
+        },
+        {
+          "name": "Yunkai Zhang",
+          "s2_id": "7549632",
+          "openalex_id": null
+        },
+        {
+          "name": "Hong Wang",
+          "s2_id": "46507182",
+          "openalex_id": null
+        },
+        {
+          "name": "SHIYANG LI",
+          "s2_id": "50341591",
+          "openalex_id": null
+        },
+        {
+          "name": "Xiyou Zhou",
+          "s2_id": "3363593",
+          "openalex_id": null
+        },
+        {
+          "name": "William Yang Wang",
+          "s2_id": "1682479",
+          "openalex_id": null
+        }
+      ],
+      "year": 2019,
+      "publication_date": "2019-09-05",
+      "venue": "International Conference on Learning Representations",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": null,
+        "arxiv": "1909.02164",
+        "pmid": null,
+        "openalex": null,
+        "s2": "ee4e24bdedd4d2e4be977bd0ca9f68a06ebb4d96"
+      },
+      "citation_count": 718,
+      "influential_citation_count": 145,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "e155e52aeeca",
+          "rank": 14
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "9fc1195f8ecb",
+          "rank": 8
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "a020efa017f5",
+          "rank": 14
+        }
+      ],
+      "outside_window": true,
+      "score": 2
+    }
+  ]
+}

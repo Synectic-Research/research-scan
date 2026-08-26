@@ -1,0 +1,72 @@
+llm-lit-search Rall: shortlist 40+0 -> reranking 40+0 = 40   spent $6.2256
+  rerank/llm-lit-search/Rall/c1   176.6s  $0.1972  in=9627 cr=5894 out=17680 (think 11026)
+  rerank/llm-lit-search/Rall/c2   239.7s  $0.2661  in=9380 cr=5894 out=24616 (think 18502)
+  rerank/llm-lit-search/Rall/c3   291.7s  $0.3213  in=9506 cr=5894 out=30107 (think 23545)
+  rerank/llm-lit-search/Rall/c4    36.2s  $0.0384  in=922 cr=5894 out=3541 (think 2700)
+ranked schema True; verify exit 0; emit exit 0
+{
+ "calls": 4,
+ "calls_ok": 4,
+ "calls_failed": 0,
+ "input_tokens": 29435,
+ "cache_read_tokens": 23576,
+ "cache_write_tokens": 0,
+ "output_tokens": 75944,
+ "thinking_tokens": 55773,
+ "cost_usd": 0.823025,
+ "api_seconds_sum": 744.19,
+ "retries": 0,
+ "schema_failures": 0,
+ "topic": "llm-lit-search",
+ "arm": "Rall",
+ "cut": 1000000,
+ "reranked": 40,
+ "in_window": 40,
+ "outside_window": 0,
+ "stage_wall_s": 744.22,
+ "ranked_schema_valid": true,
+ "ranked_schema_msg": "ok",
+ "shortlist_size": 40,
+ "verify_exit": 0,
+ "emit_exit": 0,
+ "verify_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/Rall/run\",\n  \"verification\": {\n    \"verified\": 40,\n    \"unverified\": 0,\n    \"dropped_retracted\": 0,\n    \"crossref_skipped\": false,\n    \"duration_s\": 25.587\n  },\n  \"unverified\": []\n}",
+ "emit_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/Rall/run\",\n  \"evidence_json\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/Rall/run/evidence.json\",\n  \"emit\": {\n    \"top\": 10,\n    \"foundational\": 2,\n    \"contradicting\": 1,\n    \"emitted\": 10,\n    \"alternates\": 5,\n    \"dropped_retracted\":",
+ "frontier_tokens": 105379,
+ "cumulative_spend_usd": 7.048641,
+ "top10_cids": [
+  "2cbca1abbe99",
+  "6006ace31229",
+  "60fd922117d2",
+  "dc6612fba47a",
+  "625aeeca9085",
+  "0bf8f356a21c",
+  "3b89edf4b85c",
+  "890330c91980",
+  "e2c42887588f",
+  "aac7d9e865ef"
+ ],
+ "top10_dois": [
+  "10.48550/arxiv.2608.01913",
+  "10.1145/3805712.3808629",
+  "10.48550/arxiv.2508.06600",
+  null,
+  "10.48550/arxiv.2605.14306",
+  "10.48550/arxiv.2501.10120",
+  "10.48550/arxiv.2608.24809",
+  "10.48550/arxiv.2603.20513",
+  "10.48550/arxiv.2512.06879",
+  "10.48550/arxiv.2506.18096"
+ ],
+ "selection_reasons": [
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "backfill",
+  "backfill",
+  "review"
+ ]
+}

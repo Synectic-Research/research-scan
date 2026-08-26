@@ -1,0 +1,257 @@
+{
+  "batch": "15",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "834d49f76257",
+      "title": "DSPrompt: Dynamic Soft Prompt Defense Against M-RAG Corruption",
+      "abstract_600": "Multimodal Retrieval Augmented Generation (M-RAG) is increasingly vulnerable to adversarial attacks where malicious data are crafted to produce embeddings that align with benign entries in the vector space, deceiving retrieval and inducing harmful outputs. Existing defenses primarily operate at query time, relying on auxiliary detectors, similarity re-ranking, or feature-consistency checks. However, these approaches suffer from non-trivial inference overhead, generalize poorly to unseen attack strategies, and often assume specific attack distributions. To address this, we propose DSPrompt, a D",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "408c228e86d8",
+      "title": "SciAgents: Automating Scientific Discovery Through Bioinspired Multi\u2010Agent Intelligent Graph Reasoning",
+      "abstract_600": "A key challenge in artificial intelligence (AI) is the creation of systems capable of autonomously advancing scientific understanding by exploring novel domains, identifying complex patterns, and uncovering previously unseen connections in vast scientific data. In this work, SciAgents, an approach that leverages three core concepts is presented: (1) large-scale ontological knowledge graphs to organize and interconnect diverse scientific concepts, (2) a suite of large language models (LLMs) and data retrieval tools, and (3) multi-agent systems with in-situ learning capabilities. Applied to biol",
+      "year": 2024,
+      "venue": "Advanced Materials",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8dd847dfdf4b",
+      "title": "IdeaTrail: Full-Process Agent Trajectories for Scientific Ideation",
+      "abstract_600": "Scientific ideation unfolds over multiple stages, including literature search, paper reading, tool use, claim checking, cross-paper synthesis, brainstorming, rejection of weak directions, and iterative writing. Yet most existing resources capture isolated components or final artifacts rather than the process connecting them. We introduce IdeaTrail, a dataset of 1,170 multi-turn trajectories for scientific ideation and proposal generation. Each trajectory follows a research process from evidence gathering to either idea selection or proposal construction, jointly recording tool use, acquired ev",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1bb18e3a6c72",
+      "title": "TriAgent: Automated Biomarker Discovery with Deep Research Grounding for Triage in Acute Care by LLM-Based Multi-Agent Collaboration",
+      "abstract_600": "Emergency departments worldwide face rising patient volumes, workforce shortages, and variability in triage decisions that threaten the delivery of timely and accurate care. Current triage methods rely primarily on vital signs, routine laboratory values, and clinicians'judgment, which, while effective, often miss emerging biological signals that could improve risk prediction for infection typing or antibiotic administration in acute conditions. To address this challenge, we introduce TriAgent, a large language model (LLM)-based multi-agent framework that couples automated biomarker discovery w",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "95b3aab472da",
+      "title": "A survey of sequence-to-graph mapping algorithms in the pangenome era",
+      "abstract_600": "A pangenome can reveal the genetic diversity across different individuals simultaneously. It offers a more comprehensive reference for genome analysis compared to a single linear genome that may introduce allele bias. Pangenomes are often represented as genome graphs, making sequence-to-graph mapping a fundamental task for pangenome construction and analysis. Numerous sequence-to-graph mapping algorithms have been developed over the past few years. Here, we provide a review of the advancements in sequence-to-graph mapping algorithms in the pangenome era. We also discuss the challenges and oppo",
+      "year": 2025,
+      "venue": "Genome biology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "301f5301aae8",
+      "title": "CFDA & CLIP at TREC iKAT 2025: Enhancing Personalized Conversational Search via Query Reformulation and Rank Fusion",
+      "abstract_600": "The 2025 TREC Interactive Knowledge Assistance Track (iKAT) featured both interactive and offline submission tasks. The former requires systems to operate under real-time constraints, making robustness and efficiency as important as accuracy, while the latter enables controlled evaluation of passage ranking and response generation with pre-defined datasets. To address this, we explored query rewriting and retrieval fusion as core strategies. We built our pipelines around Best-of-$N$ selection and Reciprocal Rank Fusion (RRF) strategies to handle different submission tasks. Results show that re",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3b14a111838b",
+      "title": "Search-Time Contamination in Deep Research Agents: Measuring Performance Inflation in Public Benchmark Evaluation",
+      "abstract_600": "Public benchmarks enable fair and reproducible evaluation of LLM reasoning, but they become fragile for deep research agents that actively search the web during inference. Such agents may retrieve public benchmark metadata, question context, or even ground-truth answers via web search. This gives rise to Search-Time Contamination (STC), where external retrieval bypasses intended reasoning and inflates measured performance. We systematically study STC in deep research agent evaluation. We define three contamination types with increasing severity, namely Benchmark Metadata Leakage, Question-Cont",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "1a91764a19c9",
+      "title": "The role of large language models in personalized learning: a systematic review of educational impact",
+      "abstract_600": "The rapid evolution of technology has significantly transformed the educational landscape, with the advent of Large Language Models (LLMs) introducing new possibilities for personalized learning. This systematic review examines the educational impact of LLM-based learning systems compared to traditional educational approaches, focusing on six critical research questions. These questions explore the effectiveness of LLMs in enhancing student engagement, emotional and social development, real-time progress monitoring, and their role in creating fair and rigorous examination environments. Further",
+      "year": 2025,
+      "venue": "Discover Sustainability",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bed0871421e6",
+      "title": "Enhancing Vietnamese Mental Health Question-Answering Systems: Adaptive Retrieval Augmented Generation Pipeline and Data Augmentation for Large Language Models",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "Lecture notes in computer science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7ea28272b5d9",
+      "title": "AutoResearch: Insight In, Hallucination Out",
+      "abstract_600": "Autonomous research systems are increasingly capable of executing long research workflows, yet automation alone does not ensure that the resulting process remains scientifically grounded. We introduce AutoResearch, a two-stage system that connects Idea Generation with Idea Execution to address both how research ideas are formed and how they are reliably established through experimentation. In Idea Generation, AutoResearch continuously integrates emerging research signals with accumulated domain knowledge, identifies transferable mechanistic insights, and uses multi-model generation and cross-r",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "921d0506e289",
+      "title": "Evaluating the Potential and Pitfalls of AI-Powered Conversational Agents as Humanlike Virtual Health Carers in the Remote Management of Noncommunicable Diseases: Scoping Review",
+      "abstract_600": "BACKGROUND: The rising prevalence of noncommunicable diseases (NCDs) worldwide and the high recent mortality rates (74.4%) associated with them, especially in low- and middle-income countries, is causing a substantial global burden of disease, necessitating innovative and sustainable long-term care solutions. OBJECTIVE: This scoping review aims to investigate the impact of artificial intelligence (AI)-based conversational agents (CAs)-including chatbots, voicebots, and anthropomorphic digital avatars-as human-like health caregivers in the remote management of NCDs as well as identify critical",
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5fce3bd60349",
+      "title": "Not Worth Another Token: Marginal Value Estimation for Efficient Deep Research Agents",
+      "abstract_600": "Long-horizon research agents solve open-ended tasks through iterative retrieval, aggregation, and synthesis, but context grows rapidly while the marginal value of additional evidence often declines. This leads to unnecessary token cost, higher latency, and noisier inputs for final report generation. We study marginal value estimation for context management in deep research agents and present the first systematic stage-aware comparison of pruning strategies across the pipeline. We evaluate lightweight heuristic criteria and a learned value model at pre-retrieval, post-retrieval, and pre-synthes",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bc1817f4bb5c",
+      "title": "MITra: Populating Graph Traversal Algorithms",
+      "abstract_600": "We demonstrate MITra, a system for synthesizing Multi-Instance graph Traversal algorithms that traverse from multiple source vertices simultaneously over a single thread. Underlying MITra is an abstraction that expresses traversal logic via arithmetic operations over a numeric runtime property called vertex ranks, and separates it from computation logic. Based on this, Mitra implements an interface that allows users to express traversals by declaring vertex ranks and specify computation logic by \u201cplugging in\u201d an edge function adopted from classic single-instance algorithms. It synthesizes mult",
+      "year": 2025,
+      "venue": "IEEE International Conference on Data Engineering",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5dbc41935809",
+      "title": "Generative Retrieval for Table Union Search",
+      "abstract_600": "Modern data lakes contain heterogeneous tables whose task-relevant information is often scattered across different schemas, sources, and naming conventions. Table union search (TUS) retrieves tables that can be reliably unioned with a query table, supporting data discovery, enrichment, and downstream analytics. Although learning-based TUS methods improve table- or column-level representations, they still follow an encode-search-refine pipeline: candidate retrieval is followed by query-candidate matching or reranking, making quality dependent on candidate-pool recall and incurring growing laten",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "772f6454b5e6",
+      "title": "PerspectiveGap: A Benchmark for Multi-Agent Orchestration Prompting",
+      "abstract_600": "Real-world LLM applications are moving beyond single-agent workflows toward orchestrated multi-agent systems, yet current models still struggle to determine what each sub-agent needs to know. To measure this, we introduce PerspectiveGap, a benchmark for evaluating LLMs' ability to compose orchestration prompts for multi-agent systems. PerspectiveGap contains 110 scenarios, each evaluated through two distractor-mixed task formats: role-fragment assignment and free-form prompt writing. These scenarios are organized into 10 topologies, which are distilled from the authors' real-world engineering",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e47924caf6e0",
+      "title": "Potential Roles of Large Language Models in the Production of Systematic Reviews and Meta-Analyses",
+      "abstract_600": "Large language models (LLMs) such as ChatGPT have become widely applied in the field of medical research. In the process of conducting systematic reviews, similar tools can be used to expedite various steps, including defining clinical questions, performing the literature search, document screening, information extraction, and language refinement, thereby conserving resources and enhancing efficiency. However, when using LLMs, attention should be paid to transparent reporting, distinguishing between genuine and false content, and avoiding academic misconduct. In this viewpoint, we highlight th",
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d7f239ce013d",
+      "title": "Think Inside the Chunk: RegulaRAG for Regulation-Compliant Scenario Generation using LLMs: A Case Study of UN Regulation No. 152",
+      "abstract_600": "Generating regulation-compliant test scenarios is essential for validating safety-critical automotive systems, yet Large Language Models (LLMs) struggle to ground outputs in long, hierarchical standards. We present RegulaRAG, a Retrieval-Augmented Generation (RAG) pipeline that couples SmartChunking, reference-aware enrichment of paragraphs and tables via graph traversal, with Smart Retrieve & Rerank over these enriched units. To test our system, we evaluate on a manually curated dataset covering all scenarios in UN Regulation No. 152 (AEBS). Our study comprises: (i) a three-step progressive s",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "93aed0e3733e",
+      "title": "On Generative Agents in Recommendation",
+      "abstract_600": "Recommender systems are the cornerstone of today's information dissemination, yet a disconnect between offline metrics and online performance greatly hinders their development. Addressing this challenge, we envision a recommendation simulator, capitalizing on recent breakthroughs in human-level intelligence exhibited by Large Language Models (LLMs). We propose Agent4Rec, a user simulator in recommendation, leveraging LLM-empowered generative agents equipped with user profile, memory, and actions modules specifically tailored for the recommender system. In particular, these agents' profile modu",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e2c42887588f",
+      "title": "WisPaper: Your AI Scholar Search Engine",
+      "abstract_600": "We present \\textsc{WisPaper}, an end-to-end agent system that transforms how researchers discover, organize, and track academic literature. The system addresses two fundamental challenges. (1)~\\textit{Semantic search limitations}: existing academic search engines match keywords but cannot verify whether papers truly address complex research questions; and (2)~\\textit{Workflow fragmentation}: researchers must manually stitch together separate tools for discovery, organization, and monitoring. \\textsc{WisPaper} tackles these through three integrated modules. \\textbf{Scholar Search} combines rapi",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f73bde562b48",
+      "title": "Recent advances in extracellular vesicles for therapeutic cargo delivery",
+      "abstract_600": "Exosomes, which are nanosized vesicles secreted by cells, are attracting increasing interest in the field of biomedical research due to their unique properties, including biocompatibility, cargo loading capacity, and deep tissue penetration. They serve as natural signaling agents in intercellular communication, and their inherent ability to carry proteins, lipids, and nucleic acids endows them with remarkable therapeutic potential. Thus, exosomes can be exploited for diverse therapeutic applications, including chemotherapy, gene therapy, and photothermal therapy. Moreover, their capacity for h",
+      "year": 2024,
+      "venue": "Experimental & Molecular Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5d39652bae19",
+      "title": "Synthesis Citation Index: The HLRP Corpus Dependency Graph and Triadic Governance Architecture (HLDP)",
+      "abstract_600": "Document 3 of 4 in the HLDP K\u2084 Governance Loop. Published as a coordinated drop 2026-04-27. The four documents form a closed mutual-citation graph (each cites the other three) with one apex Principal-of-Principles. Companion: HLRP #158 Synthesis Ledger v6 (10.5281/zenodo.19829505). The four documents in reading sequence: IE Operator Hierarchy (Principal-of-Principles, apex) \u2014 10.5281/zenodo.19829498 Math Companion (formal apparatus) \u2014 10.5281/zenodo.19829500 Synthesis Citation Index (SCI) (corpus dependency graph) \u2014 10.5281/zenodo.19829504 Capstone \u2014 HLDP Doppler Radar (synthesis vantage; canc",
+      "year": 2026,
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2181dfebce99",
+      "title": "A survey on retrieval-augmentation generation (RAG) models for healthcare applications",
+      "abstract_600": "Retrieval-augmented generation (RAG) models have become crucial in healthcare applications, significantly enhancing the relevance and reliability of AI-driven insights by combining the generative capabilities of large language models (LLMs) with retrieval-based methods. As healthcare data demand precision and accountability, RAG models address critical limitations of LLMs, such as the tendency to \u201challucinate\u201d or produce inaccurate information\u2014by incorporating real-time retrieval from trusted medical knowledge bases and clinical literature. This dual process of retrieving and generating ensure",
+      "year": 2025,
+      "venue": "Neural Computing and Applications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7542d6905108",
+      "title": "Two Tales of Persona in LLMs: A Survey of Role-Playing and Personalization",
+      "abstract_600": "The concept of persona, originally adopted in dialogue literature, has re-surged as a promising framework for tailoring large language models (LLMs) to specific context (e.g., personalized search, LLM-as-a-judge).However, the growing research on leveraging persona in LLMs is relatively disorganized and lacks a systematic taxonomy.To close the gap, we present a comprehensive survey to categorize the current state of the field.We identify two lines of research, namely (1) LLM Role-Playing, where personas are assigned to LLMs, and (2) LLM Personalization, where LLMs take care of user personas.Add",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a9fe31d04441",
+      "title": "Automatic assessment of text-based responses in post-secondary education: A systematic review",
+      "abstract_600": "Text-based open-ended questions in academic formative and summative assessments help students become deep learners and prepare them to understand concepts for a subsequent conceptual assessment. However, grading text-based questions, especially in large (>50 enrolled students) courses, is tedious and time-consuming for instructors. Text processing models continue progressing with the rapid development of Artificial Intelligence (AI) tools and Natural Language Processing (NLP) algorithms. Especially after breakthroughs in Large Language Models (LLM), there is immense potential to automate rapid",
+      "year": 2024,
+      "venue": "Computers and Education Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "480c557c13fa",
+      "title": "RAGCache: Efficient Knowledge Caching for Retrieval-Augmented Generation",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) has demonstrated substantial advancements in various natural language processing tasks by integrating the strengths of large language models (LLMs) and external knowledge databases. However, the retrieval step introduces long sequence generation and extra data dependency, resulting in long end-to-end latency. Our analysis benchmarks current RAG systems and reveals that, while the retrieval step poses performance challenges, it also offers optimization opportunities through its retrieval pattern and streaming search behavior. We propose RAGCache, a latency-o",
+      "year": 2025,
+      "venue": "ACM Transactions on Computer Systems",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

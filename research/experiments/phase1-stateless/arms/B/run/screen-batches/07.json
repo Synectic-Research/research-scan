@@ -1,0 +1,257 @@
+{
+  "batch": "07",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "29c8fd0aa80b",
+      "title": "Retrieval augmented generation for 10 large language models and its generalizability in assessing medical fitness",
+      "abstract_600": "Large Language Models (LLMs) hold promise for medical applications but often lack domain-specific expertise. Retrieval Augmented Generation (RAG) enables customization by integrating specialized knowledge. This study assessed the accuracy, consistency, and safety of LLM-RAG models in determining surgical fitness and delivering preoperative instructions using 35 local and 23 international guidelines. Ten LLMs (e.g., GPT3.5, GPT4, GPT4o, Gemini, Llama2, and Llama3, Claude) were tested across 14 clinical scenarios. A total of 3234 responses were generated and compared to 448 human-generated answe",
+      "year": 2025,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "121556764b19",
+      "title": "SKT5SciSumm - Revisiting Extractive-Generative Approach for Multi-Document Scientific Summarization",
+      "abstract_600": "Summarization for scientific text has shown significant benefits both for the research community and human society. Given the fact that the nature of scientific text is distinctive and the input of the multi-document summarization task is substantially long, the task requires sufficient embedding generation and text truncation without losing important information. To tackle these issues, in this paper, we propose SKT5SciSumm - a hybrid framework for multi-document scientific summarization (MDSS). We leverage the Sentence-Transformer version of Scientific Paper Embeddings using Citation-Informe",
+      "year": 2024,
+      "venue": "Pacific Asia Conference on Language, Information and Computation",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b1fc0771a735",
+      "title": "Robust Claim Verification Through Fact Detection",
+      "abstract_600": "Claim verification can be a challenging task. In this paper, we present a method to enhance the robustness and reasoning capabilities of automated claim verification through the extraction of short facts from evidence. Our novel approach, FactDetect, leverages Large Language Models (LLMs) to generate concise factual statements from evidence and label these facts based on their semantic relevance to the claim and evidence. The generated facts are then combined with the claim and evidence. To train a lightweight supervised model, we incorporate a fact-detection task into the claim verification p",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "dc157564ab93",
+      "title": "Evaluating Evidence Attribution in Generated Fact Checking Explanations",
+      "abstract_600": "Automated fact-checking systems often struggle with trustworthiness, as their generated explanations can include hallucinations. In this work, we explore evidence attribution for fact-checking explanation generation. We introduce a novel evaluation protocol -- citation masking and recovery -- to assess attribution quality in generated explanations. We implement our protocol using both human annotators and automatic annotators, and find that LLM annotation correlates with human annotation, suggesting that attribution assessment can be automated. Finally, our experiments reveal that: (1) the bes",
+      "year": 2024,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b210d98b6e64",
+      "title": "AVerImaTeC: A Dataset for Automatic Verification of Image-Text Claims with Evidence from the Web",
+      "abstract_600": "Textual claims are often accompanied by images to enhance their credibility and spread on social media, but this also raises concerns about the spread of misinformation. Existing datasets for automated verification of image-text claims remain limited, as they often consist of synthetic claims and lack evidence annotations to capture the reasoning behind the verdict. In this work, we introduce AVerImaTeC, a dataset consisting of 1,297 real-world image-text claims. Each claim is annotated with question-answer (QA) pairs containing evidence from the web, reflecting a decomposed reasoning regardin",
+      "year": 2025,
+      "venue": "Advances in Neural Information Processing Systems 38",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "562d076772cb",
+      "title": "HiEviDR-Bench: A Benchmark for Hierarchical Evidence Aggregation in Deep Research",
+      "abstract_600": "Deep research requires models to retrieve, connect, and synthesize evidence from large-scale heterogeneous sources to answer complex queries and produce analytical reports. Existing benchmarks mainly evaluate final outcomes, such as answer correctness, report quality, or citation alignment, while providing limited visibility into whether evidence is correctly selected, linked, and aggregated into supported claims and conclusions. To address this gap, we introduce HiEviDR-Bench, a benchmark for evaluating Hierarchical Evidence Aggregation in Deep Research. HiEviDR-Bench covers open-domain and a",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e4d1971adb95",
+      "title": "FaithLens: Detecting and Explaining Faithfulness Hallucination",
+      "abstract_600": "Recognizing whether outputs from large language models (LLMs) contain faithfulness hallucination is crucial for real-world applications, e.g., retrieval-augmented generation and summarization. In this paper, we introduce FaithLens, a cost-efficient and effective faithfulness hallucination detection model that can jointly provide binary predictions and corresponding explanations to improve trustworthiness. To achieve this, we first synthesize training data with explanations via advanced LLMs and apply a well-defined data filtering strategy to ensure label correctness, explanation quality, and d",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "76460060db1d",
+      "title": "Fostering effective hybrid human-LLM reasoning and decision making",
+      "abstract_600": "The impressive performance of modern Large Language Models (LLMs) across a wide range of tasks, along with their often non-trivial errors, has garnered unprecedented attention regarding the potential of AI and its impact on everyday life. While considerable effort has been and continues to be dedicated to overcoming the limitations of current models, the potentials and risks of human-LLM collaboration remain largely underexplored. In this perspective, we argue that enhancing the focus on human-LLM interaction should be a primary target for future LLM research. Specifically, we will briefly exa",
+      "year": 2025,
+      "venue": "Frontiers in Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d30b30fccce6",
+      "title": "Exploring Trust and Transparency in Retrieval-Augmented Generation for Domain Experts",
+      "abstract_600": "The increasing adoption of Retrieval-Augmented Generation (RAG) systems in domain-specific applications raises critical challenges around trust and transparency, particularly for domain experts who possess deep subject knowledge but limited technical familiarity with AI systems. This paper investigates the design and evaluation of a user-centric RAG-based application tailored for financial equity research, incorporating features such as confidence indicators, source transparency, and user control mechanisms. Through a user study with 50 financial professionals, we found that while confidence s",
+      "year": 2025,
+      "venue": "CHI Extended Abstracts",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "af10a62ceec1",
+      "title": "[177Lu]Lu-DOTA-TATE plus long-acting octreotide versus high\u2011dose long-acting octreotide for the treatment of newly diagnosed, advanced grade 2\u20133, well-differentiated, gastroenteropancreatic neuroendocrine tumours (NETTER-2): an open-label, randomised, phase 3 study",
+      "abstract_600": null,
+      "year": 2024,
+      "venue": "The Lancet",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "856c41d6e967",
+      "title": "SFBench: The SciFy Scientific Feasibility Benchmark",
+      "abstract_600": "We present SFBench, a benchmark dataset for evaluating systems that assess the feasibility of scientific claims. SFBench includes 197 claims in materials science, each annotated with a ground-truth feasibility score on a five-point scale along with an explanation of that assessment. The collection differs from previous collections in several important ways: 1) it defines a complex task that requires reasoning over claims of varying scientific feasibility; 2) its claims are not extracted from existing scientific publications but are created de novo, greatly reducing the chances that LLMs have t",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "84b54d56d46b",
+      "title": "Evaluating and Guarding Citation Faithfulness in Agentic Scientific Synthesis",
+      "abstract_600": "Agentic LLM systems such as OpenScholar and PaperQA2 read the scientific literature and return cited answers, and both they and their benchmarks already check whether those citations hold, with a fixed attribution model or human graders. Neither audits the reliability of that check itself. We show it is not reliable, and that this matters. On identical agent outputs the measured unsupported-citation rate ranges from about 3% to about 18% depending only on the verifier's strictness, and although verifiers agree on which citations are supported, they disagree on which to flag (negative-specific",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "a605f8785d87",
+      "title": "A step-by-step method for cultural annotation by LLMs",
+      "abstract_600": "Building on the growing body of research highlighting the capabilities of Large Language Models (LLMs) like Generative Pre-trained Transformers (GPT), this paper presents a structured pipeline for the annotation of cultural (big) data through such LLMs, offering a detailed methodology for leveraging GPT's computational abilities. Our approach provides researchers across various fields with a method for efficient and scalable analysis of cultural phenomena, showcasing the potential of LLMs in the empirical study of human cultures. LLMs proficiency in processing and interpreting complex data fin",
+      "year": 2024,
+      "venue": "Frontiers in Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "752402f2a368",
+      "title": "ResearchQA: Benchmarking Citation-Grounded Question-Answering on Scientific Papers",
+      "abstract_600": "Large language models are increasingly used to assist scientific reading, but existing evaluation methods often fail to detect whether answers are supported by verifiable citations. We introduce ResearchQA, a benchmark of 6,211 single-paper question-answer pairs from 494 open-access papers spanning eight domains and four question types: lookup, comprehension, multi-hop, and adversarial. ResearchQA is designed for citation-grounded evaluation: it permits multiple valid supporting passages for a claim and rewards grounded refusal when the source paper does not support an answer. We evaluate eigh",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4d6062960fb1",
+      "title": "Hallucination of Multimodal Large Language Models: A Survey",
+      "abstract_600": "This survey presents a comprehensive analysis of the phenomenon of hallucination in multimodal large language models (MLLMs), also known as Large Vision-Language Models (LVLMs), which have demonstrated significant advancements and remarkable abilities in multimodal tasks. Despite these promising developments, MLLMs often generate outputs that are inconsistent with the visual content, a challenge known as hallucination, which poses substantial obstacles to their practical deployment and raises concerns regarding their reliability in real-world applications. This problem has attracted increasing",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cf5ae5e2c4ff",
+      "title": "LLM Abstention Can Be a Prompt Artifact, in Addition to Genuine Uncertainty",
+      "abstract_600": "Large Language Models (LLMs) are increasingly trained to abstain from answering questions they are unsure about. However, this ability is often misused: in real-world applications, input prompts sometimes contain uncertainty elements, and driven by this, LLMs are inclined to abstain even on problems they are capable of solving. We argue that LLM abstention is not only an expression of genuine uncertainty; it is also an artifact that can be largely influenced by prompts. We name this phenomenon *Abstention Inflation*. We add\"Unknown\"as an extra option for LLMs to choose from; experiments show s",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "96ac9cef1e2e",
+      "title": "TeachMateGPT: A Multi-Agent Knowledge-Grounded Framework for Pedagogical Assessment Generation from Science Curriculum Materials",
+      "abstract_600": "Automatically generating textbook-grounded assessment items can reduce science teachers' workload, but existing retrieval-augmented generation (RAG) systems rely on flat retrieval, support only single-question generation, lack safeguards against weak evidence, and are ill-suited to low-resource, board-exam-structured curricula. We address these limitations with TeachMateGPT, a multi-agent system contributing four advances to curriculum-grounded science-assessment authoring. (i) COPE, a hierarchical knowledge base replacing token-window chunking with a multi-resolution index that segments docum",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "19a59b1ca69a",
+      "title": "Developing a Hybrid Long Document Summarization Framework for Automatic Slide Generation from Scientific Documents",
+      "abstract_600": "Creating slides from long scientific papers by hand takes a lot of time and often misses important details. Existing tools like DOC2PPT have tried to help, but still struggle with covering all the information and keeping the slides clear and organized, especially with longer and more complex documents. This study introduces a new idea for improving the process of making slides automatically. The plan uses a mix of different methods to summarize long texts. It includes models that understand long documents, like Longformer Encoder-Decoder, and models that create summaries, like T5. It also has",
+      "year": 2025,
+      "venue": "International Conference Computing Engineering and Design",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8c29e83cdacb",
+      "title": "Data extraction from polymer literature using large language models",
+      "abstract_600": "Automated data extraction from materials science literature at scale using artificial intelligence and natural language processing techniques is critical to advance materials discovery. However, this process for large spans of text continues to be a challenge due to the specific nature and styles of scientific manuscripts. In this study, we present a framework to automatically extract polymer-property data from full-text journal articles using commercially available (GPT-3.5) and open-source (LlaMa 2) large language models (LLM), in tandem with the named entity recognition (NER)-based Material",
+      "year": 2024,
+      "venue": "Communications Materials",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5208f285671a",
+      "title": "Benchmarking Large Language Models in Complex Question Answering Attribution using Knowledge Graphs",
+      "abstract_600": "A set of fine-grained categories is introduced for measuring the attribution, and a Complex Attributed Question Answering (CAQA) benchmark is developed by leveraging knowledge graphs for automatically generating attributions of different categories to question-answer pairs.",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cda158eb9ac8",
+      "title": "Verifying the Verifiers: Unveiling Pitfalls and Potentials in Fact Verifiers",
+      "abstract_600": "Fact verification is essential for ensuring the reliability of LLM applications. In this study, we evaluate 12 pre-trained LLMs and one specialized fact-verifier, including frontier LLMs and open-weight reasoning LLMs, using a collection of examples from 14 fact-checking benchmarks. We share three findings intended to guide future development of more robust fact verifiers. First, we highlight the importance of addressing annotation errors and ambiguity in datasets, demonstrating that approximately 16\\% of ambiguous or incorrectly labeled data substantially influences model rankings. Neglecting",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a020efa017f5",
+      "title": "SciVer: Evaluating Foundation Models for Multimodal Scientific Claim Verification",
+      "abstract_600": "We introduce SciVer, the first benchmark specifically designed to evaluate the ability of foundation models to verify claims within a multimodal scientific context. SciVer consists of 3,000 expert-annotated examples over 1,113 scientific papers, covering four subsets, each representing a common reasoning type in multimodal scientific claim verification. To enable fine-grained evaluation, each example includes expert-annotated supporting evidence. We assess the performance of 21 state-of-the-art multimodal foundation models, including o4-mini, Gemini-2.5-Flash, Llama-3.2-Vision, and Qwen2.5-VL.",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "e39f5d2f51c8",
+      "title": "Prompt-Response Semantic Divergence Metrics for Faithfulness Hallucination and Misalignment Detection in Large Language Models",
+      "abstract_600": "The proliferation of Large Language Models (LLMs) is challenged by hallucinations, critical failure modes where models generate non-factual, nonsensical or unfaithful text. This paper introduces Semantic Divergence Metrics (SDM), a novel lightweight framework for detecting Faithfulness Hallucinations -- events of severe deviations of LLMs responses from input contexts. We focus on a specific implementation of these LLM errors, {confabulations, defined as responses that are arbitrary and semantically misaligned with the user's query. Existing methods like Semantic Entropy test for arbitrariness",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "41d969489c20",
+      "title": "Ask Before You Diagnose: Safe-Psych, a Sequential Evaluation Benchmark for LLMs in Psychiatry",
+      "abstract_600": "Large language models (LLMs) are increasingly used for decision support in healthcare, but clinical evidence is often incomplete or evolving. When the available information is insufficient to support a reliable answer, models should request clarification or abstain rather than provide unsupported responses. Existing medical benchmarks, however, typically assume that complete information is available upfront. We introduce Safe-Psych, a sequential benchmark for evaluating how LLMs handle evolving diagnostic uncertainty in clinical psychiatry. Safe-Psych contains over 1,000 real-world psychiatric",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f03f7b5ef5b3",
+      "title": "Retrieval-Augmented Generation (RAG) in Healthcare: A Comprehensive Review",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) enhances large language models (LLMs) by integrating external knowledge retrieval to improve factual consistency and reduce hallucinations. Despite growing interest, its use in healthcare remains fragmented. This paper presents a Systematic Literature Review (SLR) following PRISMA guidelines, synthesizing 30 peer-reviewed studies on RAG in clinical domains, focusing on three of its most prevalent and promising applications in diagnostic support, electronic health record (EHR) summarization, and medical question answering. We synthesize the existing architec",
+      "year": 2025,
+      "venue": "AI",
+      "origin_count": 2,
+      "outside_window": false
+    }
+  ]
+}

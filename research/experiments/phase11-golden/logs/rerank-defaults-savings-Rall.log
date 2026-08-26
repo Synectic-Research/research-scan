@@ -1,0 +1,72 @@
+defaults-savings Rall: shortlist 40+6 -> reranking 40+6 = 46   spent $4.2832
+  rerank/defaults-savings/Rall/c1   148.6s  $0.1604  in=6488 cr=6148 out=14622 (think 8965)
+  rerank/defaults-savings/Rall/c2   232.2s  $0.2596  in=6815 cr=6148 out=24470 (think 18393)
+  rerank/defaults-savings/Rall/c3   162.9s  $0.1754  in=7491 cr=6148 out=15918 (think 10267)
+  rerank/defaults-savings/Rall/c4    73.3s  $0.0779  in=3203 cr=6148 out=7026 (think 3795)
+ranked schema True; verify exit 0; emit exit 0
+{
+ "calls": 4,
+ "calls_ok": 4,
+ "calls_failed": 0,
+ "input_tokens": 23997,
+ "cache_read_tokens": 24592,
+ "cache_write_tokens": 0,
+ "output_tokens": 62036,
+ "thinking_tokens": 41420,
+ "cost_usd": 0.673272,
+ "api_seconds_sum": 617.18,
+ "retries": 0,
+ "schema_failures": 0,
+ "topic": "defaults-savings",
+ "arm": "Rall",
+ "cut": 1000000,
+ "reranked": 46,
+ "in_window": 40,
+ "outside_window": 6,
+ "stage_wall_s": 617.22,
+ "ranked_schema_valid": true,
+ "ranked_schema_msg": "ok",
+ "shortlist_size": 46,
+ "verify_exit": 0,
+ "emit_exit": 0,
+ "verify_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t1/Rall/run\",\n  \"verification\": {\n    \"verified\": 46,\n    \"unverified\": 0,\n    \"dropped_retracted\": 0,\n    \"crossref_skipped\": false,\n    \"duration_s\": 22.379\n  },\n  \"unverified\": []\n}",
+ "emit_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t1/Rall/run\",\n  \"evidence_json\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t1/Rall/run/evidence.json\",\n  \"emit\": {\n    \"top\": 10,\n    \"foundational\": 2,\n    \"contradicting\": 1,\n    \"emitted\": 10,\n    \"alternates\": 5,\n    \"dropped_retracted\":",
+ "frontier_tokens": 86033,
+ "cumulative_spend_usd": 4.956506,
+ "top10_cids": [
+  "3c6587448c9c",
+  "3b187fa626d9",
+  "32831b736c11",
+  "8319d6c6bc20",
+  "c3219a378627",
+  "6c8b6522d8f1",
+  "9e3699988af6",
+  "2f9a017e1fd8",
+  "26f21e72f8db",
+  "893434476830"
+ ],
+ "top10_dois": [
+  "10.3386/w31926",
+  "10.1073/pnas.2218385120",
+  "10.3386/w32828",
+  "10.1111/jofi.13404",
+  "10.1287/mnsc.2024.05272",
+  "10.1002/arcp.70007",
+  "10.1002/bdm.2395",
+  "10.1111/joes.70132",
+  "10.3386/w24854",
+  "10.1093/rfs/hhaa108"
+ ],
+ "selection_reasons": [
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "foundational",
+  "foundational"
+ ]
+}

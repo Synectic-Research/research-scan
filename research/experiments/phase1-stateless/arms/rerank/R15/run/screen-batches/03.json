@@ -1,0 +1,257 @@
+{
+  "batch": "03",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "ddbcf08a874d",
+      "title": "Minimizing artifact-induced false-alarms for seizure detection in wearable EEG devices with gradient-boosted tree classifiers",
+      "abstract_600": "Electroencephalography (EEG) is widely used to monitor epileptic seizures, and standard clinical practice consists of monitoring patients in dedicated epilepsy monitoring units via video surveillance and cumbersome EEG caps. Such a setting is not compatible with long-term tracking under typical living conditions, thereby motivating the development of unobtrusive wearable solutions. However, wearable EEG devices present the challenges of fewer channels, restricted computational capabilities, and lower signal-to-noise ratio. Moreover, artifacts presenting morphological similarities to seizures a",
+      "year": 2024,
+      "venue": "Scientific Reports",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "43e31518612f",
+      "title": "Retrieval augmented scientific claim verification",
+      "abstract_600": "Abstract Objective To automate scientific claim verification using PubMed abstracts. Materials and Methods We developed CliVER, an end-to-end scientific Claim VERification system that leverages retrieval-augmented techniques to automatically retrieve relevant clinical trial abstracts, extract pertinent sentences, and use the PICO framework to support or refute a scientific claim. We also created an ensemble of three state-of-the-art deep learning models to classify rationale of support, refute, and neutral. We then constructed CoVERt, a new COVID VERification dataset comprising 15 PICO-encoded",
+      "year": 2024,
+      "venue": "JAMIA Open",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "07991f86cffe",
+      "title": "\ud83e\udddcSiren\u2019s Song in the AI Ocean: A Survey on Hallucination in Large Language Models",
+      "abstract_600": "Abstract While large language models (LLMs) have demonstrated remarkable capabilities across a range of downstream tasks, a significant concern revolves around their propensity to exhibit hallucinations: LLMs occasionally generate content that diverges from the user input, contradicts previously generated context, or misaligns with established world knowledge. This phenomenon poses a substantial challenge to the reliability of LLMs in real-world scenarios. In this article, we survey recent efforts on the detection, explanation, and mitigation of hallucination, with an emphasis on the unique ch",
+      "year": 2025,
+      "venue": "Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d5ae196824bc",
+      "title": "Controllable without Stereotyping: Cross-Context Stability, Utility Preservation, and Uncertainty in Big-Five-Conditioned LLM Dialogue",
+      "abstract_600": "Personality-controllable dialogue systems must express intended traits without losing contextual fidelity or collapsing into formulaic cues. We evaluated 100,000 BIG5-CHAT responses representing 10,000 scenarios crossed with five Big Five dimensions and high and low levels. After listwise removal of 64 incomplete scenarios, 9,936 scenarios remained. Scenario-grouped training, validation, and test partitions contained 6,955, 1,490, and 1,491 scenarios. Three locally fitted response-selection strategies were compared: a fixed cue-based persona-prompt proxy, a word-TF-IDF weighted-nearest-neighbo",
+      "year": 2026,
+      "venue": "Stout in Psychology and Behavioral Studies",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d3480e655e4d",
+      "title": "Attributing Response to Context: A Jensen-Shannon Divergence Driven Mechanistic Study of Context Attribution in Retrieval-Augmented Generation",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) leverages large language models (LLMs) combined with external contexts to enhance the accuracy and reliability of generated responses. However, reliably attributing generated content to specific context segments, context attribution, remains challenging due to the computationally intensive nature of current methods, which often require extensive fine-tuning or human annotation. In this work, we introduce a novel Jensen-Shannon Divergence driven method to Attribute Response to Context (ARC-JSD), enabling efficient and accurate identification of essential con",
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "128373449baf",
+      "title": "Towards Evidence-Aware Retrieval and Verification for Scientific Fact-Checking",
+      "abstract_600": "Scientific fact-checking (SFC) is a critical task that aims to verify scientific claims by finding supporting or refuting evidence from a vast and rapidly growing body of research literature [4]. Unlike general fact-checking, SFC operates in high-stakes domains where incorrect scientific conclusions may influence public policy, medical practice, or future research directions. As scientific publications continue to increase in volume and technical complexity, manually verifying claims becomes infeasible for human experts and fact-checkers. This limitation not only slows knowledge validation but",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e86acc56ed0b",
+      "title": "Using Large Language Models for Hypotheses and Claims Extraction from Scientific Literature",
+      "abstract_600": "We present a novel dataset for hypothesis and claim extraction from research papers in the interdisciplinary domain of social infertility. We use OpenAI's o1-mini reasoning LLM to create the dataset by extracting hypotheses and claims, which are then manually validated. Then we also use smaller closed and open-weight LLMs to create a benchmark for hypothesis and claim extraction.",
+      "year": 2025,
+      "venue": "The Web Conference",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a7aeafc26492",
+      "title": "Instruction Stacking Collapse: A Benchmark and the Capability-Dependent Value of Prompt Compilation",
+      "abstract_600": "Production prompts rarely carry a single instruction. One system message may require valid JSON, a word limit, three citations, and a fixed tone at the same time. We study how instruction-following degrades as such constraints accumulate. We introduce a benchmark that stacks 24 verifier-checked instructions, one to twenty at a time, and evaluate three production-tier LLMs (Claude Sonnet 4.6, GPT-5-mini, Gemini 2.5 Flash). Instruction-following degrades non-linearly: the follow rate falls from ~96% to as low as 20%, driven by a structured and reproducible set of pairwise conflicts. A single \"ou",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "99135221dc46",
+      "title": "Annotation Tool and Dataset for Fact-Checking Podcasts",
+      "abstract_600": "Podcasts are a popular medium on the web, featuring diverse and multilingual content that often includes unverified claims. Fact-checking podcasts is a challenging task, requiring transcription, annotation, and claim verification, all while preserving the contextual details of spoken content. Our tool offers a novel approach to tackle these challenges by enabling real-time annotation of podcasts during playback. This unique capability allows users to listen to the podcast and annotate key elements, such as check-worthy claims, claim spans, and contextual errors, simultaneously. By integrating",
+      "year": 2025,
+      "venue": "The Web Conference",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "60a52314c94b",
+      "title": "Agent Safety Should Be a Runtime Contract",
+      "abstract_600": "The dominant paradigm treats AI safety as a property to be instilled during model training via RLHF, DPO, or Constitutional AI. We argue this is structurally insufficient for autonomous agents that execute code, mutate files, send messages, and modify databases. Agent safety should be a runtime contract enforced by the harness, and the contract has two complementary faces. The preventive face blocks dangerous actions before they happen via sandboxes, permission gates, output filters, and trajectory monitors. The evidential face requires verifiable proof that good actions actually happened, gat",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "96bdae0afd2f",
+      "title": "FlexAC: Towards Flexible Control of Associative Reasoning in Multimodal Large Language Models",
+      "abstract_600": "Multimodal large language models (MLLMs) face an inherent trade-off between faithfulness and creativity, as different tasks require varying degrees of associative reasoning. However, existing methods lack the flexibility to modulate this reasoning strength, limiting MLLMs'adaptability across factual and creative scenarios. To bridge this gap, we propose equipping MLLMs with mechanisms that enable flexible control over associative reasoning. We begin by investigating the internal mechanisms underlying associative behavior in MLLMs and find that: (1) middle layers play a pivotal role in shaping",
+      "year": 2025,
+      "venue": "Advances in Neural Information Processing Systems 38",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d1832d46d32c",
+      "title": "Estimating Uncertainty from Reasoning: A Large-Scale Study of Multi- and Crosslingual MCQA Performance in LLMs",
+      "abstract_600": "Uncertainty estimation (UE) enables LLM-powered systems to recognize when to abstain, yet existing research has predominantly focused on English. We present the first large-scale evaluation of UE methods across 22 languages, spanning high-, mid-, and low-resource settings. Using two human-curated Q\\&A datasets, we compare open and closed box UE methods (nine in total) across different model sizes and architectures while eliciting long-form reasoning, avoiding LLM-as-a-judge and embedding-based scoring, which can introduce evaluation noise. We report three main actionable findings. First, we fi",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ce60898d2f94",
+      "title": "Dissecting Neuro-Symbolic Quality Assurance for Synthetic Oncology Data Generation",
+      "abstract_600": "Synthetic clinical data generation with large language models addresses the scarcity that limits cancer staging research, but oncology hallucinations are categorically harmful: one clinically impossible staging assignment contaminates every downstream model trained on it. Neuro-symbolic pipelines validate during generation, yet the contribution of individual quality-assurance components remains unclear. We report three controlled studies isolating gate necessity, constraint attribution, and retrieval conditionality, holding generation protocol, diversity thresholds, and fine-tuning hyperparame",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cdfdc68e84dc",
+      "title": "The perils and promises of fact-checking with large language models",
+      "abstract_600": "Automated fact-checking, using machine learning to verify claims, has grown vital as misinformation spreads beyond human fact-checking capacity. Large language models (LLMs) like GPT-4 are increasingly trusted to write academic papers, lawsuits, and news articles and to verify information, emphasizing their role in discerning truth from falsehood and the importance of being able to verify their outputs. Understanding the capacities and limitations of LLMs in fact-checking tasks is therefore essential for ensuring the health of our information ecosystem. Here, we evaluate the use of LLM agents",
+      "year": 2024,
+      "venue": "Frontiers in Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d4155e9b212d",
+      "title": "Abduction Without a Body? Representational Grounding and the Abduction Loop for Scientific Hypothesis Generation",
+      "abstract_600": "Can scientific abduction occur without continuous sensorimotor embodiment? Recent arguments in AI and philosophy of science hold that genuine hypothesis generation requires an agent continuously coupled to the physical world. We defend a narrower claim: online embodiment is not necessary for every abductive scientific act. Our focus is identity abduction: the inference that two independently developed structures are one object under an explicit correspondence, reached through representational grounding rather than bodily interaction. An agent may acquire new inferential affordances not through",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0f18c544ce57",
+      "title": "Evaluation of clinical prediction models (part 1): from development to external validation",
+      "abstract_600": "Evaluating the performance of a clinical prediction model is crucial to establish its predictive accuracy in the populations and settings intended for use. In this article, the first in a three part series, Collins and colleagues describe the importance of a meaningful evaluation using internal, internal-external, and external validation, as well as exploring heterogeneity, fairness, and generalisability in model performance.",
+      "year": 2024,
+      "venue": "BMJ",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "516895a46ea8",
+      "title": "A Systematic Review of Techniques for Artifact Detection and Artifact Category Identification in Electroencephalography from Wearable Devices",
+      "abstract_600": "Wearable electroencephalography (EEG) enables brain monitoring in real-world environments beyond clinical settings; however, the relaxed constraints of the acquisition setup often compromise signal quality. This review examines methods for artifact detection and for the identification of artifact categories (e.g., ocular) and specific sources (e.g., eye blink) in wearable EEG. A systematic search was conducted across six databases using the query: (\"electroencephalographic\" OR \"electroencephalography\" OR \"EEG\") AND (\"Artifact detection\" OR \"Artifact identification\" OR \"Artifact removal\" OR \"Ar",
+      "year": 2025,
+      "venue": "Sensors",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ddcf6f0818da",
+      "title": "Can Knowledge Graphs Reduce Hallucinations in LLMs? : A Survey",
+      "abstract_600": "Garima Agrawal, Tharindu Kumarage, Zeyad Alghamdi, Huan Liu. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5d7a28416e5a",
+      "title": "Self-Correcting RAG: Enhancing Faithfulness via MMKP Context Selection and NLI-Guided MCTS",
+      "abstract_600": "Retrieval-augmented generation (RAG) substantially extends the knowledge boundary of large language models. However, it still faces two major challenges when handling complex reasoning tasks: low context utilization and frequent hallucinations. To address these issues, we propose Self-Correcting RAG, a unified framework that reformulates retrieval and generation as constrained optimization and path planning. On the input side, we move beyond traditional greedy retrieval and, for the first time, formalize context selection as a multi-dimensional multiple-choice knapsack problem (MMKP), thereby",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f8f13995d823",
+      "title": "A Survey of Confidence Estimation and Calibration in Large Language Models",
+      "abstract_600": "Jiahui Geng, Fengyu Cai, Yuxia Wang, Heinz Koeppl, Preslav Nakov, Iryna Gurevych. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5dd9e727584d",
+      "title": "ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems",
+      "abstract_600": "Jon Saad-Falcon, Omar Khattab, Christopher Potts, Matei Zaharia. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "43d4ec9a1e25",
+      "title": "Uncertainty-Aware Web-Conditioned Scientific Fact-Checking",
+      "abstract_600": "Scientific fact-checking is vital for assessing claims in specialized domains such as biomedicine and materials science, yet existing systems often hallucinate or apply inconsistent reasoning, especially when verifying technical, compositional claims against an evidence snippet under source and cost/latency constraints. We present a pipeline centered on atomic predicate\u2013argument decomposition and calibrated, uncertainty-gated corroboration: atomic facts are aligned to local snippets via embeddings, verified by a compact evidence-grounded checker, and only facts with uncertain support trigger d",
+      "year": 2026,
+      "venue": "The Web Conference",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ba3478c2133e",
+      "title": "Echoes of Citations: Automated Extraction of Claims from Full Scientific Papers",
+      "abstract_600": "Automated extraction of core scientific claims, concise statements of a paper\u2019s primary contributions, is critical for navigating the growing scientific literature. We present a scalable framework that leverages citances, sentences from other papers citing the target work, as natural supervision, removing the need for costly manual labelling. Our method filters citances with a claim-focused rubric and aligns them with candidate claims to train two pipelines: an unsupervised extractor and a weakly supervised model. Experiments show our approach outperforms existing baselines, achieving up to 18",
+      "year": 2026,
+      "venue": "AAAI Spring Symposia",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "64852552c38e",
+      "title": "Models for minimalist RAG: B1ade 335M Embedding and 1B Parameter Small Language Models",
+      "abstract_600": "Language and embedding models used in RAG systems are conventionally assumed to require large-scale pretraining and explicit grounding supervision. We present B1ade, an efficient RAG architecture comprising two purpose-built components: a compact embedding model and a purpose-built SLM. B1ade-embed, a 335M parameter retrieval model constructed via parameter-free fusion of five pretrained encoders achieves top MTEB scores among sub-500M models with zero additional training, and B1ade-1B, an SLM trained on low-cost GPUs using Group Relative Policy Optimization (GRPO) on 723M tokens (2.2M example",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a66e58340880",
+      "title": "Unsupervised Thematic Context Discovery for Explainable AI in Fact Verification: Advancing the CARAG Framework",
+      "abstract_600": ": This paper introduces CARAG-u, an unsupervised extension of the Context-Aware Retrieval Augmented Generation (CARAG) framework, designed to advance explainability in Automated Fact Verification (AFV) architectures. Unlike its predecessor, CARAG-u eliminates reliance on predefined thematic annotations and claim-evidence pair labels, by dynamically deriving thematic clusters and evidence pools from unstructured datasets. This innovation enables CARAG-u to balance local and global perspectives in evidence retrieval and explanation generation. We benchmark CARAG-u against Retrieval Augmented Gen",
+      "year": 2025,
+      "venue": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

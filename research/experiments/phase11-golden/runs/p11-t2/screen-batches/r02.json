@@ -1,0 +1,257 @@
+{
+  "batch": "r02",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "2787e2dcbd19",
+      "title": "Benchmark Data Contamination of Large Language Models: A Survey",
+      "abstract_600": "The rapid development of Large Language Models (LLMs) like GPT-4, Claude-3, and Gemini has transformed the field of natural language processing. However, it has also resulted in a significant issue known as Benchmark Data Contamination (BDC). This occurs when language models inadvertently incorporate evaluation benchmark information from their training data, leading to inaccurate or unreliable performance during the evaluation phase of the process. This paper reviews the complex challenge of BDC in LLM evaluation and explores alternative assessment methods to mitigate the risks associated with",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "918af989b322",
+      "title": "'Publish or perish' culture blamed for reproducibility crisis.",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "915458d346e6",
+      "title": "Diabetic foot ulcers segmentation challenge report: Benchmark and analysis",
+      "abstract_600": "Monitoring the healing progress of diabetic foot ulcers is a challenging process. Accurate segmentation of foot ulcers can help podiatrists to quantitatively measure the size of wound regions to assist prediction of healing status. The main challenge in this field is the lack of publicly available manual delineation, which can be time consuming and laborious. Recently, methods based on deep learning have shown excellent results in automatic segmentation of medical images, however, they require large-scale datasets for training, and there is limited consensus on which methods perform the best.",
+      "year": 2024,
+      "venue": "Medical Image Analysis",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0f4633eb3f53",
+      "title": "Generalization or Memorization: Data Contamination and Trustworthy Evaluation for Large Language Models",
+      "abstract_600": "Recent statements about the impressive capabilities of large language models (LLMs) are usually supported by evaluating on open-access benchmarks.Considering the vast size and wide-ranging sources of LLMs' training data, it could explicitly or implicitly include test data, leading to LLMs being more susceptible to data contamination.However, due to the opacity of training data, the black-box access of models, and the rapid growth of synthetic training data, detecting and mitigating data contamination for LLMs faces significant challenges.In this paper, we propose CDD, which stands for Contamin",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9c36830b6b12",
+      "title": "HLG: Bridging Human Heuristic Knowledge and Deep Reinforcement Learning for Optimal Agent Performance",
+      "abstract_600": "Training an optimal policy in deep reinforcement learning (DRL) remains a significant challenge due to the pitfalls of inefficient sampling in dynamic environments with sparse rewards. In this paper, we proposed a Human Local Guide (HLG) incorporating high-level human knowledge and local policies to guide DRL agents to achieve optimal performance. HLG deployed the heuristic rules from human knowledge in differential decision trees and then injected them into neural networks, which can continuously improve the suboptimal global policy till the optimal level. Our developed HLG includes action gu",
+      "year": 2024,
+      "venue": "Adaptive Agents and Multi-Agent Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "68de91ed977f",
+      "title": "Must NLP be Extractive?",
+      "abstract_600": "How do we roll out language technologies across a world with 7,000 languages?In one story, we scale the successes of NLP further into 'low-resource' languages, doing ever more with less.However, this approach does not recognise the fact that -beyond the 500 institutional languages -the remaining languages are oral vernaculars.These speech communities interact with the outside world using a 'contact language'.I argue that contact languages are the appropriate target for technologies like speech recognition and machine translation, and that the 6,500 oral vernaculars should be approached differe",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "09fb15c33873",
+      "title": "Don't Just Fine-tune the Agent, Tune the Environment",
+      "abstract_600": "Large Language Model (LLM) agents show great promise for complex, multi-turn tool-use tasks, but their development is often hampered by the extreme scarcity of high-quality training data. Supervised fine-tuning (SFT) on synthetic data leads to overfitting, whereas standard reinforcement learning (RL) struggles with a critical cold-start problem and training instability. To address these challenges, we introduce $\\textbf{Environment Tuning}$, a novel training paradigm that enables agents to learn complex behaviors directly from problem instances without relying on pre-collected expert trajector",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "59715925b185",
+      "title": "PelviNeXt: A Modality-Agnostic Hybrid Network for Pelvic Imaging in Women's Health",
+      "abstract_600": "Women's health remains substantially under-resourced in medical imaging research, with pelvic pathologies such as polycystic ovary syndrome (PCOS) and pelvic fracture both suffering from a scarcity of public, well-annotated benchmark data despite their clinical importance. We introduce PelviNeXt, a modality-agnostic hybrid architecture combining a dense convolutional feature extractor, hierarchical channel-spatial attention (H-CBAM), a multi-scale fusion module (MSFM), and talking-heads multi-head self-attention (TH-MHSA), applied without modification to both pelvic ultrasound and X-ray inputs",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "87592eebe83d",
+      "title": "EPC: A Standardized Protocol for Measuring Evaluator Preference Dynamics in LLM Agent Systems",
+      "abstract_600": "When LLM agents use evaluator feedback to adapt their behavior in closed loops, evaluator biases propagate through the agent's strategy distribution -- a phenomenon known as evaluator preference coupling. Prior work has documented coupling across multiple evaluator families and model versions, but the field lacks a standardized protocol that enables third-party researchers to (i) reproduce coupling measurements, (ii) compare results across evaluators and time points, and (iii) detect measurement decay as proprietary evaluators silently update. This paper provides the protocol. We specify EPC (",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fed6aaa9c370",
+      "title": "Large Language Models for Software Engineering: A Reproducibility Crisis",
+      "abstract_600": "Reproducibility is a cornerstone of scientific progress, yet its state in large language model (LLM)-based software engineering (SE) research remains poorly understood. This paper presents the first large-scale, empirical study of reproducibility practices in LLM-for-SE research. We systematically mined and analyzed 640 papers published between 2017 and 2025 across premier software engineering, machine learning, and natural language processing venues, extracting structured metadata from publications, repositories, and documentation. Guided by four research questions, we examine (i) the prevale",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a17998a0df22",
+      "title": "The Leaderboard Illusion",
+      "abstract_600": "Measuring progress is fundamental to the advancement of any scientific field. As benchmarks play an increasingly central role, they also grow more susceptible to distortion. Chatbot Arena has emerged as the go-to leaderboard for ranking the most capable AI systems. Yet, in this work we identify systematic issues that have resulted in a distorted playing field. We find that undisclosed private testing practices benefit a handful of providers who are able to test multiple variants before public release and retract scores if desired. We establish that the ability of these providers to choose the",
+      "year": 2025,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "9a2d4caf8cf2",
+      "title": "AGIEval: A Human-Centric Benchmark for Evaluating Foundation Models",
+      "abstract_600": "Assessing foundation models' abilities for human-level tasks is crucial for Artificial General Intelligence (AGI) development.Traditional benchmarks, which rely on artificial datasets, may not accurately represent these capabilities.In this paper, we introduce AGIEval, a novel bilingual benchmark designed to assess foundation models in the context of humancentric standardized exams, such as college entrance exams, law school admission tests, math competitions, and lawyer qualification tests.We evaluate several state-of-the-art foundation models on our benchmark.Impressively, we show that GPT-4",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c7d2d6ea3f0f",
+      "title": "Evaluation of online teaching modules for PSMA PET interpretation",
+      "abstract_600": "The proliferation of US FDA\u2010approved prostate\u2010specific membrane antigen (PSMA)\u2010targeted positron emission tomography (PET) imaging agents as a means to evaluate prostate cancer patients, and the expanding knowledge of interpretive pitfalls, has led to the generation of multiple online training modules geared toward the reading of each individual agent, each taking different approaches to criteria for interpretation, which may contribute to the variability of reporting in clinical practice.",
+      "year": 2024,
+      "venue": "The Prostate",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3f39b4f38994",
+      "title": "NLP for Maternal Healthcare: Perspectives and Guiding Principles in the Age of LLMs",
+      "abstract_600": "Ethical frameworks for the use of natural language processing (NLP) are urgently needed to shape how large language models (LLMs) and similar tools are used for healthcare applications. Healthcare faces existing challenges including the balance of power in clinician-patient relationships, systemic health disparities, historical injustices, and economic constraints. Drawing directly from the voices of those most affected, and focusing on a case study of a specific healthcare setting, we propose a set of guiding principles for the use of NLP in maternal healthcare. We led an interactive session",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8148880018d0",
+      "title": "Planner-R1: Reward Shaping Enables Efficient Agentic RL with Smaller LLMs",
+      "abstract_600": "We investigated Agentic RL with large language models on the \\textsc{TravelPlanner} benchmark. Our approach, \\textsc{Planner-R1}, achieved a \\textbf{56.9\\%} final-pass rate with only 180 training queries, a $2.7\\times$ improvement over GPT-5's $21.2\\%$ baseline and the strongest agentic result on the public leaderboard. A central finding was that smaller models (8B) were highly responsive to reward shaping: with dense process-level signals, they reached competitive performance while being $3.5\\times$ more compute-efficient and $1.5\\times$ more memory-efficient than 32B models. Larger models we",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ee2f93cb92de",
+      "title": "Evaluation data contamination in LLMs: how do we measure it and (when) does it matter?",
+      "abstract_600": "Hampering the interpretation of benchmark scores, evaluation data contamination has become a growing concern in the evaluation of LLMs, and an active area of research studies its effects. While evaluation data contamination is easily understood intuitively, it is surprisingly difficult to define precisely which samples should be considered contaminated and, consequently, how it impacts benchmark scores. We propose that these questions should be addressed together and that contamination metrics can be assessed based on whether models benefit from the examples they mark contaminated. We propose",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ee039e6501ee",
+      "title": "A Technical Typology of AI Systems in Public Administration",
+      "abstract_600": "Research on artificial intelligence (AI) in the public sector often treats \"AI\" as a single category, neglecting technical distinctions between different AI systems. But these distinctions affect how different systems impact core public values like accountability, procedural justice, and non-discrimination. This paper argues that public administration research would benefit from more technical precision on \"AI\" and makes three contributions to this end. First, we introduce a typology of five categories of AI systems: hand-coded, glass-box, black-box, general-purpose, and agentic systems. We ca",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "248a0b70e950",
+      "title": "Is There a Reproducibility Crisis? On the Need for Evidence-based Approaches",
+      "abstract_600": "ABSTRACT The \u2018Sixth Report\u2014Reproducibility and Research Integrity\u2019 (UK House of Commons Science, Innovation and Technology Committee 2023. \u2018Sixth Report\u2014Reproducibility and Research Integrity\u2019) (\u2018The Report\u2019) recommends measures designed to tackle an alleged \u2018reproducibility crisis\u2019 in scientific research. Our systematic analysis of the content of this report revealed that its findings and recommendations are consistent with the scientific literature, including the acknowledgement that conclusive evidence demonstrating the existence of a \u2018reproducibility crisis\u2019 is lacking. Though conceding th",
+      "year": 2025,
+      "venue": "International Studies in the Philosophy of Science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ef949b272f6a",
+      "title": "Boreas Road Trip: A Multi-Sensor Autonomous Driving Dataset on Challenging Roads",
+      "abstract_600": "The Boreas Road Trip (Boreas-RT) dataset extends the multi-season Boreas dataset to new and diverse locations that pose challenges for modern autonomous driving algorithms. Boreas-RT comprises 60 sequences collected over 9 real-world routes, totalling 643 km of driving. Each route is traversed multiple times, enabling evaluation in identical environments under varying traffic and, in some cases, weather conditions. The data collection platform includes a 5MP FLIR Blackfly S camera, a 360 degree Navtech RAS6 Doppler-enabled spinning radar, a 128-channel 360 degree Velodyne Alpha Prime lidar, an",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e4207dd46c33",
+      "title": "ClosureBench: A Constructive Benchmark for Compositional Graph Reasoning",
+      "abstract_600": "We introduce ClosureBench, a constructive benchmark for compositional graph-relational reasoning with programmatically verified ground truth. Unlike fixed-test-set benchmarks vulnerable to data contamination, ClosureBench generates instances on demand: each task's reference answer is computed by executing a program in the Ein tensor-logic language, ensuring machine-verified correctness. The benchmark spans 26 task categories at three compositional levels (L1-L3), with difficulty controlled along three independent axes: graph size, edge density, and query depth. We evaluate models from 1.5B ope",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e47443d7273d",
+      "title": "The Rise of Agentic AI: A Review of Definitions, Frameworks, Architectures, Applications, Evaluation Metrics, and Challenges",
+      "abstract_600": "Agentic AI systems are a recently emerged and important approach that goes beyond traditional AI, generative AI, and autonomous systems by focusing on autonomy, adaptability, and goal-driven reasoning. This study provides a clear review of agentic AI systems by bringing together their definitions, frameworks, and architectures, and by comparing them with related areas like generative AI, autonomic computing, and multi-agent systems. To do this, we reviewed 143 primary studies on current LLM-based and non-LLM-driven agentic systems and examined how they support planning, memory, reflection, and",
+      "year": 2025,
+      "venue": "Future Internet",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "19c63c038ddd",
+      "title": "When Good and Reproducible Results are a Giant with Feet of Clay: The Importance of Software Quality in NLP",
+      "abstract_600": "Despite its crucial role in research experiments, code correctness is often presumed solely based on the perceived quality of results.This assumption, however, comes with the risk of erroneous outcomes and, in turn, potentially misleading findings.To mitigate this risk, we posit that the current focus on reproducibility should go hand in hand with the emphasis on software quality.We support our arguments with a case study in which we identify and fix three bugs in widely used implementations of the state-ofthe-art Conformer architecture.Through experiments on speech recognition and translation",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7dc32ad0d57b",
+      "title": "Evaluating text classification: A benchmark study",
+      "abstract_600": null,
+      "year": 2024,
+      "venue": "Expert Systems with Applications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "da3f07662d51",
+      "title": "Genomic data in the All of Us Research Program",
+      "abstract_600": "Abstract Comprehensively mapping the genetic basis of human disease across diverse individuals is a long-standing goal for the field of human genetics 1\u20134 . The All of Us Research Program is a longitudinal cohort study aiming to enrol a diverse group of at least one million individuals across the USA to accelerate biomedical research and improve human health 5,6 . Here we describe the programme\u2019s genomics data release of 245,388 clinical-grade genome sequences. This resource is unique in its diversity as 77% of participants are from communities that are historically under-represented in biomed",
+      "year": 2024,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5c9a090f25fa",
+      "title": "Why Do AI Agents Systematically Fail at Cloud Root Cause Analysis?",
+      "abstract_600": "Failures in large-scale cloud systems incur substantial financial losses, making automated Root Cause Analysis (RCA) essential for operational stability. Recent efforts leverage Large Language Model (LLM) agents to automate this task, yet existing systems exhibit low detection accuracy even with capable models, and current evaluation frameworks assess only final answer correctness without revealing why the agent's reasoning failed. This paper presents a process level failure analysis of LLM-based RCA agents. We execute the full OpenRCA benchmark across five LLM models, producing 1,675 agent ru",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    }
+  ]
+}

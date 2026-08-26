@@ -1,0 +1,257 @@
+{
+  "batch": "05",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "170b300b7aed",
+      "title": "RAGTruth: A Hallucination Corpus for Developing Trustworthy Retrieval-Augmented Language Models",
+      "abstract_600": "Cheng Niu, Yuanhao Wu, Juno Zhu, Siliang Xu, KaShun Shum, Randy Zhong, Juntong Song, Tong Zhang. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "08eb40941dc1",
+      "title": "Faithful LLM-Assisted Question Answering for Technical and Academic Search",
+      "abstract_600": "Technology scouting and competitive intelligence increasingly rely on rapid access to scientific and technical evidence. Large language models (LLMs) are reshaping question answering by enabling users to express exploratory and evolving information needs in natural language. However, their usefulness is limited by hallucinations, weak calibration, poor abstention when evidence is missing, and the cost of keeping knowledge up to date. In such settings, the key question is whether LLM-generated answers can be trusted for decision support, that is, whether they are faithful to available evidence,",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c27202190423",
+      "title": "CTIFoundry: An Agent-Native Corpus Scaffold for Cyber Threat Intelligence",
+      "abstract_600": "Cyber threat intelligence (CTI) is increasingly consumed not by human analysts but by LLM agents that compose multi-step investigations at query time. The harness side of this shift has matured rapidly (planning loops, tool protocols, context management), but the corpus side has not: threat reports and vulnerability databases are still packaged for retrieval-augmented generation, as opaque chunks behind an embedding index. We argue that this substrate, not model capability, is the bottleneck on agentic CTI investigation, and present CTIFoundry, an agent-native corpus scaffold. At build time, C",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5151c5453ca3",
+      "title": "GraphCheck: Breaking Long-Term Text Barriers with Extracted Knowledge Graph-Powered Fact-Checking",
+      "abstract_600": "Large language models (LLMs) are widely used, but they often generate subtle factual errors, especially in long-form text. These errors are fatal in some specialized domains such as medicine. Existing fact-checking with grounding documents methods face two main challenges: (1) they struggle to understand complex multihop relations in long documents, often overlooking subtle factual errors; (2) most specialized methods rely on pairwise comparisons, requiring multiple model calls, leading to high resource and computational costs. To address these challenges, we propose GraphCheck, a fact-checkin",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f250b9094261",
+      "title": "Impact of extraction techniques on phytochemical composition and bioactivity of natural product mixtures",
+      "abstract_600": "Extraction methods critically influence the phytochemical profile and bioactivity of natural product mixtures, affecting their efficacy as therapeutic agents. This review assesses the impact of various extraction techniques-such as solvent-based extraction, ultrasound-assisted extraction, and enzymatic extraction-on the composition of bioactive compounds in plant extracts. We discuss how extraction parameters modify the bioactivity profiles, influencing their application in pharmaceutics and nutrition. This review critically analyzes these techniques with a special focus on integrated (hybrid)",
+      "year": 2025,
+      "venue": "Frontiers in Pharmacology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6314a2894f5d",
+      "title": "Evaluation of Large Language Model Performance and Reliability for Citations and References in Scholarly Writing: Cross-Disciplinary Study",
+      "abstract_600": "BACKGROUND: Large language models (LLMs) have gained prominence since the release of ChatGPT in late 2022. OBJECTIVE: The aim of this study was to assess the accuracy of citations and references generated by ChatGPT (GPT-3.5) in two distinct academic domains: the natural sciences and humanities. METHODS: Two researchers independently prompted ChatGPT to write an introduction section for a manuscript and include citations; they then evaluated the accuracy of the citations and Digital Object Identifiers (DOIs). Results were compared between the two disciplines. RESULTS: Ten topics were included,",
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b80fec1678fe",
+      "title": "Take It Easy: Label-Adaptive Self-Rationalization for Fact Verification and Explanation Generation",
+      "abstract_600": "Fact verification is a crucial process in journalism for combating disinformation. Computational methods to aid journalists in the task often require adapting a model to specific domains and generating explanations. However, most automated fact-checking methods rely on three-class datasets, which do not accurately reflect real-world misinformation. Moreover, fact-checking explanations are often generated based on text summarization of evidence, failing to address the relationship between the claim and the evidence. To address these issues, we extend the self-rationalization method\u2014typically us",
+      "year": 2024,
+      "venue": "International Workshop on Information Forensics and Security",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "134a6c31c11c",
+      "title": "When Retrieval Helps and Distracts: Evaluating Evidence-Generating LLMs for Biomedical Claim Verification",
+      "abstract_600": "Biomedical fact-checking systems must do more than predict whether a claim is supported, contradicted, or unaddressed: they should also produce evidence that is faithful, complete, and useful for verification. We study this evidence-generation setting on CARE-XAI, a unified benchmark spanning five biomedical and health fact-checking sources. We compare base instruction LLMs, PubMed retrieval-augmented LLMs, fine-tuned LLMs, label-only LLMs, and biomedical encoder classifiers under a shared evaluation protocol. Biomedical classifiers remain strongest for verdict-only prediction, while fine-tune",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "251e25f8b91d",
+      "title": "On A Scale From 1 to 5: Quantifying Hallucination in Faithfulness Evaluation",
+      "abstract_600": "Hallucination has been a popular topic in natural language generation (NLG).In real-world applications, unfaithful content can result in poor data quality or loss of trust from end users.Thus, it is crucial to fact-check before adopting NLG for production usage, which can be expensive if done manually.In this paper, we investigate automated faithfulness evaluation in guided NLG.We developed a rubric template and used large language models (LLMs) to score the generation on quantifiable scales.We compared popular LLMs as well as widely adopted natural language inference (NLI) models in scoring q",
+      "year": 2025,
+      "venue": "North American Chapter of the Association for Computational Linguistics",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "a0109a3bf863",
+      "title": "OmniPilot: An Uncertainty-Aware LLM Inference Advisor for Heterogeneous GPU Clusters",
+      "abstract_600": "Serving large language models (LLMs) on a shared, heterogeneous GPU cluster requires users and operators to select the GPU type, tensor-parallel degree, and precision before committing valuable node-hours. Making these choices is challenging because effective throughput, launch-success rates, and cluster demand and utilization continuously fluctuate. Furthermore, static configuration recipes miss critical interactions: quantization effects depend heavily on the model family, key-value cache pressure creates size-by-precision trade-offs, and failure rates vary by more than twofold across differ",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f7fd6281853c",
+      "title": "Retrieval-Augmented Generation (RAG)",
+      "abstract_600": "The necessity for information is a fundamental aspect of human nature, and as such, there are ongoing efforts to enhance information retrieval with information systems (Alavi and Leidner 2001 ; Alavi et al. 2024 ). Companies are particularly affected by this, as they have extensive data at their disposal, and employees need to access it. Unfortunately, current systems are not able to adequately meet employees\u2019 expectations. In fact, studies have shown that 79% of employees are dissatisfied with the user interfaces of enterprise search systems (Cleverley and Burnett 2019 ). This has led to a ne",
+      "year": 2025,
+      "venue": "Business & Information Systems Engineering",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "480d5c568a9b",
+      "title": "Going beyond the untold facts in PLS\u2013SEM and moving forward",
+      "abstract_600": "Purpose This paper aims to discuss recent criticism related to partial least squares structural equation modeling (PLS-SEM). Design/methodology/approach Using a combination of literature reviews, empirical examples, and simulation evidence, this research demonstrates that critical accounts of PLS-SEM paint an overly negative picture of PLS-SEM\u2019s capabilities. Findings Criticisms of PLS-SEM often generalize from boundary conditions with little practical relevance to the method\u2019s general performance, and disregard the metrics and analyses (e.g., Type I error assessment) that are important when a",
+      "year": 2024,
+      "venue": "European Journal of Marketing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "82b1b1af5bba",
+      "title": "Extending FKG.in: Towards A Food Claim Traceability Network",
+      "abstract_600": "The global food landscape is rife with scientific, cultural, and commercial claims about what foods are, what they do, what they should not do, or should not do. These range from rigorously studied health benefits (probiotics improve gut health) and misrepresentations (soaked almonds make one smarter) to vague promises (superfoods boost immunity) and culturally rooted beliefs (cold foods cause coughs). Despite their widespread influence, the infrastructure for tracing, verifying, and contextualizing these claims remains fragmented and underdeveloped. In this paper, we propose a Food Claim-Trac",
+      "year": 2025,
+      "venue": "Proceedings of the 1st International Workshop on Multi-modal Food Computing",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "e1dda34676a9",
+      "title": "Rate, Explain and Cite (REC): Enhanced Explanation and Attribution in Automatic Evaluation by Large Language Models",
+      "abstract_600": "LLMs have demonstrated impressive proficiency in generating coherent and high-quality text, making them valuable across a range of text-generation tasks. However, rigorous evaluation of this generated content is crucial, as ensuring its quality remains a significant challenge due to persistent issues such as factual inaccuracies and hallucination. This paper introduces three fine-tuned general-purpose LLM autoevaluators, REC-8B, REC-12B and REC-70B, specifically designed to evaluate generated text across several dimensions: faithfulness, instruction following, coherence, and completeness. Thes",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bb8ea3983e1c",
+      "title": "RefinedRust: A Type System for High-Assurance Verification of Rust Programs",
+      "abstract_600": "Rust is a modern systems programming language whose ownership-based type system statically guarantees memory safety, making it particularly well-suited to the domain of safety-critical systems. In recent years, a wellspring of automated deductive verification tools have emerged for establishing functional correctness of Rust code. However, none of the previous tools produce foundational proofs (machine-checkable in a generalpurpose proof assistant), and all of them are restricted to the safe fragment of Rust. This is a problem because the vast majority of Rust programs make use of unsafe code",
+      "year": 2024,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "00670bbcea8e",
+      "title": "Argumentative Large Language Models for Explainable and Contestable Claim Verification",
+      "abstract_600": "The profusion of knowledge encoded in large language models (LLMs) and their ability to apply this knowledge zero-shot in a range of settings makes them promising candidates for use in decision-making. However, they are currently limited by their inability to provide outputs which can be faithfully explained and effectively contested to correct mistakes. In this paper, we attempt to reconcile these strengths and weaknesses by introducing \\emph{argumentative LLMs (ArgLLMs)}, a method for augmenting LLMs with argumentative reasoning. Concretely, ArgLLMs construct argumentation frameworks, which",
+      "year": 2025,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "e7df55ca2c54",
+      "title": "MultiHal: Multilingual Dataset for Knowledge-Graph Grounded Evaluation of LLM Hallucinations",
+      "abstract_600": "Large Language Models (LLMs) have inherent limitations of faithfulness and factuality, commonly referred to as hallucinations. Several benchmarks have been developed that provide a test bed for factuality evaluation within the context of English-centric datasets, while relying on supplementary informative context like web links or text passages but ignoring the available structured factual resources. To this end, Knowledge Graphs (KGs) have been identified as a useful aid for hallucination mitigation, as they provide a structured way to represent the facts about entities and their relations wi",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6ccef65e3c9e",
+      "title": "A Survey on Uncertainty Quantification of Large Language Models: Taxonomy, Open Research Challenges, and Future Directions",
+      "abstract_600": "The remarkable performance of large language models (LLMs) in content generation, coding, and common-sense reasoning has spurred widespread integration into many facets of society. However, integration of LLMs raises valid questions on their reliability and trustworthiness, given their propensity to generate hallucinations: plausible, factually-incorrect responses, which are expressed with striking confidence. Previous work has shown that hallucinations and other non-factual responses generated by LLMs can be detected by examining the uncertainty of the LLM in its response to the pertinent pro",
+      "year": 2025,
+      "venue": "ACM Computing Surveys",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "b8ee9ea5cf2f",
+      "title": "MissDiag: Diagnostic Evaluation of Incomplete-Knowledge Robustness in KGQA and KG-RAG",
+      "abstract_600": "Knowledge graph question answering (KGQA) and knowledge-graph-based retrieval-augmented generation (KG-RAG) aim to ground answers in explicit graph evidence, but real-world knowledge graphs are often sparse, outdated, and incomplete. Existing robustness evaluations usually report aggregate changes in answer quality after evidence is removed or perturbed, which measures sensitivity to incomplete support but leaves the source of degradation under-specified: the same score change can conflate the type of missing evidence, the response of the evaluated system, and the sensitivity of the answer-mat",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6e1fe37aceef",
+      "title": "FACTors: A New Dataset for Studying the Fact-checking Ecosystem",
+      "abstract_600": "Our fight against false information is spearheaded by fact-checkers. They investigate the veracity of claims and document their findings as fact-checking reports. With the rapid increase in the amount of false information circulating online, the use of automation in fact-checking processes aims to strengthen this ecosystem by enhancing scalability. Datasets containing fact-checked claims play a key role in developing such automated solutions. However, to the best of our knowledge, there is no fact-checking dataset at the ecosystem level, covering claims from a sufficiently long period of time",
+      "year": 2025,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "14d58315f880",
+      "title": "AutoSynthesis: An agentic system for automated meta-analysis",
+      "abstract_600": "Evidence synthesis is crucial for turning primary research into reliable knowledge for science, medicine, education, and policy. Yet, quantitative evidence synthesis remains largely manual and difficult to scale. Here, we introduce AutoSynthesis, an end-to-end multi-agent system for automated meta-analysis. Given a research question in natural language, AutoSynthesis formulates a search strategy, retrieves scientific literature, screens candidate studies, assesses full-text eligibility, extracts quantitative statistics, computes standardized effect sizes, and finally performs random-effects me",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "70c7ceb5697f",
+      "title": "SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration",
+      "abstract_600": "Recent advances in Tool-Integrated Large Language Models have made web search a core capability of information-seeking agents. However, as interaction histories grow, agents increasingly struggle to track task progress. When search attempts fail to yield useful evidence, current single- and multi-agent systems can become trapped in repetitive loops, wasting search budgets and ultimately compromising the quality and completeness of the final output. We introduce SearchOS, a system-level multi-agent framework that turns fragile, implicit search progress into explicit, persistent, and shared stat",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9dbeba44d918",
+      "title": "Evaluating Language Models for Biomedical Fact-Checking: A Benchmark Dataset for Cancer Variant Interpretation Verification",
+      "abstract_600": "Accurate interpretation of genomic variants is critical for precision oncology but remains slow and dependent on specialized expertise. Public knowledgebases such as the Clinical Interpretation of Variants in Cancer (CIViC) help by curating literature-backed variant interpretations in a structured form, yet verification and review have become major bottlenecks. To address this, we developed CIViC-Fact, a benchmark dataset and pipeline for testing automated systems that verify the accuracy of cancer variant claims. CIViC-Fact links structured claims to sentence-level supporting or refuting evid",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9fde965d07b8",
+      "title": "Tracing the Cascade: A Topology-Aware Evaluation Framework for Scientific Agent Hallucinations",
+      "abstract_600": "Large language model (LLM) agents are increasingly deployed in scientific research, where reliability is critical and the underlying knowledge is densely interconnected. In such settings, hallucinations are particularly damaging: a single erroneous claim on a foundational concept can propagate through multi-step reasoning and corrupt entire trajectories. Existing hallucination benchmarks largely operate at the surface level, treating facts in isolation and relying on uniform accuracy metrics that ignore this topological structure. We address this gap with SCHEMA, the first evidence-grounded, t",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "234f9bb4c8d1",
+      "title": "Does Fine-Tuning LLMs on New Knowledge Encourage Hallucinations?",
+      "abstract_600": "When large language models are aligned via supervised fine-tuning, they may encounter new factual information that was not acquired through pre-training. It is often conjectured that this can teach the model the behavior of hallucinating factually incorrect responses, as the model is trained to generate facts that are not grounded in its pre-existing knowledge. In this work, we study the impact of such exposure to new knowledge on the capability of the fine-tuned model to utilize its pre-existing knowledge. To this end, we design a controlled setup, focused on closed-book QA, where we vary the",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    }
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "batch": "x01",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "bf806f0608f0",
+      "title": "BrowseComp: A Simple Yet Challenging Benchmark for Browsing Agents",
+      "abstract_600": "We present BrowseComp, a simple yet challenging benchmark for measuring the ability for agents to browse the web. BrowseComp comprises 1,266 questions that require persistently navigating the internet in search of hard-to-find, entangled information. Despite the difficulty of the questions, BrowseComp is simple and easy-to-use, as predicted answers are short and easily verifiable against reference answers. BrowseComp for browsing agents can be seen as analogous to how programming competitions are an incomplete but useful benchmark for coding agents. While BrowseComp sidesteps challenges of a t",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 4,
+      "outside_window": false
+    },
+    {
+      "cid": "9ffbe5ae04cd",
+      "title": "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning",
+      "abstract_600": "Efficiently acquiring external knowledge and up-to-date information is essential for effective reasoning and text generation in large language models (LLMs). Prompting advanced LLMs with reasoning capabilities to use search engines during inference is often suboptimal, as the LLM might not fully possess the capability on how to interact optimally with the search engine. This paper introduces Search-R1, an extension of reinforcement learning (RL) for reasoning frameworks where the LLM learns to autonomously generate (multiple) search queries during step-by-step reasoning with real-time retrieva",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "d1680321c409",
+      "title": "FrontierFinance: A Challenging Benchmark for Measuring Frontier Intelligence of Finance Agents",
+      "abstract_600": "AI agents are increasingly deployed for professional investment research, yet no benchmark captures the complexity of the full investor workflow. Existing benchmarks mainly target financial data extraction, a narrow slice that current models have largely saturated, while reference-based metrics and generic LLM-as-a-judge scoring fall short on the open-ended, long-form answers that real analyst queries demand. We introduce FrontierFinance, a fully open benchmark of 220 expert-crafted queries and 11,543 source-attributed rubrics spanning six crucial use cases across the full investor workflow. F",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "3c4b822aed33",
+      "title": "DailyReport: An Open-ended Benchmark for Evaluating Search Agents on Daily Search Tasks",
+      "abstract_600": "Search Agents (SAs) typically leverage large language models (LLMs) to support complex information-seeking tasks by autonomously exploring web sources and synthesizing information into comprehensive responses. For SAs evaluation, prior benchmarks mainly focus on specialized tasks that are unlikely to arise in real-world user scenarios. Moreover, their reliance on coarse task-level rubrics often limits evaluation interpretability. To bridge this gap, we introduce DailyReport, an open-ended benchmark to evaluate SA capabilities on daily search tasks. It contains 150 open-ended tasks with 3,546 a",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "8a78fe51b7f8",
+      "title": "On-Device Deep Research at 4B: Exposure Bounds Faithfulness, Retrieval Bounds Coverage",
+      "abstract_600": "On-device research agents search a corpus, read sources, and write a cited brief on a personal laptop. Whether their citations are faithful, and at what cost, is unmeasured for a deployable small model. This study fixes one 4B generator on a 24 GB laptop and asks what makes its citations faithful. It separates two quantities usually reported as one number. Cited claim faithfulness asks whether the cited source supports the claim. Trustworthy coverage asks whether the agent also cites the right sources. The study crosses how much of each source the generator sees, 400 against 1500 characters, w",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "610497d031fe",
+      "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+      "abstract_600": "In this work, we introduce the Qwen3 Embedding series, a significant advancement over its predecessor, the GTE-Qwen series, in text embedding and reranking capabilities, built upon the Qwen3 foundation models. Leveraging the Qwen3 LLMs' robust capabilities in multilingual text understanding and generation, our innovative multi-stage training pipeline combines large-scale unsupervised pre-training with supervised fine-tuning on high-quality datasets. Effective model merging strategies further ensure the robustness and adaptability of the Qwen3 Embedding series. During the training process, the",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "903243aaff42",
+      "title": "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence",
+      "abstract_600": "We present a preview version of DeepSeek-V4 series, including two strong Mixture-of-Experts (MoE) language models -- DeepSeek-V4-Pro with 1.6T parameters (49B activated) and DeepSeek-V4-Flash with 284B parameters (13B activated) -- both supporting a context length of one million tokens. DeepSeek-V4 series incorporate several key upgrades in architecture and optimization: (1) a hybrid attention architecture that combines Compressed Sparse Attention (CSA) and Heavily Compressed Attention (HCA) to improve long-context efficiency; (2) Manifold-Constrained Hyper-Connections (mHC) that enhance conve",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "a92031c9b062",
+      "title": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering",
+      "abstract_600": "Language model (LM) agents are increasingly being used to automate complicated tasks in digital environments. Just as humans benefit from powerful software applications, such as integrated development environments, for complex tasks like software engineering, we posit that LM agents represent a new category of end users with their own needs and abilities, and would benefit from specially-built interfaces to the software they use. We investigate how interface design affects the performance of language model agents. As a result of this exploration, we introduce SWE-agent: a system that facilitat",
+      "year": 2024,
+      "venue": "Advances in Neural Information Processing Systems 37",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "acec9e867f16",
+      "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+      "abstract_600": "One of the grand challenges of artificial general intelligence is developing agents capable of conducting scientific research and discovering new knowledge. While frontier models have already been used as aides to human scientists, e.g. for brainstorming ideas, writing code, or prediction tasks, they still conduct only a small part of the scientific process. This paper presents the first comprehensive framework for fully automatic scientific discovery, enabling frontier large language models to perform research independently and communicate their findings. We introduce The AI Scientist, which",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "19fc6a1ae182",
+      "title": "WebSailor: Navigating Super-human Reasoning for Web Agent",
+      "abstract_600": "Transcending human cognitive limitations represents a critical frontier in LLM training. Proprietary agentic systems like DeepResearch have demonstrated superhuman capabilities on extremely complex information-seeking benchmarks such as BrowseComp, a feat previously unattainable. We posit that their success hinges on a sophisticated reasoning pattern absent in open-source models: the ability to systematically reduce extreme uncertainty when navigating vast information landscapes. Based on this insight, we introduce WebSailor, a complete post-training methodology designed to instill this crucia",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f875afb8f2f4",
+      "title": "BrowseComp-ZH: Benchmarking Web Browsing Ability of Large Language Models in Chinese",
+      "abstract_600": "As large language models (LLMs) evolve into tool-using agents, the ability to browse the web in real-time has become a critical yardstick for measuring their reasoning and retrieval competence. Existing benchmarks such as BrowseComp concentrate on English and overlook the linguistic, infrastructural, and censorship-related complexities of other major information ecosystems -- most notably Chinese. To address this gap, we introduce BrowseComp-ZH, a high-difficulty benchmark purpose-built to comprehensively evaluate LLM agents on the Chinese web. BrowseComp-ZH consists of 289 multi-hop questions",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "0bf8f356a21c",
+      "title": "PaSa: An LLM Agent for Comprehensive Academic Paper Search",
+      "abstract_600": "We introduce PaSa, an advanced Paper Search agent powered by large language models. PaSa can autonomously make a series of decisions, including invoking search tools, reading papers, and selecting relevant references, to ultimately obtain comprehensive and accurate results for complex scholar queries. We optimize PaSa using reinforcement learning with a synthetic dataset, AutoScholarQuery, which includes 35k fine-grained academic queries and corresponding papers sourced from top-tier AI conference publications. Additionally, we develop RealScholarQuery, a benchmark collecting real-world academ",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "4c9a5949d53c",
+      "title": "ReportBench: Evaluating Deep Research Agents via Academic Survey Tasks",
+      "abstract_600": "The advent of Deep Research agents has substantially reduced the time required for conducting extensive research tasks. However, these tasks inherently demand rigorous standards of factual accuracy and comprehensiveness, necessitating thorough evaluation before widespread adoption. In this paper, we propose ReportBench, a systematic benchmark designed to evaluate the content quality of research reports generated by large language models (LLMs). Our evaluation focuses on two critical dimensions: (1) the quality and relevance of cited literature, and (2) the faithfulness and veracity of the stat",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "fda994edd103",
+      "title": "DeepScholar-Bench: A Live Benchmark and Automated Evaluation for Generative Research Synthesis",
+      "abstract_600": "The ability to research and synthesize knowledge is central to human expertise and progress. A new class of AI systems--designed for generative research synthesis--aims to automate this process by retrieving information from the live web and producing long-form, cited reports. Yet, evaluating such systems remains an open challenge: existing question-answering benchmarks focus on short, factual answers, while expert-curated datasets risk staleness and data contamination. Neither captures the complexity and evolving nature of real research synthesis tasks. We introduce DeepScholar-bench, a live",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "87c281a40b89",
+      "title": "Characterizing Deep Research: A Benchmark and Formal Definition",
+      "abstract_600": "Information tasks such as writing surveys or analytical reports require complex search and reasoning, and have recently been grouped under the umbrella of \\textit{deep research} -- a term also adopted by recent models targeting these capabilities. Despite growing interest, the scope of the deep research task remains underdefined and its distinction from other reasoning-intensive problems is poorly understood. In this paper, we propose a formal characterization of the deep research (DR) task and introduce a benchmark to evaluate the performance of DR systems. We argue that the core defining fea",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "47d2e695c530",
+      "title": "S1-DeepResearch: Beyond Search, Toward Real-World Long-Horizon Research Agents",
+      "abstract_600": "Deep research agents aim to solve complex knowledge-intensive tasks through long-horizon planning, evidence gathering, reasoning, and report generation. While recent progress in search agents has demonstrated strong capabilities in information retrieval and answer verification, most existing training datasets remain search-centric, focusing primarily on closed-ended question answering and information localization. As a result, they mainly train information-seeking behavior while providing limited coverage of key deep research capabilities, including evidence integration, knowledge synthesis, p",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ff64e7640390",
+      "title": "Time to REFLECT: Can We Trust LLM Judges for Evidence-based Research Agents?",
+      "abstract_600": "Deep research agents increasingly automate complex information-seeking tasks, producing evidence-grounded reports via multi-step reasoning, tool use, and synthesis. Their growing role demands scalable, reliable evaluation, positioning LLM-as-judge as a supervision paradigm for assessing factual accuracy, evidence use, and reasoning quality. Yet the reliability of these judges for deep research agents remains poorly understood, posing a critical meta-evaluation problem: before deploying LLM judges to supervise research agents, we must first evaluate the judges themselves. Existing meta-evaluati",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "00ac85d7018a",
+      "title": "DEEPRUBRIC: Evidence-Tree Rubric Supervision for Efficient Reinforcement Learning of Deep Research Agents",
+      "abstract_600": "Deep research agents synthesize long-form reports by searching and reasoning over retrieved evidence. Reinforcement learning with rubric-based rewards improves these agents by optimizing them against checkable criteria that translate report quality into reward signals, but its efficiency depends on whether those criteria reliably capture the task scope and evidence needs. Most existing studies ask an LLM to generate rubrics for a given query, but when the model fails to infer the underlying information needs, the generated rubrics may be incomplete and reduce RL efficiency. To obtain more reli",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "17f01a85fde0",
+      "title": "Metis: Memory Foundation Model",
+      "abstract_600": "Recent advances in AI agents have increasingly internalized native capabilities into their underlying foundation models, giving rise to multimodal foundation models and large reasoning models. However, agent memory is still primarily implemented through external modules, leaving the native memory capability largely unexplored. In this paper, we take a first step toward this direction by introducing memory foundation models, which empower foundation models with native memory capabilities. We formalize native memory from two perspectives: a persistent and dynamically evolving memory state within",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "8f468da40990",
+      "title": "ICBCBench: An Industry Consortium Benchmark for Financial Deep Research",
+      "abstract_600": "With the rapid advancement of Deep Research Agents in knowledge-intensive domains such as finance, establishing reliable and domain-aligned evaluation standards remains a critical challenge. Existing benchmarks focus on either closed-ended question answering or open-ended report evaluation, failing to jointly capture retrieval-reasoning accuracy and end-to-end research quality required in real-world workflows. We introduce ICBCBench, a consortium-driven benchmark for financial deep research, developed in collaboration with domain experts from a broad range of financial institutions and academi",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "baf8f73b2294",
+      "title": "SearchArt: Training Long-Horizon Search Agent with Scalable Synthetic and Verified Task",
+      "abstract_600": "Recent advances in large language models (LLMs) have enabled search agents to autonomously tackle complex tasks across extended search and reasoning horizons. However, training effective search agents remains challenging due to the lack of scalable and long-horizon tasks, and the difficulty of evaluating and correcting intermediate reasoning and tool-use behaviors. We introduce SearchArt, a scalable framework for training long-horizon search agents through verification-driven task synthesis and a multi-stage post-training pipeline. SearchArt constructs large-scale datasets for complex search-,",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "346f2ae4ff78",
+      "title": "From Simple QA to Deep Research: A Verifiable Benchmark Constructed through Iterative Task Evolution",
+      "abstract_600": "Deep research benchmarks require expert-level tasks and reliable evaluation grounded in task-specific knowledge. Existing benchmarks rely heavily on expert authoring or pre-existing human-authored materials, while fully automatic construction struggles to ensure consistent and traceable verification. To address this gap, we introduce a verifiable benchmark of 500 deep research tasks spanning 31 topics and 10 major categories, with three query forms designed to probe complementary capabilities required for deep research. The benchmark is constructed automatically using an iterative Explorer-For",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "94f4197c83c8",
+      "title": "Fetch-then-Explore: Decoupling Selection from Extraction over a Persistent Workspace for Search Agents",
+      "abstract_600": "Search agents now answer questions that take dozens of searches to settle, yet how such an agent reads a page has drawn far less attention than how it finds one. Nearly all of them use one of two document interfaces, and both tie a page to the moment it is opened. \\emph{Visit-and-read} injects a reading of the page into the message history at fetch time, fixing that reading before the agent knows which fact it will need. Stateful \\emph{browsing} instead extracts on demand from the page in hand, but holds one page at a time and releases it as soon as the agent opens another. Either way, a page",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "8035d89e2711",
+      "title": "HiEviDR-Bench: A Benchmark for Hierarchical Evidence Aggregation in Deep Research",
+      "abstract_600": "Deep research requires models to retrieve, connect, and synthesize evidence from large-scale heterogeneous sources to answer complex queries and produce analytical reports. Existing benchmarks mainly evaluate final outcomes, such as answer correctness, report quality, or citation alignment, while providing limited visibility into whether evidence is correctly selected, linked, and aggregated into supported claims and conclusions. To address this gap, we introduce HiEviDR-Bench, a benchmark for evaluating Hierarchical Evidence Aggregation in Deep Research. HiEviDR-Bench covers open-domain and a",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "1aff9e1d9a0d",
+      "title": "Regression Models and Life-Tables",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

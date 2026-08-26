@@ -1,0 +1,78 @@
+{
+ "label": "t2-R40-O1-rep1",
+ "run_dir": "runs/p11-t2/R40/O1/rep1/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 41.1,
+ "cost_usd": 0.2689,
+ "input_tokens": 11655,
+ "output_tokens": 3047,
+ "thinking_tokens": 1749,
+ "n_scored": 10,
+ "in_window_n": 10,
+ "foundational_n": 0,
+ "precision_ge2_in_window": 1.0,
+ "mean_score_in_window": 2.8,
+ "foundational_scores": [],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "2cbca1abbe99",
+   "score": 3,
+   "reason": "Directly answers Q2 by decomposing which agentic moves carry the gain: recall quality, not search effort, predicts accuracy, and reformulation helps while redundant querying does not — mechanism-level attribution with a fixed retriever, exactly what C2 asks for."
+  },
+  {
+   "rank": 2,
+   "cid": "112765f8f03e",
+   "score": 3,
+   "reason": "The canonical answer to Q1: quantifies the single-query BM25 vs dense retriever recall gap (24.8% recall@5) on real literature-search queries, plus reranking gains (C3) and a documented benchmark-construction method (C4)."
+  },
+  {
+   "rank": 3,
+   "cid": "60fd922117d2",
+   "score": 3,
+   "reason": "Fixed-corpus benchmark that explicitly disentangles retriever contribution from agent contribution, with quantified BM25 baseline (3.86%) vs dense retriever numbers — hits C1 and C4 squarely even though the domain is deep-research QA rather than lit search proper."
+  },
+  {
+   "rank": 4,
+   "cid": "aac7d9e865ef",
+   "score": 2,
+   "reason": "Survey/taxonomy with a genuine critique of benchmark limitations (metric misalignment, restricted knowledge access) relevant to Q3, but it quantifies nothing and attributes no gains — useful map, not decision-moving evidence."
+  },
+  {
+   "rank": 5,
+   "cid": "dc6612fba47a",
+   "score": 3,
+   "reason": "The strongest C5 evidence in the list: shows per-query corpus curation inflated measured agentic performance, with recall collapsing from 84.3% to 21.4% on an uncurated corpus — exactly the premise-challenging result Q4 asks the scan to reach for."
+  },
+  {
+   "rank": 6,
+   "cid": "7051edb85a10",
+   "score": 3,
+   "reason": "Directly in the brief's domain with a detailed expert-labeled benchmark construction (ScholarQABench, C4) and quantified gains from a retrieval-plus-self-feedback design over plain LLMs, informing Q2 and Q3."
+  },
+  {
+   "rank": 7,
+   "cid": "625aeeca9085",
+   "score": 3,
+   "reason": "Agentic literature-retrieval system benchmarked against Google Scholar as a single-query baseline (C1) with the gain tied to intent-refinement and planning-retrieval separation (C2); key_finding is supported by the abstract, though the claimed mechanisms lack a visible ablation."
+  },
+  {
+   "rank": 8,
+   "cid": "3b89edf4b85c",
+   "score": 3,
+   "reason": "Isolates citation-graph traversal as the mechanism (C2) with a bounded, inspectable design that beats open-loop agents on LitSearch at lower cost — also usefully complicates the premise that open-ended agentic loops are what carries the gain."
+  },
+  {
+   "rank": 9,
+   "cid": "0bf8f356a21c",
+   "score": 3,
+   "reason": "Core prior work: quantifies agentic gain over Google/Google Scholar single-query baselines (recall@20/@50, C1+C2) and documents construction of both a synthetic and a real-query benchmark (C4)."
+  },
+  {
+   "rank": 10,
+   "cid": "a8b83ac688d0",
+   "score": 2,
+   "reason": "Solid C3 evidence that embedding-retriever pipelines cap recall on reasoning-intensive queries and an alternative retrieval architecture, but it is general-purpose IR on BRIGHT, not attached to a literature-search agent or benchmark — relevant, not central."
+  }
+ ]
+}

@@ -1,0 +1,257 @@
+{
+  "batch": "02",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "55631ee3b5f0",
+      "title": "Provenance Erasure Rate: A Compression-Survival Metric for Attribution Loss in AI-Composed Search Outputs",
+      "abstract_600": "Research note and metric proposal. AI retrieval systems increasingly compose answers from human-authored sources. This paper introduces Provenance Erasure Rate (PER) as a metric measuring the proportion of source-dependent claims in an AI-composed output that are presented without explicit attribution. PER does not ask whether an output is true; it asks whether the sources that made the output possible remain visible inside the composition. A motivating case study documents a Google AI Overview that constructed a false biography of a living author from real fragments in the author's published",
+      "year": 2026,
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "06eb30bb9075",
+      "title": "TSVer: A Benchmark for Fact Verification Against Time-Series Evidence",
+      "abstract_600": "Reasoning over temporal and numerical data, such as time series, is a crucial aspect of fact-checking. While many systems have recently been developed to handle this form of evidence, their evaluation remains limited by existing datasets, which often lack structured evidence, provide insufficient justifications for verdicts, or rely on synthetic claims. In this paper, we introduce TSVer, a new benchmark dataset for fact verification focusing on temporal and numerical reasoning with time-series evidence. TSVer contains 304 real-world claims sourced from 41 fact-checking organizations and a cura",
+      "year": 2025,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "66b9d0725679",
+      "title": "DeepWeaver: Bridging the Evidence Synthesis Gap in Open-Ended Question Answering",
+      "abstract_600": "Retrieve-then-generate pipelines are commonly used to produce deep-research answers for open-ended questions, but retrieval alone is insufficient: LLMs must organize noisy and fragmented evidence into comprehensive, well-cited answers. We refer to this process as evidence synthesis. However, direct generation often underuses evidence, misaligns citations, and collapses diverse information into shallow summaries, exposing an evidence synthesis gap between retrieval and generation. Thus, we propose DeepWeaver, a novel framework that weaves noisy retrieved evidence into comprehensive answers by m",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "de9ce4e915b2",
+      "title": "Chain-of-Verification Reduces Hallucination in Large Language Models",
+      "abstract_600": "Generation of plausible yet incorrect factual information, termed hallucination, is an unsolved issue in large language models.We study the ability of language models to deliberate on the responses they give in order to correct their mistakes.We develop the Chain-of-Verification (COVE) method whereby the model first (i) drafts an initial response; then (ii) plans verification questions to fact-check its draft; (iii) answers those questions independently so the answers are not biased by other responses; and (iv) generates its final verified response.In experiments, we show COVE decreases halluc",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a2aea802c303",
+      "title": "Beyond Cultural Trivia: Calibrated Exemplar Retrieval, Mode-Aware Routing, and Selective Abstention for Cross-Cultural LLM Services",
+      "abstract_600": "Cross-cultural language-model services need more than high average accuracy: they need inference procedures that recognize ambiguous answer structures, communicate uncertainty, and avoid concentrating errors in underrepresented regions. This study evaluates such procedures on the 2024 public release of CulturalBench, comprising 1,227 multiple-choice questions and 4,908 option-level binary judgments from 45 countries or regions. A deterministic decision-layer test bed was used to isolate retrieval, score verification, calibration, and abstention from changes in proprietary model checkpoints. Wo",
+      "year": 2026,
+      "venue": "Stout in Humanities and Social Sciences",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "604c348148f4",
+      "title": "Who Taught the Lie? Responsibility Attribution for Poisoned Knowledge in Retrieval-Augmented Generation",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) integrates external knowledge into large language models to improve response quality. However, recent work has shown that RAG systems are highly vulnerable to poisoning attacks, where malicious texts are inserted into the knowledge database to influence model outputs. While several defenses have been proposed, they are often circumvented by more adaptive or sophisticated attacks. This paper presents RAGOrigin, a black-box responsibility attribution framework designed to identify which texts in the knowledge database are responsible for misleading or incorre",
+      "year": 2025,
+      "venue": "IEEE Symposium on Security and Privacy",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4cf25bd9b4ee",
+      "title": "Factuality challenges in the era of large language models and opportunities for fact-checking",
+      "abstract_600": null,
+      "year": 2024,
+      "venue": "Nature Machine Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "692cf44bf13b",
+      "title": "UKRAINIAN RED CROSS IN CLAIM CASES AS A SOURCE OF CURRENCY EXTRACTION FROM THE POPULATION (LATE 1920S - EARLY 1930S)",
+      "abstract_600": "Abstract: The purpose of this research is to highlight the activities of the Ukrainian Red Cross in claim cases, its interaction with international organizations and the authorities of the GPU of the Ukrainian SSR, as well as the utilization by the Soviet political regime of this humanitarian aspect of its work as one of the sources of foreign currency accumulation. The research methodology is based on the principles of objectivity, systematicity, dialectics, and historicism. The study relies on historical methods: problem-chronological, institutional, and historical anthropology (comprehensio",
+      "year": 2024,
+      "venue": "Bulletin of Mariupol State University. Series: History. Political Studies",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5cc6d41b9aeb",
+      "title": "CiteGuard: Faithful Citation Attribution for LLMs via Retrieval-Augmented Validation",
+      "abstract_600": "Large Language Models (LLMs) have emerged as powerful assistants for scientific writing. However, concerns remain about the quality and reliability of the generated text, including citation accuracy and faithfulness. While most recent work relies on methods such as LLM-as-a-Judge, the reliability of LLM-as-a-Judge alone is also in doubt. In this work, we reframe citation evaluation as a problem of citation attribution alignment, which assesses whether LLM-generated citations match those a human author would include for the same text. We propose CiteGuard, a retrieval-aware agent framework desi",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "36ac5580c168",
+      "title": "Language Models Hallucinate, but May Excel at Fact Verification",
+      "abstract_600": "Jian Guan, Jesse Dodge, David Wadden, Minlie Huang, Hao Peng. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cbcd5750e48a",
+      "title": "Explainable Generative AI (GenXAI): a survey, conceptualization, and research agenda",
+      "abstract_600": "Abstract Generative AI (GenAI) represents a shift from AI\u2019s ability to \u201crecognize\u201d to its ability to \u201cgenerate\u201d solutions for a wide range of tasks. As generated solutions and applications grow more complex and multi-faceted, new needs, objectives, and possibilities for explainability (XAI) have emerged. This work elaborates on why XAI has gained importance with the rise of GenAI and the challenges it poses for explainability research. We also highlight new and emerging criteria that explanations should meet, such as verifiability, interactivity, security, and cost considerations. To achieve t",
+      "year": 2024,
+      "venue": "Artificial Intelligence Review",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0b02518b4980",
+      "title": "A hallucination detection and mitigation framework for faithful text summarization using LLMs",
+      "abstract_600": "Recent advancements in large language models (LLMs) have significantly propelled the field of automatic text summarization. Nevertheless, the domain continues to face substantial challenges, particularly the issue of hallucination where summaries contain information not present in the source text. Such problems not only compromise the factual accuracy of summaries but also lead to diminished user satisfaction. Existing methods exhibit limitations in effectively detecting and mitigating hallucinations, often lacking transparency in their underlying mechanisms. This paper introduces a hallucinat",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b829893a5ab8",
+      "title": "What Predicts Correctness in Text-to-SQL? A Selective-Prediction Study",
+      "abstract_600": "Evaluating uncertainty in AI-generated SQL queries requires estimating whether a query is correct, where correct means it executes to the same result as a human-written reference. We study which signals predict correctness on hard multi-table text-to-SQL, using AUROC to measure how well each ranks correct queries above incorrect ones. On BIRD and Spider, black-box signals such as string, structural, and execution self-consistency, a schema-relevance score, and query executability all fall between about 0.61 and 0.68 AUROC, with string self-consistency strongest at 0.675; white-box log-probabil",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "6c28716fcf91",
+      "title": "FashionKG-RAG: Knowledge Graph-Enhanced Retrieval-Augmented Generation for Fashion Question Answering",
+      "abstract_600": "Fashion is a knowledge-intensive domain in which effective decision-making depends on integrating multiple types of knowledge. Although Large Language Models (LLMs) have transformed many areas, their application in fashion remains limited by hallucinations and weak domain specialization. Knowledge Graph (KG)-based Retrieval-Augmented Generation (RAG) offers a promising way to add structured knowledge to LLMs. However, existing fashion KGs are typically restricted to product-level attributes or item relations, and fail to capture the broader fashion ecosystem. To bridge these gaps, we propose \\",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "776758f242b1",
+      "title": "Use of Retrieval-Augmented Large Language Model Agent for Long-Form COVID-19 Fact-Checking",
+      "abstract_600": "The COVID-19 infodemic calls for scalable fact-checking solutions that handle long-form misinformation with accuracy and reliability. This study presents SAFE (system for accurate fact extraction and evaluation), an agent system that combines large language models with retrieval-augmented generation (RAG) to improve automated fact-checking of long-form COVID-19 misinformation. SAFE includes two agents - one for claim extraction and another for claim verification using LOTR-RAG, which leverages a 130,000-document COVID-19 research corpus. An enhanced variant, SAFE (LOTR-RAG + SRAG), incorporate",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a7588078a82c",
+      "title": "TRACES: A Benchmark for Epistemic Reliability in Scientific Reasoning by LLMs",
+      "abstract_600": "Large language models are being proposed as agents in scientific workflows, in domains where no downstream verifier exists. Such deployment assumes the model can distinguish reliable scientific literature from unreliable literature, a capability that has not yet been directly measured. Existing benchmarks evaluate factuality on questions with known answers; the failure mode we target here is different. We introduce a probe corpus of 42 retracted, fraudulent, and pseudoscientific papers, paired with a methodology for eliciting and scoring single-shot model engagement with each paper's framing.",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "76531caddbe7",
+      "title": "Agentic Graph Token Reasoning",
+      "abstract_600": "Graphs model relational data throughout science and industry, from citation networks to product co-purchase graphs. Because the nodes of many such graphs carry rich text, a growing line of work applies large language models (LLMs) to graph analysis. The most graph-native of these methods use graph tokens: a graph encoder compresses a graph view, such as a node, its k-hop neighbourhood, or a cluster, into a short block of continuous tokens that jointly encodes node attributes and topology and is read directly by the model. Existing methods, however, use graph tokens in a static single-shot mann",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ebb2d00875ca",
+      "title": "What Makes Medical Claims (Un)Verifiable? Analyzing Entity and Relation Properties for Fact Verification",
+      "abstract_600": "Verifying biomedical claims fails if no evidence can be discovered. In these cases, the fact-checking verdict remains unknown and the claim is unverifiable. To improve this situation, we have to understand if there are any claim properties that impact its verifiability. In this work we assume that entities and relations define the core variables in a biomedical claim\u2019s anatomy and analyze if their properties help us to differentiate verifiable from unverifiable claims. In a study with trained annotation experts we prompt them to find evidence for biomedical claims, and observe how they refine",
+      "year": 2024,
+      "venue": "Conference of the European Chapter of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "50896c8cf510",
+      "title": "GreekBarRetrieval: A Benchmark for Greek Statutory Retrieval",
+      "abstract_600": "Statutory retrieval is necessary for citation-grounded legal question answering, but remains underexplored for Greek. We introduce GreekBarRetrieval, a public retrieval benchmark derived from, and complementing GreekBarBench, which did not include retrieval. The new benchmark comprises 283 bar-exam questions, each accompanied by the facts of the case it refers to, and 6,308 candidate statutory articles to retrieve from. Questions and facts are stated in everyday language, but need to be mapped to the formal terminology of statutes and their abstract legal concepts. A further complication is th",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "916d8c239bb9",
+      "title": "MedHal-Loc: Are \"Explainable-by-Architecture\" Medical Hallucination Detectors Faithful Localizers? A Localization Benchmark",
+      "abstract_600": "Detecting hallucinations in clinical text is increasingly framed as an explainability problem: systems should not merely flag an unreliable response but point to the offending span. Architectures built around knowledge-graph (KG) triple decomposition are marketed for exactly this auditability, yet their localization ability is typically assumed rather than measured. We introduce MedHal-Loc, a benchmark and metric for localization faithfulness -- whether a detector's top-ranked error unit actually overlaps the erroneous span. The controlled subset comprises 300 PubMedQA-derived statements with",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "b707dd1d8ce4",
+      "title": "Know Your Limits: A Survey of Abstention in Large Language Models",
+      "abstract_600": "Abstract Abstention, the refusal of large language models (LLMs) to provide an answer, is increasingly recognized for its potential to mitigate hallucinations and enhance safety in LLM systems. In this survey, we introduce a framework to examine abstention from three perspectives: the query, the model, and human values. We organize the literature on abstention methods, benchmarks, and evaluation metrics using this framework, and discuss merits and limitations of prior work. We further identify and motivate areas for future research, such as whether abstention can be achieved as a meta-capabili",
+      "year": 2025,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "16a012f8e57f",
+      "title": "Model Internals-based Answer Attribution for Trustworthy Retrieval-Augmented Generation",
+      "abstract_600": "Ensuring the verifiability of model answers is a fundamental challenge for retrieval-augmented generation (RAG) in the question answering (QA) domain. Recently, self-citation prompting was proposed to make large language models (LLMs) generate citations to supporting documents along with their answers. However, self-citing LLMs often struggle to match the required format, refer to non-existent sources, and fail to faithfully reflect LLMs\u2019 context usage throughout the generation. In this work, we present MIRAGE \u2013 Model Internals-based RAG Explanations \u2013 a plug-and-play approach using model inte",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 4,
+      "outside_window": false
+    },
+    {
+      "cid": "1ad2d87f584b",
+      "title": "The Use of Artificial Intelligence in Writing Scientific Review Articles",
+      "abstract_600": "PURPOSE OF REVIEW: With the recent explosion in the use of artificial intelligence (AI) and specifically ChatGPT, we sought to determine whether ChatGPT could be used to assist in writing credible, peer-reviewed, scientific review articles. We also sought to assess, in a scientific study, the advantages and limitations of using ChatGPT for this purpose. To accomplish this, 3 topics of importance in musculoskeletal research were selected: (1) the intersection of Alzheimer's disease and bone; (2) the neural regulation of fracture healing; and (3) COVID-19 and musculoskeletal health. For each of",
+      "year": 2024,
+      "venue": "Current Osteoporosis Reports",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "1a457bfc00da",
+      "title": "Machine learning-based network intrusion detection for big and imbalanced data using oversampling, stacking feature embedding and feature extraction",
+      "abstract_600": "Abstract Cybersecurity has emerged as a critical global concern. Intrusion Detection Systems (IDS) play a critical role in protecting interconnected networks by detecting malicious actors and activities. Machine Learning (ML)-based behavior analysis within the IDS has considerable potential for detecting dynamic cyber threats, identifying abnormalities, and identifying malicious conduct within the network. However, as the number of data grows, dimension reduction becomes an increasingly difficult task when training ML models. Addressing this, our paper introduces a novel ML-based network intru",
+      "year": 2024,
+      "venue": "Journal Of Big Data",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ec20fca86fc1",
+      "title": "Generation-Time vs. Post-hoc Citation: A Holistic Evaluation of LLM Attribution",
+      "abstract_600": "Trustworthy Large Language Models (LLMs) must cite human-verifiable sources in high-stakes domains such as healthcare, law, academia, and finance, where even small errors can have severe consequences. Practitioners and researchers face a choice: let models generate citations during decoding, or let models draft answers first and then attach appropriate citations. To clarify this choice, we introduce two paradigms: Generation-Time Citation (G-Cite), which produces the answer and citations in one pass, and Post-hoc Citation (P-Cite), which adds or verifies citations after drafting. We conduct a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "batch": "r15",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "f2e90c791cc9",
+      "title": "CTFusion: A CTF-based Benchmark for LLM Agent Evaluation",
+      "abstract_600": "Recent advances in Large Language Models (LLMs) have enabled agentic systems for complex, multi-step tasks; cybersecurity is emerging as a prominent application. To evaluate such agents, researchers widely adopt Capture The Flag (CTF) benchmarks. However, current CTF benchmarks reuse existing challenges, which exposes them to data contamination and potential cheating. Notably, we confirmed these issues in practice by integrating web search tools into an existing agent. To address these limitations, we present CTFusion, a streaming evaluation framework built on Live CTFs. To achieve this, CTFus",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "442b471f513d",
+      "title": "Calibration Without Comprehension: Diagnosing the Limits of Fine-Tuning LLMs for Vulnerability Detection in Systems Software",
+      "abstract_600": "Whether LLMs scoring well on vulnerability benchmarks genuinely reason about security or merely pattern-match on contaminated data remains unresolved. We present CWE-Trace, a framework for LLM vulnerability detection built from 834 manually curated Linux kernel samples spanning 74 CWEs. The framework enforces a strict temporal split (pre-2025 historical set / post-cutoff leakage-free set), preserves context-aware vulnerable--patched pairs, and introduces two diagnostic metrics: the Directional Failure Index (DFI) and Hierarchical Distance and Direction (HDD). We evaluate eight vanilla LLMs and",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f2d5a551c2e0",
+      "title": "REKEY: Metadata-Grounded Visual-Key Regeneration for Contamination-Resilient VQA Evaluation",
+      "abstract_600": "Static visual question answering (VQA) benchmarks age quickly: Once the items leak into training corpora, scores can reflect memorization rather than genuine visual ability, thus obscuring real progress. Rebuilding high-quality benchmarks such as V*Bench requires substantial human annotation, yet each static release can quickly become another leaked artifact. We propose ReKey, a live benchmark protocol that randomly regenerates the answer-bearing local detail, or visual key, in real images at evaluation time. Using human-validated edit slots, ReKey samples fresh instances with new answers, con",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "56a578a5ce02",
+      "title": "MedHopQA: A Disease-Centered Multi-Hop Reasoning Benchmark and Evaluation Framework for LLM-Based Biomedical Question Answering",
+      "abstract_600": "Evaluating large language models (LLMs) in the biomedical domain requires benchmarks that can distinguish genuine reasoning from pattern matching and that remain discriminative as model capabilities improve. Existing biomedical question answering (QA) benchmarks are limited in this respect: multiple-choice formats allow models to succeed by answer elimination rather than inference, and widely circulated exam-style datasets are subject to performance saturation and training data contamination. Multi-hop reasoning. i.e., the ability to integrate information across multiple sources to derive an a",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "39a848122c74",
+      "title": "AgentFairBench: Do LLM Agents Discriminate When They Act?",
+      "abstract_600": "Large language model (LLM) agents increasingly take actions (screening applicants, recommending credit, triaging patients), yet fairness for LLMs is still measured by grading answers. We introduce AgentFairBench, a cheap, reproducible, multi-domain benchmark for demographic disparity in the actions of LLM agents. Grounded in a companion framework, the Bias Conduction Framework (BCF, restated here), it spans three regulator-anchored domains: hiring, lending, and medical triage. Synthetic, demographic-neutral profiles are evaluated in counterfactual matched sets that vary only a name-coded race",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c38a78fd9900",
+      "title": "LatestEval: Addressing Data Contamination in Language Model Evaluation through Dynamic and Time-Sensitive Test Construction",
+      "abstract_600": "Data contamination in evaluation is getting increasingly prevalent with the emergence of language models pre-trained on super large, automatically crawled corpora. This problem leads to significant challenges in the accurate assessment of model capabilities and generalisations. In this paper, we propose LatestEval, an automatic method that leverages the most recent texts to create uncontaminated reading comprehension evaluations. LatestEval avoids data contamination by only using texts published within a recent time window, ensuring no overlap with the training corpora of pre-trained language",
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "39ac00ea24fa",
+      "title": "Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models",
+      "abstract_600": "The rapid advancement of large reasoning models has saturated existing math benchmarks, underscoring the urgent need for more challenging evaluation frameworks. To address this, we introduce OlymMATH, a rigorously curated, Olympiad-level math benchmark comprising 350 problems, each with parallel English and Chinese versions. OlymMATH is the first benchmark to unify dual evaluation paradigms within a single suite: (1) natural language evaluation through OlymMATH-EASY and OlymMATH-HARD, comprising 200 computational problems with numerical answers for objective rule-based assessment, and (2) form",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fe7b87771f9d",
+      "title": "EvoBrowseComp: Benchmarking Search Agents on Evolving Knowledge",
+      "abstract_600": "Search Agents -- large language models augmented with search tools -- have intensified the need for future-proof evaluation benchmarks. Existing benchmarks such as BrowseComp rely on static knowledge, making them vulnerable to test-set contamination and parametric memorization. Consequently, models can achieve high scores through fact recall rather than genuine retrieval, obscuring true browsing competence via reasoning shortcuts. In this paper, we introduce EvoBrowseComp, an evolving benchmark of 400 English and 400 Chinese contamination-free complex questions synthesized via live-web travers",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

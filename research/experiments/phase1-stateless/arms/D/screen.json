@@ -1,0 +1,3662 @@
+{
+ "scores": [
+  {
+   "cid": "7d44e80c7ceb",
+   "score": 1,
+   "reason": "Structured extraction from scientific text but materials chemistry NER, not claim-evidence linking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "484f17d7c477",
+   "score": 0,
+   "reason": "bibliometric citation contribution attribution method, not LLM claim-evidence linking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f2e0ab105094",
+   "score": 0,
+   "reason": "Survey on LLM data annotation/synthesis, unrelated to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c371bbdbe781",
+   "score": 1,
+   "reason": "Medical RAG benchmark but general QA, not claim extraction/evidence grounding from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7e43a4234722",
+   "score": 1,
+   "reason": "General hallucination detection via semantic entropy, not specific to scientific claim-evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e143423e1755",
+   "score": 2,
+   "reason": "Calibration and selective abstention for LLM judges, relevant to abstention/coverage tradeoff though RAG-judge focused",
+   "criteria_hit": [
+    "C4"
+   ]
+  },
+  {
+   "cid": "9bf531c01324",
+   "score": 2,
+   "reason": "Distinguishes citation correctness from faithfulness in RAG attribution, relevant to evidence-link error taxonomy",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "0399c34c06a6",
+   "score": 0,
+   "reason": "Extracellular vesicle biology guidelines, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "444f2c23f859",
+   "score": 3,
+   "reason": "CLAIM-BENCH directly benchmarks LLM scientific claim-evidence extraction and validation",
+   "criteria_hit": [
+    "C1",
+    "C3"
+   ]
+  },
+  {
+   "cid": "f1f9c4bc1a14",
+   "score": 2,
+   "reason": "Citation evaluation framework critiquing NLI-based supportiveness proxies, relevant to evidence-link error analysis",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "3590fd45dd53",
+   "score": 1,
+   "reason": "Multi-hop fact verification debiasing, general domain not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d2f8676002ac",
+   "score": 0,
+   "reason": "Medical report patient communication task, not scientific claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "aafb7bc4f9eb",
+   "score": 0,
+   "reason": "Multimodal hallucination mitigation, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4b2c553595f8",
+   "score": 1,
+   "reason": "Uncertainty-calibrated RAG for financial forecasting, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c6d34b2cd934",
+   "score": 1,
+   "reason": "RAG context allocation and evidence utilization measurement, general not scientific claim focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e155e52aeeca",
+   "score": 3,
+   "reason": "Scientific fact-checking from full complex structured papers, addresses limitation of abstract-only benchmarks",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "245ac2371c4d",
+   "score": 2,
+   "reason": "Multi-agent LLM extracting unstated limitations from papers with evidence grounding",
+   "criteria_hit": [
+    "C1",
+    "C2"
+   ]
+  },
+  {
+   "cid": "17f6ec0eaf8d",
+   "score": 0,
+   "reason": "poisoning attacks on generative search engines in political domain, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d6920ae21863",
+   "score": 2,
+   "reason": "Diagnoses NEI benchmark construction artifacts in fact verification, informs what benchmark numbers can support.",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "5427fc3b1300",
+   "score": 2,
+   "reason": "Complex claim verification with retrieved evidence, relevant benchmark and evidence-linking work",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "b3c274fa0709",
+   "score": 1,
+   "reason": "Clinical trial summary faithfulness, not claim extraction/evidence grounding from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "52c2d39a0c42",
+   "score": 2,
+   "reason": "Tests abstention to identify LLM knowledge gaps, relevant to calibration/abstention criterion though general QA",
+   "criteria_hit": [
+    "C4"
+   ]
+  },
+  {
+   "cid": "e0c5dde953fc",
+   "score": 1,
+   "reason": "visual source attribution in RAG, general QA domain not scientific claim verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2aba00d1ebdf",
+   "score": 3,
+   "reason": "Improves evidence retrieval for scientific fact checking using SciFact benchmark, directly relevant",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "d0a1eccf1522",
+   "score": 0,
+   "reason": "Chemistry extraction of bioactive compounds, unrelated sense of extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "55631ee3b5f0",
+   "score": 1,
+   "reason": "Attribution loss metric for AI search outputs, tangential to scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "06eb30bb9075",
+   "score": 1,
+   "reason": "Fact verification benchmark for time-series evidence, general fact-checking not scientific paper claims.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "66b9d0725679",
+   "score": 1,
+   "reason": "Evidence synthesis for open-ended QA citations, adjacent but not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "de9ce4e915b2",
+   "score": 1,
+   "reason": "General hallucination reduction via self-verification, not scientific paper claim extraction specifically",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a2aea802c303",
+   "score": 1,
+   "reason": "Abstention/calibration study but for cross-cultural trivia QA, not scientific claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "604c348148f4",
+   "score": 0,
+   "reason": "RAG poisoning attribution security paper, unrelated to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4cf25bd9b4ee",
+   "score": 1,
+   "reason": "Factuality challenges and fact-checking survey, excluded domain focus, abstract missing",
+   "criteria_hit": []
+  },
+  {
+   "cid": "692cf44bf13b",
+   "score": 0,
+   "reason": "Historical Red Cross currency claims, unrelated 'claim' sense.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5cc6d41b9aeb",
+   "score": 2,
+   "reason": "Citation attribution alignment framework evaluating LLM-generated citation faithfulness",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "36ac5580c168",
+   "score": 1,
+   "reason": "LLM fact verification ability discussion, relevant vocabulary but general hallucination framing",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cbcd5750e48a",
+   "score": 0,
+   "reason": "Explainable GenAI survey, not about claim extraction or grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0b02518b4980",
+   "score": 0,
+   "reason": "summarization hallucination, not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b829893a5ab8",
+   "score": 0,
+   "reason": "Text-to-SQL correctness prediction, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6c28716fcf91",
+   "score": 0,
+   "reason": "Fashion domain knowledge graph RAG, irrelevant.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "776758f242b1",
+   "score": 1,
+   "reason": "COVID misinformation fact-checking agent, borders excluded news/social media fact-checking domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a7588078a82c",
+   "score": 2,
+   "reason": "Benchmark for LLM epistemic reliability on retracted/fraudulent scientific papers, novel construction and evaluation.",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "76531caddbe7",
+   "score": 0,
+   "reason": "Graph token reasoning for LLM graph analysis, unrelated to claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ebb2d00875ca",
+   "score": 2,
+   "reason": "analyzes what entity/relation properties make biomedical claims verifiable, human annotation study",
+   "criteria_hit": [
+    "C1"
+   ]
+  },
+  {
+   "cid": "50896c8cf510",
+   "score": 0,
+   "reason": "Legal statutory retrieval benchmark for Greek bar exams; excluded legal domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "916d8c239bb9",
+   "score": 1,
+   "reason": "Medical hallucination localization benchmark, adjacent but not scientific paper claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b707dd1d8ce4",
+   "score": 2,
+   "reason": "Survey of abstention methods and benchmarks, relevant to calibrated uncertainty trustworthiness question",
+   "criteria_hit": [
+    "C4"
+   ]
+  },
+  {
+   "cid": "16a012f8e57f",
+   "score": 2,
+   "reason": "Addresses self-citation failures like non-existent sources and unfaithful context use in RAG",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "1ad2d87f584b",
+   "score": 0,
+   "reason": "AI-assisted review article writing, not about claim extraction accuracy or evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1a457bfc00da",
+   "score": 0,
+   "reason": "Network intrusion detection ML paper, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ec20fca86fc1",
+   "score": 2,
+   "reason": "Compares generation-time vs post-hoc citation attribution paradigms for LLM trustworthiness",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "ddbcf08a874d",
+   "score": 0,
+   "reason": "EEG seizure detection classifier, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "43e31518612f",
+   "score": 2,
+   "reason": "Scientific claim verification system with retrieval evidence linking, biomedical, rigorous evaluation",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "07991f86cffe",
+   "score": 0,
+   "reason": "General survey on LLM hallucination, not focused on scientific claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d5ae196824bc",
+   "score": 0,
+   "reason": "Personality-conditioned dialogue systems, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d3480e655e4d",
+   "score": 1,
+   "reason": "Context attribution mechanism in RAG but general QA not scientific paper claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "128373449baf",
+   "score": 2,
+   "reason": "scientific fact-checking retrieval and verification framework, directly relevant to claim-evidence grounding",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "e86acc56ed0b",
+   "score": 3,
+   "reason": "LLM hypothesis/claim extraction from papers with manual validation and benchmark across models",
+   "criteria_hit": [
+    "C1",
+    "C5"
+   ]
+  },
+  {
+   "cid": "a7aeafc26492",
+   "score": 0,
+   "reason": "Instruction-following compliance benchmark, unrelated to claim-evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "99135221dc46",
+   "score": 0,
+   "reason": "Fact-checking podcast annotation tool, excluded media fact-checking domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "60a52314c94b",
+   "score": 0,
+   "reason": "agent safety runtime contracts, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "96bdae0afd2f",
+   "score": 0,
+   "reason": "Multimodal associative reasoning control, unrelated to scientific claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d1832d46d32c",
+   "score": 1,
+   "reason": "Abstention/uncertainty for multilingual MCQA, not scientific claim extraction or grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ce60898d2f94",
+   "score": 0,
+   "reason": "Synthetic oncology data QA pipeline, not claim extraction from papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cdfdc68e84dc",
+   "score": 1,
+   "reason": "LLM fact-checking of general claims, excluded domain (news-style) not scientific paper extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d4155e9b212d",
+   "score": 0,
+   "reason": "Philosophy of science abduction, unrelated to claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0f18c544ce57",
+   "score": 0,
+   "reason": "Clinical prediction model validation, unrelated to LLM claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "516895a46ea8",
+   "score": 0,
+   "reason": "EEG artifact detection survey, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ddcf6f0818da",
+   "score": 0,
+   "reason": "Survey on knowledge graphs reducing hallucinations, not scientific claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5d7a28416e5a",
+   "score": 0,
+   "reason": "General RAG hallucination mitigation framework, unrelated to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f8f13995d823",
+   "score": 1,
+   "reason": "General survey of LLM confidence calibration, not applied to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5dd9e727584d",
+   "score": 2,
+   "reason": "RAG evaluation framework relevant to citation/evidence grounding benchmark construction",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "43d4ec9a1e25",
+   "score": 2,
+   "reason": "uncertainty-gated scientific fact-checking pipeline with calibrated abstention on claims",
+   "criteria_hit": [
+    "C4",
+    "C2"
+   ]
+  },
+  {
+   "cid": "ba3478c2133e",
+   "score": 3,
+   "reason": "automated claim extraction from full papers using citances as supervision, directly on-topic",
+   "criteria_hit": [
+    "C1"
+   ]
+  },
+  {
+   "cid": "64852552c38e",
+   "score": 0,
+   "reason": "RAG architecture/embedding model engineering, unrelated to claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a66e58340880",
+   "score": 1,
+   "reason": "fact verification framework, general domain not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d2e5deb7105c",
+   "score": 0,
+   "reason": "AI benchmark methodology audit unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "57f17536e52f",
+   "score": 0,
+   "reason": "General hallucination attribution survey, unrelated to claim-evidence grounding in papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "279581c54c48",
+   "score": 0,
+   "reason": "Rubric-based LLM judging for non-verifiable tasks, no claim-evidence grounding focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3480ffa9e1c6",
+   "score": 1,
+   "reason": "RAG attribution via Shapley values, general QA not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ebb933c13698",
+   "score": 0,
+   "reason": "Transparency of medical AI radiology products, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5a6526c39ab1",
+   "score": 0,
+   "reason": "Scientific safety/misuse benchmark, unrelated to claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1807cb867114",
+   "score": 0,
+   "reason": "Bibliometrics on open access citation diversity, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e58bf9cdc721",
+   "score": 0,
+   "reason": "Verified code synthesis with Dafny, unrelated to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a5de4f51d003",
+   "score": 2,
+   "reason": "survey of claim verification in LLM era, directly covers benchmark construction and methods",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "f003a4062119",
+   "score": 1,
+   "reason": "Enterprise RAG QA system with citation verification loop, not scientific claim extraction focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4d5a3d7e529f",
+   "score": 2,
+   "reason": "provable abstention guarantees for QA, relevant to calibration/abstention trustworthiness question",
+   "criteria_hit": [
+    "C4"
+   ]
+  },
+  {
+   "cid": "5499387c31a6",
+   "score": 0,
+   "reason": "Agentic RAG failure attribution benchmark, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5bff425d97d8",
+   "score": 0,
+   "reason": "CheckThat! fact-checking lab for disinformation, excluded news fact-checking domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7e79c4c33c21",
+   "score": 0,
+   "reason": "AHA scientific statement on AI in cardiology, not about claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3c1e5f6887f9",
+   "score": 3,
+   "reason": "survey of 134 papers on evidence-based/attribution generation with unified taxonomy and benchmarks",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "94048d413949",
+   "score": 0,
+   "reason": "Image-based deepfake fact verification, unrelated domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "77be965f840d",
+   "score": 0,
+   "reason": "search-agent reward auditing for citation laundering, off-topic domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e0194162e756",
+   "score": 1,
+   "reason": "RAG hallucination detection with conformal prediction, not paper claim extraction specifically",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1a9fe744e495",
+   "score": 0,
+   "reason": "Perspective on clinical LLM implementation challenges, not claim/evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9c56d709fd55",
+   "score": 0,
+   "reason": "RAG perspective piece for healthcare generally, not claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5c73e821b670",
+   "score": 0,
+   "reason": "Fact-checking organizations and generative AI, excluded domain (news fact-checking)",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0400ccbd230c",
+   "score": 2,
+   "reason": "Repairs noisy LLM-extracted scientific reasoning graphs linking claims to evidence sources",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "8e541822cccc",
+   "score": 0,
+   "reason": "legal case retrieval, excluded domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4b09a0db960e",
+   "score": 2,
+   "reason": "Efficient fact-checking against grounding documents, relevant to evidence-link verification methodology",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "c370dce68934",
+   "score": 1,
+   "reason": "General LLM hallucination benchmark, not focused on scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "170b300b7aed",
+   "score": 1,
+   "reason": "General RAG hallucination corpus, not specific to scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "08eb40941dc1",
+   "score": 2,
+   "reason": "faithfulness and abstention for technical/academic QA with evidence grounding",
+   "criteria_hit": [
+    "C4",
+    "C2"
+   ]
+  },
+  {
+   "cid": "c27202190423",
+   "score": 0,
+   "reason": "cyber threat intelligence corpus scaffold, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5151c5453ca3",
+   "score": 1,
+   "reason": "Fact-checking long-form text via knowledge graphs, general not scientific-paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f250b9094261",
+   "score": 0,
+   "reason": "Phytochemical extraction techniques review, false friend on 'extraction'",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6314a2894f5d",
+   "score": 2,
+   "reason": "Evaluates LLM-generated citation accuracy across disciplines, relevant to citation grounding failures",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "b80fec1678fe",
+   "score": 1,
+   "reason": "Fact verification/explanation for journalism domain, excluded news fact-checking focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "134a6c31c11c",
+   "score": 2,
+   "reason": "Evaluates evidence generation faithfulness/completeness for biomedical claim verification across LLM types",
+   "criteria_hit": [
+    "C2",
+    "C5"
+   ]
+  },
+  {
+   "cid": "251e25f8b91d",
+   "score": 1,
+   "reason": "faithfulness/hallucination scoring for general NLG, not scientific claim-evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a0109a3bf863",
+   "score": 0,
+   "reason": "GPU cluster inference scheduling, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f7fd6281853c",
+   "score": 0,
+   "reason": "RAG for enterprise search, no claim-evidence linking or verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "480d5c568a9b",
+   "score": 0,
+   "reason": "PLS-SEM statistical methodology paper, unrelated to LLM claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "82b1b1af5bba",
+   "score": 1,
+   "reason": "Food claim traceability network, tangential to scientific claim-evidence linking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e1dda34676a9",
+   "score": 1,
+   "reason": "general text generation evaluation with attribution, not specific to scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bb8ea3983e1c",
+   "score": 0,
+   "reason": "Rust type system verification, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "00670bbcea8e",
+   "score": 1,
+   "reason": "Argumentative LLMs for claim verification, general not scientific-paper specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e7df55ca2c54",
+   "score": 0,
+   "reason": "knowledge-graph grounded hallucination benchmark, general not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6ccef65e3c9e",
+   "score": 1,
+   "reason": "General LLM uncertainty quantification survey, not paper-specific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b8ee9ea5cf2f",
+   "score": 0,
+   "reason": "KGQA robustness to incomplete knowledge graphs, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6e1fe37aceef",
+   "score": 0,
+   "reason": "fact-checking ecosystem dataset for news claims, not scientific paper claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "14d58315f880",
+   "score": 1,
+   "reason": "automated meta-analysis pipeline, extraction of stats not claim-evidence grounding per se",
+   "criteria_hit": []
+  },
+  {
+   "cid": "70c7ceb5697f",
+   "score": 0,
+   "reason": "multi-agent web search framework, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9dbeba44d918",
+   "score": 2,
+   "reason": "Biomedical benchmark linking structured cancer variant claims to sentence-level supporting evidence.",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "9fde965d07b8",
+   "score": 2,
+   "reason": "evidence-grounded hallucination benchmark tracing propagation in scientific agent reasoning",
+   "criteria_hit": [
+    "C3",
+    "C2"
+   ]
+  },
+  {
+   "cid": "234f9bb4c8d1",
+   "score": 1,
+   "reason": "Studies hallucination from fine-tuning on new knowledge, general not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6d534fe1bdee",
+   "score": 1,
+   "reason": "verbal confidence and abstention study but general QA, not scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ca09394b6fa4",
+   "score": 0,
+   "reason": "General RAG survey, not about claim extraction from scientific papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "172e09fdf5d3",
+   "score": 0,
+   "reason": "clinical prediction model reporting guidelines, unrelated to LLM claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "43162541b911",
+   "score": 0,
+   "reason": "Chemistry extraction techniques for botanicals, unrelated 'extraction' sense",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ea71e3251c36",
+   "score": 3,
+   "reason": "New citation attribution benchmark (REASONS) for scientific sentence-to-source matching, addresses overgeneralization",
+   "criteria_hit": [
+    "C3",
+    "C2"
+   ]
+  },
+  {
+   "cid": "190ca86ba9b7",
+   "score": 0,
+   "reason": "LLMs replacing manual annotation in software engineering, unrelated domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6e0abbc5776d",
+   "score": 1,
+   "reason": "General LLM uncertainty quantification survey, not tied to claim/evidence extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "03bff6d51a27",
+   "score": 0,
+   "reason": "General survey of hallucination across modalities, not paper claim extraction specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e0c825e2f1d8",
+   "score": 1,
+   "reason": "General LLM abstention study for hallucination reduction, not paper-claim specific.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d18fddf95aec",
+   "score": 1,
+   "reason": "Citation verification in RAG systems, general not scientific-paper claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c07da53a87ae",
+   "score": 0,
+   "reason": "long document summarization survey, not claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cdea49da481a",
+   "score": 1,
+   "reason": "Biomedical misinformation fact-checking system, closer to news/social fact-checking exclusion than paper claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "659e22c8290d",
+   "score": 1,
+   "reason": "clinical RAG entity attribution failure, not scientific claim-evidence extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4e0d5f6e02bc",
+   "score": 0,
+   "reason": "Multimodal knowledge graph construction, unrelated to claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "afdfb7910800",
+   "score": 0,
+   "reason": "literature search infrastructure for AI agents, not claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ee4f1cf0a357",
+   "score": 1,
+   "reason": "Summarization hallucination evaluation, not scientific claim-evidence linking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "eb890ee4e8f6",
+   "score": 1,
+   "reason": "Abstention framework for LLM deployment risk, general not claim-extraction specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f432e400f29d",
+   "score": 0,
+   "reason": "multimodal long document RAG agent, no claim extraction evaluation focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c5cda5ef446d",
+   "score": 0,
+   "reason": "Bibliometric survey of publisher GAI policies, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5c1c990f19e8",
+   "score": 1,
+   "reason": "paper replication tool using coding agents, adjacent but not claim-evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e4d423d3d283",
+   "score": 0,
+   "reason": "Dataset licensing audit, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9926826e37b7",
+   "score": 0,
+   "reason": "video inpainting, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "82ca698970fc",
+   "score": 2,
+   "reason": "new claim verification benchmark decomposing reasoning types, tests LLM evidence-based verification",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "050e786fe248",
+   "score": 0,
+   "reason": "cross-lingual summarisation faithfulness via NLI, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ea63f49634f3",
+   "score": 0,
+   "reason": "generic risk-aware causal gating for agents, not scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "29c8fd0aa80b",
+   "score": 0,
+   "reason": "RAG for clinical fitness guidance, unrelated to scientific claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "121556764b19",
+   "score": 0,
+   "reason": "multi-document scientific summarization, not claim-evidence extraction/verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b1fc0771a735",
+   "score": 1,
+   "reason": "Claim verification via fact extraction from evidence, but not paper-specific grounding evaluation.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "dc157564ab93",
+   "score": 2,
+   "reason": "Evaluates evidence attribution quality in generated fact-checking explanations via citation masking protocol",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "b210d98b6e64",
+   "score": 0,
+   "reason": "image-text misinformation dataset, social media domain excluded",
+   "criteria_hit": []
+  },
+  {
+   "cid": "562d076772cb",
+   "score": 2,
+   "reason": "Benchmark for hierarchical evidence aggregation and claim-conclusion linking in deep research",
+   "criteria_hit": [
+    "C3",
+    "C2"
+   ]
+  },
+  {
+   "cid": "e4d1971adb95",
+   "score": 1,
+   "reason": "Faithfulness hallucination detection, general RAG/summarization, not scientific claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "76460060db1d",
+   "score": 0,
+   "reason": "General perspective on human-LLM collaboration, no claim extraction focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d30b30fccce6",
+   "score": 1,
+   "reason": "Trust/transparency in RAG for financial domain, tangential to grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "af10a62ceec1",
+   "score": 0,
+   "reason": "Clinical trial report, unrelated to LLM claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "856c41d6e967",
+   "score": 2,
+   "reason": "Benchmark for scientific claim feasibility assessment with novel construction avoiding data leakage",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "84b54d56d46b",
+   "score": 3,
+   "reason": "Audits reliability of citation-support verifiers in agentic scientific synthesis, shows verifier disagreement/inflated metrics",
+   "criteria_hit": [
+    "C2",
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "a605f8785d87",
+   "score": 0,
+   "reason": "LLM cultural annotation pipeline, not scientific claim-evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "752402f2a368",
+   "score": 3,
+   "reason": "Citation-grounded QA benchmark on scientific papers with grounded refusal for unsupported claims",
+   "criteria_hit": [
+    "C3",
+    "C4"
+   ]
+  },
+  {
+   "cid": "4d6062960fb1",
+   "score": 0,
+   "reason": "Multimodal LLM hallucination survey, vision-language not scientific text claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cf5ae5e2c4ff",
+   "score": 2,
+   "reason": "Shows LLM abstention driven by prompt artifacts rather than genuine uncertainty, relevant to calibration trustworthiness.",
+   "criteria_hit": [
+    "C4"
+   ]
+  },
+  {
+   "cid": "96ac9cef1e2e",
+   "score": 0,
+   "reason": "educational assessment generation, not claim extraction from scientific papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "19a59b1ca69a",
+   "score": 0,
+   "reason": "slide generation from papers, not claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8c29e83cdacb",
+   "score": 1,
+   "reason": "Materials data extraction from papers, adjacent but not claim-evidence grounding focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5208f285671a",
+   "score": 2,
+   "reason": "Attribution benchmark construction using knowledge graphs for QA, relevant to benchmark methodology",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "cda158eb9ac8",
+   "score": 2,
+   "reason": "Evaluates fact verifiers, finds benchmark annotation errors substantially skew rankings across models",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "a020efa017f5",
+   "score": 3,
+   "reason": "Multimodal scientific claim verification benchmark with expert-annotated evidence across many papers, directly on-target",
+   "criteria_hit": [
+    "C3",
+    "C1"
+   ]
+  },
+  {
+   "cid": "e39f5d2f51c8",
+   "score": 1,
+   "reason": "General hallucination detection metric, not specific to scientific claim-evidence linking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "41d969489c20",
+   "score": 1,
+   "reason": "abstention benchmark but psychiatry clinical decision support, not claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f03f7b5ef5b3",
+   "score": 0,
+   "reason": "RAG in healthcare review, not about claim extraction or evidence grounding from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6d7179cc138a",
+   "score": 1,
+   "reason": "Fact-checking lab overview including scientific claims task but broad disinformation focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f6d880d038a7",
+   "score": 3,
+   "reason": "analyzes what reasoning claim-verification benchmarks actually test, exposes construction artifacts",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "06f04da9d143",
+   "score": 1,
+   "reason": "citations in preference data for reward modeling, adjacent but not claim-evidence verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "31bbe4c5e7ce",
+   "score": 0,
+   "reason": "CT metal artifact reduction benchmark, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ba9effe373ee",
+   "score": 1,
+   "reason": "general LLM uncertainty quantification, not scientific claim extraction context",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1c07e8cdf905",
+   "score": 1,
+   "reason": "Hallucination detection with NLI ensembles and abstention, general RAG not paper-claim specific.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5131d1eee2f1",
+   "score": 2,
+   "reason": "Conformal abstention method for LLM hallucination, relevant to calibrated abstention trustworthiness",
+   "criteria_hit": [
+    "C4"
+   ]
+  },
+  {
+   "cid": "3d1ed922c8c9",
+   "score": 0,
+   "reason": "Copyright protection for image RAG generation, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e7e0983544cc",
+   "score": 0,
+   "reason": "Ethics guidance for AI in research, not about claim extraction accuracy",
+   "criteria_hit": []
+  },
+  {
+   "cid": "20710dcd2fa5",
+   "score": 0,
+   "reason": "abstract categorical framework for foundation models, unclear relevance and non-specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ef66da03327b",
+   "score": 0,
+   "reason": "Citation fraud/manipulation via purchased citations, not grounding verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f4ac4a471096",
+   "score": 0,
+   "reason": "Community notes fact-checking helpfulness, excluded social media domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d6641278912b",
+   "score": 0,
+   "reason": "Fake news detection survey, excluded domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5aeb0b1a3bec",
+   "score": 0,
+   "reason": "General hallucination detection via internal states, unrelated to claim-evidence linking in papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "69afcaff1d2f",
+   "score": 1,
+   "reason": "UQ methods for human-LLM collaboration generally, not scientific claim extraction specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c7067697e3a7",
+   "score": 0,
+   "reason": "leukemia cell image classification, off-topic biomedical imaging",
+   "criteria_hit": []
+  },
+  {
+   "cid": "47c9e4c0eb53",
+   "score": 1,
+   "reason": "Medical QA atomic fact-checking, RAG-based not paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e68abb91d036",
+   "score": 0,
+   "reason": "Systematic review data extraction methodology, unrelated to LLM claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "97b9c25fbfb6",
+   "score": 1,
+   "reason": "citation verification for deep research agent web reports, not scientific paper claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "013600ff4523",
+   "score": 0,
+   "reason": "chatbot political fact-checking, excluded news/social domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "731ce4b837e2",
+   "score": 2,
+   "reason": "survey on verifying AI-generated research claims, verification gap in AI scientist systems",
+   "criteria_hit": [
+    "C2",
+    "C5"
+   ]
+  },
+  {
+   "cid": "0288abc3ac15",
+   "score": 1,
+   "reason": "general hallucination detection pipeline, not specific to scientific claim-evidence linking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c09079120b21",
+   "score": 1,
+   "reason": "general uncertainty quantification method, not specific to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2a7de046b28a",
+   "score": 0,
+   "reason": "Adversarial RAG poisoning attack, unrelated to claim extraction/grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bec9840a6e94",
+   "score": 0,
+   "reason": "AI hypothesis-generation system, not claim extraction or evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "40b310576a7e",
+   "score": 3,
+   "reason": "Expert-written benchmark covering scientific info extraction, claim verification, summarization tasks directly",
+   "criteria_hit": [
+    "C3",
+    "C1"
+   ]
+  },
+  {
+   "cid": "2d80fe41edf0",
+   "score": 1,
+   "reason": "citation fidelity framework for multi-hop QA (HotpotQA), not scientific paper claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7aef5e75502f",
+   "score": 1,
+   "reason": "Urdu fact-checking benchmark, news/general domain not scientific papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a6b1f3fcb011",
+   "score": 0,
+   "reason": "spoken dialogue fact-checking, excluded misinformation domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "34ae3d7871a3",
+   "score": 0,
+   "reason": "Conceptual analysis of hallucination definitions, not empirical claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "18ba835d5a9b",
+   "score": 1,
+   "reason": "Uncertainty quantification benchmark for QA data uncertainty, not scientific claim extraction specific.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e903b47cf1cc",
+   "score": 0,
+   "reason": "brain-to-audio reconstruction, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e53612b0dd18",
+   "score": 0,
+   "reason": "Systematic review of fact-checking/fake news in social sciences, excluded news domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "fc8d549659ad",
+   "score": 2,
+   "reason": "verifies whether paper's own methods/evidence support its claims, intra-paper claim-evidence check",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "9add97ef181b",
+   "score": 0,
+   "reason": "bibliometric mention extraction in history of philosophy, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6976e9ae54c5",
+   "score": 0,
+   "reason": "mass spectrometry metabolomics chemistry, off-topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "378e4bff2ac2",
+   "score": 2,
+   "reason": "LLM-based large-batch scientific claim verification tool using retrieval and bibliometric scoring",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "93717ba4b74f",
+   "score": 1,
+   "reason": "faithfulness metrics review for summarization/QA/MT, not scientific claim-evidence specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bb8aeb3aefe7",
+   "score": 1,
+   "reason": "Abstention in QA with context perturbations, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6d35830ba4b2",
+   "score": 0,
+   "reason": "RAG for diabetes patient education, clinical application not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7d791e7db8f1",
+   "score": 3,
+   "reason": "Tests 10 LLMs for overgeneralization bias when summarizing scientific research vs original studies",
+   "criteria_hit": [
+    "C2",
+    "C5"
+   ]
+  },
+  {
+   "cid": "b432d5efeb52",
+   "score": 0,
+   "reason": "Lithium ore extraction chemistry, wrong sense of extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "39f0d1043de5",
+   "score": 1,
+   "reason": "Multimodal fact-level attribution benchmark, general reasoning not scientific paper claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b6945a9329cd",
+   "score": 0,
+   "reason": "systems engineering V&V, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4ac1aa4ccdc1",
+   "score": 1,
+   "reason": "faithful QA small language models, general grounding not scientific claim focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d95ff997ad03",
+   "score": 0,
+   "reason": "Hallucination detection in decision-making foundation models, unrelated to paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "12349f141043",
+   "score": 1,
+   "reason": "confidence and abstention in LLMs generally, not tied to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6daffcad735c",
+   "score": 0,
+   "reason": "KG-RAG explainability method, healthcare focus, not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "277916acffc7",
+   "score": 0,
+   "reason": "multimodal long-document QA agent framework, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5557347fb861",
+   "score": 2,
+   "reason": "Large-scale scientific claim extraction dataset from NSF abstracts using LLMs; benchmark construction details.",
+   "criteria_hit": [
+    "C3",
+    "C1"
+   ]
+  },
+  {
+   "cid": "74839e322ae4",
+   "score": 2,
+   "reason": "claim-anchored attribution framework with token-level provenance for multi-document summarization, relevant to evidence linking",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "95ff99b222ff",
+   "score": 0,
+   "reason": "Formal software verification via CHC, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "34038765e06f",
+   "score": 1,
+   "reason": "general LLM factuality survey, not specific to scientific claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "891a2f373c16",
+   "score": 1,
+   "reason": "Coarse-grained hallucination detection via NLI, general RAG not paper-claim specific; no abstract.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3680940f7746",
+   "score": 0,
+   "reason": "Multimodal visual reasoning consistency, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c3399b7c5c8b",
+   "score": 0,
+   "reason": "graph node ranking method, off-topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9e751eba471a",
+   "score": 0,
+   "reason": "Wiki cross-reference navigation study for LLM agents, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8c047a45ad17",
+   "score": 0,
+   "reason": "cybersecurity SIEM data artifacts, off-topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "aec8c9e7671b",
+   "score": 2,
+   "reason": "structured inline citation generation linking claims to source/evidence, relevant to grounding",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "8ff4ad4f464e",
+   "score": 0,
+   "reason": "Journalistic fact-checking tool, excluded news/social media domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2abf3428080f",
+   "score": 0,
+   "reason": "Medical LLM safety alignment, not claim extraction or evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e71be136b58c",
+   "score": 0,
+   "reason": "dialogue summarization hallucination benchmark, not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "78dba8acc586",
+   "score": 1,
+   "reason": "General LLM confidence calibration via critique, not claim-evidence extraction specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4f6ed8c33025",
+   "score": 0,
+   "reason": "Fair ranking in RAG systems, unrelated to claim extraction accuracy",
+   "criteria_hit": []
+  },
+  {
+   "cid": "86c18956e9d7",
+   "score": 0,
+   "reason": "campus fact-checking media studies, excluded misinformation domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "09d3f0df6646",
+   "score": 0,
+   "reason": "Polymer membrane lithium extraction, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "38bc85ca45a6",
+   "score": 0,
+   "reason": "unrelated fringe philosophical framework on thought ownership",
+   "criteria_hit": []
+  },
+  {
+   "cid": "33de44697738",
+   "score": 0,
+   "reason": "Formal verification of C programs, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4250d161a24c",
+   "score": 0,
+   "reason": "Arabic NLP benchmarking, unrelated to claim extraction from scientific papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2fee451d5fd4",
+   "score": 1,
+   "reason": "self-explanation faithfulness of LLMs generally, not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b3d0299f963d",
+   "score": 1,
+   "reason": "selective prediction/abstention for QA generally, not specific to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "241f4e603165",
+   "score": 0,
+   "reason": "low-light image enhancement, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7bc7d933e422",
+   "score": 0,
+   "reason": "social media fact-checking, excluded domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c154a96d2916",
+   "score": 0,
+   "reason": "cyber defense telemetry dataset methodology, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a62a362fbb3d",
+   "score": 0,
+   "reason": "Generic document RAG chatbot system, not scientific claim extraction/grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "841633c3d3fe",
+   "score": 0,
+   "reason": "RL for formal software verification, unrelated to claim-evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1f1bcc553062",
+   "score": 2,
+   "reason": "Claim verification with inspectable decomposition traces, RL-trained; relevant to claim-evidence grounding",
+   "criteria_hit": [
+    "C2",
+    "C5"
+   ]
+  },
+  {
+   "cid": "95f5a5e49788",
+   "score": 1,
+   "reason": "General hallucination reduction framework with NLI verification, not scientific claim grounding specific.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d6de178c4779",
+   "score": 0,
+   "reason": "UI/visualization for trust calibration, not extraction accuracy or grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1c8c3e7729f5",
+   "score": 0,
+   "reason": "RAG architecture method, no claim extraction or grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e2f40bdc4298",
+   "score": 0,
+   "reason": "Media/memory politics fact-checking of historical disinformation, excluded domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b99e8657c438",
+   "score": 0,
+   "reason": "Hazelnut antioxidant extraction chemistry, unrelated sense of extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "36c3c06189aa",
+   "score": 0,
+   "reason": "legal QA citation attribution, excluded domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "812f5e44fe11",
+   "score": 0,
+   "reason": "Rust program verification, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9fc1195f8ecb",
+   "score": 3,
+   "reason": "New scientific claim verification dataset with authentic refuted claims and cross-modal evidence, directly on benchmark construction",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "3313c066f37b",
+   "score": 0,
+   "reason": "medical QA hallucination benchmark, not claim-evidence grounding in papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a5e3d73db9ec",
+   "score": 1,
+   "reason": "Multilingual abstention method for LLM knowledge gaps, not scientific claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6afc74534098",
+   "score": 1,
+   "reason": "RAG for experiment design generation, not claim extraction/verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b9acfcee7419",
+   "score": 0,
+   "reason": "entrepreneurship decision-making RCT, unrelated to LLM claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b8b1ece49c8c",
+   "score": 3,
+   "reason": "Meta-analysis of citation quotation errors in medical literature directly measures reference-claim support failures",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "61b6d04db108",
+   "score": 0,
+   "reason": "citation network disruption index bias, bibliometrics not claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "79e14121de8c",
+   "score": 0,
+   "reason": "Neural network verification proofs, unrelated domain (formal verification, not claims).",
+   "criteria_hit": []
+  },
+  {
+   "cid": "19c65df438c9",
+   "score": 1,
+   "reason": "Deep research agents for search/citation tasks, tangential to claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "81d1de02ccbd",
+   "score": 0,
+   "reason": "Hallucination mitigation in compact LLMs via data augmentation, unrelated to paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a41dbeb058b6",
+   "score": 0,
+   "reason": "Geospatial repartition uncertainty calibration, unrelated domain and empty abstract",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c295d9ed2526",
+   "score": 0,
+   "reason": "structural engineering design verification, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d40338c367b8",
+   "score": 0,
+   "reason": "Agricultural land monitoring, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3a0a09349eaf",
+   "score": 2,
+   "reason": "scientific knowledge graph extraction from papers including claims and evidence",
+   "criteria_hit": [
+    "C1"
+   ]
+  },
+  {
+   "cid": "3169b0429cb0",
+   "score": 0,
+   "reason": "software repository mining dataset metadata, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2779645a133f",
+   "score": 0,
+   "reason": "Medical imaging annotation QA, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b9bbe5149db8",
+   "score": 0,
+   "reason": "Nanomedicine literature mapping and hypothesis generation, excluded domain focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5d010eb319a8",
+   "score": 0,
+   "reason": "General review of LLM bias and hallucination, not claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5e64d5447539",
+   "score": 1,
+   "reason": "abstention in temporal QA, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "63718da9f474",
+   "score": 0,
+   "reason": "GraphRAG survey, general retrieval technique unrelated to claim grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bd9d08cfc1a7",
+   "score": 0,
+   "reason": "Anaesthesiology sustainability consensus document, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "45eb737e6f74",
+   "score": 0,
+   "reason": "Pumpkin phytochemicals food science, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "963af1049ae5",
+   "score": 0,
+   "reason": "unrelated fringe framework on group cost attribution, not NLP claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "66951f89043c",
+   "score": 1,
+   "reason": "fact-checking benchmark for news claims, excluded domain not scientific papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "07ee54799b1f",
+   "score": 2,
+   "reason": "open-domain scientific claim verification comparing knowledge sources, relevant to evidence retrieval benchmarks",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "8a058592cc77",
+   "score": 1,
+   "reason": "Multi-agent hallucination detection via debate, tangential to claim-evidence grounding in papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cdf78b26340b",
+   "score": 1,
+   "reason": "LLM abstention review but healthcare QA context, not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6c1b5ac609eb",
+   "score": 0,
+   "reason": "RAG conflict attribution framework, generic not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b21c83b8c58d",
+   "score": 1,
+   "reason": "Journalistic fact-checking evidence types, excluded news domain, no LLM claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "afb5ed989d2c",
+   "score": 1,
+   "reason": "Climate QA benchmark uses claim extraction but not focused on evidence-grounding evaluation of papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8dea525d89b7",
+   "score": 0,
+   "reason": "Agentic web search benchmark, not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "29006e741670",
+   "score": 0,
+   "reason": "formal verification of quantum programs, unrelated sense of verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "45177fcd89cf",
+   "score": 1,
+   "reason": "Claim verification for semantic query aggregates over relational data, not scientific paper claims.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "32818169e977",
+   "score": 1,
+   "reason": "Hallucination risk from internal states, general NLG not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4c0863fcf71a",
+   "score": 1,
+   "reason": "verbal confidence vs decisions, general LLM calibration not paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5c3de6229a11",
+   "score": 1,
+   "reason": "Nugget-based RAG evaluation protocol, general attribution not paper-claim extraction specific.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b28613ba832b",
+   "score": 0,
+   "reason": "climate claim fact-checking with LLMs, general fact-checking not scientific paper extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c4986ce0dd90",
+   "score": 0,
+   "reason": "Beta-glucan food chemistry review, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "408eb91e48d5",
+   "score": 0,
+   "reason": "regulatory compliance QA citation benchmark, excluded legal domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4c0ee4e60fb8",
+   "score": 0,
+   "reason": "Gastrotricha taxonomy paper, keyword mismatch",
+   "criteria_hit": []
+  },
+  {
+   "cid": "af1c358c58ff",
+   "score": 2,
+   "reason": "survey of claim verification benchmarks and pipelines, discusses construction pitfalls",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "54ae0707a228",
+   "score": 1,
+   "reason": "contextual hallucination detection via attention, general NLP not scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "185dd5a1187a",
+   "score": 1,
+   "reason": "Uncertainty-aware diagnosis system, biomedical but not paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a2565834ab8e",
+   "score": 1,
+   "reason": "neuro-symbolic RAG for QA attribution, general not scientific-paper claim focused",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7fd0bea1d6a0",
+   "score": 1,
+   "reason": "Document-level claim extraction for fact-checking, not scientific papers or evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "758f13dc1f19",
+   "score": 2,
+   "reason": "LLM agentic verification of technical claims from literature via structured triples and knowledge graphs",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "c77ca6ff7629",
+   "score": 0,
+   "reason": "Student-AI citation practices in design education, off-topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3eaa14a27cf1",
+   "score": 0,
+   "reason": "Audio dialogue fact-checking benchmark, unrelated to scientific paper claims.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c77608477dc7",
+   "score": 2,
+   "reason": "Benchmark for biomedical contradiction/context-dependent claim divergence, relevant to grounding taxonomy.",
+   "criteria_hit": [
+    "C3",
+    "C2"
+   ]
+  },
+  {
+   "cid": "614d859caf89",
+   "score": 0,
+   "reason": "Multimodal hallucination survey, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "74ffa02fc0b5",
+   "score": 0,
+   "reason": "traffic sign recognition vision task, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "12f415c77c10",
+   "score": 0,
+   "reason": "Holographic AR displays, unrelated to LLM claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "fb0035f9c7d2",
+   "score": 0,
+   "reason": "General survey on AI for unstructured document analysis, not specific to claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "486cd3aa2db1",
+   "score": 2,
+   "reason": "benchmark and pipeline for extracting relation graphs from psychology abstracts, extraction accuracy relevant",
+   "criteria_hit": [
+    "C1",
+    "C3"
+   ]
+  },
+  {
+   "cid": "c2de8a0bd3f3",
+   "score": 0,
+   "reason": "Multimodal video QA claim attribution pipeline, not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9683bec45167",
+   "score": 0,
+   "reason": "MCQA artifact analysis, unrelated to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a47f094754a8",
+   "score": 0,
+   "reason": "generative engine optimization for SEO-like citation gaming, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e5e46a8babec",
+   "score": 1,
+   "reason": "Knowledge-centric hallucination detection, generic, abstract truncated, unclear scientific-paper focus.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6aed21a3cd4a",
+   "score": 1,
+   "reason": "general hallucination mathematical framework, not paper claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "94d739bb9ddf",
+   "score": 0,
+   "reason": "general RAG corpus expansion architecture, no claim-evidence grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9210e1df322c",
+   "score": 0,
+   "reason": "Clinical consensus document on hyperkalemia management, off-topic medical guideline.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7f969ce1f9c2",
+   "score": 0,
+   "reason": "Food science omega-3 extraction, unrelated sense of extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9bc79daf0a35",
+   "score": 1,
+   "reason": "E-commerce factoid grounding, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "59a9ccc60ae2",
+   "score": 0,
+   "reason": "Multimodal misinformation fact-checking benchmark, excluded domain (news/social media).",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b9ac5abb0a81",
+   "score": 0,
+   "reason": "General LLM-in-medicine survey, not on claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8bd6542ed245",
+   "score": 0,
+   "reason": "vision-language hallucination mechanistic interpretability, unrelated to paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f8bc9ef6d092",
+   "score": 1,
+   "reason": "Uncertainty quantification heads for hallucination detection, general not paper-grounding specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "42454e67b7c5",
+   "score": 0,
+   "reason": "Attention-free architecture for language modeling, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b0255bb56729",
+   "score": 0,
+   "reason": "Surgical case report reporting guideline, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3e0d59e07306",
+   "score": 2,
+   "reason": "LLM-based claim extraction from clinical literature with evidence weighting for recommendations",
+   "criteria_hit": [
+    "C1",
+    "C2"
+   ]
+  },
+  {
+   "cid": "9acb8d5a24f4",
+   "score": 1,
+   "reason": "Doc-VQA evidence attribution benchmark but not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0af6befa03ed",
+   "score": 0,
+   "reason": "prompt design impact on annotation accuracy for social science tasks, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6cd06f1c4581",
+   "score": 0,
+   "reason": "multilingual text embedding benchmark, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "948cb9a1712d",
+   "score": 1,
+   "reason": "Long-context hallucination detection dataset, general not scientific-paper-specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cf9ddf9a75c9",
+   "score": 0,
+   "reason": "edge computing sensor fusion framework, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "768819b14117",
+   "score": 0,
+   "reason": "pixel-level visual attribution for iterative RAG, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "66a0474ead56",
+   "score": 2,
+   "reason": "Synthetic data utility for long-context claim verification benchmark construction and generalisation.",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "ef8d1febaf62",
+   "score": 0,
+   "reason": "Chemistry solvent extraction review, unrelated sense of extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "33572a44b5b7",
+   "score": 2,
+   "reason": "Knowledge-aware attribution benchmark construction for LLMs, relevant to grounding benchmark design",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "3593601573a4",
+   "score": 1,
+   "reason": "Claim verification via knowledge graphs but general text/social media, not scientific papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cac1acd8d788",
+   "score": 3,
+   "reason": "Shows scientific claim verification benchmarks fail to detect shortcut vs true compositional checking",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "183a5b30a77c",
+   "score": 1,
+   "reason": "Hallucination detection metric evaluation across models, general not claim-evidence grounding specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "34a531f9a4fa",
+   "score": 1,
+   "reason": "Conformal uncertainty for open-ended NLG generally, not specific to claim-evidence extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2a1132354dbd",
+   "score": 0,
+   "reason": "Multimodal RAG survey, not scientific claim extraction focused",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5d919d2b29be",
+   "score": 0,
+   "reason": "fact-checkers' requirements for explainability, human-factors study on news fact-checking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "802e8aeccb24",
+   "score": 2,
+   "reason": "Analyzes why multimodal LLMs fail on chart vs table evidence in scientific claim verification",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "0a6eafdf8f38",
+   "score": 1,
+   "reason": "attribution/citation generation via preference learning, generic not scientific-paper focused",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3472fcdd1943",
+   "score": 0,
+   "reason": "Digital twins verification framework, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2a0352bf5151",
+   "score": 0,
+   "reason": "Multilingual misinformation claim verification, akin to news fact-checking, excluded.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7e57ae927283",
+   "score": 1,
+   "reason": "General hallucination leaderboard across benchmarks, not scientific paper claim extraction specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a88e991e423d",
+   "score": 0,
+   "reason": "Robotic object rearrangement abstention, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "22afb689e8f7",
+   "score": 0,
+   "reason": "Vision-language market preference prediction, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b812b2960810",
+   "score": 1,
+   "reason": "linking social media claims to scientific sources, adjacent but excluded fact-checking of social media domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "45df75183e91",
+   "score": 0,
+   "reason": "Lithium extraction from brines, unrelated chemistry paper",
+   "criteria_hit": []
+  },
+  {
+   "cid": "440f24fff905",
+   "score": 0,
+   "reason": "Financial XAI explainability, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2f032605066f",
+   "score": 0,
+   "reason": "video misinformation detection, excluded social-media fact-checking domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4e0e96710787",
+   "score": 1,
+   "reason": "Citation-grounded tutoring system, not evaluation of claim extraction accuracy.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "fe67a5121367",
+   "score": 1,
+   "reason": "RAG faithfulness benchmarking, general not scientific paper claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0ab28672194a",
+   "score": 1,
+   "reason": "Conformal prediction risk control for open QA, tangential to abstention for claim trustworthiness",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b13ae5c40c4a",
+   "score": 0,
+   "reason": "Health chatbot RAG evaluation, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5a8e30c258c9",
+   "score": 0,
+   "reason": "Community Notes fact-checking on social media, excluded domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "76b6cea85c3b",
+   "score": 0,
+   "reason": "Elephant detection system, off-topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "82cbe4e6b6cf",
+   "score": 0,
+   "reason": "Retraction demographics database, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c8caed193dd8",
+   "score": 0,
+   "reason": "Brain MRI artifact detection, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4ad45b87c77b",
+   "score": 1,
+   "reason": "Claim verification over financial documents, excluded domain and no scientific paper focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "74dfb28acb39",
+   "score": 0,
+   "reason": "General LLM explainability survey, not about claim extraction or grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7c6a42152006",
+   "score": 2,
+   "reason": "Medical LLM abstention under clinical uncertainty, relevant to abstention/calibration tradeoffs",
+   "criteria_hit": [
+    "C4"
+   ]
+  },
+  {
+   "cid": "e41a22d0ceac",
+   "score": 1,
+   "reason": "RAG faithfulness robustness in requirements traceability, tangential domain not scientific claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0a7875309d0c",
+   "score": 0,
+   "reason": "Journalistic fringe fact-checking practices, excluded news domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0836d6c7f57f",
+   "score": 1,
+   "reason": "Automated survey generation with citation reliability, adjacent but focused on survey writing not claim extraction eval",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3476ad79eb68",
+   "score": 0,
+   "reason": "NoSQL database performance comparison, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d26afc51dc0c",
+   "score": 1,
+   "reason": "Fact-checking training data generation, general claims not scientific paper extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "fa3967ebc4c6",
+   "score": 3,
+   "reason": "Evidence-grounded peer review claim extraction/verification with human-verified F1 metrics on real papers.",
+   "criteria_hit": [
+    "C1",
+    "C2"
+   ]
+  },
+  {
+   "cid": "df985ada70f2",
+   "score": 0,
+   "reason": "Arabic LLM hallucination evaluation, general NLG tasks not scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0381c51331fd",
+   "score": 0,
+   "reason": "Code generation uncertainty estimation, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1468ac7638fb",
+   "score": 0,
+   "reason": "RAG for medical QA, not claim extraction/grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8b9877e2ce9e",
+   "score": 0,
+   "reason": "Multi-hop RAG QA benchmark for financial/legal/medical docs, not claim-evidence grounding for papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c585effce86d",
+   "score": 0,
+   "reason": "Radiology report information extraction scoping review, different domain and task",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9b66407a334a",
+   "score": 0,
+   "reason": "ChatGPT research quality evaluation, not claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6d8fdd1c4b8c",
+   "score": 0,
+   "reason": "Java program verification tool, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "05a4111ad2a7",
+   "score": 0,
+   "reason": "Numerical claim fact-checking benchmark, general/news domain excluded",
+   "criteria_hit": []
+  },
+  {
+   "cid": "9f32e5f48c41",
+   "score": 1,
+   "reason": "Hallucination in pruned LLM summarization, not scientific claim-evidence linking",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3bd0157bfd44",
+   "score": 1,
+   "reason": "RALM refusal capability study, tangential to abstention but not scientific claim extraction focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "27bd594053e8",
+   "score": 2,
+   "reason": "Sub-sentence citation generation for RAG verifiability, relevant to evidence-link granularity and errors",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "a44b7c91fd2b",
+   "score": 0,
+   "reason": "Document-level relation extraction, general IE not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "62d56c3d1b1f",
+   "score": 0,
+   "reason": "Document processing for financial/warranty claims, unrelated (legal/financial claims, excluded)",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7f97a042ce2a",
+   "score": 2,
+   "reason": "Disentangles citation correctness vs faithfulness in RAG, directly relevant to evidence-link error types",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "712f40824355",
+   "score": 0,
+   "reason": "LLM annotation of classroom discourse, unrelated domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "dcd6c194f176",
+   "score": 1,
+   "reason": "general fact-checking RAG system, not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "aca7174c5d98",
+   "score": 1,
+   "reason": "Theorem-prover NLI explanation verification, not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e82834e8dc16",
+   "score": 1,
+   "reason": "general LLM uncertainty quantification method, not applied to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6656a81af3de",
+   "score": 0,
+   "reason": "Graph-grounded LLM recommendation system, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ed396f2c8700",
+   "score": 0,
+   "reason": "Digital twins for archival document preservation, unrelated to claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7c6199024324",
+   "score": 0,
+   "reason": "Formal mathematics theorem proving benchmark, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "64a0b4460e5f",
+   "score": 0,
+   "reason": "RAG per-evidence-item utility framework, not scientific claim-evidence grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "02c40fc017e1",
+   "score": 0,
+   "reason": "LLM-assisted formal program verification assertions, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "257260146472",
+   "score": 3,
+   "reason": "Compact verifier for grounded claim verification, benchmarks on SciFact and LLMAggreFact with accuracy breakdowns.",
+   "criteria_hit": [
+    "C1",
+    "C3"
+   ]
+  },
+  {
+   "cid": "7abfe00f7c24",
+   "score": 1,
+   "reason": "Dialogue-level hallucination benchmark, not scientific claim-evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4b86f48cc48d",
+   "score": 0,
+   "reason": "LLM calibration for short answer grading, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3e7c3702ce3c",
+   "score": 0,
+   "reason": "RAG for radiology consultation quality, not claim/evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "404caa4dc45d",
+   "score": 0,
+   "reason": "Document layout-aware LM for multimodal understanding, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "24cc9cf2cf5a",
+   "score": 0,
+   "reason": "Perovskite solar cell materials extraction, wrong sense of extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "514ed24b80a8",
+   "score": 1,
+   "reason": "Position paper on citation mechanisms for LLM accountability, not empirical grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "5dd7b3d9ca44",
+   "score": 0,
+   "reason": "Syntactic treebank annotation conversion errors, unrelated to scientific claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e90b22b999c3",
+   "score": 1,
+   "reason": "Multi-hop RAG benchmark, general QA not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "596fa0597205",
+   "score": 1,
+   "reason": "Faithfulness/uncertainty for RAG fact-checking, general domain not scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0e6577393bf7",
+   "score": 1,
+   "reason": "Conformal abstention policies for LLMs/VLMs generally, not specific to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c2e62bbb0d5c",
+   "score": 1,
+   "reason": "Generic RAG framework proposal, no evaluation against expert annotation of claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b4c8c493812c",
+   "score": 0,
+   "reason": "Legal semantic search over court decisions, excluded legal domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3715382e79bf",
+   "score": 0,
+   "reason": "Forest management document extraction workflow, unrelated to scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f5caad7c4abf",
+   "score": 1,
+   "reason": "LLM pipeline analyzes peer review text, tangential to claim-evidence grounding evaluation.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4508022091ce",
+   "score": 1,
+   "reason": "multilingual fact-checking of news claims, excluded domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bf148137fbce",
+   "score": 1,
+   "reason": "Multi-agent debate for controversial claim verification, not scientific paper claim extraction/grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "01759a63cac0",
+   "score": 1,
+   "reason": "Hallucination evaluation for summarization, not scientific claim-evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "416905c5d3e9",
+   "score": 0,
+   "reason": "Review of LLM clinical workflow implementation, not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0e82de61761f",
+   "score": 0,
+   "reason": "Social search relevance learning, unrelated to claim extraction or evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "88220660f832",
+   "score": 0,
+   "reason": "broad survey of scientific LLMs across modalities, not focused on claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "69290ae76a26",
+   "score": 2,
+   "reason": "Tests LLM ability to extract scientific consensus/claims from large corpus, cross-domain generalisation angle.",
+   "criteria_hit": [
+    "C1",
+    "C5"
+   ]
+  },
+  {
+   "cid": "8dd1d1afd6dc",
+   "score": 1,
+   "reason": "RAG pipeline for generating review papers, adjacent but not evaluating claim extraction accuracy",
+   "criteria_hit": []
+  },
+  {
+   "cid": "81776af11615",
+   "score": 0,
+   "reason": "Differential privacy verification, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "82f649164e12",
+   "score": 0,
+   "reason": "Classroom AI cultural bias, unrelated to scientific claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "fb1cb37a806f",
+   "score": 1,
+   "reason": "Knowledge-graph hallucination evaluation, general not specific to scientific paper claims",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ac784b808424",
+   "score": 1,
+   "reason": "LLM emotion label calibration vs human disagreement, unrelated task domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f345b7ffb0b6",
+   "score": 0,
+   "reason": "general RAG systematic review, not focused on scientific claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b965358625a7",
+   "score": 0,
+   "reason": "Long-context reasoning model training recipe, not claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f22f8a0ed67c",
+   "score": 0,
+   "reason": "YOLO object detection algorithm, unrelated sense of extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "141adb8f941e",
+   "score": 0,
+   "reason": "Open-domain RAG system for QA competition, unrelated to scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "74afa94512da",
+   "score": 1,
+   "reason": "General LLM factuality evaluation framework, not paper-specific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cfbda169f5c9",
+   "score": 0,
+   "reason": "Arabic fake news detection survey, excluded fact-checking of news domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c81bd671889e",
+   "score": 1,
+   "reason": "general hallucination detection/mitigation framework, not specific to scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3dd70737f183",
+   "score": 1,
+   "reason": "General hallucination benchmark spanning many domains, scientific attribution is only one small slice",
+   "criteria_hit": []
+  },
+  {
+   "cid": "35b5a262b8ed",
+   "score": 1,
+   "reason": "RAG attribution for clinical QA shared task, not scientific paper claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3074f221b04b",
+   "score": 0,
+   "reason": "COVID fact-checking via RAG, health misinformation not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4b4b9744192c",
+   "score": 0,
+   "reason": "Historical archaeology and cultural status, unrelated to LLM claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "18276c436058",
+   "score": 0,
+   "reason": "Bibliometric analysis of breast cancer immunotherapy, off-topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "14e651ad560a",
+   "score": 0,
+   "reason": "Discourse analysis of hallucination metaphor, not empirical extraction study",
+   "criteria_hit": []
+  },
+  {
+   "cid": "fcf9c0ba41fe",
+   "score": 0,
+   "reason": "Islamic QA grounding system, unrelated domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f86e00e53ae4",
+   "score": 1,
+   "reason": "LLM-as-judge hallucination detection in summarization, tangential to scientific claim grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8dac083d577d",
+   "score": 1,
+   "reason": "ambiguity detection/calibration for QA, not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8a4be0c5daef",
+   "score": 0,
+   "reason": "Agent memory construction via RL, unrelated to claim extraction from papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4c34fad55ad0",
+   "score": 2,
+   "reason": "Scientific claim verification framework using retrieved evidence; relevant to grounding methods, though not benchmark-focused.",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "64d911508db4",
+   "score": 1,
+   "reason": "Causal claim organization framework, vague on evaluation against expert annotation.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "706f0bf07b2d",
+   "score": 0,
+   "reason": "XAI reporting guideline adoption in medical imaging, unrelated to claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3312ed06f99e",
+   "score": 0,
+   "reason": "Protein knot structure prediction, unrelated biology paper",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f0de2d65ab82",
+   "score": 0,
+   "reason": "LLM risk taxonomy survey, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e4a659036b09",
+   "score": 0,
+   "reason": "hallucination in student feedback generation, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "18ae3236f70e",
+   "score": 0,
+   "reason": "Interactive clinical reasoning benchmark, not claim extraction from papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f63720ad588c",
+   "score": 0,
+   "reason": "ontology-grounded RAG for general domain knowledge, not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ece406630949",
+   "score": 2,
+   "reason": "Fact-checking dataset with ambiguous evidence annotation, relevant benchmark construction insight.",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "e829f68d5235",
+   "score": 0,
+   "reason": "Climate health report, no abstract, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a3484645b72c",
+   "score": 1,
+   "reason": "Taxonomy of LLM misalignment/deception, broader than claim-evidence grounding in papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "3b34501ecd91",
+   "score": 3,
+   "reason": "SciFact original paper, core scientific claim verification benchmark named in brief",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "27ed8ae2ff8d",
+   "score": 3,
+   "reason": "CiteME benchmark directly on citation attribution grounding, explicitly named in brief",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "4c65857be4ba",
+   "score": 0,
+   "reason": "Llama 3 model release paper, not relevant to claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "da6cf3a8a6ee",
+   "score": 2,
+   "reason": "Detects citation hallucinations in scientific text, relevant to citation grounding verification.",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "893085de7c40",
+   "score": 1,
+   "reason": "Citation support verification but in legal domain, excluded per brief.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "dbaf0145bb8b",
+   "score": 0,
+   "reason": "Gemini 1.5 model technical report, no claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e51d9e09c189",
+   "score": 0,
+   "reason": "Phi-3 model technical report, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ab98788216b2",
+   "score": 3,
+   "reason": "PaperQA2 literature research agent evaluated against experts on retrieval/summarization/contradiction detection tasks",
+   "criteria_hit": [
+    "C1",
+    "C5"
+   ]
+  },
+  {
+   "cid": "3cd8c1eca755",
+   "score": 1,
+   "reason": "Fine-grained citation generation in long-context QA, not scientific claim-evidence grounding specifically.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ac4a6d6dee90",
+   "score": 1,
+   "reason": "Locally-attributable generation for citations, general not scientific-paper claim extraction specific",
+   "criteria_hit": []
+  },
+  {
+   "cid": "105b7c77b4c0",
+   "score": 2,
+   "reason": "benchmark for verifying citation authenticity/hallucinated references, relevant to citation grounding construction",
+   "criteria_hit": [
+    "C3"
+   ]
+  },
+  {
+   "cid": "bb5dfa202dd6",
+   "score": 1,
+   "reason": "intrinsic pretraining source citation training method, not evaluation of claim-evidence extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2824eadfc419",
+   "score": 3,
+   "reason": "benchmark for automatic attribution evaluation of claims to cited evidence",
+   "criteria_hit": [
+    "C3",
+    "C2"
+   ]
+  },
+  {
+   "cid": "4646911c2f3a",
+   "score": 3,
+   "reason": "agentic framework for detecting miscitations across full-text scientific literature",
+   "criteria_hit": [
+    "C2",
+    "C5"
+   ]
+  },
+  {
+   "cid": "4a65993dcd38",
+   "score": 2,
+   "reason": "Systematically measures citation hallucination rates across models/agents, relevant to link-error characterization.",
+   "criteria_hit": [
+    "C2",
+    "C5"
+   ]
+  },
+  {
+   "cid": "ad751b03ff2f",
+   "score": 0,
+   "reason": "Broad LLM sourcing survey covering training data provenance, not claim-evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f83c6523c99c",
+   "score": 1,
+   "reason": "Claim-evidence faithfulness in veterinary QA, adjacent domain not scientific paper extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d07af88360db",
+   "score": 2,
+   "reason": "Benchmarks LLM judges for citation support verification in deep-research systems, relevant to grounding evaluation.",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "edd71bbd003e",
+   "score": 2,
+   "reason": "Miscitation detection where references don't support claims; directly relevant to evidence-link error characterization.",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "72af10feddf6",
+   "score": 2,
+   "reason": "Multimodal scientific claim verification using figures/tables as evidence in papers.",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "e8985803b032",
+   "score": 0,
+   "reason": "Unrelated abstract theoretical compiler jargon, no connection to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "39546bba8090",
+   "score": 0,
+   "reason": "Qwen2-VL vision-language model report, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "f97b88ad25f1",
+   "score": 0,
+   "reason": "Qwen2.5 technical report, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0188e1fee048",
+   "score": 0,
+   "reason": "Multimodal vision-language model paper, unrelated to claim extraction from science",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c05a052b3a23",
+   "score": 0,
+   "reason": "Test-time compute scaling, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7277dc9f430f",
+   "score": 0,
+   "reason": "Multimodal model architecture paper, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2ae3500fdd51",
+   "score": 0,
+   "reason": "Multimodal model scaling paper, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "88a22dfdcd06",
+   "score": 0,
+   "reason": "Red-teaming benchmark for LLM safety, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "6ae7af455a0b",
+   "score": 0,
+   "reason": "Multimodal vision-language model technical report, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "acec9e867f16",
+   "score": 0,
+   "reason": "Automated scientific discovery agent, not claim extraction/verification benchmark",
+   "criteria_hit": []
+  },
+  {
+   "cid": "54e5cec02a50",
+   "score": 0,
+   "reason": "Tool-agent-user interaction benchmark, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "948578cf9b86",
+   "score": 0,
+   "reason": "Debiasing LLM auto-evaluators for instruction-following, unrelated topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2ca0e4a45bba",
+   "score": 0,
+   "reason": "Model card addendum, no content on claim extraction or grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bf806f0608f0",
+   "score": 0,
+   "reason": "Web browsing agent benchmark, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "16b4e342cdbe",
+   "score": 0,
+   "reason": "LLM self-preference bias in evaluation, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4915e3efac3e",
+   "score": 0,
+   "reason": "jailbreak robustness benchmark, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ffd948986701",
+   "score": 0,
+   "reason": "multimodal benchmark for general reasoning, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cc3f5a16b251",
+   "score": 0,
+   "reason": "LLM-as-judge evaluator model, not claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "89091b53af5e",
+   "score": 0,
+   "reason": "LLM safety moderation tool, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "de3feb1b814f",
+   "score": 0,
+   "reason": "prompt injection/instruction hierarchy security work, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7e9046c288e0",
+   "score": 0,
+   "reason": "LLM-as-judge bias quantification, unrelated to claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e6a459a84eef",
+   "score": 1,
+   "reason": "AI agent lab designing nanobodies, biomedical AI agents not claim extraction focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "df14b3713ce9",
+   "score": 0,
+   "reason": "vision piece on AI agents in biomedical discovery, not evaluation of claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7146200e926a",
+   "score": 0,
+   "reason": "jailbreak benchmark critique, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7cf1431d8d41",
+   "score": 0,
+   "reason": "CoT reasoning meta-analysis, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b26163dcef51",
+   "score": 1,
+   "reason": "Deep research agent benchmark, citation-rich reports but not claim-evidence grounding eval",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a1b69dbf9ea6",
+   "score": 0,
+   "reason": "LLM-as-judge evaluation methodology, unrelated to claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c85ecfba9117",
+   "score": 0,
+   "reason": "Benchmark subsampling for efficient LLM eval, unrelated topic",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a5f28f654c41",
+   "score": 1,
+   "reason": "Multi-agent scientific discovery system, tangential to claim extraction/grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "601b344ce025",
+   "score": 0,
+   "reason": "Multi-turn agent evaluation benchmark, unrelated to claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "28e586aac6e9",
+   "score": 0,
+   "reason": "LLM agent for data science tasks, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "dd3e45589609",
+   "score": 0,
+   "reason": "Reward model benchmark, no abstract detail relevant to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1fddd89bedc8",
+   "score": 1,
+   "reason": "Chart understanding benchmark for MLLMs, relates to scientific paper figures but not claim-evidence extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0970eef88bf3",
+   "score": 0,
+   "reason": "LLM safety refusal benchmark, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "25f1db90053e",
+   "score": 1,
+   "reason": "RAG retrieval evaluation methodology, not claim extraction/grounding from scientific papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "88c3c5f1d53e",
+   "score": 0,
+   "reason": "Latent multi-hop reasoning mechanism study, unrelated to claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "416cb4ee9971",
+   "score": 0,
+   "reason": "General RAG retrieval quality discussion, no claim extraction or grounding focus.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cee5a2d8f739",
+   "score": 2,
+   "reason": "OpenScholar synthesizes citation-backed answers from scientific literature with new benchmark ScholarQABench.",
+   "criteria_hit": [
+    "C3",
+    "C5"
+   ]
+  },
+  {
+   "cid": "edf042691ae1",
+   "score": 0,
+   "reason": "Long-context document understanding benchmark for visual/multimodal docs, unrelated to claim grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a4d60cb73e49",
+   "score": 1,
+   "reason": "Automated research generation/review, not claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bceaacd30e65",
+   "score": 0,
+   "reason": "Code generation from scientific plots, unrelated task",
+   "criteria_hit": []
+  },
+  {
+   "cid": "375cd1eb8f71",
+   "score": 3,
+   "reason": "Evaluates whether LLM-cited medical sources actually support claims, direct evidence-link error analysis",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "20a225c408f8",
+   "score": 0,
+   "reason": "Survey on LLM personalization, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cd3ea526fb54",
+   "score": 0,
+   "reason": "Legal knowledge systems proceedings, excluded domain, no abstract detail.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a4fb97deb81d",
+   "score": 0,
+   "reason": "Multi-turn RAG conversational benchmark, not scientific claim/evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "04499a8976c0",
+   "score": 0,
+   "reason": "Multi-modal document QA retrieval system, unrelated to scientific claim grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8397243c5038",
+   "score": 0,
+   "reason": "Taxonomy of model noncompliance/refusal, not claim-evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "51e406dae26a",
+   "score": 1,
+   "reason": "LLM judge calibration/selective evaluation, general not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7c47bc78d5f1",
+   "score": 0,
+   "reason": "survey on multi-turn conversational agent evaluation, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ce6a5c4681d4",
+   "score": 0,
+   "reason": "long-context benchmark on fiction books, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "111f8c6babe8",
+   "score": 0,
+   "reason": "agent benchmark for data-driven scientific discovery, no abstract detail on claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "85d8ce75b6aa",
+   "score": 0,
+   "reason": "format-following benchmark, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "bd4f6eecdc46",
+   "score": 0,
+   "reason": "multimodal long-context benchmark, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0f6f94417ce4",
+   "score": 1,
+   "reason": "chain-of-thought verifier benchmark, reasoning verification not scientific claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1ff1527fccd5",
+   "score": 1,
+   "reason": "literature review generation toolkit, tangential to claim extraction/grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ede505c44b2f",
+   "score": 0,
+   "reason": "LLM-as-judge inconsistency for NLG evaluation, unrelated to claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e19b6dde070a",
+   "score": 0,
+   "reason": "LLM denial styles user perception study, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "112765f8f03e",
+   "score": 1,
+   "reason": "literature search retrieval benchmark, not claim-evidence grounding benchmark",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1493ee0301b4",
+   "score": 0,
+   "reason": "materials science LLM limitations position paper, excluded domain focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1c23572cc886",
+   "score": 0,
+   "reason": "tool selection protocol for LLM agents, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1604d7bb469f",
+   "score": 0,
+   "reason": "AI writing support for peer review meta-reviews, not claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "193a10fed359",
+   "score": 3,
+   "reason": "benchmark for evidence-force calibration; over-generalisation/over-claiming errors in citation grounding",
+   "criteria_hit": [
+    "C2",
+    "C3"
+   ]
+  },
+  {
+   "cid": "d540bcf07d81",
+   "score": 0,
+   "reason": "mechanistic interpretability of chain-of-thought, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a93f7f0fe1f7",
+   "score": 1,
+   "reason": "table reasoning benchmark, tangential to evidence linking but not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "1ad8b6f40c5a",
+   "score": 0,
+   "reason": "LLM-as-judge biases, unrelated to claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cb36a8f91088",
+   "score": 0,
+   "reason": "long-form generation benchmark, unrelated to claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "24182dee30ba",
+   "score": 1,
+   "reason": "RAG-QA benchmark for domain robustness, general QA not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "013f5f8e8b08",
+   "score": 1,
+   "reason": "literature review summarization agent, not claim-evidence grounding evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "422099530263",
+   "score": 2,
+   "reason": "Trains LLMs to generate citations via fine-grained rewards; relevant to citation grounding quality",
+   "criteria_hit": [
+    "C2"
+   ]
+  },
+  {
+   "cid": "965549bda178",
+   "score": 0,
+   "reason": "Memory poisoning attacks in LLM agents, unrelated to claim extraction from papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8245f650854f",
+   "score": 0,
+   "reason": "Fact-checking of social media claims using Averitec, excluded domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "cae40deb9bcf",
+   "score": 0,
+   "reason": "Automated SOTA model reproduction system, unrelated to claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "470e68c2da3b",
+   "score": 0,
+   "reason": "Peer review scaffolding tool, not claim extraction/grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "8e09195e4205",
+   "score": 0,
+   "reason": "Safety alignment inference-time adaptation, unrelated to claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "0b9d8f76f33a",
+   "score": 0,
+   "reason": "Table reasoning survey, unrelated to scientific claim-evidence grounding.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c02c6d91f6fa",
+   "score": 1,
+   "reason": "General fact-checking shared task on real-world claims, not scientific papers specifically.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "d4d210ac73ca",
+   "score": 0,
+   "reason": "RAG retriever-generator relevance propagation, general IR not claim extraction.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "67c8ac455f3c",
+   "score": 0,
+   "reason": "Community notes vs fact-checkers on social media; excluded domain.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7304f1269791",
+   "score": 1,
+   "reason": "Attribution in generated text with citations, general not scientific-paper-specific.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "e838889c1cb5",
+   "score": 1,
+   "reason": "Multi-modal scientific QA benchmark, adjacent but not claim-evidence grounding focus.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "77f40f152ef3",
+   "score": 0,
+   "reason": "Tabular data LLM survey, unrelated to claim extraction from papers.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "268253e5b53d",
+   "score": 1,
+   "reason": "Attribution in contextual QA, general not scientific claim extraction specific.",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ee636c5bbe6c",
+   "score": 1,
+   "reason": "Fact-checking dataset from Wikipedia, not scientific papers, borderline exclusion but related methodology",
+   "criteria_hit": []
+  },
+  {
+   "cid": "b13f6337909b",
+   "score": 1,
+   "reason": "ALCE citation benchmark for general QA, not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7d29489aa7b6",
+   "score": 1,
+   "reason": "Citation verifiability in generative search engines, not scientific paper claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "a357a4db7515",
+   "score": 0,
+   "reason": "foundational RAG paper, general knowledge-intensive tasks not scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "2aed270d6685",
+   "score": 0,
+   "reason": "ReAct reasoning-acting framework, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "550961b6beab",
+   "score": 0,
+   "reason": "Long-document transformer architecture paper, no claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "c17a636edf90",
+   "score": 0,
+   "reason": "Biomedical domain pretraining paper, unrelated to claim extraction/grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "4ef7e5e70b1e",
+   "score": 1,
+   "reason": "Table fact verification benchmark, general NLP not scientific claim-evidence focus",
+   "criteria_hit": []
+  },
+  {
+   "cid": "26cb103a8c7f",
+   "score": 1,
+   "reason": "Public health fact-checking dataset, excluded domain (fact-checking) though claim-evidence adjacent",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7c75cad1f848",
+   "score": 1,
+   "reason": "Wikipedia entailment dataset construction, related methodology but not scientific papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "618bfb967a9f",
+   "score": 0,
+   "reason": "LLaMA model release paper, unrelated to claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "85bedb74a697",
+   "score": 0,
+   "reason": "RoBERTa pretraining paper, unrelated",
+   "criteria_hit": []
+  },
+  {
+   "cid": "83d901bfd5f4",
+   "score": 0,
+   "reason": "LLM-as-judge chatbot evaluation benchmark, unrelated to scientific claim extraction",
+   "criteria_hit": []
+  },
+  {
+   "cid": "315491a25d45",
+   "score": 0,
+   "reason": "Math word problem verifier training, unrelated domain",
+   "criteria_hit": []
+  },
+  {
+   "cid": "16ff4e52042a",
+   "score": 0,
+   "reason": "GPQA benchmark for general QA, not claim-evidence grounding",
+   "criteria_hit": []
+  },
+  {
+   "cid": "501e83bb177a",
+   "score": 0,
+   "reason": "General RAG method paper, not about scientific claim extraction/verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "7c91b11253e7",
+   "score": 0,
+   "reason": "SciBERT pretraining paper, foundational NLP model not claim extraction evaluation",
+   "criteria_hit": []
+  },
+  {
+   "cid": "de89541f3d82",
+   "score": 0,
+   "reason": "GPT-4 medical exam evaluation, not claim extraction from papers",
+   "criteria_hit": []
+  },
+  {
+   "cid": "fe8e2464f799",
+   "score": 0,
+   "reason": "RETRO retrieval-augmented pretraining, unrelated to claim verification",
+   "criteria_hit": []
+  },
+  {
+   "cid": "ad7130776cfe",
+   "score": 0,
+   "reason": "Autonomous chemistry experimentation agent, unrelated to claim extraction",
+   "criteria_hit": []
+  }
+ ]
+}

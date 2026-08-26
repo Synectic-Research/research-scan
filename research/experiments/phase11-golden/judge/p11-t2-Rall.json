@@ -1,0 +1,78 @@
+{
+ "label": "p11-t2-Rall",
+ "run_dir": "sweep/p11-t2/Rall/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 35.8,
+ "cost_usd": 0.2385,
+ "input_tokens": 11408,
+ "output_tokens": 2489,
+ "thinking_tokens": 1230,
+ "n_scored": 10,
+ "in_window_n": 10,
+ "foundational_n": 0,
+ "precision_ge2_in_window": 1.0,
+ "mean_score_in_window": 2.5,
+ "foundational_scores": [],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "2cbca1abbe99",
+   "score": 3,
+   "reason": "Decomposes agent gains into retrieval vs utilization and shows search effort is weakly tied to accuracy — directly answers Q2 (which moves carry the gain) and Q4 (where attributed gains do not hold), with held-fixed retrieval for clean attribution."
+  },
+  {
+   "rank": 2,
+   "cid": "6006ace31229",
+   "score": 2,
+   "reason": "Benchmark-construction paper with explicit contamination controls and baseline retrieval numbers — squarely satisfies C4 and touches C1, though it targets general deep-research QA rather than scientific literature search specifically."
+  },
+  {
+   "rank": 3,
+   "cid": "60fd922117d2",
+   "score": 3,
+   "reason": "Fixed-corpus benchmark that isolates retriever contribution and gives concrete simple-retriever baselines (BM25 at 3.86%) — anchors Q1 and is a model answer to Q3 on construction; the abstract fully supports the key_finding."
+  },
+  {
+   "rank": 4,
+   "cid": "dc6612fba47a",
+   "score": 3,
+   "reason": "Shows evidence recall collapsing from 84.3% to 21.4% when the curated corpus is replaced by a naturalistic one — the clearest gain-replication-failure evidence in the list, exactly what the brief's premise-testing Q4 asks the scan to reach for."
+  },
+  {
+   "rank": 5,
+   "cid": "625aeeca9085",
+   "score": 2,
+   "reason": "Agentic literature-retrieval system with a direct single-query baseline comparison (Google Scholar), informing Q1/Q2, but results are on its own self-built benchmark and gains are attributed to the whole system rather than a specific move."
+  },
+  {
+   "rank": 6,
+   "cid": "0bf8f356a21c",
+   "score": 3,
+   "reason": "The anchor agentic paper-search system: quantified recall gains over Google-based single/paraphrased-query baselines plus construction of AutoScholarQuery/RealScholarQuery — bears on Q1, Q2 and Q3 simultaneously and is the system later work builds on."
+  },
+  {
+   "rank": 7,
+   "cid": "3b89edf4b85c",
+   "score": 3,
+   "reason": "Isolates a single agentic move — bounded citation-graph traversal with entailment pruning — and shows it beats open-ended agent loops on recall@50 in a genuine literature-search setting, the cleanest mechanism attribution for Q2 in the list."
+  },
+  {
+   "rank": 8,
+   "cid": "890330c91980",
+   "score": 2,
+   "reason": "Quantifies gains from LLM query reformulation plus iterative relevance scoring over plain vector retrieval (C3, partly C2), but is evaluated on general BEIR datasets rather than literature search, so it informs the retrieval layer without touching the scholarly setting directly."
+  },
+  {
+   "rank": 9,
+   "cid": "e2c42887588f",
+   "score": 2,
+   "reason": "A working agentic scholar-search system whose headline gain is a modest 1.3-point recall margin over a strong baseline — a useful skeptical data point for Q4 and a Q1 comparison, though largely a system description with a single number."
+  },
+  {
+   "rank": 10,
+   "cid": "aac7d9e865ef",
+   "score": 2,
+   "reason": "Survey with a taxonomy of DR-agent architectures and an explicit critique of benchmark limitations that speaks to Q3; useful map for a reader acting on the brief, but it decides nothing itself and reports no measurements."
+  }
+ ]
+}

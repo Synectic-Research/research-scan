@@ -1,0 +1,98 @@
+{
+  "run": {
+    "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/runs/p11-t2",
+    "slug": "p11-t2",
+    "date": "2026-08-26",
+    "brief_path": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/runs/p11-t2/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2024-01",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "standard"
+    }
+  },
+  "defaults": {
+    "window": {
+      "from": "2024-01",
+      "to": null
+    },
+    "top": 10,
+    "foundational": 2,
+    "domain": "cs",
+    "sources": [
+      "openalex",
+      "s2",
+      "arxiv"
+    ],
+    "profile": "standard"
+  },
+  "retrieval": {
+    "per_source": {
+      "openalex": {
+        "queried": 8,
+        "hits": 320,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "s2": {
+        "queried": 8,
+        "hits": 240,
+        "failed": 1,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "arxiv": {
+        "queried": 8,
+        "hits": 272,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "anon"
+      }
+    },
+    "deduped_remaining": 736,
+    "abstracts_present": 434,
+    "dropped": {
+      "retracted": 0,
+      "must_not": 2,
+      "type": 0,
+      "window": 0,
+      "preprint": 0,
+      "cap": 284
+    },
+    "cost_estimate_usd": 0.008,
+    "duration_s": 89.966
+  },
+  "retrieval_round2": null,
+  "expansion": null,
+  "expansion_round2": null,
+  "verification": null,
+  "emit": null,
+  "counts": {
+    "retrieved": 832,
+    "deduped": 450,
+    "expanded": 0,
+    "screened_ge2": 0,
+    "shortlisted": 0,
+    "ranked": 0,
+    "verified": 0,
+    "emitted": 0,
+    "wall_clock_s": null
+  },
+  "tool_version": "0.5.1",
+  "timestamps": {
+    "init.started_at": "2026-08-26T08:50:38+00:00",
+    "init.finished_at": "2026-08-26T08:50:38+00:00",
+    "retrieve.started_at": "2026-08-26T08:53:49+00:00",
+    "retrieve.finished_at": "2026-08-26T08:55:19+00:00"
+  }
+}

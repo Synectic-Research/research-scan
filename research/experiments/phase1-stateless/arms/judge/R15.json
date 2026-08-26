@@ -1,0 +1,81 @@
+{
+ "label": "R15",
+ "run_dir": "arms/rerank/R15/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 32.5,
+ "cost_usd": 0.2229,
+ "input_tokens": 11184,
+ "output_tokens": 2221,
+ "thinking_tokens": 1000,
+ "n_scored": 10,
+ "in_window_n": 8,
+ "foundational_n": 2,
+ "precision_ge2_in_window": 1.0,
+ "mean_score_in_window": 2.75,
+ "foundational_scores": [
+  3,
+  2
+ ],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "84b54d56d46b",
+   "score": 3,
+   "reason": "Shows citation-faithfulness numbers depend on verifier strictness (3-18% on identical outputs) and provides a calibrated conformal guard — directly moves the belief on what grounding benchmarks can legitimately support (C3) and how to bound trustworthiness (C4), on the very benchmarks the brief names."
+  },
+  {
+   "rank": 2,
+   "cid": "752402f2a368",
+   "score": 3,
+   "reason": "Purpose-built citation-grounding benchmark on scientific papers that rewards grounded refusal and shows citation metrics separate models where LLM-judge scores compress — hits C3, C4 and C5 with cross-model results."
+  },
+  {
+   "rank": 3,
+   "cid": "cac1acd8d788",
+   "score": 3,
+   "reason": "Demonstrates that existing claim-verification benchmarks reward a salient-constraint shortcut and cannot distinguish it from genuine verification — exactly the benchmark-inflation finding the premise asks the scan to reach for (C3, C5)."
+  },
+  {
+   "rank": 4,
+   "cid": "444f2c23f859",
+   "score": 3,
+   "reason": "Directly measures claim-evidence extraction and linking accuracy on full papers across six models and prompting strategies against annotated pairs — the closest match to question 1 (C1) in the list."
+  },
+  {
+   "rank": 5,
+   "cid": "9fc1195f8ecb",
+   "score": 3,
+   "reason": "Expert-annotated claim-verification benchmark whose refutations are built by perturbing evidence rather than claims, explicitly addressing artifact-resistant construction (C3) and exposing figure/table evidence-linking failures (C2)."
+  },
+  {
+   "rank": 6,
+   "cid": "0400ccbd230c",
+   "score": 2,
+   "reason": "Relevant to extraction failure but the 0/350 strict-gate figure measures schema/format validity of reasoning graphs, not claim accuracy against expert annotation; the why_it_matters overstates its bearing on the brief's premise, though the failure taxonomy is genuinely useful for C2."
+  },
+  {
+   "rank": 7,
+   "cid": "27ed8ae2ff8d",
+   "score": 3,
+   "reason": "Explicitly named in the brief's known papers; its 4-18% model vs 70% human accuracy on citation attribution is core evidence for how badly evidence-linking fails (C2, C3)."
+  },
+  {
+   "rank": 8,
+   "cid": "ea71e3251c36",
+   "score": 2,
+   "reason": "Benchmarks citation attribution across 12 domains with hallucination rates and a measured mitigation, informing C2/C3 — though sentence-to-title/author attribution is a step removed from claim-evidence grounding from full papers."
+  },
+  {
+   "rank": 9,
+   "cid": "b13f6337909b",
+   "score": 3,
+   "reason": "Foundational slot: ALCE is the canonical automatic citation-quality benchmark whose metrics later scientific-grounding work builds on; a newcomer reading the newer benchmarks without it would misread what citation-quality numbers mean."
+  },
+  {
+   "rank": 10,
+   "cid": "7d29489aa7b6",
+   "score": 2,
+   "reason": "Foundational slot: the canonical human audit establishing base rates of unsupported citations (51.5% sentence support) — real, worth-knowing background for citation grounding, though its web-search setting makes it less essential than ALCE for this specific list."
+  }
+ ]
+}

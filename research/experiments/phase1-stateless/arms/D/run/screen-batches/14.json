@@ -1,0 +1,257 @@
+{
+  "batch": "14",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "f8bc9ef6d092",
+      "title": "A Head to Predict and a Head to Question: Pre-trained Uncertainty Quantification Heads for Hallucination Detection in LLM Outputs",
+      "abstract_600": "Artem Shelmanov, Ekaterina Fadeeva, Akim Tsvigun, Ivan Tsvigun, Zhuohan Xie, Igor Kiselev, Nico Daheim, Caiqi Zhang, Artem Vazhentsev, Mrinmaya Sachan, Preslav Nakov, Timothy Baldwin. Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing. 2025.",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "42454e67b7c5",
+      "title": "Kathleen Writes: Autoregressive Generation and Data Scaling Without Attention",
+      "abstract_600": "Papers 1-2 of the Kathleen series showed that a byte-level, attention-free architecture built from a wavetable encoder and multi-scale reverberant state can match strong baselines on classification at ~450-700K parameters, without pretraining. We ask whether the same ingredients can generate. (1) Scaling: on byte-level language modeling (WikiText-103, raw UTF-8, no tokenizer), the reverberant model beats a parameter-matched transformer at every dataset scale measured (2-512 MB), e.g. 1.84 vs 2.04 bits/byte at 512 MB with ~0.5M parameters; the transformer needs more than 512 MB to match what th",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b0255bb56729",
+      "title": "Revised Surgical CAse REport (SCARE) Guideline: An Update for the Age of Artificial Intelligence",
+      "abstract_600": "INTRODUCTION Artificial intelligence (AI) is rapidly transforming healthcare and scientific publishing. Reporting guidelines need to be updated to consider this advance.The SCARE Guideline 2025 update introduces a new AI-focused domain to promote transparency, reproducibility, and ethical integrity in surgical case reports (SCAREs) involving AI. METHODS A Delphi consensus exercise was conducted to update the SCARE guidelines. A panel of 49 surgical and scientific experts was invited to rate proposed new items. In round 1, participants scored each item on a nine-point Likert scale and provided",
+      "year": 2025,
+      "venue": "Premier journal of science.",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3e0d59e07306",
+      "title": "Too much evidence, too little time: From text to actionable recommendations through multi-objective evidence reasoning",
+      "abstract_600": "Evidence-based clinical decision making requires specialists to identify, evaluate and synthesize relevant scientific literature. However, PubMed searches for complex clinical cases often return hundreds of publications that cannot be reviewed manually under time constraints. This study proposes SCEPTER (Single-Case Evidence-driven PubMed-To-rEcommendation Reasoner), a framework for transforming clinical case descriptions into evidence-based recommendations. SCEPTER combines PubMed retrieval, PubMedBERT semantic ranking, large language model (LLM)-based claim extraction, evidence-level weighti",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "9acb8d5a24f4",
+      "title": "CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence",
+      "abstract_600": "Multimodal Large Language Models (MLLMs) have significantly advanced document understanding, yet current Doc-VQA evaluations score only the final answer and leave the supporting evidence unchecked. This answer-only approach masks a critical failure mode: a model can land on the correct answer while grounding it in the wrong passage -- a critical risk in high-stakes domains like law, finance, and medicine, where every conclusion must be traceable to a specific source region. To address this, we introduce CiteVQA, a benchmark that requires models to return element-level bounding-box citations al",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0af6befa03ed",
+      "title": "What's in a Prompt?: A Large-Scale Experiment to Assess the Impact of Prompt Design on the Compliance and Accuracy of LLM-Generated Text Annotations",
+      "abstract_600": "Manually annotating data for computational social science tasks can be costly, time-consuming, and emotionally draining. While recent work suggests that LLMs can perform such annotation tasks in zero-shot settings, little is known about how prompt design impacts LLMs' compliance and accuracy. We conduct a large-scale multi-prompt experiment to test how model selection (GPT-4o, GPT-3.5, PaLM2, and Falcon7b) and prompt design features (definition inclusion, output type, explanation, and prompt length) impact the compliance and accuracy of LLM-generated annotations on four highly relevant and div",
+      "year": 2025,
+      "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6cd06f1c4581",
+      "title": "MMTEB: Massive Multilingual Text Embedding Benchmark",
+      "abstract_600": "Text embeddings are typically evaluated on a limited set of tasks, which are constrained by language, domain, and task diversity. To address these limitations and provide a more comprehensive evaluation, we introduce the Massive Multilingual Text Embedding Benchmark (MMTEB) - a large-scale, community-driven expansion of MTEB, covering over 500 quality-controlled evaluation tasks across 250+ languages. MMTEB includes a diverse set of challenging, novel tasks such as instruction following, long-document retrieval, and code retrieval, representing the largest multilingual collection of evaluation",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "948cb9a1712d",
+      "title": "Towards Long Context Hallucination Detection",
+      "abstract_600": "Large Language Models (LLMs) have demonstrated remarkable performance across various tasks.However, they are prone to contextual hallucination, generating information that is either unsubstantiated or contradictory to the given context.Although many studies have investigated contextual hallucinations in LLMs, addressing them in long-context inputs remains an open problem.In this work, we take an initial step toward solving this problem by constructing a dataset specifically designed for long-context hallucination detection.Furthermore, we propose a novel architecture that enables pre-trained e",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cf9ddf9a75c9",
+      "title": "CoSense-LLM: Semantics at the Edge with Cost- and Uncertainty-Aware Cloud-Edge Cooperation",
+      "abstract_600": "We present CoSense-LLM, an edge-first framework that turns continuous multimodal sensor streams (for example Wi-Fi CSI, IMU, audio, RFID, and lightweight vision) into compact, verifiable semantic tokens and coordinates with large language models under explicit latency, energy, bandwidth, and privacy constraints. CoSense-LLM has four parts: (i) SenseFusion, a lightweight encoder that aligns sensor embeddings with language and compresses them into short discrete code sequences; (ii) Edge-RAG, a local hybrid retrieval layer that grounds generation in site specific policies and notes; (iii) Prompt",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "768819b14117",
+      "title": "Chain of Evidence: Pixel-Level Visual Attribution for Iterative Retrieval-Augmented Generation",
+      "abstract_600": "Iterative Retrieval-Augmented Generation (iRAG) has emerged as a powerful paradigm for answering complex multi-hop questions by progressively retrieving and reasoning over external documents. However, current systems predominantly operate on parsed text, which creates two critical bottlenecks: (1) \\textit{Coarse-grained attribution}, where users are burdened with manually locating evidence within lengthy documents based on vague text-level citations; and (2) \\textit{Visual semantic loss}, where the conversion of visually rich documents (e.g., slides, PDFs with charts) into text discards spatia",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "66a0474ead56",
+      "title": "SynClaimEval: A Framework for Evaluating the Utility of Synthetic Data in Long-Context Claim Verification",
+      "abstract_600": "Large Language Models (LLMs) with extended context windows promise direct reasoning over long documents, reducing the need for chunking or retrieval. Constructing annotated resources for training and evaluation, however, remains costly. Synthetic data offers a scalable alternative, and we introduce SynClaimEval, a framework for evaluating synthetic data utility in long-context claim verification -- a task central to hallucination detection and fact-checking. Our framework examines three dimensions: (i) input characteristics, by varying context length and testing generalization to out-of-domain",
+      "year": 2025,
+      "venue": "Proceedings of the 5th Workshop on Evaluation and Comparison of NLP Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ef8d1febaf62",
+      "title": "Supramolecular deep eutectic solvents in extraction processes: a review",
+      "abstract_600": "Abstract Solvent selection is essential for industrial and analytical extraction processes to ensure environmental safety and neutrality. Nevertheless, toxic and hazardous solvents are often used, due to their cost-effectiveness and ready availability. In green chemistry, alternative solvents such as supramolecular deep eutectic solvents are gaining attention due to their superior performance compared with traditional non-green solvents in certain applications. Here we review the use of supramolecular deep eutectic solvents as a green solvent for analytical and industrial liquid\u2013liquid extract",
+      "year": 2024,
+      "venue": "Environmental Chemistry Letters",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "33572a44b5b7",
+      "title": "Towards Verifiable Generation: A Benchmark for Knowledge-aware Language Model Attribution",
+      "abstract_600": "Although achieving great success, Large Language Models (LLMs) usually suffer from unreliable hallucinations.Although language attribution can be a potential solution, there are no suitable benchmarks and evaluation metrics to attribute LLMs to structured knowledge.In this paper, we define a new task of Knowledgeaware Language Model Attribution (KaLMA) that improves upon three core concerns with conventional attributed LMs.First, we extend attribution source from unstructured texts to Knowledge Graph (KG), whose rich structures benefit both the attribution performance and working scenarios.Sec",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3593601573a4",
+      "title": "ClaimVer: Explainable Claim-Level Verification and Evidence Attribution of Text Through Knowledge Graphs",
+      "abstract_600": "In the midst of widespread misinformation and disinformation through social media and the proliferation of AI-generated texts, it has become increasingly difficult for people to validate and trust information they encounter. Many fact-checking approaches and tools have been developed, but they often lack appropriate explainability or granularity to be useful in various contexts. A text validation method that is easy to use, accessible, and can perform fine-grained evidence attribution has become crucial. More importantly, building user trust in such a method requires presenting the rationale b",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cac1acd8d788",
+      "title": "When Verification Fails: How Compositionally Infeasible Claims Escape Rejection",
+      "abstract_600": "Scientific claim verification, the task of determining whether claims are entailed by scientific evidence, is fundamental to establishing discoveries in evidence while preventing misinformation. This process involves evaluating each asserted constraint against validated evidence. Under the Closed-World Assumption (CWA), a claim is accepted if and only if all asserted constraints are positively supported. We show that existing verification benchmarks cannot distinguish models enforcing this standard from models applying a simpler shortcut called salient-constraint checking, which applies CWA's",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "183a5b30a77c",
+      "title": "Evaluating Evaluation Metrics \u2013 The Mirage of Hallucination Detection",
+      "abstract_600": "Hallucinations pose a significant obstacle to the reliability and widespread adoption of language models, yet their accurate measurement remains a persistent challenge. While many task- and domain-specific metrics have been proposed to assess faithfulness and factuality concerns, the robustness and generalization of these metrics are still untested. In this paper, we conduct a large-scale empirical evaluation of 6 diverse sets of hallucination detection metrics across 4 datasets, 37 language models from 5 families, and 5 decoding methods. Our extensive investigation reveals concerning gaps in",
+      "year": 2025,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "34a531f9a4fa",
+      "title": "ConU: Conformal Uncertainty in Large Language Models with Correctness Coverage Guarantees",
+      "abstract_600": "Uncertainty quantification (UQ) in natural language generation (NLG) tasks remains an open challenge, exacerbated by the closed-source nature of the latest large language models (LLMs).This study investigates applying conformal prediction (CP), which can transform any heuristic uncertainty notion into rigorous prediction sets, to black-box LLMs in open-ended NLG tasks.We introduce a novel uncertainty measure based on self-consistency theory, and then develop a conformal uncertainty criterion by integrating the uncertainty condition aligned with correctness into the CP algorithm.Empirical evalu",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2a1132354dbd",
+      "title": "Ask in Any Modality: A Comprehensive Survey on Multimodal Retrieval-Augmented Generation",
+      "abstract_600": "Mohammad Mahdi Abootorabi, Amirhosein Zobeiri, Mahdi Dehghani, Mohammadali Mohammadkhani, Bardia Mohammadi, Omid Ghahroodi, Mahdieh Soleymani Baghshah, Ehsaneddin Asgari. Findings of the Association for Computational Linguistics: ACL 2025. 2025.",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5d919d2b29be",
+      "title": "Show Me the Work: Fact-Checkers' Requirements for Explainable Automated Fact-Checking",
+      "abstract_600": "The pervasiveness of large language models and generative AI in online media has amplified the need for effective automated fact-checking to assist fact-checkers in tackling the increasing volume and sophistication of misinformation. The complex nature of fact-checking demands that automated fact-checking systems provide explanations that enable fact-checkers to scrutinise their outputs. However, it is unclear how these explanations should align with the decision-making and reasoning processes of fact-checkers to be effectively integrated into their workflows. Through semi-structured interview",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "802e8aeccb24",
+      "title": "Encoded but Not Routed: Explaining the Table-Chart Gap in Scientific Claim Verification",
+      "abstract_600": "Multimodal LLMs are increasingly used to assist scientific peer review, where a core requirement is verifying whether claims in a paper are supported by its evidence. Prior work has shown that models perform substantially better at this task when the evidence is a table than when it is a chart of the same underlying data. This raises the question of whether models fail to extract information from charts, or do they extract it but fail to use it when forming their prediction? We study this question through layer-wise linear probing and attention analysis on three open-weight VLMs over table and",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0a6eafdf8f38",
+      "title": "Improving Attributed Text Generation of Large Language Models via Preference Learning",
+      "abstract_600": "Large language models have been widely adopted in natural language processing, yet they face the challenge of generating unreliable content. Recent works aim to reduce misinformation and hallucinations by resorting to attribution as a means to provide evidence (i.e., citations). However, current attribution methods usually focus on the retrieval stage and automatic evaluation that neglect mirroring the citation mechanisms in human scholarly writing to bolster credibility. In this paper, we address these challenges by modelling the attribution task as preference learning and introducing an Auto",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3472fcdd1943",
+      "title": "Digital Twins Verification and Validation Approach through the Quintuple Helix Conceptual Framework",
+      "abstract_600": "The concept of digital twins has been in the field for a long time, constantly challenging the specification, modeling, design, implementation, and exploitation of complex cyber\u2013physical systems. Despite the various foundations, standards, and platforms in systems engineering, there are ongoing challenges with verification and validation methodology. This study aims to establish a generic framework that addresses the various aspects of digital twinning. The multifaceted nature of the problem requires raising the abstraction level in both the real (actual) and virtual domains, effective dissemi",
+      "year": 2024,
+      "venue": "Electronics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2a0352bf5151",
+      "title": "When Scale Meets Diversity: Evaluating Language Models on Fine-Grained Multilingual Claim Verification",
+      "abstract_600": "The rapid spread of multilingual misinformation requires robust automated fact verification systems capable of handling fine-grained veracity assessments across diverse languages.While large language models have shown remarkable capabilities across many NLP tasks, their effectiveness for multilingual claim verification with nuanced classification schemes remains understudied.We conduct a comprehensive evaluation of five state-of-the-art language models on the X-Fact dataset, which spans 25 languages with seven distinct veracity categories.Our experiments compare small language models (encoder-",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7e57ae927283",
+      "title": "The Hallucinations Leaderboard -- An Open Effort to Measure Hallucinations in Large Language Models",
+      "abstract_600": "Large Language Models (LLMs) have transformed the Natural Language Processing (NLP) landscape with their remarkable ability to understand and generate human-like text. However, these models are prone to ``hallucinations'' -- outputs that do not align with factual reality or the input context. This paper introduces the Hallucinations Leaderboard, an open initiative to quantitatively measure and compare the tendency of each model to produce hallucinations. The leaderboard uses a comprehensive set of benchmarks focusing on different aspects of hallucinations, such as factuality and faithfulness,",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a88e991e423d",
+      "title": "Abstention-Aware Personalized Object Rearrangement via Uncertainty-Guided LLM Assistance",
+      "abstract_600": "Robotic assistance in household environments requires not only predicting where objects should be placed, but also reasoning about when objects should not be placed at all. Existing approaches to personalized object rearrangement primarily focus on placement decisions under the assumption of clean observations and complete actionability, limiting their applicability in realistic, cluttered, and partially erroneous settings. In this paper, we introduce APOLLO, a hybrid framework for abstention-aware personalized object rearrangement that combines a lightweight, personalized embedding model (PEM",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

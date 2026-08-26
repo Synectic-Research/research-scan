@@ -1,0 +1,257 @@
+{
+  "batch": "15",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "22afb689e8f7",
+      "title": "GeoReward: Mitigating Contextual Variable Overestimation in Vision-Language Models for Cross-Market Preference Prediction",
+      "abstract_600": "Vision-language models excel in many multimodal tasks but remain prone to a subtle yet impactful failure mode: they tend to overestimate dominant visual-textual cues while underestimating sparse but decision-critical contextual variables. This issue, which we term Contextual Variable Overestimation (CVE), becomes particularly evident in real-world applications such as predicting advertisement image preferences across diverse geographic markets. For instance, when a VLM is asked to choose between two product images tailored for different countries, it often defaults to a consistent output, igno",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b812b2960810",
+      "title": "AIRwaves at CheckThat! 2025: Retrieving Scientific Sources for Implicit Claims on Social Media with Dual Encoders and Neural Re-Ranking",
+      "abstract_600": "Linking implicit scientific claims made on social media to their original publications is crucial for evidence-based fact-checking and scholarly discourse, yet it is hindered by lexical sparsity, very short queries, and domain-specific language. Team AIRwaves ranked second in Subtask 4b of the CLEF-2025 CheckThat! Lab with an evidence-retrieval approach that markedly outperforms the competition baseline. The optimized sparse-retrieval baseline(BM25) achieves MRR@5 = 0.5025 on the gold label blind test set. To surpass this baseline, a two-stage retrieval pipeline is introduced: (i) a first stag",
+      "year": 2025,
+      "venue": "Conference and Labs of the Evaluation Forum",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "45df75183e91",
+      "title": "Electro-driven direct lithium extraction from geothermal brines to generate battery-grade lithium hydroxide",
+      "abstract_600": "As Li-ion batteries are increasingly being deployed in electric vehicles and grid-level energy storage, the demand for Li is growing rapidly. Extracting lithium from alternative aqueous sources such as geothermal brines plays an important role in meeting this demand. Electrochemical intercalation emerges as a promising Li extraction technology due to its ability to offer high selectivity for Li and its avoidance of harsh chemical regenerants. In this work, we design an economically feasible electrochemical process that achieves selective lithium extraction from Salton Sea geothermal brine and",
+      "year": 2025,
+      "venue": "Nature Communications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "440f24fff905",
+      "title": "Persistent and Conversational Multi-Method Explainability for Trustworthy Financial AI",
+      "abstract_600": "Financial institutions increasingly require AI explanations that are persistent, cross-validated across methods, and conversationally accessible to human decision-makers. We present an architecture for human-centered explainable AI in financial sentiment analysis that combines three contributions. First, we treat XAI artifacts -- LIME feature attributions, occlusion-based word importance scores, and saliency heatmaps -- as persistent, searchable objects in distributed S3-compatible storage with structured metadata and natural-language summaries, enabling semantic retrieval over explanation his",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2f032605066f",
+      "title": "Fact-R1: Towards Explainable Video Misinformation Detection with Deep Reasoning",
+      "abstract_600": "The rapid spread of multimodal misinformation on social media has raised growing concerns, while research on video misinformation detection remains limited due to the lack of large-scale, diverse datasets. Existing methods often overfit to rigid templates and lack deep reasoning over deceptive content. To address these challenges, we introduce FakeVV, a large-scale benchmark comprising over 100,000 video-text pairs with fine-grained, interpretable annotations. In addition, we further propose Fact-R1, a novel framework that integrates deep reasoning with collaborative rule-based reinforcement l",
+      "year": 2025,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4e0e96710787",
+      "title": "DeepTutor: Towards Agentic Personalized Tutoring",
+      "abstract_600": "Education is one of the most promising real-world applications for Large Language Models (LLMs). However, current LLMs rely on static pre-training knowledge and lack adaptation to individual learners, while existing RAG systems fall short in delivering personalized, guided feedback. To bridge this gap, we present DeepTutor, a fully open-source agentic framework that unifies citation-grounded problem tutoring with difficulty-calibrated question generation. A hybrid personalization engine couples static knowledge grounding with dynamic learner memory, continuously adapting each interaction to th",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fe67a5121367",
+      "title": "Benchmarking LLM Faithfulness in RAG with Evolving Leaderboards",
+      "abstract_600": "Retrieval-augmented generation (RAG) aims to reduce hallucinations by grounding responses in external context, yet large language models (LLMs) still frequently introduce unsupported information or contradictions even when provided with relevant context. This paper presents two complementary efforts at Vectara to measure and benchmark LLM faithfulness in RAG. First, we describe our original hallucination leaderboard, which has tracked hallucination rates for LLMs since 2023 using our HHEM hallucination detection model. Motivated by limitations observed in current hallucination detection method",
+      "year": 2025,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0ab28672194a",
+      "title": "SAFER: Risk-Constrained Sample-then-Filter in Large Language Models",
+      "abstract_600": "As large language models (LLMs) are increasingly deployed in risk-sensitive applications such as real-world open-ended question answering (QA), ensuring the trustworthiness of their outputs has become critical. Existing selective conformal prediction (SCP) methods provide statistical guarantees by constructing prediction sets with a constrained miscoverage rate for correct answers. However, prior works unrealistically assume that admissible answers for all instances can be obtained via finite sampling, even for open-ended QA scenarios that lack a fixed and finite solution space. To address thi",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b13ae5c40c4a",
+      "title": "Dual-Source Retrieval-Augmented Generation Chatbot for Women\u2019s Health (HerCare): Design and Multimethod Evaluation Study",
+      "abstract_600": "Abstract Background Conversational agents for women\u2019s health often fail to meet user needs, offering either clinically sterile advice or unreliable peer anecdotes. This limitation creates a tension between the need for factual safety and emotional resonance in sensitive health contexts. Objective We aimed to address this gap by developing and conducting a formative evaluation of HerCare, a conversational agent built on a novel dual-source retrieval-augmented generation architecture. The system integrates expert medical knowledge with peer narratives and makes the provenance of each response vi",
+      "year": 2025,
+      "venue": "JMIR Formative Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5a8e30c258c9",
+      "title": "Community Notes vs. Snoping: How the Crowd Selects Fact-Checking Targets on Social Media",
+      "abstract_600": "Deploying links to professional fact-checking websites (so-called \u201csnoping\u201d) is a common misinformation intervention technique that can be used by social media users to refute misleading claims made by others. However, the real-world effect of snoping may be limited as it suffers from low visibility and distrust towards professional fact-checkers. As a remedy, X (formerly known as Twitter) recently launched its community-based fact-checking system \u201cCommunity Notes\u201d on which fact-checks are carried out by actual X users and directly shown on the fact-checked posts. Yet, an understanding of how",
+      "year": 2024,
+      "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "76b6cea85c3b",
+      "title": "Elephant Detection System Using AI",
+      "abstract_600": "Elephant Detection System Using AI is a comprehensive, multi-stakeholder platform designed to detect and manage wild elephant intrusions using camera-based surveillance. Utilizing advanced detection algorithms and real-time image recognition, the system identifies elephants in human-inhabited or protected areas, triggering automatic alerts and notifications across various sectors such as Forestry, Krishibhavan, Hospitals, Insurance agencies, and Farmers. This platform integrates user roles including Administrator, Forestry, Hospital, Krishibhavan, Insurance, Farmer, and General Public to effic",
+      "year": 2025,
+      "venue": "INTERNATIONAL JOURNAL OF SCIENTIFIC RESEARCH IN ENGINEERING AND MANAGEMENT",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "82cbe4e6b6cf",
+      "title": "Linking citation and retraction data reveals the demographics of scientific retractions among highly cited authors",
+      "abstract_600": "Retractions are becoming increasingly common but still account for a small minority of published papers. It would be useful to generate databases where the presence of retractions can be linked to impact metrics of each scientist. We have thus incorporated retraction data in an updated Scopus-based database of highly cited scientists (top 2% in each scientific subfield according to a composite citation indicator). Using data from the Retraction Watch database (RWDB), retraction records were linked to Scopus citation data. Of 55,237 items in RWDB as of August 15, 2024, we excluded non-retractio",
+      "year": 2025,
+      "venue": "PLoS Biology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c8caed193dd8",
+      "title": "BrainQCNet: A Deep Learning attention-based model for the automated detection of artifacts in brain structural MRI scans",
+      "abstract_600": "Abstract Analyses of structural MRI (sMRI) data depend on robust upstream data quality control (QC). It is also crucial that researchers seek to retain maximal amounts of data to ensure reproducible, generalizable models and to avoid wasted effort, including that of participants. The time-consuming and difficult task of manual QC evaluation has prompted the development of tools for the automatic assessment of brain sMRI scans. Existing tools have proved particularly valuable in this age of Big Data; as datasets continue to grow, reducing execution time for QC evaluation will be of considerable",
+      "year": 2024,
+      "venue": "Imaging Neuroscience",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4ad45b87c77b",
+      "title": "FinDVer: Explainable Claim Verification over Long and Hybrid-content Financial Documents",
+      "abstract_600": "Yilun Zhao, Yitao Long, Tintin Jiang, Chengye Wang, Weiyuan Chen, Hongjun Liu, Xiangru Tang, Yiming Zhang, Chen Zhao, Arman Cohan. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "74dfb28acb39",
+      "title": "Explainability for Large Language Models: A Survey",
+      "abstract_600": "Large language models (LLMs) have demonstrated impressive capabilities in natural language processing. However, their internal mechanisms are still unclear and this lack of transparency poses unwanted risks for downstream applications. Therefore, understanding and explaining these models is crucial for elucidating their behaviors, limitations, and social impacts. In this article, we introduce a taxonomy of explainability techniques and provide a structured overview of methods for explaining Transformer-based language models. We categorize techniques based on the training paradigms of LLMs: tra",
+      "year": 2024,
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7c6a42152006",
+      "title": "Knowing When to Abstain: Medical LLMs Under Clinical Uncertainty",
+      "abstract_600": "Sravanthi Machcha, Sushrita Yerra, Sahil Gupta, Aishwarya Sahoo, Sharmin Sultana, Hong Yu, Zonghai Yao. Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers). 2026.",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e41a22d0ceac",
+      "title": "A Triple-Robustness Analysis of Retrieval-Augmented Generation for Multi-Hop Requirements Traceability",
+      "abstract_600": "Reported verdicts on GraphRAG versus vector RAG disagree, and the evidence is typically tied to a single corpus, embedder, and judge -- and, we show, to where citation quality is measured. We present a triple-robustness analysis that holds a five-pipeline architecture matrix fixed and varies embedder (local e5-small vs. Azure text-embedding-3-small), corpus (DO-178C typed-edge requirements vs. Wikipedia paragraph chains via MuSiQue), and judge (paired GPT-5.4 x GPT-4.1 on both corpora), over 2x4,440 main-matrix runs, 600 cross-corpus runs, and over 5,000 faithfulness judgments. (C2a) GraphRAG'",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "0a7875309d0c",
+      "title": "Fact-Checkers on the Fringe: Investigating Methods and Practices Associated With Contested Areas of Fact-Checking",
+      "abstract_600": "This study investigates the methods and practices used by self-identified fact-checkers situated on the fringe of the field of fact-checking to support their agenda for public recognition and legitimacy. Using a case study approach and selecting nine cases across five countries (Russia, Brazil, India, China, and Singapore), we identify the most common distinguishable attributes and tactics associated with this ambiguous collection of actors. In addition to identifying how fringe fact-checkers weaponize fact-checking practices and exploit or mimic the social standing of accredited fact-checkers",
+      "year": 2024,
+      "venue": "Media and Communication",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0836d6c7f57f",
+      "title": "DeepSurvey: Enhancing Analytical Depth and Citation Reliability in Automated Survey Generation",
+      "abstract_600": "As scientific literature grows rapidly, automated survey generation has become a key capability for AI scientists and human researchers. However, existing systems suffer from limited analytical depth due to reliance on abstracts and isolated paper processing, and unreliable citations from imprecise retrieval and post-hoc grounding, producing superficial surveys and may mislead researchers. We present DeepSurvey, an agentic system that addresses both. To enhance depth, DeepSurvey extracts structured keynotes from full-text papers, models cross-paper relationships through clustering and comparat",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3476ad79eb68",
+      "title": "Comparative Performance Analysis of Modern NoSQL Data Technologies: Redis, Aerospike, and Dragonfly",
+      "abstract_600": "The rise of distributed applications and cloud computing has created a demand for scalable, high-performance key-value storage systems. This paper presents a performance evaluation of three prominent NoSQL key-value stores: Redis, Aerospike, and Dragonfly, using the Yahoo! Cloud Serving Benchmark (YCSB) framework. We conducted extensive experiments across three distinct workload patterns (read-heavy, write-heavy), and balanced while systematically varying client concurrency from 1 to 32 clients. Our evaluation methodology captures both latency, throughput, and memory characteristics under real",
+      "year": 2025,
+      "venue": "Journal of Research, Innovation and Technologies (JoRIT)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d26afc51dc0c",
+      "title": "Unknown Claims: Generation of Fact-Checking Training Examples from Unstructured and Structured Data",
+      "abstract_600": "Computational fact-checking (FC) relies on supervised models to verify claims based on given evidence, requiring a resource-intensive process to annotate large volumes of training data. We introduce Unown, a novel framework that generates training instances for FC systems automatically using both textual and tabular content. Unown selects relevant evidence and generates supporting and refuting claims with advanced negation artifacts. Designed to be flexible, Unown accommodates various strategies for evidence selection and claim generation, offering unparalleled adaptability. We comprehensively",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fa3967ebc4c6",
+      "title": "FactReview: Evidence-Grounded Peer Review with Execution-Based Claim Verification",
+      "abstract_600": "Large language model (LLM)-based reviewing systems typically assess manuscripts in isolation, leaving literature- and code-dependent claims difficult to verify. We present FactReview, an audit pipeline that extracts review-relevant claims, grounds them in related work and reference checks, and, when code is available, executes released artifacts under a fixed repair budget. On 26 paper-disjoint test papers with 354 human-verified claims, FactReview achieves 84.3\\% F1 for claim recovery. In a same-backend, evidence-matched comparison, FactReview scores 4.72/5 overall, outperforming a direct LLM",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "df985ada70f2",
+      "title": "AraHalluEval: A Fine-grained Hallucination Evaluation Framework for Arabic LLMs",
+      "abstract_600": "Recently, extensive research on the hallucination of the large language models (LLMs) has mainly focused on the English language. Despite the growing number of multilingual and Arabic-specific LLMs, evaluating LLMs'hallucination in the Arabic context remains relatively underexplored. The knowledge gap is particularly pressing given Arabic's widespread use across many regions and its importance in global communication and media. This paper presents the first comprehensive hallucination evaluation of Arabic and multilingual LLMs on two critical Arabic natural language generation tasks: generativ",
+      "year": 2025,
+      "venue": "Proceedings of The Third Arabic Natural Language Processing Conference",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0381c51331fd",
+      "title": "Assessing Correctness in LLM-Based Code Generation via Uncertainty Estimation",
+      "abstract_600": "In this work, we explore uncertainty estimation as a proxy for correctness in LLM-generated code. To this end, we adapt two state-of-the-art techniques from natural language generation -- one based on entropy and another on mutual information -- to the domain of code generation. Given the distinct semantic properties of code, we introduce modifications, including a semantic equivalence check based on symbolic execution. Our findings indicate a strong correlation between the uncertainty computed through these techniques and correctness, highlighting the potential of uncertainty estimation for q",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1468ac7638fb",
+      "title": "Leveraging long context in retrieval augmented language models for medical question answering",
+      "abstract_600": "While holding great promise for improving and facilitating healthcare through applications of medical literature summarization, large language models (LLMs) struggle to produce up-to-date responses on evolving topics due to outdated knowledge or hallucination. Retrieval-augmented generation (RAG) is a pivotal innovation that improves the accuracy and relevance of LLM responses by integrating LLMs with a search engine and external sources of knowledge. However, the quality of RAG responses can be largely impacted by the rank and density of key information in the retrieval results, such as the \"",
+      "year": 2025,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+llm-lit-search R15: shortlist 40+0 -> reranking 15+0 = 15   spent $3.0693
+  rerank/llm-lit-search/R15/c1   213.9s  $0.2738  in=9627 cr=0 out=23979 (think 17130)
+  rerank/llm-lit-search/R15/c2    32.2s  $0.0356  in=1298 cr=5894 out=3183 (think 2092)
+ranked schema True; verify exit 0; emit exit 0
+{
+ "calls": 2,
+ "calls_ok": 2,
+ "calls_failed": 0,
+ "input_tokens": 10925,
+ "cache_read_tokens": 5894,
+ "cache_write_tokens": 5894,
+ "output_tokens": 27162,
+ "thinking_tokens": 19222,
+ "cost_usd": 0.309384,
+ "api_seconds_sum": 246.07,
+ "retries": 0,
+ "schema_failures": 0,
+ "topic": "llm-lit-search",
+ "arm": "R15",
+ "cut": 15,
+ "reranked": 15,
+ "in_window": 15,
+ "outside_window": 0,
+ "stage_wall_s": 246.09,
+ "ranked_schema_valid": true,
+ "ranked_schema_msg": "ok",
+ "shortlist_size": 40,
+ "verify_exit": 0,
+ "emit_exit": 0,
+ "verify_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/R15/run\",\n  \"verification\": {\n    \"verified\": 15,\n    \"unverified\": 0,\n    \"dropped_retracted\": 0,\n    \"crossref_skipped\": false,\n    \"duration_s\": 18.521\n  },\n  \"unverified\": []\n}",
+ "emit_out": "{\n  \"ok\": true,\n  \"run_dir\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/R15/run\",\n  \"evidence_json\": \"/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/sweep/p11-t2/R15/run/evidence.json\",\n  \"emit\": {\n    \"top\": 10,\n    \"foundational\": 2,\n    \"contradicting\": 1,\n    \"emitted\": 10,\n    \"alternates\": 5,\n    \"dropped_retracted\": 0",
+ "frontier_tokens": 38087,
+ "cumulative_spend_usd": 3.378636,
+ "top10_cids": [
+  "60fd922117d2",
+  "2cbca1abbe99",
+  "dc6612fba47a",
+  "04c2c77e0326",
+  "aac7d9e865ef",
+  "37b82519b62a",
+  "3b14a111838b",
+  "d8c6216340fd",
+  "3f16ad6b5a85",
+  "93ac147bb924"
+ ],
+ "top10_dois": [
+  "10.48550/arxiv.2508.06600",
+  "10.48550/arxiv.2608.01913",
+  null,
+  "10.48550/arxiv.2607.00597",
+  "10.48550/arxiv.2506.18096",
+  "10.48550/arxiv.2608.15191",
+  "10.48550/arxiv.2606.05241",
+  "10.48550/arxiv.2608.13006",
+  "10.48550/arxiv.2511.07685",
+  "10.48550/arxiv.2607.06507"
+ ],
+ "selection_reasons": [
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "score",
+  "backfill",
+  "backfill"
+ ]
+}

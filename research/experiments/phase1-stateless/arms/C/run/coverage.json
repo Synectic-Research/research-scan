@@ -1,0 +1,308 @@
+{
+  "run": {
+    "run_dir": "research/scans/2026-08-26-claim-grounding-sonnet",
+    "slug": "claim-grounding-sonnet",
+    "date": "2026-08-26",
+    "brief_path": "research/scans/2026-08-26-claim-grounding-sonnet/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2023-08",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "standard"
+    }
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "screened": 572,
+      "ge2": 187,
+      "unattributed_ge2": 0,
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "extraction accuracy",
+          "hits": 55,
+          "by_query_type": {
+            "anchor": 1,
+            "citations": 7,
+            "contradictory": 4,
+            "direct": 24,
+            "emerging": 9,
+            "recommendations": 2,
+            "references": 7,
+            "review": 16,
+            "terminology": 2
+          },
+          "by_source": {
+            "arxiv": 25,
+            "openalex": 12,
+            "s2": 36
+          },
+          "thin": false
+        },
+        {
+          "id": "C2",
+          "name": "evidence-link errors",
+          "hits": 113,
+          "by_query_type": {
+            "adjacent": 13,
+            "anchor": 2,
+            "citations": 19,
+            "contradictory": 4,
+            "direct": 14,
+            "emerging": 8,
+            "mechanism": 12,
+            "method": 2,
+            "recommendations": 3,
+            "references": 27,
+            "review": 16,
+            "terminology": 26
+          },
+          "by_source": {
+            "arxiv": 38,
+            "openalex": 23,
+            "s2": 86
+          },
+          "thin": false
+        },
+        {
+          "id": "C3",
+          "name": "benchmark construction",
+          "hits": 77,
+          "by_query_type": {
+            "adjacent": 3,
+            "anchor": 2,
+            "citations": 14,
+            "contradictory": 7,
+            "direct": 12,
+            "emerging": 10,
+            "mechanism": 4,
+            "method": 1,
+            "recommendations": 5,
+            "references": 24,
+            "review": 17,
+            "terminology": 12
+          },
+          "by_source": {
+            "arxiv": 17,
+            "openalex": 22,
+            "s2": 65
+          },
+          "thin": false
+        },
+        {
+          "id": "C4",
+          "name": "abstention and calibration",
+          "hits": 36,
+          "by_query_type": {
+            "emerging": 1,
+            "mechanism": 3,
+            "method": 29,
+            "recommendations": 1,
+            "references": 2,
+            "review": 3
+          },
+          "by_source": {
+            "arxiv": 13,
+            "openalex": 13,
+            "s2": 15
+          },
+          "thin": false
+        },
+        {
+          "id": "C5",
+          "name": "cross-model or cross-domain generalisation",
+          "hits": 28,
+          "by_query_type": {
+            "citations": 4,
+            "contradictory": 4,
+            "direct": 7,
+            "emerging": 5,
+            "mechanism": 2,
+            "recommendations": 1,
+            "references": 2,
+            "review": 7,
+            "terminology": 2
+          },
+          "by_source": {
+            "arxiv": 12,
+            "openalex": 12,
+            "s2": 14
+          },
+          "thin": false
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "Q1",
+          "type": "direct",
+          "pool": 64,
+          "ge2": 29
+        },
+        {
+          "query_id": "Q2",
+          "type": "terminology",
+          "pool": 63,
+          "ge2": 28
+        },
+        {
+          "query_id": "Q3",
+          "type": "contradictory",
+          "pool": 57,
+          "ge2": 11
+        },
+        {
+          "query_id": "Q4",
+          "type": "review",
+          "pool": 58,
+          "ge2": 27
+        },
+        {
+          "query_id": "Q5",
+          "type": "mechanism",
+          "pool": 57,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q6",
+          "type": "method",
+          "pool": 58,
+          "ge2": 30
+        },
+        {
+          "query_id": "Q7",
+          "type": "adjacent",
+          "pool": 61,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q8",
+          "type": "emerging",
+          "pool": 60,
+          "ge2": 18
+        }
+      ],
+      "seeds": [
+        {
+          "seed_id": "27ed8ae2ff8d",
+          "neighbours": 24,
+          "ge2": 11,
+          "precision": 0.458
+        },
+        {
+          "seed_id": "3b34501ecd91",
+          "neighbours": 8,
+          "ge2": 3,
+          "precision": 0.375
+        },
+        {
+          "seed_id": "43e31518612f",
+          "neighbours": 9,
+          "ge2": 6,
+          "precision": 0.667
+        },
+        {
+          "seed_id": "444f2c23f859",
+          "neighbours": 14,
+          "ge2": 2,
+          "precision": 0.143
+        },
+        {
+          "seed_id": "659e22c8290d",
+          "neighbours": 7,
+          "ge2": 3,
+          "precision": 0.429
+        },
+        {
+          "seed_id": "82ca698970fc",
+          "neighbours": 5,
+          "ge2": 1,
+          "precision": 0.2
+        },
+        {
+          "seed_id": "84b54d56d46b",
+          "neighbours": 22,
+          "ge2": 8,
+          "precision": 0.364
+        },
+        {
+          "seed_id": "97b9c25fbfb6",
+          "neighbours": 19,
+          "ge2": 13,
+          "precision": 0.684
+        },
+        {
+          "seed_id": "9bf531c01324",
+          "neighbours": 7,
+          "ge2": 2,
+          "precision": 0.286
+        },
+        {
+          "seed_id": "9fc1195f8ecb",
+          "neighbours": 11,
+          "ge2": 8,
+          "precision": 0.727
+        },
+        {
+          "seed_id": "a020efa017f5",
+          "neighbours": 22,
+          "ge2": 15,
+          "precision": 0.682
+        },
+        {
+          "seed_id": "b707dd1d8ce4",
+          "neighbours": 12,
+          "ge2": 1,
+          "precision": 0.083
+        },
+        {
+          "seed_id": "e155e52aeeca",
+          "neighbours": 17,
+          "ge2": 6,
+          "precision": 0.353
+        },
+        {
+          "seed_id": "ea71e3251c36",
+          "neighbours": 12,
+          "ge2": 8,
+          "precision": 0.667
+        },
+        {
+          "seed_id": "ebb2d00875ca",
+          "neighbours": 4,
+          "ge2": 1,
+          "precision": 0.25
+        },
+        {
+          "seed_id": "f1f9c4bc1a14",
+          "neighbours": 18,
+          "ge2": 8,
+          "precision": 0.444
+        },
+        {
+          "seed_id": "f6d880d038a7",
+          "neighbours": 8,
+          "ge2": 5,
+          "precision": 0.625
+        }
+      ]
+    }
+  ],
+  "gap_round": {
+    "should_run": false,
+    "profile": "standard",
+    "forced": false,
+    "reasons": [
+      "coverage is even across the criteria and no query came back starved"
+    ]
+  }
+}

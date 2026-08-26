@@ -1,0 +1,923 @@
+[
+  {
+    "cid": "3b34501ecd91",
+    "criteria": {
+      "C1": 1,
+      "C2": 1,
+      "C3": 3,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Introduces SciFact (1.4K expert-written claims paired with evidence abstracts) and shows a trained system identifies plausible evidence for 23/36 COVID-19 claims on CORD-19.",
+    "methodology": "New dataset construction plus baseline entailment models trained jointly with a Wikipedia-claims dataset; evaluated on SciFact and zero-shot on CORD-19.",
+    "why_it_matters": "The foundational benchmark every later claim-verification paper measures against; its construction choices (abstract-level evidence, expert-written claims) set the numbers the field still cites, so any inflated-accuracy critique must be read against this baseline.",
+    "limitations": [
+      "small dataset (1.4K claims)",
+      "evidence limited to abstracts, not full papers or figures/tables",
+      "no explicit abstention or calibration mechanism"
+    ],
+    "relevance_reason": "Named directly in the brief as foundational prior work defining the claim-verification task and dataset paradigm.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "9fc1195f8ecb",
+    "criteria": {
+      "C1": 1,
+      "C2": 2,
+      "C3": 3,
+      "C4": 0,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "A new cross-modal claim-verification dataset (1,664 samples, 180 papers, 3 domains) built by perturbing actual figures/tables rather than LLM-fabricated claims shows figure-based verification remains far below human performance across 11 multimodal models.",
+    "methodology": "Novel refutation-construction method that modifies supporting evidence (not the claim) using authentic figures/tables in multiple formats; benchmarked against 11 open and proprietary multimodal LLMs with expert validation.",
+    "why_it_matters": "Directly addresses the benchmark-construction question (C3): shows how avoiding LLM-generated negatives changes what a grounding benchmark can support, and quantifies a large, robust figure-vs-table performance gap relevant to which evidence types a decision engine can trust.",
+    "limitations": [
+      "small sample per domain (1,664 total)",
+      "3 domains only",
+      "newly released, unreplicated construction methodology"
+    ],
+    "relevance_reason": "Directly tackles benchmark-construction artifacts and cross-modal evidence-link reliability, core to the brief's C2/C3 questions.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "0400ccbd230c",
+    "criteria": {
+      "C1": 2,
+      "C2": 1,
+      "C3": 1,
+      "C4": 0,
+      "C5": 1
+    },
+    "overall": 2,
+    "evidence_level": "computational",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "A training-free repair framework raises strict structural-validity gate passes on scientific reasoning-graph extraction from 0/350 to 300/350 and improves an evidence-grounding metric (REA) from 0.339 to 0.906.",
+    "methodology": "Peircean schema-based extraction plus judge-feedback repair loop applied to LLM-generated reasoning graphs across five 70-paper model archives from the ARCHE benchmark; abstract-only detail on ARCHE's construction.",
+    "why_it_matters": "Shows raw LLM claim/evidence graph extraction is essentially unusable without heavy repair (0/350 valid), which is a striking extraction-failure data point relevant to whether frontier LLMs 'extract claims reliably.'",
+    "limitations": [
+      "ARCHE benchmark construction not detailed",
+      "no held-out cross-domain test beyond the five archives",
+      "repair layer masks rather than measures raw extraction accuracy directly"
+    ],
+    "relevance_reason": "Provides a concrete, hard extraction-failure number (raw LLM output almost never passes strict validity), directly relevant to the brief's premise-testing goal.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "84b54d56d46b",
+    "criteria": {
+      "C1": 1,
+      "C2": 3,
+      "C3": 3,
+      "C4": 3,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": true
+    },
+    "key_finding": "On identical agent outputs, measured unsupported-citation rates range from ~3% to ~18% depending solely on verifier strictness, and verifiers disagree substantially on which citations to flag (negative-specific agreement only 0.27-0.30), while a gold-anchored protocol plus split-conformal guard bounds the true unsupported-citation rate.",
+    "methodology": "Gold-anchored evaluation protocol validating verifiers against human gold labels, re-attribution via deterministic BM25, and a split-conformal distribution-free bound; validated across four open 27-35B models and three agentic pipelines on SciFact, QASA, and PubMedQA.",
+    "why_it_matters": "Directly answers the brief's core Q2-Q4: shows evidence-linking error rates are themselves unreliable to measure without a named verifier/protocol, and demonstrates a concrete, bounded abstention mechanism (conformal guard) trading catch-rate guarantees for coverage.",
+    "limitations": [
+      "guard's bound is on catch-rate, not conclusion correctness",
+      "tested on 27-35B open models, not necessarily frontier proprietary models",
+      "calibration-negative difficulty transfer condition requires recalibration recipe to hold"
+    ],
+    "relevance_reason": "Central to the brief's exact questions: quantifies evidence-link error variability, benchmark/verifier validity, and calibrated abstention trade-offs.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "802e8aeccb24",
+    "criteria": {
+      "C1": 0,
+      "C2": 2,
+      "C3": 1,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "Chart evidence information is encoded in VLMs' intermediate representations but fails to reach the prediction position, while this routing gap is absent for table evidence of the same underlying data, and takes two architecturally distinct forms across model families.",
+    "methodology": "Layer-wise linear probing and attention analysis on three open-weight VLMs comparing table vs. chart evidence for scientific claim verification.",
+    "why_it_matters": "Reframes a known modality-specific evidence-grounding failure as a routing problem rather than an encoding problem, which changes what mitigation (better prompting vs. architecture-level attention fixes) a decision engine should pursue for chart-grounded claims.",
+    "limitations": [
+      "only three open-weight VLMs tested",
+      "narrow to table-vs-chart comparison, not broader claim types",
+      "mechanistic finding not yet linked to end-task fixes"
+    ],
+    "relevance_reason": "Provides mechanistic evidence on why one class of evidence-link errors (chart-based) occurs, relevant to C2's error-characterization question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "cac1acd8d788",
+    "criteria": {
+      "C1": 1,
+      "C2": 3,
+      "C3": 3,
+      "C4": 1,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": false
+    },
+    "key_finding": "Models that saturate existing claim-verification benchmarks consistently over-accept compositionally infeasible claims (where a non-salient constraint is contradicted while the salient one is supported), revealing that benchmarks cannot distinguish rigorous verification from salient-constraint shortcut reasoning.",
+    "methodology": "Constructs compositionally infeasible claims contrasting with existing single-element perturbation benchmarks; tests across model families and modalities, analyzes results via ROC-curve framing of verification thresholds.",
+    "why_it_matters": "Directly falsifies the premise that existing grounding benchmarks' high accuracy numbers reflect genuine claim-verification competence\u2014showing they are inflated by shortcut reasoning, exactly the artifact the brief asked us to hunt for.",
+    "limitations": [
+      "abstract-only detail on exact dataset size",
+      "focuses on compositional/CWA violations, not all error types (e.g., fabrication)",
+      "newly proposed test, not yet independently replicated"
+    ],
+    "relevance_reason": "Directly answers the brief's call for benchmarks whose construction inflates reported accuracy and models' verification failure modes.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "a020efa017f5",
+    "criteria": {
+      "C1": 1,
+      "C2": 2,
+      "C3": 3,
+      "C4": 0,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "SciVer (3,000 expert-annotated examples over 1,113 papers with four reasoning-type subsets and evidence annotations) reveals a substantial performance gap between 21 state-of-the-art multimodal foundation models and human experts on multimodal scientific claim verification.",
+    "methodology": "New benchmark construction with expert-annotated supporting evidence; evaluation of 21 multimodal models including o4-mini, Gemini-2.5-Flash, Llama-3.2-Vision, Qwen2.5-VL, plus RAG and human error analysis.",
+    "why_it_matters": "A well-constructed, large-scale, multi-reasoning-type benchmark that quantifies the current human-model gap in multimodal claim verification, giving the project a credible numeric ceiling/floor for evidence-grounding performance across modalities.",
+    "limitations": [
+      "restricted to multimodal scientific claim verification, not full free-form claim extraction",
+      "no abstention/calibration analysis",
+      "gap analysis relies partly on RAG configuration choices"
+    ],
+    "relevance_reason": "Major benchmark directly addressing C1/C3/C5 for multimodal claim-evidence grounding.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "72af10feddf6",
+    "criteria": {
+      "C1": 0,
+      "C2": 1,
+      "C3": 0,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "A tool-augmented, RL-trained (GRPO) framework equipping VLMs with table/chart/zoom tools outperforms prompting- and RL-based baselines on SciVer and MuSciClaims multimodal claim verification across five VLMs from three model families.",
+    "methodology": "Reinforcement learning (GRPO) with composite reward (correctness, format, length, tool efficiency/validity) training a policy with three type-aware visual tools; evaluated on existing SciVer/MuSciClaims benchmarks.",
+    "why_it_matters": "Demonstrates a concrete engineering path to close the evidence-localization gap identified in modality-specific grounding failures, informing what tooling a decision engine's evidence-linking module might need.",
+    "limitations": [
+      "evaluated only on existing benchmarks without new construction insight",
+      "improvement is capability-focused rather than diagnosing failure modes",
+      "no abstention or calibration analysis"
+    ],
+    "relevance_reason": "Relevant as a capability-improvement method for the same multimodal evidence-linking problem the brief cares about, though it does not characterize errors or benchmarks directly.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv",
+        "s2"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "752402f2a368",
+    "criteria": {
+      "C1": 1,
+      "C2": 2,
+      "C3": 3,
+      "C4": 2,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "ResearchQA (6,211 QA pairs over 494 papers, 8 domains, 4 question types) shows citation-based metrics (section coverage, citation accuracy) separate model quality far more clearly than LLM-evaluator scores, which stay tightly compressed, and open-weight models approach closed-model citation accuracy at 3-6x lower latency.",
+    "methodology": "New benchmark with multiple valid supporting passages per claim and a grounded-refusal design, evaluated with a deterministic citation matcher plus LLM rubric evaluator across eight closed- and open-weight models.",
+    "why_it_matters": "Directly tests whether rewarding grounded refusal (abstention) improves trustworthiness, and shows citation-grounded metrics reveal model differences that generic LLM-judge scores obscure \u2014 a methodological lesson for how the decision engine should be evaluated.",
+    "limitations": [
+      "single-paper QA setting, not multi-document claim extraction",
+      "LLM-based rubric evaluator itself unaudited for reliability",
+      "abstract does not report coverage cost of grounded refusal quantitatively"
+    ],
+    "relevance_reason": "Directly relevant to C3 (benchmark construction) and C4 (grounded refusal/abstention) for citation-grounded evaluation.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "2aba00d1ebdf",
+    "criteria": {
+      "C1": 0,
+      "C2": 1,
+      "C3": 1,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "+VeriRel, which incorporates verification success into document ranking rather than relevance alone, consistently improves evidence retrieval and downstream verification performance across SciFact, SciFact-Open, and Check-Covid.",
+    "methodology": "Retrieval re-ranking method integrating verification feedback into IR ranking; evaluated on three existing scientific fact-checking datasets.",
+    "why_it_matters": "Suggests retrieval quality (finding the right evidence passage) is itself a lever for reducing evidence-linking errors, informing whether the decision engine's error surface is in retrieval versus reasoning.",
+    "limitations": [
+      "evaluated only on existing SciFact-family datasets",
+      "does not characterize specific error types (fabrication, wrong-direction, over-generalization)",
+      "abstract gives no quantitative effect sizes"
+    ],
+    "relevance_reason": "A retrieval-side method relevant to reducing evidence-linking errors, though incremental rather than diagnostic.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "444f2c23f859",
+    "criteria": {
+      "C1": 3,
+      "C2": 2,
+      "C3": 2,
+      "C4": 0,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "CLAIM-BENCH, evaluated over 300+ claim-evidence pairs across domains and six LLMs, finds closed-source models (GPT-4, Claude) consistently outperform open-source counterparts in claim-evidence identification precision/recall, and multi-pass prompting strategies improve accuracy at higher computational cost.",
+    "methodology": "New benchmark comparing three divide-and-conquer-inspired prompting strategies (including three-pass and one-by-one) across six diverse LLMs for claim-evidence extraction and validation from full-length papers.",
+    "why_it_matters": "Directly measures claim-evidence extraction accuracy across models and prompting strategies, providing exactly the cross-model comparison the brief needs to test whether extraction itself is a bottleneck versus evidence linking.",
+    "limitations": [
+      "relatively small evaluation set (~300 pairs)",
+      "benchmark construction methodology not deeply detailed in the abstract",
+      "no calibration/abstention analysis"
+    ],
+    "relevance_reason": "Core benchmark measuring exactly what the brief's Q1 and Q2 ask about: claim-evidence extraction and linking accuracy across models.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 94.2,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "27ed8ae2ff8d",
+    "criteria": {
+      "C1": 0,
+      "C2": 3,
+      "C3": 3,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "On CiteME, frontier LMs achieve only 4.2-18.5% accuracy at identifying the paper referenced by a text excerpt, versus 69.7% for humans; an autonomous CiteAgent built on GPT-4o closes some of the gap, reaching 35.3%.",
+    "methodology": "Benchmark of text excerpts from recent ML papers each referencing one other paper; evaluates frontier LMs directly and via an autonomous search-and-read agent (CiteAgent).",
+    "why_it_matters": "Explicitly named in the brief; establishes that citation/evidence attribution\u2014not claim extraction\u2014is where LLMs fail most dramatically, directly confirming the premise that evidence-linking is the dominant failure mode and quantifying how large that gap is.",
+    "limitations": [
+      "focused on machine-learning papers only",
+      "single agent architecture tested (GPT-4o-based)",
+      "task is citation attribution, not full claim-evidence passage grounding"
+    ],
+    "relevance_reason": "Named directly in the brief as key prior work on whether models cite the source that supports a claim.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "ea71e3251c36",
+    "criteria": {
+      "C1": 1,
+      "C2": 3,
+      "C3": 3,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "On the REASONS benchmark (sentence-level citation annotations across 12 arXiv domains), top LLMs achieve high sentence-attribution performance but suffer high hallucination rates, and retrieval-augmented generation with Mistral reduces hallucination rates by 42% on indirect queries while adversarial testing exposes fundamental limits linking titles to abstracts.",
+    "methodology": "New dataset with indirect (sentence-to-title) and direct (author attribution) citation query types, evaluated with GPT-o1, GPT-4o, GPT-3.5, DeepSeek, Perplexity AI, and a metadata/RAG-augmented Mistral variant, including adversarial tests.",
+    "why_it_matters": "Quantifies hallucination in citation attribution and shows a concrete mitigation (RAG + metadata) reduces it by 42%, giving the decision engine a candidate design lever for reducing fabricated-support errors.",
+    "limitations": [
+      "restricted to arXiv domains",
+      "hallucination reduction shown only for indirect queries with a specific RAG setup",
+      "adversarial testing reveals unresolved title-abstract linking limitations"
+    ],
+    "relevance_reason": "Closely parallel to CiteME on citation attribution and hallucination, with an added mitigation angle (RAG) relevant to reducing evidence-linking errors.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "2824eadfc419",
+    "criteria": {
+      "C1": 1,
+      "C2": 3,
+      "C3": 3,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Even a fine-tuned GPT-3.5 reaches only ~80% macro-F1 on binary attribution classification across AttributionBench, a benchmark compiled from existing attribution datasets, with most errors traced to inability to process nuanced information and mismatched information access between model and human annotators.",
+    "methodology": "Compiled multi-dataset attribution benchmark; fine-tuned and evaluated LLMs including GPT-3.5 in binary classification setup; manual analysis of 300+ error cases.",
+    "why_it_matters": "Sets a concrete ceiling (~80% F1) on how well even fine-tuned models judge whether cited evidence supports a claim, and its error taxonomy (nuance failures, info-access mismatch) directly informs what our trustworthiness scorer needs to detect.",
+    "limitations": [
+      "compiled from heterogeneous existing datasets rather than scientific-paper-specific data",
+      "binary classification formulation may not capture graded support/contradiction/over-generalisation"
+    ],
+    "relevance_reason": "Directly answers the benchmark-construction and evidence-link-error questions (C2/C3) central to the brief.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "fc8d549659ad",
+    "criteria": {
+      "C1": 2,
+      "C2": 3,
+      "C3": 1,
+      "C4": 0,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "An LLM framework that extracts novelty claims from a paper's introduction and checks them against its own methods evidence produces reviewer-style assessments that align significantly with human reviewer concerns on a balanced set of 182 ICLR 2025 papers, especially for novelty issues.",
+    "methodology": "LLM-based intra-paper claim verification pipeline (extract claim, retrieve claim-relevant methodological evidence, assess substantiation) evaluated against human reviewer comments via human judgment and BERTScore on ICLR 2025 papers.",
+    "why_it_matters": "This is essentially a working prototype of the exact task the paper-to-decision engine must do internally (claim vs. own-paper evidence), and shows it is feasible to build but only validated in one venue/domain, which bounds how far we can trust its generalisation.",
+    "limitations": [
+      "single venue (ICLR 2025) and single paper type (ML)",
+      "no calibrated abstention or accuracy-vs-section breakdown",
+      "evaluation is comparison to reviewer comments rather than gold claim-evidence labels"
+    ],
+    "relevance_reason": "A near-identical framework to the project's core claim-vs-evidence verification task, tested against real peer-review judgments.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "d6920ae21863",
+    "criteria": {
+      "C1": 0,
+      "C2": 2,
+      "C3": 3,
+      "C4": 2,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": true
+    },
+    "key_finding": "In SciFact-style verification (with FEVER/HoVer as controls), NEI competence does not transfer across the different ways 'not enough information' examples are constructed; models trained on shortcut-prone constructions fail on semantically related insufficient-evidence cases, and mixed-construction training only narrows, not closes, the gap.",
+    "methodology": "NEI-CAP diagnostic protocol: tags each NEI example by construction family, audits shortcut cues, runs human adjudication of hard cases, and tests cross-construction transfer on SciFact/FEVER/HoVer.",
+    "why_it_matters": "Directly shows a claim-evidence grounding benchmark (SciFact) can hide which problem a model actually solved, meaning reported NEI/abstention accuracy on these benchmarks may not indicate real insufficient-evidence detection ability \u2014 a core risk for our abstention design.",
+    "limitations": [
+      "focused on NEI/insufficient-evidence label rather than full claim extraction pipeline",
+      "SciFact-style setting only, generalisation to full-paper multi-claim extraction untested"
+    ],
+    "relevance_reason": "Exactly the kind of benchmark-construction-artifact finding the brief asks us to reach for, targeting SciFact directly.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "ba3478c2133e",
+    "criteria": {
+      "C1": 3,
+      "C2": 0,
+      "C3": 1,
+      "C4": 0,
+      "C5": 1
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "A citance-supervised claim-extraction framework outperforms existing baselines by up to 18% precision and 22% coverage, and analysis of claim distribution across paper sections yields a new taxonomy of claim types.",
+    "methodology": "Unsupervised and weakly-supervised extractors trained using citances (citing sentences) as natural supervision, filtered by a claim-focused rubric and aligned to candidate claims; evaluated against baselines with a per-section, per-claim-type breakdown.",
+    "why_it_matters": "Provides the first evidence in this scan of how claim-extraction accuracy varies by paper section and claim type \u2014 exactly what question 1 of the brief asks \u2014 and offers a scalable supervision method our pipeline could reuse for training/eval data.",
+    "limitations": [
+      "citance-based ground truth is itself noisy proxy supervision, not expert gold annotation",
+      "no direct human-annotated accuracy numbers reported in the abstract",
+      "no cross-model comparison reported"
+    ],
+    "relevance_reason": "Core extraction-accuracy paper with section/claim-type breakdown, directly targeting the brief's first research question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "fa3967ebc4c6",
+    "criteria": {
+      "C1": 2,
+      "C2": 3,
+      "C3": 2,
+      "C4": 1,
+      "C5": 1
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "FactReview achieves 84.3% F1 for claim recovery on 354 human-verified claims across 26 papers, and removing code-execution evidence changes 17.0% of claim statuses \u2014 more than removing any other single evidence source \u2014 while reducing reviewer time by 58% and raising claim coverage from 87% to 99%.",
+    "methodology": "End-to-end audit pipeline: extracts review-relevant claims, grounds them via related-work/reference checks and code execution under a fixed repair budget; evaluated on 26 paper-disjoint test papers with human-verified claims and a reviewer-assistance user study.",
+    "why_it_matters": "Quantifies how much a specific evidence source (execution) changes claim trustworthiness verdicts, giving a concrete template and numbers for how our engine should weight different evidence types and report per-claim status changes.",
+    "limitations": [
+      "restricted to peer-review setting with code-bearing ML papers",
+      "small test set (26 papers)",
+      "no abstention/calibration analysis, and acceptance judged by humans not the system"
+    ],
+    "relevance_reason": "A near-complete implementation of claim extraction + multi-source evidence grounding + verification with quantified error/ablation numbers.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "257260146472",
+    "criteria": {
+      "C1": 0,
+      "C2": 2,
+      "C3": 2,
+      "C4": 0,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "A 1B-parameter reasoning-based verifier (ThinknCheck) reaches 78.1 balanced accuracy on LLMAggreFact (vs 77.4 for 7x-larger MiniCheck-7B) and +14.7 points over MiniCheck-7B on SciFact, but zero-shot chain-of-thought without supervised reasoning training harms accuracy, and cross-domain transfer to GSMClaims requires a domain-specialized variant.",
+    "methodology": "Fine-tunes a 4-bit Gemma3-1B on LLMAggreFact-Think (24.1k reasoning-augmented examples) to produce rationale-then-verdict outputs; benchmarks on LLMAggreFact, SciFact, and a new GSMClaims diagnostic; compares to zero-shot CoT and preference optimization.",
+    "why_it_matters": "Shows grounded-verification performance is highly sensitive to training format and does not transfer cleanly across benchmarks (SciFact accuracy far below LLMAggreFact, requiring a specialized variant), directly bearing on whether a single verifier module will generalise across our target domains.",
+    "limitations": [
+      "compact model results may not reflect frontier LLM behaviour",
+      "SciFact BAcc (64.7) still well below LLMAggreFact performance, limiting claimed generality",
+      "abstract gives no error-type breakdown (fabrication vs. wrong-direction vs. over-generalisation)"
+    ],
+    "relevance_reason": "Directly tests cross-benchmark/cross-domain generalisation of a claim-verification model, including SciFact, which the brief flags as a known benchmark.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "3c1e5f6887f9",
+    "criteria": {
+      "C1": 1,
+      "C2": 2,
+      "C3": 3,
+      "C4": 1,
+      "C5": 1
+    },
+    "overall": 3,
+    "evidence_level": "other",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": true,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "A systematic analysis of 134 papers on evidence-based text generation (citation, attribution, quotation) yields a unified taxonomy and catalogs 300 evaluation metrics across seven dimensions, revealing the field is fragmented by inconsistent terminology and isolated evaluation practices.",
+    "methodology": "Systematic literature survey and taxonomy construction over 134 papers; abstract-only detail on selection/synthesis methodology beyond the taxonomy itself.",
+    "why_it_matters": "Gives the field-wide map of which claim-evidence grounding benchmarks and metrics exist and how fragmented/incomparable they are, which is exactly what the brief's benchmark-mapping question (C3) needs before we pick or build an evaluation.",
+    "limitations": [
+      "abstract-only, no primary experimental results of its own",
+      "narrative/taxonomic synthesis rather than a systematic-review protocol with quantitative pooling"
+    ],
+    "relevance_reason": "The synthesis paper mapping the benchmark and metric landscape the brief explicitly asks us to characterize.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "e86acc56ed0b",
+    "criteria": {
+      "C1": 3,
+      "C2": 0,
+      "C3": 2,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 2,
+    "evidence_level": "computational",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "A new hypothesis/claim extraction dataset for social-infertility research papers, built using o1-mini extraction with manual validation, is used to benchmark smaller closed- and open-weight LLMs on extraction quality.",
+    "methodology": "o1-mini generates candidate hypothesis/claim extractions from papers, manually validated, forming a benchmark against which smaller LLMs are evaluated. Abstract gives no accuracy numbers.",
+    "why_it_matters": "Provides a concrete, human-validated extraction benchmark and cross-model comparison in a real scientific subfield, useful evidence for how extraction accuracy varies by model, though scope is narrow.",
+    "limitations": [
+      "single narrow interdisciplinary domain (social infertility), unclear generalisation to other fields",
+      "abstract reports no quantitative accuracy figures",
+      "reference extractions come from an LLM (o1-mini) rather than fully independent expert annotation"
+    ],
+    "relevance_reason": "A cross-model claim-extraction benchmark with human validation, relevant to the extraction-accuracy question but in a narrow domain.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "375cd1eb8f71",
+    "criteria": {
+      "C1": 0,
+      "C2": 3,
+      "C3": 2,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "observational",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": true
+    },
+    "key_finding": "SourceCheckup, an automated agent-based pipeline evaluated on 800 medical questions and 58,000 statement-source pairs across seven LLMs, finds that 50-90% of LLM responses are not fully supported by (and sometimes contradicted by) their cited sources, with even GPT-4o+Web Search leaving ~30% of statements unsupported, corroborated by independent doctor assessment.",
+    "methodology": "Automated pipeline evaluating relevance and supportiveness of LLM-cited sources for medical queries across seven LLMs, validated against independent physician judgments.",
+    "why_it_matters": "Gives a rigorous, biomedicine-grounded, large-scale quantification of exactly the evidence-linking failure the brief cares about, showing failure rates far higher than the premise 'most claims are fine, only linking is somewhat imperfect' would suggest.",
+    "limitations": [
+      "setting is LLM chatbot answers to medical questions, not full scientific-paper claim extraction",
+      "citation targets are general medical literature/web sources rather than a single source paper's own evidence"
+    ],
+    "relevance_reason": "Rigorous biomedical evaluation of citation-support failure rates, directly answering the evidence-link-error question and challenging the premise that grounding errors are minor.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "7d791e7db8f1",
+    "criteria": {
+      "C1": 2,
+      "C2": 3,
+      "C3": 1,
+      "C4": 1,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": false
+    },
+    "key_finding": "Across 4900 LLM-generated summaries from 10 models (ChatGPT-4o/4.5, DeepSeek, LLaMA 3.3 70B, Claude 3.7 Sonnet, etc.), most LLMs generalise scientific conclusions more broadly than the original text even when explicitly prompted for accuracy, with 26-73% overgeneralization rates for some models, LLM summaries ~5x more likely than human summaries to overgeneralize (OR=4.85), and newer models performing worse than earlier ones.",
+    "methodology": "Comparative evaluation of 4900 LLM-generated summaries against original scientific texts and human-authored summaries across 10 prominent LLMs, with statistical comparison (odds ratios).",
+    "why_it_matters": "Directly falsifies the premise that most extraction/summarization errors are confined to evidence linking \u2014 overgeneralisation (claim scope distortion) is itself a widespread and, alarmingly, worsening extraction-level failure, which must be built into our trustworthiness scoring even for 'well-extracted' claims.",
+    "limitations": [
+      "measures summarization overgeneralisation rather than structured claim-evidence extraction pipelines specifically",
+      "abstract does not report per-section or per-claim-type breakdown",
+      "mechanism behind 'newer models worse' not explained"
+    ],
+    "relevance_reason": "The strongest evidence in this shortlist that extraction/summarization itself, not just evidence linking, is a major failure mode \u2014 exactly the hardest-to-find result the brief asked for.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "b13f6337909b",
+    "criteria": {
+      "C1": 0,
+      "C2": 2,
+      "C3": 3,
+      "C4": 0,
+      "C5": 1
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "ALCE, the first benchmark for automatic LLM citation evaluation, shows current end-to-end retrieve-and-cite systems have substantial room for improvement \u2014 on ELI5, even the best models lack complete citation support 50% of the time.",
+    "methodology": "New benchmark (ALCE) combining diverse questions and retrieval corpora, with automatic metrics for fluency, correctness, and citation quality validated against human judgments; evaluated against SOTA LLMs and prompting strategies.",
+    "why_it_matters": "Establishes the foundational citation-evaluation metric design (fluency/correctness/citation quality) that later scientific claim-grounding benchmarks build on, useful for designing our own automatic metrics even though its setting is general QA, not scientific papers.",
+    "limitations": [
+      "general open-domain QA setting, not scientific-paper claim extraction",
+      "predates most frontier models used in later benchmarks",
+      "no scientific-paper-specific claim types tested"
+    ],
+    "relevance_reason": "Foundational citation-evaluation benchmark methodology that current scientific claim-grounding benchmarks reference and build on.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "7d29489aa7b6",
+    "criteria": {
+      "C1": 0,
+      "C2": 3,
+      "C3": 2,
+      "C4": 0,
+      "C5": 1
+    },
+    "overall": 2,
+    "evidence_level": "observational",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Human evaluation of four commercial generative search engines finds only 51.5% of generated sentences are fully supported by their citations and only 74.5% of citations actually support their associated sentence.",
+    "methodology": "Human evaluation audit of citation recall and precision across Bing Chat, NeevaAI, perplexity.ai, and YouChat on a diverse query set from Google logs and Reddit.",
+    "why_it_matters": "Foundational quantification of citation-support failure rates and the verifiability (recall/precision) framing that later scientific claim-grounding work, including the brief's own evidence-link-error question, directly inherits.",
+    "limitations": [
+      "general web search engines, not scientific-paper claim extraction",
+      "commercial systems from 2023, likely outdated relative to current frontier models",
+      "no per-claim-type or per-section breakdown"
+    ],
+    "relevance_reason": "The foundational human-evaluation study establishing the citation-verifiability framing (recall/precision of support) that scientific claim-grounding benchmarks build on.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  }
+]

@@ -1,0 +1,257 @@
+{
+  "batch": "06",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "6d534fe1bdee",
+      "title": "Reported Confidence in LLMs Tracks Commitment More Than Correctness",
+      "abstract_600": "Confidence is an estimate of the probability that a chosen answer is correct. Verbal confidence reports are widely used as uncertainty measures in large language models, but whether they are best understood as estimates of correctness is unclear. We test this with a two-stage abstention paradigm from the neuroscience of perceptual decision making: a model first answers and reports its confidence, then decides whether to commit it to a user or abstain. Across four non-reasoning models, prompt framings, and confidence formats, verbal confidence predicted the commit/abstain decision substantially",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ca09394b6fa4",
+      "title": "Retrieval-Augmented Generation for AI-Generated Content: A Survey",
+      "abstract_600": "Advancements in model algorithms, the growth of foundational models, and access to high-quality datasets have propelled the evolution of Artificial Intelligence Generated Content (AIGC). Despite its notable successes, AIGC still faces hurdles such as updating knowledge, handling long-tail data, mitigating data leakage, and managing high training and inference costs. Retrieval-Augmented Generation (RAG) has recently emerged as a paradigm to address such challenges. In particular, RAG introduces the information retrieval process, which enhances the generation process by retrieving relevant objec",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "172e09fdf5d3",
+      "title": "TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods",
+      "abstract_600": "The TRIPOD (Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis) statement was published in 2015 to provide the minimum reporting recommendations for studies developing or evaluating the performance of a prediction model. Methodological advances in the field of prediction have since included the widespread use of artificial intelligence (AI) powered by machine learning methods to develop prediction models. An update to the TRIPOD statement is thus needed. TRIPOD+AI provides harmonised guidance for reporting prediction model studies, irrespective of w",
+      "year": 2024,
+      "venue": "BMJ",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "43162541b911",
+      "title": "Critical analysis of green extraction techniques used for botanicals: Trends, priorities, and optimization strategies-A review",
+      "abstract_600": "Botanicals are widely used and marketed as food supplements or cosmetics with particular benefits for human health. Botanicals are products manufactured using natural components derived from plants, algae, fungi or lichens. Given the easy accessibility of such products, it is essential to ensure their safety by guaranteeing the absence of chemical or microbiological contamination. Furthermore, since botanicals are derived from natural products, they consist of a set of molecules called a phytocomplex, and it is important to develop standardised methods to ensure their reproducibility. Traditio",
+      "year": 2024,
+      "venue": "TrAC Trends in Analytical Chemistry",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ea71e3251c36",
+      "title": "Attribution in Scientific Literature: New Benchmark and Methods",
+      "abstract_600": "Large language models (LLMs) present a promising yet challenging frontier for automated source citation in scientific communication. Previous approaches to citation generation have been limited by citation ambiguity and LLM overgeneralization. We introduce REASONS, a novel dataset with sentence-level annotations across 12 scientific domains from arXiv. Our evaluation framework covers two key citation scenarios: indirect queries (matching sentences to paper titles) and direct queries (author attribution), both enhanced with contextual metadata. We conduct extensive experiments with models such",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "190ca86ba9b7",
+      "title": "Can LLMs Replace Manual Annotation of Software Engineering Artifacts?",
+      "abstract_600": "Experimental evaluations of software engineering innovations, e.g., tools and processes, often include human-subject studies as a component of a multi-pronged strategy to obtain greater generalizability of the findings. However, human-subject studies in our field are challenging, due to the cost and difficulty of finding and employing suitable subjects, ideally, professional programmers with varying degrees of experience. Meanwhile, large language models (LLMs) have recently started to demonstrate human-level performance in several areas. This paper explores the possibility of substituting cos",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6e0abbc5776d",
+      "title": "Uncertainty Quantification and Confidence Calibration in Large Language Models: A Survey",
+      "abstract_600": "Uncertainty quantification (UQ) enhances the reliability of Large Language Models (LLMs) by estimating confidence in outputs, enabling risk mitigation and selective prediction. However, traditional UQ methods struggle with LLMs due to computational constraints and decoding inconsistencies. Moreover, LLMs introduce unique uncertainty sources, such as input ambiguity, reasoning path divergence, and decoding stochasticity, that extend beyond classical aleatoric and epistemic uncertainty. To address this, we introduce a new taxonomy that categorizes UQ methods based on computational efficiency and",
+      "year": 2025,
+      "venue": "Knowledge Discovery and Data Mining",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "03bff6d51a27",
+      "title": "A Comprehensive Survey of Hallucination in Large Language, Image, Video and Audio Foundation Models",
+      "abstract_600": "The rapid advancement of foundation models (FMs) across language, image, audio, and video domains has shown remarkable capabilities in diverse tasks.However, the proliferation of FMs brings forth a critical challenge: the potential to generate hallucinated outputs, particularly in high-stakes applications.The tendency of foundation models to produce hallucinated content arguably represents the biggest hindrance to their widespread adoption in real-world scenarios, especially in domains where reliability and accuracy are paramount.This survey paper presents a comprehensive overview of recent de",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e0c825e2f1d8",
+      "title": "Uncertainty-Based Abstention in LLMs Improves Safety and Reduces Hallucinations",
+      "abstract_600": "A major barrier towards the practical deployment of large language models (LLMs) is their lack of reliability. Three situations where this is particularly apparent are correctness, hallucinations when given unanswerable questions, and safety. In all three cases, models should ideally abstain from responding, much like humans, whose ability to understand uncertainty makes us refrain from answering questions we don't know. Inspired by analogous approaches in classification, this study explores the feasibility and efficacy of abstaining while uncertain in the context of LLMs within the domain of",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d18fddf95aec",
+      "title": "VeriCite: Towards Reliable Citations in Retrieval-Augmented Generation via Rigorous Verification",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) has emerged as a crucial approach for enhancing the responses of large language models (LLMs) with external knowledge sources. Despite the impressive performance in complex question-answering tasks, RAG still struggle with hallucinations. Attributing RAG-generated content through in-line citations has demonstrated potential in reducing hallucinations and facilitating human verification. Existing citation generation methods primarily rely on either fine-tuning the generator or employing post-processing approaches for citation matching. However, the former ap",
+      "year": 2025,
+      "venue": "SIGIR-AP",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c07da53a87ae",
+      "title": "A Comparative Study of Transformer-based and Hybrid Deep Learning Models for Long Document Summarization of academic research papers",
+      "abstract_600": "Automatic summarization of long scientific texts has been established as an essential task within the domain of Natural Language Processing(NLP), aiming to reduce information overload and facilitate knowledge acquisition from complex academic documents. Despite its importance, fact-based conventional systems of Automatic Text Summarization have mostly failed in ensuring coherence on the document level and keeping factual correctness. To address these limitations, further recent progress in deep learning has turned more intelligent models toward the equilibrium structural fidelity with fluency.",
+      "year": 2025,
+      "venue": "Al-Salam Journal for Engineering and Technology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cdea49da481a",
+      "title": "Combating Biomedical Misinformation through Multi-modal Claim Detection and Evidence-based Verification",
+      "abstract_600": "Biomedical misinformation - ranging from misleading social media posts to fake news articles and deepfake videos - is increasingly pervasive across digital platforms, posing significant risks to public health and clinical decision-making. We developed CER, a comprehensive fact-checking system designed specifically for biomedical content. CER integrates specialized components for claim detection, scientific evidence retrieval, and veracity assessment, leveraging both transformer models and large language models to process textual and multimedia content. Unlike existing fact-checking systems tha",
+      "year": 2025,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "659e22c8290d",
+      "title": "Deceptive Grounding: Entity Attribution Failure in Clinical Retrieval-Augmented Generation",
+      "abstract_600": "Retrieval-augmented generation evaluation checks whether model claims are factually grounded in retrieved documents. It does not check whether retrieved evidence is attributed to the correct entity. A clinical RAG response can pass every automated check (zero hallucinations, near-perfect faithfulness, real citations) while presenting drug Y's clinical evidence as evidence about queried drug X. We term this deceptive grounding (DG): a failure invisible to faithfulness, hallucination, and citation checks because every claim is sourced from a real document, about the wrong entity. Using a control",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 4,
+      "outside_window": false
+    },
+    {
+      "cid": "4e0d5f6e02bc",
+      "title": "Aligning Vision to Language: Annotation-Free Multimodal Knowledge Graph Construction for Enhanced LLMs Reasoning",
+      "abstract_600": "Multimodal reasoning in Large Language Models (LLMs) struggles with incomplete knowledge and hallucination artifacts, challenges that textual Knowledge Graphs (KGs) only partially mitigate due to their modality isolation. While Multimodal Knowledge Graphs (MMKGs) promise enhanced cross-modal understanding, their practical construction is impeded by semantic narrowness of manual text annotations and inherent noise in visual-semantic entity linkages. In this paper, we propose Vision-align-to-Language integrated Knowledge Graph (VaLiK), a novel approach for constructing MMKGs that enhances LLMs r",
+      "year": 2025,
+      "venue": "IEEE International Conference on Computer Vision",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "afdfb7910800",
+      "title": "EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents",
+      "abstract_600": "The web is increasingly accessed by AI agents rather than humans. Every agent needs knowledge, especially in the life-sciences, where agentic pipelines are growing fast. Access to the literature is a crucial part of that need, and resources such as Europe PMC, with over 40M indexed records, are widely used to meet it. Yet these resources were not built for AI agents: they take keywords and complex syntax and return whole papers, so every agent must learn the syntax, issue several searches, and read full papers to find the evidence it needs. We introduce EMBL AI Librarian, a knowledge layer tha",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ee4f1cf0a357",
+      "title": "FineSurE: Fine-grained Summarization Evaluation using LLMs",
+      "abstract_600": "Automated evaluation is crucial for streamlining text summarization benchmarking and model development, given the costly and time-consuming nature of human evaluation. Traditional methods like ROUGE do not correlate well with human judgment, while recently proposed LLM-based metrics provide only summary-level assessment using Likert-scale scores. This limits deeper model analysis, e.g., we can only assign one hallucination score at the summary level, while at the sentence level, we can count sentences containing hallucinations. To remedy those limitations, we propose FineSurE, a fine-grained e",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "eb890ee4e8f6",
+      "title": "Efficiently Deploying LLMs with Controlled Risk",
+      "abstract_600": "Deploying large language models in production requires simultaneous attention to efficiency and risk control. Prior work has shown the possibility to cut costs while maintaining similar accuracy, but has neglected to focus on risk control. By contrast, here we present hierarchical chains with multi-level abstention (HCMA), which use model-intrinsic uncertainty to delegate queries along the LLM intelligence hierarchy, enabling training-free model switching based solely on black-box API calls. Our framework presents novel trade-offs between efficiency and risk. For example, deploying HCMA on MML",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f432e400f29d",
+      "title": "D2-ScaleAgent: Dual-Dimensional Scaling for Long Document Understanding",
+      "abstract_600": "Multi-modal retrieval-augmented generation (RAG) is a key technique for visually rich long document understanding. Existing multi-modal RAG methods are progressively advancing toward multi-agent systems: they first retrieve relevant pages based on a query, and then iteratively understand information within those pages. However, these methods typically rely on fixed workflows and lack the ability to dynamically scale computation at test time, often leading to insufficient evidence. To address this, we propose D2-ScaleAgent, an agentic framework that introduces a dual-dimensional scaling paradig",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c5cda5ef446d",
+      "title": "Publishers\u2019 and journals\u2019 instructions to authors on use of generative artificial intelligence in academic and scientific publishing: bibliometric analysis",
+      "abstract_600": "OBJECTIVES: To determine the extent and content of academic publishers' and scientific journals' guidance for authors on the use of generative artificial intelligence (GAI). DESIGN: Cross sectional, bibliometric study. SETTING: Websites of academic publishers and scientific journals, screened on 19-20 May 2023, with the search updated on 8-9 October 2023. PARTICIPANTS: Top 100 largest academic publishers and top 100 highly ranked scientific journals, regardless of subject, language, or country of origin. Publishers were identified by the total number of journals in their portfolio, and journal",
+      "year": 2024,
+      "venue": "BMJ",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5c1c990f19e8",
+      "title": "VERITAS: Towards a General-Purpose Replication Tool for Scientific Research",
+      "abstract_600": "AI tools are accelerating scientific publication while the systems that review it struggle to keep up, and independent verification of published research has become both harder and more important. As manual replication is slow and expensive, a growing line of work uses coding agents to automate parts of the process. Existing efforts are largely packaged as benchmarks with companion agents that only run inside the benchmark's own pipeline, and no general-purpose replication tool exists. We present VERITAS, a domain-agnostic replication framework built around CLI coding agents. Given a paper, a",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e4d423d3d283",
+      "title": "A large-scale audit of dataset licensing and attribution in AI",
+      "abstract_600": "Abstract The race to train language models on vast, diverse and inconsistently documented datasets raises pressing legal and ethical concerns. To improve data transparency and understanding, we convene a multi-disciplinary effort between legal and machine learning experts to systematically audit and trace more than 1,800 text datasets. We develop tools and standards to trace the lineage of these datasets, including their source, creators, licences and subsequent use. Our landscape analysis highlights sharp divides in the composition and focus of data licenced for commercial use. Important cate",
+      "year": 2024,
+      "venue": "Nature Machine Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9926826e37b7",
+      "title": "BVINet: Unlocking Blind Video Inpainting With Zero Annotations",
+      "abstract_600": "Video inpainting aims to fill in corrupted regions of the video with plausible contents. Existing methods generally assume that the locations of corrupted regions are known, focusing primarily on the \"how to inpaint\". This reliance necessitates manual annotation of the corrupted regions using binary masks to indicate \"whereto inpaint\". However, the annotation of these masks is labor-intensive and expensive, limiting the practicality of current methods. In this paper, we expect to relax this assumption by defining a new blind video inpainting setting, enabling the networks to learn the mapping",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "82ca698970fc",
+      "title": "Assessing the Reasoning Capabilities of LLMs in the context of Evidence-based Claim Verification",
+      "abstract_600": "Although LLMs have shown great performance on Mathematics and Coding related reasoning tasks, the reasoning capabilities of LLMs regarding other forms of reasoning are still an open problem.Here, we examine the issue of reasoning from the perspective of claim verification.We propose a framework designed to break down any claim paired with evidence into atomic reasoning types that are necessary for verification.We use this framework to create RECV, the first claim verification benchmark, incorporating real-world claims, to assess the deductive and abductive reasoning capabilities of LLMs.The be",
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "050e786fe248",
+      "title": "Leveraging Entailment Judgements in Cross-Lingual Summarisation",
+      "abstract_600": "Synthetically created Cross-Lingual Summarisation (CLS) datasets are prone to include document-summary pairs where the reference summary is unfaithful to the corresponding document as it contains content not supported by the document (i.e., hallucinated content). This low data quality misleads model learning and obscures evaluation results. Automatic ways to assess hallucinations and improve training have been proposed for monolingual summarisation, predominantly in English. For CLS, we propose to use off-the-shelf cross-lingual Natural Language Inference (X-NLI) to evaluate faithfulness of re",
+      "year": 2024,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ea63f49634f3",
+      "title": "Capability Minimization as a Safety Primitive: Risk-Aware Causal Gating for Least-Privilege LLM Agents",
+      "abstract_600": "Modern decision systems increasingly rely on learned components whose outputs may be confident yet wrong, exposing downstream actions to costly errors. We introduce Risk-Aware Causal Gating (RACG), a framework that decides whether to act on, defer, or abstain from a model's prediction by combining causal effect estimation with calibrated risk control. RACG models the causal pathway from candidate actions to outcomes and gates each decision according to an estimated counterfactual risk rather than raw predictive confidence. To make gating reliable, we derive distribution-free bounds on the prob",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

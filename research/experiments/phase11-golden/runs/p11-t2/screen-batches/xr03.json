@@ -1,0 +1,257 @@
+{
+  "batch": "xr03",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "6ba4a30f4736",
+      "title": "Efficient Retrieval-Augmented Generation via Token Co-occurrence Graphs",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) mitigates hallucinations in Large Language Models (LLMs) by grounding the generation process on external knowledge. However, standard RAG approaches struggle with multi-hop reasoning. While recent graph-based RAG methods improve the retrieval of interconnected chunks, they often rely on computationally expensive and error-prone LLM-based extraction pipelines. To address these issues, we propose TIGRAG (Token-Induced GraphRAG), an efficient graph-augmented RAG framework based on a token co-occurrence Knowledge Graph. TIGRAG directly models topological relati",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e0627e3b2054",
+      "title": "IterCOMP: Reasoning-aware Adaptive Prompt Compression for Multi-hop Question Answering",
+      "abstract_600": "Multi-hop question answering requires complex reasoning across multiple evidence segments, which often overwhelms retrieval-augmented generation systems with lengthy and noisy contexts, thereby undermining both efficiency and accuracy. While existing prompt compression methods attempt to address this issue, they are typically designed for single-turn queries and fail to capture interdependent reasoning steps. We propose IterCOMP, a unified, training-free prompt compression framework that incorporates multi-hop reasoning within an iterative compression loop. IterCOMP decomposes documents into e",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "040059a0d317",
+      "title": "DPR-FL: A Dual-Path Retrieval Method with Fusion-Based Filtering and LLM Feedback",
+      "abstract_600": ": Faced with the surge of massive natural-language content, information retrieval systems must handle increasingly complex queries while filtering noisy information effectively. Although conventional approaches have made notable progress in matching efficiency and general adaptability, they still struggle to precisely model deep semantic associations between query intent and documents in real-world environments. Such limitations can lead to ranking deviations and omission of critical information. Motivated by recent advances in large language models (LLMs) and their capability to capture deep",
+      "year": 2026,
+      "venue": "Computers, Materials &amp; Continua",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e94f37201de7",
+      "title": "Evaluating RAG approaches for Question Answering",
+      "abstract_600": null,
+      "year": null,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8792a3293aa1",
+      "title": "An Intelligent PDF Question-Answering System; A Retrieval-Augmented Generation Approach",
+      "abstract_600": "Due to the surge in digital document creation, intelligent systems that can effectively retrieve accurate information from unstructured PDF content have become a necessity. Current keyword-based search techniques lack semantic meaning, while large language models (LLMs), when utilized individually, produce hallucinated results when they are not contextually aware of document content. In this paper, we introduce a novel real-time question answering system for PDF content using a lightweight approach to Retrieval-Augmented Generation (RAG). Our system combines a HuggingFace sentence transformer",
+      "year": 2026,
+      "venue": "International Conference Computing Methodologies and Communication",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4dbe06b010bc",
+      "title": "RULER: Robust Unified LLM-based Efficient Retrieval for Legal Information",
+      "abstract_600": "Legal information retrieval demands high precision, yet traditional ''Retrieve-then-Rerank'' pipelines with two separate models suffer from cascading error propagation and knowledge disconnects between stages. To address these issues, we propose RULER, a Robust Unified LLM-based Efficient Retrieval that integrates efficient Bi-Encoder retrieval and high-precision Cross-Encoder reranking within a parameter-sharing architecture. To mitigate the Phantom Hits problem that irrelevant documents are assigned unreasonably high confidence, we introduce a Distribution-Robust Data Construction strategy t",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "767fe7c26473",
+      "title": "STaR: a soft-labeling and triplet-aware retriever for efficient retrieval-augmented QA",
+      "abstract_600": null,
+      "year": 2026,
+      "venue": "Multimedia Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "298acd4754a2",
+      "title": "Agentic RAG for Structure Aware Long Document Reasoning",
+      "abstract_600": "Graph-based and multimodal retrieval frameworks provide a strong foundation for long-document question answering, but single-pass retrieval can remain brittle when queries are ambiguous, multi-step, or misaligned with the indexed evidence. We present Agentic-RAG, a structure-aware retrieval-augmented generation framework that combines a MinerU-LightRAG-based document processing and graph retrieval pipeline with an LLM-based agentic query-control layer. The base pipeline supports structure-aware parsing and VLM-based captioning for textual, visual, and tabular evidence, while the agentic layer",
+      "year": 2026,
+      "venue": "2026 11th International Conference on Applying New Technology in Green Buildings (ATiGB)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8acbde33698b",
+      "title": "Query-Aware Knowledge Retrieval via Hyperbolic Structuring",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) has demonstrated significant potential in enhancing large language models (LLMs) by supplementing external knowledge. However, existing approaches focus primarily on retrieving isolated factual knowledge entities while neglecting the critical reasoning relationships. To address this limitation, Graph-Augmented Generation (GraphRAG) has emerged as an effective so-lution, which explicitly integrates structured knowledge graphs to support complex reasoning tasks. Although diverse graph construction methods have been explored, they typically rely on static, que",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2fd72897c921",
+      "title": "Tool-Adaptive LLM Reranker",
+      "abstract_600": "Generative Large Language Models (LLMs) have revolutionized information retrieval, yet their strictly parametric nature frequently leads to severe factual hallucinations when confronted with complex queries beyond their epistemic boundaries. While external tool-calling can mitigate this, indiscriminately invoking search tools for every document during reranking incurs prohibitive latency overheads, creating an intractable accuracy-efficiency dilemma. To address this challenge, we propose TALRanker, a novel framework that formalizes pointwise relevance scoring as an agentic Markov decision proc",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "02489312abd8",
+      "title": "MARS: Multi-hop Adaptive Retrieval and SPARQL Generation for KGQA",
+      "abstract_600": "Large language models (LLMs) have demonstrated strong reasoning performance, but their tendency to hallucinate limits their reliability in knowledge-intensive tasks requiring up-to-date and grounded information. Combining knowledge graphs (KGs) with LLMs facilitates the use of explicit symbolic knowledge that can be continuously updated without costly fine-tuning, while benefiting from rapidly advancing LLM reasoning. We propose MARS, a scalable knowledge graph question answering (KGQA) approach that requires no model fine-tuning. Rather than relying on open-ended agentic exploration, MARS per",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f7a3a51ffb06",
+      "title": "Collision to Cognition: Hash-Driven Graph Construction for Efficient RAG",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) has long been a promising paradigm for enhancing large language models (LLMs) with ex-ternal knowledge. Current embedding-based methods can capture semantic similarity but struggle to establish fine-grained, interpretable logical connections. Recently, GraphRAG has gained increasing popularity for its capability in modeling logical relations. However, it requires substantial API token usage for triple extraction or textual summarization during graph construction, which makes the entire process inefficient and expensive. In this paper, we pro-pose MeshRAG, a",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "05d9f308bf9f",
+      "title": "Search-GRT: Guided Retrieval Training of Search Agents to Optimize for Complex Question Answering",
+      "abstract_600": "The effective use of search engines by large language models (LLMs) remains a significant challenge, particularly in complex, multi-hop question-answering (MHQA) tasks. These tasks require the model to decompose questions into subqueries, retrieve relevant information, and synthesize answers from multiple sources, often leading to cascading errors due to poor retrieval in early stages. Reinforcement learning (RL) has shown promise in improving LLMs'search capabilities, but it often suffers from sparse rewards during training, hindering the model's ability to learn effectively. To address these",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "295f9f10a691",
+      "title": "Delegation Intelligence in Deep Search: A Controllable Framework for Disentangled Capability Diagnosis",
+      "abstract_600": "Deep search is becoming a core capability of modern agent systems, yet it is typically evaluated solely based on end-to-end answer accuracy. This coupled evaluation paradigm entangles retrieval quality, long-context comprehension, evidence verification, and tool-use decisions, making it difficult to determine whether a model truly knows when and how to delegate information seeking to search. To this end: (1) We formalize this meta-capability as Delegation Intelligence in deep search and decompose it into complementary dimensions-Search Decision-Making (recognizing information insufficiency and",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "619eda43edf9",
+      "title": "Fin-STAR: Structure-as-Semantics to Resolve Implicitness in Financial Retrieval",
+      "abstract_600": "Understanding financial documents is critical for high-stakes decision-making yet hindered by systemic semantic implicitness : key facts are rarely explicit in surface text and often determined by global structural cues. Missing these cues invites semantic misinterpreta-tions, such as misreading what a number refers to, an outcome unacceptable in high-stakes environments. However, existing Retrieval-Augmented Generation (RAG) systems typically treat structure as a physical navigational skeleton rather than intrinsic semantic knowledge. To address this, we introduce Fin-STAR ( Fin ancial ST ruc",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "05f68cddc570",
+      "title": "DeLIVeR: Decomposed Learning for Information-grounded Veracity Recognition via Reinforced Knowledge Graph Exploration",
+      "abstract_600": "Automated fact-checking remains a challenge for Large Language Models (LLMs) due to\"query brittleness\"in traditional retrieval systems. We propose DeLIVeR (Decomposed Learning for Information-grounded Veracity Recognition), a framework that treats evidence retrieval as a reinforced strategic exploration task. DeLIVeR utilizes a Planner LLM to decompose complex claims into targeted question sets, which are used to traverse structured Knowledge Graphs (KGs) for high-precision evidence. We optimize the Planner's policy using Group Relative Policy Optimization (GRPO) with a reward system prioritiz",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "32a290a638cd",
+      "title": "Identifying and Resolving Pitfalls of Knowledge-Based VQA Benchmarks: Auditing, Repairing, and Augmenting",
+      "abstract_600": "Knowledge-Based Visual Question Answering (KB-VQA) aims to evaluate whether Visual Language Models (VLMs) can retrieve, ground, and reason over external structured knowledge beyond visual evidence. In practice, answer accuracy is widely adopted as the primary evaluation metric, implicitly treating correctness as a proxy for knowledge-grounded reasoning. However, for existing KB-VQA benchmarks, this proxy relies on critical assumptions that are often overlooked and rendered unreliable by benchmark issues: annotated answer must be derivable from the associated knowledge base, question must be we",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "23cee4ae2e53",
+      "title": "Retrieving a Set, Not Independent Passages: Set-Level Compatibility Learning for Efficient Set Exploration",
+      "abstract_600": "Multi-hop question answering and retrieval-augmented reasoning require selecting evidence passages that are jointly useful for answering a query. However, most retrievers still score passages independently or make locally supervised sequential decisions, which can fail when evidence usefulness depends on compatibility among passages. LLM-based set selection can model such interactions, but its computational cost limits practical use. We address this gap by formulating multi-hop retrieval as query-set compatibility scoring and propose a set-level retrieval framework. Our training objective teac",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "201f051051f8",
+      "title": "DocTrace: Towards Traceable Long Document VQA via Hierarchical Evidence Graph Reasoning",
+      "abstract_600": "Long Document Visual Question Answering (LongDocVQA) requires Multimodal Large Language Models (MLLMs) to locate, integrate, and reason over heterogeneous document elements distributed across multiple pages. Existing approaches, including end-to-end MLLMs, retrieval-augmented generation (RAG) pipelines, and document agents, often lack explicit mechanisms to represent and verify how grounded evidence is progressively composed during reasoning, limiting both answer accuracy and traceability. In this paper, we cast LongDocVQA as an explicit evidence graph reasoning problem rather than implicit an",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d5c3eea28581",
+      "title": "D2-ScaleAgent: Dual-Dimensional Scaling for Long Document Understanding",
+      "abstract_600": "Multi-modal retrieval-augmented generation (RAG) is a key technique for visually rich long document understanding. Existing multi-modal RAG methods are progressively advancing toward multi-agent systems: they first retrieve relevant pages based on a query, and then iteratively understand information within those pages. However, these methods typically rely on fixed workflows and lack the ability to dynamically scale computation at test time, often leading to insufficient evidence. To address this, we propose D2-ScaleAgent, an agentic framework that introduces a dual-dimensional scaling paradig",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1f0d017fcb13",
+      "title": "Training Documents Reranker with Search Rubrics for Deep Research Agent",
+      "abstract_600": "Retrieval systems help deep research agents generate high-quality answers by providing relevant documents. However, existing retrievers typically select documents through relevance matching, while individually well-matched top-$k$ documents may not form a \\textit{set} that satisfies the complex information needs of an agent query (\\eg, diverse, concise and authoritative documents). In this paper, we propose search-oriented rubrics that \\textit{explicitly} define the requirements that high-quality document sets should satisfy for each agent query. Our search rubrics are organized into a hierarc",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8d3fa2f4efe9",
+      "title": "Distilling Temporal Search and Reasoning: Evolving LLMs for Future Prediction via Harness-Assisted Efficient Data Synthesis",
+      "abstract_600": "Future event prediction carries broad social impact yet remains challenging. SOTA approaches augment LLMs with external agent frameworks whose predictive capability vanishes once the harness is removed. While recent Tool-Integrated Reasoning (TIR) internalizes deep search for multi-hop retrieval of facts, forecasting further demands temporal search and reasoning over historical trends and dynamic shifts. The key obstacle is data: historical queries induce temporal leakage that degrades forecasting into retrieval. Prior works either freeze information gathering with static observations, or rely",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9b5a6ef1096a",
+      "title": "DLLM-Searcher: Adapting Diffusion Language Model for Efficient Search Agents",
+      "abstract_600": "Recently, Diffusion Large Language Models (dLLMs) have demonstrated unique efficiency advantages, enabled by their inherently parallel decoding mechanism and flexible generation paradigm. Meanwhile, despite the rapid advancement of Search Agents, their practical deployment is constrained by a fundamental limitation, termed as 1) Latency Challenge : the serial execution of multi-round reasoning, tool calling, and tool response waiting under the ReAct agent paradigm induces severe end-to-end latency. Intuitively, dLLMs can leverage their distinctive strengths to optimize the operational efficien",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3404d11a69b9",
+      "title": "GEM: A Generative Embedding Model Bridging Reasoning and Retrieval",
+      "abstract_600": "Modern LLMs excel at reasoning and instruction following, enabling users to express complex and diverse information needs. However, conventional retrievers largely rely on surface-level matching between queries and documents, resulting in a growing gap between how users express their needs and how retrievers interpret them. In this paper, we present GEM, a generative embedding model that augments retrieval through its own knowledge by explicitly reasoning about user intent and relevance criteria. GEM unifies generation and embedding within a single model: it first reasons over the query, then",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "80613543cc5c",
+      "title": "TabRank: Chain-of-Thought Distillation for Table Re-Rankers",
+      "abstract_600": "The ability to retrieve relevant tables for answering questions is a key task for structured information retrieval. Multi-stage retrieval systems rely heavily on rerankers to refine candidate lists produced by efficient first-stage retrievers. As a result, neural rerankers and LLM-based reranking methods have become increasingly important due to their superior capacity for semantic understanding and reasoning compared to conventional sparse or dense retrieval models. Recently, Large Reasoning Models (LRMs) equipped with explicit chain-of-thought (CoT) reasoning have shown strong improvements i",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

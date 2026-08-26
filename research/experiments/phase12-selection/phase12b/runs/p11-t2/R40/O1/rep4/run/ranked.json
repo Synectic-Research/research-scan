@@ -1,0 +1,1443 @@
+[
+  {
+    "cid": "2cbca1abbe99",
+    "criteria": {
+      "C1": 2,
+      "C2": 3,
+      "C3": 1,
+      "C4": 2,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": false
+    },
+    "key_finding": "Across six agents on BrowseComp-Plus and BrowseComp, search effort and answer quality are only weakly aligned; accuracy tracks cumulative retrieval recall far better than the number of searches, and the best agents issue far fewer redundant queries than weaker ones.",
+    "methodology": "Trajectory-level diagnosis with human-annotated document relevance judgments, decomposing failures into retrieval gaps vs. utilization gaps, retrieval model held fixed across six agents.",
+    "why_it_matters": "Directly undercuts the premise that more iterative searching drives agentic gains; the mechanism that carries the gain is evidence quality/cumulative recall, not search volume, which should reshape how C2 gains are attributed and measured.",
+    "limitations": [
+      "Evaluated on BrowseComp-Plus/BrowseComp rather than a dedicated scientific-literature benchmark",
+      "retrieval model held fixed, limiting generalization across retrievers"
+    ],
+    "relevance_reason": "Provides direct trajectory-level evidence on which agentic moves carry gains and where reported search effort fails to translate into accuracy.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "0bf8f356a21c",
+    "criteria": {
+      "C1": 3,
+      "C2": 1,
+      "C3": 1,
+      "C4": 3,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "PaSa-7B, an RL-trained agentic paper-search system, surpasses the best Google-based baseline by 37.78% in recall@20 and 39.90% in recall@50 on the real-world RealScholarQuery benchmark.",
+    "methodology": "Reinforcement learning on a synthetic 35k-query dataset (AutoScholarQuery) sourced from top-tier AI conference references, evaluated against Google/Google Scholar/GPT-based baselines on a separately constructed real-world benchmark.",
+    "why_it_matters": "Anchors the single-query database search baseline (Google, Google Scholar) that C1 asks for, and is the canonical example of the agentic system design (search, read, select) the brief is scoping.",
+    "limitations": [
+      "Trained on synthetic queries derived from citations, which may not reflect real research need diversity",
+      "gains attributed to the system as a whole rather than decomposed by specific agentic move"
+    ],
+    "relevance_reason": "The paradigmatic agentic academic-paper-search system with an explicit single-query baseline comparison and a purpose-built benchmark pair.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "3b89edf4b85c",
+    "criteria": {
+      "C1": 2,
+      "C2": 3,
+      "C3": 3,
+      "C4": 2,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Crase, a bounded citation-graph-expansion pipeline (seed search, 1.5-hop citation expansion, entailment pruning, recency-aware random-walk ranking), outperforms proprietary deep-research agents by up to 3x recall@50 at roughly a third of the cost on LitSearch and a further benchmark over a 500K-paper arXiv corpus.",
+    "methodology": "Fixed-pipeline design (no open-ended agent loop) evaluated on LitSearch and one additional benchmark against proprietary deep-research agent baselines.",
+    "why_it_matters": "Directly isolates citation-graph traversal as the specific mechanism carrying the gain over open-ended agentic search, exactly the C2 decomposition the brief wants and a candidate design to prefer over unconstrained agent loops.",
+    "limitations": [
+      "Compared against proprietary deep-research agents rather than a plain single-query baseline explicitly",
+      "evaluated on only two benchmarks, generality across corpora untested"
+    ],
+    "relevance_reason": "A structurally-bounded alternative to open agentic search that explicitly attributes gains to citation-graph traversal and ranking, core to the system-design question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "d02cb2e0fab4",
+    "criteria": {
+      "C1": 0,
+      "C2": 0,
+      "C3": 0,
+      "C4": 2,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": false
+    },
+    "key_finding": "Across eight expert-designed physics/astrophysics/cosmology literature-review tasks, overlap between human- and AI-selected references was under 6%, and mid-2025 LLMs produced references with incorrect metadata in 64% of cases, though a 2026 model showed zero errors on one test project.",
+    "methodology": "Controlled parallel study: human experts and AI systems (ChatGPT-4o, ChatGPT Deep Research, Gemini, later ChatGPT Pro 5.5) independently perform literature review for the same eight defined research goals.",
+    "why_it_matters": "Directly tests whether current agentic/AI literature-search systems replicate expert search competence, finding they largely do not, which is exactly the C5 evidence the brief says it should reach hardest for.",
+    "limitations": [
+      "Small sample of eight projects limits statistical generalization",
+      "domain-specific to physics/astro/cosmology rather than a CS-benchmark setting",
+      "later-model improvement reported on only a single project"
+    ],
+    "relevance_reason": "A rare controlled human-vs-AI comparison showing agentic literature search substantially underperforming expert search, directly answering the brief's fourth question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "e2c42887588f",
+    "criteria": {
+      "C1": 1,
+      "C2": 1,
+      "C3": 1,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "WisPaper's Deep Search agent achieves 22.26% recall on TaxoBench versus a 20.92% O3 baseline, with its validation model reaching 93.70% accuracy at reducing retrieval hallucinations.",
+    "methodology": "End-to-end agent system combining keyword retrieval with an LLM-based validation module; evaluated on TaxoBench against an O3 baseline. Abstract-only detail on benchmark construction.",
+    "why_it_matters": "Shows a modest, system-level recall gain over a strong baseline, but the small margin (roughly 1 point) and undifferentiated architecture make it weak evidence for which specific agentic move carries any gain.",
+    "limitations": [
+      "Baseline (O3) is itself a strong model rather than a plain single-query database search",
+      "no decomposition of which module drives the recall gain",
+      "TaxoBench construction not detailed in the abstract"
+    ],
+    "relevance_reason": "A current agentic scholarly-search product reporting recall numbers against a baseline, relevant to the system-design landscape but thin on mechanism attribution.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "890330c91980",
+    "criteria": {
+      "C1": 2,
+      "C2": 2,
+      "C3": 3,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "ReBOL, combining LLM query reformulation with Bayesian-optimization-guided relevance scoring, beats the best LLM reranker baseline on Robust04 (46.5% vs 35.0% recall@100) while matching reranker latency, across five BEIR datasets.",
+    "methodology": "Multimodal Bayesian Optimization posterior over document relevance initialized by LLM query reformulations, iteratively updated via batched LLM relevance scoring; evaluated on five BEIR datasets with two LLMs.",
+    "why_it_matters": "A concrete retrieval/reranking technique that could underlie the retrieval layer of agentic literature-search systems, but it is validated on general IR (BEIR) rather than a scientific-literature-search setting, so its transfer to the brief's systems is not directly shown.",
+    "limitations": [
+      "Evaluated on general BEIR datasets rather than a scientific-literature-search benchmark",
+      "no test of the technique inside an actual literature-search agent pipeline"
+    ],
+    "relevance_reason": "A retrieval/reranking method combining query reformulation with an alternative to top-k similarity retrieval, directly bearing on C3 even though not evaluated in the literature-search setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "9e751eba471a",
+    "criteria": {
+      "C1": 1,
+      "C2": 1,
+      "C3": 0,
+      "C4": 2,
+      "C5": 0
+    },
+    "overall": 1,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "In a pre-registered two-arm study on a synthetic wiki corpus, stripping cross-reference links roughly doubled searches per grounded fact as corpus size grew, while linked corpora kept search cost flat across two orders of magnitude, though grounded coverage reached ceiling in every condition.",
+    "methodology": "Pre-registered controlled experiment on a deterministic generated corpus (50/500/5000 pages), comparing an agent with followable hyperlinks vs. meaning-preserving prose, measured via search cost, fetch provenance, and coverage across 99 episodes.",
+    "why_it_matters": "Suggests link/graph traversal reduces search cost at scale, a finding analogous to citation-graph traversal, but the setting is an organizational wiki rather than scientific literature, so no explicit method transfer to the brief's systems is stated.",
+    "limitations": [
+      "Synthetic organizational-wiki corpus, not a scientific-literature corpus or benchmark",
+      "single agent (Claude) and single MCP tool setup limits generalizability",
+      "unconventional venue and no peer-reviewed validation evident from the abstract"
+    ],
+    "relevance_reason": "Offers a rigorously controlled analogue to citation-graph traversal's cost/benefit tradeoff, though outside the brief's literature-search setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "a8b83ac688d0",
+    "criteria": {
+      "C1": 3,
+      "C2": 1,
+      "C3": 3,
+      "C4": 1,
+      "C5": 2
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "LATTICE, an LLM-guided hierarchical search index with no embedding model at search time, matches the best fine-tuned ensemble on BRIGHT (46.7 nDCG@10, 49.1 with a lightweight ensemble), while showing that standard embedding retrievers and query-side agentic fixes remain brittle when the embedder misses the right documents.",
+    "methodology": "Top-down LLM-guided construction of a hierarchical document-summary index plus calibrated path-aggregated traversal, evaluated on the reasoning-intensive BRIGHT benchmark and traditional IR benchmarks (NQ, SciFact, SciDocs).",
+    "why_it_matters": "Directly measures the recall ceiling of embedding-based single-step retrieval and proposes a graph/hierarchy-navigation alternative to query reformulation, relevant to both C1 and C3, though evaluated on general reasoning-intensive IR rather than literature-search agents specifically.",
+    "limitations": [
+      "Primary benchmark (BRIGHT) is general reasoning-intensive retrieval, not a scientific-literature-search benchmark",
+      "no explicit test inside an agentic literature-search pipeline"
+    ],
+    "relevance_reason": "A retrieval-architecture paper bearing directly on the baseline-ceiling and retrieval-method questions, with citation-graph-like hierarchical traversal replacing reliance on embeddings or reformulation.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv",
+        "s2"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "60fd922117d2",
+    "criteria": {
+      "C1": 3,
+      "C2": 2,
+      "C3": 2,
+      "C4": 3,
+      "C5": 1
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "On a fixed, human-verified corpus, Search-R1 with BM25 reaches only 3.86% accuracy while GPT-5 reaches 55.9%, and GPT-5 paired with a Qwen3-Embedding-8B retriever reaches 70.1% with fewer search calls, isolating retriever contribution from agent capability.",
+    "methodology": "New benchmark (BrowseComp-Plus) built from BrowseComp with a fixed curated corpus, human-verified supporting documents, and mined hard negatives, enabling controlled disentangled evaluation of deep-research agents and retrievers.",
+    "why_it_matters": "Supplies exactly the baseline-recall-ceiling numbers (C1) and the rigorous, contamination-aware benchmark-construction template (C4) that the brief needs to anchor every other reported gain against.",
+    "limitations": [
+      "Fixed corpus (~100K docs) built from the benchmark's own queries, later shown by other work to shift difficulty when evidence is relocated to an independent corpus",
+      "focused on general deep-research QA rather than scientific-literature search specifically"
+    ],
+    "relevance_reason": "The field's reference benchmark for disentangling agent vs. retriever contribution, directly supplying single-query baseline numbers and a model of rigorous benchmark construction.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "7d6d01fe8a27",
+    "criteria": {
+      "C1": 0,
+      "C2": 0,
+      "C3": 0,
+      "C4": 1,
+      "C5": 2
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Deep-research agents exhibit an 'inertia bias' that makes them less objective when judging outcomes of their own prior actions; NIS-Agent, which isolates context at webpage-triage and answer-validation points, achieves competitive performance on GAIA, WebWalkerQA, BrowseComp and BrowseComp-zh while cutting token cost by 33%.",
+    "methodology": "New IBIS benchmark isolating self-authored vs. externally-authored action history, plus a context-isolation architecture (NIS-Agent) evaluated on four established deep-research benchmarks; an 8B model trained to resist the bias.",
+    "why_it_matters": "Identifies a system-level failure mode that could explain why some agentic gains fail to hold, relevant to C5, but the benchmarks and setting are general web deep-research QA rather than scientific literature search.",
+    "limitations": [
+      "Evaluated on general web-agent benchmarks (GAIA, WebWalkerQA, BrowseComp) rather than literature-search-specific settings",
+      "mechanism (inertia bias) is orthogonal to the brief's named agentic moves (reformulation, graph traversal, crawling)"
+    ],
+    "relevance_reason": "A plausible explanation for why iterative agentic search sometimes underdelivers, adjacent to but not squarely inside the brief's literature-search setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "3759e655e951",
+    "criteria": {
+      "C1": 1,
+      "C2": 2,
+      "C3": 3,
+      "C4": 2,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "HySemRAG's hybrid retrieval (semantic search + keyword filtering + knowledge-graph traversal) with agentic self-correction achieves 35.1% higher semantic similarity than PDF chunking (0.655 vs 0.485, p<0.000001), 68.3% single-pass QA success, and 99.0% citation accuracy across 643 evaluated observations.",
+    "methodology": "Eight-stage ETL+RAG pipeline (metadata acquisition, PDF retrieval, layout analysis, field extraction, topic modeling, knowledge-graph construction) evaluated across 60 testing sessions producing 643 observations, applied to geospatial epidemiology literature.",
+    "why_it_matters": "Demonstrates a concrete hybrid-retrieval, graph-augmented architecture with quantified extraction-quality and citation-accuracy gains, directly informing the retrieval/reranking design (C3) question the brief asks about, and citation verification bears on the recall/quality tradeoff.",
+    "limitations": [
+      "Case study applied to one applied domain (ozone/cardiovascular epidemiology), generality across scientific fields asserted but not extensively tested",
+      "gains attributed to system as a whole rather than isolated per hybrid-retrieval component"
+    ],
+    "relevance_reason": "A literature-synthesis system whose hybrid retrieval and citation-verification design is directly the kind of architecture the brief's system-design question is about.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "aac7d9e865ef",
+    "criteria": {
+      "C1": 2,
+      "C2": 2,
+      "C3": 2,
+      "C4": 3,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "other",
+    "relation": "foundational",
+    "flags": {
+      "review": true,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "A systematic taxonomy of Deep Research agent architectures (API-based vs. browser-based retrieval, static vs. dynamic workflows, single- vs. multi-agent) that identifies key benchmark limitations including restricted external-knowledge access, sequential-execution inefficiency, and metric-objective misalignment.",
+    "methodology": "Narrative survey and taxonomy synthesis of Deep Research agent architectures, tool-use frameworks, and evaluation benchmarks, with a maintained companion repository.",
+    "why_it_matters": "Provides the field-level map of system designs and, critically, a critical evaluation of current benchmarks' limitations, giving the scan its organizing framework for the sequencing of the other three questions the brief poses.",
+    "limitations": [
+      "Narrative rather than systematic-protocol review; abstract gives no quantitative synthesis",
+      "surveys the field broadly rather than adjudicating specific replication failures"
+    ],
+    "relevance_reason": "The synthesis paper that maps system designs, tool-use frameworks and benchmark critique the whole brief is organized around.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "dc6612fba47a",
+    "criteria": {
+      "C1": 3,
+      "C2": 0,
+      "C3": 1,
+      "C4": 3,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": true
+    },
+    "key_finding": "Relocating BrowseComp-Plus's evidence into an independent, non-benchmark-derived corpus (ClimbMix) caused the strongest evaluated agent's evidence recall to fall from 84.3% to 21.4% and answer accuracy to drop by five points despite issuing 63% more search calls, on 57 fully-grounded projected questions.",
+    "methodology": "A dataset-agnostic projection pipeline that decomposes questions into atomic reasoning hops and re-grounds them in a 400B-token, 553M-document corpus (ClimbMix) built independently of the benchmark, verified by automatic checks, an independent agent, and human review.",
+    "why_it_matters": "Directly demonstrates the C5 phenomenon the brief most wants: a reported agentic evaluation result collapsing once the query-selected, benchmark-derived corpus is replaced by an independently-built one, exposing benchmark-construction inflation.",
+    "limitations": [
+      "Pipeline yields only 57 fully grounded questions out of 830, a small validated subset",
+      "single projection target (ClimbMix); generality of the pipeline to other corpora not yet demonstrated at scale"
+    ],
+    "relevance_reason": "The clearest evidence in this shortlist that reported agentic/retrieval gains shrink dramatically once benchmark-corpus artifacts are removed, squarely answering the brief's fourth question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv",
+        "s2"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "04c2c77e0326",
+    "criteria": {
+      "C1": 1,
+      "C2": 3,
+      "C3": 2,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "PaperPilot-9B raises multi-turn literature search Hit@5 from 58.0 to 77.0, MRR from 47.5 to 59.4, and nDCG@10 from 26.8 to 32.5 over a base toolset agent, while cutting workflow execution errors from 9.5% to 0%, by framing search as an editable, executable DAG of operators.",
+    "methodology": "Trained via supervised workflow imitation and preference optimization over controlled workflow corruptions; evaluated on multi-turn interaction against a Qwen3.5-9B toolset agent baseline.",
+    "why_it_matters": "Directly tests Q2: it decomposes agentic literature search into named operators (keyword search, citation expansion, filtering, reranking) and shows gains attach to explicit, editable workflow structure rather than an undifferentiated agent, which is exactly the granularity the plan needs for attributing gains.",
+    "limitations": [
+      "baseline is another agent, not a single-query database search ceiling",
+      "benchmark construction for the reported metrics is not described in the abstract"
+    ],
+    "relevance_reason": "A 2026 multi-turn literature-search agent that explicitly separates and measures individual workflow operators, directly answering which agentic moves carry the reported gain.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "d8c6216340fd",
+    "criteria": {
+      "C1": 0,
+      "C2": 3,
+      "C3": 3,
+      "C4": 0,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "EviReform's evidence-guided query reformulation, which forms residual queries from retrieved passages and propagates them through graph relations, beats the strongest baseline by up to 5.59 Recall@5 and 4.50 F1 points on multi-hop QA.",
+    "methodology": "Method paper evaluated on 2WikiMultiHopQA, HotpotQA, and MuSiQue; separates original-question retrieval signal from residual, evidence-derived reformulation signal in a graph propagation scheme.",
+    "why_it_matters": "Isolates query reformulation as the mechanism carrying the gain over plain graph retrieval, which is the technique-level evidence C2/C3 ask for, but the setting is generic multi-hop QA rather than literature-search corpora, so it informs technique choice without validating it in the brief's domain.",
+    "limitations": [
+      "evaluated on multi-hop QA benchmarks, not scientific literature retrieval",
+      "no baseline recall ceiling for single-query database search reported"
+    ],
+    "relevance_reason": "A rigorous, mechanism-isolated study of query-reformulation-driven graph retrieval, the same class of technique the brief asks agentic literature-search systems to justify, but in a neighbouring (non-literature) retrieval setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "731ce4b837e2",
+    "criteria": {
+      "C1": 0,
+      "C2": 0,
+      "C3": 0,
+      "C4": 1,
+      "C5": 2
+    },
+    "overall": 3,
+    "evidence_level": "systematic-review",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": true,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "Across 26 full-text-coded AI-scientist systems (24 runnable), 83% release code but only 38% release seeds/execution traces or report any novelty-verification method, and none of the nine closed-loop systems demonstrates an externally validated in-loop oracle.",
+    "methodology": "Systematic screening of 125 candidate works down to 35 included, with full-text coding of 26 entries across seven audit dimensions (lifecycle stage, autonomy, evaluation method, artifacts, human-in-the-loop, novelty verification, result-selection disclosure).",
+    "why_it_matters": "Sharpens Q4: it shows that even where end-to-end AI-scientist systems (which include literature search as a lifecycle stage) report strong results, verification and reproducibility artifacts are the exception, which should make the scan skeptical of any single reported gain that lacks an external check.",
+    "limitations": [
+      "covers the full research lifecycle, not literature search specifically, so findings are diluted across stages",
+      "abstract gives proportions but no literature-search-specific breakdown"
+    ],
+    "relevance_reason": "The one systematic synthesis in the shortlist speaking to whether reported agentic-system claims (including literature search) actually hold up under verification, which is the scan's stated hardest question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "625aeeca9085",
+    "criteria": {
+      "C1": 2,
+      "C2": 3,
+      "C3": 2,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "PaSaMaster achieves a 16.5x higher F1-score than Google Scholar and 37.8% higher than GPT-5.2 at about 1% of the cost, across 38 disciplines in PaSaMaster-Bench, while reducing source hallucination from 32.66% to zero.",
+    "methodology": "Introduces a recursive self-evolving retrieval system with planning-retrieval separation (frontier LLM for intent, lightweight models for retrieval/scoring); evaluated against Google Scholar and GPT-5.2 on a custom 38-discipline benchmark.",
+    "why_it_matters": "Gives a concrete, quantified comparison against a real single-query search-engine baseline (Google Scholar) plus attributes gains to a specific mechanism (self-evolving intent refinement over ranked evidence), directly answering Q1 and Q2 together.",
+    "limitations": [
+      "benchmark (PaSaMaster-Bench) construction details are not given in the abstract",
+      "comparison against Google Scholar may not equal a controlled single-query database/BM25/embedding baseline"
+    ],
+    "relevance_reason": "Directly on-brief: a literature-retrieval agent quantifying gain over a single-query baseline and attributing it to a named agentic mechanism, in the exact setting the brief studies.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "ab98788216b2",
+    "criteria": {
+      "C1": 0,
+      "C2": 1,
+      "C3": 1,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "PaperQA2 matches or exceeds subject-matter-expert performance on literature retrieval, summarization, and contradiction-detection tasks, and identifies 2.34 \u00b1 1.99 contradictions per paper in biology literature, 70% validated by experts.",
+    "methodology": "Rigorous human-AI comparison on real-world literature research tasks with unrestricted human comparators (full internet/tool access); introduces the LitQA2 benchmark used to guide system design.",
+    "why_it_matters": "The most-cited, widely-discussed positive result the field measures itself against; any claim about agentic gains being real or benchmark comparability needs to be checked against this paper's specific tasks and LitQA2 construction rather than assumed to generalize.",
+    "limitations": [
+      "abstract does not separate which specific agentic mechanism (reformulation, iterative retrieval) drives the reported human-parity result",
+      "no explicit baseline recall ceiling for single-query search is reported"
+    ],
+    "relevance_reason": "The foundational, heavily-cited claim of superhuman literature synthesis that later benchmark-construction and replication-failure papers in this scan directly argue with.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "777228ece17c",
+    "criteria": {
+      "C1": 1,
+      "C2": 1,
+      "C3": 3,
+      "C4": 0,
+      "C5": 2
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": false
+    },
+    "key_finding": "Grep-based retrieval generally outperforms vector retrieval across agent harnesses on a 116-question LongMemEval sample, but overall scores depend strongly on which harness and tool-calling style is used even with identical underlying data.",
+    "methodology": "Two empirical experiments comparing grep vs. vector retrieval across a custom harness (Chronos) and provider-native CLI harnesses (Claude Code, Codex, Gemini CLI), including a distractor-density manipulation.",
+    "why_it_matters": "Shows that a retrieval-method comparison result can flip depending on agent scaffolding rather than the retrieval technique itself, a caution directly relevant to Q4's concern that reported gains may not hold under a different harness or measurement setup.",
+    "limitations": [
+      "evaluated on conversational memory retrieval (LongMemEval), not scientific literature corpora",
+      "no scientific-literature-specific baseline recall ceiling reported"
+    ],
+    "relevance_reason": "A rigorous, harness-controlled study showing agentic retrieval-method gains are fragile to implementation choices \u2014 the same caution the brief wants applied to literature-search agent claims \u2014 but in a memory-QA rather than literature-search setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "b60436ddd394",
+    "criteria": {
+      "C1": 2,
+      "C2": 3,
+      "C3": 3,
+      "C4": 3,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": true
+    },
+    "key_finding": "GraphRAG frequently underperforms vanilla RAG on real-world tasks; GraphRAG-Bench systematically maps the pipeline (construction, retrieval, generation) across fact retrieval, reasoning, summarization, and creative generation to identify when graph structure actually helps.",
+    "methodology": "Introduces a comprehensive benchmark with tasks of increasing difficulty and a full-pipeline evaluation protocol comparing GraphRAG against vanilla RAG baselines.",
+    "why_it_matters": "Directly targets Q4 for the citation-graph-traversal mechanism specifically: it shows the graph-retrieval gain the brief expects agentic systems to rely on does not reliably beat a plain retrieval baseline, and supplies the benchmark-construction template needed to test that claim rigorously in a literature-search setting.",
+    "limitations": [
+      "tasks are general-domain RAG benchmarks, not scientific-literature corpora specifically",
+      "vanilla RAG baseline is embedding-based, not necessarily the same single-query database search the brief anchors on"
+    ],
+    "relevance_reason": "Directly investigates whether the graph-traversal mechanism the brief singles out actually beats a non-graph baseline, and supplies a benchmark-construction methodology transferable to literature-search evaluation.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "93ac147bb924",
+    "criteria": {
+      "C1": 1,
+      "C2": 3,
+      "C3": 3,
+      "C4": 0,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "DynaKRAG's learned, state-conditioned policy for coordinating iterative retrieval, query reformulation, and sufficiency checking ranks first in EM/F1 across nine dataset-backbone pairs while cutting total tokens by 10.1-34.3% and retrieval calls by 15.1-43.4%.",
+    "methodology": "Method paper with a deterministic validity layer, learned continuation gate, and learned advantage scorer over evidence-acquisition actions; evaluated on HotpotQA, 2Wiki, MuSiQue with three LLM backbones against matched-backbone baselines.",
+    "why_it_matters": "Provides a fine-grained, per-operation efficiency/quality attribution for iterative retrieval and reformulation moves, exactly the mechanism-level evidence C2 asks for, but validated only on general multi-hop QA rather than literature search.",
+    "limitations": [
+      "evaluated on multi-hop QA benchmarks, not literature-search corpora",
+      "baseline is a matched-backbone method, not a single-query database search ceiling"
+    ],
+    "relevance_reason": "A mechanism-attributed iterative-retrieval/reformulation policy with measured efficiency gains, directly informative for the retrieval layer underlying literature-search agents even though tested in a neighbouring QA setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "3b14a111838b",
+    "criteria": {
+      "C1": 0,
+      "C2": 0,
+      "C3": 0,
+      "C4": 3,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": true
+    },
+    "key_finding": "Search-time contamination (benchmark metadata leakage, question-context leakage, explicit answer leakage) is widespread across six public benchmarks for deep research agents and inflates measured performance by up to 4%.",
+    "methodology": "Defines three contamination severities, develops detection algorithms, and quantifies impact by evaluating modern deep research agents on six public benchmarks.",
+    "why_it_matters": "Directly answers Q4: it shows a mechanism by which reported agentic-search gains are artifacts of benchmark contamination rather than real capability, meaning any reported improvement should be checked for search-time leakage before being trusted.",
+    "limitations": [
+      "benchmarks studied are general deep-research benchmarks, not confirmed to be literature-search-specific sets",
+      "abstract does not break down contamination by which agentic mechanism benefited most"
+    ],
+    "relevance_reason": "The clearest evidence in the shortlist that reported agentic-search gains can be measurement artifacts rather than real capability, which is precisely what Q4 asked the scan to find.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "0604cbad73a4",
+    "criteria": {
+      "C1": 0,
+      "C2": 0,
+      "C3": 0,
+      "C4": 3,
+      "C5": 1
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Deep Research Bench provides 89 multi-step web research tasks with human-worked answers and a frozen-web 'RetroSearch' environment, showing offline RetroSearch agents perform comparably to live-web agents, enabling stable evaluation over time.",
+    "methodology": "Benchmark-construction paper: 8 task categories, expert-curated answers, a large frozen scraped-web corpus for reproducibility, plus automated trace analysis of hallucination, tool use, and forgetting across major LLMs and 'Deep Research' products.",
+    "why_it_matters": "Directly addresses Q3: it shows explicit choices for query source, answer curation, and corpus-freezing that control for the changing web, a construction template the brief needs to judge whether other literature-search benchmarks are comparable or contamination-prone.",
+    "limitations": [
+      "tasks are general web research, not scientific-literature-search-specific",
+      "no explicit single-query database search baseline ceiling is reported"
+    ],
+    "relevance_reason": "A benchmark-construction paper solving exactly the contamination/comparability problem Q3 and Q4 raise, in the closely neighbouring deep-research-agent setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "1a6159b9598a",
+    "criteria": {
+      "C1": 3,
+      "C2": 0,
+      "C3": 2,
+      "C4": 3,
+      "C5": 1
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "The leading MTEB retrieval model (SFR-Embedding-Mistral, 59.0 nDCG@10 on standard benchmarks) scores only 18.3 nDCG@10 on BRIGHT's reasoning-intensive queries, though explicit query reasoning improves retrieval by up to 12.2 points.",
+    "methodology": "Introduces a 1,384-query benchmark spanning economics, psychology, mathematics, and coding, curated from naturally occurring human data, and evaluates state-of-the-art retrieval models against it.",
+    "why_it_matters": "Supplies the quantified baseline recall ceiling that Q1 asks for on hard, reasoning-intensive queries \u2014 the same query type agentic literature-search systems claim to help with \u2014 and its methodology for exposing the gap is directly reusable for constructing a literature-search-specific version.",
+    "limitations": [
+      "domains covered (economics, psychology, math, coding) do not include scientific literature retrieval directly",
+      "gains from explicit reasoning are shown for query augmentation, not for agentic reformulation/graph/crawling mechanisms specifically"
+    ],
+    "relevance_reason": "The foundational benchmark establishing how poorly single-query embedding search performs on complex queries, giving Q1 its baseline-ceiling evidence and a construction method transferable to literature-search evaluation.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "3a0a09349eaf",
+    "criteria": {
+      "C1": 0,
+      "C2": 2,
+      "C3": 2,
+      "C4": 0,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Agents-K1 converts 2.46 million scientific papers into agent-native knowledge graphs (Scholar-KG) capturing entities, evidence, citations, and method lineages beyond abstracts, and its unified pipeline (parser, IE backbone, tri-source retrieval CLI) achieves superior performance in scientific IE, KG construction, and multi-hop scientific reasoning.",
+    "methodology": "End-to-end pipeline with a multimodal parser, a 4B GRPO-trained information-extraction backbone, and a CLI unifying web search, multimodal graph retrieval, and cross-document traversal; evaluated at 2.46M-paper scale with a released 1M-paper subset.",
+    "why_it_matters": "A concrete, large-scale instantiation of citation-graph traversal as a first-class agentic mechanism (rather than flat 'cites' edges), directly informing Q2 on what graph-based moves add beyond abstract-level retrieval.",
+    "limitations": [
+      "abstract does not separate the graph-traversal mechanism's contribution from the IE/parsing components",
+      "no comparison to a single-query database search baseline ceiling"
+    ],
+    "relevance_reason": "A system directly building the citation-graph-traversal mechanism the brief asks about, at large scale, in the exact scientific-literature setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "6d7b9890d436",
+    "criteria": {
+      "C1": 0,
+      "C2": 1,
+      "C3": 3,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "An instruction-tuned agent with DPO that dynamically selects between GraphRAG and VectorRAG for scientific literature review improves VS Context Recall by 0.63 and overall Context Precision by 0.56 over baseline, on synthetic benchmarks mimicking real-world queries.",
+    "methodology": "Agentic hybrid RAG pipeline ingesting PubMed/arXiv/Google Scholar metadata into a Neo4j citation KG and a FAISS vector store, with a Llama-3.3-70B agent choosing GraphRAG vs. VectorRAG per query and uncertainty quantification at inference.",
+    "why_it_matters": "Directly evaluates hybrid retrieval/reranking underlying a literature-review agent (C3) and shows dynamic graph-vs-vector selection as the specific mechanism behind reported gains, informing what agentic designs add (Q2).",
+    "limitations": [
+      "evaluated on synthetic benchmarks mimicking real queries rather than a validated literature-search benchmark",
+      "gains are attributed to DPO instruction tuning as much as to the graph/vector selection mechanism itself"
+    ],
+    "relevance_reason": "A directly on-topic agentic hybrid-RAG system for scientific literature review with a described retrieval/reranking architecture and measured, if benchmark-limited, gains.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "9aa5a2e41aa6",
+    "criteria": {
+      "C1": 2,
+      "C2": 2,
+      "C3": 3,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Sparse (keyword-based) retrieval achieves performance close to state-of-the-art dense retrieval within an LLM-based literature search and distillation system, evaluated on biology-related benchmark questions.",
+    "methodology": "Built an agentic search-plus-distillation system operating on full-text articles; evaluated against prior biology literature benchmarks. Abstract gives no numeric precision/recall figures.",
+    "why_it_matters": "Directly challenges the assumption that dense retrieval or heavier agentic infrastructure is required to match baseline performance, bearing on where the recall ceiling of simple search actually sits.",
+    "limitations": [
+      "Biology domain only",
+      "No explicit numeric precision/recall figures given in abstract",
+      "Uses previously released benchmarks rather than a purpose-built evaluation"
+    ],
+    "relevance_reason": "Directly compares sparse vs dense retrieval within an agentic literature-search system, bearing on the baseline recall-ceiling question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "5197bbb391c8",
+    "criteria": {
+      "C1": 0,
+      "C2": 0,
+      "C3": 0,
+      "C4": 3,
+      "C5": 3
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "contradicting",
+    "flags": {
+      "review": false,
+      "contradicts": true,
+      "methods_paper": false
+    },
+    "key_finding": "For roughly 3% of questions on HLE, SimpleQA, and GPQA, search-based agents retrieve answers directly from HuggingFace-hosted evaluation datasets, and blocking that source drops accuracy on the contaminated subset by about 15%.",
+    "methodology": "Analysis of search-agent tool-use logs across three capability benchmarks, with an ablation blocking HuggingFace as a retrievable source; logs publicly released.",
+    "why_it_matters": "Shows that reported gains for agentic search systems can be inflated by leakage at the retrieval step itself, directly bearing on the brief's question of where reported gains fail to hold up under benchmark scrutiny.",
+    "limitations": [
+      "Focused on general-capability benchmarks (HLE, SimpleQA, GPQA) rather than literature-search-specific benchmarks",
+      "HuggingFace leakage may not generalize to other contamination vectors"
+    ],
+    "relevance_reason": "Demonstrates a concrete mechanism by which reported agentic-search gains do not survive contamination controls \u2014 central to the brief's fourth question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "da592d0c7f78",
+    "criteria": {
+      "C1": 1,
+      "C2": 3,
+      "C3": 3,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "CG-RAG's hybrid lexical-semantic graph retrieval over citation graphs significantly outperforms RAG methods paired with various state-of-the-art retrieval approaches on multi-domain research question-answering benchmarks.",
+    "methodology": "Introduces a contextual graph representation of citation graphs and LeSeGR, a hybrid sparse/dense retrieval-and-encoding method; evaluated against RAG baselines on research QA benchmarks.",
+    "why_it_matters": "Attributes a measured gain specifically to citation-graph-integrated hybrid retrieval rather than the system as a whole, directly informing which agentic/architectural move carries the gain.",
+    "limitations": [
+      "Abstract does not give the magnitude of the reported improvement",
+      "Benchmark construction details are not specified"
+    ],
+    "relevance_reason": "Directly evaluates citation-graph traversal combined with hybrid retrieval for literature QA, core to the brief's system-design question.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "c94dfdffe8e1",
+    "criteria": {
+      "C1": 2,
+      "C2": 1,
+      "C3": 1,
+      "C4": 3,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "State-of-the-art LLMs achieve only 0.40 accuracy on FRAMES multi-hop questions without retrieval, rising to 0.66 (>50% improvement) with a multi-step retrieval pipeline.",
+    "methodology": "New unified evaluation dataset (FRAMES) of challenging multi-hop questions requiring multi-source integration; compares no-retrieval baseline against a proposed multi-step retrieval pipeline.",
+    "why_it_matters": "Quantifies how far a no-retrieval baseline lags a multi-step retrieval approach, a concrete anchor number for the baseline-ceiling question, though the setting is general RAG QA rather than scientific literature search.",
+    "limitations": [
+      "General knowledge QA rather than a scientific-literature-search setting",
+      "Benchmark construction is not scrutinized for contamination controls"
+    ],
+    "relevance_reason": "Offers a directly quantified baseline-to-multi-step-retrieval gain useful for calibrating the brief's baseline question, though outside the literature-search domain.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "8dea525d89b7",
+    "criteria": {
+      "C1": 0,
+      "C2": 1,
+      "C3": 0,
+      "C4": 3,
+      "C5": 1
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "On Mind2Web 2's 130 long-horizon web-research tasks, the best agentic search system (OpenAI Deep Research) reaches only 50-70% of human performance despite spending half the time.",
+    "methodology": "New long-horizon benchmark built with over 1000 hours of human labor; novel tree-structured Agent-as-a-Judge evaluation framework applied to ten frontier agentic search systems versus humans.",
+    "why_it_matters": "Provides a rigorous benchmark-construction and automated-judging methodology transferable to literature-search-agent evaluation, and shows a persistent gap between frontier agentic systems and human performance.",
+    "limitations": [
+      "General web-browsing tasks rather than scientific literature specifically",
+      "Agent-as-a-judge reliability against human agreement is not detailed in the abstract"
+    ],
+    "relevance_reason": "Exemplary long-horizon agentic-search benchmark methodology closely related to the literature-search evaluation question, though set in general web search.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "a63ca904b494",
+    "criteria": {
+      "C1": 0,
+      "C2": 3,
+      "C3": 3,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "ReMindRAG's LLM-guided knowledge-graph traversal with memory-replay of prior traversal experience improves both retrieval effectiveness and cost-efficiency over existing KG-RAG baselines.",
+    "methodology": "Train-free method that stores traversal experience in KG edge embeddings; evaluated across multiple benchmark datasets and LLM backbones.",
+    "why_it_matters": "Demonstrates a specific graph-traversal mechanism (memory-guided exploration) plausibly transferable to citation-graph traversal in literature-search agents, informing which agentic moves carry gains.",
+    "limitations": [
+      "General knowledge-graph RAG setting rather than citation-graph literature search specifically",
+      "Abstract lacks concrete effect sizes"
+    ],
+    "relevance_reason": "Provides a concrete graph-traversal mechanism relevant to the brief's citation-graph-traversal question, though evaluated on general KG-RAG rather than scientific-literature citation graphs.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "87ce1c20566a",
+    "criteria": {
+      "C1": 3,
+      "C2": 3,
+      "C3": 3,
+      "C4": 0,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "A three-agent (query/retrieval/learning) system combining BM25 sparse and FAISS dense retrieval achieves an 8.5% precision improvement, 7.3% recall improvement, and ~210ms latency reduction versus PaperQA and Semantic Scholar.",
+    "methodology": "Multi-agent architecture (Query Agent, Retrieval Agent, Learning Agent) with a FastAPI-backed hybrid BM25+FAISS retrieval strategy and Sentence-Transformer semantic matching, benchmarked against named literature-search baselines.",
+    "why_it_matters": "Directly attributes a measured recall/precision gain to specific agent roles (query expansion, hybrid retrieval, adaptive learning) over named baseline systems, giving concrete numbers for both the baseline-ceiling and agentic-mechanism-gain questions.",
+    "limitations": [
+      "No venue listed, unclear peer-review status",
+      "Comparison baselines and evaluation-set construction not detailed in abstract",
+      "Single study with no replication"
+    ],
+    "relevance_reason": "One of the few papers directly measuring agentic-move-attributed gains over named baseline literature-search systems, exactly the brief's core comparison.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "crossref",
+        "openalex"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "cf7edf92441c",
+    "criteria": {
+      "C1": 1,
+      "C2": 1,
+      "C3": 0,
+      "C4": 3,
+      "C5": 1
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "InfoDeepSeek introduces a systematic methodology (determinacy, difficulty, diversity criteria) for constructing agentic information-seeking benchmarks in dynamic web environments and a fine-grained evaluation framework, revealing nuanced agent behaviors across LLMs and search engines.",
+    "methodology": "New benchmark with a query-construction methodology and evaluation framework (accuracy, utility, compactness metrics); tested across multiple LLMs, search engines, and question types.",
+    "why_it_matters": "Directly addresses the benchmark-construction question \u2014 how to build queries and evaluate against dynamic, open-ended retrieval rather than fixed gold sets \u2014 a methodology transferable to literature-search-agent benchmark design.",
+    "limitations": [
+      "General web information-seeking setting, not scientific literature specifically",
+      "No numeric results given in the abstract"
+    ],
+    "relevance_reason": "Provides benchmark-construction methodology for agentic information-seeking directly relevant to how literature-search benchmarks should be built.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": null,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "877f9d1bc175",
+    "criteria": {
+      "C1": 0,
+      "C2": 1,
+      "C3": 1,
+      "C4": 0,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "OpenNovelty, an agentic system for scholarly novelty assessment, grounds contribution comparisons in retrieved full-text prior work and, deployed on 500+ ICLR 2026 submissions, appears able to surface closely related papers authors may overlook.",
+    "methodology": "Four-phase pipeline: query generation from contribution claims, semantic-search retrieval, hierarchical taxonomy construction, and full-text contribution comparison; preliminary deployment analysis, no formal benchmark.",
+    "why_it_matters": "Demonstrates a concrete applied instantiation of the query-generation-plus-retrieval agentic design pattern in a real scientific-literature setting, though without rigorous evaluation numbers.",
+    "limitations": [
+      "Preliminary analysis only, no formal precision/recall evaluation",
+      "Applied to peer-review novelty assessment rather than general literature search",
+      "No baseline comparison given"
+    ],
+    "relevance_reason": "A concrete agentic literature-retrieval system applied to a scientific setting, illustrating the query-generation-plus-retrieval design pattern, though without rigorous benchmark evaluation.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "9e2dd94fea1d",
+    "criteria": {
+      "C1": 0,
+      "C2": 1,
+      "C3": 1,
+      "C4": 2,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "other",
+    "relation": "foundational",
+    "flags": {
+      "review": true,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "Provides a systematic four-stage taxonomy (planning, question developing, web exploration, report generation) of the deep-research agent pipeline, along with a survey of optimization techniques and benchmarks tailored to deep research.",
+    "methodology": "Narrative survey categorizing methods and benchmarks across the deep-research pipeline. Abstract-only.",
+    "why_it_matters": "Offers the orienting framework against which specific agentic literature-search systems and their benchmarks can be situated, mapping where existing benchmark and method efforts sit relative to the brief's four questions.",
+    "limitations": [
+      "Narrative survey without a stated systematic-review protocol",
+      "Covers general deep-research agents rather than literature search specifically",
+      "No quantitative synthesis given"
+    ],
+    "relevance_reason": "The most direct orienting survey of the agentic research-agent space the brief is scanning, providing a taxonomy other papers in this list can be mapped onto.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "40830b5a1000",
+    "criteria": {
+      "C1": 1,
+      "C2": 0,
+      "C3": 3,
+      "C4": 1,
+      "C5": 0
+    },
+    "overall": 2,
+    "evidence_level": "experimental",
+    "relation": "closely-related",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "ReasonIR-8B, a retriever trained via synthetic hard-query/hard-negative generation, achieves 29.9 nDCG@10 (36.9 with reranker) on the BRIGHT benchmark and improves RAG performance on MMLU (+6.4%) and GPQA (+22.6%) relative to closed-book baselines.",
+    "methodology": "Synthetic training-data generation pipeline for a dense retriever, evaluated on the BRIGHT reasoning-IR benchmark and downstream RAG tasks (MMLU, GPQA); open-sourced code, data, model.",
+    "why_it_matters": "A concrete retrieval-method advance with measured gains over closed-book baselines, useful for calibrating what a strong retriever/reranker can add underneath an agentic system, though evaluated outside the literature-search setting.",
+    "limitations": [
+      "Evaluated on general reasoning benchmarks (BRIGHT, MMLU, GPQA), not scientific-literature-search tasks",
+      "Training data is synthetic; generalization to real literature queries is untested"
+    ],
+    "relevance_reason": "A retrieval/reranking method paper with concrete gain numbers relevant to the brief's underlying-retrieval-method question, in a neighbouring (non-literature) reasoning-IR setting.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "7051edb85a10",
+    "criteria": {
+      "C1": 2,
+      "C2": 1,
+      "C3": 2,
+      "C4": 3,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "design-changing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "OpenScholar, a retrieval-augmented LM over 45M open-access papers evaluated on the new ScholarQABench (2,967 expert-written queries), outperforms GPT-4o by 5% and PaperQA2 by 7% in correctness, while GPT-4o hallucinates citations 78-90% of the time versus OpenScholar's expert-level citation accuracy.",
+    "methodology": "Specialized retrieval-augmented LM with a self-feedback inference loop; new multi-domain benchmark (ScholarQABench) with expert-written queries and long-form answers; human preference evaluation.",
+    "why_it_matters": "Gives concrete baseline numbers (GPT-4o citation hallucination rates, correctness deltas) directly anchoring the baseline-ceiling and benchmark-construction questions in the scientific-literature-search setting itself.",
+    "limitations": [
+      "Reported correctness gains (5-7%) are modest relative to strong baselines and warrant replication scrutiny",
+      "Self-feedback loop's contribution is not decomposed from the retrieval/datastore contribution in the abstract"
+    ],
+    "relevance_reason": "A flagship in-domain system and benchmark directly answering the brief's baseline-ceiling, benchmark-construction, and mechanism questions for scientific literature search.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "112765f8f03e",
+    "criteria": {
+      "C1": 3,
+      "C2": 1,
+      "C3": 3,
+      "C4": 3,
+      "C5": 1
+    },
+    "overall": 3,
+    "evidence_level": "experimental",
+    "relation": "foundational",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": false
+    },
+    "key_finding": "LitSearch finds a 24.8-point absolute recall@5 gap between BM25 and state-of-the-art dense retrievers on 597 realistic literature-search queries, with LLM-based reranking improving the best dense retriever by a further 4.4%, while commercial search engines lag 32 points behind.",
+    "methodology": "New retrieval benchmark built from GPT-4-generated questions (from inline-citation paragraphs) plus author-written questions about recent papers, expert-reviewed; benchmarks multiple retrieval models and two LLM reranking pipelines.",
+    "why_it_matters": "Directly establishes the single-query baseline recall ceiling (BM25 vs dense vs commercial search) the brief's first question asks for, and documents exactly how the evaluation set was constructed \u2014 answering the benchmark-construction question too.",
+    "limitations": [
+      "Restricted to recent ML/NLP papers rather than broader scientific domains",
+      "597 queries is a relatively small test set for strong generalization claims"
+    ],
+    "relevance_reason": "The clearest direct answer to the brief's baseline-recall-ceiling and benchmark-construction questions, purpose-built for scientific literature search.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  },
+  {
+    "cid": "b26163dcef51",
+    "criteria": {
+      "C1": 0,
+      "C2": 0,
+      "C3": 1,
+      "C4": 3,
+      "C5": 0
+    },
+    "overall": 3,
+    "evidence_level": "computational",
+    "relation": "plan-influencing",
+    "flags": {
+      "review": false,
+      "contradicts": false,
+      "methods_paper": true
+    },
+    "key_finding": "Introduces DeepResearch Bench, a 100-task, 22-field benchmark for Deep Research Agents, with two new evaluation methods \u2014 a reference-based adaptive-criteria report-quality method and a citation-count/accuracy method for retrieval capability \u2014 both said to align strongly with human judgment.",
+    "methodology": "abstract-only; benchmark of 100 PhD-level tasks hand-crafted by domain experts across 22 fields, with two proposed evaluation frameworks; code and benchmark open-sourced.",
+    "why_it_matters": "Directly answers the brief's third decision question \u2014 how evaluation sets for literature/research-search agents are constructed (task source: domain-expert-crafted PhD-level tasks; labeling: reference-based adaptive criteria plus citation-accuracy scoring) \u2014 giving a concrete construction template against which other benchmarks' comparability can be judged.",
+    "limitations": [
+      "abstract gives no quantitative results or agent rankings",
+      "tasks are broad PhD-level research/report generation, not narrowly scientific literature search or citation-graph retrieval",
+      "no baseline single-query search recall figures given, so it cannot itself answer C1",
+      "no analysis of whether reported gains replicate across metrics or benchmarks"
+    ],
+    "relevance_reason": "A purpose-built benchmark-construction paper for deep research agents, squarely relevant to the brief's question on how literature-search-agent evaluation sets are built.",
+    "verification": {
+      "verified": true,
+      "verified_by": [
+        "openalex",
+        "arxiv"
+      ],
+      "verified_on": "2026-08-26",
+      "title_match_ratio": 100.0,
+      "mismatches": []
+    }
+  }
+]

@@ -1,0 +1,257 @@
+{
+  "batch": "10",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "74839e322ae4",
+      "title": "Faithful by Construction: Claim-Anchored Attribution for Multi-Document Summarization",
+      "abstract_600": "End-to-end large language models (LLMs) produce fluent multi-document summaries but remain prone to hallucination, and the attributions they offer are typically coarse (whole documents or passages) and generated post hoc, leaving each summary statement hard to verify. We revisit the modular Extract--Select--Rewrite paradigm and recast its intermediate representation as the unit of attribution. We present CAMS, a Claim-Anchored Multi-document Summarization framework that (i) extracts atomic claims with token-level provenance from every source document, (ii) clusters equivalent claims across doc",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "95ff99b222ff",
+      "title": "Hyperproperty Verification as CHC Satisfiability",
+      "abstract_600": "Abstract Hyperproperties specify the behavior of a system across multiple executions, and are an important extension of regular temporal properties. So far, such properties have resisted comprehensive treatment by software model-checking approaches such as IC3/PDR, due to the need to find not only an inductive invariant but also a total alignment of different executions that facilitates simpler inductive invariants. We show how this treatment is achieved via a reduction from the verification problem of $$\\forall ^*\\exists ^*$$ \u2200 \u2217 \u2203 \u2217 hyperproperties to Constrained Horn Clauses (CHCs). Our sta",
+      "year": 2024,
+      "venue": "Lecture notes in computer science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "34038765e06f",
+      "title": "Factuality of Large Language Models: A Survey",
+      "abstract_600": "Yuxia Wang, Minghan Wang, Muhammad Arslan Manzoor, Fei Liu, Georgi Nenkov Georgiev, Rocktim Jyoti Das, Preslav Nakov. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "891a2f373c16",
+      "title": "From RAG to Reality: Coarse-Grained Hallucination Detection via NLI Fine-Tuning",
+      "abstract_600": null,
+      "year": 2025,
+      "venue": "Proceedings of the Fifth Workshop on Scholarly Document Processing (SDP 2025)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3680940f7746",
+      "title": "Visual reasoning consistency and robustness analysis of multimodal LLMs",
+      "abstract_600": "Traditional evaluations of multimodal large language models (LLMs) have been limited by their focus on single-image reasoning, failing to assess crucial aspects like contextual understanding, reasoning stability, and uncertainty calibration. This study addresses these limitations by introducing a novel benchmark that uniquely integrates multi-image reasoning tasks with rejection-based evaluation and positional bias detection. We further introduce entropy as a novel metric for quantifying reasoning consistency across reordered answer variants and abstention rate to measure a model\u2019s tendency to",
+      "year": 2025,
+      "venue": "Pattern Recognition",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c3399b7c5c8b",
+      "title": "PreGress: Ranking-Native Pre-training and Prompting for Graph Node Ranking",
+      "abstract_600": "Node ranking is a fundamental problem in graph information retrieval, measuring the relative importance of nodes and supporting a wide range of applications such as influence analysis, recommendation, and graph-based retrieval augmented generation. However, exact computation of graph-based ranking measures is often computationally prohibitive at scale. Existing GNN-based ranking methods provide scalable approximations, but they are typically tailored to individual ranking criteria and require retraining for each downstream task, which limits their transferability and efficiency. Recent graph p",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9e751eba471a",
+      "title": "Do Cross-References Help LLM Agents Complete Documents? Search Cost, Robustness, and Unreachable Content on a Wiki-Style Corpus",
+      "abstract_600": "A neutral, reproducible evaluation of what hyperlinks between the pages of an organizational wiki contribute to a tool-using LLM agent, measured on mcp-data-platform, an open-source MCP (Model Context Protocol) server that exposes stored knowledge pages to agents through search and fetch tools. A pre-registered two-arm contrast plants one deterministic generated corpus twice at 50, 500, and 5000 pages \u2014 once with its cross-references as real, followable links, once with each link rewritten as an ordinary sentence carrying the same meaning \u2014 and measures grounded coverage, search cost, fetch pr",
+      "year": 2026,
+      "venue": "Open MIND",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8c047a45ad17",
+      "title": "From Production SIEM to Reusable Cybersecurity Artifacts",
+      "abstract_600": "Operational evidence is not automatically scientific evidence. The most realistic Security Operations Center (SOC) data is production telemetry, yet it remains scientifically inaccessible because raw logs cannot be released; as a result, research relies on synthetic or dated datasets. We treat the boundary between private production telemetry and reusable research artifacts as the design object: a methodology that extracts, anonymizes, structures, and validates Security Information and Event Management (SIEM) data from a production financial SOC while preserving task-relevant investigative str",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "aec8c9e7671b",
+      "title": "Explicit Evidence Grounding via Structured Inline Citation Generation",
+      "abstract_600": "As AI systems become more widely adopted, the demand for factual and faithful generation grows. Properly attributing information through citations becomes, therefore, crucial. This work introduces FullCite, a framework that, in contrast to most previous works, generates structured inline citations linking each claim to both its source document and supporting evidence. FullCite proposes three strategies to inline citation generation: prompt-based generation, constrained decoding over a citation grammar, and posthoc span alignment. Using three question answering benchmarks, namely, ASQA, BioASQ,",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8ff4ad4f464e",
+      "title": "Explainable Automatic Fact-Checking for Journalists Augmentation in the Wild",
+      "abstract_600": "Journalistic manual fact-checking is the usual way to address fake news; however, this labor-intensive task regularly is not a match for the scale of the problem. The literature introduced automated fact-checking (AFC) as a potential solution; however, there is still missing functionality in the AFC pipeline, a lack of research benchmarking data, and a disconnect between their design and human factors crucial for adoption. We present a fully explainable AFC framework designed to augment professional journalists in the wild. A novel human annotation-free approach surpasses state-of-the-art mult",
+      "year": 2024,
+      "venue": "International Joint Conference on Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2abf3428080f",
+      "title": "SafeMed-R1: Clinician-Audited Safety and Ethics Alignment for Medical Large Language Models",
+      "abstract_600": "Large language models(LLMs) increasingly match expert performance on licensing examinations, yet routine clinical use remains limited because governance requires auditable reasoning, safety and ethics alignment, and resilience to adversarial misuse. Here we present SafeMed-R1, trained with a traceable Clinical Trust Signals(CTS) pipeline that links each reasoning instance to clinician rubric scores and edit histories, and aligned through safety and ethics supervision and red team stress testing. SafeMed-R1 attains a macro-averaged accuracy of 79.6% across clinical benchmarks. Under adversarial",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e71be136b58c",
+      "title": "TofuEval: Evaluating Hallucinations of LLMs on Topic-Focused Dialogue Summarization",
+      "abstract_600": "Liyan Tang, Igor Shalyminov, Amy Wong, Jon Burnsky, Jake Vincent, Yu\u2019an Yang, Siffi Singh, Song Feng, Hwanjun Song, Hang Su, Lijia Sun, Yi Zhang, Saab Mansour, Kathleen McKeown. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "78dba8acc586",
+      "title": "CritiCal: Can Critique Help LLM Uncertainty or Confidence Calibration?",
+      "abstract_600": "Accurate confidence calibration in Large Language Models (LLMs) is critical for safe use in high-stakes domains, where clear verbalized confidence enhances user trust. Traditional methods that mimic reference confidence expressions often fail to capture the reasoning needed for accurate confidence assessment. We propose natural language critiques as a solution, ideally suited for confidence calibration, as precise gold confidence labels are hard to obtain and often require multiple generations. This paper studies how natural language critiques can enhance verbalized confidence, addressing: (1)",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4f6ed8c33025",
+      "title": "Towards Fair RAG: On the Impact of Fair Ranking in Retrieval-Augmented Generation",
+      "abstract_600": "Despite the central role of retrieval in retrieval-augmented generation (RAG) systems, much of the existing research on RAG overlooks the well-established field of fair ranking and fails to account for the interests of all stakeholders involved. In this paper, we conduct the first systematic evaluation of RAG systems that integrate fairness-aware rankings, addressing both ranking fairness and attribution fairness, which ensures equitable exposure of the sources cited in the generated content. Our evaluation focuses on measuring item-side fairness, specifically the fair exposure of relevant ite",
+      "year": 2025,
+      "venue": "International Conference on the Theory of Information Retrieval",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "86c18956e9d7",
+      "title": "Memaknai Fakta dan Klarifikasi: Orientasi Epistemik Fact-Checking Kampus di Asia Tenggara",
+      "abstract_600": "Abstrak. The increasing spread of misinformation on social media has prompted a number of universities in Asia to develop campus-based fact-checking initiatives. This study analyzes the epistemic orientation of fact-checking practices within the ANNIE School Net network, a regional Southeast Asian campus newsroom program led by Masato Kajimoto. The study employs a qualitative method with a comparative case study approach, utilizing participatory observation at the 2024 ANNIE School Net Conference, analysis of program documents, and content analysis of campus fact-checking Instagram accounts in",
+      "year": 2026,
+      "venue": "Jurnal Inovasi Komunikasi",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "09d3f0df6646",
+      "title": "Solution-processable polymer membranes with hydrophilic subnanometre pores for sustainable lithium extraction",
+      "abstract_600": "Abstract Membrane-based separation processes hold great promise for sustainable extraction of lithium from brines for the rapidly expanding electric vehicle industry and renewable energy storage. However, it remains challenging to develop high-selectivity membranes that can be upscaled for industrial processes. Here we report solution-processable polymer membranes with subnanometre pores with excellent ion separation selectivity in electrodialysis processes for lithium extraction. Polymers of intrinsic microporosity incorporated with hydrophilic functional groups enable fast transport of monov",
+      "year": 2025,
+      "venue": "Nature Water",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "38bc85ca45a6",
+      "title": "S\u0394\u03d5-57 \u2014 Lent Thought: Thought Ownership, World-Binding, and Cost Attribution in Human-AI Reasoning (v1.1, AI-Readable Package)Attribution in Human-AI Reasoning",
+      "abstract_600": "S\u0394\u03d5-57 introduces Lent Thought as a thought-ownership, authorship, and attribution audit module within the Sofience\u2013\u0394\u03d5 Formalism Series. The central claim is that thought is not owned before it is routed. What appears as \u201cmy thought\u201d may be a temporary passage of language, memory, authority, affect, data, and structural pressure through an interpretive position. The framework does not claim that human thought and AI output are identical. Instead, it relocates the decisive difference away from pure ownership and toward world-binding, cost attribution, and cost re-entry. S\u0394\u03d5-57 asks whether a cl",
+      "year": 2026,
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "33de44697738",
+      "title": "An Iris Instance for Verifying CompCert C Programs",
+      "abstract_600": "Iris is a generic separation logic framework that has been instantiated to reason about a wide range of programming languages and language features. Most Iris instances are defined on simple core calculi, but by connecting Iris to new or existing formal semantics for practical languages, we can also use it to reason about real programs. In this paper we develop an Iris instance based on CompCert, the verified C compiler, allowing us to prove correctness of C programs under the same semantics we use to compile and run them. We take inspiration from the Verified Software Toolchain (VST), a prior",
+      "year": 2024,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4250d161a24c",
+      "title": "LAraBench: Benchmarking Arabic AI with Large Language Models",
+      "abstract_600": "Ahmed Abdelali, Hamdy Mubarak, Shammur Chowdhury, Maram Hasanain, Basel Mousi, Sabri Boughorbel, Samir Abdaljalil, Yassine El Kheir, Daniel Izham, Fahim Dalvi, Majd Hawasly, Nizi Nazar, Youssef Elshahawy, Ahmed Ali, Nadir Durrani, Natasa Milic-Frayling, Firoj Alam. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2fee451d5fd4",
+      "title": "Are self-explanations from Large Language Models faithful?",
+      "abstract_600": "Instruction-tuned Large Language Models (LLMs) excel at many tasks and will even explain their reasoning, so-called selfexplanations.However, convincing and wrong self-explanations can lead to unsupported confidence in LLMs, thus increasing risk.Therefore, it's important to measure if self-explanations truly reflect the model's behavior.Such a measure is called interpretability-faithfulness and is challenging to perform since the ground truth is inaccessible, and many LLMs only have an inference API.To address this, we propose employing self-consistency checks to measure faithfulness.For examp",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b3d0299f963d",
+      "title": "Entropy Alone is Insufficient for Safe Selective Prediction in LLMs",
+      "abstract_600": "Selective prediction systems can mitigate harms resulting from language model hallucinations by abstaining from answering in high-risk cases. Uncertainty quantification techniques are often employed to identify such cases, but are rarely evaluated in the context of the wider selective prediction policy and its ability to operate at low target error rates. We identify a model-dependent failure mode of entropy-based uncertainty methods that leads to unreliable abstention behaviour, and address it by combining entropy scores with a correctness probe signal. We find that across three QA benchmarks",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "241f4e603165",
+      "title": "Retrieval-Augmented Generation-Based Color Restoration for Low-Light Image Enhancement",
+      "abstract_600": "Recent low-light image enhancement (LLIE) methods have driven brightness and structural fidelity close to that of normally-exposed images, yet their outputs still exhibit systematic color shifts such as greenish skies, yellowish faces, and warm-tinted white objects. We attribute this to end-to-end LLIE training coupling brightness, structure, and color within a single network, leaving the color channels weakly supervised. We recast color restoration as an independent sub-problem and decouple it from brightness enhancement, realizing it as a general-purpose post-processing module built on retri",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7bc7d933e422",
+      "title": "LoCal: Logical and Causal Fact-Checking with LLM-Based Multi-Agents",
+      "abstract_600": "With the development of social media, people are exposed to a vast amount of unverified information, making fact-checking particularly important. Existing fact-checking methods primarily encourage breaking down claims into more easily solvable sub-tasks, and deriving final answers through reasoning with external evidence. However, these models face logical issues regarding whether and how the sub-tasks can logically be combined to form the original claims, and encounter causal errors in the reasoning process due to insufficient evidence or hallucinations from LLMs. In addition, they often suff",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c154a96d2916",
+      "title": "ARENA: An Architecture for Measuring the Transferability of Autonomous Cyber Defense",
+      "abstract_600": "Operational evidence is not automatically scientific evidence. The most realistic Security Operations Center (SOC) data is production telemetry, yet it remains scientifically inaccessible because raw logs cannot be released; as a result, research relies on synthetic or dated datasets. We treat the boundary between private production telemetry and reusable research artifacts as the design object: a methodology that extracts, anonymizes, structures, and validates Security Information and Event Management (SIEM) data from a production financial SOC while preserving task-relevant investigative str",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a62a362fbb3d",
+      "title": "Dynamic Retrieval-Augmented Generation (RAG) Chatbot System for Citation-Aware, Document-Grounded Conversational AI",
+      "abstract_600": "Traditional Large Language Models (LLMs) are constrained by static training corpora, knowledge cutoffs,\nhallucination risks, and the absence of source attribution\u2014limiting their applicability in professional and enterprise settings.\nThis paper presents the Dynamic Retrieval-Augmented Generation (RAG) Chatbot System, an open-source, modular framework\nthat bridges these gaps by coupling semantic retrieval with LLM-driven generation. Users upload heterogeneous documents\n(PDF, TXT, URLs); the system preprocesses, chunks, and embeds them using the all-MiniLM-L6-v2 Sentence Transformer,\nstores vecto",
+      "year": 2026,
+      "venue": "International Journal for Research in Applied Science and Engineering Technology",
+      "origin_count": 2,
+      "outside_window": false
+    }
+  ]
+}

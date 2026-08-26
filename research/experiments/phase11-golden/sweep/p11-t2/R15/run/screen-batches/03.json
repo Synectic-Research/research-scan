@@ -1,0 +1,257 @@
+{
+  "batch": "03",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "808432ef8be3",
+      "title": "GRAG: Graph Retrieval-Augmented Generation",
+      "abstract_600": "Naive Retrieval-Augmented Generation (RAG) focuses on individual documents during retrieval and, as a result, falls short in handling networked documents which are very popular in many applications such as citation graphs, social media, and knowledge graphs. To overcome this limitation, we introduce Graph Retrieval-Augmented Generation (GRAG), which tackles the fundamental challenges in retrieving textual subgraphs and integrating the joint textual and topological information into Large Language Models (LLMs) to enhance its generation. To enable efficient textual subgraph retrieval, we propose",
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "2aab1a144f8b",
+      "title": "REPLUG: Retrieval-Augmented Black-Box Language Models",
+      "abstract_600": "Weijia Shi, Sewon Min, Michihiro Yasunaga, Minjoon Seo, Richard James, Mike Lewis, Luke Zettlemoyer, Wen-tau Yih. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6a08ebd49be2",
+      "title": "AgentLeak: A Benchmark for Internal-Channel Privacy Leakage in Multi-Agent LLM Systems",
+      "abstract_600": "Multi-agent Large Language Model (LLM) systems create privacy risks that current output-only benchmarks cannot measure. When agents coordinate on tasks, sensitive data may pass through inter-agent messages, shared memory, and tool arguments, all pathways that final-output audits typically do not inspect. We introduce AgentLeak, a benchmark for evaluating internal-channel privacy leakage in multi-agent LLM systems. AgentLeak instruments seven privacy-relevant communication pathways and provides a large-scale empirical evaluation focused on final outputs, inter-agent messages, and shared memory.",
+      "year": 2026,
+      "venue": "IEEE Access",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "d71858ecb265",
+      "title": "ARIA: A Causal-Aware Framework for Rescuing LLM Reasoning in Trustworthy Materials Discovery",
+      "abstract_600": "Generative models have revolutionized the process of materials discovery, yet they often fail to satisfy underlying physical causality. Through an analysis of Large Language Models (LLMs) augmented with knowledge graphs derived from current literature, we uncover a phenomenon termed contextual tunneling, where models \"over-anchor\" on narrow, retrieved evidence while suppressing global physical reasoning. To address this problem, we introduce ARIA, a causal-aware framework that conditions knowledge use on mechanistic completeness. ARIA routes each query through a three-tier cascade: (i) direct",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "763d31db9fb2",
+      "title": "RAGAs: Automated Evaluation of Retrieval Augmented Generation",
+      "abstract_600": "Shahul Es, Jithin James, Luis Espinosa Anke, Steven Schockaert. Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations. 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d97bef753d0e",
+      "title": "Chain-of-Agents: End-to-End Agent Foundation Models via Multi-Agent Distillation and Agentic RL",
+      "abstract_600": "Recent advances in large language models (LLMs) and multi-agent systems have demonstrated remarkable capabilities in complex problem-solving tasks such as deep research, vibe coding, and mathematical reasoning. However, most existing multi-agent systems are built upon manual prompt/workflow engineering with sophisticated agent frameworks, making them computationally inefficient, less capable, and can not benefit from data-centric learning. In this work, we introduce Chain-of-Agents (CoA), a novel paradigm of LLM reasoning that enables native end-to-end complex problem-solving in the same way a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6d7b9890d436",
+      "title": "Open-Source Agentic Hybrid RAG Framework for Scientific Literature Review",
+      "abstract_600": "The surge in scientific publications challenges traditional review methods, demanding tools that integrate structured metadata with full-text analysis. Hybrid Retrieval Augmented Generation (RAG) systems, combining graph queries with vector search offer promise but are typically static, rely on proprietary tools, and lack uncertainty estimates. We present an agentic approach that encapsulates the hybrid RAG pipeline within an autonomous agent capable of (1) dynamically selecting between GraphRAG and VectorRAG for each query, (2) adapting instruction-tuned generation in real time to researcher",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d70d063c0091",
+      "title": "Labeling Copilot: A Deep Research Agent for Automated Data Curation in Computer Vision",
+      "abstract_600": "Curating high-quality datasets of images and annotations is a major bottleneck for deploying robust vision systems over vast, unlabeled data lakes. We introduce Labeling Copilot, the first deep research agent that automates end-to-end vision data curation. A central orchestrator agent, powered by a large multimodal language model, uses multi-step reasoning to coordinate specialized tools across three core capabilities: (1) Calibrated Discovery retrieves relevant, in-distribution images from large repositories; (2) Controllable Synthesis generates novel variants for rare scenarios; and (3) Cons",
+      "year": 2025,
+      "venue": "BigData Congress [Services Society]",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "b0cb9aa1a731",
+      "title": "Why Neighborhoods Matter: Traversal Context and Provenance in Agentic GraphRAG",
+      "abstract_600": "Retrieval-Augmented Generation can improve factuality by grounding answers in external evidence, but Agentic GraphRAG complicates what it means for citations to be faithful. In these systems, an agent explores a knowledge graph before producing an answer and a small set of citations. We frame citation faithfulness as a trajectory-level problem: final citations should not only support the answer, but also account for the graph traversal, structure, and visited-but-uncited entities that may influence it. Through controlled ablation experiments, we compare the effects of isolating, removing, and",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "1b2f1f34178d",
+      "title": "Difficulty-Gated Fusion of Reasoning Views for Temporal Retrieval",
+      "abstract_600": "Reasoning-intensive temporal retrieval requires matching a query to documents whose relevance depends on shared temporal reasoning rather than lexical overlap. Expanding a query into several reformulations that make its temporal intent explicit, and retrieving with each, supplies this reasoning, but fusing the resulting rankings with equal weights wastes accuracy: for any single query, only some reformulations are reliable. We propose query-difficulty-gated fusion of reasoning views. From each view we read an eight-dimensional signature of its score distribution, built from query-performance-p",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8f9b4a7d0322",
+      "title": "Simple Prompt Injection Attacks Can Leak Personal Data Observed by LLM Agents During Task Execution",
+      "abstract_600": "Previous benchmarks on prompt injection in large language models (LLMs) have primarily focused on generic tasks and attacks, offering limited insights into more complex threats like data exfiltration. This paper examines how prompt injection can cause tool-calling agents to leak personal data observed during task execution. Using a fictitious banking agent, we develop data flow-based attacks and integrate them into AgentDojo, a recent benchmark for agentic security. To enhance its scope, we also create a richer synthetic dataset of human-AI banking conversations. In 16 user tasks from AgentDoj",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4c108cf2a077",
+      "title": "OPTScientist: Multi-Agent Discovery of Typed Optimizer Programs for Transformer Pretraining",
+      "abstract_600": "Designing optimizers for modern deep learning remains a challenging scientific problem, requiring the joint consideration of optimization geometry, state dynamics, numerical stability, implementation constraints, and empirical generalization. Existing automated optimizer discovery methods typically search either over unconstrained code spaces or within narrowly parameterized optimizer families. The former is flexible but often produces invalid or uninterpretable programs, while the latter is stable but limits novelty. We introduce OPTScientist, a theory-guided multi-agent framework for optimiz",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4b7a5a3f8c89",
+      "title": "A Scalable Retrieval-Augmented Generation Pipeline for Domain-Specific Knowledge Applications",
+      "abstract_600": "This work presents a Retrieval-Augmented Generation (RAG) pipeline that integrates document preprocessing, embedding-based retrieval, and large language model (LLM) generation into a unified framework. The pipeline begins with the ingestion of PDF documents, followed by text cleaning, sentence segmentation, and chunking to ensure compatibility with embedding model constraints. High-dimensional vector representations are generated using transformer-based embedding models and stored for downstream use. Semantic similarity search, implemented via dot product and cosine similarity, enables efficie",
+      "year": 2025,
+      "venue": "International journal  of research and innovation in applied science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2ddff1285e45",
+      "title": "Poisoning Agentic Alpha: Adversarial Vulnerabilities Across Roles and Architectures in Multi-Agent Trading Systems",
+      "abstract_600": "LLM-based multi-agent trading systems, in which specialized agents collaborate through structured communication to produce trading decisions, are moving rapidly from research prototypes to live deployments that control real assets. The same inter-agent communication that makes them effective also exposes them: a corrupted signal can propagate to the final decision and translate into realized financial loss. Unlike prior attacks that presume privileged access to system internals, we restrict the adversary to what is practically reachable---the source data and prompts agents consume---yielding a",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "93eae78635f7",
+      "title": "WANDR: A Benchmark for Wide and Deep Research",
+      "abstract_600": "WANDR (Wide ANd Deep Research) is a benchmark of 500 realistic, challenging data-collection tasks for research agents. Each task requires a system to discover a large set of entities that satisfy specified criteria (breadth), investigate each entity through multiple coordinated web searches (depth), and return independently verifiable records with supporting sources and excerpts. Tasks are represented as qualification key hierarchies that specify the entities, relationships, evidence, and required count at each level; a hierarchy with n companies, m employees per company, and k sources per emp",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f92a000e4285",
+      "title": "Thinking Beyond Videos: Unifying Video Reasoning and Deep Research for Open-World Video Agents",
+      "abstract_600": "Open-world video understanding often requires a model to locate sparse visual evidence and acquire external knowledge that is absent from the video and its parametric memory. While Thinking-with-Videos enables active temporal perception and Deep Research supports multi-step information seeking, the two capabilities are typically developed in isolation. We introduce VideoRover, a unified Video Deep Research framework that iteratively coordinates video cropping, multimodal search, and webpage browsing. Given a video-question pair, VideoRover uses each tool result to select the next action, so lo",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3a0a09349eaf",
+      "title": "Agents-K1: Towards Agent-native Knowledge Orchestration",
+      "abstract_600": "Current LLM-based research agents have advanced through agent orchestration, yet largely overlook scientific knowledge orchestration. Existing works often reduce papers to abstracts, surface mentions, and flat \\texttt{cites} edges, omitting key entities, claims, evidence, mechanisms, and method lineages essential for scientific reasoning. To this end, we introduce \\textbf{Agents-K1}, an end-to-end knowledge orchestration pipeline that converts raw documents into agent-native scientific knowledge graphs. Agents-K1 integrates three components under a unifying theoretical foundation: a multimodal",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "25a1a700bd24",
+      "title": "Enhanced Retrieval Effectiveness through Selective Query Generation",
+      "abstract_600": "Prior research has demonstrated that reformulation of queries can significantly enhance retrieval effectiveness. Despite notable successes in neural-based query reformulation methods, identifying optimal reformulations that cover the same information need while enhancing retrieval effectiveness is still challenging. This paper introduces a two-step query reformulation framework for generating and selecting optimal target query variants which not only achieve higher retrieval performance but also preserve the original query's information need. Our comprehensive evaluations on the MS MARCO datas",
+      "year": 2024,
+      "venue": "International Conference on Information and Knowledge Management",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "7dcd0da5fbd6",
+      "title": "DP-MemView: A Memory Interface for Attribute-Level Transcript Privacy in Long-Term LLM Agents",
+      "abstract_600": "Long-term memory enables persistent personalization in LLM agents, but repeated memory-conditioned responses can cumulatively reveal protected attributes even when they are never stated explicitly. We formalize this threat as adaptive transcript privacy and introduce DP-MemView, a differentially private interface that privately selects public response-conditioning views and exposes those views---rather than raw memory---to the response LLM. Each private selection is charged to every protected attribute whose memory group intersects the read set. Per-attribute ledgers block any selection that w",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "71d06fd4c801",
+      "title": "Hallucination Rates and Reference Accuracy of ChatGPT and Bard for Systematic Reviews: Comparative Analysis",
+      "abstract_600": "Background Large language models (LLMs) have raised both interest and concern in the academic community. They offer the potential for automating literature search and synthesis for systematic reviews but raise concerns regarding their reliability, as the tendency to generate unsupported (hallucinated) content persist. Objective The aim of the study is to assess the performance of LLMs such as ChatGPT and Bard (subsequently rebranded Gemini) to produce references in the context of scientific writing. Methods The performance of ChatGPT and Bard in replicating the results of human-conducted syste",
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "edcf341211ec",
+      "title": "MARS: Multi-Specialist LLM Relay System for Competitive Programming",
+      "abstract_600": "Large Language Models excel at code generation, yet competitive programming exposes a persistent failure mode: existing multi-agent pipelines distribute work over generic planner, coder, and debugger roles and delegate the choice of algorithmic technique to the backbone alone. We present MARS (Multi-Agent Relay of Specialized LLMs), a prompt-only framework in which each agent is a topic specialist---dynamic programming, graphs, strings, geometry, and so on---grounded by retrieval-augmented generation over an algorithm-theory corpus. Given a problem, retrieval selects a small team of relevant s",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1f8bd729775c",
+      "title": "AI Agents and Agentic Systems: A Multi-Expert Analysis",
+      "abstract_600": "The emergence of AI agents and agentic systems represents a significant milestone in artificial intelligence, enabling autonomous systems to operate, learn, and collaborate in complex environments with minimal human intervention. This paper, drawing on multi-expert perspectives, examines the potential of AI agents and agentic systems to reshape industries by decentralizing decision-making, redefining organizational structures, and enhancing cross-functional collaboration. Specific applications include healthcare systems capable of creating adaptive treatment plans, supply chain agents that pre",
+      "year": 2025,
+      "venue": "Journal of Computer Information Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cfb560c649d7",
+      "title": "ChatDev: Communicative Agents for Software Development",
+      "abstract_600": "Chen Qian, Wei Liu, Hongzhang Liu, Nuo Chen, Yufan Dang, Jiahao Li, Cheng Yang, Weize Chen, Yusheng Su, Xin Cong, Juyuan Xu, Dahai Li, Zhiyuan Liu, Maosong Sun. Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 4,
+      "outside_window": false
+    },
+    {
+      "cid": "50ecf98fde2e",
+      "title": "A survey of multi-agent deep reinforcement learning with communication",
+      "abstract_600": "Abstract Communication is an effective mechanism for coordinating the behaviors of multiple agents, broadening their views of the environment, and to support their collaborations. In the field of multi-agent deep reinforcement learning (MADRL), agents can improve the overall learning performance and achieve their objectives by communication. Agents can communicate various types of messages, either to all agents or to specific agent groups, or conditioned on specific constraints. With the growing body of research work in MADRL with communication (Comm-MADRL), there is a lack of a systematic and",
+      "year": 2024,
+      "venue": "Autonomous Agents and Multi-Agent Systems",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "37a0a181c5b8",
+      "title": "Graph Chain-of-Thought: Augmenting Large Language Models by Reasoning on Graphs",
+      "abstract_600": "Bowen Jin, Chulin Xie, Jiawei Zhang, Kashob Kumar Roy, Yu Zhang, Zheng Li, Ruirui Li, Xianfeng Tang, Suhang Wang, Yu Meng, Jiawei Han. Findings of the Association for Computational Linguistics: ACL 2024. 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

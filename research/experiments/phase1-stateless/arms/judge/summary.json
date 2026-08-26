@@ -1,0 +1,82 @@
+{
+ "judge_model": "claude-fable-5",
+ "runs": [
+  {
+   "label": "baseline",
+   "run_dir": "../../scans/2026-08-26-claim-grounding-sonnet",
+   "judge_model": "claude-fable-5",
+   "seconds": 33.2,
+   "cost_usd": 0.2265,
+   "input_tokens": 10456,
+   "output_tokens": 2439,
+   "thinking_tokens": 1220,
+   "n_scored": 10,
+   "in_window_n": 8,
+   "foundational_n": 2,
+   "precision_ge2_in_window": 1.0,
+   "mean_score_in_window": 2.625,
+   "foundational_scores": [
+    3,
+    2
+   ]
+  },
+  {
+   "label": "R52",
+   "run_dir": "arms/rerank/R52/run",
+   "judge_model": "claude-fable-5",
+   "seconds": 34.5,
+   "cost_usd": 0.2332,
+   "input_tokens": 11175,
+   "output_tokens": 2429,
+   "thinking_tokens": 1165,
+   "n_scored": 10,
+   "in_window_n": 8,
+   "foundational_n": 2,
+   "precision_ge2_in_window": 1.0,
+   "mean_score_in_window": 2.625,
+   "foundational_scores": [
+    3,
+    3
+   ]
+  },
+  {
+   "label": "R25",
+   "run_dir": "arms/rerank/R25/run",
+   "judge_model": "claude-fable-5",
+   "seconds": 35.8,
+   "cost_usd": 0.2408,
+   "input_tokens": 11060,
+   "output_tokens": 2604,
+   "thinking_tokens": 1295,
+   "n_scored": 10,
+   "in_window_n": 8,
+   "foundational_n": 2,
+   "precision_ge2_in_window": 1.0,
+   "mean_score_in_window": 2.75,
+   "foundational_scores": [
+    3,
+    2
+   ]
+  },
+  {
+   "label": "R15",
+   "run_dir": "arms/rerank/R15/run",
+   "judge_model": "claude-fable-5",
+   "seconds": 32.5,
+   "cost_usd": 0.2229,
+   "input_tokens": 11184,
+   "output_tokens": 2221,
+   "thinking_tokens": 1000,
+   "n_scored": 10,
+   "in_window_n": 8,
+   "foundational_n": 2,
+   "precision_ge2_in_window": 1.0,
+   "mean_score_in_window": 2.75,
+   "foundational_scores": [
+    3,
+    2
+   ]
+  }
+ ],
+ "cumulative_spend_usd": 5.089516
+}

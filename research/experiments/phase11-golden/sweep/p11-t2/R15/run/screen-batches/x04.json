@@ -1,0 +1,257 @@
+{
+  "batch": "x04",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "fa0a08c4088d",
+      "title": "Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) mitigates hallucination in LLMs by incorporating external knowledge, but relies on chunk-based retrieval that lacks structural semantics. GraphRAG methods improve RAG by modeling knowledge as entity-relation graphs, but still face challenges in high construction cost, fixed one-time retrieval, and reliance on long-context reasoning and prompt design. To address these challenges, we propose Graph-R1, the first agentic GraphRAG framework via end-to-end reinforcement learning (RL). It introduces lightweight knowledge hypergraph construction, models retrieval a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "90805ba2092b",
+      "title": "ResearchBench: Benchmarking LLMs in Scientific Discovery via Inspiration-Based Task Decomposition",
+      "abstract_600": "Large language models (LLMs) have shown potential in assisting scientific research, yet their ability to discover high-quality research hypotheses remains unexamined due to the lack of a dedicated benchmark. To address this gap, we introduce the first large-scale benchmark for evaluating LLMs on a sufficient set of scientific discovery sub-tasks-inspiration retrieval, hypothesis composition, and hypothesis ranking-where sufficient means that perfectly solving these sub-tasks perfectly solves the overall discovery task. We develop an automated LLM-based framework that extracts critical componen",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1ff1527fccd5",
+      "title": "LitLLM: A Toolkit for Scientific Literature Review",
+      "abstract_600": "Conducting literature reviews for scientific papers is essential for understanding research, its limitations, and building on existing work. It is a tedious task which makes an automatic literature review generator appealing. Unfortunately, many existing works that generate such reviews using Large Language Models (LLMs) have significant limitations. They tend to hallucinate-generate non-factual information-and ignore the latest research they have not been trained on. To address these limitations, we propose a toolkit that operates on Retrieval Augmented Generation (RAG) principles, specialize",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7051edb85a10",
+      "title": "OpenScholar: Synthesizing Scientific Literature with Retrieval-augmented LMs",
+      "abstract_600": "Scientific progress depends on researchers' ability to synthesize the growing body of literature. Can large language models (LMs) assist scientists in this task? We introduce OpenScholar, a specialized retrieval-augmented LM that answers scientific queries by identifying relevant passages from 45 million open-access papers and synthesizing citation-backed responses. To evaluate OpenScholar, we develop ScholarQABench, the first large-scale multi-domain benchmark for literature search, comprising 2,967 expert-written queries and 208 long-form answers across computer science, physics, neuroscienc",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "440f5f761508",
+      "title": "DeepResearchGym: A Free, Transparent, and Reproducible Evaluation Sandbox for Deep Research",
+      "abstract_600": "Deep research systems represent an emerging class of agentic information retrieval methods that generate comprehensive and well-supported reports to complex queries. However, most existing frameworks rely on dynamic commercial search APIs, which pose reproducibility and transparency challenges in addition to their cost. To address these limitations, we introduce \\textsc{DeepResearchGym} as an open-source sandbox that combines a reproducible search API with a rigorous evaluation protocol for benchmarking deep research systems. The API indexes large-scale public web corpora, namely ClueWeb22 and",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fb3ff5960c98",
+      "title": "A Comprehensive Survey of Deep Research: Systems, Methodologies, and Applications",
+      "abstract_600": "This survey examines the rapidly evolving field of Deep Research systems -- AI-powered applications that automate complex research workflows through the integration of large language models, advanced information retrieval, and autonomous reasoning capabilities. We analyze more than 80 commercial and non-commercial implementations that have emerged since 2023, including OpenAI/Deep Research, Gemini/Deep Research, Perplexity/Deep Research, and numerous open-source alternatives. Through comprehensive examination, we propose a novel hierarchical taxonomy that categorizes systems according to four",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "865b023741da",
+      "title": "Evaluating large language models for accuracy incentivizes hallucinations",
+      "abstract_600": "Large language models sometimes produce confident, plausible falsehoods (\u2018hallucinations\u2019), limiting their reliability1,2. Previous work has offered numerous explanations and effective mitigations such as retrieval and tool use3, consistency-based self-verification4 and reinforcement learning from human feedback5. Nonetheless, the problem persists even in state-of-the-art language models6,7. Here we show how next-word prediction and accuracy-based evaluations inadvertently reward unwarranted guessing. Initially, next-word pretraining creates statistical pressure towards hallucination even with",
+      "year": 2026,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f29aa781d0f7",
+      "title": "DeepResearch Bench II: Diagnosing Deep Research Agents via Rubrics from Expert Report",
+      "abstract_600": "Deep Research Systems (DRS) aim to help users search the web, synthesize information, and deliver comprehensive investigative reports. However, how to rigorously evaluate these systems remains under-explored. Existing deep-research benchmarks often fall into two failure modes. Some do not adequately test a system's ability to analyze evidence and write coherent reports. Others rely on evaluation criteria that are either overly coarse or directly defined by LLMs (or both), leading to scores that can be biased relative to human experts and are hard to verify or interpret. To address these issues",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "07e2efcd7204",
+      "title": "Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents",
+      "abstract_600": "With the remarkable advancements of large language models (LLMs), LLM-based agents have become a research hotspot in human-computer interaction. However, there is a scarcity of benchmarks available for LLM-based mobile agents. Benchmarking these agents generally faces three main challenges: (1) The inefficiency of UI-only operations imposes limitations to task evaluation. (2) Specific instructions within a singular application lack adequacy for assessing the multi-dimensional reasoning and decision-making capacities of LLM mobile agents. (3) Current evaluation metrics are insufficient to accur",
+      "year": 2024,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "112765f8f03e",
+      "title": "LitSearch: A Retrieval Benchmark for Scientific Literature Search",
+      "abstract_600": "Literature search questions, such as \u201cwhere can I find research on the evaluation of consistency in generated summaries?\u201d pose significant challenges for modern search engines and retrieval systems. These questions often require a deep understanding of research concepts and the ability to reason over entire articles. In this work, we introduce LitSearch, a retrieval benchmark comprising 597 realistic literature search queries about recent ML and NLP papers. LitSearch is constructed using a combination of (1) questions generated by GPT-4 based on paragraphs containing inline citations from rese",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f569d3854f92",
+      "title": "An Empirical Study on Reinforcement Learning for Reasoning-Search Interleaved LLM Agents",
+      "abstract_600": "Reinforcement learning (RL) has demonstrated strong potential in training large language models (LLMs) capable of complex reasoning for real-world problem solving. More recently, RL has been leveraged to create sophisticated LLM-based search agents that adeptly combine reasoning with search engine use. While the use of RL for training search agents is promising, the optimal design of such agents remains not fully understood. In particular, key factors -- such as (1) reward formulation, (2) the choice and characteristics of the underlying LLM, and (3) the role of the search engine in the RL pro",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "502ad91496a6",
+      "title": "Probabilistic medical predictions of large language models",
+      "abstract_600": "Large Language Models (LLMs) have shown promise in clinical applications through prompt engineering, allowing flexible clinical predictions. However, they struggle to produce reliable prediction probabilities, which are crucial for transparency and decision-making. While explicit prompts can lead LLMs to generate probability estimates, their numerical reasoning limitations raise concerns about reliability. We compared explicit probabilities from text generation to implicit probabilities derived from the likelihood of predicting the correct label token. Across six advanced open-source LLMs and",
+      "year": 2024,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "013f5f8e8b08",
+      "title": "ChatCite: LLM Agent with Human Workflow Guidance for Comparative Literature Summary",
+      "abstract_600": "The literature review is an indispensable step in the research process. It provides the benefit of comprehending the research problem and understanding the current research situation while conducting a comparative analysis of prior works. However, literature summary is challenging and time consuming. The previous LLM-based studies on literature review mainly focused on the complete process, including literature retrieval, screening, and summarization. However, for the summarization step, simple CoT method often lacks the ability to provide extensive comparative summary. In this work, we firstl",
+      "year": 2024,
+      "venue": "International Conference on Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7a910679f6f5",
+      "title": "METAL: A Multi-Agent Framework for Chart Generation with Test-Time Scaling",
+      "abstract_600": "Chart generation aims to generate code to produce charts satisfying the desired visual properties, e.g., texts, layout, color, and type. It has great potential to empower the automatic professional report generation in financial analysis, research presentation, education, and healthcare. In this work, we build a vision-language model (VLM) based multi-agent framework for effective automatic chart generation. Generating high-quality charts requires both strong visual design skills and precise coding capabilities that embed the desired visual properties into code. Such a complex multi-modal reas",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c094178d6f39",
+      "title": "AstaBench: Rigorous Benchmarking of AI Agents with a Scientific Research Suite",
+      "abstract_600": "AI agents hold the potential to revolutionize scientific productivity by automating literature reviews, replicating experiments, analyzing data, and even proposing new directions of inquiry; indeed, there are now many such agents, ranging from general-purpose\"deep research\"systems to specialized science-specific agents, such as AI Scientist and AIGS. Rigorous evaluation of these agents is critical for progress. Yet existing benchmarks fall short on several fronts: they often (1) lack reproducible agent tools necessary for a controlled comparison of core agentic capabilities; (2) do not account",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ff6b39ce2167",
+      "title": "Tevatron 2.0: Unified Document Retrieval Toolkit across Scale, Language, and Modality",
+      "abstract_600": "Recent advancements in large language models (LLMs) have driven interest in billion-scale retrieval models with strong generalization across retrieval tasks and languages. Additionally, progress in large vision-language models has created new opportunities for multimodal retrieval. In response, we have updated the Tevatron toolkit, introducing a unified pipeline that enables researchers to explore retriever models at different scales, across multiple languages, and with various modalities. This demo paper highlights the toolkit's key features, bridging academia and industry by supporting effic",
+      "year": 2025,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "64e5f449713a",
+      "title": "Limits to scalable evaluation at the frontier: LLM as Judge won't beat twice the data",
+      "abstract_600": "High quality annotations are increasingly a bottleneck in the explosively growing machine learning ecosystem. Scalable evaluation methods that avoid costly annotation have therefore become an important research ambition. Many hope to use strong existing models in lieu of costly labels to provide cheap model evaluations. Unfortunately, this method of using models as judges introduces biases, such as self-preferencing, that can distort model comparisons. An emerging family of debiasing tools promises to fix these issues by using a few high quality labels to debias a large number of model judgmen",
+      "year": 2024,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4b6cd63d6c59",
+      "title": "Agent-R1: A Unified and Modular Framework for Agentic Reinforcement Learning",
+      "abstract_600": "Large language models (LLMs) have rapidly evolved from single-turn text generators into the foundation of increasingly capable agents. As these agents take on more complex reasoning, decision making, tool use, and long-horizon tasks, reinforcement learning (RL) is becoming increasingly important for shaping their behavior. This shift is especially visible in agentic RL, where models must interact with tools and environments across multiple rounds rather than produce a single standalone response. In this regime, the usual view of a trajectory as one ever-growing token sequence becomes increasin",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "609383fdb3bf",
+      "title": "ToolUniverse: An open platform for democratizing AI scientists",
+      "abstract_600": "AI scientists are emerging computational systems that serve as collaborative partners in discovery. These systems remain difficult to build because they are bespoke, tied to rigid workflows, and lack shared environments that unify tools, data, and analyses into a common ecosystem. We present ToolUniverse, an open platform for building AI scientists from any language or reasoning model across open- and closed-weight models. ToolUniverse standardizes how AI scientists identify and call tools through an AI-tool interaction standard, in which every tool declares its purpose in natural language, a",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c39f962ee42e",
+      "title": "HelloBench: Evaluating Long Text Generation Capabilities of Large Language Models",
+      "abstract_600": "In recent years, Large Language Models (LLMs) have demonstrated remarkable capabilities in various tasks (e.g., long-context understanding), and many benchmarks have been proposed. However, we observe that long text generation capabilities are not well investigated. Therefore, we introduce the Hierarchical Long Text Generation Benchmark (HelloBench), a comprehensive, in-the-wild, and open-ended benchmark to evaluate LLMs' performance in generating long text. Based on Bloom's Taxonomy, HelloBench categorizes long text generation tasks into five subtasks: open-ended QA, summarization, chat, text",
+      "year": 2024,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "26710c71ba04",
+      "title": "DRAMA: Diverse Augmentation from Large Language Models to Smaller Dense Retrievers",
+      "abstract_600": "Large language models (LLMs) have demonstrated strong effectiveness and robustness while fine-tuned as dense retrievers. However, their large parameter size brings significant inference time computational challenges, including high encoding costs for large-scale corpora and increased query latency, limiting their practical deployment. While smaller retrievers offer better efficiency, they often fail to generalize effectively with limited supervised fine-tuning data. In this work, we introduce DRAMA, a training framework that leverages LLMs to train smaller generalizable dense retrievers. In pa",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2a17060ba84d",
+      "title": "Enhancing Health Information Retrieval with RAG by prioritizing topical relevance and factual accuracy",
+      "abstract_600": "The exponential surge in online health information, coupled with its increasing use by non-experts, highlights the pressing need for advanced Health Information Retrieval (HIR) models that consider not only topical relevance but also the factual accuracy of the retrieved information, given the potential risks associated with health misinformation. To this aim, this paper introduces a solution driven by Retrieval-Augmented Generation (RAG), which leverages the capabilities of generative Large Language Models (LLMs) to enhance the retrieval of health-related documents grounded in scientific evid",
+      "year": 2025,
+      "venue": "Discover Computing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "79acd02a0280",
+      "title": "DeepResearch Arena: The First Exam of LLMs' Research Abilities via Seminar-Grounded Tasks",
+      "abstract_600": "Deep research agents have attracted growing attention for their potential to orchestrate multi-stage research workflows, spanning literature synthesis, methodological design, and empirical verification. Despite these strides, evaluating their research capability faithfully is rather challenging due to the difficulty of collecting frontier research questions that genuinely capture researchers\u2019 attention and intellectual curiosity. To address this gap, we introduce DeepResearch Arena, a benchmark grounded in academic seminars that capture rich expert discourse and interaction, better reflecting",
+      "year": 2025,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0758b58a36f9",
+      "title": "FeB4RAG: Evaluating Federated Search in the Context of Retrieval Augmented Generation",
+      "abstract_600": "Federated search systems aggregate results from multiple search engines, selecting appropriate sources to enhance result quality and align with user intent. With the increasing uptake of Retrieval-Augmented Generation (RAG) pipelines, federated search can play a pivotal role in sourcing relevant information across heterogeneous data sources to generate informed responses. However, existing datasets, such as those developed in the past TREC FedWeb tracks, predate the RAG paradigm shift and lack representation of modern information retrieval challenges. To bridge this gap, we present FeB4RAG, a",
+      "year": 2024,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fd1e8d139a08",
+      "title": "MedBrowseComp: Benchmarking Medical Deep Research and Computer Use",
+      "abstract_600": "Large language models (LLMs) are increasingly envisioned as decision-support tools in clinical practice, yet safe clinical reasoning demands integrating heterogeneous knowledge bases -- trials, primary studies, regulatory documents, and cost data -- under strict accuracy constraints. Existing evaluations often rely on synthetic prompts, reduce the task to single-hop factoid queries, or conflate reasoning with open-ended generation, leaving their real-world utility unclear. To close this gap, we present MedBrowseComp, the first benchmark that systematically tests an agent's ability to reliably",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

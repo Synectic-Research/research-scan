@@ -1,0 +1,81 @@
+{
+ "label": "baseline",
+ "run_dir": "../../scans/2026-08-26-claim-grounding-sonnet",
+ "judge_model": "claude-fable-5",
+ "seconds": 33.2,
+ "cost_usd": 0.2265,
+ "input_tokens": 10456,
+ "output_tokens": 2439,
+ "thinking_tokens": 1220,
+ "n_scored": 10,
+ "in_window_n": 8,
+ "foundational_n": 2,
+ "precision_ge2_in_window": 1.0,
+ "mean_score_in_window": 2.625,
+ "foundational_scores": [
+  3,
+  2
+ ],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "752402f2a368",
+   "score": 3,
+   "reason": "Single-paper citation-grounded QA benchmark that explicitly rewards grounded refusal (Q4/C4), reports cross-model citation accuracy (C5), and shows citation metrics discriminate where LLM-judge scores don't — directly moves the measurement question."
+  },
+  {
+   "rank": 2,
+   "cid": "84b54d56d46b",
+   "score": 3,
+   "reason": "Shows the unsupported-citation rate itself swings 3-18% with verifier choice — directly undermines what grounding numbers can legitimately support (C3) and supplies a calibrated bound (C4); exactly the premise-challenging measurement work the brief reaches for."
+  },
+  {
+   "rank": 3,
+   "cid": "9fc1195f8ecb",
+   "score": 3,
+   "reason": "Expert-annotated benchmark of authentic claims with construction that avoids LLM-fabricated refutations (C3), accuracy broken down by evidence modality across 11 models (C1, C5), exposing figures as a specific failure mode."
+  },
+  {
+   "rank": 4,
+   "cid": "134a6c31c11c",
+   "score": 2,
+   "reason": "Biomedical claim verification with rigorous evaluation showing retrieval benefit is source-dependent (C5) and evidence generation quality varies by system; relevant, though it leans toward health fact-checking rather than extraction from full papers."
+  },
+  {
+   "rank": 5,
+   "cid": "802e8aeccb24",
+   "score": 2,
+   "reason": "Mechanistic probing that explains the known table-vs-chart verification gap as a routing failure; genuinely changes what fix to test next (research purpose), though it measures no extraction accuracy itself and covers only one error class."
+  },
+  {
+   "rank": 6,
+   "cid": "e155e52aeeca",
+   "score": 2,
+   "reason": "Perspective paper arguing abstract-level benchmarks understate full-paper difficulty — directly relevant to what benchmark numbers can support (C3) and the brief's premise-challenging ask, but mostly gap-naming with only preliminary experiments."
+  },
+  {
+   "rank": 7,
+   "cid": "a020efa017f5",
+   "score": 3,
+   "reason": "Expert-annotated multimodal verification benchmark over 1,113 real papers, 21 models, reasoning-type breakdown and human error evaluation — squarely satisfies C1, C3 and C5 on the exact task the brief studies."
+  },
+  {
+   "rank": 8,
+   "cid": "444f2c23f859",
+   "score": 3,
+   "reason": "CLAIM-BENCH directly measures claim-evidence extraction and linking accuracy across six models (C1, C2, C5) on full-length papers, with a concrete closed/open model gap and prompting cost-accuracy tradeoff."
+  },
+  {
+   "rank": 9,
+   "cid": "b13f6337909b",
+   "score": 3,
+   "reason": "Foundational slot: ALCE is the canonical automatic citation-evaluation benchmark that later citation-faithfulness work in this list measures against; a newcomer skipping it would misread the verifier-reliability papers."
+  },
+  {
+   "rank": 10,
+   "cid": "7c75cad1f848",
+   "score": 2,
+   "reason": "Foundational slot: WiCE established sub-claim decomposition and minimal-evidence entailment, real background for over-generalisation errors, but it is Wikipedia-domain and SciFact (named in the brief) is the more canonical anchor for scientific claim verification."
+  }
+ ]
+}

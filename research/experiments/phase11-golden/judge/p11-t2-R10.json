@@ -1,0 +1,78 @@
+{
+ "label": "p11-t2-R10",
+ "run_dir": "sweep/p11-t2/R10/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 43.1,
+ "cost_usd": 0.2741,
+ "input_tokens": 11722,
+ "output_tokens": 3137,
+ "thinking_tokens": 1939,
+ "n_scored": 10,
+ "in_window_n": 10,
+ "foundational_n": 0,
+ "precision_ge2_in_window": 0.9,
+ "mean_score_in_window": 2.3,
+ "foundational_scores": [],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "2cbca1abbe99",
+   "score": 3,
+   "reason": "Directly tests the brief's premise: shows search effort and accuracy are weakly aligned, ties accuracy to cumulative retrieval recall, and isolates redundant reformulation — hits C2 and C5 and informs decisions 2 and 4."
+  },
+  {
+   "rank": 2,
+   "cid": "60fd922117d2",
+   "score": 3,
+   "reason": "Fixed-corpus benchmark with human-verified labels that separates retriever from agent and reports BM25/embedding baselines — the anchor for decision 1 (C1) and a model case for decision 3 (C4)."
+  },
+  {
+   "rank": 3,
+   "cid": "dc6612fba47a",
+   "score": 3,
+   "reason": "The clearest gain-non-replication evidence in the list: evidence recall collapses from 84.3% to 21.4% when the corpus is no longer curated per query — squarely C4 and C5, the work the brief says to reach hardest for."
+  },
+  {
+   "rank": 4,
+   "cid": "37b82519b62a",
+   "score": 3,
+   "reason": "Trajectory-level evidence that iterative crawling by itself carries little gain, with a quantified controller intervention isolating what does — directly answers decision 2 (C2) and undercuts the premise (C5-adjacent)."
+  },
+  {
+   "rank": 5,
+   "cid": "aac7d9e865ef",
+   "score": 2,
+   "reason": "Survey/taxonomy of DR agent designs plus a critique of benchmark limitations; useful framing for decisions 2 and 3 but contributes no measurement of its own."
+  },
+  {
+   "rank": 6,
+   "cid": "3759e655e951",
+   "score": 2,
+   "reason": "An actual scientific-literature system combining hybrid retrieval, knowledge-graph traversal and agentic self-correction (C3), though its evaluation measures extraction quality rather than search recall, so it informs the design decisions only partially."
+  },
+  {
+   "rank": 7,
+   "cid": "b26163dcef51",
+   "score": 2,
+   "reason": "A second independently constructed DR benchmark with expert-crafted references and citation-accuracy metrics — real material for decision 3 (C4), though it evaluates report quality more than retrieval recall."
+  },
+  {
+   "rank": 8,
+   "cid": "7d6d01fe8a27",
+   "score": 1,
+   "reason": "Inertia bias is an interesting agent-judgment failure mode, but it bears on answer validation, not on retrieval recall ceilings, mechanism-attributed gains, benchmark construction, or gain replication — shares the domain without answering any of the brief's four questions."
+  },
+  {
+   "rank": 9,
+   "cid": "d8c6216340fd",
+   "score": 2,
+   "reason": "Quantified isolation of reformulation-plus-graph-traversal gains (C2/C3), but demonstrated on generic multi-hop QA over Wikipedia entity graphs, not citation graphs or literature search — relevant mechanism evidence with an acknowledged transfer gap."
+  },
+  {
+   "rank": 10,
+   "cid": "3f16ad6b5a85",
+   "score": 2,
+   "reason": "Detailed, labor-intensive benchmark-construction precedent (C4) showing fine-grained rubric labeling exposes gaps coarser metrics hide — informs decision 3, though its focus is report quality rather than literature retrieval."
+  }
+ ]
+}

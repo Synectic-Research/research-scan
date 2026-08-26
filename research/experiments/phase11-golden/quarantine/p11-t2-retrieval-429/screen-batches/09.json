@@ -1,0 +1,257 @@
+{
+  "batch": "09",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "ab98788216b2",
+      "title": "Language agents achieve superhuman synthesis of scientific knowledge",
+      "abstract_600": "Language models are known to hallucinate incorrect information, and it is unclear if they are sufficiently accurate and reliable for use in scientific research. We developed a rigorous human-AI comparison methodology to evaluate language model agents on real-world literature search tasks covering information retrieval, summarization, and contradiction detection tasks. We show that PaperQA2, a frontier language model agent optimized for improved factuality, matches or exceeds subject matter expert performance on three realistic literature research tasks without any restrictions on humans (i.e.,",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9ff4d9823106",
+      "title": "LiteResearcher: A Scalable Agentic RL Training Framework for Deep Research Agent",
+      "abstract_600": "Reinforcement Learning (RL) has emerged as a powerful training paradigm for LLM-based agents. However, scaling agentic RL for deep research remains constrained by two coupled challenges: hand-crafted synthetic data fails to elicit genuine real-world search capabilities, and real-world search dependency during RL training introduces instability and prohibitive cost, which limits the scalability of Agentic RL. LiteResearcher is a training framework that makes Agentic RL scalable: by constructing a lite virtual world that mirrors real-world search dynamics, we enable a continuously improving trai",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "86794d216d66",
+      "title": "SurveyG: A Multi-Agent LLM Framework with Hierarchical Citation Graph for Automated Survey Generation",
+      "abstract_600": "Large language models (LLMs) are increasingly adopted for automating survey paper generation \\cite{wang2406autosurvey, liang2025surveyx, yan2025surveyforge,su2025benchmarking,wen2025interactivesurvey}. Existing approaches typically extract content from a large collection of related papers and prompt LLMs to summarize them directly. However, such methods often overlook the structural relationships among papers, resulting in generated surveys that lack a coherent taxonomy and a deeper contextual understanding of research progress. To address these shortcomings, we propose \\textbf{SurveyG}, an LL",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "329ed48f1cea",
+      "title": "Clinical Information Retrieval: A Literature Review",
+      "abstract_600": null,
+      "year": 2024,
+      "venue": "Journal of Healthcare Informatics Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "802ce2205263",
+      "title": "Human-Inspired Memory Architecture for LLM Agents",
+      "abstract_600": "Current LLM agents lack principled mechanisms for managing persistent memory across long interaction horizons. We present a biologically-grounded memory architecture comprising six cognitive mechanisms: (1) sleep-phase consolidation, (2) interference-based forgetting, (3) engram maturation, (4) reconsolidation upon retrieval, (5) entity knowledge graphs, and (6) hybrid multi-cue retrieval. Each mechanism addresses a specific failure mode of naive memory accumulation. We introduce a synthetic calibration methodology that derives all pipeline thresholds without benchmark data exposure, eliminati",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ea96e14fac5a",
+      "title": "Natural Language Generation in Healthcare: A Review of Methods and Applications",
+      "abstract_600": "Natural language generation (NLG) is the key technology to achieve generative artificial intelligence (AI). With the breakthroughs in large language models (LLMs), NLG has been widely used in various medical applications, demonstrating the potential to enhance clinical workflows, support clinical decision-making, and improve clinical documentation. Heterogeneous and diverse medical data modalities, such as medical text, images, and knowledge bases, are utilized in NLG. Researchers have proposed many generative models and applied them in a number of healthcare applications. There is a need for",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "83b33919e9bc",
+      "title": "W-RAG: Source-Aware Retrieval for Enterprise Document Generation from Heterogeneous Knowledge Bases",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) enables large language models to incorporate external knowledge during generation, improving factual grounding and domain adaptability. However, existing RAG pipelines assume that evidence retrieved from multiple repositories can be ranked globally using a single similarity function. While suitable for open-domain retrieval, this assumption breaks down in enterprise document generation, where heterogeneous knowledge bases (such as policies, regulations, technical documentation, and departmental guidelines) serve distinct roles and must be jointly represente",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "22c9aa75308b",
+      "title": "Who's the Mole? Modeling and Detecting Intention-Hiding Malicious Agents in LLM-Based Multi-Agent Systems",
+      "abstract_600": "Multi-agent systems powered by Large Language Models (LLM-MAS) have demonstrated remarkable capabilities in collaborative problem-solving. However, their deployment also introduces new security risks. Existing research on LLM-based agents has primarily examined single-agent scenarios, while the security of multi-agent systems remains largely unexplored. To address this gap, we present a systematic study of intention-hiding threats in LLM-MAS. We design four representative attack paradigms that subtly disrupt task completion while maintaining a high degree of stealth, and evaluate them under ce",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "25d01306e931",
+      "title": "Don't Break the Cache: An Evaluation of Prompt Caching for Long-Horizon Agentic Tasks",
+      "abstract_600": "Recent advancements in Large Language Model (LLM) agents have enabled complex multi-turn agentic tasks requiring extensive tool calling, where conversations can span dozens of API calls with increasingly large context windows. However, although major LLM providers offer prompt caching to reduce cost and latency, its benefits for agentic workloads remain underexplored in the research literature. To our knowledge, no prior work quantifies these cost savings or compares caching strategies for multi-turn agentic tasks. We present a comprehensive evaluation of prompt caching across three major LLM",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c4d50eba9216",
+      "title": "Foundation Agents Meet Agentic Deep Research: Evidence-Grounded Clinical Code Forecasting",
+      "abstract_600": "Next-encounter ICD forecasting predicts which standardized diagnosis codes will be documented at a future visit from the longitudinal record available beforehand. The task is prospective and multi-label: the target note does not yet exist, and several codes may be correct. Structured EHR foundation models capture recurrence and temporal progression, whereas language foundation models generate flexible diagnostic hypotheses. We introduce ICD-Deepresearch, a DeepResearch workflow that composes these predictive foundation models with medical search and ICD dictionaries. Because no source reveals",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fff6eeec2a86",
+      "title": "GraphSearch: Agentic Search-Augmented Reasoning for Zero-Shot Graph Learning",
+      "abstract_600": "Recent advances in search-augmented large reasoning models (LRMs) enable the retrieval of external knowledge to reduce hallucinations in multistep reasoning. However, their ability to operate on graph-structured data, prevalent in domains such as e-commerce, social networks, and scientific citations, remains underexplored. Unlike plain text corpora, graphs encode rich topological signals that connect related entities and can serve as valuable priors for retrieval, enabling more targeted search and improved reasoning efficiency. Yet, effectively leveraging such structure poses unique challenges",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "84c3b72e4f0c",
+      "title": "SlimPer: Make Personalization Model Slim and Smart",
+      "abstract_600": "Transformer-style architectures are increasingly adopted for industrial recommendation systems, yet they inherit a design premise misaligned with the task: generative models rely on per-token autoregressive prediction, which justifies maintaining large intermediate tensors that scale with sequence length. In contrast, recommendation systems produce a single set of relevance scores for each <user, item> pair without token-level supervision. Leveraging this observation, we propose SlimPer, which reformulates personalized ranking as iterative refinement of a compact, unified <user, item> knowledg",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7dc3101031fa",
+      "title": "A$^{2}$utoLPBench: An Auto-Generated, Agent-Friendly LP Benchmark via Inverse-KKT Construction",
+      "abstract_600": "Most LP-from-text benchmarks are static datasets of word problems written and labeled by hand. Once such a dataset is released, its size is fixed, its difficulty is fixed, and every problem can leak into the training data of future LLMs. We present \\textbf{A$^{2}$utoLPBench}, a benchmark for testing LLM-driven agents on linear programming problems written in plain text. We first pick a feasible point and dual, then write down a problem for which that point is optimal and the objective value is known. The answer is known by construction, with no solver call and no human annotator. The evaluatio",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "91cee8c0c791",
+      "title": "Agentic AI: a comprehensive survey of architectures, applications, and future directions",
+      "abstract_600": "Abstract Agentic AI represents a transformative shift in artificial intelligence, but its rapid advancement has led to a fragmented understanding, often conflating modern neural systems with outdated symbolic models\u2014a practice known as conceptual retrofitting . This survey cuts through this confusion by introducing a novel dual-paradigm framework that categorizes agentic systems into two distinct lineages: the symbolic/classical (relying on algorithmic planning and persistent state) and the neural/generative (leveraging stochastic generation and prompt-driven orchestration). Through a systemat",
+      "year": 2025,
+      "venue": "Artificial Intelligence Review",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f1aa28bca940",
+      "title": "CRUD-RAG: A Comprehensive Chinese Benchmark for Retrieval-Augmented Generation of Large Language Models",
+      "abstract_600": "Retrieval-augmented generation (RAG) is a technique that enhances the capabilities of large language models (LLMs) by incorporating external knowledge sources. This method addresses common LLM limitations, including outdated information and the tendency to produce inaccurate \u201challucinated\u201d content. However, evaluating RAG systems is a challenge. Most benchmarks focus primarily on question-answering applications, neglecting other potential scenarios where RAG could be beneficial. Accordingly, in the experiments, these benchmarks often assess only the LLM components of the RAG pipeline or the re",
+      "year": 2024,
+      "venue": "ACM Transactions on Information Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "aac7d9e865ef",
+      "title": "Deep Research Agents: A Systematic Examination And Roadmap",
+      "abstract_600": "The rapid progress of Large Language Models (LLMs) has given rise to a new category of autonomous AI systems, referred to as Deep Research (DR) agents. These agents are designed to tackle complex, multi-turn informational research tasks by leveraging a combination of dynamic reasoning, adaptive long-horizon planning, multi-hop information retrieval, iterative tool use, and the generation of structured analytical reports. In this paper, we conduct a detailed analysis of the foundational technologies and architectural components that constitute Deep Research agents. We begin by reviewing informa",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "afdfb7910800",
+      "title": "EMBL AI Librarian: Life-Sciences Knowledge Layer for AI Agents",
+      "abstract_600": "The web is increasingly accessed by AI agents rather than humans. Every agent needs knowledge, especially in the life-sciences, where agentic pipelines are growing fast. Access to the literature is a crucial part of that need, and resources such as Europe PMC, with over 40M indexed records, are widely used to meet it. Yet these resources were not built for AI agents: they take keywords and complex syntax and return whole papers, so every agent must learn the syntax, issue several searches, and read full papers to find the evidence it needs. We introduce EMBL AI Librarian, a knowledge layer tha",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "640e60001e78",
+      "title": "DEER: A Benchmark for Evaluating Deep Research Agents on Expert Report Generation",
+      "abstract_600": "Recent advances in large language models have enabled deep research systems that generate expert-level reports through multi-step reasoning and evidence-based synthesis. However, evaluating such reports remains challenging: report quality is multifaceted, making it difficult to determine what to assess and which criteria to use; LLM-based judges may miss errors that require domain expertise to identify; and because deep research relies on retrieved evidence, report-wide claim verification is also necessary. To address these issues, we propose DEER, a benchmark for evaluating expert-level deep",
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2d954509e58a",
+      "title": "GenTKG: Generative Forecasting on Temporal Knowledge Graph with Large Language Models",
+      "abstract_600": "The rapid advancements in large language models (LLMs) have ignited interest in the temporal knowledge graph (tKG) domain, where conventional embedding-based and rule-based methods dominate.The question remains open of whether pre-trained LLMs can understand structured temporal relational data and replace them as the foundation model for temporal relational forecasting.Therefore, we bring temporal knowledge forecasting into the generative setting.However, challenges occur in the huge chasms between complex temporal graph data structure and sequential natural expressions LLMs can handle, and be",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "eb4d6f3d6ad4",
+      "title": "Enhancing Interactive Image Retrieval With Query Rewriting Using Large Language Models and Vision Language Models",
+      "abstract_600": "Image search stands as a pivotal task in multimedia and computer vision, finding applications across diverse domains, ranging from internet search to medical diagnostics. Conventional image search systems operate by accepting textual or visual queries, retrieving the top-relevant candidate results from the database. However, prevalent methods often rely on single-turn procedures, introducing potential inaccuracies and limited recall. These methods also face the challenges, such as vocabulary mismatch and the semantic gap, constraining their overall effectiveness. To address these issues, we pr",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c370dce68934",
+      "title": "HalluLens: LLM Hallucination Benchmark",
+      "abstract_600": "Yejin Bang, Ziwei Ji, Alan Schelten, Anthony Hartshorn, Tara Fowler, Cheng Zhang, Nicola Cancedda, Pascale Fung. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025.",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "70ad66801baa",
+      "title": "NeuroLit Navigator: A Neurosymbolic Approach to Scholarly Article Searches for Systematic Reviews",
+      "abstract_600": "The introduction of Large Language Models (LLMs) has significantly impacted various fields, including education, for example, by enabling the creation of personalized learning materials. However, their use in Systematic Reviews (SRs) reveals limitations such as restricted access to specialized vocabularies, lack of domain-specific reasoning, and a tendency to generate inaccurate information. Existing SR tools often rely on traditional NLP methods and fail to address these issues adequately. To overcome these challenges, we developed the ``NeuroLit Navigator,'' a system that combines domain-spe",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f54d30808d05",
+      "title": "Training a Knowledge Base: Supervised Structure Learning for Agent-Curated Document Stores",
+      "abstract_600": "Retrieval-augmented generation treats the document store as a frozen input, and the offline pipelines that do build structure over it build it unsupervised -- a whole corpus indexed at uniform effort, with no signal about which structure a question will need. We instead treat the knowledge base as a non-parametric model trained on (question, answer) pairs: a curator agent answers a supervised question against the current store, is shown the gold answer, then edits the store. The store carries forward, and we evaluate the curated store with a test set, on two contamination-free benchmarks: KBGy",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f7f09a53a332",
+      "title": "A survey on multi-agent reinforcement learning and its application",
+      "abstract_600": "Multi-agent reinforcement learning (MARL) has been a rapidly evolving field. This paper presents a comprehensive survey of MARL and its applications. We trace the historical evolution of MARL, highlight its progress, and discuss related survey works. Then, we review the existing works addressing inherent challenges and those focusing on diverse applications. Some representative stochastic games, MARL means, spatial forms of MARL, and task classification are revisited. We then conduct an in-depth exploration of a variety of challenges encountered in MARL applications. We also address critical o",
+      "year": 2024,
+      "venue": "Journal of Automation and Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4e7d4c270a40",
+      "title": "ComAgent: Multi-LLM based Agentic AI Empowered Intelligent Wireless Networks",
+      "abstract_600": "Emerging 6G networks rely on complex cross-layer optimization, yet manually translating high-level intents into mathematical formulations remains a bottleneck. While Large Language Models (LLMs) offer promise, monolithic approaches often lack sufficient domain grounding, constraint awareness, and verification capabilities. To address this, we present ComAgent, a multi-LLM agentic AI framework. ComAgent employs a closed-loop Perception-Planning-Action-Reflection cycle, coordinating specialized agents for literature search, coding, and scoring to autonomously generate solver-ready formulations a",
+      "year": 2026,
+      "venue": "IEEE wireless communications",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

@@ -22,5 +22,16 @@ research/scans/*
 !research/scans/2026-08-20-agentic-lit-search-mcp-transport/
 !research/scans/2026-08-20-agentic-lit-search-orientation-mcp-transport/
 
+# Experiment evidence — the measured arcs behind the phase reports. Kept rather than
+# regenerated: the stages under study are non-deterministic, so a lost run cannot be
+# re-measured, only re-sampled, and every gate in the reports is scored against these
+# exact files. Same per-level negation as scans; the `.venv/` and `__pycache__/` rules
+# above still bind inside these trees, which is what keeps them to artefacts.
+!research/experiments/
+research/experiments/*
+!research/experiments/phase1-stateless/
+!research/experiments/phase11-golden/
+!research/experiments/phase12-selection/
+
 # Built skill package — a build artefact, rebuilt from skills/research-scan/
 dist/

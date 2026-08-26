@@ -1,0 +1,257 @@
+{
+  "batch": "13",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "54ae0707a228",
+      "title": "Lookback Lens: Detecting and Mitigating Contextual Hallucinations in Large Language Models Using Only Attention Maps",
+      "abstract_600": "When asked to summarize articles or answer questions given a passage, large language models (LLMs) can hallucinate details and respond with unsubstantiated answers that are inaccurate with respect to the input context.This paper describes a simple approach for detecting such contextual hallucinations.We hypothesize that contextual hallucinations are related to the extent to which an LLM attends to information in the provided context versus its own generations.Based on this intuition, we propose a simple hallucination detection model whose input features are given by the ratio of attention weig",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "185dd5a1187a",
+      "title": "Uncertainty-aware large language models for explainable disease diagnosis",
+      "abstract_600": "Explainable disease diagnosis, which leverages patient information (e.g., symptoms) and computational models to generate probable diagnoses and reasoning, holds strong clinical promise. Yet, when clinical notes lack sufficient evidence for a definitive diagnosis, such as the absence of definitive symptoms, diagnostic uncertainty commonly arises, increasing the risk of misdiagnosis. Despite its importance, the explicit identification and explanation of diagnostic uncertainty remain under-explored in artificial intelligence-driven systems. To fill this gap, we introduce ConfiDx, an uncertainty-a",
+      "year": 2025,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a2565834ab8e",
+      "title": "NeSy-RAG: Neuro-Symbolic RAG for Explainable Question Answering",
+      "abstract_600": "Retrieval-augmented generation (RAG) improves question answering by grounding large language models (LLMs) in external knowledge such as text corpora. However, its reasoning process remains largely opaque: intermediate reasoning steps are difficult to verify and cannot be reliably attributed to specific evidence. Moreover, missing user-specific context is rarely detected systematically, often leading to incomplete or incorrect output. We propose NeSy-RAG, a modular neuro-symbolic RAG framework that synthesizes attributable Prolog modules from retrieved text chunks. For each chunk, the system g",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7fd0bea1d6a0",
+      "title": "Measuring and Enhancing Human Value Alignment in Zero-Shot Document-Level Claim Extraction",
+      "abstract_600": "Identifying central claims from long documents is a fundamental yet challenging task in automated fact-checking pipelines. Manual extraction at the document level is costly and requires domain expertise, while existing automatic methods for claim extraction and evaluation tend to overlook critical dimensions that human fact-checkers consider essential for determining claim quality. In this paper, we propose a novel Human Value-Aligned framework that enables zero-shot document-level claim extraction and evaluation by aligning with expert preferences. We first elicit a structured set of Human Va",
+      "year": 2026,
+      "venue": "The Web Conference",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "758f13dc1f19",
+      "title": "AutoVerifier: An Agentic Automated Verification Framework Using Large Language Models",
+      "abstract_600": "Scientific and Technical Intelligence (S&TI) analysis requires verifying complex technical claims across rapidly growing literature, where existing approaches fail to bridge the verification gap between surface-level accuracy and deeper methodological validity. We present AutoVerifier, an LLM-based agentic framework that automates end-to-end verification of technical claims without requiring domain expertise. AutoVerifier decomposes every technical assertion into structured claim triples of the form (Subject, Predicate, Object), constructing knowledge graphs that enable structured reasoning ac",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c77ca6ff7629",
+      "title": "Rethinking Citation of AI Sources in Student-AI Collaboration within HCI Design Education",
+      "abstract_600": "The growing integration of AI tools in student design projects presents an unresolved challenge in HCI education: how should AI-generated content be cited and documented? Traditional citation frameworks -- grounded in credibility, retrievability, and authorship -- struggle to accommodate the dynamic and ephemeral nature of AI outputs. In this paper, we examine how undergraduate students in a UX design course approached AI usage and citation when given the freedom to integrate generative tools into their design process. Through qualitative analysis of 35 team projects and reflections from 175 s",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3eaa14a27cf1",
+      "title": "MAD: A Benchmark for Multi-Turn Audio Dialogue Fact-Checking",
+      "abstract_600": "Despite the growing popularity of audio platforms, fact-checking spoken content remains significantly underdeveloped. Misinformation in speech often unfolds across multi-turn dialogues, shaped by speaker interactions, disfluencies, overlapping speech, and emotional tone-factors that complicate both claim detection and verification. Existing datasets fall short by focusing on isolated sentences or text transcripts, without modeling the conversational and acoustic complexity of spoken misinformation. We introduce MAD (Multi-turn Audio Dialogues), the first fact-checking dataset aligned with mult",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c77608477dc7",
+      "title": "BioDivergence: A Benchmark and Evaluation Framework for Hidden Contextual Contradictions in Biomedical Abstracts",
+      "abstract_600": "Biomedical findings often seem to conflict across studies, but many of these differences are context-dependent rather than true contradictions. Variations in cohort, geography, assay protocol, disease subtype, and clinical setting can make both claims locally valid. Existing NLI and scientific claim-verification benchmarks reduce such cases to entailment, contradiction, or neutral, failing to capture the contextual structure behind divergence. To address this, we introduce BioDivergence, an evaluation framework with a six-class conflict taxonomy, a 13-axis divergence ontology, and four structu",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "614d859caf89",
+      "title": "A Survey of Multimodal Hallucination Evaluation and Detection",
+      "abstract_600": "Multi-modal Large Language Models (MLLMs) have emerged as a powerful paradigm for integrating visual and textual information, supporting a wide range of multi-modal tasks. However, these models often suffer from hallucination, producing content that appears plausible but contradicts the input content or established world knowledge. This survey offers an in-depth review of hallucination evaluation benchmarks and detection methods across Image-to-Text (I2T) and Text-to-image (T2I) generation tasks. Specifically, we first propose a taxonomy of hallucination based on faithfulness and factuality, i",
+      "year": 2025,
+      "venue": "International Journal of Computer Vision",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "74ffa02fc0b5",
+      "title": "Vision-Language Traffic Sign Recognition for Self-Driving: Robust Classification, Uncertainty Calibration, and LLM Safety Explanations on a GTSRB-Compatible Benchmark",
+      "abstract_600": "Traffic-sign recognition is a small-object perception task with direct safety relevance for self-driving systems. This paper reports a complete, reproducible evaluation of robust classification, uncertainty calibration, and language-grounded safety explanations for 43 traffic-sign classes derived from the German Traffic Sign Recognition Benchmark (GTSRB) ontology. The official GTSRB archive was treated as the target domain; however, external binary ZIP downloads were unavailable in the execution environment. Following the experimental fallback rule, the study used a packaged GTSRB-compatible s",
+      "year": 2024,
+      "venue": "Journal of Advanced Computing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "12f415c77c10",
+      "title": "Full-colour 3D holographic augmented-reality displays with metasurface waveguides",
+      "abstract_600": "Abstract Emerging spatial computing systems seamlessly superimpose digital information on the physical environment observed by a user, enabling transformative experiences across various domains, such as entertainment, education, communication and training 1\u20133 . However, the widespread adoption of augmented-reality (AR) displays has been limited due to the bulky projection optics of their light engines and their inability to accurately portray three-dimensional (3D) depth cues for virtual content, among other factors 4,5 . Here we introduce a holographic AR system that overcomes these challenge",
+      "year": 2024,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fb0035f9c7d2",
+      "title": "Exploring AI-driven approaches for unstructured document analysis and future horizons",
+      "abstract_600": "Abstract In the current industrial landscape, a significant number of sectors are grappling with the challenges posed by unstructured data, which incurs financial losses amounting to millions annually. If harnessed effectively, this data has the potential to substantially boost operational efficiency. Traditional methods for extracting information have their limitations; however, solutions powered by artificial intelligence (AI) could provide a more fitting alternative. There is an evident gap in scholarly research concerning a comprehensive evaluation of AI-driven techniques for the extractio",
+      "year": 2024,
+      "venue": "Journal Of Big Data",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "486cd3aa2db1",
+      "title": "EmpiriGraph-Psy: A Dataset and LLM Pipeline for Extracting Empirical Relation Graphs from Psychology Abstracts",
+      "abstract_600": "Existing scientific relation extraction benchmarks mainly target domains such as computer science, where entities are tasks, methods, datasets, materials, or metrics. This leaves a gap in variable-oriented empirical fields such as psychology, where findings are expressed as relations among constructs, measurements, interventions, and outcomes. We introduce variable-centered empirical graph extraction, the task of mapping scientific abstracts to typed graphs whose nodes are normalized variables and whose edges represent empirical and hierarchical relations. To support this task, we construct Em",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c2de8a0bd3f3",
+      "title": "CRAFT: Critic-Refined Adaptive Key-Frame Targeting for Multimodal Video Question Answering",
+      "abstract_600": "Grounded multi-video question answering over real-world news events requires systems to surface query-relevant evidence across heterogeneous video archives while attributing every claim to its supporting source. We introduce CRAFT (Critic-Refined Adaptive Key-Frame Targeting), a query-conditioned pipeline that combines dynamic keyframe selection, per-video ASR with multilingual fallback, and a hybrid critic loop to iteratively verify and repair claims before consolidation. The pipeline integrates UNLI temporal entailment, DeBERTa-v3 cross-claim screening, and a Llama-3.2-3B adjudicator, with a",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9683bec45167",
+      "title": "Artifacts or Abduction: How Do LLMs Answer Multiple-Choice Questions Without the Question?",
+      "abstract_600": "Multiple-choice question answering (MCQA) is often used to evaluate large language models (LLMs).To see if MCQA assesses LLMs as intended, we probe if LLMs can perform MCQA with choices-only prompts, where models must select the correct answer only from the choices.In three MCQA datasets and four LLMs, this prompt bests a majority baseline in 11/12 cases, with up to 0.33 accuracy gain.To help explain this behavior, we conduct an in-depth, black-box analysis on memorization, choice dynamics, and question inference.Our key findings are threefold.First, we find no evidence that the choices-only a",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a47f094754a8",
+      "title": "From Experience to Skill: Multi-Agent Generative Engine Optimization via Reusable Strategy Learning",
+      "abstract_600": "Generative engines (GEs) are reshaping information access by replacing ranked links with citation-grounded answers, yet current Generative Engine Optimization (GEO) methods optimize each instance in isolation, unable to accumulate or transfer effective strategies across tasks and engines. We reframe GEO as a strategy learning problem and propose MAGEO, a multi-agent framework in which coordinated planning, editing, and fidelity-aware evaluation serve as the execution layer, while validated editing patterns are progressively distilled into reusable, engine-specific optimization skills. To enabl",
+      "year": 2026,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "e5e46a8babec",
+      "title": "Knowledge-Centric Hallucination Detection",
+      "abstract_600": "Xiangkun Hu, Dongyu Ru, Lin Qiu, Qipeng Guo, Tianhang Zhang, Yang Xu, Yun Luo, Pengfei Liu, Yue Zhang, Zheng Zhang. Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing. 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6aed21a3cd4a",
+      "title": "Mathematical Analysis of Hallucination Dynamics in Large Language Models: Uncertainty Quantification, Advanced Decoding, and Principled Mitigation",
+      "abstract_600": "Large Language Models (LLMs) are powerful linguistic engines but remain susceptible to hallucinations: plausible-sounding outputs that are factually incorrect or unsupported. In this work, we present a mathematically grounded framework to understand, measure, and mitigate these hallucinations. Drawing on probabilistic modeling, information theory, trigonometric signal analysis, and Bayesian uncertainty estimation, we analyze how errors compound autoregressively, propose refined uncertainty metrics, including semantic and phase-aware variants, and develop principled mitigation strategies such a",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "94d739bb9ddf",
+      "title": "Bidirectional RAG: Safe Self-Improving Retrieval-Augmented Generation Through Multi-Stage Validation",
+      "abstract_600": "Retrieval-Augmented Generation RAG systems enhance large language models by grounding responses in external knowledge bases, but conventional RAG architectures operate with static corpora that cannot evolve from user interactions. We introduce Bidirectional RAG, a novel RAG architecture that enables safe corpus expansion through validated write back of high quality generated responses. Our system employs a multi stage acceptance layer combining grounding verification (NLI based entailment, attribution checking, and novelty detection to prevent hallucination pollution while enabling knowledge a",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9210e1df322c",
+      "title": "Consensus document on the management of hyperkalemia.",
+      "abstract_600": "Hyperkalaemia is a common electrolyte imbalance with potentially serious short-, medium- and long-term consequences on morbidity and mortality rates and the use of national health service resources. The fact that different medical specialities can manage hyperkalaemia makes it important to have a unified approach, and the recent availability of new specific drug treatments means that the approach needs to be updated. This consensus document from the scientific societies most directly involved in the management of hyperkalaemia (Sociedad Espa\u00f1ola de Cardiolog\u00eda [Spanish Society of Cardiology],",
+      "year": 2024,
+      "venue": "Nefrolog\u00eda",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7f969ce1f9c2",
+      "title": "Omega-3 fatty acids from fish by-products: Innovative extraction and application in food and feed",
+      "abstract_600": "Omega-3 fatty acids (O3FA) are essential nutrients that play a crucial role in maintaining human and animal health. They are known for their numerous health claims, including cardiovascular benefits, contributing to both the prevention and treatment of immunological, neurological, reproductive, and cardiovascular complications, and supporting overall well-being. Fish, especially oily fish, comprise rich source of O3FA. In the fish industry, significant amounts of by-products and waste are generated during processing which are often discarded or used for lower-value applications. However, there",
+      "year": 2024,
+      "venue": "Food and Bioproducts Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9bc79daf0a35",
+      "title": "Cite Before You Speak: Enhancing Context-Response Grounding in E-commerce Conversational LLM-Agents",
+      "abstract_600": "With the advancement of conversational large language models (LLMs), several LLM-based Conversational Shopping Agents (CSA) have been developed to help customers smooth their online shopping. The primary objective in building an engaging and trustworthy CSA is to ensure the agent's responses about product factoids are accurate and factually grounded. However, two challenges remain. First, LLMs produce hallucinated or unsupported claims. Such inaccuracies risk spreading misinformation and diminishing customer trust. Second, without providing knowledge source attribution in CSA response, custome",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "59a9ccc60ae2",
+      "title": "RW-Post: Auditable Evidence-Grounded Multimodal Fact-Checking in the Wild",
+      "abstract_600": "Multimodal misinformation increasingly leverages visual persuasion, where repurposed or manipulated images strengthen misleading text. We introduce \\textbf{RW-Post}, a post-aligned \\textbf{text--image benchmark} for real-world multimodal fact-checking with \\emph{auditable} annotations: each instance links the original social-media post with reasoning traces and explicitly linked evidence items derived from human fact-check articles via an LLM-assisted extraction-and-auditing pipeline. RW-Post supports controlled evaluation across closed-book, evidence-bounded, and open-web regimes, enabling sy",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b9ac5abb0a81",
+      "title": "Large language models in medical and healthcare fields: applications, advances, and challenges",
+      "abstract_600": "Large language models (LLMs) are increasingly recognized for their advanced language capabilities, offering significant assistance in diverse areas like medical communication, patient data optimization, and surgical planning. Our survey meticulously searched for papers with keywords such as \u201cmedical,\u201d \u201cclinical,\u201d \u201chealthcare,\u201d and \u201cLLMs\u201d across various databases, including ACM and Google Scholar. It sought to delve into the latest trends and applications of LLMs in healthcare, analyzing 175 relevant publications to support both practitioners and researchers in the field. We have compiled 56 ex",
+      "year": 2024,
+      "venue": "Artificial Intelligence Review",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8bd6542ed245",
+      "title": "Causal Tracing of Object Representations in Large Vision Language Models: Mechanistic Interpretability and Hallucination Mitigation",
+      "abstract_600": "Despite the remarkable advancements of Large Vision-Language Models (LVLMs), the mechanistic interpretability remains underexplored. Existing analyses are insufficiently comprehensive and lack examination covering visual and textual tokens, model components, and the full range of layers. This limitation restricts actionable insights to improve the faithfulness of model output and the development of downstream tasks, such as hallucination mitigation. To address this limitation, we introduce Fine-grained Cross-modal Causal Tracing (FCCT) framework, which systematically quantifies the causal effe",
+      "year": 2025,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

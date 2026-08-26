@@ -1,0 +1,257 @@
+{
+  "batch": "08",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "6d7179cc138a",
+      "title": "The CLEF-2026 CheckThat! Lab: Advancing Multilingual Fact-Checking",
+      "abstract_600": "The CheckThat! lab aims to advance the development of innovative technologies combating disinformation and manipulation efforts in online communication across a multitude of languages and platforms. While in early editions the focus has been on core tasks of the verification pipeline (check-worthiness, evidence retrieval, and verification), in the past three editions, the lab added additional tasks linked to the verification process. In this year's edition, the verification pipeline is at the center again with the following tasks: Task 1 on source retrieval for scientific web claims (a follow-",
+      "year": 2026,
+      "venue": "European Conference on Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f6d880d038a7",
+      "title": "What Do Claim Verification Datasets Actually Test? A Reasoning Trace Analysis",
+      "abstract_600": "Despite rapid progress in claim verification, we lack a systematic understanding of what reasoning these benchmarks actually exercise. We generate structured reasoning traces for 24K claim-verification examples across 9 datasets using GPT-4o-mini and find that direct evidence extraction dominates, while multi-sentence synthesis and numerical reasoning are severely under-represented. A dataset-level breakdown reveals stark biases: some datasets almost exclusively test lexical matching, while others require information synthesis in roughly half of cases. Using a compact 1B-parameter reasoning ve",
+      "year": 2026,
+      "venue": "International Conference on Applications of Natural Language to Data Bases",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "06f04da9d143",
+      "title": "On the Role of Citations in Preference Data",
+      "abstract_600": "Many NLP tasks require systems to provide attribution in their outputs--i.e. citations to grounding sources. Attribution serves as a bulwark against model hallucination and as a means for users to verify the credibility of model outputs. Yet, it is unclear how humans and LLMs evaluate citations when comparing outputs, a process central to reward modeling and modern LLM post-training. This paper studies the role of citations in the preferences of human judges and four open-source LLMs within the context of scientific question answering, leveraging mixed effects models to investigate the influen",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "31bbe4c5e7ce",
+      "title": "AAPM CT metal artifact reduction grand challenge",
+      "abstract_600": "BACKGROUND: Metal artifact reduction (MAR) is a long-standing challenge in CT imaging. The presence of highly attenuating objects, such as dental fillings, hip prostheses, spinal screws/rods, and gold fiducial markers, can introduce severe streak artifacts in CT images, often reducing their diagnostic value. Existing CT MAR studies typically define their own test cases and evaluation metrics, making it difficult to objectively and comprehensively compare the performance of different MAR methods. There is a widespread need for a universal CT MAR image quality benchmark to evaluate the clinical",
+      "year": 2025,
+      "venue": "Medical Physics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ba9effe373ee",
+      "title": "SpanUQ: Span-Level Uncertainty Quantification for Large Language Model Generation",
+      "abstract_600": "Uncertainty estimation is essential not only for the trustworthy deployment of large language models (LLMs) but also as a foundation for self-refinement in LLM generation. However, existing approaches operate at suboptimal granularities: token-level scores lack semantic coherence, while sequence-level scores fail to localize errors. We formalize Span-Level Uncertainty Estimation (SLUE), a new task that targets the natural granularity for uncertainty: semantically coherent text spans, each conveying a single assessable unit of meaning. To address this task, we introduce SPANUQ, a lightweight pr",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1c07e8cdf905",
+      "title": "HALT-RAG: A Task-Adaptable Framework for Hallucination Detection with Calibrated NLI Ensembles and Abstention",
+      "abstract_600": "Detecting content that contradicts or is unsupported by a given source text is a critical challenge for the safe deployment of generative language models. We introduce HALT-RAG, a post-hoc verification system designed to identify hallucinations in the outputs of Retrieval-Augmented Generation (RAG) pipelines. Our flexible and task-adaptable framework uses a universal feature set derived from an ensemble of two frozen, off-the-shelf Natural Language Inference (NLI) models and lightweight lexical signals. These features are used to train a simple, calibrated, and task-adapted meta-classifier. Us",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5131d1eee2f1",
+      "title": "Mitigating LLM Hallucinations via Conformal Abstention",
+      "abstract_600": "We develop a principled procedure for determining when a large language model (LLM) should abstain from responding (e.g., by saying \"I don't know\") in a general domain, instead of resorting to possibly \"hallucinating\" a non-sensical or incorrect answer. Building on earlier approaches that use self-consistency as a more reliable measure of model confidence, we propose using the LLM itself to self-evaluate the similarity between each of its sampled responses for a given query. We then further leverage conformal prediction techniques to develop an abstention procedure that benefits from rigorous",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "3d1ed922c8c9",
+      "title": "CPR: Retrieval Augmented Generation for Copyright Protection",
+      "abstract_600": "Retrieval Augmented Generation (RAG) is emerging as a flexible and robust technique to adapt models to private users data without training, to handle credit attribution, and to allow efficient machine unlearning at scale. However, RAG techniques for image generation may lead to parts of the retrieved samples being copied in the model's output. To reduce risks of leaking private information contained in the retrieved set, we introduce Copy-Protected generation with Retrieval (CPR), a new method for RAG with strong copyright protection guarantees in a mixed-private setting for diffusion models.",
+      "year": 2024,
+      "venue": "Computer Vision and Pattern Recognition",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "e7e0983544cc",
+      "title": "The ethics of using artificial intelligence in scientific research: new guidance needed for a new tool",
+      "abstract_600": "Using artificial intelligence (AI) in research offers many important benefits for science and society but also creates novel and complex ethical issues. While these ethical issues do not necessitate changing established ethical norms of science, they require the scientific community to develop new guidance for the appropriate use of AI. In this article, we briefly introduce AI and explain how it can be used in research, examine some of the ethical issues raised when using it, and offer nine recommendations for responsible use, including: (1) Researchers are responsible for identifying, describ",
+      "year": 2024,
+      "venue": "AI and Ethics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "20710dcd2fa5",
+      "title": "Odyssey: Constructing Verifiable Local Truth-Preserving Foundation Models",
+      "abstract_600": "We introduce a categorical framework called ODYSSEY for constructing verifiable, local truth-preserving foundation models as compositions of foundries: building-block architectural components that specify a cover of local contexts, local representation families, restriction maps, gluing rules, obstruction policies, update obligations, and human-facing views. A foundry is an organized sheaf of knowledge that carries within it an argumentation component. Concrete foundries are built from generic foundries such as evidence/argument, operational decision, institutional/financial, market meaning, s",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ef66da03327b",
+      "title": "Citation manipulation through citation mills and pre-print servers",
+      "abstract_600": "Citations are widely considered in scientists' evaluation. As such, scientists may be incentivized to inflate their citation counts. While previous literature has examined self-citations and citation cartels, it remains unclear whether scientists can purchase citations. Here, we compile a dataset of ~1.6 million profiles on Google Scholar to examine instances of citation fraud on the platform. We survey faculty at highly-ranked universities, and confirm that Google Scholar is widely used when evaluating scientists. We then engage with a citation-boosting service, and manage to purchase 50 cita",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f4ac4a471096",
+      "title": "COMMUNITYNOTES: A Dataset for Exploring the Helpfulness of Fact-Checking Explanations",
+      "abstract_600": "Fact-checking on major platforms, such as X, Meta, and TikTok, is shifting from expert-driven verification to a community-based setup, where users contribute explanatory notes to clarify why a post might be misleading. An important challenge here is determining whether an explanation is helpful for understanding real-world claims and the reasons why, which remains largely underexplored in prior research. In practice, most community notes remain unpublished due to slow community annotation, and the reasons for helpfulness lack clear definitions. To bridge these gaps, we introduce the task of pr",
+      "year": 2025,
+      "venue": "Conference of the European Chapter of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d6641278912b",
+      "title": "A Survey on the Use of Large Language Models (LLMs) in Fake News",
+      "abstract_600": "The proliferation of fake news and fake profiles on social media platforms poses significant threats to information integrity and societal trust. Traditional detection methods, including rule-based approaches, metadata analysis, and human fact-checking, have been employed to combat disinformation, but these methods often fall short in the face of increasingly sophisticated fake content. This review article explores the emerging role of Large Language Models (LLMs) in enhancing the detection of fake news and fake profiles. We provide a comprehensive overview of the nature and spread of disinfor",
+      "year": 2024,
+      "venue": "Future Internet",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5aeb0b1a3bec",
+      "title": "Unsupervised Real-Time Hallucination Detection based on the Internal States of Large Language Models",
+      "abstract_600": "Hallucinations in large language models (LLMs) refer to the phenomenon of LLMs producing responses that are coherent yet factually inaccurate.This issue undermines the effectiveness of LLMs in practical applications, necessitating research into detecting and mitigating hallucinations of LLMs.Previous studies have mainly concentrated on post-processing techniques for hallucination detection, which tend to be computationally intensive and limited in effectiveness due to their separation from the LLM's inference process.To overcome these limitations, we introduce MIND, an unsupervised training fr",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "69afcaff1d2f",
+      "title": "From Calibration to Collaboration: LLM Uncertainty Quantification Should Be More Human-Centered",
+      "abstract_600": "Large Language Models (LLMs) are increasingly assisting users in the real world, yet their reliability remains a concern. Uncertainty quantification (UQ) has been heralded as a tool to enhance human-LLM collaboration by enabling users to know when to trust LLM predictions. We argue that current practices for uncertainty quantification in LLMs are not optimal for developing useful UQ for human users making decisions in real-world tasks. Through an analysis of 40 LLM UQ methods, we identify three prevalent practices hindering the community's progress toward its goal of benefiting downstream user",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c7067697e3a7",
+      "title": "Retrieval-Augmented Vision Foundation Models for Robust Leukemia Cell Classification across Multiple Microscopy Datasets",
+      "abstract_600": "Leukemia cell image classification is challenged by real-world domain shifts from acquisition, staining, illumination, and site protocols, causing single-dataset models to generalize poorly in real clinical scenarios. This work presents a robust framework for leukemia classification across multiple heterogeneous datasets using a two-stage pipeline with a pretrained vision foundation model. Stage 1 performs binary classification (leukemia vs. non-leukemia) and is trained using 122,167 single-cell images. Stage 2 is conditionally applied to Stage 1 positives to perform subtype classification int",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "47c9e4c0eb53",
+      "title": "Improving Reliability and Explainability of Medical Question Answering through Atomic Fact Checking in Retrieval-Augmented LLMs",
+      "abstract_600": "Large language models (LLMs) exhibit extensive medical knowledge but are prone to hallucinations and inaccurate citations, which pose a challenge to their clinical adoption and regulatory compliance. Current methods, such as Retrieval Augmented Generation, partially address these issues by grounding answers in source documents, but hallucinations and low fact-level explainability persist. In this work, we introduce a novel atomic fact-checking framework designed to enhance the reliability and explainability of LLMs used in medical long-form question answering. This method decomposes LLM-genera",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e68abb91d036",
+      "title": "Methods for data extraction and data transformation in convergent integrated mixed methods systematic reviews",
+      "abstract_600": "OBJECTIVE: The objective of this guidance paper is to describe data transformation involving qualitization, including when and how to undertake this process, and to clarify how it aligns with data extraction in order to expand on the current guidance for JBI convergent integrated mixed methods systematic reviews (MMSRs). INTRODUCTION: The convergent integrated approach to MMSRs involves combining extracted data from both quantitative studies (including the quantitative components of mixed methods studies) and qualitative studies (including the qualitative components of mixed methods studies).",
+      "year": 2025,
+      "venue": "JBI Evidence Synthesis",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "97b9c25fbfb6",
+      "title": "Cited but Not Verified: Parsing and Evaluating Source Attribution in LLM Deep Research Agents",
+      "abstract_600": "Large language models (LLMs) power deep research agents that synthesize information from hundreds of web sources into cited reports, yet these citations cannot be reliably verified. Current approaches either trust models to self-cite accurately, risking bias, or employ retrieval-augmented generation (RAG) that does not validate source accessibility, relevance, or factual consistency. We introduce the first source attribution evaluation framework that uses a reproducible AST parser to extract and evaluate inline citations from LLM-generated Markdown reports at scale. Unlike methods that verify",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "013600ff4523",
+      "title": "In generative AI we trust: can chatbots effectively verify political information?",
+      "abstract_600": "Abstract This article presents a comparative analysis of the potential of two large language model (LLM)-based chatbots\u2014ChatGPT and Bing Chat (recently rebranded to Microsoft Copilot)\u2014to detect veracity of political information. We use AI auditing methodology to investigate how chatbots evaluate true, false, and borderline statements on five topics: COVID-19, Russian aggression against Ukraine, the Holocaust, climate change, and LGBTQ + -related debates. We compare how the chatbots respond in high- and low-resource languages by using prompts in English, Russian, and Ukrainian. Furthermore, we",
+      "year": 2024,
+      "venue": "Journal of Computational Social Science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "731ce4b837e2",
+      "title": "Autonomous Research Agents: A Survey of AI Scientists and the Verification Gap",
+      "abstract_600": "Large language model (LLM) agents are increasingly used across the scientific research lifecycle: ideation, literature search, experiment design and execution, analysis, manuscript drafting, and review. End-to-end AI scientist systems can now produce paper-like manuscripts, but their claims are often harder to verify than their code is to run. This survey studies that gap in computational AI/ML research, where code, benchmarks, experiments, and write-ups are most visible. We screen 125 candidate works and include 35, with full-text coding of 26 entries: 24 runnable systems and two study or pos",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0288abc3ac15",
+      "title": "Integrating Token-Level Uncertainty, Bidirectional NLI, and Semantic Entropy for Robust Hallucination Detection in Large Language Models",
+      "abstract_600": "This work presents an integrated hybrid detection pipeline for hallucinations in large language model outputs, specifically addressing calibration limitations of previous approaches. Our method combines token-level uncertainty-quantified via averaged loglikelihoods from a Mistral model-with bidirectional natural language inference (NLI) contradiction signals and semantic entropy derived from output clustering. Unlike earlier frameworks, our dynamic weighting scheme mitigates the low-confidence calibration of NLI outputs, resulting in a more robust and interpretable detection mechanism. Evaluat",
+      "year": 2025,
+      "venue": "2025 International Conference on Artificial intelligence and Emerging Technologies (ICAIET)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c09079120b21",
+      "title": "Complementing Self-Consistency with Cross-Model Disagreement for Uncertainty Quantification",
+      "abstract_600": "Large language models (LLMs) often produce confident yet incorrect responses, and uncertainty quantification is one potential solution to more robust usage. Recent works routinely rely on self-consistency to estimate aleatoric uncertainty (AU), yet this proxy collapses when models are overconfident and produce the same incorrect answer across samples. We analyze this regime and show that cross-model semantic disagreement is higher on incorrect answers precisely when AU is low. Motivated by this, we introduce an epistemic uncertainty (EU) term that operates in the black-box access setting: EU u",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2a7de046b28a",
+      "title": "NeuroGenPoisoning: Neuron-Guided Attacks on Retrieval-Augmented Generation of LLM via Genetic Optimization of External Knowledge",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) empowers Large Language Models (LLMs) to dynamically integrate external knowledge during inference, improving their factual accuracy and adaptability. However, adversaries can inject poisoned external knowledge to override the model's internal memory. While existing attacks iteratively manipulate retrieval content or prompt structure of RAG, they largely ignore the model's internal representation dynamics and neuron-level sensitivities. The underlying mechanism of RAG poisoning has not been fully studied and the effect of knowledge conflict with strong para",
+      "year": 2025,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bec9840a6e94",
+      "title": "Accelerating scientific discovery with Co-Scientist",
+      "abstract_600": "Abstract Scientific discovery is driven by scientists generating hypotheses for complex problems that undergo rigorous experimental validation. To augment this process, we introduce Co-Scientist, a multi-agent artificial intelligence (AI) system built on Gemini for structured scientific thinking and hypothesis generation. Co-Scientist aims to help scientists discover new original knowledge. Conditioned on their research objectives and previous scientific evidence, it formulates demonstrably novel research hypotheses for experimental verification. The system\u2019s design involves agents continuousl",
+      "year": 2026,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

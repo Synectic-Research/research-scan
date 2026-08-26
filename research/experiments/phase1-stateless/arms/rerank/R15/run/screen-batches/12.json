@@ -1,0 +1,257 @@
+{
+  "batch": "12",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "b9bbe5149db8",
+      "title": "Evidence-Grounded Frontier Mapping and Agentic Hypothesis Generation in Nanomedicine",
+      "abstract_600": "Nanomedicine research spans delivery chemistry, immunology, imaging, biomaterials, and disease-specific translational science, yet its conceptual design space remains fragmented across a large and heterogeneous literature. To date, artificial intelligence in nanomedicine has focused primarily on property prediction and formulation optimization, with much less attention to evidence-grounded discovery support at the level of research direction selection. We introduce pArticleMap, a literature-mapping and research-hypothesis-generation system that combines article embeddings, similarity-graph ana",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5d010eb319a8",
+      "title": "Towards trustworthy LLMs: a review on debiasing and dehallucinating in large language models",
+      "abstract_600": "Recently, large language models (LLMs) have attracted considerable attention due to their remarkable capabilities. However, LLMs\u2019 generation of biased or hallucinatory content raised significant concerns, posing major challenges for their practical application. Many studies have dedicated efforts to address these critical issues, adopting various approaches to mitigate bias and hallucinations in LLM-generated content. Remarkably, no review papers have synthesized insights on these two primary problems. Addressing this gap, this paper aims to conduct a simultaneous and dual-focused review of th",
+      "year": 2024,
+      "venue": "Artificial Intelligence Review",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5e64d5447539",
+      "title": "When Silence Is Golden: Can LLMs Learn to Abstain in Temporal QA and Beyond?",
+      "abstract_600": "Large language models (LLMs) rarely admit uncertainty, often producing fluent but misleading answers, rather than abstaining (i.e., refusing to answer). This weakness is even evident in temporal question answering, where models frequently ignore time-sensitive evidence and conflate facts across different time-periods. In this paper, we present the first empirical study of training LLMs with an abstention ability while reasoning about temporal QA. Existing approaches such as calibration might be unreliable in capturing uncertainty in complex reasoning. We instead frame abstention as a teachable",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "63718da9f474",
+      "title": "Retrieval-Augmented Generation with Graphs (GraphRAG)",
+      "abstract_600": "Retrieval-augmented generation (RAG) is a powerful technique that enhances downstream task execution by retrieving additional information, such as knowledge, skills, and tools from external sources. Graph, by its intrinsic \"nodes connected by edges\" nature, encodes massive heterogeneous and relational information, making it a golden resource for RAG in tremendous real-world applications. As a result, we have recently witnessed increasing attention on equipping RAG with Graph, i.e., GraphRAG. However, unlike conventional RAG, where the retriever, generator, and external data sources can be unif",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bd9d08cfc1a7",
+      "title": "European Society of Anaesthesiology and Intensive Care consensus document on sustainability",
+      "abstract_600": "Climate change is a defining issue for our generation. The carbon footprint of clinical practice accounts for 4.7% of European greenhouse gas emissions, with the European Union ranking as the third largest contributor to the global healthcare industry's carbon footprint, after the United States and China. Recognising the importance of urgent action, the European Society of Anaesthesiology and Intensive Care (ESAIC) adopted the Glasgow Declaration on Environmental Sustainability in June 2023. Building on this initiative, the ESAIC Sustainability Committee now presents a consensus document in pe",
+      "year": 2024,
+      "venue": "European Journal of Anaesthesiology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "45eb737e6f74",
+      "title": "Pumpkin and Pumpkin By-Products: A Comprehensive Overview of Phytochemicals, Extraction, Health Benefits, and Food Applications",
+      "abstract_600": "vegetable, pumpkin has recently gained much attention because of its variety of phytochemicals and health advantages. Pumpkins are a type of winter squash, traditionally with large, spherical, orange fruits and a highly nutrient food. Pumpkin by-products comprise various parts, such as seeds, peels, and pulp residues, with their bioactive composition and many potential benefits poorly explored by the food industry. Pumpkin and their by-products contain a wide range of phytochemicals, including carotenoids, polyphenols, tocopherols, vitamins, minerals, and dietary fibers. These compounds in pum",
+      "year": 2024,
+      "venue": "Foods",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "963af1049ae5",
+      "title": "S\u0394\u03d5-58 \u2014 Cost Attribution Symmetry Index: Group Cost Attribution, Exit Cost, Dissent Cost, Repair Burden, and Capture Risk (v1.0, AI-Readable Package)",
+      "abstract_600": "S\u0394\u03d5-58 introduces the Cost Attribution Symmetry Index (CASI) within the Sofience\u2013\u0394\u03d5 Formalism Series. The central claim is that a group is not evaluated first by its declared values, ideology, orthodoxy, mission, sacredness, popularity, sincerity, or moral label. A group is audited by how it attributes benefit, sacrifice, repair burden, dissent cost, exit cost, and interpretive authority. This AI-readable package decomposes the canonical S\u0394\u03d5-58 paper into operational files for AI ingestion, group cost attribution audit, citation, and reproducible evaluation. It includes the canonical paper, co",
+      "year": 2026,
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "66951f89043c",
+      "title": "Scaling Truth: The Confidence Paradox in AI Fact-Checking",
+      "abstract_600": "The rise of misinformation underscores the need for scalable and reliable fact-checking solutions. Large language models (LLMs) hold promise in automating fact verification, yet their effectiveness across global contexts remains uncertain. We systematically evaluate nine established LLMs across multiple categories (open/closed-source, multiple sizes, diverse architectures, reasoning-based) using 5,000 claims previously assessed by 174 professional fact-checking organizations across 47 languages. Our methodology tests model generalizability on claims postdating training cutoffs and four prompti",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "07ee54799b1f",
+      "title": "Comparing Knowledge Sources for Open-Domain Scientific Claim Verification",
+      "abstract_600": "The increasing rate at which scientific knowledge is discovered and health claims shared online has highlighted the importance of developing efficient fact-checking systems for scientific claims. The usual setting for this task in the literature assumes that the documents containing the evidence for claims are already provided and annotated or contained in a limited corpus. This renders the systems unrealistic for real-world settings where knowledge sources with potentially millions of documents need to be queried to find relevant evidence. In this paper, we perform an array of experiments to",
+      "year": 2024,
+      "venue": "Conference of the European Chapter of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "8a058592cc77",
+      "title": "CSMAD: Hallucination Detection via Multi-Agent Debate with NLI-Verified Contradictory Statements",
+      "abstract_600": "Large Language Models (LLMs) are prone to hallucinations, producing fluent but factually incorrect statements. Recent multi-agent debate methods improve hallucination detection by jointly improving reasoning and decision-making. However, existing approaches either collaborate which amplifies shared overconfidence, or adopt adversarial preset stances, that can inject incorrect information complicating decision making. To address this, we propose Contradictory Statement Multi-Agent Debate (CSMAD), a multi-agent framework that creates structured disagreement by generating a contradictory claim fo",
+      "year": 2026,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cdf78b26340b",
+      "title": "When silence is safer: a review and decision-theoretic framework for LLM abstention in healthcare.",
+      "abstract_600": "Large language models (LLMs) are designed to generate answers to user prompts, which often drives them to respond even when uncertainty is high, information is incomplete, or a refusal would be more appropriate. In healthcare, this tendency can be dangerous: confidently stated but inaccurate medical advice can cause significant harm, making the ability to abstain especially important. In this paper, we review studies investigating LLM abstention behaviors in healthcare. The literature highlights two main motivations: (1) uncertainty-driven abstention, where the model withholds a response when",
+      "year": 2026,
+      "venue": "npj Digital Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6c1b5ac609eb",
+      "title": "EvoTrustRAG: Evolution-Aware Conflict Attribution and Evidence Handling for Reliable Retrieval-Augmented Generation",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) improves the factuality of large language models with external knowledge, yet conflicting evidence remains a fundamental challenge in dynamic and adversarial environments. Existing approaches often treat conflicts as static inconsistencies and select more reliable knowledge, overlooking that the same conflict may arise from legitimate knowledge evolution, malicious manipulation, or unresolved uncertainty. We formulate conflict origin attribution as a new problem in RAG: identifying which explanation of conflicting evidence is supported by observable context",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "b21c83b8c58d",
+      "title": "Redefining objectivity: Exploring types of evidence by fact-checkers in four European countries",
+      "abstract_600": "Fact-checking journalism challenges procedural norms of objectivity by providing truth verdicts. By actively evaluating statements and online rumors based on evidence weight, fact-checkers aim for robust, scientific objectivity. Despite this trend, there is a lack of studies analyzing evidence types used in verification articles, a gap which this article seeks to address. This comparative research examines types of valid evidence\u2014documentation, digital forensic tools, and statements\u2014employed by fact-checkers across 12 organizations in the UK, Germany, Portugal, and Spain (n\u2009=\u20091976). Results ar",
+      "year": 2025,
+      "venue": "European Journal of Communication",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "afb5ed989d2c",
+      "title": "MMClima: A Framework for Multimodal Climate Science Data and Evaluation",
+      "abstract_600": "Climate change research increasingly requires AI systems that reason across text, dynamic visual content, and scientific figures, yet existing climate QA benchmarks are small, mostly textual, and cover a narrow range of models. We introduce MMClima, a large-scale multimodal climate question answering framework with 104k+ expert-validated question-answer pairs spanning articles, video transcriptions, and figures across five core climate science domains. MMClima is constructed via automated claim extraction and QA synthesis with human-in-the-loop validation to ensure both scale and reliability.",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "8dea525d89b7",
+      "title": "Mind2Web 2: Evaluating Agentic Search with Agent-as-a-Judge",
+      "abstract_600": "Agentic search such as Deep Research systems-where agents autonomously browse the web, synthesize information, and return comprehensive citation-backed answers-represents a major shift in how users interact with web-scale information. While promising greater efficiency and cognitive offloading, the growing complexity and open-endedness of agentic search have outpaced existing evaluation benchmarks and methodologies, which largely assume short search horizons and static answers. In this paper, we introduce Mind2Web 2, a benchmark of 130 realistic, high-quality, and long-horizon tasks that requi",
+      "year": 2025,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "29006e741670",
+      "title": "Efficient Formal Verification of Quantum Error Correcting Programs",
+      "abstract_600": "Quantum error correction (QEC) is fundamental for suppressing noise in quantum hardware and enabling fault-tolerant quantum computation. In this paper, we propose an efficient verification framework for QEC programs. We define an assertion logic and a program logic specifically crafted for QEC programs and establish a sound proof system. We then develop an efficient method for handling verification conditions (VCs) of QEC programs: for Pauli errors, the VCs are reduced to classical assertions that can be solved by SMT solvers, and for non-Pauli errors, we provide a heuristic algorithm. We form",
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "45177fcd89cf",
+      "title": "Evergreen: Efficient Claim Verification for Semantic Aggregates",
+      "abstract_600": "With recent semantic query processing engines, semantic aggregation has become a primitive operator, enabling the reduction of a relation into a natural language aggregate using an LLM. However, the resulting semantic aggregate may contain claims that are not grounded in the underlying relation. Verifying such claims is challenging: they often involve quantifiers, groupings, and comparisons over relations that far exceed LLM context windows and require a costly combination of semantic and symbolic processing. We present Evergreen, a system that recasts claim verification as a semantic query pr",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "32818169e977",
+      "title": "LLM Internal States Reveal Hallucination Risk Faced With a Query",
+      "abstract_600": "The hallucination problem of Large Language Models (LLMs) significantly limits their reliability and trustworthiness.Humans have a selfawareness process that allows us to recognize what we don't know when faced with queries.Inspired by this, our paper investigates whether LLMs can estimate their own hallucination risk before response generation.We analyze the internal mechanisms of LLMs broadly both in terms of training data sources and across 15 diverse Natural Language Generation (NLG) tasks, spanning over 700 datasets.Our empirical analysis reveals two key insights: (1) LLM internal states",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4c0863fcf71a",
+      "title": "Are LLM Decisions Faithful to Verbal Confidence?",
+      "abstract_600": "Large Language Models (LLMs) can produce surprisingly sophisticated estimates of their own uncertainty. However, it remains unclear to what extent this expressed confidence is tied to the reasoning, knowledge, or decision making of the model. To test this, we introduce $\\textbf{RiskEval}$: a framework designed to evaluate whether models adjust their abstention policies in response to varying error penalties. Our evaluation of several frontier models reveals a critical dissociation: models are neither cost-aware when articulating their verbal confidence, nor strategically responsive when decidi",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5c3de6229a11",
+      "title": "Nugget-based Annotation Protocol and Tool For Evaluating Long-form Retrieval-Augmented Generation",
+      "abstract_600": "Retrieval-augmented generation (RAG) summarizes retrieved documents into a text passage that fulfills the information need expressed by the user. Such generated responses should faithfully distill the relevant information and provide sufficient attribution back to the source documents. Nugget-based evaluation was proposed for text summarization and has been adapted to evaluate RAG output in recent shared tasks such as 2024 TREC RAG, BioGen, and NeuCLIR tracks. However, annotating such detailed and nuanced information is complex and errorful. Multiple pieces of information need to be labeled, e",
+      "year": 2025,
+      "venue": "Annual International ACM SIGIR Conference on Research and Development in Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b28613ba832b",
+      "title": "Automated fact-checking of climate claims with large language models",
+      "abstract_600": "Accurate identification of true versus false climate information in the digital age is critical. Misinformation can significantly affect public understanding and policymaking. Automated fact-checking seeks to validate claims against trustworthy factual data. This study tackles the challenge of fact-checking climate claims by leveraging the currently most capable Large Language Models (LLMs). To this end, we introduce Climinator, an acronym for CLImate Mediator for INformed Analysis and Transparent Objective Reasoning. It significantly boosts the performance of automated fact-checking by integr",
+      "year": 2025,
+      "venue": "npj Climate Action",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c4986ce0dd90",
+      "title": "Beta-Glucan as a Soluble Dietary Fiber Source: Origins, Biosynthesis, Extraction, Purification, Structural Characteristics, Bioavailability, Biofunctional Attributes, Industrial Utilization, and Global Trade",
+      "abstract_600": "This paper explores the multifaceted nature of \u03b2-glucan, a notable dietary fiber (DF) with extensive applications. Beginning with an in-depth examination of its intricate polysaccharide structure, the discussion extends to diverse sources like oats, barley, mushrooms, and yeast, emphasizing their unique compositions. The absorption and metabolism of \u03b2-glucan in the human body are scrutinized, emphasizing its potential health benefits. Extraction and purification processes for high-quality \u03b2-glucan in food, pharmaceuticals, and cosmetics are outlined. The paper underscores \u03b2-glucan's biofunctio",
+      "year": 2024,
+      "venue": "Nutrients",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "408eb91e48d5",
+      "title": "Citation-Closure Retrieval and Per-Rule Attribution for Real-World Regulatory Compliance Question Answering",
+      "abstract_600": "Deploying Large Language Models (LLMs) for regulatory compliance demands rigorous traceability via comprehensive citations across multi-tiered authority structures. Unlike traditional multi-hop or legal QA, this task requires structured procedural lookups and evidence-set closure rather than entity resolution or case-law reasoning. Existing RAG systems struggle here due to flattened citation edges, fragmented retrieval expansions, and fragile post-hoc attribution. We formalize Regulatory Compliance QA with RegOps-Bench, a novel benchmark featuring an Operational Knowledge Graph derived from co",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4c0ee4e60fb8",
+      "title": "Molecular phylogenetic position and description of a new genus and species of freshwater Chaetonotidae (Gastrotricha: Chaetonotida: Paucitubulatina), and the annotation of its mitochondrial genome",
+      "abstract_600": "Chaetonotidae is the most diversified family of the entire phylum Gastrotricha; it comprises ~430 species distributed across 16 genera. The current classification, established mainly on morphological traits, has been challenged in recent years by phylogenetic studies, indicating that the cuticular ornamentations used to discriminate among species may be misleading when used to identify groupings, which has been the practice until now. Therefore, a consensus is developing toward implementing novel approaches to better define species identity and affiliation at a higher taxonomic ranking. Using",
+      "year": 2024,
+      "venue": "Invertebrate Systematics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "af1c358c58ff",
+      "title": "A Systematic Survey of Claim Verification: Corpora, Systems, and Case Studies",
+      "abstract_600": "Automated Claim Verification (CV)-the task of assessing a claim's veracity against explicitly provided evidence-is a critical tool in the fight against growing misinformation.This survey offers a comprehensive analysis of 198 studies published between January 2022 and March 2025, synthesizing recent advances in CV corpus creation and system design.Through two in-depth case studies, we illuminate persistent challenges in veracity annotation, limitations of conventional CV pipelines, and pitfalls in recent claim decomposition approaches.We conclude by identifying key unresolved challenges and pr",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+shortlist exit=0: {
+  "ok": true,
+  "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R25/run",
+  "screened": 572,
+  "screened_ge2": 90,
+  "in_window": 40,
+  "outside_window": 2
+}
+R25: shortlist 40+2 -> reranking 23+2 = 25
+  R25/c1   122.4s  $0.1459  in=8567 cr=5850 out=12756 (think 6210)
+  R25/c2   139.4s  $0.1580  in=7245 cr=5850 out=14237 (think 7908)
+ranked.json schema: True ok
+verify exit=0: {
+  "ok": true,
+  "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R25/run",
+  "verification": {
+    "verified": 25,
+    "unverified": 0,
+    "dropped_retracted": 0,
+    "crossref_skipped": false,
+    "duration_s": 0.014
+  },
+  "unverified": []
+}
+emit exit=0: {
+  "ok": true,
+  "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R25/run",
+  "evidence_json": "/Users/nabergoj/Projects/research-scan/research/experiments/phase1-stateless/arms/rerank/R25/run/evidence.json",
+  "emit": {
+    "top": 10,
+    "founda
+{
+ "calls": 2,
+ "calls_ok": 2,
+ "calls_failed": 0,
+ "input_tokens": 15812,
+ "cache_read_tokens": 11700,
+ "cache_write_tokens": 0,
+ "output_tokens": 26993,
+ "thinking_tokens": 14118,
+ "cost_usd": 0.303894,
+ "api_seconds_sum": 261.83,
+ "retries": 0,
+ "sub_arm": "R25",
+ "source_arm": "C",
+ "cut": 25,
+ "reranked": 25,
+ "in_window": 23,
+ "outside_window": 2,
+ "stage_wall_s": 261.85,
+ "ranked_schema_valid": true,
+ "ranked_schema_msg": "ok",
+ "shortlist_size": 42,
+ "verify_exit": 0,
+ "emit_exit": 0,
+ "cumulative_spend_usd": 3.922202,
+ "top10_dois": [
+  "10.48550/arxiv.2607.20527",
+  "10.48550/arxiv.2604.10990",
+  "10.48550/arxiv.2607.11074",
+  "10.48550/arxiv.2506.08235",
+  "10.48550/arxiv.2605.26663",
+  "10.1098/rsos.241776",
+  "10.48550/arxiv.2602.07621",
+  "10.18653/v1/2026.acl-long.1430",
+  "10.18653/v1/2023.emnlp-main.398",
+  "10.18653/v1/2023.findings-emnlp.467"
+ ],
+ "top10_cids": [
+  "84b54d56d46b",
+  "cac1acd8d788",
+  "752402f2a368",
+  "444f2c23f859",
+  "d6920ae21863",
+  "7d791e7db8f1",
+  "9fc1195f8ecb",
+  "3c1e5f6887f9",
+  "b13f6337909b",
+  "7d29489aa7b6"
+ ],
+ "top10_overlap": 5
+}

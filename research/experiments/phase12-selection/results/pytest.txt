@@ -1,0 +1,35 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.13, pytest-9.1.1, pluggy-1.6.0 -- /Users/nabergoj/Projects/research-scan/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/nabergoj/Projects/research-scan
+configfile: pyproject.toml
+plugins: anyio-4.14.2, respx-0.23.1
+collecting ... collected 25 items
+
+research/experiments/phase12-selection/test_contract.py::test_clean_response_is_unchanged PASSED [  4%]
+research/experiments/phase12-selection/test_contract.py::test_every_recorded_x02_attempt_now_lands[attempt1] PASSED [  8%]
+research/experiments/phase12-selection/test_contract.py::test_every_recorded_x02_attempt_now_lands[attempt2] PASSED [ 12%]
+research/experiments/phase12-selection/test_contract.py::test_every_recorded_x02_attempt_now_lands[attempt3] PASSED [ 16%]
+research/experiments/phase12-selection/test_contract.py::test_every_recorded_x02_attempt_now_lands[attempt4] PASSED [ 20%]
+research/experiments/phase12-selection/test_contract.py::test_every_recorded_x02_attempt_now_lands[attempt5] PASSED [ 24%]
+research/experiments/phase12-selection/test_contract.py::test_every_recorded_x02_attempt_now_lands[attempt6] PASSED [ 28%]
+research/experiments/phase12-selection/test_contract.py::test_salvage_response_needs_no_salvage_script PASSED [ 32%]
+research/experiments/phase12-selection/test_contract.py::test_matches_the_recorded_salvage_output_exactly PASSED [ 36%]
+research/experiments/phase12-selection/test_contract.py::test_unknown_cid_is_discarded_and_logged_never_retried PASSED [ 40%]
+research/experiments/phase12-selection/test_contract.py::test_repeated_unknown_cid_is_discarded_the_same_way PASSED [ 44%]
+research/experiments/phase12-selection/test_contract.py::test_duplicate_expected_cid_identical_score_keeps_one PASSED [ 48%]
+research/experiments/phase12-selection/test_contract.py::test_duplicate_expected_cid_conflicting_score_invalidates_the_batch PASSED [ 52%]
+research/experiments/phase12-selection/test_contract.py::test_conflicting_duplicate_retries_then_lands PASSED [ 56%]
+research/experiments/phase12-selection/test_contract.py::test_conflicting_duplicate_forever_fails_after_two_retries PASSED [ 60%]
+research/experiments/phase12-selection/test_contract.py::test_missing_cids_are_retried_as_a_sub_batch PASSED [ 64%]
+research/experiments/phase12-selection/test_contract.py::test_missing_cids_retry_the_whole_batch_when_sub_batch_is_unsupported PASSED [ 68%]
+research/experiments/phase12-selection/test_contract.py::test_persistently_missing_cids_fail_the_batch_but_keep_the_good_rows PASSED [ 72%]
+research/experiments/phase12-selection/test_contract.py::test_a_bad_row_costs_its_own_cid_not_the_batch[mutate0-out of range] PASSED [ 76%]
+research/experiments/phase12-selection/test_contract.py::test_a_bad_row_costs_its_own_cid_not_the_batch[mutate1-not an integer] PASSED [ 80%]
+research/experiments/phase12-selection/test_contract.py::test_a_bad_row_costs_its_own_cid_not_the_batch[mutate2-missing reason] PASSED [ 84%]
+research/experiments/phase12-selection/test_contract.py::test_a_bad_row_costs_its_own_cid_not_the_batch[mutate3-unknown criteria ids] PASSED [ 88%]
+research/experiments/phase12-selection/test_contract.py::test_score_two_with_empty_criteria_hit_is_still_rejected PASSED [ 92%]
+research/experiments/phase12-selection/test_contract.py::test_no_scores_array_is_a_retryable_invalid_batch PASSED [ 96%]
+research/experiments/phase12-selection/test_contract.py::test_call_exception_counts_as_an_attempt_and_cannot_loop PASSED [100%]
+
+============================== 25 passed in 0.03s ==============================

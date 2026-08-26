@@ -1,0 +1,257 @@
+{
+  "batch": "09",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "40b310576a7e",
+      "title": "SciRIFF: A Resource to Enhance Language Model Instruction-Following over Scientific Literature",
+      "abstract_600": "We present SciRIFF (Scientific Resource for Instruction-Following and Finetuning), a dataset of 137K instruction-following instances for training and evaluation, covering 54 tasks. These tasks span five core scientific literature understanding capabilities: information extraction, summarization, question answering, claim verification, and classification. SciRIFF is unique in being entirely expert-written, high-quality instruction-following dataset for extracting and synthesizing information from research literature across diverse scientific fields. It features complex instructions with long in",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2d80fe41edf0",
+      "title": "ProvenAI: Provenance-Native Traces of Evidence in Generated Answers",
+      "abstract_600": "Retrieval-augmented systems routinely present citations alongside generated answers, yet a citation does not confirm that the corresponding source meaningfully shaped the output. This paper introduces ProvenAI, a framework that decomposes transparency in multi-hop question answering into three independently measurable layers: answer correctness, citation fidelity against benchmark supporting evidence, and per-document influence under leave-one-resource-out intervention. Targeting the HotpotQA distractor benchmark through a seven-stage pipeline covering data normalisation, retrieval indexing, c",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "7aef5e75502f",
+      "title": "UrduFactCheck: An Agentic Fact-Checking Framework for Urdu with Evidence Boosting and Benchmarking",
+      "abstract_600": "The rapid adoption of Large Language Models (LLMs) has raised important concerns about the factual reliability of their outputs, particularly in low-resource languages such as Urdu. Existing automated fact-checking systems are predominantly developed for English, leaving a significant gap for the more than 200 million Urdu speakers worldwide. In this work, we present UrduFactBench and UrduFactQA, two novel hand-annotated benchmarks designed to enable fact-checking and factual consistency evaluation in Urdu. While UrduFactBench focuses on claim verification, UrduFactQA targets the factuality of",
+      "year": 2025,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a6b1f3fcb011",
+      "title": "Context-Aware Multimodal Claim Verification in Spoken Dialogues",
+      "abstract_600": "Every day, millions absorb claims from podcasts and streams that no fact-checker ever sees. Spoken misinformation is built through conversation, where credibility comes not from facts alone but from how claims are framed, reinforced, or left unchallenged across turns. Yet fact-checking has focused on isolated text, leaving dialogue audio under-studied. We introduce MAD2, a new Multi-turn Audio Dialogues benchmark for spoken claim verification, containing 1,000 two-speaker dialogues with 3,368 check-worthy claims and approximately 10 hours of audio, and propose calibrated multimodal fusion of a",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "34ae3d7871a3",
+      "title": "The Pitfalls of Defining Hallucination",
+      "abstract_600": "Abstract Despite impressive advances in Natural Language Generation (NLG) and Large Language Models (LLMs), researchers are still unclear about important aspects of NLG evaluation. To substantiate this claim, I examine current classifications of hallucination and omission in data-text NLG, and I propose a logic-based synthesis of these classfications. I conclude by highlighting some remaining limitations of all current thinking about hallucination and by discussing implications for LLMs.",
+      "year": 2024,
+      "venue": "Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "18ba835d5a9b",
+      "title": "MAQA: Evaluating Uncertainty Quantification in LLMs Regarding Data Uncertainty",
+      "abstract_600": "Despite the massive advancements in large language models (LLMs), they still suffer from producing plausible but incorrect responses.To improve the reliability of LLMs, recent research has focused on uncertainty quantification to predict whether a response is correct or not.However, most uncertainty quantification methods have been evaluated on singlelabeled questions, which removes data uncertainty-the irreducible randomness often present in user queries, which can arise from factors like multiple possible answers.This limitation may cause uncertainty quantification results to be unreliable i",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e903b47cf1cc",
+      "title": "RAG-Audio: Retrieval-Augmented Generation for Faithful Brain-to-Audio Reconstruction",
+      "abstract_600": "Brain-to-audio reconstruction is limited by \\emph{prior domination}: when a pretrained generator is conditioned on a weak neural signal, it produces realistic but stimulus-inaccurate audio. We introduce RAG-Audio, which decodes fMRI into a semantic audio embedding, retrieves a matching real-audio exemplar, and initializes the frozen generator's sampling trajectory from that exemplar while retaining the decoded embedding as conditioning. On Brain2Music, RAG-Audio improves 10-way stimulus identification from $0.14$--$0.18$ for direct generation, near the $0.10$ chance level, to $0.40$--$0.43$, c",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e53612b0dd18",
+      "title": "Unveiling the truth: A systematic review of fact-checking and fake news research in social sciences",
+      "abstract_600": "The current media ecosystem, marked by immediacy and social networks dynamics, has created a fertile field for disinformation. Faced with its exponential growth, since 2014, research has focused on combating false content in the media. From a descriptive approach, this study has analyzed 200 documents on fact-checking and fake news published between 2014 and 2022 in scientific journals indexed in Scopus. This study has found that Europe and the United States are leading the way in the number of journals and authors publishing on the subject. The United States universities are the ones that hos",
+      "year": 2024,
+      "venue": "Online Journal of Communication and Media Technologies",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fc8d549659ad",
+      "title": "Do Methods Support the Claims? Intra-Paper Verification for Peer Review",
+      "abstract_600": "The growing volume of scientific submissions has motivated interest in using large language models (LLMs) to assist peer review. Existing automated novelty assessment approaches typically compare a paper's claimed contributions against prior literature, implicitly assuming that these contributions are accurately realized in the work itself. Human reviewers, however, frequently challenge novelty claims not because similar ideas already exist, but because the methodological evidence presented in the paper does not adequately support them. This internal mismatch between claimed contributions and",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9add97ef181b",
+      "title": "Bibliometrics beyond citations: introducing mention extraction and analysis",
+      "abstract_600": "Abstract Standard citation-based bibliometric tools have severe limitations when they are applied to periods in the history of science and the humanities before the advent of now-current citation practices. This paper presents an alternative method involving the extracting and analysis of mentions to map and analyze links between scholars and texts in periods that fall outside the scope of citation-based studies. Focusing on one specific discipline in one particular period and language area\u2014Anglophone philosophy between 1890 and 1979\u2014we describe a procedure to create a mention index by identif",
+      "year": 2024,
+      "venue": "Scientometrics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "6976e9ae54c5",
+      "title": "Dark Reactions in Microdroplets Explain Widespread Artifacts in Metabolomic Profiling",
+      "abstract_600": "Reliable ion annotation and identification remain persistent challenges in mass-spectrometry-based untargeted metabolomics. Here, we elucidate the identities, sources, and formation mechanisms of numerous previously unexplained ions by showing that microdroplets formed during electrospray ionization can promote a wide array of chemical transformations. These include redox, addition, condensation, reductive amination, decarboxylative coupling, and radical reactions, many of which are facilitated at the gas-aqueous interface by reactive oxygen and nitrogen species. Activation of metabolite chemi",
+      "year": 2026,
+      "venue": "ACS Measurement Science Au",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "378e4bff2ac2",
+      "title": "Valsci: an open-source, self-hostable literature review utility for automated large-batch scientific claim verification using large language models",
+      "abstract_600": "BACKGROUND: The exponential growth of scientific publications poses a formidable challenge for researchers seeking to validate emerging hypotheses or synthesize existing evidence. In this paper, we introduce Valsci, an open-source, self-hostable utility that automates large-batch scientific claim verification using any OpenAI-compatible large language model. Valsci unites retrieval-augmented generation with structured bibliometric scoring and chain-of-thought prompting, enabling users to efficiently search, evaluate, and summarize evidence from the Semantic Scholar database and other academic",
+      "year": 2025,
+      "venue": "BMC Bioinformatics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "93717ba4b74f",
+      "title": "A Review of Faithfulness Metrics for Hallucination Assessment in Large Language Models",
+      "abstract_600": "This review examines the means with which faithfulness has been evaluated across open-ended summarization, question answering and machine translation tasks. We find that the use of Large Language Models (LLMs) as a faithfulness evaluator is commonly the metric that is most highly correlated with human judgement. The means with which other studies have mitigated hallucinations is discussed, with both retrieval augmented generation (RAG) and prompting framework approaches having been linked with superior faithfulness, whilst other recommendations for mitigation are provided. Research into faithf",
+      "year": 2024,
+      "venue": "IEEE Journal on Selected Topics in Signal Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "bb8aeb3aefe7",
+      "title": "Characterizing LLM Abstention Behavior in Science QA with Context Perturbations",
+      "abstract_600": "The correct model response in the face of uncertainty is to abstain from answering a question so as not to mislead the user. In this work, we study the ability of LLMs to abstain from answering context-dependent science questions when provided insufficient or incorrect context. We probe model sensitivity in several settings: removing gold context, replacing gold context with irrelevant context, and providing additional context beyond what is given. In experiments on four QA datasets with six LLMs, we show that performance varies greatly across models, across the type of context provided, and a",
+      "year": 2024,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6d35830ba4b2",
+      "title": "Enhancement of the Performance of Large Language Models in Diabetes Education through Retrieval-Augmented Generation: Comparative Study",
+      "abstract_600": "BACKGROUND: Large language models (LLMs) demonstrated advanced performance in processing clinical information. However, commercially available LLMs lack specialized medical knowledge and remain susceptible to generating inaccurate information. Given the need for self-management in diabetes, patients commonly seek information online. We introduce the Retrieval-augmented Information System for Enhancement (RISE) framework and evaluate its performance in enhancing LLMs to provide accurate responses to diabetes-related inquiries. OBJECTIVE: This study aimed to evaluate the potential of the RISE fr",
+      "year": 2024,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7d791e7db8f1",
+      "title": "Generalization bias in large language model summarization of scientific research",
+      "abstract_600": "Artificial intelligence chatbots driven by large language models (LLMs) have the potential to increase public science literacy and support scientific research, as they can quickly summarize complex scientific information in accessible terms. However, when summarizing scientific texts, LLMs may omit details that limit the scope of research conclusions, leading to generalizations of results broader than warranted by the original study. We tested 10 prominent LLMs, including ChatGPT-4o, ChatGPT-4.5, DeepSeek, LLaMA 3.3 70B, and Claude 3.7 Sonnet, comparing 4900 LLM-generated summaries to their or",
+      "year": 2025,
+      "venue": "Royal Society Open Science",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b432d5efeb52",
+      "title": "Direct extraction of lithium from ores by electrochemical leaching",
+      "abstract_600": "Abstract With the rapid increase in lithium consumption for electric vehicle applications, its price soared during the past decade. To secure a reliable and cost-effective supply chain, it is critical to unlock alternative lithium extraction resources beyond conventional brine. In this study, we develop an electrochemical method to directly leach lithium from \u03b1-phase spodumene. We find the H 2 O 2 promoter can significantly reduce the leaching potential by facilitating the electron transfer and changing the reaction path. Upon leaching, \u03b2-phase spodumene shows a typical phase transformation to",
+      "year": 2024,
+      "venue": "Nature Communications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "39f0d1043de5",
+      "title": "Multimodal Fact-Level Attribution for Verifiable Reasoning",
+      "abstract_600": "Multimodal large language models (MLLMs) are increasingly used for real-world tasks involving multi-step reasoning and long-form generation, where reliability requires grounding model outputs in heterogeneous input sources and verifying individual factual claims. However, existing multimodal grounding benchmarks and evaluation methods focus on simplified, observation-based scenarios or limited modalities and fail to assess attribution in complex multimodal reasoning. We introduce MuRGAt (Multimodal Reasoning with Grounded Attribution), a benchmark for evaluating fact-level multimodal attributi",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "b6945a9329cd",
+      "title": "Successfully Integrating Early Validation and Verification in Industrial MBSE",
+      "abstract_600": "Model\u2010Based Systems Engineering (MBSE) is being adopted and integrated in industrial settings. Through MBSE several capabilities are unlocked and made available during development, especially in the earlier stages of development where there is historical use of document\u2010based artifacts. A notable capability enabled by a primarily model\u2010based development is Validation and Verification (V&V). Earlier V&V is potentially a strong enabler for improving development efficiency, particularly through reducing the need for later prototyping stages. In fact, through MBSE virtual prototyping can be enable",
+      "year": 2025,
+      "venue": "INCOSE International Symposium",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4ac1aa4ccdc1",
+      "title": "OCC-RAG: Optimal Cognitive Core for Faithful Question Answering",
+      "abstract_600": "Recent progress in the development of language models has been defined by scale, with each generation absorbing more of the world's knowledge into its weights. However, many practical applications benefit more from robust reasoning than from extensive parametric knowledge. In this setting, task-specialized small language models (SLMs) offer a principled design choice. We introduce Optimal Cognitive Core (OCC), a family of SLMs built around this premise. As a variant of OCC, we present OCC-RAG, optimized for faithful question answering (QA) grounded in the provided context. This task directly a",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d95ff997ad03",
+      "title": "Hallucination Detection in Foundation Models for Decision-Making: A Flexible Definition and Review of the State of the Art",
+      "abstract_600": "Autonomous systems are soon to be ubiquitous, spanning manufacturing, agriculture, healthcare, entertainment, and other industries. Most of these systems are developed with modular sub-components for decision-making, planning, and control that may be hand-engineered or learning-based. While these approaches perform well under the situations they were specifically designed for, they can perform especially poorly in out-of-distribution scenarios that will undoubtedly arise at test-time. The rise of foundation models trained on multiple tasks with impressively large datasets has led researchers t",
+      "year": 2025,
+      "venue": "ACM Computing Surveys",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "12349f141043",
+      "title": "Causal Evidence that Language Models use Confidence to Drive Behavior",
+      "abstract_600": "Metacognition -- assessing the quality of one's own cognitive performance -- guides adaptive behavior across species. Substantial research demonstrates that confidence signals can be extracted from language model outputs, yet a fundamental question remains: do models actually use these signals to control behavior, such as deciding whether to answer or abstain? To investigate, we developed a four-phase paradigm. Phase~1 elicited baseline confidence estimates without an abstention option. Phase~2 revealed that LLMs apply an implicit threshold to internal confidence when deciding to abstain, with",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6daffcad735c",
+      "title": "Explainable Knowledge Graph Retrieval-Augmented Generation (KG-RAG) with KG-SMILE",
+      "abstract_600": "Generative AI, such as Large Language Models (LLMs), has achieved impressive progress but still produces hallucinations and unverifiable claims, limiting reliability in sensitive domains. Retrieval-Augmented Generation (RAG) improves accuracy by grounding outputs in external knowledge, especially in domains like healthcare, where precision is vital. However, RAG remains opaque and essentially a black box, heavily dependent on data quality. We developed a method-agnostic, perturbation-based framework that provides token and component-level interoperability for Graph RAG using SMILE and named it",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "277916acffc7",
+      "title": "MARDoc: A Memory-Aware Refinement Agent Framework for Multimodal Long Document QA",
+      "abstract_600": "Iterative retrieval-reasoning agents have recently shown promise for multimodal long-document question answering. However, most existing systems maintain a single growing context that mixes retrieval traces, observations, and intermediate reasoning. As interactions accumulate, key evidence becomes scattered and diluted, making multi-hop reasoning noisy. We propose MARDoc, a Memory-Aware Refinement Agent framework that decouples long-document QA into three specialized agents: an Explorer for multi-granularity multimodal retrieval, a Refiner for distilling interaction traces into structured evid",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5557347fb861",
+      "title": "NSF-SciFy: Mining the NSF Awards Database for Scientific Claims",
+      "abstract_600": "We introduce NSF-SciFy, a comprehensive dataset of scientific claims and investigation proposals extracted from National Science Foundation award abstracts. While previous scientific claim verification datasets have been limited in size and scope, NSF-SciFy represents a significant advance with 2.8 million claims from 400,000 abstracts spanning all science and mathematics disciplines. We present two focused subsets: NSF-SciFy-MatSci with 114,000 claims from materials science awards, and NSF-SciFy-20K with 135,000 claims across five NSF directorates. Using zero-shot prompting, we develop a scal",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

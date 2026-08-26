@@ -1,0 +1,257 @@
+{
+  "batch": "11",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "841633c3d3fe",
+      "title": "Re:Form -- Reducing Human Annotations in Scalable Formal Software Verification with RL in LLMs: A Preliminary Study on Dafny",
+      "abstract_600": "Existing informal language-based (e.g., human language) Large Language Models (LLMs) trained with Reinforcement Learning (RL) face a significant challenge: their verification processes, which provide crucial training signals, are neither reliable nor scalable. In fact, the prevalent large proprietary models could hardly generate verifiable programs. A promising yet largely uncharted alternative is formal language-based reasoning. Grounding LLMs in rigorous formal systems where generative models operate in formal language spaces (e.g., Dafny) enables the automatic and mathematically provable ve",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1f1bcc553062",
+      "title": "DecomposeRL: Learning to Ask Useful, Informative, and Diverse Questions for Semi-Supervised, Traceable Claim Verification",
+      "abstract_600": "Claim verification splits between end-to-end classifiers that are accurate but yields no inspectable traces, and decomposition-based methods produce inspectable traces but lag performance on benchmark datasets. We propose DecomposeRL an accurate claim-verifier that produce inspectable traces. DecomposeRL frames decomposition as an RL policy trained with GRPO and a multi-faceted reward ensemble, enabling both fully supervised and semi-supervised learning from unlabeled claims. DecomposeRL addresses the prohibitive training cost of GRPO with a data-curation funnel that distills 115K fact-verific",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "95f5a5e49788",
+      "title": "A Multi-Stage Hallucination Reduction Framework for Large Language Models using Retrieval-Augmented Generation and NLI-based Verification",
+      "abstract_600": "Strong generative abilities are displayed by Large Language Models (LLMs), but they often generate hallucinations\u2014confident but factually incorrect statements. The safe use of LLMs in academic, legal, medical, and business applications that demand factual reliability is complicated by these hallucinations. This work describes a multi-phase framework for reducing hallucinations that combines a verification module based on Natural Language Inference (NLI) with Retrieval-Augmented Generation (RAG). The system uses a lightweight LLM (Flan-T5) to generate a baseline response, an FAISS-based semanti",
+      "year": 2026,
+      "venue": "2026 6th International Conference on Expert Clouds and Applications (ICOECA)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d6de178c4779",
+      "title": "Addressing Uncertainty in LLM Outputs for Trust Calibration Through Visualization and User Interface Design",
+      "abstract_600": "Large language models (LLMs) are becoming ubiquitous in knowledge work. However, the uncertainty inherent to LLM summary generation limits the efficacy of human-machine teaming, especially when users are unable to properly calibrate their trust in automation. Visual conventions for signifying uncertainty and interface design strategies for engaging users are needed to realize the full potential of LLMs. We report on an exploratory interdisciplinary project that resulted in four main contributions to explainable artificial intelligence in and beyond an intelligence analysis context. First, we p",
+      "year": 2025,
+      "venue": "Visible Language",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1c8c3e7729f5",
+      "title": "Parametric Retrieval Augmented Generation",
+      "abstract_600": "Retrieval-augmented generation (RAG) has emerged as a promising solution to enhance the reliability of large language models (LLMs) with external knowledge. Existing RAG methods share a common strategy for knowledge injection: they place the retrieved documents into the input context of the LLM, which we refer to as the in-context knowledge injection method. While this approach is simple and often effective, it has inherent limitations. Firstly, increasing the context length and number of relevant documents can lead to higher computational overhead and degraded performance, especially in compl",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e2f40bdc4298",
+      "title": "Media and Memory Politics in the Digital Age: the Challenge of Fake News and the Role of Fact-Checking in the Context of Historical Disinformation about the Falsification of Ukrainian History in the EU",
+      "abstract_600": "In the digital age, mass media have become key actors in shaping memory politics, as they serve as the main platform through which societies construct and transmit interpretations of the past. However, the dynamic nature of the online environment creates favorable conditions for the spread of fake news, manipulation, and historical disinformation.\nThis article addresses the issue of historical falsification using the example of ethnic Ukrainian lands that are now part of Poland, Slovakia, and Hungary. It also examines the historical policies of these countries aimed at minimizing or distorting",
+      "year": 2025,
+      "venue": "Presoznavstvo Press Studies",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b99e8657c438",
+      "title": "Green Extraction of Antioxidants from Hazelnut By-products Using Microwave-Assisted Extraction, Ultrasound-Assisted Extraction, and Pressurized Liquid Extraction",
+      "abstract_600": "Abstract This study investigates the green extraction of antioxidants from hazelnut by-products (specifically hazelnut meal and skin) using microwave-assisted extraction (MAE), ultrasound-assisted extraction (UAE), and pressurized liquid extraction (PLE). The process optimization was conducted via response surface methodology (RSM), with key operational parameters of each process. The extracts were characterized for their total antioxidant capacity (TAC), free radical scavenging capacity (FRC), ABTS radical scavenging capacity (ARC), and total phenolic content (TPC) using spectrophotometric as",
+      "year": 2025,
+      "venue": "Food and Bioprocess Technology",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "36c3c06189aa",
+      "title": "Re-Ranking Through an Attribution Lens for Citation Quality in Legal QA",
+      "abstract_600": "Retrieval-augmented generation systems for legal question answering typically retrieve passages based on semantic similarity and provide them to a language model, which then generates cited answers. Prior work assumes that highly ranked passages are most likely to be usefully cited by the model. Perturbation-based attribution methods, such as C-LIME, have been used exclusively for post-hoc explanation. However, on the AQuAECHR benchmark, semantic similarity does not correlate with passage attribution. Within a retriever's candidate pool, similarity-based ranking performs worse than random sele",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "812f5e44fe11",
+      "title": "A Hybrid Approach to Semi-automated Rust Verification",
+      "abstract_600": "We propose a hybrid approach to end-to-end Rust verification where the proof effort is split into powerful automated verification of safe Rust and targeted semi-automated verification of unsafe Rust. To this end, we present Gillian-Rust, a proof-of-concept semi-automated verification tool built on top of the Gillian platform that can reason about type safety and functional correctness of unsafe code. Gillian-Rust automates a rich separation logic for real-world Rust, embedding the lifetime logic of RustBelt and the parametric prophecies of RustHornBelt, and is able to verify real-world Rust st",
+      "year": 2025,
+      "venue": "Proceedings of the ACM on Programming Languages",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9fc1195f8ecb",
+      "title": "SciClaimEval: Cross-modal Claim Verification in Scientific Papers",
+      "abstract_600": "We present SciClaimEval, a new scientific dataset for the claim verification task. Unlike existing resources, SciClaimEval features authentic claims, including refuted ones, directly extracted from published papers. To create refuted claims, we introduce a novel approach that modifies the supporting evidence (figures and tables), rather than altering the claims or relying on large language models (LLMs) to fabricate contradictions. The dataset provides cross-modal evidence with diverse representations: figures are available as images, while tables are provided in multiple formats, including im",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "3313c066f37b",
+      "title": "MedHallu: A Comprehensive Benchmark for Detecting Medical Hallucinations in Large Language Models",
+      "abstract_600": "Advancements in Large Language Models (LLMs) and their increasing use in medical question-answering necessitate rigorous evaluation of their reliability.A critical challenge lies in hallucination, where models generate plausible yet factually incorrect outputs.In the medical domain, this poses serious risks to patient safety and clinical decision-making.To address this, we introduce MedHallu, one of the first benchmark specifically designed for medical hallucination detection.Med-Hallu comprises 10,000 high-quality questionanswer pairs derived from PubMedQA, with hallucinated answers systemati",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a5e3d73db9ec",
+      "title": "CausalAbstain: Enhancing Multilingual LLMs with Causal Reasoning for Trustworthy Abstention",
+      "abstract_600": "Large Language Models (LLMs) often exhibit knowledge disparities across languages.Encouraging LLMs to abstain when faced with knowledge gaps is a promising strategy to reduce hallucinations in multilingual settings.Current abstention strategies for multilingual scenarios primarily rely on generating feedback in various languages using LLMs and performing self-reflection.However, these methods can be adversely impacted by inaccuracies and biases in the generated feedback.To address this, from a causal perspective, we introduce Causal-Abstain, a method that helps LLMs determine whether to utiliz",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "6afc74534098",
+      "title": "Attr-RAG: Attribution-Guided Retrieval-Augmented Generation for Scientific Experiment Design",
+      "abstract_600": "Evidence-based science depends on the iterative integration of experimentation, a process traditionally driven by slow and error-prone human effort. This has inspired the vision of an automated \"robot scientist\" capable of conducting end-to-end experimentation. While Large Language Models (LLMs) can generate procedural instructions, they often struggle to accurately describe scientific experiments due to the limited availability of high-quality, domain-specific examples in their training data. Retrieval-Augmented Generation (RAG) helps bridge this gap by allowing LLMs to access up-to-date exte",
+      "year": 2025,
+      "venue": "International Conference on Machine Learning and Applications",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b9acfcee7419",
+      "title": "Scientific decision-making, project selection and longer-term outcomes",
+      "abstract_600": "Analyzing data from two randomized controlled trials (RCTs) involving 382 entrepreneurs, this study explores the implications of training a group of entrepreneurs in a scientific approach to decision-making on their project selection. It provides evidence that the documented increased likelihood of project termination by \u2018scientific\u2019 entrepreneurs is associated with higher accuracy in recognizing project value. Unlike the control group, they are quicker in adjusting their expectations on project value downward before making the termination decision. This study also fills an important gap in pr",
+      "year": 2024,
+      "venue": "Research Policy",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b8b1ece49c8c",
+      "title": "Systematic review and meta-analysis of quotation inaccuracy in medicine",
+      "abstract_600": "Quotations are crucial to science but have been shown to be often inaccurate. Quotation errors, that is, a reference not supporting the authors\u2019 claim, may still be a significant issue in scientific medical writing. This study aimed to examine the quotation error rate and trends over time in the medical literature. A systematic search of PubMed, Web of Science, and reference lists for quotation error studies in medicine and without date or language restrictions identified 46 studies analyzing 32,000 quotations/references. Literature search, data extraction, and risk of bias assessments were pe",
+      "year": 2025,
+      "venue": "Research Integrity and Peer Review",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "61b6d04db108",
+      "title": "The disruption index is biased by citation inflation",
+      "abstract_600": "Abstract A recent analysis of scientific publication and patent citation networks by Park et al. (Nature, 2023) suggests that publications and patents are becoming less disruptive over time. Here we show that the reported decrease in disruptiveness is an artifact of systematic shifts in the structure of citation networks unrelated to innovation system capacity. Instead, the decline is attributable to \u201ccitation inflation,\u201d an unavoidable characteristic of real citation networks that manifests as a systematic time-dependent bias and renders cross-temporal analysis challenging. One driver of cita",
+      "year": 2024,
+      "venue": "Quantitative Science Studies",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "79e14121de8c",
+      "title": "Proof Minimization in Neural Network Verification",
+      "abstract_600": "The widespread adoption of deep neural networks (DNNs) requires efficient techniques for verifying their safety. DNN verifiers are complex tools, which might contain bugs that could compromise their soundness and undermine the reliability of the verification process. This concern can be mitigated using proofs: artifacts that are checkable by an external and reliable proof checker, and which attest to the correctness of the verification process. However, such proofs tend to be extremely large, limiting their use in many scenarios. In this work, we address this problem by minimizing proofs of un",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "19c65df438c9",
+      "title": "QUEST: Training Frontier Deep Research Agents with Fully Synthetic Tasks",
+      "abstract_600": "Deep research agents extend the role of search engines from retrieving keyword-matched pages to synthesizing knowledge, fundamentally changing how humans interact with information. However, frontier systems remain proprietary, while existing open agents often generalize poorly across different task types, leaving unclear how to train a broadly capable deep research agent. We release QUEST, a family of open models (ranging from 2B to 35B) that serve as general-purpose deep research agents designed to handle a wide range of long-horizon search tasks, with strong capabilities in fact seeking, cit",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "81d1de02ccbd",
+      "title": "Targeted Data Augmentation for Hallucination Mitigation and Faithfulness Enhancement in Compact LLMs",
+      "abstract_600": "Compact Large Language Models (LLMs) with 2-7 billion parameters can be deployed on resource-constrained devices but suffer from hallucinations - factually incorrect responses with miscalibrated confidence. On the TruthfulQA benchmark, these models achieve $45-55 \\%$ faithfulness, with overconfidence errors occurring in $\\mathbf{2 5 - 3 5 \\%}$ of cases. Prompting techniques provide modest improvements, but resource-intensive retraining is not feasible. A lightweight, sequential framework for hallucination mitigation through targeted data augmentation (DA) and supervised fine-tuning (SFT) was p",
+      "year": 2026,
+      "venue": "International Conference on Computing for Sustainable Global Development",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a41dbeb058b6",
+      "title": "CoAlign: Uncertainty Calibration of LLM for Geospatial Repartition",
+      "abstract_600": ",",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c295d9ed2526",
+      "title": "Verication-driven closed-loop multi-agent large language modelframework for code-compliant structural design",
+      "abstract_600": "Multi-agent large language model(LLM)systems are applied to structural design,yet most use one-shot generation and cannot verify their output,leaving themill-suited to safety-critical tasks.Rather than trusting LLM self-correction,thisframework injects feedback from an external physics-based verier into a closedrepair loop.The framework couples a three-layernite-element verication systemwith a dual-node loop.Node 1 turns code violations into hard repair constraints,Node 2 turns a four-dimensional quality score into safety-rst soft constraints,and a retrieval-augmented code base makes every vio",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d40338c367b8",
+      "title": "EO-based long term cropland and paddy monitoring with the farm action toolkit (FAcT): strengthening policy support in Bhutan",
+      "abstract_600": "Bhutan\u2019s Five-Year Strategic Plan (FYP) guides national development, resource allocation, and food security. Reliable, spatiotemporally explicit agricultural land-use data is essential for tracking progress and enabling policies such as subsidies and tax concessions. This study presents the Farm Action Toolkit (FAcT), an AI-enabled, Earth Observation (EO)-based framework for long-term cropland and paddy monitoring (2002\u20132024), linking EO data to farmer benefit access and FYP implementation. FAcT delivers Bhutan\u2019s first national, field-scale cropland and paddy dataset, achieving 87\u201392% accuracy",
+      "year": 2026,
+      "venue": "Discover Agriculture",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3a0a09349eaf",
+      "title": "Agents-K1: Towards Agent-native Knowledge Orchestration",
+      "abstract_600": "Current LLM-based research agents have advanced through agent orchestration, yet largely overlook scientific knowledge orchestration. Existing works often reduce papers to abstracts, surface mentions, and flat \\texttt{cites} edges, omitting key entities, claims, evidence, mechanisms, and method lineages essential for scientific reasoning. To this end, we introduce \\textbf{Agents-K1}, an end-to-end knowledge orchestration pipeline that converts raw documents into agent-native scientific knowledge graphs. Agents-K1 integrates three components under a unifying theoretical foundation: a multimodal",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3169b0429cb0",
+      "title": "MIRAGE: Metadata-Integrated Repository Analysis and Guided Enhancement for MSR Datasets",
+      "abstract_600": "This paper proposes an improved approach to the analysis of Mining Software Repositories (MSR) datasets via metadata enrichment, FAIRness assessment, and topic-driven analysis. This research expands upon an earlier dataset directory created specifically for the analysis of MSR datasets by adding new annotations to the datasets, enriching the metadata categories, and offering more advanced filtering options. The metadata of the MSR papers presented from 2013 to 2024 has been gathered using the Semantic Scholar API. The analysis is based on Latent Dirichlet Allocation (LDA) topic modeling and st",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "2779645a133f",
+      "title": "Quality Assured: Rethinking Annotation Strategies in Imaging AI",
+      "abstract_600": "Abstract This paper does not describe a novel method. Instead, it studies an essential foundation for reliable benchmarking and ultimately real-world application of AI-based image analysis: generating high-quality reference annotations. Previous research has focused on crowdsourcing as a means of outsourcing annotations. However, little attention has so far been given to annotation companies, specifically regarding their internal quality assurance (QA) processes. Therefore, our aim is to evaluate the influence of QA employed by annotation companies on annotation quality and devise methodologie",
+      "year": 2024,
+      "venue": "Lecture notes in computer science",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

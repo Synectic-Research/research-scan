@@ -1,0 +1,257 @@
+{
+  "batch": "01",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "7d44e80c7ceb",
+      "title": "Structured information extraction from scientific text with large language models",
+      "abstract_600": "Extracting structured knowledge from scientific text remains a challenging task for machine learning models. Here, we present a simple approach to joint named entity recognition and relation extraction and demonstrate how pretrained large language models (GPT-3, Llama-2) can be fine-tuned to extract useful records of complex scientific knowledge. We test three representative tasks in materials chemistry: linking dopants and host materials, cataloging metal-organic frameworks, and general composition/phase/morphology/application information extraction. Records are extracted from single sentence",
+      "year": 2024,
+      "venue": "Nature Communications",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "484f17d7c477",
+      "title": "Which is the cited source? A new perspective on article evaluation based on semantic similarity\u2014Citation contribution attribution",
+      "abstract_600": "Abstract Citation analysis, an essential method in bibliometrics and scientometrics, has been widely applied to assess scholarly publications. Traditionally, studies attribute citation contributions directly to cited papers, overlooking indirect citations. Citation cascade research improves on this by assuming papers inherit contributions from their citation generations but does not consider the source of the citation content (CC). We argue that citation contributions should be attributed to the source of the CC, which includes not only the cited paper but also its references. This study intro",
+      "year": 2025,
+      "venue": "Journal of the Association for Information Science and Technology",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f2e0ab105094",
+      "title": "Large Language Models for Data Annotation and Synthesis: A Survey",
+      "abstract_600": "Data annotation and synthesis generally refers to the labeling or generating of raw data with relevant information, which could be used for improving the efficacy of machine learning models. The process, however, is labor-intensive and costly. The emergence of advanced Large Language Models (LLMs), exemplified by GPT-4, presents an unprecedented opportunity to automate the complicated process of data annotation and synthesis. While existing surveys have extensively covered LLM architecture, training, and general applications, we uniquely focus on their specific utility for data annotation. Thi",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "c371bbdbe781",
+      "title": "Benchmarking Retrieval-Augmented Generation for Medicine",
+      "abstract_600": "While large language models (LLMs) have achieved state-of-the-art performance on a wide range of medical question answering (QA) tasks, they still face challenges with hallucinations and outdated knowledge. Retrieval-augmented generation (RAG) is a promising solution and has been widely adopted. However, a RAG system can involve multiple flexible components, and there is a lack of best practices regarding the optimal RAG setting for various medical purposes. To systematically evaluate such systems, we propose the Medical Information Retrieval-Augmented Generation Evaluation (MIRAGE), a first-o",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "7e43a4234722",
+      "title": "Detecting hallucinations in large language models using semantic entropy",
+      "abstract_600": "Abstract Large language model (LLM) systems, such as ChatGPT 1 or Gemini 2 , can show impressive reasoning and question-answering capabilities but often \u2018hallucinate\u2019 false outputs and unsubstantiated answers 3,4 . Answering unreliably or without the necessary information prevents adoption in diverse fields, with problems including fabrication of legal precedents 5 or untrue facts in news articles 6 and even posing a risk to human life in medical domains such as radiology 7 . Encouraging truthfulness through supervision or reinforcement has been only partially successful 8 . Researchers need a",
+      "year": 2024,
+      "venue": "Nature",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e143423e1755",
+      "title": "CalibJudge: Calibrated LLM-as-a-Judge for Multilingual RAG with Uncertainty-Aware Scoring",
+      "abstract_600": "Large Language Models (LLMs) serving as automatic evaluators (LLM-as-a-Judge) have become essential for assessing Retrieval-Augmented Generation (RAG) systems. However, in multilingual settings, these judges exhibit significant calibration drift across languages, producing scores that are neither comparable nor aligned with human judgments. We present CalibJudge, a post-hoc calibration framework that addresses this challenge through: (1) language-specific temperature scaling, (2) uncertainty quantification, and (3) selective abstention. We evaluate CalibJudge on the MEMERAG benchmark covering",
+      "year": 2026,
+      "venue": "Preprints.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "9bf531c01324",
+      "title": "Correctness is not Faithfulness in Retrieval Augmented Generation Attributions",
+      "abstract_600": "Large language models (LLMs) have transformed information retrieval through chat interfaces, but their hallucination tendencies pose significant risks. While Retrieval Augmented Generation (RAG) with citations has emerged as a solution by allowing users to verify responses through source attribution, current evaluation approaches focus primarily on citation correctness - whether cited documents support the corresponding statements. This is insufficient and we introduce citation faithfulness - whether the model's reliance on cited documents is genuine rather than post-rationalized to fit pre-ex",
+      "year": 2025,
+      "venue": "International Conference on the Theory of Information Retrieval",
+      "origin_count": 5,
+      "outside_window": false
+    },
+    {
+      "cid": "0399c34c06a6",
+      "title": "Minimal information for studies of extracellular vesicles (MISEV2023): From basic to advanced approaches",
+      "abstract_600": "Extracellular vesicles (EVs), through their complex cargo, can reflect the state of their cell of origin and change the functions and phenotypes of other cells. These features indicate strong biomarker and therapeutic potential and have generated broad interest, as evidenced by the steady year-on-year increase in the numbers of scientific publications about EVs. Important advances have been made in EV metrology and in understanding and applying EV biology. However, hurdles remain to realising the potential of EVs in domains ranging from basic biology to clinical applications due to challenges",
+      "year": 2024,
+      "venue": "Journal of Extracellular Vesicles",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "444f2c23f859",
+      "title": "Can AI Validate Science? Benchmarking LLMs for Accurate Scientific Claim \u2192 Evidence Reasoning",
+      "abstract_600": "Large language models (LLMs) are increasingly being used for complex research tasks such as literature review, idea generation, and scientific paper analysis, yet their ability to truly understand and process the intricate relationships within complex research papers, such as the logical links between claims and supporting evidence remains largely unexplored. In this study, we present CLAIM-BENCH, a comprehensive benchmark for evaluating LLMs' capabilities in scientific claim-evidence extraction and validation, a task that reflects deeper comprehension of scientific argumentation. We systemati",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "f1f9c4bc1a14",
+      "title": "CiteEval: Principle-Driven Citation Evaluation for Source Attribution",
+      "abstract_600": "Citation quality is crucial in information-seeking systems, directly influencing trust and the effectiveness of information access. Current evaluation frameworks, both human and automatic, mainly rely on Natural Language Inference (NLI) to assess binary or ternary supportiveness from cited sources, which we argue is a suboptimal proxy for citation evaluation. In this work we introduce CiteEval, a citation evaluation framework driven by principles focusing on fine-grained citation assessment within a broad context, encompassing not only the cited sources but the full retrieval context, user que",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "3590fd45dd53",
+      "title": "Causal Walk: Debiasing Multi-Hop Fact Verification with Front-Door Adjustment",
+      "abstract_600": "Multi-hop fact verification aims to detect the veracity of the given claim by integrating and reasoning over multiple pieces of evidence. Conventional multi-hop fact verification models are prone to rely on spurious correlations from the annotation artifacts, leading to an obvious performance decline on unbiased datasets. Among the various debiasing works, the causal inference-based methods become popular by performing theoretically guaranteed debiasing such as casual intervention or counterfactual reasoning. However, existing causal inference-based debiasing methods, which mainly formulate fa",
+      "year": 2024,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "d2f8676002ac",
+      "title": "G-CARL: Grounded Checklist-Aligned Reward Learning for Patient-Oriented Medical Report Interpretation",
+      "abstract_600": "Personalized interpretation of medical reports has emerged as an increasingly important need among patients. Addressing this need requires both evidence-grounded medical factuality and context-dependent patient communication, yet existing medical vision-language tasks do not adequately capture these dual requirements. To bridge this gap, we introduce Patient-oriented Medical Report Interpretation (PMRI), a novel open-ended multimodal generation task that requires models to explain medical reports in accurate and accessible language based on a user's query and dialogue history. These two object",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "aafb7bc4f9eb",
+      "title": "Attention Reallocation: Towards Zero-cost and Controllable Hallucination Mitigation of MLLMs",
+      "abstract_600": "Multi-Modal Large Language Models (MLLMs) stand out in various tasks but still struggle with hallucinations. While recent training-free mitigation methods mostly introduce additional inference overhead through a retrospection strategy and contrastive decoding, we propose attention reallocation (AttnReal) to mitigate MLLM hallucinations with nearly zero extra cost. Our approach is motivated by the key observations that, MLLM\u2019s unreasonable attention distribution causes features to be dominated by historical output tokens, which further contributes to hallucinated responses because of the distri",
+      "year": 2025,
+      "venue": "International Journal of Computer Vision",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4b2c553595f8",
+      "title": "FinAbstain: Uncertainty-Calibrated Multimodal RAG for Selective Financial Forecasting",
+      "abstract_600": "Large language models (LLMs) can synthesize financial narratives but may express high confidence when evidence is sparse, stale, or contradictory. This failure is especially consequential in forecasting, where filings, news, prices, volume, and technical signals can disagree. We present FinAbstain, a research framework for uncertainty-calibrated multimodal retrieval-augmented generation (RAG) with selective prediction. A point-in-time retriever admits only information public at the forecast timestamp and supplies modality-specific evidence to fundamental, news, technical, risk, and verificatio",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c6d34b2cd934",
+      "title": "The Laws of Context Allocation: Causal Measurement and Closed-Loop Orchestration in Generative Search",
+      "abstract_600": "As Retrieval-Augmented Generation (RAG) shifts toward diverse portfolio generation, it is stymied by two critical bottlenecks: flawed measurement of evidence utilization, and suboptimal context budget allocation. We resolve both sequentially. To resolve measurement, we expose a pervasive ``diagnostic illusion'': standard relevance proxies fail catastrophically on hard negatives. We replace them with an efficient causal leave-one-out probe that accurately isolates generative reliance and formally calibrates the structural dilution of LLM attention. To resolve allocation, we deploy this causal p",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e155e52aeeca",
+      "title": "The Next Phase of Scientific Fact-Checking: Advanced Evidence Retrieval from Complex Structured Academic Papers",
+      "abstract_600": "Scientific fact-checking aims to determine the veracity of scientific claims by retrieving and analysing evidence from research literature. The problem is inherently more complex than general fact-checking since it must accommodate the evolving nature of scientific knowledge, the structural complexity of academic literature and the challenges posed by long-form, multimodal scientific expression. However, existing approaches focus on simplified versions of the problem based on small-scale datasets consisting of abstracts rather than full papers, thereby avoiding the distinct challenges associat",
+      "year": 2025,
+      "venue": "International Conference on the Theory of Information Retrieval",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "245ac2371c4d",
+      "title": "Tree-of-Concerns: Hierarchical Multi-Agent Debate for Unstated-Limitation Extraction in Scientific Critique",
+      "abstract_600": "As scientific literature grows and papers increasingly under-report limitations, multi-agent LLMs offer a promising approach to systematically uncover these hidden failure modes. Here, we introduce Tree-of-Concerns, a multi-agent framework that deploys specialized skeptic personas, each operating through a category-specific analytical lens, as parallel debate trees to extract unstated limitations from scientific papers. Each persona conducts structured, evidence-grounded argumentation, while a Panel Review mechanism re-evaluates each surviving claim from all five perspectives to correct catego",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "17f6ec0eaf8d",
+      "title": "Assessing Attack Surfaces in Generative Search Engines through Publisher Attributes: A Case Study in Political Domains",
+      "abstract_600": "We characterize the attack surface of generative search engines (GSEs) against poisoning attacks in the political domain, from the perspectives of citation selection and personalization. GSEs integrate web search and answer generation with user preferences and backgrounds using large language models (LLMs). They play a crucial role in how users access information on the web. Because anyone can publish content on the web, GSEs are vulnerable to poisoning attacks that manipulate citations to undermine reliable information delivery. Existing studies on citation evaluation focus on how faithfully",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d6920ae21863",
+      "title": "Evidence Absence Is Not Evidence Insufficiency: Diagnosing NEI Construction Artifacts in Fact Verification",
+      "abstract_600": "Evidence absence is not evidence insufficiency, but fact verification benchmarks can make them observationally similar. The Not Enough Information (NEI) label is often operationalized through different evidence conditions, and that choice silently determines what a verifier learns and what its score can hide. We introduce NEI-CAP, a construction-aware diagnostic protocol for insufficient-evidence evaluation. Each NEI example carries the construction family that produced it; NEI-CAP audits shortcut cues, validates hard cases through human adjudication, and tests whether competence transfers acr",
+      "year": 2026,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5427fc3b1300",
+      "title": "Complex Claim Verification with Evidence Retrieved in the Wild",
+      "abstract_600": "Jifan Chen, Grace Kim, Aniruddh Sriram, Greg Durrett, Eunsol Choi. Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers). 2024.",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "b3c274fa0709",
+      "title": "Faithful by Design: Evaluating and Improving LLM-Generated Clinical Trial Summaries for Multi-Stakeholder Audiences",
+      "abstract_600": "Large language models are increasingly used to summarize clinical trial results for healthcare providers, patients, and payers, but their tendency to hallucinate poses significant risks in this high-stakes context. This study introduces a benchmark evaluation framework for measuring the faithfulness of LLM-generated clinical trial summaries across three stakeholder audiences. The framework consists of 200 stratified trials drawn from the Aggregate Analysis of ClinicalTrials.gov database, evaluated using audience-specific prompt templates and a six-dimension faithfulness annotation schema. Base",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "52c2d39a0c42",
+      "title": "Don\u2019t Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration",
+      "abstract_600": "Despite efforts to expand the knowledge of large language models (LLMs), knowledge gaps -- missing or outdated information in LLMs -- might always persist given the evolving nature of knowledge. In this work, we study approaches to identify LLM knowledge gaps and abstain from answering questions when knowledge gaps are present. We first adapt existing approaches to model calibration or adaptation through fine-tuning/prompting and analyze their ability to abstain from generating low-confidence outputs. Motivated by their failures in self-reflection and over-reliance on held-out sets, we propose",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "e0c5dde953fc",
+      "title": "VISA: Retrieval Augmented Generation with Visual Source Attribution",
+      "abstract_600": "Generation with source attribution is important for enhancing the verifiability of retrieval-augmented generation (RAG) systems. However, existing approaches in RAG primarily link generated content to document-level references, making it challenging for users to locate evidence among multiple content-rich retrieved documents. To address this challenge, we propose Retrieval-Augmented Generation with Visual Source Attribution (VISA), a novel approach that combines answer generation with visual source attribution. Leveraging large vision-language models (VLMs), VISA identifies the evidence and hi",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": false
+    },
+    {
+      "cid": "2aba00d1ebdf",
+      "title": "+VeriRel: Verification Feedback to Enhance Document Retrieval for Scientific Fact Checking",
+      "abstract_600": "Identification of appropriate supporting evidence is critical to the success of scientific fact checking. However, existing approaches rely on off-the-shelf Information Retrieval algorithms that rank documents based on relevance rather than the evidence they provide to support or refute the claim being checked. This paper proposes +VeriRel which includes verification success in the document ranking. Experimental results on three scientific fact checking datasets (SciFact, SciFact-Open and Check-Covid) demonstrate consistently leading performance by +VeriRel for document evidence retrieval and",
+      "year": 2025,
+      "venue": "International Conference on Information and Knowledge Management",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "d0a1eccf1522",
+      "title": "The Influence of Solvent Choice on the Extraction of Bioactive Compounds from Asteraceae: A Comparative Review",
+      "abstract_600": "While the potential of Asteraceae plants as herbal remedies has been globally recognized, their widespread application in the food, cosmetic, and pharmaceutical industries requires a deeper understanding of how extraction methods influence bioactive compound yields and functionalities. Previous research has primarily focused on the physiological activities or chemical compositions of individual Asteraceae species, often overlooking the critical role of solvent selection in optimizing extraction. Additionally, the remarkable physiological activities observed in these plants have spurred a growi",
+      "year": 2024,
+      "venue": "Foods",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

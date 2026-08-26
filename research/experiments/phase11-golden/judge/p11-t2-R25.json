@@ -1,0 +1,78 @@
+{
+ "label": "p11-t2-R25",
+ "run_dir": "sweep/p11-t2/R25/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 37.5,
+ "cost_usd": 0.2409,
+ "input_tokens": 11253,
+ "output_tokens": 2568,
+ "thinking_tokens": 1479,
+ "n_scored": 10,
+ "in_window_n": 10,
+ "foundational_n": 0,
+ "precision_ge2_in_window": 0.9,
+ "mean_score_in_window": 2.6,
+ "foundational_scores": [],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "60fd922117d2",
+   "score": 3,
+   "reason": "Fixed-corpus benchmark that isolates retriever contribution and reports BM25 vs embedding vs agent numbers — directly anchors decision 1 and speaks to decision 3's construction question."
+  },
+  {
+   "rank": 2,
+   "cid": "2cbca1abbe99",
+   "score": 3,
+   "reason": "Decomposes agentic gain into retrieval vs utilization and shows search effort is weakly aligned with quality — exactly the mechanism-attribution and premise-testing evidence decisions 2 and 4 need."
+  },
+  {
+   "rank": 3,
+   "cid": "0bf8f356a21c",
+   "score": 3,
+   "reason": "The canonical academic-paper-search agent with concrete recall deltas against single-query Google/Scholar baselines plus its own benchmark construction — central to decisions 1, 2 and 3."
+  },
+  {
+   "rank": 4,
+   "cid": "3b89edf4b85c",
+   "score": 3,
+   "reason": "Attributes recall@50 gains to a specific bounded citation-graph traversal mechanism and shows it beating open-ended deep-research agents — decision 2's mechanism attribution and a challenge to the premise."
+  },
+  {
+   "rank": 5,
+   "cid": "dc6612fba47a",
+   "score": 3,
+   "reason": "Shows evidence recall collapsing from 84.3% to 21.4% when the per-query-curated corpus is replaced with an independent one — the clearest hit on decision 4 and benchmark-construction inflation (C5, C4)."
+  },
+  {
+   "rank": 6,
+   "cid": "625aeeca9085",
+   "score": 2,
+   "reason": "A recent literature-retrieval agent with baseline comparisons and a multidisciplinary benchmark, but gains are reported for the system as a whole on its own benchmark, so it informs decisions 1-3 without mechanism attribution."
+  },
+  {
+   "rank": 7,
+   "cid": "aac7d9e865ef",
+   "score": 2,
+   "reason": "Survey/taxonomy whose benchmark critique bears on decision 3, but it reports no measurements itself; useful framing rather than decision-moving evidence."
+  },
+  {
+   "rank": 8,
+   "cid": "04c2c77e0326",
+   "score": 3,
+   "reason": "Literature-search agent that decomposes citation expansion, reformulation and reranking into explicit operators with measured gains — the closest match to the brief's exact system and decision 2."
+  },
+  {
+   "rank": 9,
+   "cid": "3b14a111838b",
+   "score": 3,
+   "reason": "Quantifies benchmark-content leakage inflating deep-research agent scores — direct evidence for decision 4 that reported gains can be artifacts of evaluation, and informs contamination controls under C4."
+  },
+  {
+   "rank": 10,
+   "cid": "7d6d01fe8a27",
+   "score": 1,
+   "reason": "General web-research agent design paper about inertia bias and token cost; the mechanism is not one of the brief's named moves and the gains are not literature-search recall, so it informs no decision the brief names."
+  }
+ ]
+}

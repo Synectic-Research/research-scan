@@ -1,0 +1,81 @@
+{
+ "label": "R25",
+ "run_dir": "arms/rerank/R25/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 35.8,
+ "cost_usd": 0.2408,
+ "input_tokens": 11060,
+ "output_tokens": 2604,
+ "thinking_tokens": 1295,
+ "n_scored": 10,
+ "in_window_n": 8,
+ "foundational_n": 2,
+ "precision_ge2_in_window": 1.0,
+ "mean_score_in_window": 2.75,
+ "foundational_scores": [
+  3,
+  2
+ ],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "84b54d56d46b",
+   "score": 3,
+   "reason": "Directly moves the measurement question at the heart of Q2-Q4: shows unsupported-citation rates on scientific-synthesis outputs are verifier-dependent (3-18%), invalidating naive cross-benchmark comparison, and tests a bounded abstention mechanism on SciFact/PubMedQA — central to C2, C3 and C4."
+  },
+  {
+   "rank": 2,
+   "cid": "cac1acd8d788",
+   "score": 3,
+   "reason": "Exactly the premise-challenging result the brief reaches for: existing claim-verification benchmarks cannot distinguish real verification from salient-constraint shortcuts, so their high numbers are inflated — squarely C3 and C5, with cross-family evidence."
+  },
+  {
+   "rank": 3,
+   "cid": "752402f2a368",
+   "score": 2,
+   "reason": "A well-constructed citation-grounded benchmark on scientific papers that rewards grounded refusal (C3, C4) and shows LLM-judge scores compress model differences; framed as QA rather than claim extraction, so relevant but a step removed from the brief's core extraction/linking questions."
+  },
+  {
+   "rank": 4,
+   "cid": "444f2c23f859",
+   "score": 3,
+   "reason": "CLAIM-BENCH measures claim-evidence extraction and linking accuracy across six models and multiple domains against annotated pairs — the most direct hit on C1 and C5 in the list, and it speaks to whether extraction or linking is the bottleneck."
+  },
+  {
+   "rank": 5,
+   "cid": "d6920ae21863",
+   "score": 3,
+   "reason": "Shows SciFact-style NEI labels are construction artifacts that fail to transfer, meaning reported insufficient-evidence/abstention accuracy may not reflect real competence — directly informs C3, C4 and C5 and undercuts what benchmark numbers can support."
+  },
+  {
+   "rank": 6,
+   "cid": "7d791e7db8f1",
+   "score": 3,
+   "reason": "Quantifies over-generalisation — an error type C2 names explicitly — at 26-73% across 10 models with human comparison, and contradicts the premise that errors are confined to evidence linking; strong, rigorous evidence that moves the belief."
+  },
+  {
+   "rank": 7,
+   "cid": "9fc1195f8ecb",
+   "score": 3,
+   "reason": "Benchmark built from authentic claims with perturbed figures/tables rather than LLM-fabricated negatives, expert-validated across three domains — a direct C3 contribution on what construction choices allow numbers to support, plus cross-model/cross-modality results (C5)."
+  },
+  {
+   "rank": 8,
+   "cid": "3c1e5f6887f9",
+   "score": 2,
+   "reason": "Systematic survey of 134 papers and 300 metrics mapping the fragmented attribution/citation evaluation landscape; genuinely useful for C3's benchmark-mapping question, though it contributes no new measurement itself."
+  },
+  {
+   "rank": 9,
+   "cid": "b13f6337909b",
+   "score": 3,
+   "reason": "Foundational slot: ALCE is the canonical automatic citation-evaluation benchmark whose fluency/correctness/citation-quality framing the newer grounding work in this list builds on; a newcomer who skipped it would misread the rest."
+  },
+  {
+   "rank": 10,
+   "cid": "7d29489aa7b6",
+   "score": 2,
+   "reason": "Foundational slot: the citation precision/recall verifiability framing and headline failure rates are real background the field inherits, but its setting is commercial web search rather than scientific papers, so it is worth knowing rather than the canonical paper for this topic."
+  }
+ ]
+}

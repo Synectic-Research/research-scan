@@ -1,0 +1,257 @@
+{
+  "batch": "04",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "d2e5deb7105c",
+      "title": "What Current AI Benchmarks Leave Unmeasured: Modality, Search, Citations, and Implications (for Safety Evaluations)",
+      "abstract_600": "Large language model (LLM) benchmark evaluations are routinely used to support claims about model safety, reliability, and deployment readiness. Yet most evaluations rely on a single access modality (model APIs), perform a single run per prompt, and report accuracy as the primary outcome metric, without accounting for conditions such as web search that may have effects on model behavior in deployment. We audit these assumptions for one of the most widely-used LLMs, comparing two modalities, ChatGPT's chat UI and OpenAI's API, with and without web search enabled. We use a stratified total sampl",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "57f17536e52f",
+      "title": "Survey and analysis of hallucinations in large language models: attribution to prompting strategies or model behavior",
+      "abstract_600": "Hallucination in Large Language Models (LLMs) refers to outputs that appear fluent and coherent but are factually incorrect, logically inconsistent, or entirely fabricated. As LLMs are increasingly deployed in education, healthcare, law, and scientific research, understanding and mitigating hallucinations has become critical. In this work, we present a comprehensive survey and empirical analysis of hallucination attribution in LLMs. Introducing a novel framework to determine whether a given hallucination stems from not optimize prompting or the model's intrinsic behavior. We evaluate state-of-",
+      "year": 2025,
+      "venue": "Frontiers in Artificial Intelligence",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "279581c54c48",
+      "title": "Autorubric: A Unifying Framework for Rubric-Based LLM Evaluation on Non-Verifiable Tasks",
+      "abstract_600": "Rubric-based LLM judges have become indispensable for evaluating and optimizing systems on non-verifiable tasks, where success cannot be reduced to exact programmatic checks. Yet the underlying judges remain vulnerable to position bias, stochastic inconsistency, criterion conflation, forced judgments under uncertainty, and model-dependent calibration. Rubrics structure evaluation but do not eliminate these failures; they add consequential choices about criterion design, scale types, weighting, aggregation, abstention, calibration, and reliability measurement. Despite extensive research across",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "3480ffa9e1c6",
+      "title": "Source Attribution in Retrieval-Augmented Generation",
+      "abstract_600": "While attribution methods, such as Shapley values, are widely used to explain the importance of features or training data in traditional machine learning, their application to Large Language Models (LLMs), particularly within Retrieval-Augmented Generation (RAG) systems, is nascent and challenging. The primary obstacle is the substantial computational cost, where each utility function evaluation involves an expensive LLM call, resulting in direct monetary and time expenses. This paper investigates the feasibility and effectiveness of adapting Shapley-based attribution to identify influential r",
+      "year": 2026,
+      "venue": "Communications in computer and information science",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "ebb933c13698",
+      "title": "A trustworthy AI reality-check: the lack of transparency of artificial intelligence products in healthcare",
+      "abstract_600": "Trustworthy medical AI requires transparency about the development and testing of underlying algorithms to identify biases and communicate potential risks of harm. Abundant guidance exists on how to achieve transparency for medical AI products, but it is unclear whether publicly available information adequately informs about their risks. To assess this, we retrieved public documentation on the 14 available CE-certified AI-based radiology products of the II b risk category in the EU from vendor websites, scientific publications, and the European EUDAMED database. Using a self-designed survey, w",
+      "year": 2024,
+      "venue": "Frontiers in Digital Health",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5a6526c39ab1",
+      "title": "SciHazard: A Benchmark for Measuring Scientific Safety Risks with Decomposed Harm Scoring",
+      "abstract_600": "Large language models (LLMs) increasingly support science, but they can also convert hazardous scientific knowledge into actionable misuse guidance. Existing benchmarks often rely on templated queries disconnected from real-world hazards, and employ LLM-as-a-Judge paradigms without domain grounding. To address this, we introduce SciHazard, a real-world-grounded benchmark for scientific risks and a dataset agnostic evaluation framework for measuring harmfulness. SciHazard contains 2400 hazardous questions and 600 oversafety questions across 12 disciplines, with both queries grounded in regulate",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "1807cb867114",
+      "title": "Open access research outputs receive more diverse citations",
+      "abstract_600": "Abstract The goal of open access is to allow more people to read and use research outputs. An observed association between highly cited research outputs and open access has been claimed as evidence of increased usage of the research, but this remains controversial. A higher citation count also does not necessarily imply wider usage such as citations by authors from more places. A knowledge gap exists in our understanding of who gets to use open access research outputs and where users are located. Here we address this gap by examining the association between an output\u2019s open access status and t",
+      "year": 2024,
+      "venue": "Scientometrics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e58bf9cdc721",
+      "title": "Towards AI-Assisted Synthesis of Verified Dafny Methods",
+      "abstract_600": "Large language models show great promise in many domains, including programming. A promise is easy to make but hard to keep, and language models often fail to keep their promises, generating erroneous code. A promising avenue to keep models honest is to incorporate formal verification: generating programs\u2019 specifications as well as code, so that the code can be proved correct with respect to the specifications. Unfortunately, existing large language models show a severe lack of proficiency in verified programming. In this paper, we demonstrate how to improve two pretrained models\u2019 proficiency",
+      "year": 2024,
+      "venue": "Proceedings of the ACM on software engineering.",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a5de4f51d003",
+      "title": "Claim Verification in the Age of Large Language Models: A Survey",
+      "abstract_600": "Alphaeus Dmonte, Roland R Oruche, Marcos Zampieri, Prasad Calyam, Isabelle Augenstein. Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop). 2026.",
+      "year": 2026,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f003a4062119",
+      "title": "eSapiens: A Real-World NLP Framework for Multimodal Document Understanding and Enterprise Knowledge Processing",
+      "abstract_600": "We introduce eSapiens, a unified question-answering system designed for enterprise settings, which bridges structured databases and unstructured textual corpora via a dual-module architecture. The system combines a Text-to-SQL planner with a hybrid Retrieval-Augmented Generation (RAG) pipeline, enabling natural language access to both relational data and free-form documents. To enhance answer faithfulness, the RAG module integrates dense and sparse retrieval, commercial reranking, and a citation verification loop that ensures grounding consistency. We evaluate eSapiens on the RAGTruth benchmar",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4d5a3d7e529f",
+      "title": "Uncertainty-Aware Abstention in Large Language Models with Provable Alignment Guarantees",
+      "abstract_600": "Large language models (LLMs) are increasingly deployed in question answering (QA) systems, yet they may generate hallucinated or misaligned responses without reliable confidence estimates. Uncertainty quantification (UQ) offers a natural basis for selective answering, where a system answers only when its prediction is deemed reliable and abstains otherwise. However, existing uncertainty scores for LLMs are often heuristic: a threshold chosen on such scores does not, by itself, provide statistical guarantees on the error rate among accepted answers. We propose CIC, a confidence-interval-based c",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5499387c31a6",
+      "title": "When Failures Propagate: Causal Failure Attribution in Agentic Retrieval-Augmented Generation",
+      "abstract_600": "Agentic retrieval-augmented generation (RAG) interleaves retrieval, reasoning, and answer generation across multiple hops. A retrieval error at hop 1 can surface only as a wrong answer at hop 3, while later retrieval can also repair the trajectory. This paper introduces AgenticRAG-FP, an interventional benchmark for causal failure attribution in agentic RAG. The benchmark injects a certified fault at a specified hop, re-executes the downstream trajectory, and evaluates diagnosers against the known intervention. Its central question is whether a post-hoc trace still identifies the injected hop",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "5bff425d97d8",
+      "title": "The CLEF-2025 CheckThat! Lab: Subjectivity, Fact-Checking, Claim Normalization, and Retrieval",
+      "abstract_600": "The CheckThat! lab aims to advance the development of innovative technologies designed to identify and counteract online disinformation and manipulation efforts across various languages and platforms. The first five editions focused on key tasks in the information verification pipeline, including check-worthiness, evidence retrieval and pairing, and verification. Since the 2023 edition, the lab has expanded its scope to address auxiliary tasks that support research and decision-making in verification. In the 2025 edition, the lab revisits core verification tasks while also considering auxiliar",
+      "year": 2025,
+      "venue": "European Conference on Information Retrieval",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "7e79c4c33c21",
+      "title": "Use of Artificial Intelligence in Improving Outcomes in Heart Disease: A Scientific Statement From the American Heart Association",
+      "abstract_600": "A major focus of academia, industry, and global governmental agencies is to develop and apply artificial intelligence and other advanced analytical tools to transform health care delivery. The American Heart Association supports the creation of tools and services that would further the science and practice of precision medicine by enabling more precise approaches to cardiovascular and stroke research, prevention, and care of individuals and populations. Nevertheless, several challenges exist, and few artificial intelligence tools have been shown to improve cardiovascular and stroke care suffic",
+      "year": 2024,
+      "venue": "Circulation",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3c1e5f6887f9",
+      "title": "Attribution, Citation, and Quotation: A Survey of Evidence-based Text Generation with Large Language Models",
+      "abstract_600": "The increasing adoption of large language models (LLMs) has raised serious concerns about their reliability and trustworthiness. As a result, a growing body of research focuses on evidence-based text generation with LLMs, aiming to link model outputs to supporting evidence to ensure traceability and verifiability. However, the field is fragmented due to inconsistent terminology, isolated evaluation practices, and a lack of unified benchmarks. To bridge this gap, we systematically analyze 134 papers, introduce a unified taxonomy of evidence-based text generation with LLMs, and investigate 300 e",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "94048d413949",
+      "title": "LookupForensics: A Large-Scale Multi-Task Dataset for Multi-Phase Image-Based Fact Verification",
+      "abstract_600": "Amid the proliferation of forged images, notably the tsunami of deepfake content, extensive research has been conducted on using artificial intelligence (AI) to identify forged content in the face of continuing advancements in counterfeiting technologies. We have investigated the use of AI to provide the original authentic image after deepfake detection, which we believe is a reliable and persuasive solution. We call this \u201cimage-based automated fact verification,\u201d a name that originated from a text-based fact-checking system used by journalists. We have developed a two-phase open framework tha",
+      "year": 2024,
+      "venue": "IEEE Access",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "77be965f840d",
+      "title": "HERALD: Counterfactual Audits and Minimal Repairs for Proof-of-Retrieval Rewards",
+      "abstract_600": "Search-agent rewards mix answer quality, citation grounding, tool cost, and anti-hacking terms; a high score therefore need not imply that cited evidence was retrieved, and added penalties can cancel. We introduce HERALD, an offline audit that applies exact same-question interventions, separates candidate-visible from oracle information, and enumerates detector contracts before policy optimization. On four Qwen3-8B pools from HotpotQA, 2WikiMultiHopQA, and MuSiQue, $R_0$ rejects search deletion and fake IDs, but a label-free citation-laundering attack succeeds. A complete $2^3$ ablation identi",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e0194162e756",
+      "title": "The Semantic Illusion: Certified Limits of Embedding-Based Hallucination Detection in RAG Systems",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) systems remain susceptible to hallucinations despite grounding in retrieved evidence. While current detection methods leverage embedding similarity and natural language inference (NLI), their reliability in safety-critical settings remains unproven. We apply conformal prediction to RAG hallucination detection, transforming heuristic scores into decision sets with finite-sample coverage guarantees (1-alpha). Using calibration sets of n=600, we demonstrate a fundamental dichotomy: on synthetic hallucinations (Natural Questions), embedding methods achieve 95%",
+      "year": 2025,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "1a9fe744e495",
+      "title": "Challenges of Implementing LLMs in Clinical Practice: Perspectives",
+      "abstract_600": "Large language models (LLMs) have the potential to transform healthcare by assisting in documentation, diagnosis, patient communication, and medical education. However, their integration into clinical practice remains a challenge. This perspective explores the barriers to implementation by synthesizing recent evidence across five challenge domains: workflow misalignment and diagnostic safety, bias and equity, regulatory and legal governance, technical vulnerabilities such as hallucinations or data poisoning, and the preservation of patient trust and human connection. While the perspective focu",
+      "year": 2025,
+      "venue": "Journal of Clinical Medicine",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "9c56d709fd55",
+      "title": "Retrieval-augmented generation for generative artificial intelligence in health care",
+      "abstract_600": "Generative artificial intelligence has brought disruptive innovations in health care but faces certain challenges. Retrieval-augmented generation (RAG) enables models to generate more reliable content by leveraging the retrieval of external knowledge. In this perspective, we analyze the possible contributions that RAG could bring to health care in equity, reliability, and personalization. Additionally, we discuss the current limitations and challenges of implementing RAG in medical scenarios.",
+      "year": 2025,
+      "venue": "npj Health Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "5c73e821b670",
+      "title": "The Impact and Opportunities of Generative AI in Fact-Checking",
+      "abstract_600": "Generative AI appears poised to transform white collar professions, with more than 90% of Fortune 500 companies using OpenAI\u2019s flagship GPT models, which have been characterized as \u201cgeneral purpose technologies\u201d capable of effecting epochal changes in the economy. But how will such technologies impact organizations whose job is to verify and report factual information, and to ensure the health of the information ecosystem? To investigate this question, we conducted 30 interviews with N=38 participants working at 29 fact-checking organizations across six continents, asking about how they use ge",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "0400ccbd230c",
+      "title": "PEARL: Auditable Repair for Scientific Reasoning Graph Extraction",
+      "abstract_600": "Scientific Reasoning Graph Extraction (SRGE) aims to recover explicit links among observations, evidence, intermediate claims, and paper-level conclusions. LLMs can produce graph-like scientific explanations, but their outputs often mix malformed syntax, drifting edge labels, incorrectly oriented roots, and weak source anchors. We propose PEARL (Peircean Extraction via Abstraction and Repair Layer), a training-free framework that turns noisy LLM graph responses into auditable reasoning graphs and repairs them toward strict semantic validity. PEARL first materializes explicit graph content unde",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8e541822cccc",
+      "title": "Fenced Citation-Context Retrieval for Case Law: Temporal Leakage and Degree Control Across Two Jurisdictions",
+      "abstract_600": "Prior case retrieval (PCR) aims to identify the precedent cases relevant to the facts of a query case. Incoming citation context, the text with which later cases characterize a case when citing it, is a powerful relevance signal, yet it is typically evaluated without a temporal constraint, so the retriever is credited with citations made after the query. We introduce a temporally fenced retriever with no learned parameters that augments BM25 with incoming citation context restricted to citations predating the query, together with a temporal-admission decomposition that quantifies the phantom f",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4b09a0db960e",
+      "title": "MiniCheck: Efficient Fact-Checking of LLMs on Grounding Documents",
+      "abstract_600": "Recognizing if LLM output can be grounded in evidence is central to many tasks in NLP: retrieval-augmented generation, summarization, document-grounded dialogue, and more.Current approaches to this kind of factchecking are based on verifying each piece of a model generation against potential evidence using an LLM.However, this process can be very computationally expensive, requiring many calls to a model to check a single response.In this work, we show how to build small fact-checking models that have GPT-4level performance but for 400x lower cost.We do this by constructing synthetic training",
+      "year": 2024,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c370dce68934",
+      "title": "HalluLens: LLM Hallucination Benchmark",
+      "abstract_600": "Yejin Bang, Ziwei Ji, Alan Schelten, Anthony Hartshorn, Tara Fowler, Cheng Zhang, Nicola Cancedda, Pascale Fung. Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). 2025.",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

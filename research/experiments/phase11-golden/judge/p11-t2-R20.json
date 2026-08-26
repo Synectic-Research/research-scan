@@ -1,0 +1,78 @@
+{
+ "label": "p11-t2-R20",
+ "run_dir": "sweep/p11-t2/R20/run",
+ "judge_model": "claude-fable-5",
+ "seconds": 39.7,
+ "cost_usd": 0.2632,
+ "input_tokens": 11521,
+ "output_tokens": 2960,
+ "thinking_tokens": 1783,
+ "n_scored": 10,
+ "in_window_n": 10,
+ "foundational_n": 0,
+ "precision_ge2_in_window": 0.9,
+ "mean_score_in_window": 2.6,
+ "foundational_scores": [],
+ "scores": [
+  {
+   "rank": 1,
+   "cid": "60fd922117d2",
+   "score": 3,
+   "reason": "Fixed-corpus benchmark that anchors BM25/embedding baselines against agents and disentangles retriever from agent contribution — directly answers decisions 1 and 3 (C1, C4)."
+  },
+  {
+   "rank": 2,
+   "cid": "b60436ddd394",
+   "score": 1,
+   "reason": "GraphRAG concept-graph retrieval for generation is not citation-graph traversal in literature search; the 'graph sometimes loses to vanilla RAG' finding is analogous but would not change a decision this brief names."
+  },
+  {
+   "rank": 3,
+   "cid": "2cbca1abbe99",
+   "score": 3,
+   "reason": "Decomposes agent gains into retrieval vs utilization and shows search effort barely correlates with answer quality — mechanism-level attribution the brief's decision 2 needs, plus premise-testing evidence (C2, C5)."
+  },
+  {
+   "rank": 4,
+   "cid": "dc6612fba47a",
+   "score": 3,
+   "reason": "Shows a per-query-assembled benchmark corpus inflated agent recall from 84.3% to 21.4% once evidence moved to an independent corpus — the exact benchmark-construction and gain-failure evidence decisions 3 and 4 ask for (C4, C5)."
+  },
+  {
+   "rank": 5,
+   "cid": "0bf8f356a21c",
+   "score": 3,
+   "reason": "Canonical agentic paper-search system quantifying the recall gap over single-query Google/Scholar baselines with two-benchmark construction — hits decisions 1, 2 and 3 simultaneously (C1, C2, C4)."
+  },
+  {
+   "rank": 6,
+   "cid": "625aeeca9085",
+   "score": 3,
+   "reason": "Agentic literature-retrieval system with quantified F1 comparison against Google Scholar single-query baseline and mechanism separation (planning vs retrieval) — squarely on decisions 1 and 2, though results are on its own benchmark (C1, C2)."
+  },
+  {
+   "rank": 7,
+   "cid": "37b82519b62a",
+   "score": 2,
+   "reason": "Shows most agent iterations add nothing and attributes recovered gains to specific control signals — informs decision 2's mechanism attribution, though on general deep-research web QA rather than literature search (C2)."
+  },
+  {
+   "rank": 8,
+   "cid": "aac7d9e865ef",
+   "score": 2,
+   "reason": "Survey/taxonomy of deep-research agents with a critique of benchmark limitations; useful framing for decisions 2 and 3 but reports no measured baseline, gain, or replication itself."
+  },
+  {
+   "rank": 9,
+   "cid": "3b14a111838b",
+   "score": 3,
+   "reason": "Measures a concrete mechanism (search-time contamination) by which public-benchmark agent gains are inflated — the strongest kind of decision-4 evidence and exactly the premise-challenging work the brief asks the scan to reach for (C4, C5)."
+  },
+  {
+   "rank": 10,
+   "cid": "04c2c77e0326",
+   "score": 3,
+   "reason": "An agentic scientific-literature-search system whose explicit operators (citation expansion, reranking, filtering) map onto the brief's named agentic moves, with measured gains over a baseline toolset agent (C2, C3)."
+  }
+ ]
+}

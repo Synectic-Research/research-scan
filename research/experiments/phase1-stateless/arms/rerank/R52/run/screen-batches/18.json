@@ -1,0 +1,257 @@
+{
+  "batch": "18",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "extraction accuracy",
+      "text": "Measures LLM claim-extraction accuracy from full papers or abstracts against expert/human annotation, ideally broken down by paper section, claim type, or model."
+    },
+    {
+      "id": "C2",
+      "name": "evidence-link errors",
+      "text": "Characterizes how claim-to-evidence links (passage, table, or citation) fail: fabricated support, wrong-direction reads of contradicting evidence, or over-generalisation past the paper's conditions."
+    },
+    {
+      "id": "C3",
+      "name": "benchmark construction",
+      "text": "Describes how a claim-evidence or citation-grounding benchmark (e.g. SciFact, CiteME, or similar) was built, and what its reported numbers can or cannot legitimately support."
+    },
+    {
+      "id": "C4",
+      "name": "abstention and calibration",
+      "text": "Tests whether abstention or calibrated uncertainty improves the trustworthiness of extracted claims, and reports the coverage cost of doing so."
+    },
+    {
+      "id": "C5",
+      "name": "cross-model or cross-domain generalisation",
+      "text": "Reports whether extraction or grounding results replicate across different models, domains, or paper types, or whether they are inflated by benchmark artifacts."
+    }
+  ],
+  "items": [
+    {
+      "cid": "141adb8f941e",
+      "title": "HiFi-RAG: Hierarchical Content Filtering and Two-Pass Generation for Open-Domain RAG",
+      "abstract_600": "Retrieval-Augmented Generation (RAG) in open-domain settings faces significant challenges regarding irrelevant information in retrieved documents and the alignment of generated answers with user intent. We present HiFi-RAG (Hierarchical Filtering RAG), the winning closed-source system in the Text-to-Text static evaluation of the MMU-RAGent NeurIPS 2025 Competition. Our approach moves beyond standard embedding-based retrieval via a multi-stage pipeline. We leverage the speed and cost-efficiency of Gemini 2.5 Flash (4-6x cheaper than Pro) for query formulation, hierarchical content filtering, an",
+      "year": 2025,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "74afa94512da",
+      "title": "Evaluating the Factuality of Large Language Models Using Multiple Plug-and-Play Fact Sources",
+      "abstract_600": "Large language models (LLMs) often produce factually inaccurate content, or hallucinations, which undermines their reliability. Existing factuality evaluation systems usually rely on a single predefined fact source, making them task-specific and hard to extend. We present UFO, a unified framework for factuality evaluation that supports multiple plug-and-play fact sources. UFO integrates human-written evidence, web search results, and LLM knowledge within a single evaluation pipeline, and allows users to flexibly select, reorder, and even define customized sources. The system is accessible thro",
+      "year": 2026,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "cfbda169f5c9",
+      "title": "Survey of machine learning techniques for Arabic fake news detection",
+      "abstract_600": "Abstract Social media platforms have emerged as primary information sources, offering easy access to a wide audience. Consequently, a significant portion of the global population relies on these platforms for updates on current events. However, fraudulent actors exploit social networks to disseminate false information, either for financial gain or to manipulate public opinion. Recognizing the detrimental impact of fake news, researchers have turned their attention to automating its detection. In this paper, we provide a thorough review of fake news detection in Arabic, a low-resource language,",
+      "year": 2024,
+      "venue": "Artificial Intelligence Review",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "c81bd671889e",
+      "title": "Reducing hallucinations of large language models via hierarchical semantic piece",
+      "abstract_600": "With the widespread application of large language models (LLMs) in natural language processing (NLP), hallucinations have become a significant impediment to their effective use of LLMs in industry applications. To address this challenge, we integrate existing hallucination detection and mitigation methods into a unified hallucination detection and mitigation framework. The framework consists of four main components: output parser, reference parser, fact verifier, and mitigator. These components collectively consolidate various hallucination detection and mitigation methods. Within this unified",
+      "year": 2025,
+      "venue": "Complex & Intelligent Systems",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3dd70737f183",
+      "title": "HALoGEN: Fantastic LLM Hallucinations and Where to Find Them",
+      "abstract_600": "Despite their impressive ability to generate high-quality and fluent text, generative large language models (LLMs) also produce hallucinations: statements that are misaligned with established world knowledge or provided input context. However, measuring hallucination can be challenging, as having humans verify model generations on-the-fly is both expensive and time-consuming. In this work, we release HALoGEN, a comprehensive hallucination benchmark consisting of: (1) 10,923 prompts for generative models spanning nine domains including programming, scientific attribution, and summarization, and",
+      "year": 2025,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 2,
+      "outside_window": false
+    },
+    {
+      "cid": "35b5a262b8ed",
+      "title": "heiDS at ArchEHR-QA 2025: From Fixed-k to Query-dependent-k for Retrieval Augmented Generation",
+      "abstract_600": "This paper presents the approach of our team called heiDS for the ArchEHR-QA 2025 shared task. A pipeline using a retrieval augmented generation (RAG) framework is designed to generate answers that are attributed to clinical evidence from the electronic health records (EHRs) of patients in response to patient-specific questions. We explored various components of a RAG framework, focusing on ranked list truncation (RLT) retrieval strategies and attribution approaches. Instead of using a fixed top-k RLT retrieval strategy, we employ a query-dependent-k retrieval strategy, including the existing",
+      "year": 2025,
+      "venue": "Proceedings of the 24th Workshop on Biomedical Language Processing (Shared Tasks)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3074f221b04b",
+      "title": "Use of Retrieval-Augmented Large Language Model for COVID-19 Fact-Checking: Development and Usability Study",
+      "abstract_600": "Background The COVID-19 pandemic has been accompanied by an \u201cinfodemic,\u201d where the rapid spread of misinformation has exacerbated public health challenges. Traditional fact-checking methods, though effective, are time-consuming and resource-intensive, limiting their ability to combat misinformation at scale. Large language models (LLMs) such as GPT-4 offer a more scalable solution, but their susceptibility to generating hallucinations\u2014plausible yet incorrect information\u2014compromises their reliability. Objective This study aims to enhance the accuracy and reliability of COVID-19 fact-checking by",
+      "year": 2025,
+      "venue": "Journal of Medical Internet Research",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4b4b9744192c",
+      "title": "The 19th-century \u2018antiquities rush\u2019 and the international competition for cultural status",
+      "abstract_600": "Abstract This article examines the 19th-century \u2018antiquities rush\u2019 \u2013 the frenzy of archaeological digging, scientific expeditions, and straightforward looting of artefacts in the broader Mediterranean \u2013 through the framework of international status competition. To do this, I first situate material culture at the foundation of international status-seeking and demonstrate the importance of cultural objects as status symbols for states. I then elaborate two logics of status-seeking that explain why states engaged in massive cultural extraction practices in the early 19th century. The first logic",
+      "year": 2025,
+      "venue": "Review of International Studies",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "18276c436058",
+      "title": "Knowledge mapping of immunotherapy for breast cancer: A bibliometric analysis from 2013 to 2022",
+      "abstract_600": "Breast cancer is the leading cause of cancer-related death among women globally. Immunotherapy has emerged as a major milestone in contemporary oncology. This study aims to conduct a bibliometric analysis in the field of immunotherapy for breast cancer, providing a comprehensive overview of the current research status, identifying trends and hotspots in research topics. We searched and retrieved data from the Web of Science Core Collection, and performed a bibliometric analysis of publications on immunotherapy for breast cancer from 2013 to 2022. Current status and hotspots were evaluated by c",
+      "year": 2024,
+      "venue": "Human Vaccines & Immunotherapeutics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "14e651ad560a",
+      "title": "Between fact and fairy: tracing the hallucination metaphor in AI discourse",
+      "abstract_600": "Abstract Large and powerful language models such as OpenAI\u2019s GPT model family, Google\u2019s LaMDA and BERT or Meta\u2019s LlaMA are integral to many applications, such as translation, summarization or language generation. They have become an inherent part of current everyday activities and working practices. These models produce and process language in an impressively convincing human-like manner, but also repeatedly generate outputs that appear untrustworthy and factually incorrect. In computer science (Ji et al. 2023) and popular discourse alike this phenomenon is called hallucination. The term is us",
+      "year": 2025,
+      "venue": "AI & Society",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "fcf9c0ba41fe",
+      "title": "Fanar-Sadiq: A Multi-Agent Architecture for Grounded Islamic QA",
+      "abstract_600": "Large language models (LLMs) can answer religious knowledge queries fluently, yet they often hallucinate and misattribute sources, which is especially consequential in Islamic settings where users expect grounding in canonical texts (Qur'an and Hadith) and jurisprudential (fiqh) nuance. Retrieval-augmented generation (RAG) improves grounding, however, a single retrieve-then-generate pipeline is insufficient for diverse Islamic queries, including verbatim scripture, citation-grounded guidance, and rule-constrained computations such as zakat and inheritance. To address these challenges, we prese",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f86e00e53ae4",
+      "title": "Evaluating LLMs' Assessment of Mixed-Context Hallucination Through the Lens of Summarization",
+      "abstract_600": "With the rapid development of large language models (LLMs), LLM-as-a-judge has emerged as a widely adopted approach for text quality evaluation, including hallucination evaluation. While previous studies have focused exclusively on single-context evaluation (e.g., discourse faithfulness or world factuality), real-world hallucinations typically involve mixed contexts, which remains inadequately evaluated. In this study, we use summarization as a representative task to comprehensively evaluate LLMs' capability in detecting mixed-context hallucinations, specifically distinguishing between factual",
+      "year": 2025,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8dac083d577d",
+      "title": "Ambiguity Detection and Uncertainty Calibration for Question Answering with Large Language Models",
+      "abstract_600": "Large Language Models (LLMs) have demonstrated excellent capabilities in Question Answering (QA) tasks, yet their ability to identify and address ambiguous questions remains underdeveloped. Ambiguities in user queries often lead to inaccurate or misleading answers, undermining user trust in these systems. Despite prior attempts using prompt-based meth-ods, performance has largely been equivalent to random guessing, leaving a significant gap in effective ambiguity detection. To address this, we propose a novel framework for detecting ambiguous questions within LLM-based QA systems. We first pro",
+      "year": 2025,
+      "venue": "Proceedings of the 5th Workshop on Trustworthy NLP (TrustNLP 2025)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "8a4be0c5daef",
+      "title": "AttriMem: Attribution-Guided Process Feedback for Agent Memory Construction",
+      "abstract_600": "Effective memory is crucial for LLM agents, yet constructing it effectively remains challenging. A memory-construction policy decides what information to extract, store, update, compress, or discard as interactions accumulate. Heuristic memory methods rely on subjective, task-specific rules, which can misalign with downstream objectives and limit cross-task adaptability. RL-based methods, by contrast, learn from task feedback but mainly use outcome- or module-level rewards. These coarse signals indicate task success but cannot identify which intermediate memory contents support the final answe",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "4c34fad55ad0",
+      "title": "Hypothesis Space Reasoning Chains Improve Scientific Claim Verification with Retrieved Evidence and Probabilistic Weights Evidence Matrices",
+      "abstract_600": "The exponential growth of published research has precipitated a critical need for automated systems capable of verifying scientific claims. Traditional fact-checking frameworks often struggle with the complexity of scientific discourse, which frequently requires multi-hop reasoning and the synthesis of disparate pieces of evidence. This paper introduces a novel framework utilizing hypothesis-space reasoning chains coupled with advanced retrieval mechanisms to enhance the accuracy and interpretability of scientific claim verification. By generating a structured space of plausible hypotheses bef",
+      "year": 2026,
+      "venue": "International journal of information and communication technology trends",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "64d911508db4",
+      "title": "PROMETHEUS: Automating Deep Causal Research Integrating Text, Data and Models",
+      "abstract_600": "Large language models can extract local causal claims from text, but those claims become more useful when organized as persistent, navigable world models rather than as flat summaries. We introduce PROMETHEUS, a framework that turns retrieved literature, filings, reviews, reports, agent traces, source data, code, simulations, and scientific models into causal atlases: sheaf-like families of local causal predictive-state models over an explicit cover of a research substrate. Each local region contains causal episodes, structured claim tables, predictive tests, support statistics, and provenance",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "706f0bf07b2d",
+      "title": "Guideline-Aware XAI for Imaging: Closing the Trust Gap in Clinical AI",
+      "abstract_600": "This paper interrogates explainable AI practices in medical imaging through a dual lens: how XAI is used to justify model decisions and how often studies align with healthcare reporting standards that enable trustworthy adoption in clinics. Using a structured literature rubric (2020-2025) and a PubMed-based citation analysis of frameworks (TRIPOD/CLAIM/TRIPOD-AI/DECIDE-AI/FUTURE-AI), the study finds single-digit uptake for recent guidelines and persistent reliance on older checklists, despite widespread deployment claims, highlighting a transparencyadoption paradox in radiology AI. The synthes",
+      "year": 2026,
+      "venue": "2026 5th International Conference on Communication, Computing and Electronics Systems (ICCCES)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "3312ed06f99e",
+      "title": "Are there double knots in proteins? Prediction and in vitro verification based on TrmD-Tm1570 fusion from C. nitroreducens",
+      "abstract_600": "We have been aware of the existence of knotted proteins for over 30 years\u2014but it is hard to predict what is the most complicated knot that can be formed in proteins. Here, we show new and the most complex knotted topologies recorded to date\u2014double trefoil knots (31#31). We found five domain arrangements (architectures) that result in a doubly knotted structure in almost a thousand proteins. The double knot topology is found in knotted membrane proteins from the CaCA family, that function as ion transporters, in the group of carbonic anhydrases that catalyze the hydration of carbon dioxide, and",
+      "year": 2024,
+      "venue": "Frontiers in Molecular Biosciences",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f0de2d65ab82",
+      "title": "Risk Taxonomy, Mitigation, and Assessment Benchmarks of Large Language Model Systems",
+      "abstract_600": "Large language models (LLMs) have strong capabilities in solving diverse natural language processing tasks. However, the safety and security issues of LLM systems have become the major obstacle to their widespread application. Many studies have extensively investigated risks in LLM systems and developed the corresponding mitigation strategies. Leading-edge enterprises such as OpenAI, Google, Meta, and Anthropic have also made lots of efforts on responsible LLMs. Therefore, there is a growing need to organize the existing studies and establish comprehensive taxonomies for the community. In this",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e4a659036b09",
+      "title": "On Assessing the Faithfulness of LLM-generated Feedback on Student Assignments",
+      "abstract_600": "This work analyzed the limitations of data-driven and prompt-driven automated feedback systems in generating feedback for student project reports and explored various methods for measuring hallucinations and showed that instruction fine-tuned ChatGPT yields better alignment with human judgment.",
+      "year": 2024,
+      "venue": "Educational Data Mining",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "18ae3236f70e",
+      "title": "MediQ: Question-Asking LLMs and a Benchmark for Reliable Interactive Clinical Reasoning",
+      "abstract_600": "Users typically engage with LLMs interactively, yet most existing benchmarks evaluate them in a static, single-turn format, posing reliability concerns in interactive scenarios. We identify a key obstacle towards reliability: LLMs are trained to answer any question, even with incomplete context or insufficient knowledge. In this paper, we propose to change the static paradigm to an interactive one, develop systems that proactively ask questions to gather more information and respond reliably, and introduce an benchmark - MediQ - to evaluate question-asking ability in LLMs. MediQ simulates clin",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "f63720ad588c",
+      "title": "OG-RAG: Ontology-grounded retrieval-augmented generation for large language models",
+      "abstract_600": "While LLMs are widely used for generic tasks like question answering and search, they struggle to adapt to specialized knowledge, such as industrial workflows in healthcare, legal, and agricultural sectors, as well as knowledgedriven tasks such as news journalism, investigative research, and consulting without expensive fine-tuning or sub-optimal retrieval methods.Existing retrieval-augmented models, such as RAG, offer improvements but fail to account for structured domain knowledge, leading to suboptimal context generation.Ontologies, which conceptually organize domain knowledge by defining e",
+      "year": 2025,
+      "venue": null,
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "ece406630949",
+      "title": "AmbiFC : Fact-Checking Ambiguous Claims with Evidence",
+      "abstract_600": "Abstract Automated fact-checking systems verify claims against evidence to predict their veracity. In real-world scenarios, the retrieved evidence may not unambiguously support or refute the claim and yield conflicting but valid interpretations. Existing fact-checking datasets assume that the models developed with them predict a single veracity label for each claim, thus discouraging the handling of such ambiguity. To address this issue we present AmbiFC,1 a fact-checking dataset with 10k claims derived from real-world information needs. It contains fine-grained evidence annotations of 50k pas",
+      "year": 2024,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "e829f68d5235",
+      "title": "The 2024 report of the Lancet Countdown on health and climate change: facing record-breaking threats from delayed action",
+      "abstract_600": null,
+      "year": 2024,
+      "venue": "The Lancet",
+      "origin_count": 1,
+      "outside_window": false
+    },
+    {
+      "cid": "a3484645b72c",
+      "title": "From Sycophancy to Deception: A Unified Taxonomy for LLM Spontaneous Misalignment",
+      "abstract_600": "Large language models (LLMs) could produce systematically misaligned output, from hallucinated citations to strategic deception of evaluators, yet these phenomena are studied by separate communities with incompatible terminology. We propose a unified taxonomy organized along three complementary dimensions: degree of goal-directedness (behavioral to strategic deception), object of deception, and mechanism (fabrication, omission, or pragmatic distortion). Applying this taxonomy to 50 existing benchmarks reveals that every benchmark tests fabrication while pragmatic distortion, attribution, and c",
+      "year": 2026,
+      "venue": "arXiv",
+      "origin_count": 1,
+      "outside_window": false
+    }
+  ]
+}

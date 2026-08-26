@@ -1,0 +1,212 @@
+{
+  "batch": "x05",
+  "sub_criteria": [
+    {
+      "id": "C1",
+      "name": "baseline recall ceiling",
+      "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+    },
+    {
+      "id": "C2",
+      "name": "agentic mechanism gain",
+      "text": "Attributes a measured gain to a specific agentic move \u2014 query reformulation, citation-graph traversal, or iterative crawling \u2014 rather than to the system as an undifferentiated whole."
+    },
+    {
+      "id": "C3",
+      "name": "retrieval/reranking method",
+      "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+    },
+    {
+      "id": "C4",
+      "name": "benchmark construction",
+      "text": "Explains how an evaluation set for literature-search agents was built \u2014 query source, relevance labeling, corpus coverage, contamination controls."
+    },
+    {
+      "id": "C5",
+      "name": "gain replication failure",
+      "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+    }
+  ],
+  "items": [
+    {
+      "cid": "2aed270d6685",
+      "title": "ReAct: Synergizing Reasoning and Acting in Language Models",
+      "abstract_600": "While large language models (LLMs) have demonstrated impressive capabilities across tasks in language understanding and interactive decision making, their abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action plan generation) have primarily been studied as separate topics. In this paper, we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner, allowing for greater synergy between the two: reasoning traces help the model induce, track, and update action plans as well as handle exceptions, while actions allow it",
+      "year": 2022,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 7,
+      "outside_window": true
+    },
+    {
+      "cid": "a357a4db7515",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "abstract_600": "Large pre-trained language models have been shown to store factual knowledge in their parameters, and achieve state-of-the-art results when fine-tuned on downstream NLP tasks. However, their ability to access and precisely manipulate knowledge is still limited, and hence on knowledge-intensive tasks, their performance lags behind task-specific architectures. Additionally, providing provenance for their decisions and updating their world knowledge remain open research problems. Pre-trained models with a differentiable access mechanism to explicit non-parametric memory can overcome this issue, b",
+      "year": 2020,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 5,
+      "outside_window": true
+    },
+    {
+      "cid": "7c7b932ff81c",
+      "title": "Dense Passage Retrieval for Open-Domain Question Answering",
+      "abstract_600": "Open-domain question answering relies on efficient passage retrieval to select candidate contexts, where traditional sparse vector space models, such as TF-IDF or BM25, are the de facto method. In this work, we show that retrieval can be practically implemented using dense representations alone, where embeddings are learned from a small number of questions and passages by a simple dual-encoder framework. When evaluated on a wide range of open-domain QA datasets, our dense retriever outperforms a strong Lucene-BM25 system largely by 9%-19% absolute in terms of top-20 passage retrieval accuracy,",
+      "year": 2020,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 4,
+      "outside_window": true
+    },
+    {
+      "cid": "68a7ec08cbfe",
+      "title": "HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question Answering",
+      "abstract_600": "Existing question answering (QA) datasets fail to train QA systems to perform complex reasoning and provide explanations for answers. We introduce HotpotQA, a new dataset with 113k Wikipedia-based question-answer pairs with four key features: (1) the questions require finding and reasoning over multiple supporting documents to answer; (2) the questions are diverse and not constrained to any pre-existing knowledge bases or knowledge schemas; (3) we provide sentence-level supporting facts required for reasoning, allowing QA systems to reason with strong supervision and explain the predictions; (",
+      "year": 2018,
+      "venue": "Conference on Empirical Methods in Natural Language Processing",
+      "origin_count": 4,
+      "outside_window": true
+    },
+    {
+      "cid": "cf400f1f8ff6",
+      "title": "Toolformer: Language Models Can Teach Themselves to Use Tools",
+      "abstract_600": "Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. Thi",
+      "year": 2023,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 3,
+      "outside_window": true
+    },
+    {
+      "cid": "501e83bb177a",
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "abstract_600": "Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate. Retrieval-Augmented Generation (RAG), an ad hoc approach that augments LMs with retrieval of relevant knowledge, decreases such issues. However, indiscriminately retrieving and incorporating a fixed number of retrieved passages, regardless of whether retrieval is necessary, or passages are relevant, diminishes LM versatility or can lead to unhelpful response generation. We introduce a new framework c",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 3,
+      "outside_window": true
+    },
+    {
+      "cid": "f8fb9526dedf",
+      "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+      "abstract_600": "With advances in generative AI, there is now potential for autonomous agents to manage daily tasks via natural language commands. However, current agents are primarily created and tested in simplified synthetic environments, leading to a disconnect with real-world scenarios. In this paper, we build an environment for language-guided agents that is highly realistic and reproducible. Specifically, we focus on agents that perform tasks on the web, and create an environment with fully functional websites from four common domains: e-commerce, social forum discussions, collaborative software develop",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 3,
+      "outside_window": true
+    },
+    {
+      "cid": "25ed3a43e0db",
+      "title": "GAIA: a benchmark for General AI Assistants",
+      "abstract_600": "We introduce GAIA, a benchmark for General AI Assistants that, if solved, would represent a milestone in AI research. GAIA proposes real-world questions that require a set of fundamental abilities such as reasoning, multi-modality handling, web browsing, and generally tool-use proficiency. GAIA questions are conceptually simple for humans yet challenging for most advanced AIs: we show that human respondents obtain 92\\% vs. 15\\% for GPT-4 equipped with plugins. This notable performance disparity contrasts with the recent trend of LLMs outperforming humans on tasks requiring professional skills",
+      "year": 2023,
+      "venue": "arXiv.org",
+      "origin_count": 3,
+      "outside_window": true
+    },
+    {
+      "cid": "83d901bfd5f4",
+      "title": "Judging LLM-as-a-judge with MT-Bench and Chatbot Arena",
+      "abstract_600": "Evaluating large language model (LLM) based chat assistants is challenging due to their broad capabilities and the inadequacy of existing benchmarks in measuring human preferences. To address this, we explore using strong LLMs as judges to evaluate these models on more open-ended questions. We examine the usage and limitations of LLM-as-a-judge, including position, verbosity, and self-enhancement biases, as well as limited reasoning ability, and propose solutions to mitigate some of them. We then verify the agreement between LLM judges and human preferences by introducing two benchmarks: MT-be",
+      "year": 2023,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "58bbcab240cd",
+      "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+      "abstract_600": "The emergence of large language models (LLMs) has marked a significant breakthrough in natural language processing (NLP), fueling a paradigm shift in information acquisition. Nevertheless, LLMs are prone to hallucination, generating plausible yet nonfactual content. This phenomenon raises significant concerns over the reliability of LLMs in real-world information retrieval (IR) systems and has attracted intensive research to detect and mitigate such hallucinations. Given the open-ended general-purpose attributes inherent to LLMs, LLM hallucinations present distinct challenges that diverge from",
+      "year": 2023,
+      "venue": "ACM Trans. Inf. Syst.",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "0d85436f3f6d",
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "abstract_600": "Language models have outpaced our ability to evaluate them effectively, but for their future development it is essential to study the frontier of their capabilities. We find real-world software engineering to be a rich, sustainable, and challenging testbed for evaluating the next generation of language models. To this end, we introduce SWE-bench, an evaluation framework consisting of $2,294$ software engineering problems drawn from real GitHub issues and corresponding pull requests across $12$ popular Python repositories. Given a codebase along with a description of an issue to be resolved, a",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "ac521a1e116b",
+      "title": "Natural Questions: A Benchmark for Question Answering Research",
+      "abstract_600": "We present the Natural Questions corpus, a question answering data set. Questions consist of real anonymized, aggregated queries issued to the Google search engine. An annotator is presented with a question along with a Wikipedia page from the top 5 search results, and annotates a long answer (typically a paragraph) and a short answer (one or more entities) if present on the page, or marks null if no long/short answer is present. The public release consists of 307,373 training examples with single annotations; 7,830 examples with 5-way annotations for development data; and a further 7,842 exam",
+      "year": 2019,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "fdf779a7da9e",
+      "title": "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs",
+      "abstract_600": "Despite the advancements of open-source large language models (LLMs), e.g., LLaMA, they remain significantly limited in tool-use capabilities, i.e., using external tools (APIs) to fulfill human instructions. The reason is that current instruction tuning largely focuses on basic language tasks but ignores the tool-use domain. This is in contrast to the excellent tool-use capabilities of state-of-the-art (SOTA) closed-source LLMs, e.g., ChatGPT. To bridge this gap, we introduce ToolLLM, a general tool-use framework encompassing data construction, model training, and evaluation. We first present",
+      "year": 2023,
+      "venue": "International Conference on Learning Representations",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "840265439db2",
+      "title": "google,\u6211,\u8428\u5a1c",
+      "abstract_600": null,
+      "year": 2006,
+      "venue": null,
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "4d77b84c28b2",
+      "title": "TriviaQA: A Large Scale Distantly Supervised Challenge Dataset for Reading Comprehension",
+      "abstract_600": "We present TriviaQA, a challenging reading comprehension dataset containing over 650K question-answer-evidence triples. TriviaQA includes 95K question-answer pairs authored by trivia enthusiasts and independently gathered evidence documents, six per question on average, that provide high quality distant supervision for answering the questions. We show that, in comparison to other recently introduced large-scale datasets, TriviaQA (1) has relatively complex, compositional questions, (2) has considerable syntactic and lexical variability between questions and corresponding answer-evidence senten",
+      "year": 2017,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "a5cb61fca694",
+      "title": "WebGPT: Browser-assisted question-answering with human feedback",
+      "abstract_600": "We fine-tune GPT-3 to answer long-form questions using a text-based web-browsing environment, which allows the model to search and navigate the web. By setting up the task so that it can be performed by humans, we are able to train models on the task using imitation learning, and then optimize answer quality with human feedback. To make human evaluation of factual accuracy easier, models must collect references while browsing in support of their answers. We train and evaluate our models on ELI5, a dataset of questions asked by Reddit users. Our best model is obtained by fine-tuning GPT-3 using",
+      "year": 2021,
+      "venue": "arXiv.org",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "84281d4ccdb7",
+      "title": "BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models",
+      "abstract_600": "Existing neural information retrieval (IR) models have often been studied in homogeneous and narrow settings, which has considerably limited insights into their out-of-distribution (OOD) generalization capabilities. To address this, and to facilitate researchers to broadly evaluate the effectiveness of their models, we introduce Benchmarking-IR (BEIR), a robust and heterogeneous evaluation benchmark for information retrieval. We leverage a careful selection of 18 publicly available datasets from diverse text retrieval tasks and domains and evaluate 10 state-of-the-art retrieval systems includi",
+      "year": 2021,
+      "venue": "NeurIPS Datasets and Benchmarks",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "eaae4608bbee",
+      "title": "Interleaving Retrieval with Chain-of-Thought Reasoning for Knowledge-Intensive Multi-Step Questions",
+      "abstract_600": "Prompting-based large language models (LLMs) are surprisingly powerful at generating natural language reasoning steps or Chains-of-Thoughts (CoT) for multi-step question answering (QA). They struggle, however, when the necessary knowledge is either unavailable to the LLM or not up-to-date within its parameters. While using the question to retrieve relevant text from an external knowledge source helps LLMs, we observe that this one-step retrieve-and-read approach is insufficient for multi-step QA. Here, what to retrieve depends on what has already been derived, which in turn may depend on what",
+      "year": 2022,
+      "venue": "Annual Meeting of the Association for Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "afb494ed7c18",
+      "title": "Constructing A Multi-hop QA Dataset for Comprehensive Evaluation of Reasoning Steps",
+      "abstract_600": "A multi-hop question answering (QA) dataset aims to test reasoning and inference skills by requiring a model to read multiple paragraphs to answer a given question. However, current datasets do not provide a complete explanation for the reasoning process from the question to the answer. Further, previous studies revealed that many examples in existing multi-hop datasets do not require multi-hop reasoning to answer a question. In this study, we present a new multi-hop QA dataset, called 2WikiMultiHopQA, which uses structured and unstructured data. In our dataset, we introduce the evidence infor",
+      "year": 2020,
+      "venue": "International Conference on Computational Linguistics",
+      "origin_count": 2,
+      "outside_window": true
+    },
+    {
+      "cid": "09794a7061c5",
+      "title": "Language Models are Few-Shot Learners",
+      "abstract_600": "Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performan",
+      "year": 2020,
+      "venue": "Neural Information Processing Systems",
+      "origin_count": 1,
+      "outside_window": true
+    }
+  ]
+}

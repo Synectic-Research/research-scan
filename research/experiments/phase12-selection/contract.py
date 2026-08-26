@@ -21,6 +21,15 @@ Drop-in for the phase-11 driver: `screen.py::_one` calls `C.validate_batch_score
 `reconcile(batch, payload).scores` is the same list on a clean response, and the retry decision
 moves from "did it raise" to `Reconciliation.verdict`. Nothing in `lib/common.py` is edited — the
 Phase-1.1 artefacts stay exactly as measured.
+
+**Phase-1.2C, the rerank path.** The same wire defect recurred on `rerank.py`, which does its own
+all-or-nothing check (`got != want -> raise`) and re-issues the whole 13-row chunk: one recorded
+call returned `extra=['5716814f6adf_placeholder']` while *dropping four real cids*, so the retry
+re-paid for nine correct RankedEntries to recover four. Reconciliation is stage-agnostic — only
+the array key and the per-row field contract differ — so `rows_key` and `validate_row` are
+parameters with the screening shape as their default. Every existing call site and every
+assertion in `test_contract.py` is unchanged; `phase12c/rerank_contract.py` supplies the
+rerank shape.
 """
 
 from __future__ import annotations
@@ -91,18 +100,38 @@ def _validate_row(row: dict, known_criteria: set[str]) -> tuple[dict | None, str
     }, ""
 
 
-def reconcile(batch: dict, payload: Any) -> Reconciliation:
-    """Partition a batch response against `batch['items']`. Never raises on model output."""
+#: Default array key, duplicate discriminator and per-row contract: the screening shape this
+#: module was written for. The rerank shape overrides all three (`phase12c/rerank_contract.py`).
+SCORES_KEY = "scores"
+SCORE_FIELD = "score"
+
+
+def reconcile(
+    batch: dict,
+    payload: Any,
+    *,
+    rows_key: str = SCORES_KEY,
+    score_field: str = SCORE_FIELD,
+    validate_row: Callable[[dict, set[str]], tuple[dict | None, str]] | None = None,
+) -> Reconciliation:
+    """Partition a batch response against `batch['items']`. Never raises on model output.
+
+    `rows_key` / `score_field` / `validate_row` select the stage's wire shape. The reconciliation
+    rules — unknown cids discarded without a retry, identical duplicates collapsed, conflicting
+    duplicates invalidating the response, a bad row costing its own cid — are the same at every
+    stage.
+    """
+    validate_row = validate_row or _validate_row
     want = [item["cid"] for item in batch["items"]]
     want_set = set(want)
     known = {criterion["id"] for criterion in batch["sub_criteria"]}
 
     rec = Reconciliation(verdict=INVALID)
-    rows = payload.get("scores") if isinstance(payload, dict) else None
+    rows = payload.get(rows_key) if isinstance(payload, dict) else None
     if not isinstance(rows, list):
-        rec.note("no_scores_array", got=type(payload).__name__)
+        rec.note("no_scores_array", got=type(payload).__name__, key=rows_key)
         rec.missing = list(want)
-        rec.reason = "no scores array"
+        rec.reason = f"no {rows_key} array"
         return rec
 
     # 1. Unknown cids never reach the judgement layer, and never earn a retry: a batch cannot be
@@ -123,13 +152,13 @@ def reconcile(batch: dict, payload: Any) -> Reconciliation:
     chosen: dict[str, dict] = {}
     for cid, group in by_cid.items():
         if len(group) > 1:
-            scores = {row.get("score") for row in group}
+            scores = {row.get(score_field) for row in group}
             if len(scores) > 1:
                 conflicting.append(cid)
                 rec.note("duplicate_conflicting", cid=cid, scores=sorted(map(str, scores)))
                 continue
             rec.note("duplicate_identical_collapsed", cid=cid, copies=len(group),
-                     score=group[0].get("score"))
+                     score=group[0].get(score_field))
         chosen[cid] = group[0]
 
     if conflicting:
@@ -144,7 +173,7 @@ def reconcile(batch: dict, payload: Any) -> Reconciliation:
         if row is None:
             rec.missing.append(cid)
             continue
-        clean, why = _validate_row(row, known)
+        clean, why = validate_row(row, known)
         if clean is None:
             rec.note("row_rejected", cid=cid, why=why)
             rec.missing.append(cid)
@@ -168,6 +197,9 @@ def screen_batch(
     *,
     max_retries: int = MAX_RETRIES,
     supports_sub_batch: bool = True,
+    rows_key: str = SCORES_KEY,
+    score_field: str = SCORE_FIELD,
+    validate_row: Callable[[dict, set[str]], tuple[dict | None, str]] | None = None,
 ) -> BatchOutcome:
     """Call, reconcile, retry what is owed — at most `max_retries` times, then fail on the record.
 
@@ -192,7 +224,8 @@ def screen_batch(
             outcome.reason = f"{type(exc).__name__}: {exc}"[:400]
             continue
 
-        rec = reconcile(ask, payload)
+        rec = reconcile(ask, payload, rows_key=rows_key, score_field=score_field,
+                        validate_row=validate_row)
         for entry in rec.provenance:
             outcome.provenance.append({"attempt": outcome.attempts, **entry})
 

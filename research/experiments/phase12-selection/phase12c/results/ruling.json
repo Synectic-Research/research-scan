@@ -1,0 +1,135 @@
+{
+ "winner": "K3",
+ "step1_survivors": [
+  "K0",
+  "K1",
+  "K2",
+  "K3"
+ ],
+ "jaccard_winner_by_topic": {
+  "defaults-savings/R40/O1": "K1",
+  "llm-lit-search/R40/O1": "K3"
+ },
+ "jaccard_conflict_across_topics": true,
+ "winner_restores_stability_and_worst_run_recall": false,
+ "per_key": {
+  "K0": {
+   "worst_recall_by_topic": {
+    "defaults-savings/R40/O1": 1,
+    "llm-lit-search/R40/O1": 1
+   },
+   "jaccard_by_topic": {
+    "defaults-savings/R40/O1": 0.6239,
+    "llm-lit-search/R40/O1": 0.5276
+   },
+   "jaccard_mean_of_topics": 0.5757,
+   "key_length": 5,
+   "meets_baseline": {
+    "defaults-savings/R40/O1": false,
+    "llm-lit-search/R40/O1": false
+   },
+   "meets_jaccard": {
+    "defaults-savings/R40/O1": false,
+    "llm-lit-search/R40/O1": false
+   }
+  },
+  "K1": {
+   "worst_recall_by_topic": {
+    "defaults-savings/R40/O1": 1,
+    "llm-lit-search/R40/O1": 1
+   },
+   "jaccard_by_topic": {
+    "defaults-savings/R40/O1": 0.7172,
+    "llm-lit-search/R40/O1": 0.4663
+   },
+   "jaccard_mean_of_topics": 0.5917,
+   "key_length": 5,
+   "meets_baseline": {
+    "defaults-savings/R40/O1": false,
+    "llm-lit-search/R40/O1": false
+   },
+   "meets_jaccard": {
+    "defaults-savings/R40/O1": true,
+    "llm-lit-search/R40/O1": false
+   }
+  },
+  "K2": {
+   "worst_recall_by_topic": {
+    "defaults-savings/R40/O1": 1,
+    "llm-lit-search/R40/O1": 1
+   },
+   "jaccard_by_topic": {
+    "defaults-savings/R40/O1": 0.7172,
+    "llm-lit-search/R40/O1": 0.4663
+   },
+   "jaccard_mean_of_topics": 0.5917,
+   "key_length": 7,
+   "meets_baseline": {
+    "defaults-savings/R40/O1": false,
+    "llm-lit-search/R40/O1": false
+   },
+   "meets_jaccard": {
+    "defaults-savings/R40/O1": true,
+    "llm-lit-search/R40/O1": false
+   }
+  },
+  "K3": {
+   "worst_recall_by_topic": {
+    "defaults-savings/R40/O1": 1,
+    "llm-lit-search/R40/O1": 1
+   },
+   "jaccard_by_topic": {
+    "defaults-savings/R40/O1": 0.6239,
+    "llm-lit-search/R40/O1": 0.6713
+   },
+   "jaccard_mean_of_topics": 0.6476,
+   "key_length": 9,
+   "meets_baseline": {
+    "defaults-savings/R40/O1": false,
+    "llm-lit-search/R40/O1": false
+   },
+   "meets_jaccard": {
+    "defaults-savings/R40/O1": false,
+    "llm-lit-search/R40/O1": true
+   }
+  }
+ },
+ "decomposition_all_cells": {
+  "TIE_LOSS_BAND": 39,
+  "SCORE_LOSS": 18
+ },
+ "decomposition_R40_only": {
+  "SCORE_LOSS": 18,
+  "TIE_LOSS_BAND": 9
+ },
+ "score_loss_share_all": 0.316,
+ "score_loss_share_R40": 0.667,
+ "tie_band_rescued_by": {
+  "K1": 4,
+  "K2": 4,
+  "K3": 3
+ },
+ "tie_band_total": 39,
+ "goldens_K0_emitted": 48,
+ "goldens_lost_by_ladder": {
+  "K1": 5,
+  "K2": 5,
+  "K3": 16
+ },
+ "net_golden_delta": {
+  "K1": -1,
+  "K2": -1,
+  "K3": -13
+ },
+ "key_tier_run_stability_R40": {
+  "defaults-savings/R40/O1": {
+   "overall_pct_stable": 87.5,
+   "histogram_pct_stable": 15.0
+  },
+  "llm-lit-search/R40/O1": {
+   "overall_pct_stable": 67.5,
+   "histogram_pct_stable": 2.5
+  }
+ },
+ "ruling": "PHASE 1.4 NECESSARY"
+}

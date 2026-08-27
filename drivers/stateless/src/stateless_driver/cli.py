@@ -5,6 +5,13 @@ batch through one stateless call, and writes the accepted judgements to `screen.
 the agent owns in the conversational path, produced here by an engine instead. Everything the
 engine produced, and everything it cost, is written under `<run>/engine/<stamp>/`.
 
+`screen.json` is written only by a run in which every batch was satisfied. A run that ends short
+writes `screen.partial.json` instead and leaves `screen.json` as it found it, because the stages
+that read a screen next — `research-scan expand` and `research-scan coverage` — check that the
+file names known sub-criteria, not that it covers the pool, and would consume a shortened one at
+exit 0. The shortfall is not silent in either direction: the partial file is still read back as
+resume state, so a retry does not re-buy batches this run already paid for.
+
 `research-scan shortlist` remains the authority on the result: it re-validates `screen.json`
 against the package's own contract and exits 2 on anything this driver let through.
 """
@@ -66,9 +73,21 @@ def merge(run_dir: Path, existing: list[dict], accepted: list[dict]) -> list[dic
     return [rows[cid] for cid in order if cid in rows]
 
 
+#: Where a run that ended short puts its rows. Never `screen.json`, which downstream stages read
+#: as a finished screen, and which only a run with no failed batch is allowed to write.
+PARTIAL_NAME = "screen.partial.json"
+
+
 def write_json(path: Path, payload: object) -> None:
+    """Whole or not at all — a reader never sees a half-written file, and never a promoted one."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, indent=1, ensure_ascii=False), encoding="utf-8")
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=1, ensure_ascii=False), encoding="utf-8")
+    tmp.replace(path)
+
+
+def read_scores(path: Path) -> list[dict]:
+    return json.loads(path.read_text(encoding="utf-8"))["scores"] if path.is_file() else []
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -105,11 +124,12 @@ def main(argv: list[str] | None = None) -> int:
     system = prompt.system_text(prompt.purpose_line(brief), brief, rubric)
 
     screen_path = run_dir / "screen.json"
-    existing = (
-        json.loads(screen_path.read_text(encoding="utf-8"))["scores"]
-        if screen_path.is_file()
-        else []
-    )
+    partial_path = run_dir / PARTIAL_NAME
+    # A previous run's rows count as already bought whichever file they landed in. Resume state
+    # and pipeline state are different things: only the second of these is `screen.json`.
+    carried = {row["cid"]: row for row in read_scores(screen_path)}
+    carried.update({row["cid"]: row for row in read_scores(partial_path)})
+    existing = list(carried.values())
     batches = read_batches(run_dir, args.batches)
     todo = batches if args.all else outstanding(batches, {row["cid"] for row in existing})
 
@@ -192,18 +212,27 @@ def main(argv: list[str] | None = None) -> int:
     write_json(out_dir / "summary.json", summary)
 
     merged = merge(run_dir, existing, accepted.scores)
-    write_json(screen_path, {"scores": merged})
+    target = partial_path if failed else screen_path
+    write_json(target, {"scores": merged})
+    if not failed:
+        # Promotion is the whole point: the partial file's rows are in `screen.json` now.
+        partial_path.unlink(missing_ok=True)
     log.info(
         "wrote %d score(s) to %s · %d call(s) in %.1fs · artefacts in %s",
         len(merged),
-        screen_path,
+        target,
         engine.usage.calls,
         wall,
         out_dir,
     )
     if failed:
         log.error("%d batch(es) failed on the record: %s", len(failed), ", ".join(failed))
-        log.error("screen.json is short of %d cid(s)", len(summary["unsatisfied_cids"]))
+        log.error(
+            "%s is short of %d cid(s) and screen.json was left as it was found — re-run to"
+            " finish the outstanding batches; nothing already bought is bought again",
+            PARTIAL_NAME,
+            len(summary["unsatisfied_cids"]),
+        )
         return 1
     return 0
 

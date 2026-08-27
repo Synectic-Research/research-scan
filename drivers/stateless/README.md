@@ -70,6 +70,32 @@ never a loop. When those are spent the batch fails **on the record**: the accept
 the unresolved cids are named in `summary.json` and in the provenance record, the process exits
 non-zero, and what it wrote is never presented as a complete `screen.json`.
 
+### Why a short run writes a different filename
+
+`screen.json` is the name the pipeline reads as a finished screen, so only a run that satisfied
+every batch writes it. A run that ends short writes `screen.partial.json` and leaves `screen.json`
+exactly as it found it (`cli.PARTIAL_NAME`, promoted by `cli.main` in one `Path.replace`).
+
+The reason is that the stages downstream do not all fail closed on a shortened screen, and it is
+worth being precise about which do:
+
+| stage | what it checks | a shortened `screen.json` |
+|---|---|---|
+| `research-scan expand` | that the file names sub-criteria `queries.json` defines (`src/research_scan/cli.py:432`) | passes, exit 0 — seeds the citation walk from fewer papers, and spends on it |
+| `research-scan coverage` | the same attribution check (`src/research_scan/cli.py:612`) | passes, exit 0 — understates every per-criterion count |
+| `research-scan shortlist` | exactly one score per candidate (`src/research_scan/shortlist.py:66`, enforced at `src/research_scan/cli.py:533`) | **exit 2, every missing cid named** |
+
+So the authority stage does fail closed and no incomplete screen can reach `evidence.json` through
+it. But `expand` runs *before* that gate, mutates the candidate pool and costs money, and neither
+it nor `coverage` reads an exit status or the engine's `completion_status` — the package is
+engine-blind by design and never looks inside `<run>/engine/`. Filename is the one signal that
+reaches them.
+
+The partial file is still read back as resume state on the next run, alongside `screen.json`, so
+nothing already bought is bought again; a run that finishes promotes the merged rows to
+`screen.json` and deletes the partial. Resume state and pipeline state are different things, and
+only the second of them is `screen.json`.
+
 ## Provenance
 
 Every run writes `<run>/engine/<UTC stamp>/provenance.json`:
@@ -114,11 +140,13 @@ ANTHROPIC_API_KEY=… uv run python -m stateless_driver --run ../../research/sca
 `--dry-run` writes the provenance record and the batch plan and spends nothing. Batches already
 covered by `screen.json` are not re-bought unless `--all` is passed. `--model`, `--effort`,
 `--max-tokens`, `--max-concurrency`, `--batches` and `--no-cache` are the knobs; every one of them
-lands in the provenance record. Exit 1 means at least one batch failed on the record — the
-unsatisfied cids are in `summary.json`, and `research-scan shortlist` will name them too.
+lands in the provenance record. Exit 1 means at least one batch failed on the record — the rows it
+did get are in `screen.partial.json`, the unsatisfied cids are in `summary.json`, and
+`research-scan shortlist` will name them too. Re-run the same command to finish the outstanding
+batches; the partial rows are picked up, not re-bought.
 
 ```bash
-uv run pytest -q      # 76 tests: the ported contract suite plus this driver's own
+uv run pytest -q      # 79 tests: the ported contract suite plus this driver's own
 ```
 
 ## Dependencies

@@ -46,10 +46,13 @@ from fastmcp.server.dependencies import get_http_request
 from fastmcp.server.middleware import Middleware, MiddlewareContext
 from pydantic import Field
 from starlette.applications import Starlette
+from starlette.requests import Request
+from starlette.responses import JSONResponse
 from starlette.routing import Mount
 
 from research_scan import __version__, config
 from research_scan import coverage as coverage_module
+from research_scan import deployment as deployment_module
 from research_scan import run as run_module
 from research_scan import shortlist as shortlist_module
 from research_scan.schema import (
@@ -1051,6 +1054,29 @@ class TokenAuth(Middleware):
 mcp.add_middleware(TokenAuth())
 
 
+# --- health ------------------------------------------------------------------
+
+
+@mcp.custom_route("/health", methods=["GET"])
+async def health(request: Request) -> JSONResponse:
+    """Liveness for anyone; deployment identity only for a caller that already holds the token.
+
+    Split on purpose. This server is reachable through a public tunnel, so an unauthenticated
+    body must not publish the exact commit it is running — that is free reconnaissance. But a
+    plain uptime monitor still needs a 200 without holding a credential, so liveness stays open
+    and the fingerprint sits behind the same gate as every MCP message.
+
+    The fingerprint is display and debug data. Nothing here is a security input: no branch of
+    this server's auth, validation or dispatch reads it, and none ever should.
+    """
+    payload: dict[str, object] = {"status": "ok"}
+    scope = request.scope
+    path = f"{scope.get('root_path') or ''}{scope.get('path') or ''}"
+    if authorize(path, request.headers.get("authorization"), config.load().mcp_token):
+        payload.update(deployment_module.current().as_dict())
+    return JSONResponse(payload)
+
+
 # --- serving -----------------------------------------------------------------
 
 
@@ -1134,6 +1160,10 @@ def main(host: str | None = None, port: int | None = None) -> None:
         else int(os.environ.get("RESEARCH_SCAN_MCP_PORT", str(DEFAULT_PORT)))
     )
     settings.mcp_data_dir.mkdir(parents=True, exist_ok=True)
+
+    # What code is in this process, decided now and frozen. Written before the address block so
+    # that the first line of every server log answers "which build is this?".
+    sys.stderr.write(f"{deployment_module.banner()}\n")
 
     # The token is never printed: the operator has it, and a log line is not the place for it.
     if settings.mcp_token:

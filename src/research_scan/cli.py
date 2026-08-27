@@ -36,6 +36,7 @@ from research_scan import (
     shortlist,
 )
 from research_scan import coverage as coverage_module
+from research_scan import deployment as deployment_module
 from research_scan import render as render_module
 from research_scan import retrieve as retrieve_module
 from research_scan import verify as verify_module
@@ -1073,6 +1074,10 @@ def mcp_(
         level=os.environ.get("RESEARCH_SCAN_MCP_LOG", "INFO").upper(),
         format="%(asctime)s %(levelname)s %(name)s %(message)s",
     )
+    # Same line the HTTP transport writes, for the same reason: a stdio server is launched by an
+    # agent runner and lives as long as the session, so its log has to say which build it is.
+    # stderr only — stdout is the protocol.
+    sys.stderr.write(f"{deployment_module.banner()}\n")
     mcp_server.mcp.run(transport="stdio", show_banner=False)
 
 

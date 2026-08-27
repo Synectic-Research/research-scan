@@ -1,10 +1,12 @@
 """The screening driver's CID contract, reconciled instead of all-or-nothing.
 
-Ported unchanged from `23d7c36:research/experiments/phase12-selection/contract.py`, the module
-Phase-1.2A measured and Phase-1.2C and Phase-1.4 then ran on every chunk. Its tests came with it
-(`tests/test_contract.py`), against the same recorded fixtures. Edits belong here now; the
-evidence tree stays frozen. One mechanical deviation from that file, so this tree can sit inside
-the repo's own lint gate: `Callable` and `Iterable` are imported from `collections.abc`.
+Ported unchanged from
+`23d7c360590e4d44db986812c390d9026ede9a13:research/experiments/phase12-selection/contract.py`,
+the module Phase-1.2A measured and Phase-1.2C and Phase-1.4 then ran on every chunk. Its tests
+came with it (`tests/test_contract.py`), against the same recorded fixtures. Edits belong here
+now; the evidence tree stays frozen. One mechanical deviation from that file, so this tree can
+sit inside the repo's own lint gate: `Callable` and `Iterable` are imported from
+`collections.abc`.
 
 Phase-1.2A — the screening driver's CID contract, reconciled instead of all-or-nothing.
 

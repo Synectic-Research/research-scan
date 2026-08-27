@@ -4,8 +4,9 @@ The stable half — purpose line, brief, rubric, output contract — is byte-ide
 call in a run and goes in `system` behind one cache breakpoint. The batch is the only thing that
 varies, which is what makes the calls stateless: no conversation, no run state, no tools.
 
-Ported from the Phase-1.1/1.2 arm-C driver (`552f09c:research/experiments/phase1-stateless/
-screen_arms.py`, `.../lib/common.py`). The templates are module constants so `provenance.py` can
+Ported from the Phase-1.1/1.2 arm-C driver
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase1-stateless/screen_arms.py`,
+`.../lib/common.py`). The templates are module constants so `provenance.py` can
 hash exactly what was sent — a prompt that changes without its hash changing is a measurement
 that cannot be reproduced.
 """

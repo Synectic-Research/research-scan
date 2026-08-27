@@ -867,12 +867,12 @@ and the harness is a different one (a claude.ai client over Streamable HTTP, not
 Nothing in this section is a statement about the engine's recall or precision.
 
 Both runs drove the frozen pipeline from a plain claude.ai conversation through the MCP adapter
-over Streamable HTTP at `e673060` (tagged `v0.4.0` — the tag ran ahead of the package version,
-which the changelog records), with the skill's own rubrics driving every
-judgement rather than the model improvising them. Server started 2026-08-20 12:10:13, twelve
-seconds after
-that commit; the working tree was clean and both scans opened later. Artifacts under
-`research/scans/*-mcp-transport/`.
+over Streamable HTTP at `e6730602e326a86cf8e25713168404367513859f` (tagged `v0.4.0` — the tag ran
+ahead of the package version, which the changelog records). That commit and that tag belong to the
+pre-publication private history and are not reachable in this repository; the CHANGELOG's v0.5.0
+note records why. The skill's own rubrics drove every judgement rather than the model improvising
+them. Server started 2026-08-20 12:10:13, twelve seconds after that commit; the working tree was
+clean and both scans opened later. Artifacts under `research/scans/*-mcp-transport/`.
 [deployment details removed for publication — measurements unchanged]
 
 | | scan 1 | scan 2 |
@@ -956,8 +956,8 @@ figures are arithmetic over those parts and have never been run end to end as a 
 Replay of `research/scans/2026-08-26-claim-grounding-sonnet` (a $6.45, 28-minute, 60-turn Sonnet-5
 run) through stateless calls. Same model, same effort, same batches, same rubric; the saved run
 directory was read and never written
-(`552f09c:research/experiments/phase1-stateless/report.md`,
-`552f09c:research/experiments/phase1-stateless/measurements.json`).
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase1-stateless/report.md`,
+`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase1-stateless/measurements.json`).
 
 | | baseline (conversational) | arm B — stateless, sequential, thinking on | arm C — stateless, parallel, thinking off |
 |---|---|---|---|
@@ -972,7 +972,8 @@ directory was read and never written
 **The same arc failed its own pre-registered gate, and that is not a footnote.** Arm C's cost was
 25.2% of the baseline screening share against a ≤ 20% target, binary agreement 83.0% against
 ≥ 95%, exact agreement 60.3% against ≥ 80% — three FAILs
-(`552f09c:research/experiments/phase1-stateless/report.md` §4). Concurrency, not statelessness, is
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase1-stateless/report.md` §4).
+Concurrency, not statelessness, is
 the speed lever: arm B is stateless too and takes essentially the baseline's wall time. Thinking is
 the entire cost difference and buys about seven points of binary agreement.
 
@@ -990,8 +991,9 @@ judge pass beside a recall FAIL is a reason to keep measuring, never a reason to
 ### MEASURED — where the golden topics actually lose papers
 
 Two live end-to-end golden scans through the stateless driver, nothing changed to fix anything
-(`552f09c:research/experiments/phase11-golden/report.md`,
-`552f09c:research/experiments/phase11-golden/measurements.json`). Of the 13 golden papers the two
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase11-golden/report.md`,
+`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase11-golden/measurements.json`).
+Of the 13 golden papers the two
 runs failed to emit: **1 was lost at screening, 4 were never retrieved, and 8 were lost downstream**
 — at the shortlist cap, the rerank cut, or the reranker's own ordering. Put the other way round:
 of the **12 golden papers the two runs retrieved, 11 were retained** by screening at ≥ 2. Screening
@@ -1002,7 +1004,7 @@ is not the loss stage. That is the finding that redirected the rest of the progr
 An offline sweep of three orderings × five caps over six frozen inputs — both golden topics, both
 eras, and the two V1-acceptance control runs swept twice (as recorded, and with the `p-standard`
 attribution overlay), 90 recomputations, zero model calls
-(`552f09c:research/experiments/phase12-selection/results/report_head.md`,
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase12-selection/results/report_head.md`,
 `…/results/report_tail.md`, `…/results/sweep.json`). The sweep's control arm reproduces each run's
 recorded `shortlist.json` cid-for-cid, so it recomputes the shipped code rather than resembling it.
 
@@ -1028,7 +1030,7 @@ stratified per-criterion reserve (T2) was swept alongside it and is a pure no-op
 at every cap, so the simpler policy shipped. v0.6.0 adds `cid ASC` as a terminal tier to make the
 order total; on the same six inputs that moves 4 rows, every one inside a fully tied band, with
 shortlist membership at the shipped caps unchanged
-(`1fd1465:research/experiments/phase12-selection/results/src-t1-replay.json`).
+(`1fd1465f413c21104d7af3710ed219ce595ca49a:research/experiments/phase12-selection/results/src-t1-replay.json`).
 
 **This measurement makes no recall claim.** Every paper beyond the original cap of 40 was never
 reranked, so no simulated recall@10 was computed for any configuration, and none is reported.
@@ -1041,13 +1043,14 @@ recall and the stability bar on both topics — `winner_restores_stability_and_w
 false` — and on the frontier the architecture actually runs, `defaults-savings/R40`, **all 18 misses
 are SCORE-LOSS**: the golden's `overall` is strictly below the boundary row's, so no ladder
 beginning with `overall DESC` can reach it, by construction. Deterministic selection was exhausted
-there (`23d7c36:research/experiments/phase12-selection/phase12c/results/tables.md` §5,
+there (`23d7c360590e4d44db986812c390d9026ede9a13:research/experiments/phase12-selection/phase12c/results/tables.md` §5,
 `…/results/ruling.json`).
 
 Phase-1.4 then ran the judgement itself: a 2×2 factorial (rubric discrimination × content
 correction) against a **fresh** five-replicate control, both topics, 39 live runs
-(`232effc:research/experiments/phase14/results/tables.md`,
-`232effc:research/experiments/phase14/results/ruling.json`). No cell cleared the pre-registered
+(`232effc2bb540526d046449e0700e039e0d2c12a:research/experiments/phase14/results/tables.md`,
+`232effc2bb540526d046449e0700e039e0d2c12a:research/experiments/phase14/results/ruling.json`).
+No cell cleared the pre-registered
 bar on both topics — the strongest cell gained +2.2 mean recall@10 on `defaults-savings` and lost
 0.4 on `llm-lit-search`. `adopted_factors: []`. **Outcome C — freeze the current reranker.** Its
 own README states the consequence: failure does not authorise another tuning slice. The one
@@ -1071,7 +1074,8 @@ And end-to-end non-inferiority for the stateless path is undemonstrated — not 
 
 These are arithmetic: the measured screening and rerank arms plus the baseline's own cost and wall
 time for every stage neither arm touched
-(`552f09c:research/experiments/phase1-stateless/measurements.json`, `extrapolation`). **No scan has
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase1-stateless/measurements.json`,
+`extrapolation`). **No scan has
 been run end to end this way as a default path**, no golden non-inferiority has been demonstrated
 for it, and nothing in the shipped pipeline calls a model. Quote the screening numbers; do not
 quote the full-scan numbers as a result.

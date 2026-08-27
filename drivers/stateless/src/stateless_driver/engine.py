@@ -3,7 +3,7 @@
 Arm C of the Phase-1 stateless replay, as a reference implementation. What was measured stays
 measured: one batch per call, thinking off, the stable prefix cached once and read by every later
 call, and the reconciling CID contract deciding what a response was worth
-(`552f09c:research/experiments/phase1-stateless/measurements.json`).
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase1-stateless/measurements.json`).
 
 The pool is threads rather than `asyncio`: the work is entirely I/O-bound, and the ported
 `contract.screen_batch` — the piece with the retry rule in it — stays the synchronous function

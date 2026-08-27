@@ -133,7 +133,8 @@ excluded from the sdist and was never in the wheel.
 
 Screening on the Phase-1.1 topic-2 run, stateless-parallel against the recorded conversational
 baseline: **979 s → 73 s** and **$3.003 → $0.757**, all 572 candidates scored, schema-valid
-(`552f09c:research/experiments/phase1-stateless/measurements.json`). Full-scan figures are
+(`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase1-stateless/measurements.json`).
+Full-scan figures are
 projections from those parts, not a demonstrated end-to-end path.
 
 What is not measured is the part that decides whether this can ever be a default: end-to-end

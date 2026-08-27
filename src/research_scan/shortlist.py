@@ -178,9 +178,10 @@ def order_key(scored: ScoredCandidate, supported: int = 0) -> tuple:
     cid ASC (§8.7, Phase-1.2A). Date sat third until v0.6.0, where — inside the large equal-score,
     equal-origin bands a real pool actually produces — it was the only discriminator left, so the
     cut ran as a recency filter and dropped central papers for being older than their band
-    (`552f09c:research/experiments/phase12-selection/results/report_tail.md` §4). The two tiers
-    ahead of it are relevance evidence the screen and the retrieval already produced; `cid` last
-    makes the order total, so a shortlist does not depend on `candidates.json` order.
+    (`552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase12-selection/results/
+    report_tail.md` §4). The two tiers ahead of it are relevance evidence the screen and the
+    retrieval already produced; `cid` last makes the order total, so a shortlist does not depend
+    on `candidates.json` order.
 
     Every tier resolves to a plain, totally ordered value here, and the result is a plain tuple
     that `sorted` computes once per row. Nothing fallible runs between two rows: there is no

@@ -19,8 +19,8 @@ for and the rows a call returned. The judgements are never touched — every rul
 the wire shape.
 
     unknown cid (incl. repeated)      discard the row, log it, do not retry
-    expected cid twice, same score    keep one, log it
-    expected cid twice, scores differ batch invalid -> retry (bounded)
+    expected cid twice, same judgement  keep one, log it
+    expected cid twice, judgements differ  that cid is unsatisfied -> retry it (bounded)
     expected cid missing              retry the missing records (sub-batch when supported)
     row fails the field contract      that cid is unsatisfied -> retry it, log why
     retries exhausted                 fail the batch with a recorded reason, keep what is valid
@@ -35,9 +35,17 @@ all-or-nothing check (`got != want -> raise`) and re-issues the whole 13-row chu
 call returned `extra=['5716814f6adf_placeholder']` while *dropping four real cids*, so the retry
 re-paid for nine correct RankedEntries to recover four. Reconciliation is stage-agnostic — only
 the array key and the per-row field contract differ — so `rows_key` and `validate_row` are
-parameters with the screening shape as their default. Every existing call site and every
-assertion in `test_contract.py` is unchanged; `phase12c/rerank_contract.py` supplies the
+parameters with the screening shape as their default. `phase12c/rerank_contract.py` supplies the
 rerank shape.
+
+**v0.6.0.** Two rules were widened here, and only here — the evidence tree keeps the module as
+Phase-1.2A measured it. First, duplicates are collapsed only when they agree on every accepted
+judgement field (`JUDGMENT_FIELDS`), not on the score alone: two rows can carry the same score and
+disagree about which criteria the paper satisfied, and `criteria_hit` reaches `screen.json`.
+Second, a disagreement now costs its own cid rather than the response: invalidating all 25 rows to
+re-ask about 1 is the same waste this module was written to remove, one level up. The two ported
+assertions that encoded the old whole-batch rule were rewritten to the new one, not relaxed —
+they now pin the kept rows and the minimal sub-batch as well.
 """
 
 from __future__ import annotations
@@ -54,7 +62,7 @@ MAX_RETRIES = 2
 
 #: What a reconciliation tells the driver to do next.
 COMPLETE = "complete"        # every expected cid satisfied
-INVALID = "invalid"          # conflicting duplicates: this response cannot be trusted at all
+INVALID = "invalid"          # the response has no rows array at all: nothing in it can be read
 INCOMPLETE = "incomplete"    # some expected cids unsatisfied; the satisfied ones are good
 
 
@@ -114,6 +122,30 @@ def _validate_row(row: dict, known_criteria: set[str]) -> tuple[dict | None, str
 SCORES_KEY = "scores"
 SCORE_FIELD = "score"
 
+#: The accepted judgement fields, besides the score, that two copies of a cid have to agree on
+#: before they can be collapsed into one. Phase-1.2A compared the score alone, which was too
+#: narrow: two rows can carry the same score and disagree about *which* criteria the paper
+#: satisfied, and `criteria_hit` is an accepted field that reaches `screen.json` and the
+#: shortlist's second tier. Collapsing those picked one attribution over another silently.
+JUDGMENT_FIELDS = ("criteria_hit",)
+
+
+def _judgment(row: dict, score_field: str, judgment_fields: Iterable[str]) -> tuple:
+    """One row's judgement, normalised so that only real disagreement counts as disagreement.
+
+    Lists are compared as sets: `["C1", "C2"]` and `["C2", "C1", "C2"]` are the same attribution
+    written two ways, and re-asking the model about that would spend a call on nothing. Everything
+    is stringified so a malformed value compares rather than raising.
+    """
+    parts: list[Any] = [("score", repr(row.get(score_field)))]
+    for name in judgment_fields:
+        value = row.get(name)
+        if isinstance(value, list):
+            parts.append((name, "list", *sorted({repr(item) for item in value})))
+        else:
+            parts.append((name, "scalar", repr(value)))
+    return tuple(parts)
+
 
 def reconcile(
     batch: dict,
@@ -121,14 +153,15 @@ def reconcile(
     *,
     rows_key: str = SCORES_KEY,
     score_field: str = SCORE_FIELD,
+    judgment_fields: tuple[str, ...] = JUDGMENT_FIELDS,
     validate_row: Callable[[dict, set[str]], tuple[dict | None, str]] | None = None,
 ) -> Reconciliation:
     """Partition a batch response against `batch['items']`. Never raises on model output.
 
-    `rows_key` / `score_field` / `validate_row` select the stage's wire shape. The reconciliation
-    rules — unknown cids discarded without a retry, identical duplicates collapsed, conflicting
-    duplicates invalidating the response, a bad row costing its own cid — are the same at every
-    stage.
+    `rows_key` / `score_field` / `judgment_fields` / `validate_row` select the stage's wire shape.
+    The reconciliation rules — unknown cids discarded without a retry, duplicates collapsed only
+    when they agree on every accepted judgement field, a disagreement or a bad row costing its own
+    cid rather than the batch — are the same at every stage.
     """
     validate_row = validate_row or _validate_row
     want = [item["cid"] for item in batch["items"]]
@@ -155,31 +188,31 @@ def reconcile(
             continue
         by_cid.setdefault(cid, []).append(row)
 
-    # 2. Duplicates of an expected cid. Same score -> keep one. Different scores -> the response
-    #    is self-contradictory about a judgement, which is the one case worth another call.
+    # 2. Duplicates of an expected cid. Same judgement -> keep one. A disagreement in any accepted
+    #    field -> that cid is unresolved and is re-asked; the rest of the response still stands.
+    #    The contradiction is about one paper, so it costs one paper: making it invalidate the
+    #    response re-bought 24 correct judgements to recover 1, which is the waste this module
+    #    exists to remove.
     conflicting: list[str] = []
     chosen: dict[str, dict] = {}
     for cid, group in by_cid.items():
         if len(group) > 1:
-            scores = {row.get(score_field) for row in group}
-            if len(scores) > 1:
+            judgments = {_judgment(row, score_field, judgment_fields) for row in group}
+            if len(judgments) > 1:
                 conflicting.append(cid)
-                rec.note("duplicate_conflicting", cid=cid, scores=sorted(map(str, scores)))
+                rec.note("duplicate_conflicting", cid=cid,
+                         scores=sorted({str(row.get(score_field)) for row in group}),
+                         fields=sorted(_disagreeing_fields(group, score_field, judgment_fields)))
                 continue
             rec.note("duplicate_identical_collapsed", cid=cid, copies=len(group),
                      score=group[0].get(score_field))
         chosen[cid] = group[0]
 
-    if conflicting:
-        rec.verdict = INVALID
-        rec.missing = list(want)
-        rec.reason = f"conflicting duplicate scores for {sorted(conflicting)}"
-        return rec
-
     # 3. Field contract, per row. A bad row costs its own cid, not the batch.
+    unresolved = set(conflicting)
     for cid in want:
         row = chosen.get(cid)
-        if row is None:
+        if cid in unresolved or row is None:
             rec.missing.append(cid)
             continue
         clean, why = validate_row(row, known)
@@ -191,7 +224,21 @@ def reconcile(
 
     rec.verdict = COMPLETE if not rec.missing else INCOMPLETE
     rec.reason = "" if not rec.missing else f"{len(rec.missing)} cid(s) unsatisfied"
+    if conflicting:
+        rec.reason += f"; conflicting duplicate judgements for {sorted(conflicting)}"
     return rec
+
+
+def _disagreeing_fields(
+    group: list[dict], score_field: str, judgment_fields: Iterable[str]
+) -> set[str]:
+    """Which accepted fields the copies of one cid actually disagreed about — for the log."""
+    names = [score_field, *judgment_fields]
+    return {
+        name
+        for index, name in enumerate(names)
+        if len({_judgment(row, score_field, judgment_fields)[index] for row in group}) > 1
+    }
 
 
 def sub_batch(batch: dict, cids: Iterable[str]) -> dict:
@@ -208,6 +255,7 @@ def screen_batch(
     supports_sub_batch: bool = True,
     rows_key: str = SCORES_KEY,
     score_field: str = SCORE_FIELD,
+    judgment_fields: tuple[str, ...] = JUDGMENT_FIELDS,
     validate_row: Callable[[dict, set[str]], tuple[dict | None, str]] | None = None,
 ) -> BatchOutcome:
     """Call, reconcile, retry what is owed — at most `max_retries` times, then fail on the record.
@@ -234,7 +282,7 @@ def screen_batch(
             continue
 
         rec = reconcile(ask, payload, rows_key=rows_key, score_field=score_field,
-                        validate_row=validate_row)
+                        judgment_fields=judgment_fields, validate_row=validate_row)
         for entry in rec.provenance:
             outcome.provenance.append({"attempt": outcome.attempts, **entry})
 
@@ -257,7 +305,7 @@ def screen_batch(
             outcome.reason = ""
             break
 
-        outcome.reason = f"{len(owed)} cid(s) unsatisfied"
+        outcome.reason = rec.reason
         if attempt < max_retries:
             ask = sub_batch(batch, owed) if supports_sub_batch else batch
             outcome.provenance.append(

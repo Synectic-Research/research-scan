@@ -89,3 +89,100 @@ def test_a_brief_without_a_purpose_line_is_refused_before_any_call(tmp_path):
 
     with pytest.raises(ValueError, match="Purpose:"):
         cli.main(["--run", str(run), "--rubric", str(rubric), "--dry-run"])
+
+
+# --- the terminal path: what a run that cannot finish leaves behind ----------
+
+
+def install_fake_anthropic(monkeypatch, responder):
+    """`cli.main` imports `anthropic` at the point of first spend; hand it a fake there."""
+    import sys
+    import types
+
+    from conftest import FakeClient
+
+    module = types.ModuleType("anthropic")
+    module.Anthropic = lambda **kwargs: FakeClient(responder)
+    monkeypatch.setitem(sys.modules, "anthropic", module)
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test-not-a-real-key")
+
+
+def rubric_file(tmp_path):
+    path = tmp_path / "screen-rubric.md"
+    path.write_text("# rubric\nscore 0-3\n")
+    return path
+
+
+def engine_dir(run):
+    return next((run / "engine").iterdir())
+
+
+def test_exhaustion_exits_non_zero_and_never_presents_a_complete_screen(tmp_path, monkeypatch):
+    """A batch that cannot be satisfied leaves a named shortfall, not a quietly complete file."""
+    run = make_run(tmp_path, batches={"01": ["aaaaaaaaaaaa", "bbbbbbbbbbbb"]})
+    # Every attempt answers for one cid only; the other is never satisfied.
+    install_fake_anthropic(monkeypatch, lambda request, n: {"scores": [row("aaaaaaaaaaaa")]})
+
+    code = cli.main(["--run", str(run), "--rubric", str(rubric_file(tmp_path))])
+
+    assert code == 1, "a short run must not exit 0"
+    summary = json.loads((engine_dir(run) / "summary.json").read_text())
+    assert summary["unsatisfied_cids"] == ["bbbbbbbbbbbb"]
+    assert summary["batches_failed"] == ["01"]
+
+    record = json.loads((engine_dir(run) / "provenance.json").read_text())
+    assert record["completion_status"] == "incomplete"
+    assert record["unresolved_cids"] == ["bbbbbbbbbbbb"]
+    assert record["attempt_count"] == 3, "one call plus two retries, then it stops"
+    assert record["retry_summary"]["batches_failed"] == ["01"]
+    assert record["input_record_count"] == 2
+    assert record["accepted_record_count"] == 1
+
+    written = json.loads((run / "screen.json").read_text())["scores"]
+    assert [entry["cid"] for entry in written] == ["aaaaaaaaaaaa"], "the shortfall is visible"
+
+
+def test_a_complete_run_records_itself_complete_and_exits_zero(tmp_path, monkeypatch):
+    run = make_run(tmp_path, batches={"01": ["aaaaaaaaaaaa", "bbbbbbbbbbbb"]})
+    install_fake_anthropic(
+        monkeypatch,
+        lambda request, n: {"scores": [row("aaaaaaaaaaaa"), row("bbbbbbbbbbbb")]},
+    )
+
+    code = cli.main(["--run", str(run), "--rubric", str(rubric_file(tmp_path))])
+
+    assert code == 0
+    record = json.loads((engine_dir(run) / "provenance.json").read_text())
+    assert record["completion_status"] == "complete"
+    assert record["unresolved_cids"] == []
+    assert record["attempt_count"] == 1
+    assert record["batch_size"] == 2
+    assert record["completed_at"] is not None
+    assert record["usage"]["calls"] == 1
+
+
+def test_only_rows_the_acceptance_chain_returned_can_reach_screen_json(tmp_path, monkeypatch):
+    """`accept.attach` decides the artifact; nothing writes a row that did not come through it."""
+    run = make_run(tmp_path, batches={"01": ["aaaaaaaaaaaa", "bbbbbbbbbbbb"]})
+    install_fake_anthropic(
+        monkeypatch,
+        lambda request, n: {
+            "scores": [
+                row("aaaaaaaaaaaa"),
+                # A cid the run never retrieved, and a row that fails the field contract.
+                row("dddddddddddd"),
+                dict(row("bbbbbbbbbbbb"), score=9),
+            ]
+        },
+    )
+
+    code = cli.main(["--run", str(run), "--rubric", str(rubric_file(tmp_path))])
+
+    assert code == 1
+    accepted = json.loads((engine_dir(run) / "accepted.json").read_text())
+    written = json.loads((run / "screen.json").read_text())["scores"]
+
+    assert [entry["cid"] for entry in accepted["scores"]] == ["aaaaaaaaaaaa"]
+    assert [entry["cid"] for entry in written] == ["aaaaaaaaaaaa"]
+    assert written == accepted["scores"], "screen.json carries the accepted rows and nothing else"
+    assert "dddddddddddd" not in json.dumps(written), "an invented cid never reaches the pipeline"

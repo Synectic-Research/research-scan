@@ -113,6 +113,7 @@ def main(argv: list[str] | None = None) -> int:
     batches = read_batches(run_dir, args.batches)
     todo = batches if args.all else outstanding(batches, {row["cid"] for row in existing})
 
+    stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
     record = provenance.build(
         model_id=args.model,
         rubric=rubric,
@@ -122,8 +123,10 @@ def main(argv: list[str] | None = None) -> int:
         sampling=provenance.Sampling(max_tokens=args.max_tokens),
         max_concurrency=args.max_concurrency,
         prompt_cache=not args.no_cache,
+        run_id=f"{run_dir.name}/{stamp}",
+        batch_size=max((len(batch["items"]) for batch in todo.values()), default=None),
     )
-    out_dir = run_dir / "engine" / time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+    out_dir = run_dir / "engine" / stamp
     write_json(out_dir / "provenance.json", record.as_dict())
     log.info(
         "%d batch(es) outstanding of %d · model %s · effort %s · thinking %s · concurrency %d",
@@ -162,7 +165,13 @@ def main(argv: list[str] | None = None) -> int:
     outcomes = engine_module.screen(engine, todo, max_concurrency=args.max_concurrency)
     wall = time.monotonic() - started
 
-    record.model_resolved = sorted(engine.models_seen)
+    provenance.finalize(
+        record,
+        outcomes,
+        usage=engine.usage.as_dict(),
+        input_record_count=sum(len(batch["items"]) for batch in todo.values()),
+        model_revision_or_hash=sorted(engine.models_seen),
+    )
     accepted = accept.attach(record.as_dict(), outcomes)
     write_json(out_dir / "provenance.json", record.as_dict())
     write_json(out_dir / "accepted.json", accepted.as_dict())

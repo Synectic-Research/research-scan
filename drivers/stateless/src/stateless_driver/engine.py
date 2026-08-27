@@ -1,8 +1,8 @@
 """The call path: one batch per call, no conversation, a bounded worker pool.
 
-Arm C of the Phase-1 stateless replay, productionised. What was measured stays measured: one
-batch per call, thinking off, the stable prefix cached once and read by every later call, and
-the reconciling CID contract deciding what a response was worth
+Arm C of the Phase-1 stateless replay, as a reference implementation. What was measured stays
+measured: one batch per call, thinking off, the stable prefix cached once and read by every later
+call, and the reconciling CID contract deciding what a response was worth
 (`552f09c:research/experiments/phase1-stateless/measurements.json`).
 
 The pool is threads rather than `asyncio`: the work is entirely I/O-bound, and the ported

@@ -110,13 +110,20 @@ def test_duplicate_expected_cid_identical_score_keeps_one():
     assert collapsed[0]["cid"] == "2ad9d99f0b79" and collapsed[0]["copies"] == 2
 
 
-def test_duplicate_expected_cid_conflicting_score_invalidates_the_batch():
+def test_duplicate_expected_cid_conflicting_score_costs_that_cid_and_no_other():
+    """v0.6.0 widening: the contradiction is about one paper, so it costs one paper.
+
+    Phase-1.2A invalidated the whole response here, which re-bought 24 correct judgements to
+    recover 1 — the same waste the module was written to remove, one level up.
+    """
     row = next(r for r in SALVAGE["scores"][:25] if r["cid"] == "2ad9d99f0b79")
     payload = {"scores": SALVAGE["scores"][:25] + [dict(row, score=0, criteria_hit=[])]}
     rec = contract.reconcile(BATCH, payload)
-    assert rec.verdict == contract.INVALID
-    assert rec.scores == []
+    assert rec.verdict == contract.INCOMPLETE
+    assert rec.missing == ["2ad9d99f0b79"]
+    assert [r["cid"] for r in rec.scores] == [c for c in WANT if c != "2ad9d99f0b79"]
     assert events(rec, "duplicate_conflicting")[0]["cid"] == "2ad9d99f0b79"
+    assert events(rec, "duplicate_conflicting")[0]["fields"] == ["criteria_hit", "score"]
 
 
 def test_conflicting_duplicate_retries_then_lands():
@@ -134,8 +141,11 @@ def test_conflicting_duplicate_forever_fails_after_two_retries():
     out = contract.screen_batch(BATCH, lambda b: (calls.append(b), bad)[1])
     assert len(calls) == 3, "one call plus at most two retries — never a loop"
     assert out.ok is False and out.attempts == 3
-    assert "conflicting duplicate scores" in out.reason
-    assert out.missing == WANT
+    assert "conflicting duplicate judgements for ['2ad9d99f0b79']" in out.reason
+    assert out.missing == ["2ad9d99f0b79"], "only the contradicted cid stays owed"
+    assert len(out.scores) == 24, "the judgements the response got right are kept"
+    assert [item["cid"] for item in calls[1]["items"]] == ["2ad9d99f0b79"], "minimal sub-batch"
+    assert [item["cid"] for item in calls[2]["items"]] == ["2ad9d99f0b79"]
 
 
 def test_missing_cids_are_retried_as_a_sub_batch():
@@ -215,3 +225,74 @@ def test_call_exception_counts_as_an_attempt_and_cannot_loop():
     out = contract.screen_batch(BATCH, call)
     assert len(calls) == 3 and out.ok is False
     assert "connection reset" in out.reason
+
+
+# --- v0.6.0: the widened duplicate rule -------------------------------------
+
+
+def test_duplicates_agreeing_on_every_accepted_field_collapse():
+    """Identical across score *and* criteria_hit: one judgement written twice, not a conflict."""
+    row = next(r for r in SALVAGE["scores"][:25] if r["cid"] == "2ad9d99f0b79")
+    payload = {"scores": SALVAGE["scores"][:25] + [dict(row)]}
+
+    rec = contract.reconcile(BATCH, payload)
+
+    assert rec.verdict == contract.COMPLETE
+    assert [r["cid"] for r in rec.scores] == WANT
+    assert events(rec, "duplicate_identical_collapsed")[0]["copies"] == 2
+
+
+def test_duplicates_agreeing_on_score_but_not_criteria_hit_are_a_conflict():
+    """The Phase-1.2A discriminator missed this: same score, different attribution."""
+    row = next(
+        r for r in SALVAGE["scores"][:25] if r["cid"] == "2ad9d99f0b79" and r["score"] >= 2
+    )
+    other = [c for c in {h for s in SALVAGE["scores"][:25] for h in s["criteria_hit"]}
+             if c not in row["criteria_hit"]]
+    payload = {"scores": SALVAGE["scores"][:25] + [dict(row, criteria_hit=other[:1])]}
+
+    rec = contract.reconcile(BATCH, payload)
+
+    assert rec.verdict == contract.INCOMPLETE
+    assert rec.missing == ["2ad9d99f0b79"]
+    assert events(rec, "duplicate_conflicting")[0]["fields"] == ["criteria_hit"]
+
+
+def test_criteria_hit_order_and_repetition_are_not_a_disagreement():
+    """`["C1","C2"]` and `["C2","C1","C1"]` are one attribution; re-asking would buy nothing."""
+    # No recorded row names two criteria, so the two-criterion case is built from one that does
+    # name one — the rule under test is the comparison, not the fixture.
+    scored = next(r for r in SALVAGE["scores"][:25] if r["score"] >= 2)
+    rows = [r for r in SALVAGE["scores"][:25] if r["cid"] != scored["cid"]]
+    rows.append(dict(scored, criteria_hit=["C1", "C2"]))
+    payload = {"scores": rows + [dict(scored, criteria_hit=["C2", "C1", "C1"])]}
+
+    rec = contract.reconcile(BATCH, payload)
+
+    assert rec.verdict == contract.COMPLETE
+    assert events(rec, "duplicate_conflicting") == []
+
+
+def test_a_valid_row_plus_a_malformed_duplicate_invalidates_only_that_cid():
+    """The pair disagrees, so the cid is owed — and every other cid is untouched."""
+    row = next(r for r in SALVAGE["scores"][:25] if r["cid"] == "2ad9d99f0b79")
+    payload = {"scores": SALVAGE["scores"][:25] + [dict(row, score="three", criteria_hit=None)]}
+
+    rec = contract.reconcile(BATCH, payload)
+
+    assert rec.verdict == contract.INCOMPLETE
+    assert rec.missing == ["2ad9d99f0b79"]
+    assert len(rec.scores) == 24
+
+
+def test_an_unreadable_cid_is_logged_unassignable_and_leaves_its_batch_owed():
+    """A row whose cid cannot be read is discarded; nothing it might have been is satisfied."""
+    payload = {"scores": SALVAGE["scores"][:24] + [{"cid": None, "score": 3, "reason": "x"}]}
+
+    rec = contract.reconcile(BATCH, payload)
+
+    discarded = events(rec, "unknown_cid_discarded")
+    assert discarded[0]["cid"] is None and discarded[0]["well_formed"] is False
+    assert rec.verdict == contract.INCOMPLETE
+    assert rec.missing == [WANT[24]], "the expected cid it did not answer for is still owed"
+    assert len(rec.scores) == 24, "the unrelated rows survive"

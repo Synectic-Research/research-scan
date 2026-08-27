@@ -1,0 +1,9 @@
+# Actions are pinned to commit SHAs in ci.yml and release.yml, which is what makes a
+# supply-chain compromise of a tag a non-event here. The cost is that a pin never moves on
+# its own — so Dependabot opens the PR that moves it, keeping the version comment in step.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

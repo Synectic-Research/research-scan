@@ -96,7 +96,9 @@ One, recorded rather than repaired.
 exit-2 class — `1 overall==3 row(s) carry no rank … ranks not unique: [4]`, then `ranks not unique:
 [3]` (`logs/p11-t2-S-rep4.log`). The violation is raised after reconciliation has accepted the
 chunk, by design, so reconcile-and-re-ask cannot recover it and the replicate has no emitted set.
-That cell is analysed at n=4; every other cell is n=5.
+That cell is analysed at n=4; every other cell is n=5. The re-ask path did fire: each attempt
+logged `c1, c2, c3, c3/a2`, so chunk 3 was re-asked, reconciliation accepted the second response,
+and `check_batch` rejected it anyway — four generations of the same chunk, none conforming.
 
 The absence is not at random — the cell that failed to produce it is the cell whose contract
 failed — so it is treated as evidence both ways. It is the only contract failure in all 40 attempted

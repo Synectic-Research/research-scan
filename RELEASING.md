@@ -98,6 +98,108 @@ claude plugin details research-scan@synectic     # skill present, MCP server lis
 Then, in a session, `/mcp` should show `research-scan` connected with `scan_start`,
 `scan_continue`, `scan_verify` and `scan_result`.
 
+## Refresh the private server, then verify the fingerprint
+
+**Required. A release is not complete until the resident process is refreshed and
+fingerprint-verified.** Publishing moves PyPI, the registry and the tag; it does not touch a
+server that is already running. A source install serves the modules it imported at boot, so the
+checkout can advance to the new release while the process keeps answering with the old one — that
+is not hypothetical, it ran for six days undetected before the fingerprint existed.
+
+**1. Restart**, per `ops.md` in the private stack-context staging tree:
+
+```bash
+launchctl kickstart -k gui/$(id -u)/org.synectic.research-scan-mcp
+```
+
+Note the wall-clock time of the restart; `started_at` is checked against it below.
+
+**2. Read the fingerprint back.** Liveness is public, but the tuple needs the token — so the
+health call is authenticated. The token goes into a variable and is never echoed:
+
+```bash
+TOKEN="$(grep '^RESEARCH_SCAN_MCP_TOKEN=' ~/.config/research-scan/.env | cut -d= -f2-)"
+curl -sS -H "Authorization: Bearer $TOKEN" http://127.0.0.1:8765/health
+```
+
+**3. Check it against the release, by deployment mode.** The mode is not a judgement call:
+`dirty: null` means the package resolved from an installed copy, anything else means a checkout.
+
+| | source deployment | wheel deployment |
+|---|---|---|
+| `version` | equals the released version | equals the released version |
+| `git_sha` | equals the released commit (12 hex) | `"unknown"` — **expected, not a defect** |
+| `dirty` | `false` — a dirty tree invalidates the release claim | `null` |
+| identity | — | artifact hash matches the published wheel |
+| `started_at` | at or after the restart in step 1 | at or after the restart in step 1 |
+
+A `started_at` earlier than the restart means the kickstart did not take and the old process is
+still bound to the port. Re-read `ops.md`; do not re-run the release.
+
+**4. Smoke-test the tunnel.** A bad path must come back **404** — the server answering that the
+route does not exist. A **502** or **530** is Cloudflare failing to reach the origin, which means
+the tunnel is down even though the local port is fine:
+
+```bash
+curl -s -o /dev/null -w '%{http_code}\n' "https://<tunnel-host>/definitely-not-the-secret/mcp"
+```
+
+### The release receipt
+
+One JSON object per release, recording what was published and what the process actually reports.
+It is written to the **private** stack-context tree, never to this repository — the procedure is
+public, the receipts are not.
+
+```bash
+cd ~/Projects/research-scan
+VERSION="$(uv run research-scan --version)"
+TOKEN="$(grep '^RESEARCH_SCAN_MCP_TOKEN=' ~/.config/research-scan/.env | cut -d= -f2-)"
+RECEIPTS=~/Projects/stack-context/staging/research-scan/receipts
+mkdir -p "$RECEIPTS"
+
+curl -sS -H "Authorization: Bearer $TOKEN" http://127.0.0.1:8765/health \
+  | VERSION="$VERSION" python3 -c '
+import json, os, subprocess, sys, urllib.request
+from datetime import UTC, datetime
+
+health = json.load(sys.stdin)
+git = lambda *a: subprocess.run(["git", *a], capture_output=True, text=True).stdout.strip()
+with urllib.request.urlopen("https://pypi.org/pypi/research-scan/json", timeout=30) as fh:
+    pypi = json.load(fh)["info"]["version"]
+
+json.dump({
+    "version": os.environ["VERSION"],
+    "git_sha": git("rev-parse", "HEAD")[:12],
+    "dirty": bool(git("status", "--porcelain")),
+    # `dirty: null` is the installed-copy signal. A checkout whose git will not answer also lands
+    # here, but it fails the source criteria anyway on `git_sha == "unknown"`, so the label
+    # cannot mask a bad release.
+    "deployment_mode": "wheel" if health.get("dirty") is None else "source",
+    "pypi_version": pypi,
+    "server_sha": health.get("git_sha"),
+    "server_started_at": health.get("started_at"),
+    "verified_at": datetime.now(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+}, sys.stdout, indent=2)
+print()
+' > "$RECEIPTS/v$VERSION.json"
+
+cat "$RECEIPTS/v$VERSION.json"
+```
+
+`pypi.org` HTML is Fastly-challenged; the JSON API above is the reliable read. The receipt carries
+no token and no hostname. An commits stack-context.
+
+### What the SHA does and does not prove
+
+> SHA+clean is operational observability, not cryptographic proof of executed code from a mutable
+> checkout; immutable wheel/artifact deployment is the stronger end state (backlog decision at
+> next release).
+
+Concretely: the fingerprint reports what `HEAD` pointed at and what the tree looked like *when the
+process booted*. It cannot attest that the bytes running in memory are that commit's — a checkout
+can be edited between boot and inspection, and a `.pyc` can outlive its source. It closes the gap
+that actually bit us, which was a stale process nobody could see, and it is worth exactly that.
+
 ## Rollback
 
 Releases are append-only. Nothing here deletes.

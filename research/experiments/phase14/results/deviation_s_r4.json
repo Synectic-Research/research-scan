@@ -1,0 +1,84 @@
+{
+ "deviation": {
+  "cell": "llm-lit-search/S",
+  "missing_replicate": 4,
+  "n_recorded": 4,
+  "n_target": 5,
+  "class": "contract14.PriorityContractViolation",
+  "exit_code": 2,
+  "attempts": 2,
+  "chunk": "c3",
+  "violations": [
+   "1 overall==3 row(s) carry no rank: ['5197bbb391c8']; ranks not unique: [4]",
+   "ranks not unique: [3]"
+  ],
+  "log": "logs/p11-t2-S-rep4.log",
+  "recoverable_by_reask": false,
+  "only_contract_failure_in_slice": true,
+  "s_cell_replicates_attempted": 10
+ },
+ "bound": {
+  "reachable_ceiling": 3,
+  "observed_runs": [
+   2,
+   2,
+   2,
+   2
+  ],
+  "best_case_runs": [
+   2,
+   2,
+   2,
+   2,
+   3
+  ],
+  "best_case_mean": 2.2,
+  "c0_mean": 2.4,
+  "best_case_delta_vs_c0": -0.2,
+  "non_inferiority": {
+   "needs_missing_replicate_to_score": 4.0,
+   "ceiling": 3,
+   "attainable": false
+  },
+  "materially_better": {
+   "needs_missing_replicate_to_score": 9.0,
+   "ceiling": 3,
+   "attainable": false,
+   "defaults_savings_delta": 0.2
+  },
+  "no_stable_golden_lost": {
+   "PaSa": {
+    "c0": "4/5",
+    "s_observed": "0/4",
+    "s_best_case": "1/5",
+    "best_case_fraction": 0.2,
+    "floor": 0.6,
+    "breach_stands": true
+   },
+   "LitSearch": {
+    "c0": "4/5",
+    "s_observed": "4/4",
+    "s_best_case": "5/5",
+    "best_case_fraction": 1.0,
+    "floor": 0.6,
+    "breach_stands": false
+   },
+   "OpenScholar": {
+    "c0": "4/5",
+    "s_observed": "4/4",
+    "s_best_case": "5/5",
+    "best_case_fraction": 1.0,
+    "floor": 0.6,
+    "breach_stands": false
+   }
+  },
+  "substantially_less_saturated": {
+   "defaults_savings_cut": -0.0615,
+   "required": 0.25,
+   "topic_complete_at_n5": true,
+   "already_failed_independently_of_this_topic": true
+  }
+ },
+ "clauses_the_deviation_could_flip": [],
+ "verdict_robust_to_deviation": true
+}

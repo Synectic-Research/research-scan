@@ -1,0 +1,1617 @@
+{
+  "run": {
+    "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/runs/p11-t1/C0/rep4/run",
+    "slug": "p11-t1",
+    "date": "2026-08-26",
+    "brief_path": "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/runs/p11-t1/C0/rep4/run/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2023-08",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "behavioral",
+      "sources": [
+        "openalex",
+        "s2"
+      ],
+      "profile": "standard"
+    }
+  },
+  "packets": [
+    {
+      "cid": "3c6587448c9c",
+      "criteria": {
+        "C1": 3,
+        "C2": 3,
+        "C3": 1,
+        "C4": 3,
+        "C5": 2,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "rct",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": false
+      },
+      "key_finding": "A field experiment shrouding the credit-card autopay-minimum default cut exact-minimum payers by 23% after six months but did not significantly reduce credit card debt.",
+      "methodology": "Field experiment on credit card autopay enrollment, six-month follow-up, large cardholder sample.",
+      "why_it_matters": "Directly tests the brief's core question\u2014whether changing an enrollment default shifts behavior nominally but not the underlying amount\u2014showing behavior change without an outcome improvement, a warning for judging round-up enrollment by sign-up counts alone.",
+      "limitations": [
+        "Domain is credit-card repayment, not a savings sweep, so the direction of desired behavior differs.",
+        "Abstract does not give exact debt-reduction confidence intervals."
+      ],
+      "relevance_reason": "Closest available consumer financial-product test of a default/nudge changing enrollment without changing the outcome that matters, matching the brief's amount-vs-enrollment question.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "The Semblance of Success in Nudging Consumers to Pay Down Credit Card Debt",
+      "abstract": "We test a nudge in a field experiment on credit cards. The nudge shrouds the autopay enrollment option for cardholders to automatically pay exactly the credit card minimum payment each month. After six months, the nudge decreases the fraction of cardholders who only pay exactly the minimum by 23 percent. However, the nudge does not significantly reduce credit card debt. Nudged cardholders often choose autopay amounts that are only slightly higher than the minimum payment. The nudge reduces autopay enrollment, which increases missed payments. The nudge reduces manual payments by autopay enrollees. Cardholders frequently lacking liquid cash best explains our results. (JEL C93, D12, D91, G21, G51)",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Benedict Guttman\u2010Kenney",
+          "s2_id": null,
+          "openalex_id": "A5060117673"
+        },
+        {
+          "name": "Paul Adams",
+          "s2_id": null,
+          "openalex_id": "A5052478974"
+        },
+        {
+          "name": "Stefan Hunt",
+          "s2_id": null,
+          "openalex_id": "A5006846110"
+        },
+        {
+          "name": "David Laibson",
+          "s2_id": null,
+          "openalex_id": "A5058269956"
+        },
+        {
+          "name": "Neil Stewart",
+          "s2_id": null,
+          "openalex_id": "A5009418620"
+        },
+        {
+          "name": "Jesse Leary",
+          "s2_id": null,
+          "openalex_id": "A5083348721"
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-12-01",
+      "venue": "National Bureau of Economic Research",
+      "type": "article",
+      "raw_type": "report",
+      "ids": {
+        "doi": "10.3386/w31926",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W4389580036",
+        "s2": null
+      },
+      "citation_count": 17,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.3386/w31926",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q3",
+          "seed_id": null,
+          "rank": 37
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q6",
+          "seed_id": null,
+          "rank": 34
+        },
+        {
+          "source": "openalex",
+          "relation": "citations",
+          "query_id": null,
+          "seed_id": "3c6587448c9c",
+          "rank": 0
+        },
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f0395b76e878",
+          "rank": 24
+        }
+      ],
+      "outside_window": false,
+      "rank": 1,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.3386/w31926"
+    },
+    {
+      "cid": "32831b736c11",
+      "criteria": {
+        "C1": 3,
+        "C2": 3,
+        "C3": 2,
+        "C4": 1,
+        "C5": 1,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "observational",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": false
+      },
+      "key_finding": "Steady-state saving rates rise only 0.6% of income from automatic enrollment and 0.3% from auto-escalation once job turnover, pre-vesting withdrawals, and opt-outs are accounted for; only 40% of auto-escalation defaults are accepted at the first escalation date.",
+      "methodology": "Longitudinal analysis of nine 401(k) plans incorporating job separation, balance withdrawal, and opt-out dynamics.",
+      "why_it_matters": "The clearest quantified rebuttal of the 'defaults will lift enrollment so default everyone in' premise: medium/long-run dynamics erode most of the apparent gain, directly supporting the support team's skepticism.",
+      "limitations": [
+        "401(k) retirement plans rather than liquid consumer savings.",
+        "Abstract gives steady-state estimates but not month-by-month withdrawal timing relevant to a round-up feature."
+      ],
+      "relevance_reason": "Contradicts the premise that defaults reliably raise saving amounts, which the brief explicitly asked us to test.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Smaller than We Thought? The Effect of Automatic Savings Policies",
+      "abstract": "Medium-and long-run dynamics undermine the effect of automatic enrollment and default savingsrate auto-escalation on retirement savings.Our analysis of nine 401(k) plans incorporates the facts that employees frequently leave firms (often before matching contributions from their employer have fully vested), a large percentage of 401(k) balances are withdrawn upon employment separation, and many employees opt out of auto-escalation.Steady-state saving rates increase by 0.6% of income due to automatic enrollment and 0.3% of income due to default autoescalation.Only 40% of those with an auto-escalation default escalate on their first escalation date, and more opt out later.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "James J. Choi",
+          "s2_id": null,
+          "openalex_id": "A5102947185"
+        },
+        {
+          "name": "David Laibson",
+          "s2_id": null,
+          "openalex_id": "A5109613356"
+        },
+        {
+          "name": "Jordan Cammarota",
+          "s2_id": null,
+          "openalex_id": "A5106608104"
+        },
+        {
+          "name": "Richard Lombardo",
+          "s2_id": null,
+          "openalex_id": "A5106608105"
+        },
+        {
+          "name": "John Beshears",
+          "s2_id": null,
+          "openalex_id": "A5084393981"
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-08-01",
+      "venue": "National Bureau of Economic Research",
+      "type": "preprint",
+      "raw_type": "report",
+      "ids": {
+        "doi": "10.3386/w32828",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W4401689560",
+        "s2": null
+      },
+      "citation_count": 29,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.3386/w32828",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 1
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 8
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 13
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q6",
+          "seed_id": null,
+          "rank": 2
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "G1",
+          "seed_id": null,
+          "rank": 6
+        }
+      ],
+      "outside_window": false,
+      "rank": 2,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.3386/w32828"
+    },
+    {
+      "cid": "3b187fa626d9",
+      "criteria": {
+        "C1": 3,
+        "C2": 2,
+        "C3": 0,
+        "C4": 2,
+        "C5": 3,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "observational",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": false
+      },
+      "key_finding": "Pre-checked recurring-donation defaults raised campaign donations by over $43 million but also increased requested refunds by almost $3 million, with the largest effects on smaller, less-experienced donors who apparently did not intend the recurring commitment.",
+      "methodology": "Staggered difference-in-differences design exploiting different rollout timing of pre-checked recurring-donation boxes across U.S. political campaign websites.",
+      "why_it_matters": "The pre-checked recurring-payment mechanism is structurally identical to a default-on round-up multiplier: it shows the same default can lift the headline number while creating unintended recurring commitments and complaint-like behaviour (refund requests) concentrated among the least experienced users.",
+      "limitations": [
+        "political donations, not a savings or banking product",
+        "refund requests are a proxy for regret, not a direct measure of savings withdrawal or complaints"
+      ],
+      "relevance_reason": "Directly demonstrates the 'nominal enrolment vs genuine intent' failure mode the support team worries about, via a near-identical checkbox-default mechanism.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Dark defaults: How choice architecture steers political campaign donations",
+      "abstract": "In the months before the 2020 U.S. election, several political campaign websites added prechecked boxes (defaults), automatically making all donations into recurring weekly contributions unless donors unchecked them. Since these changes occurred at different times for different campaigns, we use a staggered difference-in-differences design to measure the causal effects of defaults on donors' behavior. We estimate that defaults increased campaign donations by over $43 million while increasing requested refunds by almost $3 million. The weekly default only impacted weekly recurring donations, and not other donations, suggesting that donors may not have intended to make weekly donations. The longer defaults were displayed, the more money campaigns raised through weekly donations. Donors did not compensate by changing the amount they donated. We found that the default had a larger impact on smaller donors and on donors who had no prior experience with defaults, causing them to start more chains and donate a larger proportion of their money through weekly recurring donations.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Nathaniel A. Posner",
+          "s2_id": null,
+          "openalex_id": "A5058758681"
+        },
+        {
+          "name": "A. M. Simonov",
+          "s2_id": null,
+          "openalex_id": "A5042950631"
+        },
+        {
+          "name": "Kellen Mrkva",
+          "s2_id": null,
+          "openalex_id": "A5047674976"
+        },
+        {
+          "name": "Eric J. Johnson",
+          "s2_id": null,
+          "openalex_id": "A5032996798"
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-09-26",
+      "venue": "Proceedings of the National Academy of Sciences",
+      "type": "article",
+      "raw_type": "article",
+      "ids": {
+        "doi": "10.1073/pnas.2218385120",
+        "arxiv": null,
+        "pmid": "37751554",
+        "openalex": "W4387040975",
+        "s2": null
+      },
+      "citation_count": 29,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10556642/pdf/pnas.202218385.pdf",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q4",
+          "seed_id": null,
+          "rank": 2
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q7",
+          "seed_id": null,
+          "rank": 1
+        }
+      ],
+      "outside_window": false,
+      "rank": 3,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.1073/pnas.2218385120"
+    },
+    {
+      "cid": "6c8b6522d8f1",
+      "criteria": {
+        "C1": 1,
+        "C2": 3,
+        "C3": 2,
+        "C4": 2,
+        "C5": 2,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "other",
+      "relation": "plan-influencing",
+      "flags": {
+        "review": true,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "Proposes a taxonomy and framework for when default effects persist, fade, or reverse downstream, driven by the time course of choice, prior preferences, and salience of trade-offs.",
+      "methodology": "Conceptual/theoretical review synthesizing prior default-effect literature into a research agenda; abstract-only.",
+      "why_it_matters": "Gives the mechanism-level account of exactly the question the brief asks\u2014whether enrollment defaults change durable behavior or fade\u2014useful for predicting which round-up users will disengage and why.",
+      "limitations": [
+        "Theoretical synthesis, not a new empirical estimate.",
+        "Not specific to financial products, so predictions must be validated in our setting."
+      ],
+      "relevance_reason": "Directly addresses persistence and downstream default effects in consumer decision-making, the mechanism question underlying the enrollment-vs-disengagement trade-off.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "How default choice architecture impacts downstream behavior: A taxonomy, theoretical framework, and research agenda",
+      "abstract": "Much is known about the immediate effects of default choice architecture and their underlying psychological processes. Yet, significant gaps remain in understanding if, when, and how defaults produce downstream effects on consumer behavior. We resolve conceptual ambiguity around downstream default effects by developing a taxonomy to categorize them and proposing a conceptual framework that illuminates the dynamic interplay of consumers' thoughts and actions with choice architecture as they engage in decision making over time. Applying this framework, we synthesize the current state of knowledge about downstream default effects, producing insights into multiple intersecting factors that modulate them. These include the time course of choice and consumption, consumers' antecedent preferences, and the salience of trade\u2010offs within and across choices. This theorizing guides our compilation of a research agenda for reconciling inconsistent prior findings and advancing understanding of how defaults interact with individual differences and contextual factors to influence later behavior.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "R. Waisman",
+          "s2_id": "51164519",
+          "openalex_id": null
+        },
+        {
+          "name": "Tim Derksen",
+          "s2_id": "2210771674",
+          "openalex_id": null
+        },
+        {
+          "name": "Gerald H\u00e4ubl",
+          "s2_id": "2261599260",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-11-25",
+      "venue": "Consumer Psychology Review",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.1002/arcp.70007",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": null,
+        "s2": "26e4fd6f9066709d6a5c8b8f6a609d94fa38590a"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.1002/arcp.70007",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q2",
+          "seed_id": null,
+          "rank": 9
+        }
+      ],
+      "outside_window": false,
+      "rank": 4,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.1002/arcp.70007"
+    },
+    {
+      "cid": "8319d6c6bc20",
+      "criteria": {
+        "C1": 3,
+        "C2": 2,
+        "C3": 0,
+        "C4": 3,
+        "C5": 1,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "rct",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "At-scale UK bank field experiments show automatic enrolment into just-in-time overdraft alerts reduces unarranged overdraft charges 17-19% and arranged overdraft charges 4-8%, worth an estimated \u00a3170-240 million annually market-wide, though alerts capture less than half of the achievable savings.",
+      "methodology": "Large-scale randomized field experiments at major UK retail banks comparing automatic enrolment into alert types.",
+      "why_it_matters": "This is a consumer banking auto-enrolment feature at the same institutions and scale as ours, giving a real effect-size benchmark for what auto-enrolment can deliver in a live app, and evidence that even a working default captures only part of the possible benefit.",
+      "limitations": [
+        "measures charge reduction, not savings-pot enrolment or amount saved",
+        "no explicit long-horizon (6-12 month) retention analysis reported in the abstract",
+        "alerts are a passive notification, not a savings-contribution decision"
+      ],
+      "relevance_reason": "Closest available consumer-banking evidence on auto-enrolment's real financial effect at scale, directly informing the entry-decision trade-off.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Sending Out an SMS: Automatic Enrollment Experiments for Overdraft Alerts",
+      "abstract": "ABSTRACT At\u2010scale field experiments at major U.K. banks show that automatic enrollment into \u201cjust\u2010in\u2010time\u201d text alerts reduces unarranged overdraft and unpaid item charges 17% to 19% and arranged overdraft charges 4% to 8%, implying annual market\u2010wide savings of \u00a3170 million to \u00a3240 million. Incremental benefits from \u201cearly\u2010warning\u201d alerts are statistically insignificant, although economically significant effects are not ruled out. Prior to the experiments, over half of overdrafts could have been avoided by using lower\u2010cost liquidity available in savings and credit card accounts. Alerts help consumers achieve less than half of these potential savings.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Michael D. Grubb",
+          "s2_id": null,
+          "openalex_id": "A5071470762"
+        },
+        {
+          "name": "Darragh Kelly",
+          "s2_id": null,
+          "openalex_id": "A5090943909"
+        },
+        {
+          "name": "Jeroen Nieboer",
+          "s2_id": null,
+          "openalex_id": "A5057007575"
+        },
+        {
+          "name": "Matthew Osborne",
+          "s2_id": null,
+          "openalex_id": "A5101775647"
+        },
+        {
+          "name": "JONATHAN SHAW",
+          "s2_id": null,
+          "openalex_id": null
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-12-26",
+      "venue": "The Journal of Finance",
+      "type": "article",
+      "raw_type": "article",
+      "ids": {
+        "doi": "10.1111/jofi.13404",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W4405810416",
+        "s2": "f88e9e5eda647396b70046cc4491caf410fa8086"
+      },
+      "citation_count": 4,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jofi.13404",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 11
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 29
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q6",
+          "seed_id": null,
+          "rank": 5
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "G2",
+          "seed_id": null,
+          "rank": 12
+        }
+      ],
+      "outside_window": false,
+      "rank": 5,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.1111/jofi.13404"
+    },
+    {
+      "cid": "9e3699988af6",
+      "criteria": {
+        "C1": 2,
+        "C2": 0,
+        "C3": 2,
+        "C4": 2,
+        "C5": 3,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "plan-influencing",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": false
+      },
+      "key_finding": "Across experiments including a 4,207-person five-country European sample, default nudges produced medium-to-large shifts in risk-taking but also lowered users' ratings of the advice/wealth manager, especially when the default was one they refused.",
+      "methodology": "Three experiments, including a large representative multi-country European sample, testing default framing and presentation effects on investment allocation and perceived advice quality.",
+      "why_it_matters": "Provides direct European evidence that a default can be perceived as manipulative and damage trust when it's not accepted\u2014precisely the reputational, dark-pattern risk the EU-context brief flags for the entry and level decisions.",
+      "limitations": [
+        "Setting is investment/wealth-management advice rather than a round-up savings sweep specifically.",
+        "Effect on trust is a self-reported rating, not behavioral churn or complaints."
+      ],
+      "relevance_reason": "Directly measures the manipulation/trust cost of defaults in a European financial-advice context, matching the brief's concern about dark-pattern perception.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Framing the Default Option Right",
+      "abstract": "ABSTRACT Defaults are powerful nudges to shape individuals' behavior: In three experiments, including a large experiment using representative samples from five European countries (n = 4207), we show that they can significantly affect risk\u2010taking by medium to large effect sizes. We also show that implementing a default nudge leads to a lower rating of the advice delivered by the wealth manager compared to no default, an effect that has a medium to large effect size. In addition, defaults the targeted individuals refuse result in lower advice ratings. These side effects call for caution before applying nudges and individualized defaults rather than a one\u2010size\u2010fits\u2010all approach. Additionally, we find evidence pointing to two small effects of framing in default presentation. First, asking how much individuals want to invest in the risky asset emphasizes risk. It reduces investment in the risky asset compared to asking them how much they want to leave on the safe account, particularly for more risk\u2010averse individuals. Second, asking individuals if they want to change a default allocation of 100% in the risky asset leads to more investment in the risky asset than asking them whether they accept such an allocation. Perceived wealth manager honesty appears to mediate the relationship between the default nudge and the rating of the advice.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Luc Meunier",
+          "s2_id": null,
+          "openalex_id": "A5004791682"
+        },
+        {
+          "name": "Yashar Bashirzadeh",
+          "s2_id": null,
+          "openalex_id": "A5099052520"
+        },
+        {
+          "name": "Sima Ohadi",
+          "s2_id": null,
+          "openalex_id": "A5045182686"
+        }
+      ],
+      "year": 2024,
+      "publication_date": "2024-06-06",
+      "venue": "Journal of Behavioral Decision Making",
+      "type": "article",
+      "raw_type": "article",
+      "ids": {
+        "doi": "10.1002/bdm.2395",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W4399443051",
+        "s2": null
+      },
+      "citation_count": 8,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/bdm.2395",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 10
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q5",
+          "seed_id": null,
+          "rank": 30
+        }
+      ],
+      "outside_window": false,
+      "rank": 6,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.1002/bdm.2395"
+    },
+    {
+      "cid": "5b90c3dd16ce",
+      "criteria": {
+        "C1": 2,
+        "C2": 2,
+        "C3": 0,
+        "C4": 2,
+        "C5": 0,
+        "C6": 3
+      },
+      "overall": 3,
+      "evidence_level": "observational",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "Following the EU Digital Markets Act's mandated browser choice screens, Firefox usage rose 113% on iOS and 12% on Android relative to a no-mandate counterfactual, with effects still present 15 months after rollout.",
+      "methodology": "Difference-in-differences design around staggered EU Digital Markets Act choice-screen rollout across iOS and Android.",
+      "why_it_matters": "This is the most direct evidence available that a forced active-choice screen produces large, persistent behaviour change in an EU-regulated mobile app context \u2014 exactly the comparison the active-choice design option needs before it's chosen over opt-out.",
+      "limitations": [
+        "mobile browser choice, not a financial savings decision",
+        "platform differences (iOS vs Android rollout) complicate attributing the full effect to the choice screen alone"
+      ],
+      "relevance_reason": "Best available real-world evidence on active/forced choice screens under the same EU regulatory regime the product operates in, central to the C6 question.",
+      "verification": {
+        "verified": false,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 64.8,
+        "mismatches": [
+          "title"
+        ]
+      },
+      "title": "The Effect of Choice Screens on Mobile Browser Usage: Evidence from the EU Digital Markets Act",
+      "abstract": "Can active choice mitigate the effects of preset defaults? We study this question using a difference-in-differences design around the rollout of the EU\u2019s Digital Markets Act, which required iOS and Android to display browser choice screens under certain conditions. We find large effects, with notable differences across platforms: from 15 months after the mandate onward, Firefox usage was 113 percent higher on iOS and 12 percent higher on Android relative to a no-mandate counterfactual. This gap is consistent with rollout differences, as Android showed choice screens primarily on new devices, whereas iOS also showed them on existing devices.Institutional subscribers to the NBER working paper series, and residents of developing countries may download this paper without additional charge at www.nber.org.",
+      "tldr": "Large effects are found around the rollout of the EU\u2019s Digital Markets Act, which required iOS and Android to display browser choice screens under certain conditions, with notable differences across platforms.",
+      "authors": [
+        {
+          "name": "Jesper Akesson",
+          "s2_id": "97352288",
+          "openalex_id": null
+        },
+        {
+          "name": "Kush Amlani",
+          "s2_id": "2432105219",
+          "openalex_id": null
+        },
+        {
+          "name": "Raul Cepeda Suarez",
+          "s2_id": "2432106388",
+          "openalex_id": null
+        },
+        {
+          "name": "Emily Chissell",
+          "s2_id": "2345454919",
+          "openalex_id": null
+        },
+        {
+          "name": "Stefan Hunt",
+          "s2_id": "116621948",
+          "openalex_id": null
+        },
+        {
+          "name": "Michael Luca",
+          "s2_id": "2265398617",
+          "openalex_id": null
+        },
+        {
+          "name": "G. Petrie",
+          "s2_id": "153255283",
+          "openalex_id": null
+        }
+      ],
+      "year": 2026,
+      "publication_date": "2026-04-01",
+      "venue": "Social Science Research Network",
+      "type": "article",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.3386/w35112",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": null,
+        "s2": "3892ff12a3cd871bf26c6fc7d91b9ada2db7c826"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.3386/w35112",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "G2",
+          "seed_id": null,
+          "rank": 8
+        }
+      ],
+      "outside_window": false,
+      "rank": 7,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.3386/w35112"
+    },
+    {
+      "cid": "1a20e0fae390",
+      "criteria": {
+        "C1": 3,
+        "C2": 0,
+        "C3": 1,
+        "C4": 1,
+        "C5": 2,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "rct",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": false
+      },
+      "key_finding": "In a 220-participant RCT on voluntary pension saving in China, all tested nudges \u2014 including default options \u2014 significantly reduced willingness to contribute relative to control, contrary to prevailing international evidence, with the largest backfire effects for positive-narrative and default-option nudges.",
+      "methodology": "Randomized controlled trial via online survey testing social-norm, framing, default-option, and narrative nudges on voluntary pension contribution decisions.",
+      "why_it_matters": "Directly contradicts the brief's stated internal premise that 'defaults will lift enrolment' by showing a default option can backfire and reduce willingness to contribute, with effects varying by income, education, and gender \u2014 exactly the heterogeneity the brief wants surfaced before committing to opt-out.",
+      "limitations": [
+        "small online-survey sample (n=220), not a live financial product",
+        "Chinese cultural/institutional context may not transfer to an EU consumer app",
+        "self-reported willingness rather than observed enrolment or savings behaviour"
+      ],
+      "relevance_reason": "One of the few papers in this set that directly contradicts the 'defaults always help' premise the brief explicitly asks to test.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "When Nudges Backfire: The Effect of Social Norms, Framing Effects, and Default Options on the Pension Saving Decisions in China",
+      "abstract": "This study investigates the impact of behavioral nudgessocial norms, loss aversion framing, default options, and positive narrativeon voluntary pension saving decisions in China. Using a randomized controlled trial administered via an online survey with 220 participants, we examine how these interventions influence both the willingness to contribute and the proportion of income allocated to pension savings. Contrary to prevailing international evidence, our results indicate that all nudges significantly reduce willingness to contribute relative to a control group, with the most substantial backfire effects observed for positive narrative and default option nudges. Furthermore, we identify important heterogeneity effects across income groups and emphasize the moderating roles of education, gender, and financial motivation. These findings underscore the critical importance of cultural, institutional, and individual factors in the design and implementation of behavioral interventions. Policy measures tailored to specific demographic segments and focused on financial education and trust-building are recommended.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Yuming Dong",
+          "s2_id": "2335128226",
+          "openalex_id": null
+        },
+        {
+          "name": "Zhaoyue Wang",
+          "s2_id": "2274198727",
+          "openalex_id": null
+        },
+        {
+          "name": "Zhuting He",
+          "s2_id": "2394764220",
+          "openalex_id": null
+        }
+      ],
+      "year": 2025,
+      "publication_date": "2025-11-26",
+      "venue": "Advances in Economics, Management and Political Sciences",
+      "type": "review",
+      "raw_type": "JournalArticle",
+      "ids": {
+        "doi": "10.54254/2754-1169/2025.bl30018",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": null,
+        "s2": "57b9b58b5585757e1b96aac252de5991ebb1704b"
+      },
+      "citation_count": 0,
+      "influential_citation_count": 0,
+      "is_retracted": false,
+      "oa_url": "https://www.ewadirect.com/proceedings/aemps/article/view/30018/pdf",
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 24
+        }
+      ],
+      "outside_window": false,
+      "rank": 8,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.54254/2754-1169/2025.bl30018"
+    },
+    {
+      "cid": "26f21e72f8db",
+      "criteria": {
+        "C1": 2,
+        "C2": 1,
+        "C3": 1,
+        "C4": 2,
+        "C5": 2,
+        "C6": 1
+      },
+      "overall": 3,
+      "evidence_level": "other",
+      "relation": "closely-related",
+      "flags": {
+        "review": true,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "Synthesizes household-finance behavioral evidence across savings, borrowing, payments, asset allocation, and insurance, and reviews interventions including choice architecture, product design, and disclosure that firms and governments use to shape financial outcomes.",
+      "methodology": "Narrative review/overview chapter (NBER) synthesizing the behavioral household finance literature.",
+      "why_it_matters": "The broad synthesis of choice-architecture effects across consumer financial products (not employer plans specifically) the brief asked for as a review giving effect sizes rather than a single study, useful for calibrating expectations about the round-up feature's design levers generally.",
+      "limitations": [
+        "a narrative overview, not a systematic review or meta-analysis with pooled effect sizes",
+        "covers many financial domains, so savings-specific and app-specific detail is diluted",
+        "2018 publication, predating the newest fintech default-design literature"
+      ],
+      "relevance_reason": "Best available broad review of choice-architecture interventions in consumer (not solely employer) financial behavior, satisfying the brief's request for synthesis-level evidence.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Behavioral Household Finance",
+      "abstract": "This chapter provides an overview of household finance. The first part summarizes key facts regarding household financial behavior, emphasizing empirical regularities that are inconsistent with the standard classical economic model and discussing extensions of the classical model and explanations grounded in behavioral economics that can account for the observed patterns. This part covers five topics: consumption and savings, borrowing, payments, asset allocation, and insurance. The second part addresses interventions that firms, governments, and other parties deploy to shape household financial outcomes: education and information, peer effects and social influence, product design, advice and disclosure, choice architecture, and interventions that directly target prices or quantities.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "John Beshears",
+          "s2_id": null,
+          "openalex_id": "A5084393981"
+        },
+        {
+          "name": "James J. Choi",
+          "s2_id": null,
+          "openalex_id": "A5102947185"
+        },
+        {
+          "name": "David Laibson",
+          "s2_id": null,
+          "openalex_id": "A5058269956"
+        },
+        {
+          "name": "Brigitte C. Madrian",
+          "s2_id": null,
+          "openalex_id": "A5071283924"
+        }
+      ],
+      "year": 2018,
+      "publication_date": "2018-07-01",
+      "venue": "National Bureau of Economic Research",
+      "type": "review",
+      "raw_type": "report",
+      "ids": {
+        "doi": "10.3386/w24854",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W2883361709",
+        "s2": "fcf22a8de90838c11028a0e6bd561ad7b5e69a66"
+      },
+      "citation_count": 125,
+      "influential_citation_count": 11,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.3386/w24854",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "b6857cc616fe",
+          "rank": 18
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "8319d6c6bc20",
+          "rank": 15
+        }
+      ],
+      "outside_window": true,
+      "rank": 9,
+      "selection_reason": "foundational",
+      "url": "https://doi.org/10.3386/w24854"
+    },
+    {
+      "cid": "893434476830",
+      "criteria": {
+        "C1": 1,
+        "C2": 1,
+        "C3": 0,
+        "C4": 3,
+        "C5": 3,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "rct",
+      "relation": "contradicting",
+      "flags": {
+        "review": false,
+        "contradicts": true,
+        "methods_paper": false
+      },
+      "key_finding": "A randomized reminder intervention on a Brazilian financial platform cut credit-card late fees by 14% but raised checking-account overdraft fees by 9%, with users who had a history of overdraft use experiencing a net 5% increase in total fees while everyone else saved 15%.",
+      "methodology": "Field experiment (randomized reminder nudge) with a consumer financial management platform in Brazil, comparing fee outcomes across credit card and checking account products.",
+      "why_it_matters": "Directly evidences the support team's worry: a well-intentioned nudge can help most users while making a defined subgroup worse off, which is exactly the distributional check the brief wants before defaulting everyone into round-up savings.",
+      "limitations": [
+        "Studies payment reminders, not enrolment defaults or contribution-level anchors",
+        "Credit card/overdraft fee context rather than a round-up savings pot",
+        "Brazilian credit market may differ from EU consumer-protection context"
+      ],
+      "relevance_reason": "Best available evidence in this shortlist that a helpful-seeming nudge can produce net harm for an identifiable user segment, bearing directly on C5's who-is-helped/who-is-hurt question.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Side Effects of Nudging: Evidence from a Randomized Intervention in the Credit Card Market",
+      "abstract": "Abstract This paper studies the direct and indirect effects of nudging, by means of a field experiment with a financial management platform in Brazil. Reminders for upcoming credit card payments reduced credit card late-payment fees by 14%, but increased overdraft fees in checking accounts by 9%. The unintended effect is concentrated in users with a history of overdraft use. These users experienced a net increase of 5% in total fees, while the rest experienced savings of 15%. The results provide clear insights for nudge design: like any policy action, nudges can have side effects, and one size may not fit all.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Paolina C. Medina",
+          "s2_id": null,
+          "openalex_id": "A5010769995"
+        }
+      ],
+      "year": 2020,
+      "publication_date": "2020-09-01",
+      "venue": "Review of Financial Studies",
+      "type": "article",
+      "raw_type": "article",
+      "ids": {
+        "doi": "10.1093/rfs/hhaa108",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W3086410377",
+        "s2": "51e635bbe627af84e7ef4f27ec95397b0f4b8d58"
+      },
+      "citation_count": 96,
+      "influential_citation_count": 2,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "3c6587448c9c",
+          "rank": 15
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "8319d6c6bc20",
+          "rank": 27
+        },
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f0395b76e878",
+          "rank": 7
+        }
+      ],
+      "outside_window": true,
+      "rank": 10,
+      "selection_reason": "foundational",
+      "url": "https://doi.org/10.1093/rfs/hhaa108"
+    }
+  ],
+  "alternates": [
+    {
+      "cid": "bfd1c9f2db97",
+      "criteria": {
+        "C1": 2,
+        "C2": 1,
+        "C3": 0,
+        "C4": 1,
+        "C5": 1,
+        "C6": 3
+      },
+      "overall": 3,
+      "evidence_level": "experimental",
+      "relation": "design-changing",
+      "flags": {
+        "review": true,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "Introduces and field-tests 'enhanced active choice,' a forced-choice design that highlights the losses of the non-preferred option, as an alternative to opt-out defaults when automatic enrollment is infeasible or ethically fraught, building on prior active-choice work in savings behavior.",
+      "methodology": "Review of prior active-choice literature plus a series of studies including two field experiments testing active choice and enhanced active choice.",
+      "why_it_matters": "Speaks directly to whether active choice can capture most of the enrollment benefit of a default without the ethical/manipulation cost, and offers a concrete design variant (loss-framed active choice) the team could test instead of choosing purely opt-in/opt-out/active-choice as equal alternatives.",
+      "limitations": [
+        "primary field experiments are in medication adherence, not financial products",
+        "savings-behavior discussion is drawn from prior literature review rather than this paper's own new financial data",
+        "no 6-12 month persistence data reported"
+      ],
+      "relevance_reason": "The paper most directly on point for the entry-mechanism decision, proposing and testing active-choice designs explicitly as an alternative to defaults, including in the context of savings behavior.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Enhanced active choice: A new method to motivate behavior change",
+      "abstract": "Abstract High rates of medication non\u2010adherence have significant public health and economic consequences. In other contexts such as savings behavior, opt\u2010out policies, in which the alternative preferred by the policy maker is made the default, have gotten great traction but may not be feasible in health care settings. After reviewing previous applications, we present a series of studies, including two field experiments, that test the effectiveness of an alternative, \u2018active choice\u2019 policy in which there is no default, but decision makers are required to make a choice (Carroll, Choi, Laibson, Madrian, & Metrick, 2009; Spital, 1993, 1995). In addition, we propose and test a modified version of active choice, that we call \u2018enhanced active choice\u2019 that favors one alternative by highlighting losses incumbent in the in the non\u2010preferred alternative. We recommend Enhanced Active Choice as a complement to automatic enrollment or when automatic enrollment is infeasible or unethical.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "P. Keller",
+          "s2_id": "40554209",
+          "openalex_id": null
+        },
+        {
+          "name": "Bari A. Harlam",
+          "s2_id": "114777323",
+          "openalex_id": null
+        },
+        {
+          "name": "G. Loewenstein",
+          "s2_id": "3070352",
+          "openalex_id": null
+        },
+        {
+          "name": "K. Volpp",
+          "s2_id": "145746867",
+          "openalex_id": null
+        }
+      ],
+      "year": 2011,
+      "publication_date": "2011-10-01",
+      "venue": "Journal of Consumer Psychology",
+      "type": "review",
+      "raw_type": "Review",
+      "ids": {
+        "doi": "10.1016/j.jcps.2011.06.003",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W2115325155",
+        "s2": "74e583a4f7e45a81d6a823544252d735da4b6f1b"
+      },
+      "citation_count": 236,
+      "influential_citation_count": 14,
+      "is_retracted": false,
+      "oa_url": null,
+      "origins": [
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "9e3699988af6",
+          "rank": 27
+        },
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "3c6587448c9c",
+          "rank": 7
+        },
+        {
+          "source": "s2",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "6c8b6522d8f1",
+          "rank": 28
+        }
+      ],
+      "outside_window": true,
+      "rank": 11,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.1016/j.jcps.2011.06.003"
+    },
+    {
+      "cid": "a46ee7af47d3",
+      "criteria": {
+        "C1": 0,
+        "C2": 0,
+        "C3": 0,
+        "C4": 2,
+        "C5": 3,
+        "C6": 0
+      },
+      "overall": 3,
+      "evidence_level": "other",
+      "relation": "design-changing",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": true
+      },
+      "key_finding": "Maps EU laws on dark patterns onto a six-category taxonomy of autonomy violations, framing regulation of pre-selected defaults and similar choice-architecture tactics as protection of consumer autonomy rather than pure welfare.",
+      "methodology": "Legal doctrinal analysis and taxonomy-building across EU consumer-protection statutes; abstract-only.",
+      "why_it_matters": "Gives the legal test for whether our opt-out default or pre-set multiplier would read as a dark pattern under EU law, directly bearing on which entry mechanism is defensible, not just effective.",
+      "limitations": [
+        "normative legal analysis, not an empirical study of enrolment or savings behaviour",
+        "no financial-product-specific case studies",
+        "framework, not measured effect sizes"
+      ],
+      "relevance_reason": "Directly addresses the EU dark-pattern/manipulation risk the brief flags as a reputational constraint on the opt-out design.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Regulating Dark Patterns",
+      "abstract": "Dark patterns have become increasingly pervasive in online choice architectures, encompassing practices like subscription traps, hiding information about fees, pre-selecting options by default, nagging, and drip pricing. Regulators around the world have started to express concerns that such practices are causing substantial consumer detriment. This Article focuses on the legal response to dark patterns in the European Union. It provides the first comprehensive mapping of European Union laws expressly addressing dark patterns. The Article argues that these laws protect biased consumers and adopt autonomy as a normative lens to assess dark patterns. Consequently, regulating dark patterns in European Union law means regulating for autonomy. This normative lens is under-researched. This Article addresses this gap in research with two principle contributions. First, it works out a specific conception of autonomous decision-making, rooted in the paradigm that providing consumers with information enables consumers to make an informed decision. Second, the Article offers a novel normative classification for dark patterns in online choice architectures. It develops a taxonomy encompassing six categories of autonomy violations, specifically tailored for the assessment and regulation of dark patterns that exploit consumer behavioral biases. These categories serve multiple purposes. They uncover and make explicit the autonomy violations addressed by existing European Union laws. They delineate the contentious line between acceptable influences on consumer decision-making and autonomy violations that may warrant regulation in online choice architectures. They also provide policymakers in the EU and elsewhere with a framework when deliberating the regulation of other instances of dark patterns.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Martin Brenncke",
+          "s2_id": null,
+          "openalex_id": "A5073091271"
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-09-30",
+      "venue": "Aston Publications Explorer (Aston University)",
+      "type": "article",
+      "raw_type": "article",
+      "ids": {
+        "doi": "10.48550/arxiv.2310.00340",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W4387323449",
+        "s2": null
+      },
+      "citation_count": 8,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://publications.aston.ac.uk/id/eprint/45801/1/Brenncke_Regulating_Dark_Patterns_2023_AAM.pdf",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q7",
+          "seed_id": null,
+          "rank": 2
+        }
+      ],
+      "outside_window": false,
+      "rank": 12,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.48550/arxiv.2310.00340"
+    },
+    {
+      "cid": "df2e582de7db",
+      "criteria": {
+        "C1": 3,
+        "C2": 3,
+        "C3": 3,
+        "C4": 0,
+        "C5": 2,
+        "C6": 0
+      },
+      "overall": 2,
+      "evidence_level": "observational",
+      "relation": "foundational",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "Automatic 401(k) enrollment pushed participation above 85% at three firms, but about 80% of enrollees initially accepted both the default 2-3% contribution rate and default conservative fund, and half still did so after three years, largely offsetting the wealth gains from higher participation.",
+      "methodology": "Multi-year administrative panel data from three large U.S. firms comparing pre- and post-automatic-enrollment cohorts.",
+      "why_it_matters": "The definitive demonstration that a pre-set default level anchors most users for years, directly warning that shipping a pre-selected round-up multiplier risks anchoring people below what they would otherwise choose, and that enrollment gains can be offset by anchoring effects on amount.",
+      "limitations": [
+        "401(k) employer plan with an intermediary employer relationship the brief says doesn't transfer",
+        "2001 data, predating app-based product design and EU rules",
+        "measures retirement contribution/investment defaults, not a liquid round-up multiplier"
+      ],
+      "relevance_reason": "The foundational study on default-level anchoring persistence, the exact risk the brief's second design decision (pre-set multiplier) needs evidence on.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "For Better or For Worse: Default Effects and 401(k) Savings Behavior",
+      "abstract": "In the last several years, many employers have decided to automatically enroll their new employees in the company 401(k) plan. Using several years of administrative data from three large firms, we analyze the impact of automatic enrollment on 401(k) participation rates, savings behavior, and asset accumulation. We find that although employees can opt out of the 401(k) plan, few choose to do so. As a result, automatic enrollment has a dramatic impact on retirement savings behavior: 401(k) participation rates at all three firms exceed 85%, but participants tend to anchor at a low default savings rate and in a conservative default investment vehicle. We find that initially, about 80% of participants accept both the default savings rate (2% or 3% for our three companies) and the default investment fund (a stable value or money market fund). Even after three years, half of the plan participants subject to automatic enrollment continue to contribute at the default rate and invest their contributions exclusively in the default fund. The effects of automatic enrollment on asset accumulation are not straightforward. While higher participation rates promote wealth accumulation, the low default savings rate and the conservative default investment fund undercut accumulation. In our sample, these two effects are roughly offsetting on average. However, automatic enrollment does increase saving in the lower tail of the savings distribution by dramatically reducing the fraction of employees who do not participate in the 401(k) plan.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "James J. Choi",
+          "s2_id": null,
+          "openalex_id": "A5102947185"
+        },
+        {
+          "name": "David Laibson",
+          "s2_id": null,
+          "openalex_id": "A5058269956"
+        },
+        {
+          "name": "Brigitte C. Madrian",
+          "s2_id": null,
+          "openalex_id": "A5071283924"
+        },
+        {
+          "name": "Andrew Metrick",
+          "s2_id": null,
+          "openalex_id": "A5048441405"
+        }
+      ],
+      "year": 2001,
+      "publication_date": "2001-12-01",
+      "venue": "National Bureau of Economic Research",
+      "type": "other",
+      "raw_type": "report",
+      "ids": {
+        "doi": "10.3386/w8651",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W2110070697",
+        "s2": null
+      },
+      "citation_count": 165,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.3386/w8651",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "b6857cc616fe",
+          "rank": 17
+        },
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f0395b76e878",
+          "rank": 19
+        }
+      ],
+      "outside_window": true,
+      "rank": 13,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.3386/w8651"
+    },
+    {
+      "cid": "5273b68f1dce",
+      "criteria": {
+        "C1": 3,
+        "C2": 2,
+        "C3": 3,
+        "C4": 0,
+        "C5": 2,
+        "C6": 0
+      },
+      "overall": 2,
+      "evidence_level": "observational",
+      "relation": "closely-related",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "At a 12% default contribution rate, 25% of employees had not opted out after 12 months (versus ~50% at lower defaults in prior literature), and many stayed anchored at 12% despite it being financially suboptimal for them.",
+      "methodology": "Administrative data analysis of a single employer retirement plan with an unusually high default; literature comparison for baseline opt-out rates.",
+      "why_it_matters": "Shows a pre-set level can anchor people well past the point of financial sense, and that low-income employees are anchored more strongly \u2014 directly relevant to whether a pre-selected round-up multiplier will anchor rather than merely suggest.",
+      "limitations": [
+        "employer-sponsored retirement plan, not a consumer self-directed liquid savings product",
+        "no employer-as-intermediary control condition"
+      ],
+      "relevance_reason": "Strongest available evidence on anchoring at a pre-set contribution level, the mechanism behind C3, even though the setting is a pension plan.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Automatic Enrollment with a 12% Default Contribution Rate",
+      "abstract": "We study a retirement savings plan with a default contribution rate of 12% of income, which is much higher than previously studied defaults. Twenty-five percent of employees had not opted out of this default 12 months after hire; a literature review finds that the corresponding fraction in plans with lower defaults is approximately one-half. Because only contributions above 12% were matched by the employer, 12% was likely to be a suboptimal contribution rate for employees. Employees who remained at the 12% default contribution rate had average income that was approximately one-third lower than would be predicted from the relationship between salaries and contribution rates among employees who were not at 12%. Defaults may influence low-income employees more strongly in part because these employees face higher psychological barriers to active decision making. Contributions: conceptualized paper (JB, DL, BM, JC), wrote paper (JB, JC), edited paper (DL), implemented empirical analysis (JB, RG), project leadership (JB, JC). The research reported herein was supported by the U.S. Social Security Administration (SSA) through grant #10-M-98363-1-02 to the National Bureau of Economic Research (NBER) as part of the Retirement Research Consortium (RRC). The findings and conclusions expressed are solely those of the authors and do not represent the views of SSA, any agency of the Federal Government, the RRC, the authors\u2019 universities, or NBER. The authors thank Joshua Rauh and two anonymous reviewers for their comments and thank Yeguang Chi and Richard Lombardo for excellent research assistance. The authors also acknowledge individual and collective financial support from the National Institutes of Health (grants R01-AG021650 and T32-AG-000186) and the Pershing Square Fund for Research on the Foundations of Human Behavior.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "John Beshears",
+          "s2_id": null,
+          "openalex_id": "A5084393981"
+        },
+        {
+          "name": "Ruofei Guo",
+          "s2_id": null,
+          "openalex_id": "A5104167462"
+        },
+        {
+          "name": "David Laibson",
+          "s2_id": null,
+          "openalex_id": "A5058269956"
+        },
+        {
+          "name": "Brigitte C. Madrian",
+          "s2_id": null,
+          "openalex_id": "A5071283924"
+        },
+        {
+          "name": "James J. Choi",
+          "s2_id": null,
+          "openalex_id": "A5102947185"
+        }
+      ],
+      "year": 2023,
+      "publication_date": "2023-08-01",
+      "venue": "National Bureau of Economic Research",
+      "type": "article",
+      "raw_type": "report",
+      "ids": {
+        "doi": "10.3386/w31601",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W4386214208",
+        "s2": "4ba006b92f5932ba95d90cb6f0c4793a1b0b29f5"
+      },
+      "citation_count": 7,
+      "influential_citation_count": 1,
+      "is_retracted": false,
+      "oa_url": "https://doi.org/10.3386/w31601",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 2
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 5
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 2
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q1",
+          "seed_id": null,
+          "rank": 3
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q6",
+          "seed_id": null,
+          "rank": 1
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "Q6",
+          "seed_id": null,
+          "rank": 3
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q6",
+          "seed_id": null,
+          "rank": 1
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "Q6",
+          "seed_id": null,
+          "rank": 2
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "G1",
+          "seed_id": null,
+          "rank": 22
+        },
+        {
+          "source": "openalex",
+          "relation": "query",
+          "query_id": "G1",
+          "seed_id": null,
+          "rank": 37
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "G1",
+          "seed_id": null,
+          "rank": 3
+        },
+        {
+          "source": "s2",
+          "relation": "query",
+          "query_id": "G1",
+          "seed_id": null,
+          "rank": 4
+        }
+      ],
+      "outside_window": false,
+      "rank": 14,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.3386/w31601"
+    },
+    {
+      "cid": "5a5e499f6ec3",
+      "criteria": {
+        "C1": 3,
+        "C2": 2,
+        "C3": 1,
+        "C4": 0,
+        "C5": 3,
+        "C6": 1
+      },
+      "overall": 2,
+      "evidence_level": "observational",
+      "relation": "foundational",
+      "flags": {
+        "review": false,
+        "contradicts": false,
+        "methods_paper": false
+      },
+      "key_finding": "Using 41 million observations in Denmark, each $1 of government subsidy expenditure raised total saving by only 1 cent because 85% of people are 'passive savers' unresponsive to subsidies but heavily moved by automatic (default) employer contributions, while the 15% 'active savers' who do respond are wealthier and more sophisticated.",
+      "methodology": "Large-scale administrative panel data analysis of Danish retirement savings accounts, decomposing active versus passive responses to subsidies and automatic contributions.",
+      "why_it_matters": "Gives the clearest quantified evidence that passive/default mechanisms move a very different (less sophisticated) population than active mechanisms move, directly informing the brief's concern about who is helped by defaults versus who was already going to save.",
+      "limitations": [
+        "Danish retirement/tax-advantaged savings accounts, an employer/government-mediated setting",
+        "measures long-run wealth shifting across account types rather than liquid, discretionary round-up saving",
+        "predates app-based fintech and current EU dark-pattern scrutiny"
+      ],
+      "relevance_reason": "The strongest available evidence on heterogeneity between active and passive savers under default versus subsidy-based mechanisms, central to the brief's distributional question even though set in retirement accounts.",
+      "verification": {
+        "verified": true,
+        "verified_by": [
+          "crossref",
+          "openalex"
+        ],
+        "verified_on": "2026-08-27",
+        "title_match_ratio": 100.0,
+        "mismatches": []
+      },
+      "title": "Active vs. Passive Decisions and Crowd-Out in Retirement Savings Accounts: Evidence from Denmark *",
+      "abstract": "Abstract Using 41 million observations on savings for the population of Denmark, we show that the effects of retirement savings policies on wealth accumulation depend on whether they change savings rates by active or passive choice. Subsidies for retirement accounts, which rely on individuals to take an action to raise savings, primarily induce individuals to shift assets from taxable accounts to retirement accounts. We estimate that each $1 of government expenditure on subsidies increases total saving by only 1 cent. In contrast, policies that raise retirement contributions if individuals take no action\u2014such as automatic employer contributions to retirement accounts\u2014increase wealth accumulation substantially. We estimate that approximately 15% of individuals are \u201cactive savers\u201d who respond to tax subsidies primarily by shifting assets across accounts; 85% of individuals are \u201cpassive savers\u201d who are unresponsive to subsidies but are instead heavily influenced by automatic contributions made on their behalf. Active savers tend to be wealthier and more financially sophisticated. We conclude that automatic contributions are more effective at increasing savings rates than subsidies for three reasons: (i) subsidies induce relatively few individuals to respond, (ii) they generate substantial crowd-out conditional on response, and (iii) they do not increase the savings of passive individuals, who are least prepared for retirement.",
+      "tldr": null,
+      "authors": [
+        {
+          "name": "Raj Chetty",
+          "s2_id": null,
+          "openalex_id": "A5051484328"
+        },
+        {
+          "name": "John N. Friedman",
+          "s2_id": null,
+          "openalex_id": "A5080908193"
+        },
+        {
+          "name": "S\u00f8ren Leth\u2010Petersen",
+          "s2_id": null,
+          "openalex_id": "A5021604824"
+        },
+        {
+          "name": "Torben Heien Nielsen",
+          "s2_id": null,
+          "openalex_id": "A5039937611"
+        },
+        {
+          "name": "Tore Vincents Olsen",
+          "s2_id": null,
+          "openalex_id": "A5089980736"
+        }
+      ],
+      "year": 2014,
+      "publication_date": "2014-05-09",
+      "venue": "The Quarterly Journal of Economics",
+      "type": "article",
+      "raw_type": "article",
+      "ids": {
+        "doi": "10.1093/qje/qju013",
+        "arxiv": null,
+        "pmid": null,
+        "openalex": "W2236924981",
+        "s2": null
+      },
+      "citation_count": 694,
+      "influential_citation_count": null,
+      "is_retracted": false,
+      "oa_url": "http://nrs.harvard.edu/urn-3:HUL.InstRepos:27304884",
+      "origins": [
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f9d28a450ab0",
+          "rank": 5
+        },
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "3c6587448c9c",
+          "rank": 1
+        },
+        {
+          "source": "openalex",
+          "relation": "references",
+          "query_id": null,
+          "seed_id": "f0395b76e878",
+          "rank": 1
+        }
+      ],
+      "outside_window": true,
+      "rank": 15,
+      "selection_reason": "score",
+      "url": "https://doi.org/10.1093/qje/qju013"
+    }
+  ]
+}

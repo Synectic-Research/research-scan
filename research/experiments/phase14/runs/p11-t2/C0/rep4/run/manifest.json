@@ -1,0 +1,192 @@
+{
+  "run": {
+    "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/runs/p11-t2/C0/rep4/run",
+    "slug": "p11-t2",
+    "date": "2026-08-26",
+    "brief_path": "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/runs/p11-t2/C0/rep4/run/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2024-01",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "standard"
+    }
+  },
+  "defaults": {
+    "window": {
+      "from": "2024-01",
+      "to": null
+    },
+    "top": 10,
+    "foundational": 2,
+    "domain": "cs",
+    "sources": [
+      "openalex",
+      "s2",
+      "arxiv"
+    ],
+    "profile": "standard"
+  },
+  "retrieval": {
+    "per_source": {
+      "openalex": {
+        "queried": 8,
+        "hits": 320,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "s2": {
+        "queried": 8,
+        "hits": 280,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "arxiv": {
+        "queried": 8,
+        "hits": 272,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "anon"
+      }
+    },
+    "deduped_remaining": 771,
+    "abstracts_present": 435,
+    "dropped": {
+      "retracted": 0,
+      "must_not": 2,
+      "type": 0,
+      "window": 0,
+      "preprint": 0,
+      "cap": 319
+    },
+    "cost_estimate_usd": 0.008,
+    "duration_s": 11.485
+  },
+  "retrieval_round2": {
+    "per_source": {
+      "openalex": {
+        "queried": 4,
+        "hits": 160,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "s2": {
+        "queried": 4,
+        "hits": 160,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "key"
+      },
+      "arxiv": {
+        "queried": 4,
+        "hits": 96,
+        "failed": 0,
+        "unavailable": false,
+        "auth": "anon"
+      }
+    },
+    "deduped_remaining": 373,
+    "abstracts_present": 355,
+    "dropped": {
+      "retracted": 0,
+      "must_not": 2,
+      "type": 0,
+      "window": 0,
+      "preprint": 0,
+      "cap": 0
+    },
+    "cost_estimate_usd": 0.004,
+    "duration_s": 70.061
+  },
+  "expansion": {
+    "seeds": 15,
+    "added": 100,
+    "added_outside_window": 20,
+    "dropped": {
+      "retracted": 0,
+      "must_not": 0,
+      "type": 0,
+      "cap": 285
+    },
+    "auth": {
+      "s2": "key",
+      "openalex": "key"
+    },
+    "duration_s": 91.278
+  },
+  "expansion_round2": {
+    "seeds": 4,
+    "added": 81,
+    "added_outside_window": 0,
+    "dropped": {
+      "retracted": 0,
+      "must_not": 0,
+      "type": 0,
+      "cap": 12
+    },
+    "auth": {
+      "s2": "key",
+      "openalex": "key"
+    },
+    "duration_s": 38.072
+  },
+  "verification": {
+    "verified": 40,
+    "unverified": 0,
+    "dropped_retracted": 0,
+    "crossref_skipped": false,
+    "duration_s": 0.032
+  },
+  "emit": {
+    "top": 10,
+    "foundational": 2,
+    "contradicting": 1,
+    "emitted": 10,
+    "alternates": 5,
+    "dropped_retracted": 0,
+    "duration_s": 0.0
+  },
+  "counts": {
+    "retrieved": 1288,
+    "deduped": 928,
+    "expanded": 181,
+    "screened_ge2": 200,
+    "shortlisted": 40,
+    "ranked": 40,
+    "verified": 40,
+    "emitted": 10,
+    "wall_clock_s": 49130.0
+  },
+  "tool_version": "0.5.1",
+  "timestamps": {
+    "init.started_at": "2026-08-26T08:50:38+00:00",
+    "init.finished_at": "2026-08-26T08:50:38+00:00",
+    "retrieve.started_at": "2026-08-26T08:55:51+00:00",
+    "retrieve.finished_at": "2026-08-26T08:56:02+00:00",
+    "expand.started_at": "2026-08-26T09:00:53+00:00",
+    "expand.finished_at": "2026-08-26T09:02:25+00:00",
+    "coverage.started_at": "2026-08-26T09:13:31+00:00",
+    "coverage.finished_at": "2026-08-26T09:13:31+00:00",
+    "retrieve-r2.started_at": "2026-08-26T09:07:41+00:00",
+    "retrieve-r2.finished_at": "2026-08-26T09:08:54+00:00",
+    "expand-r2.started_at": "2026-08-26T09:11:31+00:00",
+    "expand-r2.finished_at": "2026-08-26T09:12:09+00:00",
+    "shortlist.started_at": "2026-08-26T09:13:31+00:00",
+    "shortlist.finished_at": "2026-08-26T09:13:31+00:00",
+    "verify.started_at": "2026-08-26T22:29:27+00:00",
+    "verify.finished_at": "2026-08-26T22:29:27+00:00",
+    "emit.started_at": "2026-08-26T22:29:28+00:00",
+    "emit.finished_at": "2026-08-26T22:29:28+00:00"
+  }
+}

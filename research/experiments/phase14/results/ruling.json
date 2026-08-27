@@ -1,0 +1,344 @@
+{
+ "thresholds": {
+  "material_recall_gain": 1.0,
+  "non_inferiority": 0.0,
+  "saturation_relative_cut": 0.25,
+  "stable_in_c0": 0.8,
+  "stable_floor": 0.6
+ },
+ "verdicts": {
+  "S": {
+   "cell": "S",
+   "control": "C0",
+   "clauses": {
+    "materially_better": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": 0.2,
+      "llm-lit-search": -0.4
+     },
+     "threshold": ">= +1.0 on at least one topic"
+    },
+    "non_inferior_both_topics": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": 0.2,
+      "llm-lit-search": -0.4
+     },
+     "threshold": ">= 0.0 on every topic"
+    },
+    "no_stable_golden_lost": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": [],
+      "llm-lit-search": [
+       {
+        "golden": "PaSa",
+        "c0": "4/5",
+        "S": "0/4"
+       }
+      ]
+     },
+     "threshold": "f_g >= 0.8 in C0 may not fall below 0.6"
+    },
+    "no_special_slot_regression": {
+     "pass": true,
+     "detail": {
+      "defaults-savings": [],
+      "llm-lit-search": []
+     },
+     "threshold": "review / contradicting / foundational fills and inclusion freqs >= C0"
+    },
+    "substantially_less_saturated": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": -0.0615,
+      "llm-lit-search": 0.0126
+     },
+     "threshold": ">= 25% relative reduction on every topic"
+    }
+   },
+   "adopt": false,
+   "per_topic": {
+    "defaults-savings": {
+     "n": 5,
+     "n_control": 5,
+     "recall10_mean": 1,
+     "c0_recall10_mean": 0.8,
+     "delta_recall10_mean": 0.2,
+     "recall10_min": 0,
+     "c0_recall10_min": 0,
+     "top_tier_share": 0.345,
+     "c0_top_tier_share": 0.325,
+     "saturation_relative_cut": -0.0615,
+     "stable_golden_breaches": [],
+     "slot_regressions": [],
+     "jaccard_mean": 0.5972,
+     "c0_jaccard_mean": 0.8273
+    },
+    "llm-lit-search": {
+     "n": 4,
+     "n_control": 5,
+     "recall10_mean": 2,
+     "c0_recall10_mean": 2.4,
+     "delta_recall10_mean": -0.4,
+     "recall10_min": 2,
+     "c0_recall10_min": 2,
+     "top_tier_share": 0.5875,
+     "c0_top_tier_share": 0.595,
+     "saturation_relative_cut": 0.0126,
+     "stable_golden_breaches": [
+      {
+       "golden": "PaSa",
+       "c0": "4/5",
+       "S": "0/4"
+      }
+     ],
+     "slot_regressions": [],
+     "jaccard_mean": 0.5951,
+     "c0_jaccard_mean": 0.6434
+    }
+   }
+  },
+  "C": {
+   "cell": "C",
+   "control": "C0",
+   "clauses": {
+    "materially_better": {
+     "pass": true,
+     "detail": {
+      "defaults-savings": 1.4,
+      "llm-lit-search": -0.6
+     },
+     "threshold": ">= +1.0 on at least one topic"
+    },
+    "non_inferior_both_topics": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": 1.4,
+      "llm-lit-search": -0.6
+     },
+     "threshold": ">= 0.0 on every topic"
+    },
+    "no_stable_golden_lost": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": [],
+      "llm-lit-search": [
+       {
+        "golden": "PaSa",
+        "c0": "4/5",
+        "C": "2/5"
+       },
+       {
+        "golden": "OpenScholar",
+        "c0": "4/5",
+        "C": "2/5"
+       }
+      ]
+     },
+     "threshold": "f_g >= 0.8 in C0 may not fall below 0.6"
+    },
+    "no_special_slot_regression": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": [],
+      "llm-lit-search": [
+       {
+        "slot": "review_slots",
+        "c0": 0.6,
+        "C": 0.2
+       }
+      ]
+     },
+     "threshold": "review / contradicting / foundational fills and inclusion freqs >= C0"
+    }
+   },
+   "adopt": false,
+   "per_topic": {
+    "defaults-savings": {
+     "n": 5,
+     "n_control": 5,
+     "recall10_mean": 2.2,
+     "c0_recall10_mean": 0.8,
+     "delta_recall10_mean": 1.4,
+     "recall10_min": 1,
+     "c0_recall10_min": 0,
+     "top_tier_share": 0.415,
+     "c0_top_tier_share": 0.325,
+     "saturation_relative_cut": -0.2769,
+     "stable_golden_breaches": [],
+     "slot_regressions": [],
+     "jaccard_mean": 0.4741,
+     "c0_jaccard_mean": 0.8273
+    },
+    "llm-lit-search": {
+     "n": 5,
+     "n_control": 5,
+     "recall10_mean": 1.8,
+     "c0_recall10_mean": 2.4,
+     "delta_recall10_mean": -0.6,
+     "recall10_min": 1,
+     "c0_recall10_min": 2,
+     "top_tier_share": 0.65,
+     "c0_top_tier_share": 0.595,
+     "saturation_relative_cut": -0.0924,
+     "stable_golden_breaches": [
+      {
+       "golden": "PaSa",
+       "c0": "4/5",
+       "C": "2/5"
+      },
+      {
+       "golden": "OpenScholar",
+       "c0": "4/5",
+       "C": "2/5"
+      }
+     ],
+     "slot_regressions": [
+      {
+       "slot": "review_slots",
+       "c0": 0.6,
+       "C": 0.2
+      }
+     ],
+     "jaccard_mean": 0.5573,
+     "c0_jaccard_mean": 0.6434
+    }
+   }
+  },
+  "SC": {
+   "cell": "SC",
+   "control": "C0",
+   "clauses": {
+    "materially_better": {
+     "pass": true,
+     "detail": {
+      "defaults-savings": 2.2,
+      "llm-lit-search": -0.4
+     },
+     "threshold": ">= +1.0 on at least one topic"
+    },
+    "non_inferior_both_topics": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": 2.2,
+      "llm-lit-search": -0.4
+     },
+     "threshold": ">= 0.0 on every topic"
+    },
+    "no_stable_golden_lost": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": [],
+      "llm-lit-search": [
+       {
+        "golden": "PaSa",
+        "c0": "4/5",
+        "SC": "1/5"
+       }
+      ]
+     },
+     "threshold": "f_g >= 0.8 in C0 may not fall below 0.6"
+    },
+    "no_special_slot_regression": {
+     "pass": true,
+     "detail": {
+      "defaults-savings": [],
+      "llm-lit-search": []
+     },
+     "threshold": "review / contradicting / foundational fills and inclusion freqs >= C0"
+    },
+    "substantially_less_saturated": {
+     "pass": false,
+     "detail": {
+      "defaults-savings": -0.4615,
+      "llm-lit-search": -0.1261
+     },
+     "threshold": ">= 25% relative reduction on every topic"
+    }
+   },
+   "adopt": false,
+   "per_topic": {
+    "defaults-savings": {
+     "n": 5,
+     "n_control": 5,
+     "recall10_mean": 3,
+     "c0_recall10_mean": 0.8,
+     "delta_recall10_mean": 2.2,
+     "recall10_min": 2,
+     "c0_recall10_min": 0,
+     "top_tier_share": 0.475,
+     "c0_top_tier_share": 0.325,
+     "saturation_relative_cut": -0.4615,
+     "stable_golden_breaches": [],
+     "slot_regressions": [],
+     "jaccard_mean": 0.5549,
+     "c0_jaccard_mean": 0.8273
+    },
+    "llm-lit-search": {
+     "n": 5,
+     "n_control": 5,
+     "recall10_mean": 2,
+     "c0_recall10_mean": 2.4,
+     "delta_recall10_mean": -0.4,
+     "recall10_min": 2,
+     "c0_recall10_min": 2,
+     "top_tier_share": 0.67,
+     "c0_top_tier_share": 0.595,
+     "saturation_relative_cut": -0.1261,
+     "stable_golden_breaches": [
+      {
+       "golden": "PaSa",
+       "c0": "4/5",
+       "SC": "1/5"
+      }
+     ],
+     "slot_regressions": [],
+     "jaccard_mean": 0.5752,
+     "c0_jaccard_mean": 0.6434
+    }
+   }
+  }
+ },
+ "main_effects": {
+  "S": {
+   "defaults-savings": {
+    "contrasts": {
+     "S-C0": 0.2,
+     "SC-C": 0.8
+    },
+    "main_effect": 0.5,
+    "interaction": -0.6
+   },
+   "llm-lit-search": {
+    "contrasts": {
+     "S-C0": -0.4,
+     "SC-C": 0.2
+    },
+    "main_effect": -0.1,
+    "interaction": -0.6
+   }
+  },
+  "C": {
+   "defaults-savings": {
+    "contrasts": {
+     "C-C0": 1.4,
+     "SC-S": 2
+    },
+    "main_effect": 1.7,
+    "interaction": -0.6
+   },
+   "llm-lit-search": {
+    "contrasts": {
+     "C-C0": -0.6,
+     "SC-S": 0
+    },
+    "main_effect": -0.3,
+    "interaction": -0.6
+   }
+  }
+ },
+ "adopted_factors": [],
+ "outcome": "OUTCOME C \u2014 freeze the current reranker"
+}

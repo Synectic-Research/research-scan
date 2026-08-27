@@ -1,0 +1,36 @@
+p14/llm-lit-search/S/r4: shortlist 40+0 -> 40+0=40  rubric=1463602af95dd6e9  priority=on  ledger $20.8244
+  p14/llm-lit-search/S/r4/c1  ok=True attempts=1 kept=13/13  ledger $21.2150
+  p14/llm-lit-search/S/r4/c2  ok=True attempts=1 kept=13/13  ledger $21.6428
+Traceback (most recent call last):
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/run14.py", line 253, in <module>
+    main()
+    ~~~~^^
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/run14.py", line 249, in main
+    one(args.topic, args.cell, args.rep)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/run14.py", line 162, in one
+    outcome = driver14.rerank_chunk(batch, call, priority=priority_on)
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/driver14.py", line 144, in rerank_chunk
+    contract14.check_batch(outcome.batch, outcome.scores)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/contract14.py", line 95, in check_batch
+    raise PriorityContractViolation(batch_tag, violations, rows)
+contract14.PriorityContractViolation: p14/llm-lit-search/S/r4/c3: priority_rank contract violated: 1 overall==3 row(s) carry no rank: ['5197bbb391c8']; ranks not unique: [4]
+p14/llm-lit-search/S/r4: shortlist 40+0 -> 40+0=40  rubric=1463602af95dd6e9  priority=on  ledger $28.8196
+  p14/llm-lit-search/S/r4/c1  ok=True attempts=1 kept=13/13  ledger $29.1048
+  p14/llm-lit-search/S/r4/c2  ok=True attempts=1 kept=13/13  ledger $29.2811
+Traceback (most recent call last):
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/run14.py", line 253, in <module>
+    main()
+    ~~~~^^
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/run14.py", line 249, in main
+    one(args.topic, args.cell, args.rep)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/run14.py", line 162, in one
+    outcome = driver14.rerank_chunk(batch, call, priority=priority_on)
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/driver14.py", line 144, in rerank_chunk
+    contract14.check_batch(outcome.batch, outcome.scores)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nabergoj/Projects/research-scan/research/experiments/phase14/contract14.py", line 95, in check_batch
+    raise PriorityContractViolation(batch_tag, violations, rows)
+contract14.PriorityContractViolation: p14/llm-lit-search/S/r4/c3: priority_rank contract violated: ranks not unique: [3]

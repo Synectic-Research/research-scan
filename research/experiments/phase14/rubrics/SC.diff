@@ -1,0 +1,93 @@
+--- skills/research-scan/references/rerank-rubric.md (C0)
++++ phase14/rubrics/SC.md
+@@ -20,11 +20,51 @@
+ Score each `C*` from `queries.json` independently, from the abstract in front of you. A paper can be
+ 3 on outcome and 0 on population; that pattern is information, and code uses the sum as a tie-break.
+ 
+-### `overall` — holistic 0–3
+-
+-Your own judgment of design impact, **not an average**. A paper that is 3 on the one criterion the
+-decision turns on may deserve a 3 overall while scoring 0 elsewhere. Say what you actually think;
+-ties are broken by code (§10.4), not by you nudging numbers.
++### `overall` — 0–3 against absolute anchors
++
++Judge every record against these four anchors. They are **absolute**: there is no cap on how many
++records may reach any level and no quota requiring that any of them be used.
++
++| Score | Means |
++|---|---|
++| **0** | No material bearing on the research question. |
++| **1** | Related or background; unlikely to change what should be believed, tested, measured, compared or selected. |
++| **2** | Directly useful evidence materially informing at least one criterion, but replaceable by stronger evidence in the current candidate set. |
++| **3** | Decision-changing: omitting this paper would materially weaken or alter the evidence portfolio — closest prior work, strongest evidence, serious contradiction, uniquely relevant method or benchmark precedent, or a necessary foundational result. |
++
++`overall` is your own judgment, **not an average** of `criteria`. A paper that is 3 on the one
++criterion the decision turns on may deserve a 3 overall while scoring 0 elsewhere. Say what you
++actually think.
++
++### `priority_rank` — a strict order over the records you scored 3
++
++Every record you score `overall: 3` also carries a `priority_rank`: a strict ranking of those
++records against each other, best first. The ranks are **1, 2, 3, … with no gaps and no ties** — if
++four records in front of you score 3, exactly one carries `1`, one `2`, one `3` and one `4`. Every
++record you score 0, 1 or 2 carries `priority_rank: 0`.
++
++Rank on the same question the top anchor asks: how much would the evidence portfolio lose if this
++paper were left out. This is where you say which of your 3s matters most; the four-level scale
++deliberately cannot.
++
++### What counts as decision-changing value
++
++The purpose taxonomy defines a `research` answer as one that **changes what we believe, what we
++would test, or how we would measure it**, and asks of the claim under test whether a paper bears on
++the relation the brief is asking about **in either direction**. Read that widely, and at every
++purpose. All of the following are legitimate decision-changing value in their own right, not weaker
++substitutes for it:
++
++- **closest prior work** — the published work nearest to what the brief is deciding or claiming;
++- **strongest evidence** — the most rigorous, or largest-sample, estimate available on the question;
++- **contested or contradicting evidence** — work bearing on the brief's relation in the other
++  direction;
++- **method or benchmark precedent** — the technique, design, measurement or evaluation set that the
++  later work is reported against;
++- **necessary foundational results** — the result without which the current literature's argument,
++  baseline or comparison cannot be read.
++
++A paper whose value to the brief is one of these is not scored down for it being one of these.
+ 
+ ### `relation` — required from S4.5 on
+ 
+@@ -38,13 +78,13 @@
+ | `contradicting` | Pushes against a premise the brief states. |
+ | `foundational` | The older work the current literature argues with. |
+ 
+-**Any of the first four earns `overall=3`, unless the off-domain cap below applies** — at every
+-purpose, not only at `build`. Closely-related high-quality work is NOT scored down for being
+-non-actionable: a rigorous study of the same question in a neighbouring setting is exactly what a
+-reader wants next to the directly actionable papers, and on a `research` or `orient` scan it may be
+-the whole answer. Do not reserve 3 for papers that change something a reader is about to build —
+-"informs no named decision" is not a defect when the brief never named one. `foundational` papers
+-are scored on merit like everything else; code handles where they render.
++**`relation` records how the paper stands to the brief; it does not set `overall`.** Score `overall`
++against the anchors above, at every purpose, not only at `build`. Closely-related high-quality work
++is NOT scored down for being non-actionable: a rigorous study of the same question in a
++neighbouring setting is exactly what a reader wants next to the directly actionable papers, and on
++a `research` or `orient` scan it may be the whole answer. "Informs no named decision" is not a
++defect when the brief never named one. `foundational` papers are scored on merit like everything
++else; code handles where they render.
+ 
+ ### The off-domain cap — `overall` 2 maximum
+ 
+@@ -64,6 +104,12 @@
+ technique, design or measurement that carries across, and why it survives the change of setting.
+ "Analogous", "similar dynamics", "the same underlying mechanism" are not method transfers; they are
+ the analogy the cap exists to stop. If you cannot name what transfers, it does not transfer.
++
++The same exception is available when the paper's value to the brief is one of the decision-changing
++roles named above, and `relevance_reason` says which role and what specifically carries across —
++the closest-prior-work claim, the estimate, the contradicted relation, the method or benchmark, or
++the foundational result the brief's decision rests on. The bar is identical to the method-transfer
++bar: a role asserted without naming what carries across is the analogy the cap exists to stop.
+ 
+ This is a real defect, not a hypothetical. The S5 acceptance judge scored `2026-08-19-topic2b`
+ rank 7 a 1: a requirements-traceability QA paper, in a scan about scientific literature search,

@@ -1,0 +1,573 @@
+{
+  "run": {
+    "run_dir": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/runs/p11-t2",
+    "slug": "p11-t2",
+    "date": "2026-08-26",
+    "brief_path": "/Users/nabergoj/Projects/research-scan/research/experiments/phase11-golden/runs/p11-t2/brief.md",
+    "defaults": {
+      "window": {
+        "from": "2024-01",
+        "to": null
+      },
+      "top": 10,
+      "foundational": 2,
+      "domain": "cs",
+      "sources": [
+        "openalex",
+        "s2",
+        "arxiv"
+      ],
+      "profile": "standard"
+    }
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "screened": 570,
+      "ge2": 173,
+      "unattributed_ge2": 0,
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "baseline recall ceiling",
+          "hits": 22,
+          "by_query_type": {
+            "adjacent": 2,
+            "citations": 2,
+            "direct": 3,
+            "emerging": 1,
+            "method": 3,
+            "recommendations": 2,
+            "references": 8,
+            "review": 3,
+            "terminology": 4
+          },
+          "by_source": {
+            "arxiv": 5,
+            "openalex": 4,
+            "s2": 17
+          },
+          "thin": false
+        },
+        {
+          "id": "C2",
+          "name": "agentic mechanism gain",
+          "hits": 84,
+          "by_query_type": {
+            "adjacent": 3,
+            "citations": 6,
+            "direct": 18,
+            "emerging": 4,
+            "mechanism": 8,
+            "method": 17,
+            "recommendations": 2,
+            "references": 18,
+            "review": 5,
+            "terminology": 16
+          },
+          "by_source": {
+            "arxiv": 25,
+            "openalex": 11,
+            "s2": 66
+          },
+          "thin": false
+        },
+        {
+          "id": "C3",
+          "name": "retrieval/reranking method",
+          "hits": 77,
+          "by_query_type": {
+            "adjacent": 6,
+            "citations": 3,
+            "direct": 15,
+            "emerging": 1,
+            "mechanism": 10,
+            "method": 24,
+            "recommendations": 3,
+            "references": 21,
+            "review": 3,
+            "terminology": 3
+          },
+          "by_source": {
+            "arxiv": 21,
+            "openalex": 17,
+            "s2": 55
+          },
+          "thin": false
+        },
+        {
+          "id": "C4",
+          "name": "benchmark construction",
+          "hits": 58,
+          "by_query_type": {
+            "adjacent": 5,
+            "citations": 9,
+            "contradictory": 1,
+            "direct": 6,
+            "emerging": 3,
+            "mechanism": 2,
+            "method": 2,
+            "recommendations": 3,
+            "references": 23,
+            "review": 6,
+            "terminology": 14
+          },
+          "by_source": {
+            "arxiv": 14,
+            "openalex": 14,
+            "s2": 39
+          },
+          "thin": false
+        },
+        {
+          "id": "C5",
+          "name": "gain replication failure",
+          "hits": 6,
+          "by_query_type": {
+            "adjacent": 2,
+            "contradictory": 1,
+            "emerging": 1,
+            "recommendations": 1,
+            "references": 1,
+            "review": 1,
+            "terminology": 2
+          },
+          "by_source": {
+            "arxiv": 5,
+            "s2": 3
+          },
+          "thin": false
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "Q1",
+          "type": "direct",
+          "pool": 69,
+          "ge2": 27
+        },
+        {
+          "query_id": "Q2",
+          "type": "terminology",
+          "pool": 71,
+          "ge2": 31
+        },
+        {
+          "query_id": "Q3",
+          "type": "mechanism",
+          "pool": 57,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q4",
+          "type": "method",
+          "pool": 57,
+          "ge2": 27
+        },
+        {
+          "query_id": "Q5",
+          "type": "contradictory",
+          "pool": 58,
+          "ge2": 1
+        },
+        {
+          "query_id": "Q6",
+          "type": "review",
+          "pool": 56,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q7",
+          "type": "adjacent",
+          "pool": 58,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q8",
+          "type": "emerging",
+          "pool": 69,
+          "ge2": 8
+        }
+      ],
+      "seeds": [
+        {
+          "seed_id": "04c2c77e0326",
+          "neighbours": 8,
+          "ge2": 4,
+          "precision": 0.5
+        },
+        {
+          "seed_id": "0604cbad73a4",
+          "neighbours": 9,
+          "ge2": 4,
+          "precision": 0.444
+        },
+        {
+          "seed_id": "3759e655e951",
+          "neighbours": 5,
+          "ge2": 1,
+          "precision": 0.2
+        },
+        {
+          "seed_id": "3b14a111838b",
+          "neighbours": 11,
+          "ge2": 4,
+          "precision": 0.364
+        },
+        {
+          "seed_id": "3f16ad6b5a85",
+          "neighbours": 25,
+          "ge2": 14,
+          "precision": 0.56
+        },
+        {
+          "seed_id": "60fd922117d2",
+          "neighbours": 29,
+          "ge2": 17,
+          "precision": 0.586
+        },
+        {
+          "seed_id": "625aeeca9085",
+          "neighbours": 15,
+          "ge2": 6,
+          "precision": 0.4
+        },
+        {
+          "seed_id": "777228ece17c",
+          "neighbours": 12,
+          "ge2": 4,
+          "precision": 0.333
+        },
+        {
+          "seed_id": "aac7d9e865ef",
+          "neighbours": 29,
+          "ge2": 8,
+          "precision": 0.276
+        },
+        {
+          "seed_id": "b0cb9aa1a731",
+          "neighbours": 7,
+          "ge2": 1,
+          "precision": 0.143
+        },
+        {
+          "seed_id": "b26163dcef51",
+          "neighbours": 37,
+          "ge2": 12,
+          "precision": 0.324
+        },
+        {
+          "seed_id": "d8c6216340fd",
+          "neighbours": 16,
+          "ge2": 11,
+          "precision": 0.688
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "screened": 1009,
+      "ge2": 200,
+      "unattributed_ge2": 0,
+      "criteria": [
+        {
+          "id": "C1",
+          "name": "baseline recall ceiling",
+          "hits": 26,
+          "by_query_type": {
+            "adjacent": 2,
+            "citations": 2,
+            "contradictory": 1,
+            "direct": 3,
+            "emerging": 1,
+            "gap": 1,
+            "method": 3,
+            "recommendations": 2,
+            "references": 12,
+            "review": 3,
+            "terminology": 4
+          },
+          "by_source": {
+            "arxiv": 5,
+            "openalex": 4,
+            "s2": 21
+          },
+          "thin": false
+        },
+        {
+          "id": "C2",
+          "name": "agentic mechanism gain",
+          "hits": 89,
+          "by_query_type": {
+            "adjacent": 3,
+            "citations": 7,
+            "direct": 18,
+            "emerging": 4,
+            "mechanism": 8,
+            "method": 17,
+            "recommendations": 5,
+            "references": 19,
+            "review": 5,
+            "terminology": 16
+          },
+          "by_source": {
+            "arxiv": 25,
+            "openalex": 11,
+            "s2": 71
+          },
+          "thin": false
+        },
+        {
+          "id": "C3",
+          "name": "retrieval/reranking method",
+          "hits": 89,
+          "by_query_type": {
+            "adjacent": 6,
+            "citations": 3,
+            "contradictory": 1,
+            "direct": 15,
+            "emerging": 1,
+            "mechanism": 10,
+            "method": 24,
+            "recommendations": 9,
+            "references": 27,
+            "review": 3,
+            "terminology": 3
+          },
+          "by_source": {
+            "arxiv": 22,
+            "openalex": 17,
+            "s2": 67
+          },
+          "thin": false
+        },
+        {
+          "id": "C4",
+          "name": "benchmark construction",
+          "hits": 69,
+          "by_query_type": {
+            "adjacent": 5,
+            "citations": 12,
+            "contradictory": 5,
+            "direct": 6,
+            "emerging": 3,
+            "gap": 2,
+            "mechanism": 2,
+            "method": 2,
+            "recommendations": 6,
+            "references": 26,
+            "review": 6,
+            "terminology": 14
+          },
+          "by_source": {
+            "arxiv": 15,
+            "openalex": 15,
+            "s2": 48
+          },
+          "thin": false
+        },
+        {
+          "id": "C5",
+          "name": "gain replication failure",
+          "hits": 9,
+          "by_query_type": {
+            "adjacent": 2,
+            "citations": 1,
+            "contradictory": 3,
+            "emerging": 1,
+            "recommendations": 2,
+            "references": 1,
+            "review": 1,
+            "terminology": 2
+          },
+          "by_source": {
+            "arxiv": 6,
+            "s2": 5
+          },
+          "thin": false
+        }
+      ],
+      "queries": [
+        {
+          "query_id": "Q1",
+          "type": "direct",
+          "pool": 69,
+          "ge2": 27
+        },
+        {
+          "query_id": "Q2",
+          "type": "terminology",
+          "pool": 71,
+          "ge2": 31
+        },
+        {
+          "query_id": "Q3",
+          "type": "mechanism",
+          "pool": 57,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q4",
+          "type": "method",
+          "pool": 57,
+          "ge2": 27
+        },
+        {
+          "query_id": "Q5",
+          "type": "contradictory",
+          "pool": 58,
+          "ge2": 1
+        },
+        {
+          "query_id": "Q6",
+          "type": "review",
+          "pool": 56,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q7",
+          "type": "adjacent",
+          "pool": 58,
+          "ge2": 14
+        },
+        {
+          "query_id": "Q8",
+          "type": "emerging",
+          "pool": 69,
+          "ge2": 8
+        },
+        {
+          "query_id": "G1",
+          "type": "gap",
+          "pool": 76,
+          "ge2": 1
+        },
+        {
+          "query_id": "G2",
+          "type": "gap",
+          "pool": 86,
+          "ge2": 1
+        },
+        {
+          "query_id": "R1",
+          "type": "contradictory",
+          "pool": 113,
+          "ge2": 3
+        },
+        {
+          "query_id": "R2",
+          "type": "contradictory",
+          "pool": 101,
+          "ge2": 2
+        }
+      ],
+      "seeds": [
+        {
+          "seed_id": "04c2c77e0326",
+          "neighbours": 8,
+          "ge2": 4,
+          "precision": 0.5
+        },
+        {
+          "seed_id": "0604cbad73a4",
+          "neighbours": 9,
+          "ge2": 4,
+          "precision": 0.444
+        },
+        {
+          "seed_id": "3759e655e951",
+          "neighbours": 5,
+          "ge2": 1,
+          "precision": 0.2
+        },
+        {
+          "seed_id": "3b14a111838b",
+          "neighbours": 11,
+          "ge2": 4,
+          "precision": 0.364
+        },
+        {
+          "seed_id": "3f16ad6b5a85",
+          "neighbours": 25,
+          "ge2": 14,
+          "precision": 0.56
+        },
+        {
+          "seed_id": "5197bbb391c8",
+          "neighbours": 27,
+          "ge2": 9,
+          "precision": 0.333
+        },
+        {
+          "seed_id": "60fd922117d2",
+          "neighbours": 29,
+          "ge2": 17,
+          "precision": 0.586
+        },
+        {
+          "seed_id": "625aeeca9085",
+          "neighbours": 15,
+          "ge2": 6,
+          "precision": 0.4
+        },
+        {
+          "seed_id": "777228ece17c",
+          "neighbours": 12,
+          "ge2": 4,
+          "precision": 0.333
+        },
+        {
+          "seed_id": "aac7d9e865ef",
+          "neighbours": 29,
+          "ge2": 8,
+          "precision": 0.276
+        },
+        {
+          "seed_id": "b0cb9aa1a731",
+          "neighbours": 7,
+          "ge2": 1,
+          "precision": 0.143
+        },
+        {
+          "seed_id": "b26163dcef51",
+          "neighbours": 37,
+          "ge2": 12,
+          "precision": 0.324
+        },
+        {
+          "seed_id": "d8c6216340fd",
+          "neighbours": 16,
+          "ge2": 11,
+          "precision": 0.688
+        },
+        {
+          "seed_id": "f367b8118c04",
+          "neighbours": 5,
+          "ge2": 0,
+          "precision": 0.0
+        },
+        {
+          "seed_id": "fe7b87771f9d",
+          "neighbours": 1,
+          "ge2": 1,
+          "precision": 1.0
+        },
+        {
+          "seed_id": "ff039f41b558",
+          "neighbours": 23,
+          "ge2": 11,
+          "precision": 0.478
+        }
+      ]
+    }
+  ],
+  "gap_round": {
+    "should_run": true,
+    "profile": "standard",
+    "forced": false,
+    "reasons": [
+      "C5 gain replication failure has 6 papers, under 8",
+      "C5 gain replication failure has 6 papers against a median of 58 across the criteria"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+--- skills/research-scan/references/rerank-rubric.md (C0)
++++ phase14/rubrics/C.md
+@@ -25,6 +25,25 @@
+ Your own judgment of design impact, **not an average**. A paper that is 3 on the one criterion the
+ decision turns on may deserve a 3 overall while scoring 0 elsewhere. Say what you actually think;
+ ties are broken by code (§10.4), not by you nudging numbers.
++
++### What counts as decision-changing value
++
++The purpose taxonomy defines a `research` answer as one that **changes what we believe, what we
++would test, or how we would measure it**, and asks of the claim under test whether a paper bears on
++the relation the brief is asking about **in either direction**. Read that widely, and at every
++purpose. All of the following are legitimate decision-changing value in their own right, not weaker
++substitutes for it:
++
++- **closest prior work** — the published work nearest to what the brief is deciding or claiming;
++- **strongest evidence** — the most rigorous, or largest-sample, estimate available on the question;
++- **contested or contradicting evidence** — work bearing on the brief's relation in the other
++  direction;
++- **method or benchmark precedent** — the technique, design, measurement or evaluation set that the
++  later work is reported against;
++- **necessary foundational results** — the result without which the current literature's argument,
++  baseline or comparison cannot be read.
++
++A paper whose value to the brief is one of these is not scored down for it being one of these.
+ 
+ ### `relation` — required from S4.5 on
+ 
+@@ -64,6 +83,12 @@
+ technique, design or measurement that carries across, and why it survives the change of setting.
+ "Analogous", "similar dynamics", "the same underlying mechanism" are not method transfers; they are
+ the analogy the cap exists to stop. If you cannot name what transfers, it does not transfer.
++
++The same exception is available when the paper's value to the brief is one of the decision-changing
++roles named above, and `relevance_reason` says which role and what specifically carries across —
++the closest-prior-work claim, the estimate, the contradicted relation, the method or benchmark, or
++the foundational result the brief's decision rests on. The bar is identical to the method-transfer
++bar: a role asserted without naming what carries across is the analogy the cap exists to stop.
+ 
+ This is a real defect, not a hypothetical. The S5 acceptance judge scored `2026-08-19-topic2b`
+ rank 7 a 1: a requirements-traceability QA paper, in a scan about scientific literature search,

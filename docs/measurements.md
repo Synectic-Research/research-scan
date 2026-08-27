@@ -936,3 +936,146 @@ had already found — also gives 9; the union of the two definitions is 11 ranke
 said 4 ranked and 2 in the top 10; the "2 in the top 10" reproduces under the union definition, the
 "4" reproduces under none of the three and is recorded here as unexplained. Derive these counts from
 the artifacts, not from the report.
+
+---
+
+## Phase 1.x — stateless screening, the shortlist order, and the rerank contract (2026-08-26 → 2026-08-27)
+
+A four-arc measurement programme asking whether the judgement stages could be driven by stateless
+API calls instead of a conversation, and — once that turned out to be the wrong question — where a
+scan actually loses good papers. It closed at **Outcome C**: the reranker is frozen, no rubric or
+reranker change ships, and the one selection defect it found is fixed in v0.6.0.
+
+Everything below cites an immutable `SHA:path` under `research/experiments/`, which is committed
+and append-only. **MEASURED and PROJECTED are separated on purpose, and the separation is the
+point**: the wall-clock and cost figures are real measurements of *one stage*; the full-scan
+figures are arithmetic over those parts and have never been run end to end as a default path.
+
+### MEASURED — screening, on the recorded baseline run
+
+Replay of `research/scans/2026-08-26-claim-grounding-sonnet` (a $6.45, 28-minute, 60-turn Sonnet-5
+run) through stateless calls. Same model, same effort, same batches, same rubric; the saved run
+directory was read and never written
+(`552f09c:research/experiments/phase1-stateless/report.md`,
+`552f09c:research/experiments/phase1-stateless/measurements.json`).
+
+| | baseline (conversational) | arm B — stateless, sequential, thinking on | arm C — stateless, parallel, thinking off |
+|---|---|---|---|
+| screening wall clock | 979 s | 960.9 s | **72.6 s** (13.5×) |
+| screening cost | $3.003 | $1.300 | **$0.757** |
+| candidates scored | 572 | 572 | 572 |
+| schema-valid `screen.json` | — | yes | yes |
+| binary ≥ 2 agreement with the baseline | — | 89.5% | 83.0% |
+| exact score agreement | — | 73.1% | 60.3% |
+| papers kept at ≥ 2 | 187 | 135 | 90 |
+
+**The same arc failed its own pre-registered gate, and that is not a footnote.** Arm C's cost was
+25.2% of the baseline screening share against a ≤ 20% target, binary agreement 83.0% against
+≥ 95%, exact agreement 60.3% against ≥ 80% — three FAILs
+(`552f09c:research/experiments/phase1-stateless/report.md` §4). Concurrency, not statelessness, is
+the speed lever: arm B is stateless too and takes essentially the baseline's wall time. Thinking is
+the entire cost difference and buys about seven points of binary agreement.
+
+The rerank arms are the one place a pre-registered fallback passed: top-10 DOI overlap was 5/10 for
+every cut depth (FAIL), while an independent Fable-5 judge scored **1.00 in-window precision on all
+four lists**, with the two cheapest cuts scoring a higher mean relevance than the baseline. Two good
+lists drawn from a pool of near-equivalent 3s, not one good and one bad.
+
+### MEASURED — where the golden topics actually lose papers
+
+Two live end-to-end golden scans through the stateless driver, nothing changed to fix anything
+(`552f09c:research/experiments/phase11-golden/report.md`,
+`552f09c:research/experiments/phase11-golden/measurements.json`). Of the 13 golden papers the two
+runs failed to emit: **1 was lost at screening, 4 were never retrieved, and 8 were lost downstream**
+— at the shortlist cap, the rerank cut, or the reranker's own ordering. Screening is not the loss
+stage. That is the finding that redirected the rest of the programme.
+
+### MEASURED — the shortlist ordering defect (shipped in v0.6.0)
+
+An offline sweep of three orderings × five caps over six frozen inputs — both golden topics, both
+eras, and the two V1-acceptance control runs swept twice (as recorded, and with the `p-standard`
+attribution overlay), 90 recomputations, zero model calls
+(`552f09c:research/experiments/phase12-selection/results/report_head.md`,
+`…/results/report_tail.md`, `…/results/sweep.json`). The sweep's control arm reproduces each run's
+recorded `shortlist.json` cid-for-cid, so it recomputes the shipped code rather than resembling it.
+
+The shipped key was `score DESC, origin_count DESC, date DESC`. In a real pool the first two tiers
+tie in large bands, so date was the only discriminator left and **the cap ran as a recency filter**:
+on `p11-t2` the 54 score-3 candidates split 7/16/31 by origin count, and the 31 single-origin 3s
+were ordered by age alone — OpenScholar (2024-11-21) at rank 52 and LitSearch (2024-07-10) at rank
+54, the two oldest, both cut at 40. On the pre-v0.4-era control run `2026-08-19-topic2b`,
+OpenScholar sat at rank 90 of a 289-strong population and was cut at 40, 60 and 80. It is a latent
+defect, not something the stateless screen created.
+
+Golden survival into the rerank frontier, pooled over both stateless topics (11 goldens scored ≥ 2):
+
+| ordering | @40 | @60 | @80 | @120 |
+|---|---|---|---|---|
+| shipped (T0) | **8/11** | 10/11 | 10/11 | 10/11 |
+| T1 | **10/11** | 10/11 | 10/11 | 10/11 |
+
+10/11 is the finite maximum; the shipped order at the shipped cap is the unique loser. T1 —
+`score DESC, criteria_supported DESC, origin_count DESC, best_retrieval_rank ASC, date DESC` —
+recovers both papers **at cap 40**, with no cap change, no weights, and no extra rerank tokens. A
+stratified per-criterion reserve (T2) was swept alongside it and is a pure no-op on all six inputs
+at every cap, so the simpler policy shipped. v0.6.0 adds `cid ASC` as a terminal tier to make the
+order total; on the same six inputs that moves 4 rows, every one inside a fully tied band, with
+shortlist membership at the shipped caps unchanged
+(`research/experiments/phase12-selection/results/src-t1-replay.json`).
+
+**This measurement makes no recall claim.** Every paper beyond the original cap of 40 was never
+reranked, so no simulated recall@10 was computed for any configuration, and none is reported.
+
+### MEASURED — the reranker, and why it is frozen
+
+Phase-1.2C replayed the 28 recorded rerank runs under every deterministic tie-break ladder over the
+recorded features. Some ladders rescue individual papers inside a tie band, but none meets both the
+recall and the stability bar on both topics — `winner_restores_stability_and_worst_run_recall:
+false` — and on the frontier the architecture actually runs, `defaults-savings/R40`, **all 18 misses
+are SCORE-LOSS**: the golden's `overall` is strictly below the boundary row's, so no ladder
+beginning with `overall DESC` can reach it, by construction. Deterministic selection was exhausted
+there (`23d7c36:research/experiments/phase12-selection/phase12c/results/tables.md` §5,
+`…/results/ruling.json`).
+
+Phase-1.4 then ran the judgement itself: a 2×2 factorial (rubric discrimination × content
+correction) against a **fresh** five-replicate control, both topics, 39 live runs
+(`232effc:research/experiments/phase14/results/tables.md`,
+`232effc:research/experiments/phase14/results/ruling.json`). No cell cleared the pre-registered
+bar on both topics — the strongest cell gained +2.2 mean recall@10 on `defaults-savings` and lost
+0.4 on `llm-lit-search`. `adopted_factors: []`. **Outcome C — freeze the current reranker.** Its
+own README states the consequence: failure does not authorise another tuning slice. The one
+experiment that may reopen it, and the hard kill rule that would end it, are recorded in
+[#3](https://github.com/Synectic-Research/research-scan/issues/3); the screening-strictness
+finding is parked in [#2](https://github.com/Synectic-Research/research-scan/issues/2).
+
+### PROJECTED — not measured, not demonstrated
+
+| | measured baseline | projected, arm C + the R15 rerank cut |
+|---|---|---|
+| full-scan cost | $6.45 | **~$1.31** |
+| full-scan wall clock | 1689 s | ~537 s |
+
+These are arithmetic: the measured screening and rerank arms plus the baseline's own cost and wall
+time for every stage neither arm touched
+(`552f09c:research/experiments/phase1-stateless/measurements.json`, `extrapolation`). **No scan has
+been run end to end this way as a default path**, no golden non-inferiority has been demonstrated
+for it, and nothing in the shipped pipeline calls a model. Quote the screening numbers; do not
+quote the full-scan numbers as a result.
+
+### What shipped in v0.6.0, and what did not
+
+**Shipped:** the T1 shortlist ordering, above. The reference driver in `drivers/stateless/`, as a
+repo-only experimental engine, outside the package and outside the sdist.
+
+**Not shipped:** any reranker or rubric change (Outcome C); the stateless driver as a default or
+documented path; any engine interface in the package. `research-scan` still makes no model calls
+of its own, and `engine = none` — a person or an agent screening against the rubrics — remains the
+first-class way to run a scan; the ratified invariant and the conditions any future engine
+protocol is bound by are in
+[#4](https://github.com/Synectic-Research/research-scan/issues/4).
+
+**The promotion bar, recorded so it is not renegotiated later.** A cognition engine may become a
+documented path only on **end-to-end golden non-inferiority against a fresh multi-replicate
+conversational control**, on both topics. Cost is not a promotion criterion: the arc above is
+exactly the shape of evidence — 13.5× faster, a quarter of the cost, and quality that the same
+evidence cannot yet call equal — that a cost bar would have waved through.

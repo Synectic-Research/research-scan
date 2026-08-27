@@ -9,6 +9,51 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
+## [0.6.0] — 2026-08-27
+
+### Fixed
+
+- **The shortlist tie-break was acting as a recency filter inside large equal-score bands.** The
+  ordered cut handed to the reranker keyed on `score DESC, origin_count DESC, date DESC`, and in a
+  real pool the first two tiers tie across dozens of papers — so date decided, and the cap dropped
+  central papers for being older than their band. On the recorded topic-2 acceptance run a paper
+  screened 3 sat at rank 90 of a 289-strong in-window population and never reached the reranker; on
+  the golden-topic run the cut fell inside the score-3 band and lost two. Latent since v0.4 and
+  present on both eras of artefact — the evidence is in
+  [`docs/measurements.md`](docs/measurements.md),
+  `552f09c:research/experiments/phase12-selection/results/report_tail.md` §4, and the audit record
+  in [#1](https://github.com/Synectic-Research/research-scan/issues/1). Pooled golden
+  survival into the rerank frontier at the shipped cap goes from 8/11 to 10/11, which is the finite
+  maximum, with no cap change and no new weights.
+
+### Added
+
+- A **runtime deployment fingerprint**: the server logs it at startup and `/health` reports it, so
+  a running deployment can be matched to the commit it was built from. `RELEASING.md` gained the
+  post-release step that exercises it — restart, then verify the fingerprint against the release
+  SHA — and a release receipt.
+- An **experimental reference cognition driver** in `drivers/stateless/`, repo-only. It screens a
+  run's batches through stateless provider calls behind a reconciling CID contract, and every run
+  writes a machine-readable engine provenance record. It is **not part of the installed package**:
+  it lives outside `src/`, is excluded from the sdist, was never in the wheel, carries its own
+  pinned dependency contract, and the package's own dependency list is unchanged. It informs the
+  provider-neutral engine protocol that has not shipped
+  ([#4](https://github.com/Synectic-Research/research-scan/issues/4)); promotion to a documented
+  path requires
+  end-to-end golden non-inferiority against a fresh multi-replicate conversational control, and
+  cost is not a promotion criterion.
+
+### Changed
+
+- **Shortlist ordering is now a total order**: `score DESC, criteria_supported DESC,
+  origin_count DESC, best_retrieval_rank ASC, date DESC, cid ASC`. `criteria_supported` counts the
+  distinct sub-criteria screening attributed to a paper (restricted to the ids `queries.json`
+  defines, when the run has that file); `best_retrieval_rank` is the best position any source gave
+  it. Both are evidence the pipeline already produced. The final `cid` tier removes the last
+  dependence on `candidates.json` order — on the six frozen inputs it moves four rows, all inside
+  fully tied bands, with membership at the shipped caps unchanged. **No other selection semantics
+  change**: same caps, same threshold, same two windows, same slot rules at emit.
+
 ## [0.5.2] — 2026-08-21
 
 ### Added

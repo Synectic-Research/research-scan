@@ -52,12 +52,18 @@ packages = ["src/research_scan"]
 # The sdist otherwise takes everything git tracks, and `research/experiments/` is tracked on
 # purpose (see its README). Committed evidence must not become a 20MB payload on PyPI: the
 # wheel never saw it — `packages` above is a whitelist — but the sdist would.
+# The second entry is not redundant: hatchling force-includes any `README.md` it finds, so the
+# directory pattern alone leaves that one file behind.
 [tool.hatch.build.targets.sdist]
-exclude = ["research/experiments/"]
+exclude = ["research/experiments/", "research/experiments/README.md"]
 
 [tool.ruff]
 line-length = 100
 src = ["src", "tests"]
+# `research/experiments/` is committed evidence, not source: append-only by its README, never
+# imported by `src/`. Lint rules would demand edits to frozen artefacts, so it is out of scope
+# for the repo gate (pytest is already confined by `testpaths` below).
+extend-exclude = ["research/experiments"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]

@@ -432,6 +432,12 @@ commit, a test compares them), and the exit-2 error messages.
 measured results behind the current defaults, and `eval/` the golden-set harness
 (`research-scan eval --topic <t> --run <dir>`).
 
+[`drivers/`](https://github.com/Synectic-Research/research-scan/blob/main/drivers/README.md) holds
+experimental reference implementations of a cognition engine — code that produces the judgements a
+scan needs, for people who want one driven by something other than a hosting agent. They live in
+the repository only: nothing there is installed by the package, imported by it, or shipped in its
+sdist or wheel, and no engine protocol ships in this release.
+
 [Documentation](https://researchscan.synectic.org) · [`CONTRIBUTING.md`](https://github.com/Synectic-Research/research-scan/blob/main/CONTRIBUTING.md) · [`SECURITY.md`](https://github.com/Synectic-Research/research-scan/blob/main/SECURITY.md) ·
 [`CHANGELOG.md`](https://github.com/Synectic-Research/research-scan/blob/main/CHANGELOG.md) · [`CODE_OF_CONDUCT.md`](https://github.com/Synectic-Research/research-scan/blob/main/CODE_OF_CONDUCT.md) ·
 [`CITATION.cff`](https://github.com/Synectic-Research/research-scan/blob/main/CITATION.cff) · [`LICENSE`](https://github.com/Synectic-Research/research-scan/blob/main/LICENSE) (Apache-2.0)

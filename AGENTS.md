@@ -81,8 +81,16 @@ The rubrics quote its field tables, so check them too when a contract moves.
 
 ## Boundaries
 
-- **No LLM SDK in this package, ever.** No `anthropic`, no prompts, no model calls. Every judgment
-  belongs to the hosting agent. This is the property that makes the tool harness-agnostic.
+- **No LLM SDK in this package.** No `anthropic`, no prompts, no model calls in `src/`. Every
+  judgment belongs to whatever drives the CLI. This is the property that makes the tool
+  harness-agnostic. Amended at v0.6.0, in wording only: the ratified doctrine is "Research Scan
+  core never depends on a model; optional cognition engines are explicit, replaceable,
+  provenance-recorded, contract-bound, opt-in; default `engine=none`". `drivers/` holds one such
+  engine as a repo-only reference — it is outside the package, carries its own `pyproject.toml`
+  and `uv.lock`, is excluded from the sdist and was never in the wheel, and the package's own
+  dependency list is byte-unchanged by it. The typed interface that would make an engine a
+  supported surface has not shipped; until it does, the README's identity line does not move
+  (`PLUGGABLE_COGNITION_ENGINE`).
 - **Dependencies are the §5 list** (`httpx`, `pydantic`, `typer`, `rapidfuzz`, `pyyaml`; dev
   `pytest`, `respx`, `ruff`). Adding one needs a reason a slice actually proved. Amended at v0.3:
   `fastmcp` and `uvicorn`, exact-pinned, for the MCP server. Amended again at v0.5: they moved from

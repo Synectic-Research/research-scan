@@ -1,0 +1,24 @@
+# The driver's own dependency contract. It is deliberately a separate project: `anthropic` is a
+# dependency of this engine, never of `research-scan`, and the package's dependency list is
+# unchanged by everything in this tree.
+[project]
+name = "research-scan-stateless-driver"
+version = "0.1.0"
+description = "Experimental reference cognition engine for the Research Scan screening stage."
+requires-python = ">=3.11"
+license = "Apache-2.0"
+authors = [{ name = "Andrej Nabergoj" }]
+# Pinned exactly, to the version the Phase-1.x arms were measured against: a driver whose SDK
+# floats is a driver whose measurements cannot be repeated.
+dependencies = ["anthropic==1.0.0"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+# Not an installable package — `uv run` puts `src/` on the path and nothing is built or published.
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,6 +1,6 @@
 [project]
 name = "research-scan"
-version = "0.5.2"
+version = "0.6.0"
 description = "Research Scan finds and verifies the 5–10 recent papers that matter most for a research question, project, or decision."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -49,13 +49,25 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/research_scan"]
 
-# The sdist otherwise takes everything git tracks, and `research/experiments/` is tracked on
-# purpose (see its README). Committed evidence must not become a 20MB payload on PyPI: the
-# wheel never saw it — `packages` above is a whitelist — but the sdist would.
-# The second entry is not redundant: hatchling force-includes any `README.md` it finds, so the
-# directory pattern alone leaves that one file behind.
+# The sdist otherwise takes everything git tracks, and `research/experiments/` and `drivers/` are
+# tracked on purpose (see their READMEs). Committed evidence and a repo-only driver must not
+# become a payload on PyPI: the wheel never saw either — `packages` above is a whitelist — but
+# the sdist would.
+# The `README.md` entries are not redundant: hatchling force-includes any `README.md` it finds,
+# so a directory pattern alone leaves those files behind.
 [tool.hatch.build.targets.sdist]
-exclude = ["research/experiments/", "research/experiments/README.md"]
+exclude = [
+    "research/experiments/",
+    "research/experiments/README.md",
+    "drivers/",
+    "drivers/README.md",
+    "drivers/stateless/README.md",
+    # Per-machine agent configuration. It is ignored by a contributor's global gitignore rather
+    # than by this repo's, so hatchling never saw a rule for it and shipped it — it is in the
+    # published 0.5.2 sdist. Excluded here as well as in `.gitignore`, because the sdist must not
+    # depend on how one contributor's git is configured.
+    ".claude/",
+]
 
 [tool.ruff]
 line-length = 100

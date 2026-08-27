@@ -33,7 +33,9 @@ CID_PATTERN = r"^[0-9a-f]{12}$"
 
 Month = Annotated[str, StringConstraints(pattern=MONTH_PATTERN)]
 Cid = Annotated[str, StringConstraints(pattern=CID_PATTERN)]
-Score = Annotated[int, Field(ge=0, le=3)]
+# Strict, because the shortlist's first tier reads this number. Lax coercion turned `true` into
+# 1 and `"3"` into 3, so a malformed screen file bought a place in the order instead of exiting 2.
+Score = Annotated[int, Field(ge=0, le=3, strict=True)]
 
 MAX_QUERY_WORDS = 30
 MAX_ROUND2_QUERIES = 8
@@ -352,7 +354,10 @@ class Origin(Model):
     relation: Relation = Field(description="`query` for search hits; the rest come from expansion.")
     query_id: str | None = Field(default=None, description="Set when `relation` is `query`.")
     seed_id: Cid | None = Field(default=None, description="Set for expansion relations.")
-    rank: int = Field(ge=0, description="Position in that source's result list.")
+    # Zero-based: every source builds its origins with `enumerate(results)`, so the top hit is
+    # rank 0 and `ge=0` is the real floor, not an off-by-one. Strict for the same reason `Score`
+    # is — the shortlist's fourth tier reads this, and `true` coerced to rank 1.
+    rank: int = Field(ge=0, strict=True, description="Position in that source's result list.")
 
 
 class Candidate(Model):

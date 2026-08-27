@@ -37,3 +37,8 @@ research/experiments/*
 
 # Built skill package — a build artefact, rebuilt from skills/research-scan/
 dist/
+
+# Per-machine agent configuration: local permission decisions and MCP toggles, never shared and
+# never shipped. Ignored here rather than only in a contributor's global gitignore, so the sdist
+# excludes it on every machine.
+.claude/

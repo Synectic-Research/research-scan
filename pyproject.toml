@@ -62,6 +62,11 @@ exclude = [
     "drivers/",
     "drivers/README.md",
     "drivers/stateless/README.md",
+    # Per-machine agent configuration. It is ignored by a contributor's global gitignore rather
+    # than by this repo's, so hatchling never saw a rule for it and shipped it — it is in the
+    # published 0.5.2 sdist. Excluded here as well as in `.gitignore`, because the sdist must not
+    # depend on how one contributor's git is configured.
+    ".claude/",
 ]
 
 [tool.ruff]

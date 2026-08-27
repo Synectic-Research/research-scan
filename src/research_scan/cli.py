@@ -539,11 +539,24 @@ def shortlist_(
             json_output,
         )
 
+    # The order's `criteria_supported` tier counts ids `queries.json` defines, so a typo cannot
+    # buy a place in it. A run without the file still shortlists — every id the screen named
+    # counts — because this stage's inputs are `screen.json` and `candidates.json`, and always were.
+    plan_path = directory / "queries.json"
+    known_criteria = None
+    if plan_path.exists():
+        try:
+            plan = run.read_model(plan_path, QueryPlan)
+        except run.StageInputError as exc:
+            _fail_stage(exc, json_output)
+        known_criteria = {criterion.id for criterion in plan.sub_criteria}
+
     result = shortlist.build(
         candidates.candidates,
         screen,
         max_in_window=max_in_window or shortlist.DEFAULT_MAX_IN_WINDOW,
         max_outside_window=max_outside_window or shortlist.DEFAULT_MAX_OUTSIDE_WINDOW,
+        known_criteria=known_criteria,
     )
     run.write_model(directory / "shortlist.json", result)
 

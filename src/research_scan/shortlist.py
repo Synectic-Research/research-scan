@@ -8,7 +8,9 @@ else exits 2 with the list, because the agent can fix that and only the agent ca
 
 from __future__ import annotations
 
+import functools
 import logging
+from collections.abc import Collection, Iterable, Sequence
 from dataclasses import dataclass, field
 
 from research_scan.schema import Candidate, ScoredCandidate, ScreenFile, Shortlist
@@ -75,9 +77,76 @@ def validate_coverage(candidates: list[Candidate], screen: ScreenFile) -> Covera
     )
 
 
-def order_key(scored: ScoredCandidate) -> tuple:
-    """Score, then how many ways we found it, then recency (§8.7)."""
-    return (scored.score, len(scored.origins), scored.publication_date or "0000-00-00")
+#: A candidate no source ranked (expansion-only, or an origin list a source left empty) sorts
+#: behind every ranked one rather than ahead of it. Phase-1.2A's sweep used the same sentinel.
+NO_RETRIEVAL_RANK = 10**6
+
+#: What an unknown publication date sorts as: last, under a DESC date tier.
+NO_DATE = "0000-00-00"
+
+
+@functools.total_ordering
+class _Descending:
+    """Reverses one field's order so a DESC tier can sit inside an ascending key.
+
+    `publication_date` is a string, so it cannot be negated the way the numeric tiers are, and a
+    whole-key `reverse=True` would flip `cid` too — which is exactly the tier that has to run ASC.
+    """
+
+    __slots__ = ("value",)
+
+    def __init__(self, value: str) -> None:
+        self.value = value
+
+    def __eq__(self, other: object) -> bool:
+        return isinstance(other, _Descending) and self.value == other.value
+
+    def __lt__(self, other: _Descending) -> bool:
+        return other.value < self.value
+
+    def __repr__(self) -> str:  # pragma: no cover - diagnostics only
+        return f"_Descending({self.value!r})"
+
+
+def criteria_supported(criteria_hit: Sequence[str], known: Collection[str] | None = None) -> int:
+    """How many distinct sub-criteria a paper was screened as satisfying.
+
+    Unique, because a repeated id is one criterion; and restricted to `known` when the run's
+    `queries.json` is at hand, so a typo cannot buy a place in the order. Empty on pre-v0.2
+    `screen.json` files, where the tier no-ops and the remaining tiers decide.
+
+    criteria_supported is a lexicographic tie-break feature, not a relevance score — never
+    optimize it numerically.
+    """
+    if known is None:
+        return len({criterion for criterion in criteria_hit if criterion})
+    return len({criterion for criterion in criteria_hit if criterion in known})
+
+
+def best_retrieval_rank(candidate: Candidate) -> int:
+    """The best position any source gave this paper, over every origin it earned."""
+    return min((origin.rank for origin in candidate.origins), default=NO_RETRIEVAL_RANK)
+
+
+def order_key(scored: ScoredCandidate, supported: int = 0) -> tuple:
+    """The shortlist's lexicographic total order — ascending, so `sorted(..., key=…)` is enough.
+
+    score DESC, criteria_supported DESC, origin_count DESC, best_retrieval_rank ASC, date DESC,
+    cid ASC (§8.7, Phase-1.2A). Date sat third until v0.6.0, where — inside the large equal-score,
+    equal-origin bands a real pool actually produces — it was the only discriminator left, so the
+    cut ran as a recency filter and dropped central papers for being older than their band
+    (`552f09c:research/experiments/phase12-selection/results/report_tail.md` §4). The two tiers
+    ahead of it are relevance evidence the screen and the retrieval already produced; `cid` last
+    makes the order total, so a shortlist does not depend on `candidates.json` order.
+    """
+    return (
+        -scored.score,
+        -supported,
+        -len(scored.origins),
+        best_retrieval_rank(scored),
+        _Descending(scored.publication_date or NO_DATE),
+        scored.cid,
+    )
 
 
 def build(
@@ -86,23 +155,28 @@ def build(
     *,
     max_in_window: int = DEFAULT_MAX_IN_WINDOW,
     max_outside_window: int = DEFAULT_MAX_OUTSIDE_WINDOW,
+    known_criteria: Collection[str] | None = None,
 ) -> Shortlist:
-    """Attach scores, split by window, order, and cut (§8.7)."""
+    """Attach scores, split by window, order, and cut (§8.7).
+
+    `known_criteria` is `queries.json`'s sub-criterion ids when the caller has them; without it
+    `criteria_supported` counts every distinct id the screen named.
+    """
     scores = {entry.cid: entry.score for entry in screen.scores}
+    supported = {
+        entry.cid: criteria_supported(entry.criteria_hit, known_criteria)
+        for entry in screen.scores
+    }
     scored = [
         ScoredCandidate(**candidate.model_dump(), score=scores[candidate.cid])
         for candidate in candidates
         if scores.get(candidate.cid, 0) >= SHORTLIST_SCORE_THRESHOLD
     ]
 
-    in_window = sorted(
-        (item for item in scored if not item.outside_window), key=order_key, reverse=True
-    )
-    outside_window = sorted(
-        (item for item in scored if item.outside_window), key=order_key, reverse=True
-    )
+    def ordered(items: Iterable[ScoredCandidate]) -> list[ScoredCandidate]:
+        return sorted(items, key=lambda item: order_key(item, supported.get(item.cid, 0)))
 
     return Shortlist(
-        in_window=in_window[:max_in_window],
-        outside_window=outside_window[:max_outside_window],
+        in_window=ordered(item for item in scored if not item.outside_window)[:max_in_window],
+        outside_window=ordered(item for item in scored if item.outside_window)[:max_outside_window],
     )

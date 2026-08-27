@@ -1,0 +1,410 @@
+{
+ "part_a_all_six_inputs_reproduce_t1": true,
+ "part_b_every_reordering_inside_a_tie_band": true,
+ "build_matches_the_with_cid_arm": true,
+ "cid_affected_rows_total": 4,
+ "runs": [
+  {
+   "key": "t1-stateless",
+   "label": "topic 1 defaults-savings \u2014 Phase-1.1 stateless",
+   "run_dir": "research/experiments/phase11-golden/runs/p11-t1",
+   "criteria_overlay": null,
+   "pool_ge2": 78,
+   "pool_in_window": 72,
+   "pool_outside_window": 6,
+   "attribution": {
+    "rows_with_criteria_hit": 78,
+    "rows_where_unique_and_valid_differs": []
+   },
+   "part_a_reproduces_phase12a_t1": {
+    "T1@40": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 40,
+     "outside_window_rows": 6
+    },
+    "T1@60": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 60,
+     "outside_window_rows": 6
+    },
+    "T1@80": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 72,
+     "outside_window_rows": 6
+    },
+    "T1@120": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 72,
+     "outside_window_rows": 6
+    },
+    "T1@inf": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 72,
+     "outside_window_rows": 6
+    }
+   },
+   "part_b_cid_tier": {
+    "in_window": {
+     "rows": 72,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "outside_window": {
+     "rows": 6,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "membership_at_shipped_caps": {
+     "in_window_40_identical": true,
+     "outside_window_12_identical": true
+    },
+    "build_matches_with_cid_arm": true
+   }
+  },
+  {
+   "key": "t2-stateless",
+   "label": "topic 2 llm-lit-search \u2014 Phase-1.1 stateless",
+   "run_dir": "research/experiments/phase11-golden/runs/p11-t2",
+   "criteria_overlay": null,
+   "pool_ge2": 200,
+   "pool_in_window": 200,
+   "pool_outside_window": 0,
+   "attribution": {
+    "rows_with_criteria_hit": 200,
+    "rows_where_unique_and_valid_differs": []
+   },
+   "part_a_reproduces_phase12a_t1": {
+    "T1@40": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 40,
+     "outside_window_rows": 0
+    },
+    "T1@60": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 60,
+     "outside_window_rows": 0
+    },
+    "T1@80": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 80,
+     "outside_window_rows": 0
+    },
+    "T1@120": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 120,
+     "outside_window_rows": 0
+    },
+    "T1@inf": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 200,
+     "outside_window_rows": 0
+    }
+   },
+   "part_b_cid_tier": {
+    "in_window": {
+     "rows": 200,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "outside_window": {
+     "rows": 0,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "membership_at_shipped_caps": {
+     "in_window_40_identical": true,
+     "outside_window_12_identical": true
+    },
+    "build_matches_with_cid_arm": true
+   }
+  },
+  {
+   "key": "t1-control",
+   "label": "topic 1 defaults-savings \u2014 conversational control (s3-e2e)",
+   "run_dir": "research/scans/2026-08-19-s3-e2e",
+   "criteria_overlay": null,
+   "pool_ge2": 104,
+   "pool_in_window": 87,
+   "pool_outside_window": 17,
+   "attribution": {
+    "rows_with_criteria_hit": 0,
+    "rows_where_unique_and_valid_differs": []
+   },
+   "part_a_reproduces_phase12a_t1": {
+    "T1@40": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 40,
+     "outside_window_rows": 12
+    },
+    "T1@60": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 60,
+     "outside_window_rows": 12
+    },
+    "T1@80": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 80,
+     "outside_window_rows": 12
+    },
+    "T1@120": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 87,
+     "outside_window_rows": 12
+    },
+    "T1@inf": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 87,
+     "outside_window_rows": 12
+    }
+   },
+   "part_b_cid_tier": {
+    "in_window": {
+     "rows": 87,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "outside_window": {
+     "rows": 17,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "membership_at_shipped_caps": {
+     "in_window_40_identical": true,
+     "outside_window_12_identical": true
+    },
+    "build_matches_with_cid_arm": true
+   }
+  },
+  {
+   "key": "t2-control",
+   "label": "topic 2 llm-lit-search \u2014 conversational control (topic2b)",
+   "run_dir": "research/scans/2026-08-19-topic2b",
+   "criteria_overlay": null,
+   "pool_ge2": 301,
+   "pool_in_window": 289,
+   "pool_outside_window": 12,
+   "attribution": {
+    "rows_with_criteria_hit": 0,
+    "rows_where_unique_and_valid_differs": []
+   },
+   "part_a_reproduces_phase12a_t1": {
+    "T1@40": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 40,
+     "outside_window_rows": 12
+    },
+    "T1@60": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 60,
+     "outside_window_rows": 12
+    },
+    "T1@80": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 80,
+     "outside_window_rows": 12
+    },
+    "T1@120": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 120,
+     "outside_window_rows": 12
+    },
+    "T1@inf": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 289,
+     "outside_window_rows": 12
+    }
+   },
+   "part_b_cid_tier": {
+    "in_window": {
+     "rows": 289,
+     "moved": 2,
+     "moved_cids": [
+      "37a0a181c5b8",
+      "b3d5d32fa2ab"
+     ],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "outside_window": {
+     "rows": 12,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "membership_at_shipped_caps": {
+     "in_window_40_identical": true,
+     "outside_window_12_identical": true
+    },
+    "build_matches_with_cid_arm": true
+   }
+  },
+  {
+   "key": "t1-control+attr",
+   "label": "topic 1 control, criteria overlay from p-standard-t1",
+   "run_dir": "research/scans/2026-08-19-s3-e2e",
+   "criteria_overlay": "research/scans/2026-08-19-p-standard-t1",
+   "pool_ge2": 104,
+   "pool_in_window": 87,
+   "pool_outside_window": 17,
+   "attribution": {
+    "rows_with_criteria_hit": 104,
+    "rows_where_unique_and_valid_differs": []
+   },
+   "part_a_reproduces_phase12a_t1": {
+    "T1@40": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 40,
+     "outside_window_rows": 12
+    },
+    "T1@60": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 60,
+     "outside_window_rows": 12
+    },
+    "T1@80": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 80,
+     "outside_window_rows": 12
+    },
+    "T1@120": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 87,
+     "outside_window_rows": 12
+    },
+    "T1@inf": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 87,
+     "outside_window_rows": 12
+    }
+   },
+   "part_b_cid_tier": {
+    "in_window": {
+     "rows": 87,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "outside_window": {
+     "rows": 17,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "membership_at_shipped_caps": {
+     "in_window_40_identical": true,
+     "outside_window_12_identical": true
+    },
+    "build_matches_with_cid_arm": true
+   }
+  },
+  {
+   "key": "t2-control+attr",
+   "label": "topic 2 control, criteria overlay from p-standard-t2",
+   "run_dir": "research/scans/2026-08-19-topic2b",
+   "criteria_overlay": "research/scans/2026-08-19-p-standard-t2",
+   "pool_ge2": 301,
+   "pool_in_window": 289,
+   "pool_outside_window": 12,
+   "attribution": {
+    "rows_with_criteria_hit": 301,
+    "rows_where_unique_and_valid_differs": []
+   },
+   "part_a_reproduces_phase12a_t1": {
+    "T1@40": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 40,
+     "outside_window_rows": 12
+    },
+    "T1@60": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 60,
+     "outside_window_rows": 12
+    },
+    "T1@80": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 80,
+     "outside_window_rows": 12
+    },
+    "T1@120": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 120,
+     "outside_window_rows": 12
+    },
+    "T1@inf": {
+     "in_window_identical": true,
+     "outside_window_identical": true,
+     "in_window_rows": 289,
+     "outside_window_rows": 12
+    }
+   },
+   "part_b_cid_tier": {
+    "in_window": {
+     "rows": 289,
+     "moved": 2,
+     "moved_cids": [
+      "37a0a181c5b8",
+      "b3d5d32fa2ab"
+     ],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "outside_window": {
+     "rows": 12,
+     "moved": 0,
+     "moved_cids": [],
+     "reordered_outside_a_tie_band": [],
+     "membership_identical_uncapped": true
+    },
+    "membership_at_shipped_caps": {
+     "in_window_40_identical": true,
+     "outside_window_12_identical": true
+    },
+    "build_matches_with_cid_arm": true
+   }
+  }
+ ]
+}

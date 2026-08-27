@@ -1,0 +1,257 @@
+{
+ "batch": "x02",
+ "sub_criteria": [
+  {
+   "id": "C1",
+   "name": "baseline recall ceiling",
+   "text": "Reports or measures the recall/precision ceiling of single-query database search (BM25, embedding search, or a search API) as a comparison point."
+  },
+  {
+   "id": "C2",
+   "name": "agentic mechanism gain",
+   "text": "Attributes a measured gain to a specific agentic move — query reformulation, citation-graph traversal, or iterative crawling — rather than to the system as an undifferentiated whole."
+  },
+  {
+   "id": "C3",
+   "name": "retrieval/reranking method",
+   "text": "Describes or evaluates a retrieval or reranking technique underlying an agentic literature-search system (dense retrieval, learned reranker, hybrid search)."
+  },
+  {
+   "id": "C4",
+   "name": "benchmark construction",
+   "text": "Explains how an evaluation set for literature-search agents was built — query source, relevance labeling, corpus coverage, contamination controls."
+  },
+  {
+   "id": "C5",
+   "name": "gain replication failure",
+   "text": "Shows a reported agentic gain shrinking, disappearing, or failing to generalize under a different benchmark, metric, or independent replication."
+  }
+ ],
+ "items": [
+  {
+   "cid": "5b772b4af4f9",
+   "title": "Qwen3 Technical Report",
+   "abstract_600": "In this work, we present Qwen3, the latest version of the Qwen model family. Qwen3 comprises a series of large language models (LLMs) designed to advance performance, efficiency, and multilingual capabilities. The Qwen3 series includes models of both dense and Mixture-of-Expert (MoE) architectures, with parameter scales ranging from 0.6 to 235 billion. A key innovation in Qwen3 is the integration of thinking mode (for complex, multi-step reasoning) and non-thinking mode (for rapid, context-driven responses) into a unified framework. This eliminates the need to switch between different models--",
+   "year": 2025,
+   "venue": null,
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "ae3afed1d636",
+   "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+   "abstract_600": "Mathematical reasoning poses a significant challenge for language models due to its complex and structured nature. In this paper, we introduce DeepSeekMath 7B, which continues pre-training DeepSeek-Coder-Base-v1.5 7B with 120B math-related tokens sourced from Common Crawl, together with natural language and code data. DeepSeekMath 7B has achieved an impressive score of 51.7% on the competition-level MATH benchmark without relying on external toolkits and voting techniques, approaching the performance level of Gemini-Ultra and GPT-4. Self-consistency over 64 samples from DeepSeekMath 7B achieve",
+   "year": 2024,
+   "venue": "arXiv.org",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "4a1808a68e2a",
+   "title": "Gemini 2.5: Pushing the Frontier with Advanced Reasoning, Multimodality, Long Context, and Next Generation Agentic Capabilities",
+   "abstract_600": "In this report, we introduce the Gemini 2.X model family: Gemini 2.5 Pro and Gemini 2.5 Flash, as well as our earlier Gemini 2.0 Flash and Flash-Lite models. Gemini 2.5 Pro is our most capable model yet, achieving SoTA performance on frontier coding and reasoning benchmarks. In addition to its incredible coding and reasoning skills, Gemini 2.5 Pro is a thinking model that excels at multimodal understanding and it is now able to process up to 3 hours of video content. Its unique combination of long context, multimodal and reasoning capabilities can be combined to unlock new agentic workflows. G",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "b27a24fe580e",
+   "title": "The Claude 3 Model Family: Opus, Sonnet, Haiku",
+   "abstract_600": null,
+   "year": null,
+   "venue": null,
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "06529dd41b76",
+   "title": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+   "abstract_600": "Inference scaling empowers LLMs with unprecedented reasoning ability, with reinforcement learning as the core technique to elicit complex reasoning. However, key technical details of state-of-the-art reasoning LLMs are concealed (such as in OpenAI o1 blog and DeepSeek R1 technical report), thus the community still struggles to reproduce their RL training results. We propose the $\\textbf{D}$ecoupled Clip and $\\textbf{D}$ynamic s$\\textbf{A}$mpling $\\textbf{P}$olicy $\\textbf{O}$ptimization ($\\textbf{DAPO}$) algorithm, and fully open-source a state-of-the-art large-scale RL system that achieves 50",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "9bf0e36392aa",
+   "title": "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+   "abstract_600": "Large Language Models (LLMs) applied to code-related applications have emerged as a prominent field, attracting significant interest from both academia and industry. However, as new and improved LLMs are developed, existing evaluation benchmarks (e.g., HumanEval, MBPP) are no longer sufficient for assessing their capabilities. In this work, we propose LiveCodeBench, a comprehensive and contamination-free evaluation of LLMs for code, which continuously collects new problems over time from contests across three competition platforms, namely LeetCode, AtCoder, and CodeForces. Notably, our benchma",
+   "year": 2024,
+   "venue": "International Conference on Learning Representations",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "1368f4284dea",
+   "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+   "abstract_600": "The use of retrieval-augmented generation (RAG) to retrieve relevant information from an external knowledge source enables large language models (LLMs) to answer questions over private and/or previously unseen document collections. However, RAG fails on global questions directed at an entire text corpus, such as\"What are the main themes in the dataset?\", since this is inherently a query-focused summarization (QFS) task, rather than an explicit retrieval task. Prior QFS methods, meanwhile, do not scale to the quantities of text indexed by typical RAG systems. To combine the strengths of these c",
+   "year": 2024,
+   "venue": "arXiv.org",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "2ad9d99f0b79",
+   "title": "M3-Embedding: Multi-Linguality, Multi-Functionality, Multi-Granularity Text Embeddings Through Self-Knowledge Distillation",
+   "abstract_600": "In this paper, we introduce a new embedding model called M3-Embedding, which is distinguished for its versatility in \\textit{Multi-Linguality}, \\textit{Multi-Functionality}, and \\textit{Multi-Granularity}. It provides a uniform support for the semantic retrieval of more than 100 working languages. It can simultaneously accomplish the three common retrieval functionalities: dense retrieval, multi-vector retrieval, and sparse retrieval. Besides, it is also capable of processing inputs of different granularities, spanning from short sentences to long documents of up to 8,192 tokens. The effective",
+   "year": 2024,
+   "venue": "Annual Meeting of the Association for Computational Linguistics",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "7e43a4234722",
+   "title": "Detecting hallucinations in large language models using semantic entropy",
+   "abstract_600": "Large language model (LLM) systems, such as ChatGPT1 or Gemini2, can show impressive reasoning and question-answering capabilities but often ‘hallucinate’ false outputs and unsubstantiated answers3,4. Answering unreliably or without the necessary information prevents adoption in diverse fields, with problems including fabrication of legal precedents5 or untrue facts in news articles6 and even posing a risk to human life in medical domains such as radiology7. Encouraging truthfulness through supervision or reinforcement has been only partially successful8. Researchers need a general method for",
+   "year": 2024,
+   "venue": "Nature",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "2157edcc0bd6",
+   "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+   "abstract_600": "In this white paper, we present AlphaEvolve, an evolutionary coding agent that substantially enhances capabilities of state-of-the-art LLMs on highly challenging tasks such as tackling open scientific problems or optimizing critical pieces of computational infrastructure. AlphaEvolve orchestrates an autonomous pipeline of LLMs, whose task is to improve an algorithm by making direct changes to the code. Using an evolutionary approach, continuously receiving feedback from one or more evaluators, AlphaEvolve iteratively improves the algorithm, potentially leading to new scientific and practical d",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "383b0f005b6a",
+   "title": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale",
+   "abstract_600": "The performance of a large language model (LLM) depends heavily on the quality and size of its pretraining dataset. However, the pretraining datasets for state-of-the-art open LLMs like Llama 3 and Mixtral are not publicly available and very little is known about how they were created. In this work, we introduce FineWeb, a 15-trillion token dataset derived from 96 Common Crawl snapshots that produces better-performing LLMs than other open pretraining datasets. To advance the understanding of how best to curate high-quality pretraining datasets, we carefully document and ablate all of the desig",
+   "year": 2024,
+   "venue": "Neural Information Processing Systems",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "d91bba85d875",
+   "title": "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments",
+   "abstract_600": "Autonomous agents that accomplish complex computer tasks with minimal human interventions have the potential to transform human-computer interaction, significantly enhancing accessibility and productivity. However, existing benchmarks either lack an interactive environment or are limited to environments specific to certain applications or domains, failing to reflect the diverse and complex nature of real-world computer use, thereby limiting the scope of tasks and agent scalability. To address this issue, we introduce OSWorld, the first-of-its-kind scalable, real computer environment for multim",
+   "year": 2024,
+   "venue": "Neural Information Processing Systems",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "4a14fef053e3",
+   "title": "Why Do Multi-Agent LLM Systems Fail?",
+   "abstract_600": "Despite enthusiasm for Multi-Agent LLM Systems (MAS), their performance gains on popular benchmarks are often minimal. This gap highlights a critical need for a principled understanding of why MAS fail. Addressing this question requires systematic identification and analysis of failure patterns. We introduce MAST-Data, a comprehensive dataset of 1600+ annotated traces collected across 7 popular MAS frameworks. MAST-Data is the first multi-agent system dataset to outline the failure dynamics in MAS for guiding the development of better future systems. To enable systematic classification of fail",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "8e780f21853b",
+   "title": "A Survey on Evaluation of LLM-based Agents",
+   "abstract_600": "LLM-based agents represent a paradigm shift in AI, enabling autonomous systems to plan, reason, and use tools while interacting with dynamic environments. This paper provides the first comprehensive survey of evaluation methods for these increasingly capable agents. We analyze the field of agent evaluation across five perspectives: (1) Core LLM capabilities needed for agentic workflows, like planning, and tool use; (2) Application-specific benchmarks such as web and SWE agents; (3) Evaluation of generalist agents; (4) Analysis of agent benchmarks'core dimensions; and (5) Evaluation frameworks",
+   "year": 2026,
+   "venue": "Annual Meeting of the Association for Computational Linguistics",
+   "origin_count": 2,
+   "outside_window": false
+  },
+  {
+   "cid": "63a70af94562",
+   "title": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+   "abstract_600": "Task automation has been greatly empowered by the recent advances in Large Language Models (LLMs) via Python code, where the tasks ranging from software engineering development to general-purpose reasoning. While current benchmarks have shown that LLMs can solve tasks using programs like human developers, the majority of their evaluations are limited to short and self-contained algorithmic tasks or standalone function calls. Solving challenging and practical tasks requires the capability of utilizing diverse function calls as tools to efficiently implement functionalities like data analysis an",
+   "year": 2024,
+   "venue": "International Conference on Learning Representations",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "bec9840a6e94",
+   "title": "Accelerating scientific discovery with Co-Scientist",
+   "abstract_600": "Scientific discovery is driven by scientists generating hypotheses for complex problems that undergo rigorous experimental validation. To augment this process, we introduce Co-Scientist, a multi-agent artificial intelligence (AI) system built on Gemini for structured scientific thinking and hypothesis generation. Co-Scientist aims to help scientists discover new original knowledge. Conditioned on their research objectives and previous scientific evidence, it formulates demonstrably novel research hypotheses for experimental verification. The system’s design involves agents continuously generat",
+   "year": 2025,
+   "venue": "Nature",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "4fde20d46d5b",
+   "title": "NV-Embed: Improved Techniques for Training LLMs as Generalist Embedding Models",
+   "abstract_600": "Decoder-only LLM-based embedding models are beginning to outperform BERT or T5-based embedding models in general-purpose text embedding tasks, including dense vector-based retrieval. In this work, we introduce NV-Embed, incorporating architectural designs, training procedures, and curated datasets to significantly enhance the performance of LLM as a versatile embedding model, while maintaining its simplicity and reproducibility. For model architecture, we propose a latent attention layer to obtain pooled embeddings, which consistently improves retrieval and downstream task accuracy compared to",
+   "year": 2024,
+   "venue": "International Conference on Learning Representations",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "fc55bb28b48b",
+   "title": "A benchmark of expert-level academic questions to assess AI capabilities",
+   "abstract_600": "Benchmarks are important tools for tracking the rapid advancements in large language model (LLM) capabilities. However, benchmarks are not keeping pace in difficulty: LLMs now achieve more than 90% accuracy on popular benchmarks such as Measuring Massive Multitask Language Understanding1, limiting informed measurement of state-of-the-art LLM capabilities. Here, in response, we introduce Humanity’s Last Exam (HLE), a multi-modal benchmark at the frontier of human knowledge, designed to be an expert-level closed-ended academic benchmark with broad subject coverage. HLE consists of 2,500 question",
+   "year": 2025,
+   "venue": "Nature",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "0b653fe6d7bf",
+   "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+   "abstract_600": "Recent large language model (LLM)-driven chat assistant systems have integrated memory components to track user-assistant chat histories, enabling more accurate and personalized responses. However, their long-term memory capabilities in sustained interactions remain underexplored. We introduce LongMemEval, a comprehensive benchmark designed to evaluate five core long-term memory abilities of chat assistants: information extraction, multi-session reasoning, temporal reasoning, knowledge updates, and abstention. With 500 meticulously curated questions embedded within freely scalable user-assista",
+   "year": 2024,
+   "venue": "International Conference on Learning Representations",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "f0391ba70949",
+   "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation",
+   "abstract_600": "Retrieval-Augmented Generation (RAG) systems enhance large language models (LLMs) by integrating external knowledge sources, enabling more accurate and contextually relevant responses tailored to user needs. However, existing RAG systems have significant limitations, including reliance on flat data representations and inadequate contextual awareness, which can lead to fragmented answers that fail to capture complex inter-dependencies. To address these challenges, we propose LightRAG, which incorporates graph structures into text indexing and retrieval processes. This innovative framework emplo",
+   "year": 2024,
+   "venue": "Conference on Empirical Methods in Natural Language Processing",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "0874c37384b6",
+   "title": "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering",
+   "abstract_600": "We introduce MLE-bench, a benchmark for measuring how well AI agents perform at machine learning engineering. To this end, we curate 75 ML engineering-related competitions from Kaggle, creating a diverse set of challenging tasks that test real-world ML engineering skills such as training models, preparing datasets, and running experiments. We establish human baselines for each competition using Kaggle's publicly available leaderboards. We use open-source agent scaffolds to evaluate several frontier language models on our benchmark, finding that the best-performing setup--OpenAI's o1-preview wi",
+   "year": 2024,
+   "venue": "arXiv.org",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "d931535c694a",
+   "title": "MedXpertQA: Benchmarking Expert-Level Medical Reasoning and Understanding",
+   "abstract_600": "We introduce MedXpertQA, a highly challenging and comprehensive benchmark to evaluate expert-level medical knowledge and advanced reasoning. MedXpertQA includes 4,460 questions spanning 17 specialties and 11 body systems. It includes two subsets, Text for text evaluation and MM for multimodal evaluation. Notably, MM introduces expert-level exam questions with diverse images and rich clinical information, including patient records and examination results, setting it apart from traditional medical multimodal benchmarks with simple QA pairs generated from image captions. MedXpertQA applies rigoro",
+   "year": 2025,
+   "venue": "International Conference on Machine Learning",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "c1642d9b9412",
+   "title": "From RAG to Memory: Non-Parametric Continual Learning for Large Language Models",
+   "abstract_600": "Our ability to continuously acquire, organize, and leverage knowledge is a key feature of human intelligence that AI systems must approximate to unlock their full potential. Given the challenges in continual learning with large language models (LLMs), retrieval-augmented generation (RAG) has become the dominant way to introduce new information. However, its reliance on vector retrieval hinders its ability to mimic the dynamic and interconnected nature of human long-term memory. Recent RAG approaches augment vector embeddings with various structures like knowledge graphs to address some of thes",
+   "year": 2025,
+   "venue": "International Conference on Machine Learning",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "7e7fa2bcc7ef",
+   "title": "MiniMax-M1: Scaling Test-Time Compute Efficiently with Lightning Attention",
+   "abstract_600": "We introduce MiniMax-M1, the world's first open-weight, large-scale hybrid-attention reasoning model. MiniMax-M1 is powered by a hybrid Mixture-of-Experts (MoE) architecture combined with a lightning attention mechanism. The model is developed based on our previous MiniMax-Text-01 model, which contains a total of 456 billion parameters with 45.9 billion parameters activated per token. The M1 model natively supports a context length of 1 million tokens, 8x the context size of DeepSeek R1. Furthermore, the lightning attention mechanism in MiniMax-M1 enables efficient scaling of test-time compute",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "origin_count": 1,
+   "outside_window": false
+  },
+  {
+   "cid": "32c874c08bbd",
+   "title": "Generative Representational Instruction Tuning",
+   "abstract_600": "All text-based language problems can be reduced to either generation or embedding. Current models only perform well at one or the other. We introduce generative representational instruction tuning (GRIT) whereby a large language model is trained to handle both generative and embedding tasks by distinguishing between them through instructions. Compared to other open models, our resulting GritLM 7B sets a new state of the art on the Massive Text Embedding Benchmark (MTEB) and outperforms all models up to its size on a range of generative tasks. By scaling up further, GritLM 8x7B outperforms all",
+   "year": 2024,
+   "venue": "arXiv.org",
+   "origin_count": 1,
+   "outside_window": false
+  }
+ ]
+}

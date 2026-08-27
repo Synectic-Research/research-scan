@@ -24,12 +24,10 @@ idea is not retried blind.
   `552f09c462dce07a7c20fa3f30e85c3264f42346:research/experiments/phase12-selection/results/report_tail.md`
   §4, and the audit record in
   [#1](https://github.com/Synectic-Research/research-scan/issues/1). Fixed in
-  `1fd1465f413c21104d7af3710ed219ce595ca49a`, with
-  the replay that proves it in
+  `1fd1465f413c21104d7af3710ed219ce595ca49a`, with the replay that proves it in
   `1fd1465f413c21104d7af3710ed219ce595ca49a:research/experiments/phase12-selection/results/src-t1-replay.json`.
-  Pooled golden
-  survival into the rerank frontier at the shipped cap goes from 8/11 to 10/11, which is the finite
-  maximum, with no cap change and no new weights.
+  Pooled golden survival into the rerank frontier at the shipped cap goes from 8/11 to 10/11,
+  which is the finite maximum, with no cap change and no new weights.
 
 ### Added
 

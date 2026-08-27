@@ -10,8 +10,10 @@ from __future__ import annotations
 
 import functools
 import logging
+import re
 from collections.abc import Collection, Iterable, Sequence
 from dataclasses import dataclass, field
+from datetime import date
 
 from research_scan.schema import Candidate, ScoredCandidate, ScreenFile, Shortlist
 
@@ -81,8 +83,31 @@ def validate_coverage(candidates: list[Candidate], screen: ScreenFile) -> Covera
 #: behind every ranked one rather than ahead of it. Phase-1.2A's sweep used the same sentinel.
 NO_RETRIEVAL_RANK = 10**6
 
-#: What an unknown publication date sorts as: last, under a DESC date tier.
+#: What an unknown publication date sorts as: last, under a DESC date tier. Lower than every
+#: real `YYYY-MM-DD`, so it needs no special case in the comparator.
 NO_DATE = "0000-00-00"
+
+_ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def order_date(publication_date: str | None) -> str:
+    """The date tier's domain: a real `YYYY-MM-DD`, or `NO_DATE` for missing and malformed.
+
+    `publication_date` is free text at the schema — sources report partial dates (`2024`,
+    `2024-03`) and the field is metadata everywhere else, so tightening it there would reject
+    records the pipeline is meant to keep. The ordering needs a total domain instead: anything
+    that is not a real calendar date sorts with the unknowns, behind every dated row, rather
+    than being compared as a raw string (where `"2024-13-01"` or `"n.d."` outranks `"2025-01-01"`).
+
+    Resolved here, in the key, so the comparator itself stays plain tuple comparison.
+    """
+    if not publication_date or not _ISO_DATE.match(publication_date):
+        return NO_DATE
+    try:
+        date.fromisoformat(publication_date)
+    except ValueError:
+        return NO_DATE
+    return publication_date
 
 
 @functools.total_ordering
@@ -111,20 +136,38 @@ class _Descending:
 def criteria_supported(criteria_hit: Sequence[str], known: Collection[str] | None = None) -> int:
     """How many distinct sub-criteria a paper was screened as satisfying.
 
-    Unique, because a repeated id is one criterion; and restricted to `known` when the run's
-    `queries.json` is at hand, so a typo cannot buy a place in the order. Empty on pre-v0.2
-    `screen.json` files, where the tier no-ops and the remaining tiers decide.
+    The domain is narrow on purpose. An id counts when it is a non-empty string that `known`
+    declares; ids are compared in their canonical form — the schema strips surrounding
+    whitespace, and matching is exact against `queries.json` — and de-duplicated after that
+    normalisation, because a repeated id is one criterion. Empty, unknown and misspelled ids are
+    ignored rather than counted, so a typo cannot buy a place in the order; booleans and other
+    non-strings never reach here, being rejected at the schema. Without `known` (the caller has
+    no `queries.json`) every distinct non-empty id counts.
+
+    The no-op is artifact-level and is decided before sorting, in `build`, which resolves this
+    count for every row up front: when no row in a `screen.json` carries a valid hit the tier is
+    uniformly 0 across that artifact and the remaining tiers decide, which is what a pre-v0.2
+    file gets. In a mixed artifact a row with no valid hits scores 0 and sorts behind its
+    attributed peers — it is not exempted. This is never a pairwise "skip this tier" comparator:
+    the tier is one resolved number per row, not a decision taken between two rows.
 
     criteria_supported is a lexicographic tie-break feature, not a relevance score — never
     optimize it numerically.
     """
     if known is None:
         return len({criterion for criterion in criteria_hit if criterion})
-    return len({criterion for criterion in criteria_hit if criterion in known})
+    return len({criterion for criterion in criteria_hit if criterion and criterion in known})
 
 
 def best_retrieval_rank(candidate: Candidate) -> int:
-    """The best position any source gave this paper, over every origin it earned."""
+    """The best position any source gave this paper, over every origin it earned.
+
+    Every rank reaching here is already a valid one: `Origin.rank` is a strict, non-negative int
+    at the schema, so booleans, floats, strings and negatives exit 2 long before the order runs.
+    A candidate no source ranked — no origins at all — takes `NO_RETRIEVAL_RANK` and sorts behind
+    every ranked row; an artifact where nothing is ranked gives every row the same sentinel, so
+    the tier no-ops naturally. `origin_count` is a separate tier and is unaffected either way.
+    """
     return min((origin.rank for origin in candidate.origins), default=NO_RETRIEVAL_RANK)
 
 
@@ -138,13 +181,20 @@ def order_key(scored: ScoredCandidate, supported: int = 0) -> tuple:
     (`552f09c:research/experiments/phase12-selection/results/report_tail.md` §4). The two tiers
     ahead of it are relevance evidence the screen and the retrieval already produced; `cid` last
     makes the order total, so a shortlist does not depend on `candidates.json` order.
+
+    Every tier resolves to a plain, totally ordered value here, and the result is a plain tuple
+    that `sorted` computes once per row. Nothing fallible runs between two rows: there is no
+    `cmp_to_key`, no parsing and no lookup in the comparison itself, so the order cannot depend
+    on which pairs a particular sort implementation happens to compare. `cid ASC` is a fixed
+    final tier, never a runtime option — a caller cannot turn it off, because an order that is
+    total only sometimes is not a total order.
     """
     return (
         -scored.score,
         -supported,
         -len(scored.origins),
         best_retrieval_rank(scored),
-        _Descending(scored.publication_date or NO_DATE),
+        _Descending(order_date(scored.publication_date)),
         scored.cid,
     )
 
@@ -161,7 +211,23 @@ def build(
 
     `known_criteria` is `queries.json`'s sub-criterion ids when the caller has them; without it
     `criteria_supported` counts every distinct id the screen named.
+
+    The order's last tier is `cid`, so a cid has to identify exactly one row. Both shipped call
+    paths already refuse a duplicate before reaching here — `research-scan shortlist` exits 2 on
+    `validate_coverage`, the MCP server raises `invalid_artifact` — and this repeats the check
+    locally so the guarantee belongs to the ordering rather than to its callers: collapsing two
+    rows onto one cid would silently drop a screened paper, which is the one failure this whole
+    stage exists to prevent.
     """
+    counts: dict[str, int] = {}
+    for entry in screen.scores:
+        counts[entry.cid] = counts.get(entry.cid, 0) + 1
+    duplicates = sorted(cid for cid, count in counts.items() if count > 1)
+    if duplicates:
+        raise ValueError(
+            f"screen.json scores {len(duplicates)} cid(s) more than once: {_sample(duplicates)}"
+        )
+
     scores = {entry.cid: entry.score for entry in screen.scores}
     supported = {
         entry.cid: criteria_supported(entry.criteria_hit, known_criteria)

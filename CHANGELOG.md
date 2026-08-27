@@ -22,7 +22,9 @@ idea is not retried blind.
   present on both eras of artefact — the evidence is in
   [`docs/measurements.md`](docs/measurements.md),
   `552f09c:research/experiments/phase12-selection/results/report_tail.md` §4, and the audit record
-  in [#1](https://github.com/Synectic-Research/research-scan/issues/1). Pooled golden
+  in [#1](https://github.com/Synectic-Research/research-scan/issues/1). Fixed in `1fd1465`, with
+  the replay that proves it in
+  `1fd1465:research/experiments/phase12-selection/results/src-t1-replay.json`. Pooled golden
   survival into the rerank frontier at the shipped cap goes from 8/11 to 10/11, which is the finite
   maximum, with no cap change and no new weights.
 
@@ -53,6 +55,15 @@ idea is not retried blind.
   dependence on `candidates.json` order — on the six frozen inputs it moves four rows, all inside
   fully tied bands, with membership at the shipped caps unchanged. **No other selection semantics
   change**: same caps, same threshold, same two windows, same slot rules at emit.
+- **The fields that order reads now have domains narrow enough to trust.** `score` and
+  `Origin.rank` are strict integers: Pydantic's lax coercion turned `true` into `1` and `"3"` into
+  `3`, so a malformed `screen.json` bought a place in the order instead of exiting 2. A run whose
+  artefacts carry a score or a rank as a string or a boolean now fails at the stage that reads it,
+  with the field named. `rank` keeps its `≥ 0` floor — ranks are zero-based, and the top hit is
+  rank 0. `publication_date` is unchanged at the schema, where partial dates are legitimate
+  metadata, but the date tier resolves through a calendar check, so `"2024-13-01"` sorts with the
+  unknowns instead of outranking `"2025-01-01"` as a raw string. And `shortlist.build` refuses a
+  screen file that scores one cid twice, which both shipped call paths already refused upstream.
 
 ## [0.5.2] — 2026-08-21
 

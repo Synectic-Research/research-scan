@@ -981,14 +981,21 @@ every cut depth (FAIL), while an independent Fable-5 judge scored **1.00 in-wind
 four lists**, with the two cheapest cuts scoring a higher mean relevance than the baseline. Two good
 lists drawn from a pool of near-equivalent 3s, not one good and one bad.
 
+**That fallback cannot stand alone, and is not treated as if it could.** The judge rates the papers
+a list actually contains, so it measures precision and is blind to the paper that was never
+selected — a list of ten strong papers and a list of ten strong papers missing the one that mattered
+score the same. Recall is what the golden set is for, and no judge score substitutes for it: a
+judge pass beside a recall FAIL is a reason to keep measuring, never a reason to ship.
+
 ### MEASURED — where the golden topics actually lose papers
 
 Two live end-to-end golden scans through the stateless driver, nothing changed to fix anything
 (`552f09c:research/experiments/phase11-golden/report.md`,
 `552f09c:research/experiments/phase11-golden/measurements.json`). Of the 13 golden papers the two
 runs failed to emit: **1 was lost at screening, 4 were never retrieved, and 8 were lost downstream**
-— at the shortlist cap, the rerank cut, or the reranker's own ordering. Screening is not the loss
-stage. That is the finding that redirected the rest of the programme.
+— at the shortlist cap, the rerank cut, or the reranker's own ordering. Put the other way round:
+of the **12 golden papers the two runs retrieved, 11 were retained** by screening at ≥ 2. Screening
+is not the loss stage. That is the finding that redirected the rest of the programme.
 
 ### MEASURED — the shortlist ordering defect (shipped in v0.6.0)
 
@@ -1021,7 +1028,7 @@ stratified per-criterion reserve (T2) was swept alongside it and is a pure no-op
 at every cap, so the simpler policy shipped. v0.6.0 adds `cid ASC` as a terminal tier to make the
 order total; on the same six inputs that moves 4 rows, every one inside a fully tied band, with
 shortlist membership at the shipped caps unchanged
-(`research/experiments/phase12-selection/results/src-t1-replay.json`).
+(`1fd1465:research/experiments/phase12-selection/results/src-t1-replay.json`).
 
 **This measurement makes no recall claim.** Every paper beyond the original cap of 40 was never
 reranked, so no simulated recall@10 was computed for any configuration, and none is reported.
@@ -1047,6 +1054,13 @@ own README states the consequence: failure does not authorise another tuning sli
 experiment that may reopen it, and the hard kill rule that would end it, are recorded in
 [#3](https://github.com/Synectic-Research/research-scan/issues/3); the screening-strictness
 finding is parked in [#2](https://github.com/Synectic-Research/research-scan/issues/2).
+
+So the position after Phase-1.4 is this, and it is deliberately a negative one. The reranker is
+frozen. Deterministic selection over the recorded features is exhausted on the frontier the
+architecture runs. Generic rubric changes did not generalise across both topics, and the ones that
+helped one hurt the other. The LLM judge is precision-oriented and cannot gate recall on its own.
+And end-to-end non-inferiority for the stateless path is undemonstrated — not refuted, undemonstrated
+— which is why the driver ships repo-only and the promotion bar below is written down.
 
 ### PROJECTED — not measured, not demonstrated
 
@@ -1077,5 +1091,5 @@ protocol is bound by are in
 **The promotion bar, recorded so it is not renegotiated later.** A cognition engine may become a
 documented path only on **end-to-end golden non-inferiority against a fresh multi-replicate
 conversational control**, on both topics. Cost is not a promotion criterion: the arc above is
-exactly the shape of evidence — 13.5× faster, a quarter of the cost, and quality that the same
-evidence cannot yet call equal — that a cost bar would have waved through.
+exactly the shape of evidence — 979 s to 72.6 s (13.5×), a quarter of the cost, and quality that
+the same evidence cannot yet call equal — that a cost bar would have waved through.

@@ -1,4 +1,4 @@
-![Research Scan logo](assets/research-scan-logo.jpg)
+![Research Scan logo](https://raw.githubusercontent.com/Synectic-Research/research-scan/v0.6.0/assets/research-scan-logo.jpg)
 
 # research-scan
 

@@ -180,8 +180,8 @@ every table is in `docs/measurements.md`.
 
 **v0.2.1 — profiles, a bounded out-of-window total, a conditional gap round.** Robustness and
 bounded cost, no new mechanisms. Measured profile table in `docs/measurements.md`:
-`quick` 7/10 and 6/6, `standard` 8/10 and 5/6, `deep` 9/10 and 5/6 on the two golden topics, at
-pools of ~350, ~570 and 575/805. Three things that came out of measuring it:
+`quick` 7/10 and ~~6/6~~ 4/6, `standard` 8/10 and 5/6, `deep` 9/10 and 5/6 on the two golden
+topics, at pools of ~350, ~570 and 575/805. Three things that came out of measuring it:
 
 - **The V1 acceptance table was never one setting.** `2026-08-19-s3-e2e` ran at per_query 20 /
   cap 250 — `quick` depth — and `2026-08-19-topic2b` at 40 / 675 — `deep`. Eval results are keyed

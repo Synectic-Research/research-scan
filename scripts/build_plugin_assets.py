@@ -12,13 +12,20 @@ The plugin archive is the plugin only. `marketplace.json` lives in the repositor
 the artifact: the repo is its own marketplace, and shipping the catalog inside the entry
 it lists is a loop with no purpose.
 
-    python scripts/build_plugin_assets.py --ref vX.Y.Z --out dist/assets
+    python scripts/build_plugin_assets.py --ref vX.Y.Z \
+        --out dist-assets --manifest dist/release-assets-manifest.json
+
+`--manifest` writes the exact publishable set — one entry per archive, with the digest
+already computed here. It is what `verify_release_assets.py` checks the published release
+against, and it is deliberately written outside `--out`: nothing that uploads or attests
+the archive directory can then pick the manifest up and publish it as an asset.
 """
 
 from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import subprocess
 import sys
 import tarfile
@@ -105,6 +112,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--ref", required=True, help="git ref to build from (tag, branch or SHA)")
     parser.add_argument("--out", required=True, type=Path, help="directory to write archives into")
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        help="write the publishable set as JSON here; keep it outside --out",
+    )
     args = parser.parse_args()
 
     with tempfile.TemporaryDirectory() as staging:
@@ -116,11 +128,23 @@ def main() -> int:
             (args.out / f"research-scan-skill-{version}.skill", skill_members(tree)),
             (args.out / f"research-scan-plugin-{version}.zip", plugin_members(tree)),
         ]
+        entries = []
         for target, members in built:
             digest = write_zip(target, members)
+            entries.append(
+                {"name": target.name, "sha256": digest, "bytes": target.stat().st_size}
+            )
             print(f"{digest}  {target.name}")
             for arcname, _ in sorted(members, key=lambda member: member[0]):
                 print(f"    {arcname}")
+
+        if args.manifest is not None:
+            args.manifest.parent.mkdir(parents=True, exist_ok=True)
+            args.manifest.write_text(
+                json.dumps({"version": version, "assets": entries}, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            print(f"manifest: {args.manifest}")
 
     return 0
 

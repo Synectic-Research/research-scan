@@ -1,4 +1,4 @@
-![Research Scan logo](assets/research-scan-logo.jpg)
+![Research Scan logo](https://raw.githubusercontent.com/Synectic-Research/research-scan/v0.6.0/assets/research-scan-logo.jpg)
 
 # research-scan
 
@@ -90,13 +90,20 @@ research-scan doctor --json      # machine-readable; this is the CI/agent interf
 ```
 Research Scan <version>
 ✓ configuration
-✓ OpenAlex   ✓ Semantic Scholar   ✓ Crossref   ✓ arXiv   ✓ PubMed
+✓ OpenAlex   ✓ Semantic Scholar   ✓ Crossref   ✓ arXiv   ○ PubMed
+  PubMed: endpoint reachable; source routed for biomed but not built
 ✓ writable run store
 Ready.
 ```
 
 Exit 0 means go. Exit 3 means a mandatory check failed; see [Troubleshooting](#troubleshooting). The
 checks and the exit code are identical in all three output modes — only the presentation differs.
+
+`○` marks a source that is routed but has no retrieval adapter — see the
+[sources table](#supported-sources). The probe still runs and still reports honestly: PubMed's
+row says the E-utilities endpoint answered, which is a different claim from being able to
+retrieve from it. `doctor --json` carries the same fact as `sources_not_built`, alongside a
+`providers` map whose keys and values are unchanged.
 
 ## Your first scan
 

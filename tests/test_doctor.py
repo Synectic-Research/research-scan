@@ -332,3 +332,88 @@ def test_doctor_against_the_real_apis():
     with http.HttpClient(settings, cache=False, max_retries=1) as client:
         report = doctor.run_checks(settings, client)
     assert report.exit_code == 0, doctor.render_table(report)
+
+
+# --- routed but not built ----------------------------------------------------
+#
+# `_probe_pubmed` asks whether NCBI's E-utilities endpoint answers. Whether this package can
+# retrieve from PubMed is a different question, and `retrieve.IMPLEMENTED_SOURCES` has always
+# been the one that answers it. Until 0.6.1 doctor kept its own source list and could only say
+# "ok", so a reachable endpoint read as a working source. The fix is strictly additive: every
+# key, value and type below the new one is what 0.6.0 emitted.
+
+
+def test_pubmed_is_reported_not_built_even_when_its_endpoint_answers(settings):
+    report = doctor.run_checks(settings, FakeClient())
+
+    assert statuses(report)["pubmed esearch"] == "OK", "the endpoint really does answer"
+    assert report.sources_not_built() == ["pubmed"], "and the source really is not built"
+
+
+def test_the_not_built_list_does_not_depend_on_reachability(settings):
+    """Two different questions. An unreachable PubMed is still a PubMed that is not built."""
+    reachable = doctor.run_checks(settings, FakeClient())
+    unreachable = doctor.run_checks(settings, FakeClient({"esearch.fcgi": 503}))
+
+    assert unreachable.sources_not_built() == reachable.sources_not_built() == ["pubmed"]
+    assert statuses(unreachable)["pubmed esearch"] == "WARN", "the probe result still moves"
+
+
+def test_crossref_never_appears_as_not_built(settings):
+    """Crossref verifies DOIs and is never a retrieval source, so the question does not apply."""
+    report = doctor.run_checks(settings, FakeClient())
+
+    assert "crossref" not in report.sources_not_built()
+    assert report.to_dict()["providers"]["crossref"] == "ok"
+
+
+def test_the_not_built_list_is_sorted_deduplicated_and_scoped_to_the_selection(settings):
+    full = doctor.run_checks(settings, FakeClient()).sources_not_built()
+    assert full == sorted(set(full))
+
+    without = doctor.run_checks(settings, FakeClient(), sources=["openalex"]).sources_not_built()
+    assert without == [], "a source that was not selected is not reported on"
+
+
+@pytest.mark.parametrize("overrides", [None, {"esearch.fcgi": 503}], ids=["reachable", "down"])
+def test_the_legacy_json_contract_is_untouched_by_the_new_field(settings, overrides):
+    """0.6.0's keys, values and types, whatever the PubMed probe did."""
+    report = doctor.run_checks(settings, FakeClient(overrides))
+    payload = report.to_dict()
+
+    assert set(payload["providers"]) == set(doctor.ALL_SOURCES)
+    assert all(isinstance(value, str) for value in payload["providers"].values())
+    assert payload["providers"]["pubmed"] in {"ok", "warn"}, "the legacy value still moves"
+    assert payload["ready"] is True
+    assert payload["exit_code"] == 0
+    assert report.ok is True
+    assert payload["sources_not_built"] == ["pubmed"]
+
+
+def test_the_new_field_is_json_serialisable_and_a_list_of_strings(settings):
+    payload = json.loads(json.dumps(doctor.run_checks(settings, FakeClient()).to_dict()))
+
+    assert isinstance(payload["sources_not_built"], list)
+    assert all(isinstance(name, str) for name in payload["sources_not_built"])
+
+
+def test_the_compact_summary_marks_pubmed_rather_than_ticking_it(settings):
+    rendered = doctor.render_compact(doctor.run_checks(settings, FakeClient()))
+
+    assert "○ PubMed" in rendered
+    assert "✓ PubMed" not in rendered
+    assert "PubMed: endpoint reachable; source routed for biomed but not built" in rendered
+    assert "✓ OpenAlex" in rendered, "a built source still ticks"
+
+
+def test_the_compact_note_stays_truthful_when_the_endpoint_is_down(settings):
+    rendered = doctor.render_compact(doctor.run_checks(settings, FakeClient({"esearch.fcgi": 503})))
+
+    assert "PubMed: endpoint check did not pass; source routed for biomed but not built" in rendered
+
+
+def test_the_verbose_table_says_it_too(settings):
+    rendered = doctor.render_table(doctor.run_checks(settings, FakeClient()))
+
+    assert "pubmed esearch" in rendered, "the probe row is unchanged"
+    assert "source routed for biomed but not built" in rendered

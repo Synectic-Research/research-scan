@@ -25,11 +25,27 @@ from typing import Any, Literal, Protocol
 from research_scan import __version__
 from research_scan.config import Settings
 from research_scan.http import HttpError, Response, is_retryable
+from research_scan.retrieve import IMPLEMENTED_SOURCES
 
 Status = Literal["OK", "WARN", "FAIL", "SKIP"]
 
 ALL_SOURCES: tuple[str, ...] = ("openalex", "s2", "crossref", "arxiv", "pubmed")
 MIN_PYTHON = (3, 11)
+
+#: Crossref verifies DOIs and is never a retrieval source, so "is it built?" is not a question
+#: about it and it must never appear in `sources_not_built`.
+VERIFICATION_ONLY: frozenset[str] = frozenset({"crossref"})
+
+#: Derived, never listed by hand — a second source list is exactly what went wrong. `retrieve`
+#: owns which adapters exist; the day PubMed is built, this empties itself.
+NOT_BUILT: tuple[str, ...] = tuple(
+    sorted(
+        name
+        for name in ALL_SOURCES
+        if name not in VERIFICATION_ONLY
+        and name not in {source.value for source in IMPLEMENTED_SOURCES}
+    )
+)
 
 #: Which live checks roll up into one line per provider. Presentation only — the checks
 #: themselves, their statuses and the exit code are untouched by anything in this map.
@@ -136,6 +152,17 @@ class Report:
         rolled = {name: self.rollup(PROVIDER_CHECKS[name]) for name in self.sources}
         return {name: status for name, status in rolled.items() if status is not None}
 
+    def sources_not_built(self) -> list[str]:
+        """Selected sources that are routed but have no retrieval adapter.
+
+        Deliberately independent of every probe result. `_probe_pubmed` asks whether NCBI's
+        E-utilities endpoint answers, which it does; that is a different question from whether
+        this package can retrieve from PubMed, which it cannot. Conflating the two is what let
+        a green tick read as a working source. Sorted and duplicate-free so the field is stable
+        to diff.
+        """
+        return [name for name in NOT_BUILT if name in self.sources]
+
     @property
     def config_status(self) -> Status | None:
         """Python, the config path, and any credential whose absence is disqualifying.
@@ -168,6 +195,10 @@ class Report:
             "version": __version__,
             "ready": self.ok,
             "providers": {name: _SERIALISED[status] for name, status in self.providers().items()},
+            # Additive. `providers` answers "did the probe pass"; this answers "can it retrieve",
+            # and the two are independent: an unreachable PubMed is still not built, and a
+            # reachable one is still not built. Nothing above changes key, value or type.
+            "sources_not_built": self.sources_not_built(),
             "config": _SERIALISED[status] if (status := self.config_status) else None,
             "run_store": _SERIALISED[status] if (status := self.run_store_status) else None,
             "exit_code": self.exit_code,
@@ -452,6 +483,17 @@ def _probe_pubmed(client: Client, settings: Settings) -> tuple[Status, str]:
 
 _MARK: dict[Status, str] = {"OK": "✓", "WARN": "!", "FAIL": "✗", "SKIP": "-"}
 
+#: A routed-but-unbuilt source gets its own mark rather than a tick. Presentation only — the
+#: check's status, the warning tally and the exit code are untouched by it.
+_NOT_BUILT_MARK = "○"
+
+
+def _not_built_note(status: Status) -> str:
+    """Says what is true of the probe as well as of the source, so it stays honest when the
+    endpoint is down: a source that cannot be reached is still a source that is not built."""
+    reachable = "endpoint reachable" if status == "OK" else "endpoint check did not pass"
+    return f"{reachable}; source routed for biomed but not built"
+
 #: What to do about it, per check, when it is not OK. One sentence, imperative, no diagnosis
 #: theatre — `--verbose` is there for the detail.
 _REMEDY: dict[str, str] = {
@@ -492,13 +534,18 @@ def render_compact(report: Report) -> str:
         lines.append(line)
 
     providers = report.providers()
+    not_built = set(report.sources_not_built())
     if providers:
         lines.append(
             "   ".join(
-                f"{_MARK[status]} {PROVIDER_LABELS[name]}" for name, status in providers.items()
+                f"{_NOT_BUILT_MARK if name in not_built else _MARK[status]} {PROVIDER_LABELS[name]}"
+                for name, status in providers.items()
             )
         )
         for name, status in providers.items():
+            if name in not_built:
+                lines.append(f"  {PROVIDER_LABELS[name]}: {_not_built_note(status)}")
+                continue
             if status != "OK":
                 hint = _remedy(report, PROVIDER_CHECKS[name])
                 if hint:
@@ -533,6 +580,13 @@ def render_table(report: Report) -> str:
         timing = f"  [{check.duration_ms:.0f} ms]" if check.duration_ms is not None else ""
         lines.append(
             f"{_SYMBOL[check.status]} {marker} {check.name.ljust(width)}  {check.detail}{timing}"
+        )
+
+    for name in report.sources_not_built():
+        status = report.rollup(PROVIDER_CHECKS[name]) or "SKIP"
+        lines.append(
+            f"{_NOT_BUILT_MARK}   {' '.ljust(width)}  "
+            f"{PROVIDER_LABELS[name]}: {_not_built_note(status)}"
         )
 
     lines += ["", "paths:"]

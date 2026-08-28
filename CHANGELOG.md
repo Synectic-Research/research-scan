@@ -9,6 +9,48 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
+## [0.6.1] — 2026-08-28
+
+### Fixed
+
+- **The release workflow's own asset check could not tell a stray file from a missing one.**
+  It globbed the directory the archives were built into — which, because the builder wrote into
+  the repository's tracked `assets/`, also held the project logo. A file that was never a release
+  asset made the check fail, and the v0.6.0 run went red after a wholly successful publish. The
+  same glob would also have passed silently had the builder produced nothing: iterating an empty
+  directory succeeds. Verification now runs against a manifest the builder emits, so an extra
+  file is a non-event and a missing or altered asset is a hard failure, in both directions. The
+  archives build into their own directory, which is what the builder's own usage line always
+  said. Worth recording alongside it: `workflow_dispatch` runs the build job only and never
+  reaches the release job, so the first time this check ran on a release was the release. It is
+  now a script with its own tests, rehearsed by the ordinary suite on every push.
+
+- **`doctor` reported PubMed as `ok` when the source is not built.** The check probes the
+  E-utilities endpoint, and the endpoint answers — but PubMed is routed for `biomed` and has no
+  retrieval adapter, which `retrieve` has always recorded as `unavailable`. `doctor` kept its own
+  source list and had no way to say so; it now derives the answer from the same registry, so the
+  day PubMed is built the list empties itself. The change is strictly additive: `providers` keeps
+  every key, value and type, including a `pubmed` that still moves with its probe, and `ready`,
+  `ok` and the exit code are untouched. A new `sources_not_built` carries the fact, independent
+  of reachability — an unreachable PubMed is still a PubMed that is not built. The human summary
+  marks the row rather than ticking it. Whether a routed-but-unbuilt source should affect
+  readiness is a separate contract question and is not answered here.
+
+- **The PyPI project page never showed the logo.** The README's image path is relative, and a
+  published description is served from a URL where that path means nothing. It is now an
+  absolute raw URL pinned to `v0.6.0`, which serves that exact blob — a published description is
+  immutable, so a branch pin would let every past release's page re-render with a future logo.
+
+- The withdrawn `quick` 6/6 figure is marked inline in `AGENTS.md`, matching the strike-through
+  `docs/measurements.md` has always carried.
+
+### Note
+
+A patch release. No selection, retrieval, screening, expansion, verification, emit, schema or
+rubric behaviour changes, and no dependency changes: the shortlist order and the emitted
+artefacts are byte-for-byte what 0.6.0 produced. `sources/pubmed.py` remains a stub — nothing
+here builds PubMed retrieval.
+
 ## [0.6.0] — 2026-08-27
 
 ### Fixed

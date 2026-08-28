@@ -228,8 +228,14 @@ changelog and update the release body from it.
 five-way version guard, the wheel identity check, and the deterministic asset build with its
 hashes in the job summary. `publish-pypi` and `release` are gated on
 `github.event_name == 'push'` in addition to the `v*` tag prefix, so dispatching the workflow
-cannot publish even if you point it at a tag. Dispatch **is** the dry run; there is no flag to
-flip.
+cannot publish even if you point it at a tag.
+
+Read that limit precisely: dispatch is the dry run **for the build job**, and it never reaches
+the release job or the round-trip verifier inside it. Before v0.6.1 that meant the first time
+the verifier ran on a release was the release — which is how v0.6.0 published cleanly and then
+went red on a check of its own. The verifier is now a script with its own tests
+(`scripts/verify_release_assets.py`, `tests/test_release_assets.py`), so its rehearsal is the
+ordinary pytest suite on every push and PR, before any tag exists.
 
 Real publishing requires a tag push. To rebuild the archives locally and compare against what a
 release published:

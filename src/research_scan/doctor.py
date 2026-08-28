@@ -585,8 +585,8 @@ def render_table(report: Report) -> str:
     for name in report.sources_not_built():
         status = report.rollup(PROVIDER_CHECKS[name]) or "SKIP"
         lines.append(
-            f"{_NOT_BUILT_MARK}   {' '.ljust(width)}  "
-            f"{PROVIDER_LABELS[name]}: {_not_built_note(status)}"
+            f"{_NOT_BUILT_MARK.ljust(4)}   {PROVIDER_LABELS[name].ljust(width)}  "
+            f"{_not_built_note(status)}"
         )
 
     lines += ["", "paths:"]

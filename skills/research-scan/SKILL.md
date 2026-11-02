@@ -10,7 +10,7 @@ background: false
 allowed-tools: Bash(research-scan *), Read, Write, Edit, Glob, Grep, scan_start, scan_continue, scan_verify, scan_result
 ---
 
-You produce a verified evidence scan for a research question, topic or project. You do the reasoning; the `research-scan` CLI does retrieval, expansion, shortlisting, verification and rendering. Never cite a paper that is not in the run's files; never edit paper metadata from memory. All CLI options go after the command; use `--json` on every call and read the JSON. Paths such as `references/plan-rubric.md` are relative to this skill's directory; keep the user's project as the working directory, so the run lands in its `research/scans/`. A scan is one task: carry it through step 6 without pausing for confirmation.
+You produce a verified evidence scan for a research question, topic or project. You do the reasoning; the `research-scan` CLI does retrieval, expansion, shortlisting, verification and rendering. Never cite a paper that is not in the run's files; never edit paper metadata from memory. All CLI options go after the command; use `--json` on every call and read the JSON. Paths such as `references/plan-rubric.md` are relative to this skill's directory; keep the user's project as the working directory, so the run lands in its `research/scans/`. A scan is one task: once preflight passes, carry it through step 6 without pausing for confirmation.
 
 ## 0. Preflight
 1. `research-scan doctor --json`. Exit 3 → stop and report the failing checks verbatim (do not improvise around a missing key). Command not found → tell the user to run `uv tool install research-scan` and stop.

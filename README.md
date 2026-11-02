@@ -71,7 +71,7 @@ want in a Dockerfile or a provisioning script.
 | `OPENALEX_API_KEY` | OpenAlex, the primary source. **Required**; `doctor` exits 3 without it. |
 | `OPENALEX_MAILTO` | Strongly recommended. Raises OpenAlex to 5 req/s and joins the Crossref polite pool. |
 | `S2_API_KEY` | Recommended. Semantic Scholar search and citation-graph expansion work without it, throttled to roughly a third of the rate; `doctor` warns. |
-| `NCBI_API_KEY` | Optional. Raises the PubMed endpoint to 10 req/s instead of 3; PubMed retrieval itself is not built yet. |
+| `NCBI_API_KEY` | Optional. Raises this client's NCBI E-utilities limit from 3 to 10 req/s; PubMed retrieval is not built, so today only `doctor`'s probe uses it. |
 
 To write the file by hand instead, `.env.example` in the repo is the template. Process environment
 beats `~/.config/research-scan/.env`, which beats a repo-local `./.env`.
@@ -385,8 +385,8 @@ Two more flags to get right:
 
 - `--plugin-dir` is unnecessary if the skill is already installed under `~/.claude/skills/`. Never
   combine it with `--bare`: bare mode skips `--plugin-dir`, so the skill would not load at all.
-- `--allowedTools` must carry `Bash(research-scan *)`, `Read`, `Write`, `Edit`, `Glob` and `Grep`,
-  the same set the skill's own `allowed-tools` names.
+- `--allowedTools` must carry `Bash(research-scan *)`, `Read`, `Write`, `Edit`, `Glob` and `Grep`:
+  the skill's own `allowed-tools` line, minus the four `scan_*` MCP tools a headless run does not use.
 
 ## Not for
 

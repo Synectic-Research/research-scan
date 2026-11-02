@@ -9,6 +9,17 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
+## [Unreleased]
+
+### Changed
+
+- **A scan is one task.** `SKILL.md` now says to carry a scan through the report without pausing
+  for confirmation. An interactive Codex session stopped after three screening batches; run with
+  `codex exec` and told to finish, it completed the same run end to end. The README's Codex
+  section now recommends `codex exec`.
+- **Docs:** the README's argument list names `--gap-round`, and its `NCBI_API_KEY` row no longer
+  reads as enabling PubMed retrieval. `RELEASING.md` gains the documentation-site sync step.
+
 ## [0.6.3] — 2026-11-02
 
 ### Changed

@@ -17,12 +17,15 @@ idea is not retried blind.
   for confirmation. An interactive Codex session stopped after three screening batches; run with
   `codex exec` and told to finish, it completed the same run end to end. The README's Codex
   section now recommends `codex exec`.
-- **Docs:** the README's argument list names `--gap-round`, and its `NCBI_API_KEY` row no longer
-  reads as enabling PubMed retrieval. `RELEASING.md` gains the documentation-site sync step.
+- **Docs:** the README's argument list names `--gap-round`, its `NCBI_API_KEY` row no longer reads
+  as enabling PubMed retrieval, the Codex section notes `--skip-git-repo-check` outside a git
+  repository, and the headless `--allowedTools` set is stated exactly. `RELEASING.md` gains the
+  documentation-site sync step.
 - **One tagline everywhere:** "Research Scan finds and ranks recent scientific papers that matter
   most for a specific research question, project, or decision." README, PyPI metadata, the plugin
-  and the GitHub About text; the registry's 100-character field carries a short form. The skill's
-  `description` keeps its wording, because it is the measured trigger surface.
+  and marketplace manifests, the `CITATION.cff` abstract and the GitHub About text; the registry's
+  100-character field carries a short form. The skill's `description` keeps its wording, because it
+  is the measured trigger surface.
 - **Issue and pull-request templates.** Bug reports ask for `version --json` and `doctor
   --verbose`; security reports go to private vulnerability reporting.
 

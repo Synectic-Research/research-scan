@@ -155,6 +155,11 @@ Both print `401`. `GET /health` without a token prints `200`.
 The path-secret form puts the token in every request line. From 0.6.2 the server redacts it from
 its own logs, but the process's files and the token's history still need an operator:
 
+- **Connect with a header, not a path.** claude.ai's custom-connector dialog takes request headers,
+  so its connector needs no path secret: URL `https://<tunnel-host>/mcp`, authentication **No
+  sign-in**, and one header named `Authorization` whose value is `Bearer <token>`. The token then
+  never appears in a URL, a request line or an access log. Keep `/<token>/mcp` for a client that
+  genuinely cannot set a header.
 - **Log permissions.** `chmod 600 ~/Library/Logs/research-scan/mcp*.log` — an existing file keeps
   its mode when it is reopened for append, so this holds across restarts. Also add
   `<key>Umask</key><integer>63</integer>` (octal 077) to the LaunchAgent plist so anything the
@@ -200,12 +205,14 @@ fi
 launchctl kickstart -k gui/$(id -u)/org.synectic.research-scan-mcp
 ```
 
-3. **Copy the new token, paste it into the connector URL in claude.ai, then clear the clipboard**
-   with the second command. A clipboard manager or Universal Clipboard may already have copied it;
-   turn those off for the paste if you use them.
+3. **Copy the new header value, paste it as the connector's `Authorization` header in claude.ai,
+   then clear the clipboard** with the second command. The value already starts with `Bearer `. If
+   the connector will not let you edit the header, remove it and add it again under the same name.
+   A clipboard manager or Universal Clipboard may already have copied it; turn those off for the
+   paste if you use them.
 
 ```bash
-rsc 'from research_scan.config import load; print(load().mcp_token or "", end="")' | pbcopy
+rsc 'from research_scan.config import load; t = load().mcp_token; print(f"Bearer {t}" if t else "", end="")' | pbcopy
 ```
 
 ```bash
@@ -213,10 +220,10 @@ pbcopy < /dev/null
 ```
 
 4. **Scrub the old token from the logs — last, in place, in the same shell.** Apart from the logs
-   and the connector URL until step 3, `$OLD` is the only copy of the old value. The server
-   redacts only the token it booted with, so between steps 2 and 3 every connector call to the
-   *old* URL writes the old token into a 401 line again, and so does any client still configured
-   with it afterwards: scrub once nothing uses the old URL. Rewrite the files through `cat >`, never
+   and the connector until step 3, `$OLD` is the only copy of the old value. A header never reaches
+   the access log, but a client still on the path form does: the server redacts only the token it
+   booted with, so every call to an *old* `/<token>/mcp` URL writes the old token into a 401 line
+   again. Scrub once nothing uses an old URL. Rewrite the files through `cat >`, never
    `sed -i`: BSD `sed -i` swaps in a new file, and launchd keeps the server writing to the old,
    unlinked one until the next restart. `cat >` is safe under the live writer because launchd
    opens both logs append-only, so the server's next line lands at the new end. The `.scrub`

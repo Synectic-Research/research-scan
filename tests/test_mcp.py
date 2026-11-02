@@ -8,7 +8,9 @@ here is the bridging, not the engine.
 from __future__ import annotations
 
 import asyncio
+import io
 import json
+import logging
 import os
 from datetime import date
 from importlib.metadata import version as distribution_version
@@ -181,6 +183,120 @@ def test_both_mounts_accept_a_good_token_and_reject_a_bad_one(mcp_home):
     assert probe(app, "http://test/mcp").startswith("rejected:")
     assert probe(app, "http://test/mcp", auth="wrong-token").startswith("rejected:")
     assert probe(app, "http://test/not-the-token/mcp").startswith("rejected:")
+
+
+@pytest.fixture
+def clean_uvicorn_loggers():
+    """Logger filters are process-global, so remove the ones a test installed.
+
+    Only the filters: `main()` runs uvicorn's `dictConfig`, whose stream handlers on
+    `uvicorn.access` / `uvicorn.error` stay for the session. Nothing else in the suite logs there.
+    """
+    yield
+    for name in mcp_server.UVICORN_LOGGERS:
+        target = logging.getLogger(name)
+        for existing in list(target.filters):
+            if isinstance(existing, mcp_server.RedactSecrets):
+                target.removeFilter(existing)
+
+
+def test_main_installs_access_log_redaction_after_uvicorn_configures_logging(
+    mcp_home, monkeypatch, clean_uvicorn_loggers
+):
+    """The token reached `mcp.log` 2,108 times as the path of a claude.ai connector request.
+
+    Drives `main()` itself, with only the serve loop stubbed, so uvicorn's real `dictConfig`
+    runs after the filter is installed and the assertion covers it surviving that.
+    """
+    import uvicorn
+    from uvicorn.logging import AccessFormatter
+
+    from research_scan import config
+
+    # `uvicorn.run()` exits 3 when the server never reports started; the stub reports it.
+    monkeypatch.setattr(
+        uvicorn.Server, "run", lambda self, sockets=None: setattr(self, "started", True)
+    )
+    # Without pytest's root handler `basicConfig` would add one for the rest of the session.
+    monkeypatch.setattr(logging, "basicConfig", lambda **kwargs: None)
+    mcp_server.main(host="127.0.0.1", port=0)
+
+    access = logging.getLogger("uvicorn.access")
+    captured = io.StringIO()
+    handler = logging.StreamHandler(captured)
+    handler.setFormatter(AccessFormatter('%(client_addr)s - "%(request_line)s" %(status_code)s'))
+    access.addHandler(handler)
+    try:
+        # The exact call shape of uvicorn's h11/httptools protocols: the path is an argument.
+        access.info(
+            '%s - "%s %s HTTP/%s" %d', "160.79.106.168:0", "POST", f"/{TOKEN}/mcp", "1.1", 200
+        )
+    finally:
+        access.removeHandler(handler)
+
+    line = captured.getvalue()
+    assert TOKEN not in line
+    assert f"POST /{config.REDACTED}/mcp HTTP/1.1" in line
+
+
+def test_redaction_covers_the_message_mapping_args_and_the_error_logger(clean_uvicorn_loggers):
+    mcp_server.redact_server_logs((TOKEN,))
+    mcp_server.redact_server_logs((TOKEN,))  # idempotent: one filter, not two
+    error = logging.getLogger("uvicorn.error")
+    assert sum(isinstance(f, mcp_server.RedactSecrets) for f in error.filters) == 1
+
+    record = logging.LogRecord(
+        "uvicorn.error", logging.ERROR, __file__, 1, f"failed on /{TOKEN}/mcp", None, None
+    )
+    assert error.filters[-1].filter(record)
+    assert TOKEN not in record.getMessage()
+
+    mapped = logging.LogRecord(
+        "uvicorn.error", logging.ERROR, __file__, 1, "path %(p)s", ({"p": f"/{TOKEN}/x"},), None
+    )
+    error.filters[-1].filter(mapped)
+    assert TOKEN not in mapped.getMessage()
+
+
+def test_redaction_covers_tracebacks_stacks_and_non_string_values(clean_uvicorn_loggers):
+    """uvicorn logs `exc_info=` on ASGI errors and `logger.error(exc)` on a bind failure."""
+    import sys
+
+    from research_scan import config
+
+    gate = mcp_server.RedactSecrets((TOKEN,))
+    formatter = logging.Formatter("%(message)s")
+
+    try:
+        raise RuntimeError(f"no route for /{TOKEN}/mcp")
+    except RuntimeError:
+        traced = logging.LogRecord(
+            "uvicorn.error",
+            logging.ERROR,
+            __file__,
+            1,
+            "Exception in ASGI application",
+            None,
+            sys.exc_info(),
+        )
+    traced.stack_info = f"Stack (most recent call last):\n  /{TOKEN}/mcp"
+    gate.filter(traced)
+    rendered = formatter.format(traced)
+    assert TOKEN not in rendered
+    assert "RuntimeError: no route for /" + config.REDACTED in rendered
+
+    bare = logging.LogRecord(
+        "uvicorn.error", logging.ERROR, __file__, 1, OSError(f"bind failed /{TOKEN}"), None, None
+    )
+    gate.filter(bare)
+    assert TOKEN not in formatter.format(bare)
+
+    # Values without a secret are left alone, so `%d` still gets its int.
+    counted = logging.LogRecord(
+        "uvicorn.access", logging.INFO, __file__, 1, "%s %d", (f"/{TOKEN}/mcp", 200), None
+    )
+    gate.filter(counted)
+    assert counted.args == (f"/{config.REDACTED}/mcp", 200)
 
 
 def test_without_a_token_the_server_starts_and_401s_instead_of_refusing_to_boot(

@@ -1118,6 +1118,65 @@ class RejectEverything:
 
 NO_TOKEN_DETAIL = "no RESEARCH_SCAN_MCP_TOKEN configured — every request will be rejected"
 
+# Every uvicorn logger that can carry a request path. The access logger writes one line per
+# request with the path as a format argument; the error logger can quote it in a traceback.
+UVICORN_LOGGERS = ("uvicorn.access", "uvicorn.error")
+
+
+class RedactSecrets(logging.Filter):
+    """Strip configured secrets from a record before any handler formats it.
+
+    The path-secret mount puts the token in the request line, and uvicorn's access logger passes
+    that path as a format *argument*, so the secret lives in `record.args`, not `record.msg`.
+    Rewriting only the message would leave it in every line. The message, the arguments, a
+    traceback and a stack are all redacted here.
+
+    A non-string value is replaced by its redacted text only when that text holds a secret: the
+    access line formats its status code with `%d`, so stringifying every argument would break it.
+    """
+
+    def __init__(self, secrets: tuple[str, ...]) -> None:
+        super().__init__()
+        self.secrets = secrets
+
+    def _clean(self, value: Any) -> Any:
+        if isinstance(value, str):
+            return config.redact_text(value, self.secrets)
+        text = str(value)
+        if any(secret in text for secret in self.secrets):
+            return config.redact_text(text, self.secrets)
+        return value
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        if not self.secrets:
+            return True
+        record.msg = self._clean(record.msg)
+        if isinstance(record.args, tuple):
+            record.args = tuple(self._clean(arg) for arg in record.args)
+        elif isinstance(record.args, Mapping):
+            record.args = {key: self._clean(value) for key, value in record.args.items()}
+        # `Formatter.format` renders the traceback after filters run, and reuses `exc_text` when
+        # it is already set — so render it here, redacted, and the formatter prints this copy.
+        if record.exc_info and not record.exc_text:
+            record.exc_text = logging.Formatter().formatException(record.exc_info)
+        if record.exc_text:
+            record.exc_text = config.redact_text(record.exc_text, self.secrets)
+        if record.stack_info:
+            record.stack_info = config.redact_text(record.stack_info, self.secrets)
+        return True
+
+
+def redact_server_logs(secrets: tuple[str, ...]) -> None:
+    """Attach the redaction filter to uvicorn's loggers.
+
+    On the loggers, not their handlers: uvicorn's `dictConfig` replaces a logger's handlers but
+    leaves its filters in place, so this survives being installed before `uvicorn.run()`.
+    """
+    for name in UVICORN_LOGGERS:
+        target = logging.getLogger(name)
+        if not any(isinstance(existing, RedactSecrets) for existing in target.filters):
+            target.addFilter(RedactSecrets(secrets))
+
 
 def build_app(token: str | None = None) -> Starlette:
     """One MCP app, mounted twice: `/mcp` for a bearer client, `/<token>/mcp` for a client that
@@ -1181,6 +1240,8 @@ def main(host: str | None = None, port: int | None = None) -> None:
 
     import uvicorn
 
+    # The path-secret mount puts the token in every request line uvicorn logs.
+    redact_server_logs(settings.secrets())
     uvicorn.run(build_app(settings.mcp_token), host=host, port=port, log_level="info")
 
 

@@ -348,7 +348,8 @@ set headers, and it is strictly worse — a secret in a URL reaches browser hist
 so it is acceptable for a short-lived local session and nothing more. claude.ai's custom
 connectors take request headers, so the claude.ai connector uses bearer too (moved 2026-11-02).
 With no token configured the server still starts and answers 401 to every request, so it is
-health-checkable and never silently open. From v0.6.2 an ASGI gate answers 401 before any route runs, so an unauthenticated
+health-checkable and never silently open.
+From v0.6.2 an ASGI gate answers 401 before any route runs, so an unauthenticated
 `initialize` no longer opens a session; `GET /health` is the one open route, and uvicorn's loggers
 redact configured secrets, because the path form puts the token in every request line. One global
 lock serializes every scan's subprocess work: the HTTP cache is one sqlite file and the rate

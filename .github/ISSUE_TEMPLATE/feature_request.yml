@@ -1,0 +1,23 @@
+name: Feature request
+description: A change to what Research Scan retrieves, verifies or emits, or how agents drive it.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you were trying to find out or build, and where the current behaviour fell short.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would change
+      description: >-
+        Retrieval, ranking and selection defaults change only with a before-and-after measurement
+        on the golden topics, so say how the change could be measured if it touches them.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: A brief, a run directory excerpt, or a paper the scan should have found and did not.

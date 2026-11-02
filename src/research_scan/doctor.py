@@ -519,7 +519,7 @@ _REMEDY: dict[str, str] = {
     "S2_API_KEY": "request a key at semanticscholar.org/product/api, then re-run configure",
     "NCBI_API_KEY": "only matters for biomedical topics; add it with `research-scan configure`",
     "python": f"install Python {'.'.join(map(str, MIN_PYTHON))} or newer",
-    "config path": "make the config directory writable",
+    "config path": "make the config directory readable (`configure` needs it writable)",
     "cache path": "make the cache directory writable",
 }
 

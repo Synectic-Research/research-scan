@@ -1025,16 +1025,17 @@ def authorize(path: str, authorization: str | None, token: str | None) -> bool:
     Bearer is preferred and is what a client that can set headers should send. The path-segment
     form exists only for clients that cannot set them, and it is strictly worse — a secret in a
     URL reaches browser history and proxy logs — so it is for a short-lived local session and
-    nothing more. Both compare in constant time.
+    nothing more. Both compare in constant time, as bytes: `compare_digest` raises on a `str`
+    holding non-ASCII, which made a request for `/é/mcp` a 500 with a traceback in the log.
     """
     if not token:
         return False
     if authorization and authorization.lower().startswith("bearer "):
         supplied = authorization.split(" ", 1)[1].strip()
-        if hmac.compare_digest(supplied, token):
+        if hmac.compare_digest(supplied.encode(), token.encode()):
             return True
     segments = [segment for segment in path.split("/") if segment]
-    return bool(segments) and hmac.compare_digest(segments[0], token)
+    return bool(segments) and hmac.compare_digest(segments[0].encode(), token.encode())
 
 
 class TokenAuth(Middleware):
@@ -1203,8 +1204,10 @@ class RequireToken:
     - `GET /.well-known/*`: no such route exists, so these keep their 404. A 401 there reads to an
       MCP client as "this server wants OAuth but publishes no metadata".
 
-    Lifespan and websocket scopes pass through: FastMCP registers HTTP routes only, so a websocket
-    ends at the router's close.
+    Paths are read from `scope["path"]` as uvicorn sets it, with no root path: `main()` never
+    sets one, and under `--root-path` the path-token form and the probe exemption both fail
+    closed. Lifespan and websocket scopes pass through: FastMCP registers HTTP routes only, so a
+    websocket ends at the router's close.
     """
 
     def __init__(self, app, token: str) -> None:

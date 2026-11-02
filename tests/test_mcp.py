@@ -315,6 +315,30 @@ def test_a_secret_that_uvicorn_percent_encodes_is_redacted_in_that_form():
     mcp_server.RedactSecrets((odd,)).filter(record)
     assert record.args == (f"/{config.REDACTED}/mcp", 200)
 
+    # A client that misplaces the token in the query string sends it fully encoded.
+    encoded = b"t=tok%20en%2B%25%2Fzz"
+    in_query = get_path_with_query_string({"path": "/mcp", "query_string": encoded})
+    record = logging.LogRecord(
+        "uvicorn.access", logging.INFO, __file__, 1, "%s", (in_query,), None
+    )
+    mcp_server.RedactSecrets((odd,)).filter(record)
+    assert record.args == (f"/mcp?t={config.REDACTED}",)
+
+
+def test_a_non_ascii_credential_is_refused_not_crashed_on(mcp_home):
+    """`hmac.compare_digest` raises on non-ASCII `str`; the gate turned that into a 500 with a
+    traceback on every such request, from anyone."""
+    assert mcp_server.authorize("/é/mcp", None, TOKEN) is False
+    assert mcp_server.authorize("/mcp", "Bearer é", TOKEN) is False
+    responses = raw(
+        mcp_server.build_app(TOKEN),
+        [
+            ("POST", "/%C3%A9/mcp", {}),
+            ("POST", "/mcp", {"authorization": "Bearer é".encode()}),
+        ],
+    )
+    assert [response.status_code for response in responses] == [401, 401]
+
 
 INITIALIZE = {
     "jsonrpc": "2.0",

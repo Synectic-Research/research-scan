@@ -1256,7 +1256,7 @@ def _emit_candidates_recall(
 
 def _fail_unwritable(target: Path, why: str) -> NoReturn:
     _fail(
-        f"cannot write {target.parent} ({why}). configure needs write access there; a sandboxed "
+        f"cannot write to {target.parent} ({why}). configure needs write access there; a sandboxed "
         "agent session is often read-only, so run `research-scan configure` in a plain terminal",
         False,
         code=1,

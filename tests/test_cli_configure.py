@@ -208,8 +208,9 @@ def test_a_read_only_config_dir_fails_with_a_message_before_any_prompt(home, mon
     result = runner.invoke(app, ["configure", "--quiet"], input="\n")
 
     assert result.exit_code == 1
-    assert result.exception is None or isinstance(result.exception, SystemExit)
+    assert isinstance(result.exception, SystemExit)
     assert "configure needs write access" in result.output
+    assert "Credentials are written to" not in result.output
     assert "Operation not permitted" in result.output
     assert prompted == []
 

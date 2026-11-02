@@ -12,13 +12,15 @@ idea is not retried blind.
 ## [0.6.3] — 2026-11-02
 
 ### Changed
+
 - **The skill runs in any Agent Skills host.** `SKILL.md` follows the open
   [Agent Skills](https://agentskills.io/) format, so Codex, Cursor and Copilot read the same folder
   Claude Code does; the README shows the Codex install. Claude Code behaviour is unchanged.
 - **The claude.ai connector authenticates with a header.** `RELEASING.md` now sets it up with
-  `Authorization: Bearer <token>` on `/mcp`, so the token never appears in a URL or a log line.
+  `Authorization: Bearer <token>` on `/mcp`, so the token never appears in a URL.
 
 ### Fixed
+
 - **`doctor` passes a read-only config directory.** A scan only reads `~/.config/research-scan`;
   only `configure` writes there. `doctor` demanded write access, so a sandbox that grants read but
   not write — Codex's `workspace-write`, the safer posture — failed preflight with exit 3. The

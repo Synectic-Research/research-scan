@@ -27,7 +27,7 @@ jobs:
           PYPI = "https://pypi.org/pypi/research-scan/json"
           REGISTRY = (
               "https://registry.modelcontextprotocol.io/v0/servers"
-              "?search=org.synectic/research-scan"
+              "?search=org.synectic/research-scan&version=latest"
           )
 
 
@@ -38,11 +38,27 @@ jobs:
 
           pypi_version = fetch(PYPI)["info"]["version"]
 
-          servers = fetch(REGISTRY)["servers"]
+          # Without `version=latest`, search returns every published version oldest first, and
+          # taking the first hit compared PyPI with 0.5.1 forever: a weekly false alarm from 0.6.1
+          # on. The filter also keeps the answer on page one however many versions exist; the
+          # isLatest test below is a second guard on the same thing.
+          OFFICIAL = "io.modelcontextprotocol.registry/official"
+          matches = [
+              s
+              for s in fetch(REGISTRY)["servers"]
+              if s["server"]["name"] == "org.synectic/research-scan"
+          ]
           entry = next(
-              (s for s in servers if s["server"]["name"] == "org.synectic/research-scan"),
+              (s for s in matches if s.get("_meta", {}).get(OFFICIAL, {}).get("isLatest")),
               None,
           )
+          if matches and entry is None:
+              print(
+                  f"::error title=No latest entry::{len(matches)} registry entries for "
+                  "org.synectic/research-scan, none marked isLatest. Check the registry's "
+                  "status for this server and whether its API changed shape."
+              )
+              sys.exit(1)
           if entry is None:
               print(
                   "::error title=Registry entry missing::org.synectic/research-scan is not in "

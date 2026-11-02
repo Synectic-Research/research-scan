@@ -136,13 +136,39 @@ curl -sS -H "Authorization: Bearer $TOKEN" http://127.0.0.1:8765/health
 A `started_at` earlier than the restart means the kickstart did not take and the old process is
 still bound to the port. Re-read `ops.md`; do not re-run the release.
 
-**4. Smoke-test the tunnel.** A bad path must come back **404** — the server answering that the
-route does not exist. A **502** or **530** is Cloudflare failing to reach the origin, which means
-the tunnel is down even though the local port is fine:
+**4. Smoke-test the tunnel.** A bad path must come back **401** — the server's token gate
+answering before any route runs (it was a router 404 before 0.6.2). A **502** or **530** is
+Cloudflare failing to reach the origin, which means the tunnel is down even though the local port
+is fine. An unauthenticated `initialize` must be refused the same way, with no session opened:
 
 ```bash
 curl -s -o /dev/null -w '%{http_code}\n' "https://<tunnel-host>/definitely-not-the-secret/mcp"
+curl -s -o /dev/null -w '%{http_code}\n' -X POST "https://<tunnel-host>/mcp" \
+  -H 'content-type: application/json' -H 'accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"smoke","version":"0"}}}'
 ```
+
+Both print `401`. `GET /health` without a token prints `200`.
+
+### Hardening the resident server
+
+The path-secret form puts the token in every request line. From 0.6.2 the server redacts it from
+its own logs, but the process's files and the token's history still need an operator:
+
+- **Log permissions.** `chmod 600 ~/Library/Logs/research-scan/mcp*.log` — an existing file keeps
+  its mode when it is reopened for append, so this holds across restarts. Also add
+  `<key>Umask</key><integer>63</integer>` (octal 077) to the LaunchAgent plist so anything the
+  process creates is private; re-check the log modes after the first restart rather than assume
+  launchd applies it to the files it opens for you. A `0644` log is readable by every process on
+  the machine, including a VM that shares the host filesystem.
+- **Rotate after any exposure.** A token that ever reached a log, a shell history or a URL bar is
+  spent. Rotate in one sitting, because the connector is down between the second and third step:
+  write a new `RESEARCH_SCAN_MCP_TOKEN` to `~/.config/research-scan/.env`, `kickstart -k` the
+  agent, then update the connector URL in claude.ai. Only then scrub the old value from the log
+  (`sed -i ''` on the file, after the rotation so nothing is still writing it).
+- **Generate the token URL-safe** (`python3 -c 'import secrets; print(secrets.token_urlsafe(32))'`).
+  The redaction also covers percent-encoded forms, but a token that never needs encoding is one
+  less thing to trust.
 
 ### The release receipt
 

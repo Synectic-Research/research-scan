@@ -9,6 +9,46 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
+## [0.6.2] — 2026-11-02
+
+### Security
+
+- **The MCP server wrote its token into its own log.** The claude.ai connector authenticates with
+  the token as the first URL path segment, and uvicorn's access log records the path of every
+  request — so the secret was written in clear text once per connector call, to a log file the
+  LaunchAgent created world-readable. A logging filter on `uvicorn.access` and `uvicorn.error` now
+  redacts every configured secret from the message, its arguments, tracebacks and stacks, in the
+  raw form and in the percent-encoded forms uvicorn writes. **Rotate any token a 0.6.1 or earlier
+  HTTP server has served** — redaction stops new copies; it does not recall old ones.
+  `RELEASING.md` has the rotation order and the log-permission step.
+
+- **An unauthenticated `initialize` opened a server session.** The token was checked on every MCP
+  message, but `initialize` reached FastMCP's session manager first, so anyone who could reach the
+  port could create sessions (tool calls were still refused). An ASGI gate in front of the whole
+  app now answers 401 before any route runs. `GET /health` stays open for uptime probes and still
+  withholds the deployment fingerprint; `GET /.well-known/*` keeps its 404, so an MCP client does
+  not read the 401 as a demand for OAuth.
+
+### Fixed
+
+- **A non-ASCII path or bearer value raised inside the token comparison.** `hmac.compare_digest`
+  refuses a `str` holding non-ASCII; credentials are now compared as bytes, still in constant
+  time. The gate above would otherwise have turned every such request into a 500.
+- **The auth path doubled its prefix.** `root_path + path` repeated the mount prefix, because
+  uvicorn and Starlette's `Mount` both keep the full path in `scope["path"]`. It now reads that
+  alone. Authentication was unaffected only because the first segment happened to survive.
+
+### Changed
+
+- The tunnel smoke test in `RELEASING.md` expects **401** for a bad path, not 404: the gate
+  answers before the router does.
+
+### Note
+
+A patch release. Nothing in the CLI pipeline moves: no retrieval, screening, selection, schema or
+rubric behaviour changes, and no dependency changes. Only the HTTP transport of the MCP adapter
+is touched; stdio is unchanged.
+
 ## [0.6.1] — 2026-08-28
 
 ### Fixed

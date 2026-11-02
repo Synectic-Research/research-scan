@@ -187,7 +187,8 @@ outside Codex (it creates the cache), then start a scanning session with network
 cache writable. Both apply to the whole session, not only to `research-scan`:
 
 ```bash
-codex -c sandbox_workspace_write.network_access=true --add-dir ~/.cache/research-scan
+codex --sandbox workspace-write -c sandbox_workspace_write.network_access=true \
+  --add-dir ~/.cache/research-scan
 ```
 
 ### Claude Code — the plugin

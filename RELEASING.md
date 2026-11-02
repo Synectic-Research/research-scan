@@ -136,13 +136,117 @@ curl -sS -H "Authorization: Bearer $TOKEN" http://127.0.0.1:8765/health
 A `started_at` earlier than the restart means the kickstart did not take and the old process is
 still bound to the port. Re-read `ops.md`; do not re-run the release.
 
-**4. Smoke-test the tunnel.** A bad path must come back **404** — the server answering that the
-route does not exist. A **502** or **530** is Cloudflare failing to reach the origin, which means
-the tunnel is down even though the local port is fine:
+**4. Smoke-test the tunnel.** A bad path must come back **401** — the server's token gate
+answering before any route runs (it was a router 404 before 0.6.2). A **502** or **530** is
+Cloudflare failing to reach the origin, which means the tunnel is down even though the local port
+is fine. An unauthenticated `initialize` must be refused the same way, with no session opened:
 
 ```bash
 curl -s -o /dev/null -w '%{http_code}\n' "https://<tunnel-host>/definitely-not-the-secret/mcp"
+curl -s -o /dev/null -w '%{http_code}\n' -X POST "https://<tunnel-host>/mcp" \
+  -H 'content-type: application/json' -H 'accept: application/json, text/event-stream' \
+  -d '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"smoke","version":"0"}}}'
 ```
+
+Both print `401`. `GET /health` without a token prints `200`.
+
+### Hardening the resident server
+
+The path-secret form puts the token in every request line. From 0.6.2 the server redacts it from
+its own logs, but the process's files and the token's history still need an operator:
+
+- **Log permissions.** `chmod 600 ~/Library/Logs/research-scan/mcp*.log` — an existing file keeps
+  its mode when it is reopened for append, so this holds across restarts. Also add
+  `<key>Umask</key><integer>63</integer>` (octal 077) to the LaunchAgent plist so anything the
+  process creates is private; re-check the log modes after the first restart rather than assume
+  launchd applies it to the files it opens for you. A `0644` log is readable by every process on
+  the machine, including a VM that shares the host filesystem.
+- **Rotate after any exposure.** A token that ever reached a log, a shell history or a URL bar is
+  spent. The recipe is in [Rotating the token](#rotating-the-token) below.
+- **Keep the token URL-safe.** The recipe below uses `secrets.token_urlsafe`. The redaction also
+  covers percent-encoded forms, but a token that never needs encoding is one less thing to trust,
+  and a non-ASCII token will not authenticate as a bearer header.
+
+#### Rotating the token
+
+Rotate in one sitting, in **one shell**, with the connector idle. Paste the blocks as they are:
+they carry no comments, because an interactive macOS zsh treats `#` as an argument, not a comment.
+
+1. **Capture the old token and write a new one.** The connector is down from here (the message
+   gate re-reads `.env` on every call) until step 3. The token is read and written through the
+   package's own `config.load()` and `write_env`, so quoted values, `export` lines and comments in
+   a hand-edited `.env` behave exactly as the server sees them; the write is atomic, keeps every
+   other line and leaves the file `0600`. If no token is found, nothing is written.
+
+```bash
+rsc() {
+  env -u RESEARCH_SCAN_MCP_TOKEN -u UV_ENV_FILE \
+    uv run -q --project "$HOME/Projects/research-scan" python -c "$1"
+}
+OLD="$(rsc 'from research_scan.config import load; print(load().mcp_token or "")')"
+if [ -n "$OLD" ]; then
+  rsc 'import secrets
+from research_scan.config import write_env
+write_env({"RESEARCH_SCAN_MCP_TOKEN": secrets.token_urlsafe(32)})'
+  echo "old token captured, new token written"
+else
+  echo "no token found: nothing changed, stop here"
+fi
+```
+
+2. **Restart onto it.** The new token works only after this restart, so keep the order.
+
+```bash
+launchctl kickstart -k gui/$(id -u)/org.synectic.research-scan-mcp
+```
+
+3. **Copy the new token, paste it into the connector URL in claude.ai, then clear the clipboard**
+   with the second command. A clipboard manager or Universal Clipboard may already have copied it;
+   turn those off for the paste if you use them.
+
+```bash
+rsc 'from research_scan.config import load; print(load().mcp_token or "", end="")' | pbcopy
+```
+
+```bash
+pbcopy < /dev/null
+```
+
+4. **Scrub the old token from the logs — last, in place, in the same shell.** Apart from the logs
+   and the connector URL until step 3, `$OLD` is the only copy of the old value. The server
+   redacts only the token it booted with, so between steps 2 and 3 every connector call to the
+   *old* URL writes the old token into a 401 line again, and so does any client still configured
+   with it afterwards: scrub once nothing uses the old URL. Rewrite the files through `cat >`, never
+   `sed -i`: BSD `sed -i` swaps in a new file, and launchd keeps the server writing to the old,
+   unlinked one until the next restart. `cat >` is safe under the live writer because launchd
+   opens both logs append-only, so the server's next line lands at the new end. The `.scrub`
+   copies hold the rest of the request log, hence the `umask 077` subshell.
+
+```bash
+LOGS=(~/Library/Logs/research-scan/mcp.log ~/Library/Logs/research-scan/mcp.err.log)
+if [ -n "$OLD" ]; then
+  ( umask 077
+    for f in "${LOGS[@]}"; do
+      sed "s|$OLD|***REDACTED***|g" "$f" > "$f.scrub" && cat "$f.scrub" > "$f" && rm "$f.scrub"
+    done )
+  grep -qF -- "$OLD" "${LOGS[@]}"
+  case $? in
+    0) echo "OLD TOKEN STILL PRESENT: OLD kept, fix and re-run this block" ;;
+    1) echo "scrubbed"; unset OLD ;;
+    *) echo "CHECK FAILED: a log is missing or unreadable, nothing verified; OLD kept" ;;
+  esac
+else
+  echo "OLD is empty: nothing scrubbed"
+fi
+```
+
+`|` never occurs in a URL-safe token, so it is a safe `sed` delimiter. `OLD` is unset only when
+the check proves the scrub, so a failed run can be repeated; a log the loop could not read or
+rewrite leaves a `0600` `.scrub` file beside it, overwritten by the next run (use `>|` if your
+shell sets `noclobber`). The old token is briefly in `sed`'s
+and `grep`'s arguments, visible to processes of the same user, who can read `.env` anyway. A line
+the server appends between the `sed` read and the `cat` write is lost, which is why the connector
+should be idle.
 
 ### The release receipt
 

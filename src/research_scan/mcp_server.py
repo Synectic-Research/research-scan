@@ -39,6 +39,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Annotated, Any
+from urllib.parse import quote, quote_plus
 
 from fastmcp import FastMCP
 from fastmcp.exceptions import ToolError
@@ -46,6 +47,8 @@ from fastmcp.server.dependencies import get_http_request
 from fastmcp.server.middleware import Middleware, MiddlewareContext
 from pydantic import Field
 from starlette.applications import Starlette
+from starlette.datastructures import Headers
+from starlette.middleware import Middleware as StarletteMiddleware
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.routing import Mount
@@ -1022,16 +1025,17 @@ def authorize(path: str, authorization: str | None, token: str | None) -> bool:
     Bearer is preferred and is what a client that can set headers should send. The path-segment
     form exists only for clients that cannot set them, and it is strictly worse — a secret in a
     URL reaches browser history and proxy logs — so it is for a short-lived local session and
-    nothing more. Both compare in constant time.
+    nothing more. Both compare in constant time, as bytes: `compare_digest` raises on a `str`
+    holding non-ASCII, which made a request for `/é/mcp` a 500 with a traceback in the log.
     """
     if not token:
         return False
     if authorization and authorization.lower().startswith("bearer "):
         supplied = authorization.split(" ", 1)[1].strip()
-        if hmac.compare_digest(supplied, token):
+        if hmac.compare_digest(supplied.encode(), token.encode()):
             return True
     segments = [segment for segment in path.split("/") if segment]
-    return bool(segments) and hmac.compare_digest(segments[0], token)
+    return bool(segments) and hmac.compare_digest(segments[0].encode(), token.encode())
 
 
 class TokenAuth(Middleware):
@@ -1044,8 +1048,9 @@ class TokenAuth(Middleware):
             # No HTTP layer at all (in-process transport). Nothing to authenticate against.
             return await call_next(context)
 
-        scope = request.scope
-        path = f"{scope.get('root_path') or ''}{scope.get('path') or ''}"
+        # uvicorn already folds root_path into `path`, and a Mount keeps the full path; adding
+        # root_path again doubled the prefix.
+        path = request.scope.get("path") or ""
         if not authorize(path, request.headers.get("authorization"), config.load().mcp_token):
             raise ToolError("unauthorized")
         return await call_next(context)
@@ -1070,8 +1075,7 @@ async def health(request: Request) -> JSONResponse:
     this server's auth, validation or dispatch reads it, and none ever should.
     """
     payload: dict[str, object] = {"status": "ok"}
-    scope = request.scope
-    path = f"{scope.get('root_path') or ''}{scope.get('path') or ''}"
+    path = request.scope.get("path") or ""
     if authorize(path, request.headers.get("authorization"), config.load().mcp_token):
         payload.update(deployment_module.current().as_dict())
     return JSONResponse(payload)
@@ -1118,6 +1122,111 @@ class RejectEverything:
 
 NO_TOKEN_DETAIL = "no RESEARCH_SCAN_MCP_TOKEN configured — every request will be rejected"
 
+# Every uvicorn logger that can carry a request path. The access logger writes one line per
+# request with the path as a format argument; the error logger can quote it in a traceback.
+UVICORN_LOGGERS = ("uvicorn.access", "uvicorn.error")
+
+
+class RedactSecrets(logging.Filter):
+    """Strip configured secrets from a record before any handler formats it.
+
+    The path-secret mount puts the token in the request line, and uvicorn's access logger passes
+    that path as a format *argument*, so the secret lives in `record.args`, not `record.msg`.
+    Rewriting only the message would leave it in every line. The message, the arguments, a
+    traceback and a stack are all redacted here.
+
+    A non-string value is replaced by its redacted text only when that text holds a secret: the
+    access line formats its status code with `%d`, so stringifying every argument would break it.
+    """
+
+    def __init__(self, secrets: tuple[str, ...]) -> None:
+        super().__init__()
+        # uvicorn logs `quote(path)`, so a secret with a character outside the unreserved set
+        # reaches the record percent-encoded. Redact every form it can take there.
+        forms = {
+            form
+            for secret in secrets
+            for form in (secret, quote(secret), quote(secret, safe=""), quote_plus(secret))
+        }
+        self.secrets = tuple(sorted(forms, key=len, reverse=True))
+
+    def _clean(self, value: Any) -> Any:
+        if isinstance(value, str):
+            return config.redact_text(value, self.secrets)
+        text = str(value)
+        if any(secret in text for secret in self.secrets):
+            return config.redact_text(text, self.secrets)
+        return value
+
+    def filter(self, record: logging.LogRecord) -> bool:
+        if not self.secrets:
+            return True
+        record.msg = self._clean(record.msg)
+        if isinstance(record.args, tuple):
+            record.args = tuple(self._clean(arg) for arg in record.args)
+        elif isinstance(record.args, Mapping):
+            record.args = {key: self._clean(value) for key, value in record.args.items()}
+        # `Formatter.format` renders the traceback after filters run, and reuses `exc_text` when
+        # it is already set — so render it here, redacted, and the formatter prints this copy.
+        if record.exc_info and not record.exc_text:
+            record.exc_text = logging.Formatter().formatException(record.exc_info)
+        if record.exc_text:
+            record.exc_text = config.redact_text(record.exc_text, self.secrets)
+        if record.stack_info:
+            record.stack_info = config.redact_text(record.stack_info, self.secrets)
+        return True
+
+
+def redact_server_logs(secrets: tuple[str, ...]) -> None:
+    """Attach the redaction filter to uvicorn's loggers.
+
+    On the loggers, not their handlers: uvicorn's `dictConfig` replaces a logger's handlers but
+    leaves its filters in place, so this survives being installed before `uvicorn.run()`.
+    """
+    for name in UVICORN_LOGGERS:
+        target = logging.getLogger(name)
+        if not any(isinstance(existing, RedactSecrets) for existing in target.filters):
+            target.addFilter(RedactSecrets(secrets))
+
+
+BAD_TOKEN_DETAIL = "missing or invalid token"
+
+
+class RequireToken:
+    """ASGI gate in front of the whole app: no token, no response but 401.
+
+    `TokenAuth` checks every MCP *message*, but `initialize` reaches FastMCP's session manager
+    first, so an unauthenticated caller could still open server sessions. This answers before any
+    route runs. Two read-only exemptions go on to the router unchanged:
+
+    - `GET /health` (and `/health/`, which redirects): an uptime probe needs a 200 without the
+      token, and the handler itself still withholds the deployment fingerprint.
+    - `GET /.well-known/*`: no such route exists, so these keep their 404. A 401 there reads to an
+      MCP client as "this server wants OAuth but publishes no metadata".
+
+    Paths are read from `scope["path"]` as uvicorn sets it, with no root path: `main()` never
+    sets one, and under `--root-path` the path-token form and the probe exemption both fail
+    closed. Lifespan and websocket scopes pass through: FastMCP registers HTTP routes only, so a
+    websocket ends at the router's close.
+    """
+
+    def __init__(self, app, token: str) -> None:
+        self.app = app
+        self.token = token
+        self.reject = RejectEverything(BAD_TOKEN_DETAIL)
+
+    async def __call__(self, scope, receive, send) -> None:
+        if scope["type"] != "http":
+            return await self.app(scope, receive, send)
+        path = scope.get("path") or ""
+        if scope.get("method") in ("GET", "HEAD") and (
+            path.rstrip("/") == "/health" or path.startswith("/.well-known/")
+        ):
+            return await self.app(scope, receive, send)
+        if authorize(path, Headers(scope=scope).get("authorization"), self.token):
+            return await self.app(scope, receive, send)
+        await self.reject(scope, receive, send)
+
 
 def build_app(token: str | None = None) -> Starlette:
     """One MCP app, mounted twice: `/mcp` for a bearer client, `/<token>/mcp` for a client that
@@ -1127,7 +1236,8 @@ def build_app(token: str | None = None) -> Starlette:
     parent router must run, or streamable HTTP never initializes.
 
     With no token configured there is no secret to put in a path, so the path-segment mount is
-    not created and every route answers 401. Never silently open.
+    not created and every route answers 401. Never silently open. With one, `RequireToken`
+    answers 401 to any unauthenticated request except `GET /health`, before a session can open.
     """
     token = token or config.load().mcp_token
     if not token:
@@ -1135,6 +1245,7 @@ def build_app(token: str | None = None) -> Starlette:
     inner = mcp.http_app(path="/mcp")
     return Starlette(
         routes=[Mount(f"/{token}", app=inner), Mount("/", app=inner)],
+        middleware=[StarletteMiddleware(RequireToken, token=token)],
         lifespan=inner.lifespan,
     )
 
@@ -1181,6 +1292,8 @@ def main(host: str | None = None, port: int | None = None) -> None:
 
     import uvicorn
 
+    # The path-secret mount puts the token in every request line uvicorn logs.
+    redact_server_logs(settings.secrets())
     uvicorn.run(build_app(settings.mcp_token), host=host, port=port, log_level="info")
 
 

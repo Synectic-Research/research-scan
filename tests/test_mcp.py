@@ -8,7 +8,9 @@ here is the bridging, not the engine.
 from __future__ import annotations
 
 import asyncio
+import io
 import json
+import logging
 import os
 from datetime import date
 from importlib.metadata import version as distribution_version
@@ -181,6 +183,276 @@ def test_both_mounts_accept_a_good_token_and_reject_a_bad_one(mcp_home):
     assert probe(app, "http://test/mcp").startswith("rejected:")
     assert probe(app, "http://test/mcp", auth="wrong-token").startswith("rejected:")
     assert probe(app, "http://test/not-the-token/mcp").startswith("rejected:")
+
+
+@pytest.fixture
+def clean_uvicorn_loggers():
+    """Logger filters are process-global, so remove the ones a test installed.
+
+    Only the filters: `main()` runs uvicorn's `dictConfig`, whose stream handlers on
+    `uvicorn.access` / `uvicorn.error` stay for the session. Nothing else in the suite logs there.
+    """
+    yield
+    for name in mcp_server.UVICORN_LOGGERS:
+        target = logging.getLogger(name)
+        for existing in list(target.filters):
+            if isinstance(existing, mcp_server.RedactSecrets):
+                target.removeFilter(existing)
+
+
+def test_main_installs_access_log_redaction_after_uvicorn_configures_logging(
+    mcp_home, monkeypatch, clean_uvicorn_loggers
+):
+    """The token reached `mcp.log` 2,108 times as the path of a claude.ai connector request.
+
+    Drives `main()` itself, with only the serve loop stubbed, so uvicorn's real `dictConfig`
+    runs after the filter is installed and the assertion covers it surviving that.
+    """
+    import uvicorn
+    from uvicorn.logging import AccessFormatter
+
+    from research_scan import config
+
+    # `uvicorn.run()` exits 3 when the server never reports started; the stub reports it.
+    monkeypatch.setattr(
+        uvicorn.Server, "run", lambda self, sockets=None: setattr(self, "started", True)
+    )
+    # Without pytest's root handler `basicConfig` would add one for the rest of the session.
+    monkeypatch.setattr(logging, "basicConfig", lambda **kwargs: None)
+    mcp_server.main(host="127.0.0.1", port=0)
+
+    access = logging.getLogger("uvicorn.access")
+    captured = io.StringIO()
+    handler = logging.StreamHandler(captured)
+    handler.setFormatter(AccessFormatter('%(client_addr)s - "%(request_line)s" %(status_code)s'))
+    access.addHandler(handler)
+    try:
+        # The exact call shape of uvicorn's h11/httptools protocols: the path is an argument.
+        access.info(
+            '%s - "%s %s HTTP/%s" %d', "160.79.106.168:0", "POST", f"/{TOKEN}/mcp", "1.1", 200
+        )
+    finally:
+        access.removeHandler(handler)
+
+    line = captured.getvalue()
+    assert TOKEN not in line
+    assert f"POST /{config.REDACTED}/mcp HTTP/1.1" in line
+
+
+def test_redaction_covers_the_message_mapping_args_and_the_error_logger(clean_uvicorn_loggers):
+    mcp_server.redact_server_logs((TOKEN,))
+    mcp_server.redact_server_logs((TOKEN,))  # idempotent: one filter, not two
+    error = logging.getLogger("uvicorn.error")
+    assert sum(isinstance(f, mcp_server.RedactSecrets) for f in error.filters) == 1
+
+    record = logging.LogRecord(
+        "uvicorn.error", logging.ERROR, __file__, 1, f"failed on /{TOKEN}/mcp", None, None
+    )
+    assert error.filters[-1].filter(record)
+    assert TOKEN not in record.getMessage()
+
+    mapped = logging.LogRecord(
+        "uvicorn.error", logging.ERROR, __file__, 1, "path %(p)s", ({"p": f"/{TOKEN}/x"},), None
+    )
+    error.filters[-1].filter(mapped)
+    assert TOKEN not in mapped.getMessage()
+
+
+def test_redaction_covers_tracebacks_stacks_and_non_string_values(clean_uvicorn_loggers):
+    """uvicorn logs `exc_info=` on ASGI errors and `logger.error(exc)` on a bind failure."""
+    import sys
+
+    from research_scan import config
+
+    gate = mcp_server.RedactSecrets((TOKEN,))
+    formatter = logging.Formatter("%(message)s")
+
+    try:
+        raise RuntimeError(f"no route for /{TOKEN}/mcp")
+    except RuntimeError:
+        traced = logging.LogRecord(
+            "uvicorn.error",
+            logging.ERROR,
+            __file__,
+            1,
+            "Exception in ASGI application",
+            None,
+            sys.exc_info(),
+        )
+    traced.stack_info = f"Stack (most recent call last):\n  /{TOKEN}/mcp"
+    gate.filter(traced)
+    rendered = formatter.format(traced)
+    assert TOKEN not in rendered
+    assert "RuntimeError: no route for /" + config.REDACTED in rendered
+
+    bare = logging.LogRecord(
+        "uvicorn.error", logging.ERROR, __file__, 1, OSError(f"bind failed /{TOKEN}"), None, None
+    )
+    gate.filter(bare)
+    assert TOKEN not in formatter.format(bare)
+
+    # Values without a secret are left alone, so `%d` still gets its int.
+    counted = logging.LogRecord(
+        "uvicorn.access", logging.INFO, __file__, 1, "%s %d", (f"/{TOKEN}/mcp", 200), None
+    )
+    gate.filter(counted)
+    assert counted.args == (f"/{config.REDACTED}/mcp", 200)
+
+
+def test_a_secret_that_uvicorn_percent_encodes_is_redacted_in_that_form():
+    """uvicorn logs `quote(scope["path"])`; a token with a space or `%` arrives encoded."""
+    from uvicorn.protocols.utils import get_path_with_query_string
+
+    from research_scan import config
+
+    odd = "tok en+%/zz"
+    logged = get_path_with_query_string({"path": f"/{odd}/mcp", "query_string": b""})
+    assert odd not in logged  # the premise: the raw form is not what reaches the log
+
+    record = logging.LogRecord(
+        "uvicorn.access", logging.INFO, __file__, 1, "%s %d", (logged, 200), None
+    )
+    mcp_server.RedactSecrets((odd,)).filter(record)
+    assert record.args == (f"/{config.REDACTED}/mcp", 200)
+
+    # A client that misplaces the token in the query string sends it fully encoded.
+    encoded = b"t=tok%20en%2B%25%2Fzz"
+    in_query = get_path_with_query_string({"path": "/mcp", "query_string": encoded})
+    record = logging.LogRecord(
+        "uvicorn.access", logging.INFO, __file__, 1, "%s", (in_query,), None
+    )
+    mcp_server.RedactSecrets((odd,)).filter(record)
+    assert record.args == (f"/mcp?t={config.REDACTED}",)
+
+
+def test_a_non_ascii_credential_is_refused_not_crashed_on(mcp_home):
+    """`hmac.compare_digest` raises on non-ASCII `str`; the gate turned that into a 500 with a
+    traceback on every such request, from anyone."""
+    assert mcp_server.authorize("/é/mcp", None, TOKEN) is False
+    assert mcp_server.authorize("/mcp", "Bearer é", TOKEN) is False
+    responses = raw(
+        mcp_server.build_app(TOKEN),
+        [
+            ("POST", "/%C3%A9/mcp", {}),
+            ("POST", "/mcp", {"authorization": "Bearer é".encode()}),
+        ],
+    )
+    assert [response.status_code for response in responses] == [401, 401]
+
+
+INITIALIZE = {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+        "protocolVersion": "2025-06-18",
+        "capabilities": {},
+        "clientInfo": {"name": "probe", "version": "0"},
+    },
+}
+
+
+def raw(app, requests: list[tuple[str, str, dict[str, str]]]) -> list[httpx.Response]:
+    """Plain HTTP over ASGI with the lifespan running, so a 200 means FastMCP really answered."""
+
+    async def go() -> list[httpx.Response]:
+        async with app.router.lifespan_context(app), httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=app), base_url="http://test"
+        ) as client:
+            out = []
+            for method, url, headers in requests:
+                headers = {"accept": "application/json, text/event-stream", **headers}
+                body = INITIALIZE if method == "POST" else None
+                out.append(await client.request(method, url, json=body, headers=headers))
+            return out
+
+    return asyncio.run(go())
+
+
+def test_an_unauthenticated_request_is_refused_before_a_session_opens(mcp_home):
+    """`initialize` used to reach FastMCP's session manager without the token: anyone could
+    create server sessions, and only the later tool calls were refused."""
+    app = mcp_server.build_app(TOKEN)
+    bearer = {"authorization": f"Bearer {TOKEN}"}
+    responses = raw(
+        app,
+        [
+            ("POST", "/mcp", {}),
+            ("POST", "/mcp", {"authorization": "Bearer wrong-token"}),
+            ("POST", "/not-the-token/mcp", {}),
+            ("GET", "/mcp", {}),
+            ("DELETE", "/mcp", {}),
+            ("POST", "/mcp", bearer),
+            ("POST", f"/{TOKEN}/mcp", {}),
+        ],
+    )
+
+    refused, admitted = responses[:5], responses[5:]
+    for response in refused:
+        assert response.status_code == 401
+        assert response.json() == {"error": "unauthorized", "detail": "missing or invalid token"}
+        assert "mcp-session-id" not in response.headers
+    for response in admitted:
+        assert response.status_code == 200
+        assert response.headers.get("mcp-session-id")
+
+
+def test_health_stays_open_and_still_withholds_identity_without_the_token(mcp_home):
+    anonymous, head, slash, holder, wrong_method = raw(
+        mcp_server.build_app(TOKEN),
+        [
+            ("GET", "/health", {}),
+            ("HEAD", "/health", {}),
+            ("GET", "/health/", {}),
+            ("GET", f"/{TOKEN}/health", {}),
+            ("POST", "/health", {}),
+        ],
+    )
+
+    assert anonymous.status_code == 200
+    assert anonymous.json() == {"status": "ok"}
+    assert head.status_code == 200
+    # A probe written with a trailing slash keeps the redirect it always got.
+    assert slash.status_code == 307
+    assert holder.status_code == 200
+    assert "git_sha" in holder.json()
+    # Only the probe is exempt; anything else on that path needs the token like every route.
+    assert wrong_method.status_code == 401
+
+
+def test_well_known_paths_keep_their_404_rather_than_signalling_oauth(mcp_home):
+    """An MCP client reads a 401 here as "OAuth required, metadata missing"; there is no route."""
+    responses = raw(
+        mcp_server.build_app(TOKEN),
+        [
+            ("GET", "/.well-known/oauth-protected-resource", {}),
+            ("GET", "/.well-known/oauth-protected-resource/mcp", {}),
+            ("GET", "/.well-known/oauth-authorization-server", {}),
+        ],
+    )
+    assert [response.status_code for response in responses] == [404, 404, 404]
+
+
+def test_the_connector_can_open_and_close_a_session_on_the_path_token(mcp_home):
+    """The claude.ai connector's lifecycle on `/<token>/mcp`: initialize, notify, close."""
+    app = mcp_server.build_app(TOKEN)
+    accept = {"accept": "application/json, text/event-stream"}
+
+    async def go() -> tuple[int, int, int]:
+        async with app.router.lifespan_context(app), httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=app), base_url="http://test"
+        ) as client:
+            opened = await client.post(f"/{TOKEN}/mcp", json=INITIALIZE, headers=accept)
+            session = {**accept, "mcp-session-id": opened.headers["mcp-session-id"]}
+            notified = await client.post(
+                f"/{TOKEN}/mcp",
+                json={"jsonrpc": "2.0", "method": "notifications/initialized"},
+                headers=session,
+            )
+            closed = await client.delete(f"/{TOKEN}/mcp", headers=session)
+            return opened.status_code, notified.status_code, closed.status_code
+
+    assert asyncio.run(go()) == (200, 202, 200)
 
 
 def test_without_a_token_the_server_starts_and_401s_instead_of_refusing_to_boot(

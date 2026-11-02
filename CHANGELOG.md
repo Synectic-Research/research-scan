@@ -9,12 +9,14 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
-## [Unreleased]
+## [0.6.3] — 2026-11-02
 
 ### Changed
 - **The skill runs in any Agent Skills host.** `SKILL.md` follows the open
   [Agent Skills](https://agentskills.io/) format, so Codex, Cursor and Copilot read the same folder
   Claude Code does; the README shows the Codex install. Claude Code behaviour is unchanged.
+- **The claude.ai connector authenticates with a header.** `RELEASING.md` now sets it up with
+  `Authorization: Bearer <token>` on `/mcp`, so the token never appears in a URL or a log line.
 
 ### Fixed
 - **`doctor` passes a read-only config directory.** A scan only reads `~/.config/research-scan`;
@@ -22,6 +24,11 @@ idea is not retried blind.
   not write — Codex's `workspace-write`, the safer posture — failed preflight with exit 3. The
   config check now reports `read-only` and passes; the cache path, which a scan writes, still has
   to be writable.
+- **`configure` in a read-only config directory** printed a traceback after the keys were typed.
+  It now checks before the first prompt and exits 1 with one sentence saying where it needs write
+  access.
+- **The weekly registry check** compared PyPI with the registry's oldest entry and failed on a
+  false alarm from 0.6.1 on; it now asks for the entry the registry marks latest.
 - **Skill wording:** the `coverage.json` query path, the step a skipped gap round goes to, and
   where `--gap-round` is passed.
 

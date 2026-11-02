@@ -152,14 +152,15 @@ Both print `401`. `GET /health` without a token prints `200`.
 
 ### Hardening the resident server
 
-The path-secret form puts the token in every request line. From 0.6.2 the server redacts it from
-its own logs, but the process's files and the token's history still need an operator:
+Prefer the header form. Where the path form is still in use it puts the token in every request
+line; from 0.6.2 the server redacts it from its own logs, but the process's files and the token's
+history still need an operator:
 
 - **Connect with a header, not a path.** claude.ai's custom-connector dialog takes request headers,
   so its connector needs no path secret: URL `https://<tunnel-host>/mcp`, authentication **No
   sign-in**, and one header named `Authorization` whose value is `Bearer <token>`. The token then
-  never appears in a URL, a request line or an access log. Keep `/<token>/mcp` for a client that
-  genuinely cannot set a header.
+  never appears in a URL, a request line or the server's access log. Keep `/<token>/mcp` for a
+  client that genuinely cannot set a header.
 - **Log permissions.** `chmod 600 ~/Library/Logs/research-scan/mcp*.log` — an existing file keeps
   its mode when it is reopened for append, so this holds across restarts. Also add
   `<key>Umask</key><integer>63</integer>` (octal 077) to the LaunchAgent plist so anything the

@@ -457,11 +457,13 @@ V1.1 review floor. **Raising `CONTRADICTING_SLOTS` is a selection change and nee
 quotes it with `$ARGUMENTS` and `${CLAUDE_SKILL_DIR}`, which only Claude Code fills in. As built,
 the body reads its brief from the invoking request (Claude Code appends `ARGUMENTS:` when no
 placeholder takes them) and links bundled files by paths relative to the skill, and the frontmatter
-adds the spec's `license` and `compatibility`. The Claude Code keys stay, `context: fork` above all:
-the headless pattern below was measured with it. Codex reads the same folder from
-`~/.agents/skills`. No rubric, schema or judgement changed; the same edit corrected a `coverage.json` field path, named
-the shortlist as the step a skipped gap round goes to, and moved the forcing `--gap-round` onto the
-`coverage` call that decides whether the round runs.
+adds the spec's `license` and `compatibility`. The four Claude Code keys stay top-level, where
+Claude Code reads them, `context: fork` above all: the headless pattern below was measured with it. The
+spec's validator flags them as unexpected and Codex ignores them. Codex reads the same folder from
+`~/.agents/skills`. No rubric, schema or judgement changed; the same edit corrected a
+`coverage.json` field path, named the shortlist as the step a skipped gap round goes to, moved the
+forcing `--gap-round` onto the `coverage` call that decides whether the round runs, and points
+screening at the batches `retrieve` returns instead of a directory glob.
 
 ## Patterns
 

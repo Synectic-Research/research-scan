@@ -162,46 +162,51 @@ its own logs, but the process's files and the token's history still need an oper
   launchd applies it to the files it opens for you. A `0644` log is readable by every process on
   the machine, including a VM that shares the host filesystem.
 - **Rotate after any exposure.** A token that ever reached a log, a shell history or a URL bar is
-  spent. Rotate in one sitting, with the connector idle: it is down from the restart until its URL
-  is updated. No step below prints a token or puts one on a command line.
+  spent. Rotate in one sitting, in one shell, with the connector idle: it is down from step 1
+  (the message gate re-reads `.env` on every call) until its URL is updated in step 3. Nothing
+  below puts a token in your shell history or on screen. The token is read and written through
+  the package's own `config.load()` and `write_env`, so quoted values, `export` lines and comments
+  in a hand-edited `.env` behave exactly as the server sees them.
 
   ```bash
-  ENV=~/.config/research-scan/.env
-  OLD="$(grep '^RESEARCH_SCAN_MCP_TOKEN=' "$ENV" | cut -d= -f2-)"   # kept for the scrub
+  rs() { env -u RESEARCH_SCAN_MCP_TOKEN uv run -q --project "$HOME/Projects/research-scan" python -c "$1"; }
+  OLD="$(rs 'from research_scan.config import load; print(load().mcp_token or "")')"
+  [ -n "$OLD" ] && echo "old token captured" || echo "no token found: stop here"
 
-  # 1. Write a new URL-safe token in place (same file, so its 0600 mode is kept).
-  python3 - "$ENV" <<'PY'
-  import pathlib, secrets, sys
-  env = pathlib.Path(sys.argv[1])
-  keep = [l for l in env.read_text().splitlines() if not l.startswith("RESEARCH_SCAN_MCP_TOKEN=")]
-  env.write_text("\n".join([*keep, f"RESEARCH_SCAN_MCP_TOKEN={secrets.token_urlsafe(32)}"]) + "\n")
-  PY
+  # 1. Write a new URL-safe token: atomic, every other line kept, file left 0600.
+  rs 'import secrets; from research_scan.config import write_env; write_env({"RESEARCH_SCAN_MCP_TOKEN": secrets.token_urlsafe(32)})'
 
   # 2. Restart onto it.
   launchctl kickstart -k gui/$(id -u)/org.synectic.research-scan-mcp
 
-  # 3. Copy the new token to the clipboard and paste it into the connector URL in claude.ai.
-  grep '^RESEARCH_SCAN_MCP_TOKEN=' "$ENV" | cut -d= -f2- | tr -d '\n' | pbcopy
+  # 3. Copy the new token to the clipboard; paste it into the connector URL in claude.ai.
+  rs 'from research_scan.config import load; print(load().mcp_token, end="")' | pbcopy
   ```
 
-  **Scrub last, and in place.** The server redacts only the token it booted with, so between
-  steps 2 and 3 every connector call to the *old* URL writes the old token into a 401 line again —
-  and so does any client still configured with it afterwards. Scrub once nothing uses the old URL.
-  Rewrite the files through `cat >`, never `sed -i`: BSD `sed -i` swaps in a new file, and launchd
-  keeps the server writing to the old, unlinked one until the next restart.
+  **Scrub last, in place, in the same shell.** `$OLD` is the only copy of the old value. The
+  server redacts only the token it booted with, so between steps 2 and 3 every connector call to
+  the *old* URL writes the old token into a 401 line again — and so does any client still
+  configured with it afterwards. Scrub once nothing uses the old URL. Rewrite the files through
+  `cat >`, never `sed -i`: BSD `sed -i` swaps in a new file, and launchd keeps the server writing to
+  the old, unlinked one until the next restart. `cat >` is safe under the live writer because
+  launchd opens both logs append-only, so the server's next line lands at the new end.
 
   ```bash
   for f in ~/Library/Logs/research-scan/mcp.log ~/Library/Logs/research-scan/mcp.err.log; do
     sed "s|$OLD|***REDACTED***|g" "$f" > "$f.scrub" && cat "$f.scrub" > "$f" && rm "$f.scrub"
   done
+  grep -c -F -- "$OLD" ~/Library/Logs/research-scan/mcp*.log   # both counts must be 0
   unset OLD
   ```
 
-  `|` never occurs in a URL-safe token, so it is a safe `sed` delimiter. A line the server appends
-  between the `sed` read and the `cat` write is lost, which is why the connector should be idle.
+  `|` never occurs in a URL-safe token, so it is a safe `sed` delimiter. An empty `$OLD` makes
+  `sed` refuse the expression and the loop stops, so a lost value fails loudly, not silently.
+  The old token is briefly in `sed`'s arguments, visible to processes of the same user, who can
+  read `.env` anyway. A line the server appends between the `sed` read and the `cat` write is lost,
+  which is why the connector should be idle.
 - **Keep the token URL-safe.** The recipe above uses `secrets.token_urlsafe`. The redaction also
   covers percent-encoded forms, but a token that never needs encoding is one less thing to trust,
-  and a non-ASCII token cannot authenticate as a bearer header at all.
+  and a non-ASCII token will not authenticate as a bearer header.
 
 ### The release receipt
 

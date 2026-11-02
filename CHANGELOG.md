@@ -19,9 +19,9 @@ idea is not retried blind.
   LaunchAgent created world-readable. A logging filter on `uvicorn.access` and `uvicorn.error` — the
   loggers that see request paths — now redacts every configured secret from the message, its
   arguments, tracebacks and stacks, in the raw form and in the percent-encoded forms uvicorn
-  writes. **Rotate any token a 0.6.1 or earlier
-  HTTP server has served** — redaction stops new copies; it does not recall old ones.
-  `RELEASING.md` has the rotation order and the log-permission step.
+  writes. **Rotate any token a 0.6.1 or earlier HTTP server has served** — redaction stops new
+  copies; it does not recall old ones. `RELEASING.md` has the rotation recipe and the
+  log-permission step.
 
 - **An unauthenticated `initialize` opened a server session.** The token was checked on every MCP
   message, but `initialize` reached FastMCP's session manager first, so anyone who could reach the

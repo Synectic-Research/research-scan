@@ -238,7 +238,7 @@ def run_checks(
     }
 
     report.checks.append(_check_python())
-    report.checks.append(_check_path("config path", settings.config_dir))
+    report.checks.append(_check_path("config path", settings.config_dir, read_only_ok=True))
     report.checks.append(_check_path("cache path", settings.cache_dir))
     report.checks.extend(_check_keys(settings, selected, report))
 
@@ -283,10 +283,27 @@ def _writable(path: Path) -> tuple[bool, str]:
     return True, str(path)
 
 
-def _check_path(name: str, path: Path) -> Check:
+def _readable_dir(path: Path) -> bool:
+    try:
+        next(path.iterdir(), None)
+    except OSError:
+        return False
+    return True
+
+
+def _check_path(name: str, path: Path, *, read_only_ok: bool = False) -> Check:
+    """A path the scan writes must be writable; one it only reads may be read-only.
+
+    The config directory is the second kind: a scan reads credentials from it and only
+    `configure` writes there. A sandbox that grants read but not write (Codex's
+    `workspace-write`) is the safer posture, not a fault.
+    """
     ok, detail = _writable(path)
     if ok:
         return Check(name, "OK", detail, mandatory=True)
+    if read_only_ok and _readable_dir(path):
+        note = f"{path} (read-only: a scan only reads it; `configure` needs write)"
+        return Check(name, "OK", note, mandatory=True)
     return Check(name, "FAIL", f"{path}: {detail}", mandatory=True)
 
 
@@ -502,7 +519,7 @@ _REMEDY: dict[str, str] = {
     "S2_API_KEY": "request a key at semanticscholar.org/product/api, then re-run configure",
     "NCBI_API_KEY": "only matters for biomedical topics; add it with `research-scan configure`",
     "python": f"install Python {'.'.join(map(str, MIN_PYTHON))} or newer",
-    "config path": "make the config directory writable",
+    "config path": "make the config directory readable (`configure` needs it writable)",
     "cache path": "make the cache directory writable",
 }
 

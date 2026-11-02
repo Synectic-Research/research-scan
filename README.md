@@ -183,8 +183,8 @@ mkdir -p ~/.agents/skills && ln -s "$PWD/skills/research-scan" ~/.agents/skills/
 ```
 
 The CLI needs the network, which Codex's default sandbox blocks. Run `research-scan doctor` once
-outside Codex (it creates the cache), then start a scanning session with network access and the
-cache writable. Both apply to the whole session, not only to `research-scan`:
+outside Codex (it creates the cache and config directories), then start a scanning session with
+network access and the cache writable. Both apply to the whole session, not only to `research-scan`:
 
 ```bash
 codex --sandbox workspace-write -c sandbox_workspace_write.network_access=true \

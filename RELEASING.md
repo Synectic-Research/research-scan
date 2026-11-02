@@ -16,7 +16,7 @@ disagrees:
 | `.claude-plugin/plugin.json` | `version` |
 | `CITATION.cff` | `version`, and `date-released` |
 | `server.json` | `version` **and** `packages[0].version` |
-| `CHANGELOG.md` | a `## [X.Y.Z]` section |
+| `CHANGELOG.md` | a `## [X.Y.Z]` section — rename `## [Unreleased]` to it |
 
 The changelog section is not optional: the GitHub Release body is generated from it, and the
 release job fails when the section is missing.

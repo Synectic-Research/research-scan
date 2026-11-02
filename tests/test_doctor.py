@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 
 import pytest
 
@@ -209,6 +210,35 @@ def test_unwritable_cache_path_fails(settings, monkeypatch, tmp_path):
 
     assert report.exit_code == 3
     assert statuses(report)["cache path"] == "FAIL"
+
+
+@pytest.mark.skipif(os.geteuid() == 0, reason="root ignores directory permissions")
+def test_a_read_only_config_dir_passes_and_says_so(settings):
+    # A sandbox such as Codex's grants read but not write on ~/.config. A scan only reads it.
+    settings.config_dir.mkdir(parents=True, exist_ok=True)
+    settings.config_dir.chmod(0o500)
+    try:
+        report = doctor.run_checks(settings, FakeClient())
+    finally:
+        settings.config_dir.chmod(0o700)
+
+    check = next(c for c in report.checks if c.name == "config path")
+    assert check.status == "OK"
+    assert "read-only" in check.detail
+    assert report.exit_code == 0
+
+
+@pytest.mark.skipif(os.geteuid() == 0, reason="root ignores directory permissions")
+def test_an_unreadable_config_dir_still_fails(settings):
+    settings.config_dir.mkdir(parents=True, exist_ok=True)
+    settings.config_dir.chmod(0o000)
+    try:
+        report = doctor.run_checks(settings, FakeClient())
+    finally:
+        settings.config_dir.chmod(0o700)
+
+    assert statuses(report)["config path"] == "FAIL"
+    assert report.exit_code == 3
 
 
 def test_report_json_masks_every_key(settings):

@@ -98,6 +98,12 @@ claude plugin details research-scan@synectic     # skill present, MCP server lis
 Then, in a session, `/mcp` should show `research-scan` connected with `scan_start`,
 `scan_continue`, `scan_verify` and `scan_result`.
 
+**Sync the documentation site.** In `research-scan-docs`, set `current_release` in
+`scripts/release-facts.json`, recapture every transcript `scripts/check-versions.py` names from a
+clean install of the release, and push once `check-versions.py`, `npm run build` and
+`check-site.py` pass. Its README's "Release pass" is the procedure. 0.6.2 and 0.6.3 shipped without
+this step and the site sat on 0.6.1 transcripts until it was added.
+
 ## Refresh the private server, then verify the fingerprint
 
 **Required. A release is not complete until the resident process is refreshed and

@@ -71,7 +71,7 @@ want in a Dockerfile or a provisioning script.
 | `OPENALEX_API_KEY` | OpenAlex, the primary source. **Required**; `doctor` exits 3 without it. |
 | `OPENALEX_MAILTO` | Strongly recommended. Raises OpenAlex to 5 req/s and joins the Crossref polite pool. |
 | `S2_API_KEY` | Recommended. Semantic Scholar search and citation-graph expansion work without it, throttled to roughly a third of the rate; `doctor` warns. |
-| `NCBI_API_KEY` | Optional. PubMed only: 10 req/s instead of 3. |
+| `NCBI_API_KEY` | Optional. Raises this client's NCBI E-utilities limit from 3 to 10 req/s; PubMed retrieval is not built, so today only `doctor`'s probe uses it. |
 
 To write the file by hand instead, `.env.example` in the repo is the template. Process environment
 beats `~/.config/research-scan/.env`, which beats a repo-local `./.env`.
@@ -149,7 +149,7 @@ Full argument list:
 /research-scan <brief.md | "question"> [--profile quick|standard|deep] [--top N] [--foundational N]
                                        [--from YYYY-MM] [--to YYYY-MM] [--slug name]
                                        [--domain behavioral|cs|biomed|general]
-                                       [--max-candidates N] [--per-query N]
+                                       [--max-candidates N] [--per-query N] [--gap-round]
 ```
 
 ## Connect your agent
@@ -184,12 +184,16 @@ mkdir -p ~/.agents/skills && ln -s "$PWD/skills/research-scan" ~/.agents/skills/
 
 The CLI needs the network, which Codex's default sandbox blocks. Run `research-scan doctor` once
 outside Codex (it creates the cache and config directories), then start a scanning session with
-network access and the cache writable. Both apply to the whole session, not only to `research-scan`:
+network access and the cache writable. Both apply to the whole session, not only to `research-scan`.
+A full scan is a long, unattended task, so run it with `codex exec` and say that it should finish:
 
 ```bash
-codex --sandbox workspace-write -c sandbox_workspace_write.network_access=true \
-  --add-dir ~/.cache/research-scan
+codex exec --sandbox workspace-write -c sandbox_workspace_write.network_access=true \
+  --add-dir ~/.cache/research-scan \
+  'Use the research-scan skill on brief.md with --profile quick, and run every step through the report.'
 ```
+
+Outside a git repository, `codex exec` also needs `--skip-git-repo-check`.
 
 ### Claude Code — the plugin
 
@@ -381,8 +385,8 @@ Two more flags to get right:
 
 - `--plugin-dir` is unnecessary if the skill is already installed under `~/.claude/skills/`. Never
   combine it with `--bare`: bare mode skips `--plugin-dir`, so the skill would not load at all.
-- `--allowedTools` must carry `Bash(research-scan *)`, `Read`, `Write`, `Edit`, `Glob` and `Grep`,
-  the same set the skill's own `allowed-tools` names.
+- `--allowedTools` must carry `Bash(research-scan *)`, `Read`, `Write`, `Edit`, `Glob` and `Grep`:
+  the skill's own `allowed-tools` line, minus the four `scan_*` MCP tools a headless run does not use.
 
 ## Not for
 

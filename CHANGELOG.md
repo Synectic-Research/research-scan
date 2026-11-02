@@ -9,6 +9,22 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
+## [Unreleased]
+
+### Changed
+- **The skill runs in any Agent Skills host.** `SKILL.md` follows the open
+  [Agent Skills](https://agentskills.io/) format, so Codex, Cursor and Copilot read the same folder
+  Claude Code does; the README shows the Codex install. Claude Code behaviour is unchanged.
+
+### Fixed
+- **`doctor` passes a read-only config directory.** A scan only reads `~/.config/research-scan`;
+  only `configure` writes there. `doctor` demanded write access, so a sandbox that grants read but
+  not write — Codex's `workspace-write`, the safer posture — failed preflight with exit 3. The
+  config check now reports `read-only` and passes; the cache path, which a scan writes, still has
+  to be writable.
+- **Skill wording:** the `coverage.json` query path, the step a skipped gap round goes to, and
+  where `--gap-round` is passed.
+
 ## [0.6.2] — 2026-11-02
 
 ### Security

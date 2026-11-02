@@ -280,7 +280,9 @@ with arXiv dead in all eight queries; the manifest had said so all along.
 
 Installed locally as `uv tool install --editable .` (so `research-scan` is on PATH and tracks the
 working tree) with `~/.claude/skills/research-scan` symlinked at `skills/research-scan`. Editing a
-rubric changes the live skill; editing `src/` changes the live CLI.
+rubric changes the live skill; editing `src/` changes the live CLI. Check with `research-scan
+--version`: a plain `uv tool install research-scan` replaces the editable install with a pinned PyPI
+copy, which is how this machine ran 0.6.1 until 2026-11-02 without anyone noticing.
 
 **Three modules are not in §5**, added deliberately rather than growing `cli.py` past 500 lines:
 `run.py` (run directory, manifest upsert, window resolution, parameter precedence — reused by every
@@ -464,6 +466,13 @@ from `~/.agents/skills`. No rubric, schema or judgement changed; the same edit c
 `coverage.json` field path, named the shortlist as the step a skipped gap round goes to, moved the
 forcing `--gap-round` onto the `coverage` call that decides whether the round runs, and points
 screening at the batches `retrieve` returns instead of a directory glob.
+
+**§8.6's "config/cache paths writable" is narrowed: the config path only has to be readable.** A
+scan reads credentials from `~/.config/research-scan` and never writes there; only `configure`
+does. Codex's `workspace-write` sandbox grants read but not write on it, and demanding write failed
+preflight with exit 3 although every source probe passed. The config check now passes read-only
+and says so; the cache path, which every scan writes, keeps the write probe. Verified in a real
+Codex sandbox: `config path` OK (read-only), `cache path` OK, exit 0.
 
 ## Patterns
 

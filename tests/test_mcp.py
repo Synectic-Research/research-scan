@@ -299,6 +299,23 @@ def test_redaction_covers_tracebacks_stacks_and_non_string_values(clean_uvicorn_
     assert counted.args == (f"/{config.REDACTED}/mcp", 200)
 
 
+def test_a_secret_that_uvicorn_percent_encodes_is_redacted_in_that_form():
+    """uvicorn logs `quote(scope["path"])`; a token with a space or `%` arrives encoded."""
+    from uvicorn.protocols.utils import get_path_with_query_string
+
+    from research_scan import config
+
+    odd = "tok en+%/zz"
+    logged = get_path_with_query_string({"path": f"/{odd}/mcp", "query_string": b""})
+    assert odd not in logged  # the premise: the raw form is not what reaches the log
+
+    record = logging.LogRecord(
+        "uvicorn.access", logging.INFO, __file__, 1, "%s %d", (logged, 200), None
+    )
+    mcp_server.RedactSecrets((odd,)).filter(record)
+    assert record.args == (f"/{config.REDACTED}/mcp", 200)
+
+
 INITIALIZE = {
     "jsonrpc": "2.0",
     "id": 1,

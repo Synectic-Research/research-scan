@@ -39,6 +39,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Annotated, Any
+from urllib.parse import quote, quote_plus
 
 from fastmcp import FastMCP
 from fastmcp.exceptions import ToolError
@@ -1139,7 +1140,14 @@ class RedactSecrets(logging.Filter):
 
     def __init__(self, secrets: tuple[str, ...]) -> None:
         super().__init__()
-        self.secrets = secrets
+        # uvicorn logs `quote(path)`, so a secret with a character outside the unreserved set
+        # reaches the record percent-encoded. Redact every form it can take there.
+        forms = {
+            form
+            for secret in secrets
+            for form in (secret, quote(secret), quote(secret, safe=""), quote_plus(secret))
+        }
+        self.secrets = tuple(sorted(forms, key=len, reverse=True))
 
     def _clean(self, value: Any) -> Any:
         if isinstance(value, str):

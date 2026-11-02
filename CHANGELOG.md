@@ -34,6 +34,12 @@ idea is not retried blind.
 - **Skill wording:** the `coverage.json` query path, the step a skipped gap round goes to, and
   where `--gap-round` is passed.
 
+### Note
+
+A patch release. No retrieval, screening, selection, schema or rubric behaviour changes, and no
+measured number moves. What does move: `doctor`'s verdict on a read-only config directory, and the
+shape of `SKILL.md`'s frontmatter in the skill bundle.
+
 ## [0.6.2] — 2026-11-02
 
 ### Security

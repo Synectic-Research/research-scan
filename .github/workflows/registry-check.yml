@@ -38,9 +38,18 @@ jobs:
 
           pypi_version = fetch(PYPI)["info"]["version"]
 
+          # Search returns every published version, oldest first. Compare against the one the
+          # registry marks as latest, not the first hit: taking the first hit compared PyPI with
+          # 0.5.1 forever and failed weekly from 0.6.1 on, a false alarm.
+          OFFICIAL = "io.modelcontextprotocol.registry/official"
           servers = fetch(REGISTRY)["servers"]
           entry = next(
-              (s for s in servers if s["server"]["name"] == "org.synectic/research-scan"),
+              (
+                  s
+                  for s in servers
+                  if s["server"]["name"] == "org.synectic/research-scan"
+                  and s.get("_meta", {}).get(OFFICIAL, {}).get("isLatest")
+              ),
               None,
           )
           if entry is None:

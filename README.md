@@ -2,12 +2,12 @@
 
 # research-scan
 
-Research Scan finds and verifies the 5–10 recent papers that matter most for a research question,
-project, or decision. Starting from a brief or a single question, it retrieves the literature,
-expands through citation graphs, measures coverage, verifies every DOI against the live record, and
-emits evidence objects — while the agent driving it plans the queries, screens the candidates and
-ranks the shortlist. It is an evidence pipeline for a reasoning agent, not an assistant that answers
-questions.
+Research Scan finds and ranks recent scientific papers that matter most for a specific research
+question, project, or decision. Starting from a brief or a single question, it retrieves the
+literature, expands through citation graphs, measures coverage, verifies every DOI against the live
+record, and emits evidence objects — while the agent driving it plans the queries, screens the
+candidates and ranks the shortlist. It is an evidence pipeline for a reasoning agent, not an
+assistant that answers questions.
 
 Documentation: <https://researchscan.synectic.org>
 

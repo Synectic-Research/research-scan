@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in the CLI, the skill or the MCP server did not do what the docs say.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+      description: The command or prompt you ran, what it did, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: version
+    attributes:
+      label: research-scan version --json
+      description: Paste the output. It names the version, Python, platform and whether MCP is enabled.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: research-scan doctor --verbose
+      description: Paste the output. Credential values are already masked; check before posting anyway.
+      render: text
+  - type: textarea
+    id: run
+    attributes:
+      label: Run directory, if a scan was involved
+      description: >-
+        The stage that failed, its exit code, and the relevant part of manifest.json or the
+        stage's *.log.jsonl. Do not attach .env files or tokens.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where you ran it
+      options:
+        - CLI directly
+        - Claude Code (skill or plugin)
+        - Codex or another Agent Skills host
+        - An MCP client over stdio
+        - Other
+    validations:
+      required: true

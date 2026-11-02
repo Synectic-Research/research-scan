@@ -16,9 +16,10 @@ idea is not retried blind.
 - **The MCP server wrote its token into its own log.** The claude.ai connector authenticates with
   the token as the first URL path segment, and uvicorn's access log records the path of every
   request — so the secret was written in clear text once per connector call, to a log file the
-  LaunchAgent created world-readable. A logging filter on `uvicorn.access` and `uvicorn.error` now
-  redacts every configured secret from the message, its arguments, tracebacks and stacks, in the
-  raw form and in the percent-encoded forms uvicorn writes. **Rotate any token a 0.6.1 or earlier
+  LaunchAgent created world-readable. A logging filter on `uvicorn.access` and `uvicorn.error` — the
+  loggers that see request paths — now redacts every configured secret from the message, its
+  arguments, tracebacks and stacks, in the raw form and in the percent-encoded forms uvicorn
+  writes. **Rotate any token a 0.6.1 or earlier
   HTTP server has served** — redaction stops new copies; it does not recall old ones.
   `RELEASING.md` has the rotation order and the log-permission step.
 

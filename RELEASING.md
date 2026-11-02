@@ -162,13 +162,46 @@ its own logs, but the process's files and the token's history still need an oper
   launchd applies it to the files it opens for you. A `0644` log is readable by every process on
   the machine, including a VM that shares the host filesystem.
 - **Rotate after any exposure.** A token that ever reached a log, a shell history or a URL bar is
-  spent. Rotate in one sitting, because the connector is down between the second and third step:
-  write a new `RESEARCH_SCAN_MCP_TOKEN` to `~/.config/research-scan/.env`, `kickstart -k` the
-  agent, then update the connector URL in claude.ai. Only then scrub the old value from the log
-  (`sed -i ''` on the file, after the rotation so nothing is still writing it).
-- **Generate the token URL-safe** (`python3 -c 'import secrets; print(secrets.token_urlsafe(32))'`).
-  The redaction also covers percent-encoded forms, but a token that never needs encoding is one
-  less thing to trust.
+  spent. Rotate in one sitting, with the connector idle: it is down from the restart until its URL
+  is updated. No step below prints a token or puts one on a command line.
+
+  ```bash
+  ENV=~/.config/research-scan/.env
+  OLD="$(grep '^RESEARCH_SCAN_MCP_TOKEN=' "$ENV" | cut -d= -f2-)"   # kept for the scrub
+
+  # 1. Write a new URL-safe token in place (same file, so its 0600 mode is kept).
+  python3 - "$ENV" <<'PY'
+  import pathlib, secrets, sys
+  env = pathlib.Path(sys.argv[1])
+  keep = [l for l in env.read_text().splitlines() if not l.startswith("RESEARCH_SCAN_MCP_TOKEN=")]
+  env.write_text("\n".join([*keep, f"RESEARCH_SCAN_MCP_TOKEN={secrets.token_urlsafe(32)}"]) + "\n")
+  PY
+
+  # 2. Restart onto it.
+  launchctl kickstart -k gui/$(id -u)/org.synectic.research-scan-mcp
+
+  # 3. Copy the new token to the clipboard and paste it into the connector URL in claude.ai.
+  grep '^RESEARCH_SCAN_MCP_TOKEN=' "$ENV" | cut -d= -f2- | tr -d '\n' | pbcopy
+  ```
+
+  **Scrub last, and in place.** The server redacts only the token it booted with, so between
+  steps 2 and 3 every connector call to the *old* URL writes the old token into a 401 line again —
+  and so does any client still configured with it afterwards. Scrub once nothing uses the old URL.
+  Rewrite the files through `cat >`, never `sed -i`: BSD `sed -i` swaps in a new file, and launchd
+  keeps the server writing to the old, unlinked one until the next restart.
+
+  ```bash
+  for f in ~/Library/Logs/research-scan/mcp.log ~/Library/Logs/research-scan/mcp.err.log; do
+    sed "s|$OLD|***REDACTED***|g" "$f" > "$f.scrub" && cat "$f.scrub" > "$f" && rm "$f.scrub"
+  done
+  unset OLD
+  ```
+
+  `|` never occurs in a URL-safe token, so it is a safe `sed` delimiter. A line the server appends
+  between the `sed` read and the `cat` write is lost, which is why the connector should be idle.
+- **Keep the token URL-safe.** The recipe above uses `secrets.token_urlsafe`. The redaction also
+  covers percent-encoded forms, but a token that never needs encoding is one less thing to trust,
+  and a non-ASCII token cannot authenticate as a bearer header at all.
 
 ### The release receipt
 

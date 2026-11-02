@@ -441,7 +441,7 @@ def next_stage(state: ScanState, skip: set[str]) -> tuple[str, list[str]] | None
 
 
 def stage_args(stage: str, args: list[str], options: dict[str, Any]) -> list[str]:
-    """Deferred `scan_start` flags, routed to the stage that owns them (SKILL.md:15)."""
+    """Deferred `scan_start` flags, routed to the stage that owns them (SKILL.md §0.2)."""
     extra: list[str] = []
     if stage == "coverage" and options.get("force_gap_round"):
         extra.append("--gap-round")

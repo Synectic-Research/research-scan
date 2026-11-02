@@ -173,6 +173,24 @@ claude --plugin-dir /path/to/research-scan
 npx skills add Synectic-Research/research-scan
 ```
 
+### Codex and other Agent Skills hosts
+
+The skill follows the open [Agent Skills](https://agentskills.io/) format, so the same folder serves
+Codex, Cursor, Copilot and any other host that reads `SKILL.md`. Codex looks in `~/.agents/skills`:
+
+```bash
+mkdir -p ~/.agents/skills && ln -s "$PWD/skills/research-scan" ~/.agents/skills/research-scan
+```
+
+The CLI needs the network, which Codex's default sandbox blocks. Run `research-scan doctor` once
+outside Codex (it creates the cache), then start a scanning session with network access and the
+cache writable. Both apply to the whole session, not only to `research-scan`:
+
+```bash
+codex --sandbox workspace-write -c sandbox_workspace_write.network_access=true \
+  --add-dir ~/.cache/research-scan
+```
+
 ### Claude Code — the plugin
 
 The plugin installs the skill and configures the `uvx` MCP server in one step; the `.mcp.json` route
@@ -363,8 +381,8 @@ Two more flags to get right:
 
 - `--plugin-dir` is unnecessary if the skill is already installed under `~/.claude/skills/`. Never
   combine it with `--bare`: bare mode skips `--plugin-dir`, so the skill would not load at all.
-- `--allowedTools` must carry `Bash(research-scan *)`, `Read`, `Write`, `Edit`, `Glob` and `Grep`.
-  `Glob` is not optional — the skill globs `screen-batches/` to find the batches to score.
+- `--allowedTools` must carry `Bash(research-scan *)`, `Read`, `Write`, `Edit`, `Glob` and `Grep`,
+  the same set the skill's own `allowed-tools` names.
 
 ## Not for
 

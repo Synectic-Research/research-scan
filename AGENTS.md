@@ -453,6 +453,16 @@ V1.1 review floor. **Raising `CONTRADICTING_SLOTS` is a selection change and nee
 `eval --stage candidates`:** candidate recall cannot see emit, so the number that moves is
 `precision_ge2_in_window`, and rolling it is the maintainer's call.
 
+**`SKILL.md` is written to the open Agent Skills format, so one folder serves every host.** §11
+quotes it with `$ARGUMENTS` and `${CLAUDE_SKILL_DIR}`, which only Claude Code fills in. As built,
+the body reads its brief from the invoking request (Claude Code appends `ARGUMENTS:` when no
+placeholder takes them) and links bundled files by paths relative to the skill, and the frontmatter
+adds the spec's `license` and `compatibility`. The Claude Code keys stay, `context: fork` above all:
+the headless pattern below was measured with it. Codex reads the same folder from
+`~/.agents/skills`. No rubric, schema or judgement changed; the same edit corrected a `coverage.json` field path, named
+the shortlist as the step a skipped gap round goes to, and moved the forcing `--gap-round` onto the
+`coverage` call that decides whether the round runs.
+
 ## Patterns
 
 - **Files are the interface.** Every stage reads and writes JSON in the run directory, validated

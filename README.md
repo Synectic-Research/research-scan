@@ -173,6 +173,19 @@ claude --plugin-dir /path/to/research-scan
 npx skills add Synectic-Research/research-scan
 ```
 
+### Codex and other Agent Skills hosts
+
+The skill follows the open [Agent Skills](https://agentskills.io/) format, so the same folder serves
+Codex, Cursor, Copilot and any other host that reads `SKILL.md`. Codex looks in `~/.agents/skills`:
+
+```bash
+ln -s "$PWD/skills/research-scan" ~/.agents/skills/research-scan
+```
+
+The CLI needs the network. Codex's default sandbox blocks it, so start a scanning session with
+`-c sandbox_workspace_write.network_access=true`, and add `--add-dir ~/.cache/research-scan` so the
+HTTP cache is writable. Both apply to the whole session, not only to `research-scan`.
+
 ### Claude Code — the plugin
 
 The plugin installs the skill and configures the `uvx` MCP server in one step; the `.mcp.json` route

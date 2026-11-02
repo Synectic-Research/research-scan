@@ -144,7 +144,7 @@ When you get there:
   one concept. A thin criterion is usually thin because round 1 asked in the wrong community's
   words, so reach for the vocabulary that criterion's own literature uses, not a rewording of the
   query that already failed.
-- **At most 2 reformulations** of the lowest-yield query in `coverage.json.queries`, ids `R1…`,
+- **At most 2 reformulations** of the lowest-yield query in the latest round's `queries` (`coverage.json.rounds`), ids `R1…`,
   keeping the original's `type` and dropping `target_criterion` unless one criterion is the point.
 - Ids must not collide with `queries`. `type: "gap"` is rejected inside `queries`, and a `gap`
   query without a real `target_criterion` is `exit 2`.

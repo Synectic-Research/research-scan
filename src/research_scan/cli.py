@@ -18,6 +18,7 @@ import os
 import platform
 import sys
 from pathlib import Path
+from typing import NoReturn
 
 import typer
 from typer import completion
@@ -139,6 +140,12 @@ def configure_(
         typer.echo("Then run: research-scan doctor")
         raise typer.Exit(2)
 
+    # Before any prompt: a read-only config directory (a sandboxed agent session, say) must
+    # fail with a message, not a traceback after the user has typed their keys.
+    writable, why = doctor._writable(target.parent)
+    if not writable:
+        _fail_unwritable(target, why)
+
     typer.echo(f"Credentials are written to {target}")
     typer.echo("Enter keeps the current value. Ctrl-C aborts without writing.\n")
 
@@ -168,7 +175,10 @@ def configure_(
         typer.echo("")
 
     if answers:
-        written = config.write_env(answers)
+        try:
+            written = config.write_env(answers)
+        except OSError as exc:
+            _fail_unwritable(target, exc.strerror or str(exc))
         typer.echo(f"wrote {', '.join(sorted(answers))} to {written}\n")
     else:
         typer.echo("nothing changed\n")
@@ -1244,7 +1254,16 @@ def _emit_candidates_recall(
     typer.echo(f"→ {written}")
 
 
-def _fail(message: str, json_output: bool, *, code: int) -> None:
+def _fail_unwritable(target: Path, why: str) -> NoReturn:
+    _fail(
+        f"cannot write {target.parent} ({why}). configure needs write access there; a sandboxed "
+        "agent session is often read-only, so run `research-scan configure` in a plain terminal",
+        False,
+        code=1,
+    )
+
+
+def _fail(message: str, json_output: bool, *, code: int) -> NoReturn:
     if json_output:
         typer.echo(json.dumps({"ok": False, "error": message}), err=True)
     else:

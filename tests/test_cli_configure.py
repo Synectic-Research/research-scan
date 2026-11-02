@@ -198,6 +198,37 @@ def test_a_first_run_with_no_openalex_key_refuses_rather_than_writing_half_a_con
     assert not (home / ".config" / "research-scan" / ".env").exists()
 
 
+def test_a_read_only_config_dir_fails_with_a_message_before_any_prompt(home, monkeypatch):
+    # A sandboxed agent session can read ~/.config but not write it. The user must learn that
+    # before typing a key, and from a sentence rather than a traceback.
+    monkeypatch.setattr(doctor, "_writable", lambda path: (False, "Operation not permitted"))
+    prompted: list[str] = []
+    monkeypatch.setattr("getpass.getpass", lambda *a, **k: prompted.append("key") or "")
+
+    result = runner.invoke(app, ["configure", "--quiet"], input="\n")
+
+    assert result.exit_code == 1
+    assert result.exception is None or isinstance(result.exception, SystemExit)
+    assert "configure needs write access" in result.output
+    assert "Operation not permitted" in result.output
+    assert prompted == []
+
+
+def test_a_write_that_fails_after_the_prompts_is_a_message_too(home, monkeypatch):
+    answer(monkeypatch, "openalex-key-1234", "", "")
+
+    def refuse(*args, **kwargs):
+        raise PermissionError(13, "Permission denied")
+
+    monkeypatch.setattr(config, "write_env", refuse)
+
+    result = runner.invoke(app, ["configure", "--quiet"], input="\n")
+
+    assert result.exit_code == 1
+    assert isinstance(result.exception, SystemExit)
+    assert "Permission denied" in result.output
+
+
 def test_the_exit_code_is_doctors(home, monkeypatch, offline_doctor):
     """A configure that leaves the install unusable must not exit 0."""
     offline_doctor.checks.append(

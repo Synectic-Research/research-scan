@@ -9,7 +9,7 @@ Every release below was gated on measurement. Where an entry says a change was r
 measurement that killed it is in [`docs/measurements.md`](docs/measurements.md), kept so the same
 idea is not retried blind.
 
-## [Unreleased]
+## [0.6.4] — 2026-11-02
 
 ### Changed
 
@@ -25,6 +25,12 @@ idea is not retried blind.
   `description` keeps its wording, because it is the measured trigger surface.
 - **Issue and pull-request templates.** Bug reports ask for `version --json` and `doctor
   --verbose`; security reports go to private vulnerability reporting.
+
+### Note
+
+A patch release. No retrieval, screening, selection, schema or rubric behaviour changes, and no
+measured number moves. What does move: one sentence in `SKILL.md`, and the package descriptions on
+PyPI and the MCP registry.
 
 ## [0.6.3] — 2026-11-02
 

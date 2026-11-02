@@ -46,6 +46,8 @@ from fastmcp.server.dependencies import get_http_request
 from fastmcp.server.middleware import Middleware, MiddlewareContext
 from pydantic import Field
 from starlette.applications import Starlette
+from starlette.datastructures import Headers
+from starlette.middleware import Middleware as StarletteMiddleware
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.routing import Mount
@@ -1044,8 +1046,9 @@ class TokenAuth(Middleware):
             # No HTTP layer at all (in-process transport). Nothing to authenticate against.
             return await call_next(context)
 
-        scope = request.scope
-        path = f"{scope.get('root_path') or ''}{scope.get('path') or ''}"
+        # uvicorn already folds root_path into `path`, and a Mount keeps the full path; adding
+        # root_path again doubled the prefix.
+        path = request.scope.get("path") or ""
         if not authorize(path, request.headers.get("authorization"), config.load().mcp_token):
             raise ToolError("unauthorized")
         return await call_next(context)
@@ -1070,8 +1073,7 @@ async def health(request: Request) -> JSONResponse:
     this server's auth, validation or dispatch reads it, and none ever should.
     """
     payload: dict[str, object] = {"status": "ok"}
-    scope = request.scope
-    path = f"{scope.get('root_path') or ''}{scope.get('path') or ''}"
+    path = request.scope.get("path") or ""
     if authorize(path, request.headers.get("authorization"), config.load().mcp_token):
         payload.update(deployment_module.current().as_dict())
     return JSONResponse(payload)
@@ -1178,6 +1180,43 @@ def redact_server_logs(secrets: tuple[str, ...]) -> None:
             target.addFilter(RedactSecrets(secrets))
 
 
+BAD_TOKEN_DETAIL = "missing or invalid token"
+
+
+class RequireToken:
+    """ASGI gate in front of the whole app: no token, no response but 401.
+
+    `TokenAuth` checks every MCP *message*, but `initialize` reaches FastMCP's session manager
+    first, so an unauthenticated caller could still open server sessions. This answers before any
+    route runs. Two read-only exemptions go on to the router unchanged:
+
+    - `GET /health` (and `/health/`, which redirects): an uptime probe needs a 200 without the
+      token, and the handler itself still withholds the deployment fingerprint.
+    - `GET /.well-known/*`: no such route exists, so these keep their 404. A 401 there reads to an
+      MCP client as "this server wants OAuth but publishes no metadata".
+
+    Lifespan and websocket scopes pass through: FastMCP registers HTTP routes only, so a websocket
+    ends at the router's close.
+    """
+
+    def __init__(self, app, token: str) -> None:
+        self.app = app
+        self.token = token
+        self.reject = RejectEverything(BAD_TOKEN_DETAIL)
+
+    async def __call__(self, scope, receive, send) -> None:
+        if scope["type"] != "http":
+            return await self.app(scope, receive, send)
+        path = scope.get("path") or ""
+        if scope.get("method") in ("GET", "HEAD") and (
+            path.rstrip("/") == "/health" or path.startswith("/.well-known/")
+        ):
+            return await self.app(scope, receive, send)
+        if authorize(path, Headers(scope=scope).get("authorization"), self.token):
+            return await self.app(scope, receive, send)
+        await self.reject(scope, receive, send)
+
+
 def build_app(token: str | None = None) -> Starlette:
     """One MCP app, mounted twice: `/mcp` for a bearer client, `/<token>/mcp` for a client that
     cannot set headers.
@@ -1186,7 +1225,8 @@ def build_app(token: str | None = None) -> Starlette:
     parent router must run, or streamable HTTP never initializes.
 
     With no token configured there is no secret to put in a path, so the path-segment mount is
-    not created and every route answers 401. Never silently open.
+    not created and every route answers 401. Never silently open. With one, `RequireToken`
+    answers 401 to any unauthenticated request except `GET /health`, before a session can open.
     """
     token = token or config.load().mcp_token
     if not token:
@@ -1194,6 +1234,7 @@ def build_app(token: str | None = None) -> Starlette:
     inner = mcp.http_app(path="/mcp")
     return Starlette(
         routes=[Mount(f"/{token}", app=inner), Mount("/", app=inner)],
+        middleware=[StarletteMiddleware(RequireToken, token=token)],
         lifespan=inner.lifespan,
     )
 

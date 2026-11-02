@@ -299,6 +299,121 @@ def test_redaction_covers_tracebacks_stacks_and_non_string_values(clean_uvicorn_
     assert counted.args == (f"/{config.REDACTED}/mcp", 200)
 
 
+INITIALIZE = {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "initialize",
+    "params": {
+        "protocolVersion": "2025-06-18",
+        "capabilities": {},
+        "clientInfo": {"name": "probe", "version": "0"},
+    },
+}
+
+
+def raw(app, requests: list[tuple[str, str, dict[str, str]]]) -> list[httpx.Response]:
+    """Plain HTTP over ASGI with the lifespan running, so a 200 means FastMCP really answered."""
+
+    async def go() -> list[httpx.Response]:
+        async with app.router.lifespan_context(app), httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=app), base_url="http://test"
+        ) as client:
+            out = []
+            for method, url, headers in requests:
+                headers = {"accept": "application/json, text/event-stream", **headers}
+                body = INITIALIZE if method == "POST" else None
+                out.append(await client.request(method, url, json=body, headers=headers))
+            return out
+
+    return asyncio.run(go())
+
+
+def test_an_unauthenticated_request_is_refused_before_a_session_opens(mcp_home):
+    """`initialize` used to reach FastMCP's session manager without the token: anyone could
+    create server sessions, and only the later tool calls were refused."""
+    app = mcp_server.build_app(TOKEN)
+    bearer = {"authorization": f"Bearer {TOKEN}"}
+    responses = raw(
+        app,
+        [
+            ("POST", "/mcp", {}),
+            ("POST", "/mcp", {"authorization": "Bearer wrong-token"}),
+            ("POST", "/not-the-token/mcp", {}),
+            ("GET", "/mcp", {}),
+            ("DELETE", "/mcp", {}),
+            ("POST", "/mcp", bearer),
+            ("POST", f"/{TOKEN}/mcp", {}),
+        ],
+    )
+
+    refused, admitted = responses[:5], responses[5:]
+    for response in refused:
+        assert response.status_code == 401
+        assert response.json() == {"error": "unauthorized", "detail": "missing or invalid token"}
+        assert "mcp-session-id" not in response.headers
+    for response in admitted:
+        assert response.status_code == 200
+        assert response.headers.get("mcp-session-id")
+
+
+def test_health_stays_open_and_still_withholds_identity_without_the_token(mcp_home):
+    anonymous, head, slash, holder, wrong_method = raw(
+        mcp_server.build_app(TOKEN),
+        [
+            ("GET", "/health", {}),
+            ("HEAD", "/health", {}),
+            ("GET", "/health/", {}),
+            ("GET", f"/{TOKEN}/health", {}),
+            ("POST", "/health", {}),
+        ],
+    )
+
+    assert anonymous.status_code == 200
+    assert anonymous.json() == {"status": "ok"}
+    assert head.status_code == 200
+    # A probe written with a trailing slash keeps the redirect it always got.
+    assert slash.status_code == 307
+    assert holder.status_code == 200
+    assert "git_sha" in holder.json()
+    # Only the probe is exempt; anything else on that path needs the token like every route.
+    assert wrong_method.status_code == 401
+
+
+def test_well_known_paths_keep_their_404_rather_than_signalling_oauth(mcp_home):
+    """An MCP client reads a 401 here as "OAuth required, metadata missing"; there is no route."""
+    responses = raw(
+        mcp_server.build_app(TOKEN),
+        [
+            ("GET", "/.well-known/oauth-protected-resource", {}),
+            ("GET", "/.well-known/oauth-protected-resource/mcp", {}),
+            ("GET", "/.well-known/oauth-authorization-server", {}),
+        ],
+    )
+    assert [response.status_code for response in responses] == [404, 404, 404]
+
+
+def test_the_connector_can_open_and_close_a_session_on_the_path_token(mcp_home):
+    """The claude.ai connector's lifecycle on `/<token>/mcp`: initialize, notify, close."""
+    app = mcp_server.build_app(TOKEN)
+    accept = {"accept": "application/json, text/event-stream"}
+
+    async def go() -> tuple[int, int, int]:
+        async with app.router.lifespan_context(app), httpx.AsyncClient(
+            transport=httpx.ASGITransport(app=app), base_url="http://test"
+        ) as client:
+            opened = await client.post(f"/{TOKEN}/mcp", json=INITIALIZE, headers=accept)
+            session = {**accept, "mcp-session-id": opened.headers["mcp-session-id"]}
+            notified = await client.post(
+                f"/{TOKEN}/mcp",
+                json={"jsonrpc": "2.0", "method": "notifications/initialized"},
+                headers=session,
+            )
+            closed = await client.delete(f"/{TOKEN}/mcp", headers=session)
+            return opened.status_code, notified.status_code, closed.status_code
+
+    assert asyncio.run(go()) == (200, 202, 200)
+
+
 def test_without_a_token_the_server_starts_and_401s_instead_of_refusing_to_boot(
     mcp_home, monkeypatch
 ):

@@ -269,10 +269,12 @@ def test_health_with_a_wrong_bearer_falls_back_to_liveness(mcp_home):
     assert response.json() == {"status": "ok"}
 
 
-def test_a_wrong_path_secret_is_not_a_route_at_all(mcp_home):
-    """Only `/{token}` is mounted, so a guessed prefix 404s before any handler runs — it never
-    reaches the liveness answer."""
-    assert get(mcp_server.build_app(TOKEN), "/not-the-token/health").status_code == 404
+def test_a_wrong_path_secret_never_reaches_a_handler(mcp_home):
+    """A guessed prefix is refused before routing — it never reaches the liveness answer. It was
+    a router 404 until the token gate moved in front of every route; now it is the gate's 401."""
+    response = get(mcp_server.build_app(TOKEN), "/not-the-token/health")
+    assert response.status_code == 401
+    assert "status" not in response.json()
 
 
 def test_health_never_names_the_token(mcp_home, monkeypatch):

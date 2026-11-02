@@ -163,7 +163,7 @@ its own logs, but the process's files and the token's history still need an oper
   the machine, including a VM that shares the host filesystem.
 - **Rotate after any exposure.** A token that ever reached a log, a shell history or a URL bar is
   spent. The recipe is in [Rotating the token](#rotating-the-token) below.
-- **Keep the token URL-safe.** The recipe above uses `secrets.token_urlsafe`. The redaction also
+- **Keep the token URL-safe.** The recipe below uses `secrets.token_urlsafe`. The redaction also
   covers percent-encoded forms, but a token that never needs encoding is one less thing to trust,
   and a non-ASCII token will not authenticate as a bearer header.
 
@@ -241,8 +241,9 @@ fi
 ```
 
 `|` never occurs in a URL-safe token, so it is a safe `sed` delimiter. `OLD` is unset only when
-the check proves the scrub, so a failed run can be repeated; a log `sed` could not read leaves a
-`0600` `.scrub` file beside it, overwritten by the next run. The old token is briefly in `sed`'s
+the check proves the scrub, so a failed run can be repeated; a log the loop could not read or
+rewrite leaves a `0600` `.scrub` file beside it, overwritten by the next run (use `>|` if your
+shell sets `noclobber`). The old token is briefly in `sed`'s
 and `grep`'s arguments, visible to processes of the same user, who can read `.env` anyway. A line
 the server appends between the `sed` read and the `cat` write is lost, which is why the connector
 should be idle.
